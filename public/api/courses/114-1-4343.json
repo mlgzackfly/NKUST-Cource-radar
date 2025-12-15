@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4343",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(歷史)海洋文明發展",
+  "selectCode": "4343",
+  "courseCode": "042C01671",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(燕",
+  "combinedClassName": "",
+  "time": "(五)3-4",
+  "classroom": "HS210",
+  "instructors": [
+    {
+      "name": "劉宗智"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "【一】新舊課程不得”重複”修讀【二】107-111學年入學生修讀通過者，優先認列為核心通識課程，如已修滿「核心(一)海洋科技探索或校訂(五)海洋科技與永續」2學分者，始認列為博雅歷史課群學分數。",
+  "lectureHours": 2,
+  "labHours": 0
+}

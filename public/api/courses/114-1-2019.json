@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2019",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理心理學",
+  "selectCode": "2019",
+  "courseCode": "232C10242",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企一甲",
+  "combinedClassName": "",
+  "time": "(一)5-6",
+  "classroom": "MB524",
+  "instructors": [
+    {
+      "name": "林思吟"
+    }
+  ],
+  "enrolled": 68,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 2,
+  "labHours": 0
+}

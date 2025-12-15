@@ -1,0 +1,87 @@
+{
+  "id": "114-1-1014",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(三)",
+  "selectCode": "1014",
+  "courseCode": "222C00092",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子四丙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王鴻猷"
+    },
+    {
+      "name": "朱紹儀"
+    },
+    {
+      "name": "李財福"
+    },
+    {
+      "name": "周肇基"
+    },
+    {
+      "name": "林志學"
+    },
+    {
+      "name": "邱建良"
+    },
+    {
+      "name": "洪盟峯"
+    },
+    {
+      "name": "張財榮"
+    },
+    {
+      "name": "張萬榮"
+    },
+    {
+      "name": "連志原"
+    },
+    {
+      "name": "陳昭和"
+    },
+    {
+      "name": "陳聰毅"
+    },
+    {
+      "name": "楊素華"
+    },
+    {
+      "name": "趙珮如"
+    },
+    {
+      "name": "劉志益"
+    },
+    {
+      "name": "劉炳宏"
+    },
+    {
+      "name": "薛丁仁"
+    },
+    {
+      "name": "謝東利"
+    },
+    {
+      "name": "謝欽旭"
+    },
+    {
+      "name": "謝慶發"
+    }
+  ],
+  "enrolled": 149,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：指導教師研討室",
+  "lectureHours": 4,
+  "labHours": 0
+}

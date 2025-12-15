@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1244",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "論文",
+  "selectCode": "1244",
+  "courseCode": "209B00116",
+  "credits": 6,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "模具工程系碩士班[建工/燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "碩模一甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "歐士輔"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 6,
+  "labHours": 0
+}

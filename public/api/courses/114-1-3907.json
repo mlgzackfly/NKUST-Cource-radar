@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3907",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "行政訴訟法",
+  "selectCode": "3907",
+  "courseCode": "237F10360",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "進四技財稅系二甲",
+  "combinedClassName": "",
+  "time": "(二)12-13",
+  "classroom": "育205",
+  "instructors": [
+    {
+      "name": "李志偉"
+    }
+  ],
+  "enrolled": 42,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

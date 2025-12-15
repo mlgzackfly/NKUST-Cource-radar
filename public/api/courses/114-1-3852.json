@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3852",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業概論",
+  "selectCode": "3852",
+  "courseCode": "237C10252",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "四財稅一甲",
+  "combinedClassName": "",
+  "time": "(三)3-4",
+  "classroom": "MA209",
+  "instructors": [
+    {
+      "name": "蕭大正"
+    }
+  ],
+  "enrolled": 65,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

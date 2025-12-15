@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0220",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "網路行銷",
+  "selectCode": "0220",
+  "courseCode": "234C10300",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "四國企三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MB325",
+  "instructors": [
+    {
+      "name": "廖明瑜"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2011",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "餐旅業組織行為",
+  "selectCode": "2011",
+  "courseCode": "235H10063",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "觀光管理系觀光與餐旅管理碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專觀光餐旅一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "西101",
+  "instructors": [
+    {
+      "name": "李一民"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

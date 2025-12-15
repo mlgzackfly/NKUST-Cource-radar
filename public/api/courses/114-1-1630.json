@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1630",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機概論",
+  "selectCode": "1630",
+  "courseCode": "204C00004",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系一甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "HS319",
+  "instructors": [
+    {
+      "name": "陳建安"
+    }
+  ],
+  "enrolled": 43,
+  "capacity": 43,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

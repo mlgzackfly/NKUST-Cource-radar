@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1700",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "廣告企劃與行銷",
+  "selectCode": "1700",
+  "courseCode": "252C10165",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "HS415",
+  "instructors": [
+    {
+      "name": "翟治平"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "此課程為創新設計學院創新設計產業類專班113學年度入學必修課，請該學年度類專班同學，修習完此課程後，至「歷年成績表更改必選修系統」申請更改課程必選修別。",
+  "lectureHours": 3,
+  "labHours": 0
+}

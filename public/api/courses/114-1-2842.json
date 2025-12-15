@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2842",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "審計品質與審計市場",
+  "selectCode": "2842",
+  "courseCode": "157H00019",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "會計資訊系碩士在職專班",
+  "requiredOrElective": "必修",
+  "className": "碩專會計資訊二乙",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "行509",
+  "instructors": [
+    {
+      "name": "林宗輝"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 20,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

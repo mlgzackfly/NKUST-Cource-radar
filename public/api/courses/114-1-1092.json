@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1092",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "1092",
+  "courseCode": "209C00208",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模一甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "模605",
+  "instructors": [
+    {
+      "name": "林香君"
+    }
+  ],
+  "enrolled": 74,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

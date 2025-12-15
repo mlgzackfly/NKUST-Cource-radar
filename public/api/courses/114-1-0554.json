@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0554",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工業安全與衛生",
+  "selectCode": "0554",
+  "courseCode": "208C10151",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "四化材四甲",
+  "combinedClassName": "",
+  "time": "(五)3-4",
+  "classroom": "育303",
+  "instructors": [
+    {
+      "name": "簡秀紋"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

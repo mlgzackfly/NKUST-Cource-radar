@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4140",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務應用文",
+  "selectCode": "4140",
+  "courseCode": "041F00358",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "進基礎二技三甲",
+  "combinedClassName": "進二技觀光系三甲",
+  "time": "(日)5-6",
+  "classroom": "育302",
+  "instructors": [
+    {
+      "name": "孔令元"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 進技觀三甲",
+  "lectureHours": 2,
+  "labHours": 0
+}

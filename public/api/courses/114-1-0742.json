@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0742",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "0742",
+  "courseCode": "202C00155",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機一丙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "機404",
+  "instructors": [
+    {
+      "name": "陳道星"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

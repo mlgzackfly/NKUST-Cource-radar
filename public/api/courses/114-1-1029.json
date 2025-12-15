@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1029",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光纖通訊",
+  "selectCode": "1029",
+  "courseCode": "222A10056",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子一甲",
+  "combinedClassName": "碩子一甲",
+  "time": "(四)5-7",
+  "classroom": "資606",
+  "instructors": [
+    {
+      "name": "周肇基"
+    }
+  ],
+  "enrolled": 10,
+  "capacity": 10,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1172",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "模具工程概論",
+  "selectCode": "1172",
+  "courseCode": "209F00060",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技模具系一甲",
+  "combinedClassName": "",
+  "time": "(五)10-11",
+  "classroom": "模601",
+  "instructors": [
+    {
+      "name": "胡逸群"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

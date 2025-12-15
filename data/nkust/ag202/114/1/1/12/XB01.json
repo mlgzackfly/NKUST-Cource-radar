@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-15T15:07:24.224Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "114#1",
+    "cmp_area_id": "1",
+    "dgr_id": "12",
+    "unt_id": "XB01",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "XB01",
+    "label": "(共同教育學院)基礎教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "4023",
+      "campus": "建工校區",
+      "division": "日間部五專",
+      "department": "基礎教育中心",
+      "className": "基礎五專三甲(建",
+      "combinedClassName": "五土三甲,五模三甲",
+      "courseCode": "041E00115",
+      "courseName": "本土語文/臺灣手語",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "黃小民",
+      "classroom": "土609",
+      "enrolled": 58,
+      "capacity": 60,
+      "time": "(四)5-6",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "班級: 五模三甲、五土三甲(合班)，本課程教授閩南語。"
+    }
+  ]
+}

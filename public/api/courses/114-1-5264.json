@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5264",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "生醫光電導論",
+  "selectCode": "5264",
+  "courseCode": "121B10204",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "光電工程研究所",
+  "requiredOrElective": "選修",
+  "className": "光電碩士班一甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "育101",
+  "instructors": [
+    {
+      "name": "劉世崑"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

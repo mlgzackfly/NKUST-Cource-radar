@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3909",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "稅務會計(一)",
+  "selectCode": "3909",
+  "courseCode": "237F10270",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "進四技財稅系三甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "康瑞亨"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

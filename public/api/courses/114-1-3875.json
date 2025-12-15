@@ -1,0 +1,42 @@
+{
+  "id": "114-1-3875",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "3875",
+  "courseCode": "237C00364",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "汪青萍"
+    },
+    {
+      "name": "張純萍"
+    },
+    {
+      "name": "管國珍"
+    },
+    {
+      "name": "蕭大正"
+    },
+    {
+      "name": "魏文欽"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

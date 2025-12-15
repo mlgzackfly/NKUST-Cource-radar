@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0619",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電技術與實務",
+  "selectCode": "0619",
+  "courseCode": "227A10078",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電機工程系博士班",
+  "requiredOrElective": "選修",
+  "className": "博電一甲",
+  "combinedClassName": "碩電一甲,碩電二甲",
+  "time": "(二)2-4",
+  "classroom": "電B06",
+  "instructors": [
+    {
+      "name": "易政男"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 24,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

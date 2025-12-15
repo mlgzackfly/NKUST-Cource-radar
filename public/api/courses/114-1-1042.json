@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1042",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "影像和視訊處理",
+  "selectCode": "1042",
+  "courseCode": "222A10181",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子一甲",
+  "combinedClassName": "碩子一甲",
+  "time": "(三)6-8",
+  "classroom": "資1207",
+  "instructors": [
+    {
+      "name": "陳昭和"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 18,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

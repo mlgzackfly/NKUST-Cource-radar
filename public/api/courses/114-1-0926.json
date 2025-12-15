@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0926",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "影像處理微學分─深度學習實作模組",
+  "selectCode": "0926",
+  "courseCode": "227C10603",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電四丙",
+  "combinedClassName": "",
+  "time": "(三)8",
+  "classroom": "電B05B",
+  "instructors": [
+    {
+      "name": "黃科瑋"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

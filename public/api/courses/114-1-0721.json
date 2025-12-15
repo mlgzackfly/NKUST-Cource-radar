@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0721",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "基礎施工",
+  "selectCode": "0721",
+  "courseCode": "201E00255",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土四甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "土508",
+  "instructors": [
+    {
+      "name": "沈茂松"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

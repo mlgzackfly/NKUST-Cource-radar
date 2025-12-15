@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1158",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "製造工程",
+  "selectCode": "1158",
+  "courseCode": "209C10503",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模四丙",
+  "combinedClassName": "四模四乙,四模四甲",
+  "time": "(二)5-7",
+  "classroom": "模505",
+  "instructors": [
+    {
+      "name": "伏和中"
+    }
+  ],
+  "enrolled": 79,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

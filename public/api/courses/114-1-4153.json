@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4153",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中文閱讀與表達(一)",
+  "selectCode": "4153",
+  "courseCode": "041F00380",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "進基礎四技一甲",
+  "combinedClassName": "進四技模具系一甲",
+  "time": "(六)12-13",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "蔡靖文"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 進四模一甲，本課程不可抵充實務應用文。",
+  "lectureHours": 2,
+  "labHours": 0
+}

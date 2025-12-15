@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3873",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "程式設計",
+  "selectCode": "3873",
+  "courseCode": "237C00334",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅三甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MA409B",
+  "instructors": [
+    {
+      "name": "彭琪祿"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 90,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

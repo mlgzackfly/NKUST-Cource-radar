@@ -1,0 +1,42 @@
+{
+  "id": "114-1-0725",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "學期實習(一)",
+  "selectCode": "0725",
+  "courseCode": "201E00271",
+  "credits": 9,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土五甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "林智強"
+    },
+    {
+      "name": "黃亦敏"
+    },
+    {
+      "name": "黃凱翔"
+    },
+    {
+      "name": "謝嘉聲"
+    },
+    {
+      "name": "藍文浩"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 9
+}

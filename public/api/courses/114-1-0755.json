@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0755",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料力學",
+  "selectCode": "0755",
+  "courseCode": "202C00187",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機二乙",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "機408",
+  "instructors": [
+    {
+      "name": "黃華志"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

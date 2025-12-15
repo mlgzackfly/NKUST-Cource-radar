@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0700",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "地工技術",
+  "selectCode": "0700",
+  "courseCode": "201F00040",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技土木系四甲",
+  "combinedClassName": "",
+  "time": "(六)8-10",
+  "classroom": "土709",
+  "instructors": [
+    {
+      "name": "沈永年"
+    }
+  ],
+  "enrolled": 62,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

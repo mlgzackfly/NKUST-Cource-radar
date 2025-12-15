@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0626",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機器學習與機器人應用",
+  "selectCode": "0626",
+  "courseCode": "227A10140",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電機工程系博士班",
+  "requiredOrElective": "選修",
+  "className": "博電一甲",
+  "combinedClassName": "碩電一甲,碩電二甲",
+  "time": "(四)2-4",
+  "classroom": "電506",
+  "instructors": [
+    {
+      "name": "蔡奇謚"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

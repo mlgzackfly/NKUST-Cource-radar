@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1723",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "廣告消費與認知心理",
+  "selectCode": "1723",
+  "courseCode": "252H10004",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "碩專文化創意二甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "育400電腦教室",
+  "instructors": [
+    {
+      "name": "翟治平"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 21,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

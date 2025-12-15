@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1046",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機器學習數學",
+  "selectCode": "1046",
+  "courseCode": "222A10219",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子二甲",
+  "combinedClassName": "碩子二甲",
+  "time": "(二)5-7",
+  "classroom": "資606",
+  "instructors": [
+    {
+      "name": "蘇德仁"
+    }
+  ],
+  "enrolled": 10,
+  "capacity": 10,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

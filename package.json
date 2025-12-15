@@ -10,7 +10,8 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
     "db:import:nkust-ag202": "node scripts/db/import-nkust-ag202.mjs",
-    "scrape:nkust-ag202": "node scripts/scrape/nkust-ag202.mjs"
+    "scrape:nkust-ag202": "node scripts/scrape/nkust-ag202.mjs",
+    "build:api": "node scripts/api/build-static-api.mjs"
   },
   "dependencies": {
     "@prisma/client": "6.19.1",

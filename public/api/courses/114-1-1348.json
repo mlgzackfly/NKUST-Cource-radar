@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1348",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業資源規劃導論",
+  "selectCode": "1348",
+  "courseCode": "205F00054",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "進四技工管系二甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "土308",
+  "instructors": [
+    {
+      "name": "黃瑞展"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 67,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

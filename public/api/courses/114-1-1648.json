@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1648",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "車輛實習(一)",
+  "selectCode": "1648",
+  "courseCode": "204C00029",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系三甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "HS303",
+  "instructors": [
+    {
+      "name": "王文彬"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 18,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "課程採分組教學：陳建安老師限學號雙號學生選修、王文彬老師限學號單號學生選修。",
+  "lectureHours": 0,
+  "labHours": 3
+}

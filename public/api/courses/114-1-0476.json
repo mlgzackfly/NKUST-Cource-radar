@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0476",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料庫",
+  "selectCode": "0476",
+  "courseCode": "221C00067",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "四資工三甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "育501",
+  "instructors": [
+    {
+      "name": "楊孟翰"
+    }
+  ],
+  "enrolled": 81,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

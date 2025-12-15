@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4614",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "英語聽講訓練(三)",
+  "selectCode": "4614",
+  "courseCode": "043E00027",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語五專四甲(建",
+  "combinedClassName": "",
+  "time": "(二)1-2",
+  "classroom": "土508",
+  "instructors": [
+    {
+      "name": "陳信智"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "級別：高",
+  "lectureHours": 2,
+  "labHours": 0
+}

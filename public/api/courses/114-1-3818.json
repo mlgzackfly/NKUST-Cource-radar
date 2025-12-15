@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3818",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智慧行銷應用專題",
+  "selectCode": "3818",
+  "courseCode": "231C10334",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "智慧商務系四乙",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MA215",
+  "instructors": [
+    {
+      "name": "黃河銓"
+    }
+  ],
+  "enrolled": 10,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

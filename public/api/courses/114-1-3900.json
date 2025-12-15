@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3900",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業概論",
+  "selectCode": "3900",
+  "courseCode": "237F10206",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "進四技財稅系一甲",
+  "combinedClassName": "",
+  "time": "(二)12-13",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "蕭大正"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

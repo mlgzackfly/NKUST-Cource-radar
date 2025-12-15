@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3878",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "大數據商業分析與決策",
+  "selectCode": "3878",
+  "courseCode": "237C00332",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅四甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MA409B",
+  "instructors": [
+    {
+      "name": "彭琪祿"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 90,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

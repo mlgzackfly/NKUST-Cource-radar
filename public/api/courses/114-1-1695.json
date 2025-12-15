@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1695",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "構成與色彩",
+  "selectCode": "1695",
+  "courseCode": "252C00065",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "必修",
+  "className": "四文創一甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "HS418",
+  "instructors": [
+    {
+      "name": "林皇耀"
+    }
+  ],
+  "enrolled": 73,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

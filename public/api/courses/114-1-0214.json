@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0214",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理心理學",
+  "selectCode": "0214",
+  "courseCode": "234C10227",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "四國企二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "MB322",
+  "instructors": [
+    {
+      "name": "留淑芳"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

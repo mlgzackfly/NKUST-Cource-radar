@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3816",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專案實習(一)",
+  "selectCode": "3816",
+  "courseCode": "231C10360",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "智慧商務系四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "謝文川"
+    }
+  ],
+  "enrolled": 1,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 2
+}

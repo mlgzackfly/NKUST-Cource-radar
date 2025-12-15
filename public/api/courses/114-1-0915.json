@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0915",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "信號與系統",
+  "selectCode": "0915",
+  "courseCode": "227C10415",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三丙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "陳碩聰"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

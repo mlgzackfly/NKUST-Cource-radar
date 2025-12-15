@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0790",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "雷射加工",
+  "selectCode": "0790",
+  "courseCode": "202C10293",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機四甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "機103",
+  "instructors": [
+    {
+      "name": "謝作生"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

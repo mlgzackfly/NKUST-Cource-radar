@@ -1,0 +1,33 @@
+{
+  "id": "114-1-1063",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "生理訊號量測實務",
+  "selectCode": "1063",
+  "courseCode": "222F10348",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "進四技電子系二乙",
+  "combinedClassName": "",
+  "time": "(六)11-13",
+  "classroom": "資809",
+  "instructors": [
+    {
+      "name": "江柏叡"
+    },
+    {
+      "name": "蔡正才"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 49,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

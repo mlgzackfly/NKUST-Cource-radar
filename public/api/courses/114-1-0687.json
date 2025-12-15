@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0687",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "土壤力學實驗",
+  "selectCode": "0687",
+  "courseCode": "201C00038",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土三乙",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "土101",
+  "instructors": [
+    {
+      "name": "沈茂松"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1662",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "進階職場英文(一)",
+  "selectCode": "1662",
+  "courseCode": "251C10291",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "選修",
+  "className": "四人二甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "HS529",
+  "instructors": [
+    {
+      "name": "吳淑敏"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

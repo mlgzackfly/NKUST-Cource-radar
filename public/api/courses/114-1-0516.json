@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0516",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "普通化學(一)",
+  "selectCode": "0516",
+  "courseCode": "208C00128",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材一乙",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "杜秀中"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

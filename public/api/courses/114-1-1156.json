@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1156",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "先進模具成形技術",
+  "selectCode": "1156",
+  "courseCode": "209C10489",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模四丙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "模103",
+  "instructors": [
+    {
+      "name": "常閎智"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

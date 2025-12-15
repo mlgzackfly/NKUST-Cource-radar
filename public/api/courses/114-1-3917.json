@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3917",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "產業競爭分析",
+  "selectCode": "3917",
+  "courseCode": "237H10127",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "碩專財政稅務二甲",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "行503",
+  "instructors": [
+    {
+      "name": "鄭舜仁"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

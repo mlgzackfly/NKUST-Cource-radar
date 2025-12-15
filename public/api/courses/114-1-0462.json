@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0462",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0462",
+  "courseCode": "201B00145",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "土木工程系碩士班",
+  "requiredOrElective": "必修",
+  "className": "土木碩士二甲",
+  "combinedClassName": "",
+  "time": "(三)5-6",
+  "classroom": "土207",
+  "instructors": [
+    {
+      "name": "王和源"
+    }
+  ],
+  "enrolled": 43,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

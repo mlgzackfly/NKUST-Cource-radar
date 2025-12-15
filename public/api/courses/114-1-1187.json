@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1187",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料力學",
+  "selectCode": "1187",
+  "courseCode": "209G00035",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進四技產學攜手專班",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "進四產攜模具三甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "模601",
+  "instructors": [
+    {
+      "name": "王心德"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

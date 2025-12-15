@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3862",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財政學(一)",
+  "selectCode": "3862",
+  "courseCode": "237C00213",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅二甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MA206",
+  "instructors": [
+    {
+      "name": "陳柏青"
+    }
+  ],
+  "enrolled": 71,
+  "capacity": 87,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

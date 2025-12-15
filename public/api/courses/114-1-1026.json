@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1026",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "深度學習實作與應用",
+  "selectCode": "1026",
+  "courseCode": "222C10694",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四丙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "資501A",
+  "instructors": [
+    {
+      "name": "張財榮"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

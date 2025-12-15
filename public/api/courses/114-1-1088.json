@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1088",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "自動化工程概論",
+  "selectCode": "1088",
+  "courseCode": "209C00135",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部二技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "技模四甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "模603",
+  "instructors": [
+    {
+      "name": "劉順財"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

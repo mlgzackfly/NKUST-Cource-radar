@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0589",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "化工製造程序",
+  "selectCode": "0589",
+  "courseCode": "208F10145",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技化材系四甲",
+  "combinedClassName": "",
+  "time": "(二)11-13",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "楊木火"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 85,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

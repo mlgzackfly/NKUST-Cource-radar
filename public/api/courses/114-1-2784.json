@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2784",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "營業稅實務",
+  "selectCode": "2784",
+  "courseCode": "157F10256",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技會資系四甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "行503",
+  "instructors": [
+    {
+      "name": "陳錦富"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

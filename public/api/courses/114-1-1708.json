@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1708",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "媒體閱聽人研究",
+  "selectCode": "1708",
+  "courseCode": "252C10190",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創三甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "HS418",
+  "instructors": [
+    {
+      "name": "陳志賢"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

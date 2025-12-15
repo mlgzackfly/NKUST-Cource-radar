@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0814",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工業安全與衛生",
+  "selectCode": "0814",
+  "courseCode": "202F10124",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技機械系三甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "機408",
+  "instructors": [
+    {
+      "name": "劉得成"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

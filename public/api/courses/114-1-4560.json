@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4560",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(社會)社會學與當代社會",
+  "selectCode": "4560",
+  "courseCode": "042F00270",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "進博雅四技一甲",
+  "combinedClassName": "",
+  "time": "(四)12-13",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "柯碧蘭"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

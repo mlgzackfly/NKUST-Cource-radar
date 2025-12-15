@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2772",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子商務",
+  "selectCode": "2772",
+  "courseCode": "157F10137",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技會資系二甲",
+  "combinedClassName": "",
+  "time": "(四)10-11",
+  "classroom": "東105",
+  "instructors": [
+    {
+      "name": "彭正中"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

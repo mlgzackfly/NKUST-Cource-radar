@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0651",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "土木工程概論",
+  "selectCode": "0651",
+  "courseCode": "201C10431",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "選修",
+  "className": "四土一乙",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "王廷魁"
+    }
+  ],
+  "enrolled": 85,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

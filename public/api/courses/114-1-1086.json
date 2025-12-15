@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1086",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料科學與工程",
+  "selectCode": "1086",
+  "courseCode": "209C00209",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部二技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "技模三甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "模601",
+  "instructors": [
+    {
+      "name": "陳永璋"
+    }
+  ],
+  "enrolled": 12,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

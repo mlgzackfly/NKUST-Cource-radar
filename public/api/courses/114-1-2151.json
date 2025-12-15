@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2151",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業倫理專題研討(一)",
+  "selectCode": "2151",
+  "courseCode": "234H00006",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "國際企業系碩士班[建工/燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "碩專國際企業一甲",
+  "combinedClassName": "",
+  "time": "(六)5",
+  "classroom": "行510",
+  "instructors": [
+    {
+      "name": "陳昇鴻"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

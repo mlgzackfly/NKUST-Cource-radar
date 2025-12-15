@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0944",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "0944",
+  "courseCode": "227F00069",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技電機系一甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "土309",
+  "instructors": [
+    {
+      "name": "陳碩聰"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

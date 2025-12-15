@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1325",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "書報討論(一)",
+  "selectCode": "1325",
+  "courseCode": "205A00060",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "工管系博班二甲",
+  "combinedClassName": "",
+  "time": "(三)5-6",
+  "classroom": "育402",
+  "instructors": [
+    {
+      "name": "黃瑞展"
+    }
+  ],
+  "enrolled": 8,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

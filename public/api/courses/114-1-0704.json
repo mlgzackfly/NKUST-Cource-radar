@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0704",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "特色工程個案研究",
+  "selectCode": "0704",
+  "courseCode": "201F10114",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技土木系四甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "土609",
+  "instructors": [
+    {
+      "name": "曾世雄"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

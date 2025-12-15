@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5282",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智慧商務微學分",
+  "selectCode": "5282",
+  "courseCode": "231C11027",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "智慧商務系四乙",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MA211",
+  "instructors": [
+    {
+      "name": "李仕雄"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 54,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "共上6週課程",
+  "lectureHours": 1,
+  "labHours": 0
+}

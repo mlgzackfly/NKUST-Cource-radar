@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0594",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0594",
+  "courseCode": "208B10070",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "化學工程與材料工程系碩士班[建",
+  "requiredOrElective": "選修",
+  "className": "碩化材二甲",
+  "combinedClassName": "",
+  "time": "(五)5-6",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "倪偵翔"
+    },
+    {
+      "name": "簡秀紋"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

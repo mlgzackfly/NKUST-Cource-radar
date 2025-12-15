@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0993",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微算機實習",
+  "selectCode": "0993",
+  "courseCode": "222C00120",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子二丙",
+  "combinedClassName": "",
+  "time": "(一)1-4",
+  "classroom": "資405",
+  "instructors": [
+    {
+      "name": "謝欽旭"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

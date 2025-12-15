@@ -1,0 +1,45 @@
+{
+  "id": "114-1-0314",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0314",
+  "courseCode": "236F00058",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "進四技金資系三甲",
+  "combinedClassName": "",
+  "time": "(二)9(三)9(四)9",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "林育秀"
+    },
+    {
+      "name": "林萍珍"
+    },
+    {
+      "name": "張嘉倩"
+    },
+    {
+      "name": "楊耿杰"
+    },
+    {
+      "name": "鄭智陽"
+    },
+    {
+      "name": "羅志賢"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：指導教師研討室",
+  "lectureHours": 3,
+  "labHours": 0
+}

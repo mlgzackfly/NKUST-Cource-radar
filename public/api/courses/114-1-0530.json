@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0530",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "有機化學(一)",
+  "selectCode": "0530",
+  "courseCode": "208C00266",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材二乙",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "育203",
+  "instructors": [
+    {
+      "name": "郭仲文"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

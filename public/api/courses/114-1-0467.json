@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0467",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機程式設計",
+  "selectCode": "0467",
+  "courseCode": "221C00070",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "四資工一甲",
+  "combinedClassName": "",
+  "time": "(二)7-9",
+  "classroom": "資002",
+  "instructors": [
+    {
+      "name": "陳洳瑾"
+    }
+  ],
+  "enrolled": 71,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

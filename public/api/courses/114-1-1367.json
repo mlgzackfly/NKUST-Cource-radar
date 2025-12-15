@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1367",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "華語(一)",
+  "selectCode": "1367",
+  "courseCode": "229B00022",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "電資工程與科技管理外國學生碩士",
+  "requiredOrElective": "必修",
+  "className": "電資科技外碩一甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "資1207",
+  "instructors": [
+    {
+      "name": "葉亭妤"
+    }
+  ],
+  "enrolled": 7,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2030",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "廣告與推廣策略",
+  "selectCode": "2030",
+  "courseCode": "232C10188",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企三甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MB523",
+  "instructors": [
+    {
+      "name": "王崇昱"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

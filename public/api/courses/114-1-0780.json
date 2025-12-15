@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0780",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工業4.0概論",
+  "selectCode": "0780",
+  "courseCode": "202C10456",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機三乙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "機407",
+  "instructors": [
+    {
+      "name": "劉昭恕"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

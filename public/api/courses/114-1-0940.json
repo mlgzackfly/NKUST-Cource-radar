@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0940",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料庫系統",
+  "selectCode": "0940",
+  "courseCode": "227F10208",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技電機系四甲",
+  "combinedClassName": "",
+  "time": "(六)7-9",
+  "classroom": "電503",
+  "instructors": [
+    {
+      "name": "鍾澍強"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

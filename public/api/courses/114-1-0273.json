@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0273",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "程式設計",
+  "selectCode": "0273",
+  "courseCode": "236C00151",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "四金資一甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MB424",
+  "instructors": [
+    {
+      "name": "林萍珍"
+    },
+    {
+      "name": "黃宥輔"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "林萍珍2.5鐘點、黃宥輔0.5鐘點",
+  "lectureHours": 3,
+  "labHours": 0
+}

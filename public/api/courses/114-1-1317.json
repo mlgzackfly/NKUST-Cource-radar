@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1317",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人工智慧",
+  "selectCode": "1317",
+  "courseCode": "205A10041",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "工管系博班一甲",
+  "combinedClassName": "碩工一甲",
+  "time": "(五)2-4",
+  "classroom": "育500",
+  "instructors": [
+    {
+      "name": "林國義"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 21,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

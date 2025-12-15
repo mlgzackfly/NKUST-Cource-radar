@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0503",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料科學",
+  "selectCode": "0503",
+  "courseCode": "221H10064",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "碩專資訊工程二甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育505",
+  "instructors": [
+    {
+      "name": "林聯發"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

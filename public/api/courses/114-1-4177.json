@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4177",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "校訂(一)藝術美感探索",
+  "selectCode": "4177",
+  "courseCode": "042C01623",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技一甲(建",
+  "combinedClassName": "",
+  "time": "(四)1-2",
+  "classroom": "育206",
+  "instructors": [
+    {
+      "name": "謝佳穎"
+    }
+  ],
+  "enrolled": 50,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "107-111學年入學生必須至學分抵免系統申請抵充【博雅(人文)藝術與美感探索】，始可認列為博雅課程學分數",
+  "lectureHours": 2,
+  "labHours": 0
+}

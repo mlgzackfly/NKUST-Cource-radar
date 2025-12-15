@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0267",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國貿理論與政策",
+  "selectCode": "0267",
+  "courseCode": "234F00086",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系三甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育105",
+  "instructors": [
+    {
+      "name": "李仁耀"
+    },
+    {
+      "name": "蔡建樹"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

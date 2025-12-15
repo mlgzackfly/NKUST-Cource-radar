@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1658",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "勞資關係",
+  "selectCode": "1658",
+  "courseCode": "251C00089",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "必修",
+  "className": "四人二甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "HS529",
+  "instructors": [
+    {
+      "name": "王湧泉"
+    }
+  ],
+  "enrolled": 65,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

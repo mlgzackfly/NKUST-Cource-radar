@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1636",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物件導向程式設計",
+  "selectCode": "1636",
+  "courseCode": "204C10040",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "選修",
+  "className": "日四技車輛系二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "HS319",
+  "instructors": [
+    {
+      "name": "吳宗勲"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

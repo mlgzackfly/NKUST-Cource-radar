@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0224",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "跨文化管理",
+  "selectCode": "0224",
+  "courseCode": "234C10292",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "四國企三甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "MB324",
+  "instructors": [
+    {
+      "name": "方沴淳"
+    }
+  ],
+  "enrolled": 62,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

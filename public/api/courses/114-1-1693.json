@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1693",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "設計繪畫",
+  "selectCode": "1693",
+  "courseCode": "252C10184",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創一甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "HS609",
+  "instructors": [
+    {
+      "name": "陳岡緯"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0557",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "輸送現象與單元操作(三)",
+  "selectCode": "0557",
+  "courseCode": "208C00123",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材四甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "潘俊仁"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

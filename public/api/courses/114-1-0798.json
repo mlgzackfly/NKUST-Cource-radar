@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0798",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "研究方法",
+  "selectCode": "0798",
+  "courseCode": "202B00090",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "機械系碩士班一甲",
+  "combinedClassName": "",
+  "time": "(五)5",
+  "classroom": "機304",
+  "instructors": [
+    {
+      "name": "許中豪"
+    }
+  ],
+  "enrolled": 73,
+  "capacity": 64,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 1,
+  "labHours": 0
+}

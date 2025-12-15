@@ -1,0 +1,33 @@
+{
+  "id": "114-1-1049",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子儀表",
+  "selectCode": "1049",
+  "courseCode": "222F10207",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "進四技電子系一乙",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "資501A",
+  "instructors": [
+    {
+      "name": "陳聰毅"
+    },
+    {
+      "name": "鄭平守"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

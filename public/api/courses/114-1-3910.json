@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3910",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "法律經濟學(一)",
+  "selectCode": "3910",
+  "courseCode": "237F10226",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "進四技財稅系三甲",
+  "combinedClassName": "",
+  "time": "(三)11-12",
+  "classroom": "育206",
+  "instructors": [
+    {
+      "name": "郭恆宏"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

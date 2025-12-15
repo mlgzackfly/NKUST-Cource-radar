@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0460",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "0460",
+  "courseCode": "201B00015",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "土木工程系碩士班",
+  "requiredOrElective": "必修",
+  "className": "土木碩士一甲",
+  "combinedClassName": "",
+  "time": "(三)5-6",
+  "classroom": "土702",
+  "instructors": [
+    {
+      "name": "吳崇豪"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

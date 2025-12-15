@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1310",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "產業經營與改善",
+  "selectCode": "1310",
+  "courseCode": "205C10279",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "四工三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "土703",
+  "instructors": [
+    {
+      "name": "楊富強"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

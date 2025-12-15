@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3967",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業倫理與永續發展",
+  "selectCode": "3967",
+  "courseCode": "800F00002",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "管理學院",
+  "requiredOrElective": "必修",
+  "className": "進四管院課程一甲",
+  "combinedClassName": "進四技企管系一甲,進四技企管系二甲,進四技企管系三甲,",
+  "time": "(二)10-11",
+  "classroom": "育501",
+  "instructors": [
+    {
+      "name": "黃敏雄"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

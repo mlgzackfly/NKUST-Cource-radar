@@ -1,0 +1,54 @@
+{
+  "id": "114-1-1715",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "1715",
+  "courseCode": "252C00259",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "必修",
+  "className": "四文創四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "丁旭輝"
+    },
+    {
+      "name": "林皇耀"
+    },
+    {
+      "name": "徐錦成"
+    },
+    {
+      "name": "陳志賢"
+    },
+    {
+      "name": "陳育民"
+    },
+    {
+      "name": "陳崇文"
+    },
+    {
+      "name": "黃雅玲"
+    },
+    {
+      "name": "楊雅玲"
+    },
+    {
+      "name": "翟治平"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 6,
+  "labHours": 0
+}

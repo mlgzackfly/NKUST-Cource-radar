@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1062",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "離散數學",
+  "selectCode": "1062",
+  "courseCode": "222F10178",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "進四技電子系二乙",
+  "combinedClassName": "",
+  "time": "(六)8-10",
+  "classroom": "育501",
+  "instructors": [
+    {
+      "name": "應繼華"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

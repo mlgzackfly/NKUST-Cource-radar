@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0276",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經濟學(一)",
+  "selectCode": "0276",
+  "courseCode": "236C00020",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "四金資一甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "MB422",
+  "instructors": [
+    {
+      "name": "張嘉倩"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

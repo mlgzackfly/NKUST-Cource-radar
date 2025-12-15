@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0316",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財經資料庫程式設計",
+  "selectCode": "0316",
+  "courseCode": "236F10028",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技金資系三甲",
+  "combinedClassName": "",
+  "time": "(二)10-11",
+  "classroom": "資002",
+  "instructors": [
+    {
+      "name": "楊耿杰"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 72,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

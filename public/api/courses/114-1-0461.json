@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0461",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數值分析",
+  "selectCode": "0461",
+  "courseCode": "201B10112",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "土木工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "土木碩士一甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "土408",
+  "instructors": [
+    {
+      "name": "陳世豪"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

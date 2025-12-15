@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0941",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電機理論",
+  "selectCode": "0941",
+  "courseCode": "227F10213",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技電機系四甲",
+  "combinedClassName": "",
+  "time": "(日)9-11",
+  "classroom": "土408",
+  "instructors": [
+    {
+      "name": "盧嘉鴻"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

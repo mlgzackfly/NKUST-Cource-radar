@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2022",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "商事法",
+  "selectCode": "2022",
+  "courseCode": "232C10156",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企二甲",
+  "combinedClassName": "",
+  "time": "(二)3-4",
+  "classroom": "MB523",
+  "instructors": [
+    {
+      "name": "陳文生"
+    }
+  ],
+  "enrolled": 41,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

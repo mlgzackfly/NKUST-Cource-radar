@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1684",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "社會科學研究方法",
+  "selectCode": "1684",
+  "courseCode": "251H00009",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "人力資源發展系碩士班",
+  "requiredOrElective": "必修",
+  "className": "碩專人力資源一甲",
+  "combinedClassName": "",
+  "time": "(六)5-7",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "陳儀蓉"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

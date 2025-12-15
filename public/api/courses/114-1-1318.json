@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1318",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "1318",
+  "courseCode": "205A00057",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "工管系博班一甲",
+  "combinedClassName": "",
+  "time": "(四)5-6",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "王嘉男"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

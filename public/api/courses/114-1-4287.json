@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4287",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(科技)現今科技議題",
+  "selectCode": "4287",
+  "courseCode": "042C00522",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(三)3-4",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "林祖強"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

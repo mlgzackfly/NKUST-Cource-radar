@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0707",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程地質",
+  "selectCode": "0707",
+  "courseCode": "201E00230",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土三甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "土509",
+  "instructors": [
+    {
+      "name": "張志誠"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

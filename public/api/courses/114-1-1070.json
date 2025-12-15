@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1070",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電磁學",
+  "selectCode": "1070",
+  "courseCode": "222F00094",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系三甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "潘建源"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

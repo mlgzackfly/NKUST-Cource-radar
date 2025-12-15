@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3855",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "3855",
+  "courseCode": "237C00167",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅一甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "MA209",
+  "instructors": [
+    {
+      "name": "姚名鴻"
+    }
+  ],
+  "enrolled": 66,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

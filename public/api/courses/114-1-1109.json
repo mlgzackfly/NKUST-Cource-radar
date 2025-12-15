@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1109",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程製圖實習",
+  "selectCode": "1109",
+  "courseCode": "209C10264",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模一丙",
+  "combinedClassName": "四模一乙,四模一甲",
+  "time": "(五)1-4",
+  "classroom": "模501",
+  "instructors": [
+    {
+      "name": "常閎智"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

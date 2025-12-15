@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1077",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電腦視覺",
+  "selectCode": "1077",
+  "courseCode": "222F10196",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "進四技電子系四乙",
+  "combinedClassName": "",
+  "time": "(六)5-7",
+  "classroom": "資704",
+  "instructors": [
+    {
+      "name": "蔡正雄"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

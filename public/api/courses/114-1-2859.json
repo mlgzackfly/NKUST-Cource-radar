@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2859",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "租稅與財產移轉規劃",
+  "selectCode": "2859",
+  "courseCode": "154H10090",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "風險管理與保險系碩士專班",
+  "requiredOrElective": "選修",
+  "className": "風管碩專班二甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "行510",
+  "instructors": [
+    {
+      "name": "黃立宇"
+    },
+    {
+      "name": "鄭憲超"
+    }
+  ],
+  "enrolled": 7,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

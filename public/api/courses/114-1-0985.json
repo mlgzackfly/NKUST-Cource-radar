@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0985",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程數學(一)",
+  "selectCode": "0985",
+  "courseCode": "222C00148",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子二乙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "李財福"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

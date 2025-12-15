@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2718",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中級會計學(二)",
+  "selectCode": "2718",
+  "courseCode": "157C00477",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系二甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "MB104",
+  "instructors": [
+    {
+      "name": "蔡秋田"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

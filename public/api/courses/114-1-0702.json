@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0702",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "現場土力實驗",
+  "selectCode": "0702",
+  "courseCode": "201F00008",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技土木系四甲",
+  "combinedClassName": "",
+  "time": "(日)2-4",
+  "classroom": "土101",
+  "instructors": [
+    {
+      "name": "沈茂松"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

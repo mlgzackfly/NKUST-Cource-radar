@@ -1,0 +1,57 @@
+{
+  "id": "114-1-0770",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0770",
+  "courseCode": "202C00071",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王珉玟"
+    },
+    {
+      "name": "許中豪"
+    },
+    {
+      "name": "許光城"
+    },
+    {
+      "name": "陳信宏"
+    },
+    {
+      "name": "陳錦泰"
+    },
+    {
+      "name": "黃世疇"
+    },
+    {
+      "name": "黃靖謙"
+    },
+    {
+      "name": "蔡立仁"
+    },
+    {
+      "name": "蔡明章"
+    },
+    {
+      "name": "羅雪芬"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

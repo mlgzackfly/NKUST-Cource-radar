@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1233",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "衝壓模設計實務",
+  "selectCode": "1233",
+  "courseCode": "209E00251",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模三甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "模111",
+  "instructors": [
+    {
+      "name": "林恒勝"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2828",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "租稅規劃與企業策略",
+  "selectCode": "2828",
+  "courseCode": "157B10066",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "會計資訊系碩士班",
+  "requiredOrElective": "選修",
+  "className": "會資碩士班一甲",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "行509",
+  "instructors": [
+    {
+      "name": "楊碧雲"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

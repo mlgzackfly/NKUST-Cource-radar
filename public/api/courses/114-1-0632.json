@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0632",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "0632",
+  "courseCode": "222B00295",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "電子工程系碩士班",
+  "requiredOrElective": "必修",
+  "className": "碩子一甲",
+  "combinedClassName": "",
+  "time": "(一)3-4",
+  "classroom": "資701",
+  "instructors": [
+    {
+      "name": "劉淑白"
+    }
+  ],
+  "enrolled": 98,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

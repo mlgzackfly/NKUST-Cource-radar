@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0269",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業經營策略",
+  "selectCode": "0269",
+  "courseCode": "234F00075",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系四甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "方沴淳"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

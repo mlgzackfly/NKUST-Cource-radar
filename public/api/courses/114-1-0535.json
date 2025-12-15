@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0535",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "化工熱力學",
+  "selectCode": "0535",
+  "courseCode": "208C00126",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "吳忠信"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

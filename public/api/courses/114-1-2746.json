@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2746",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電腦稽核輔助軟體實作",
+  "selectCode": "2746",
+  "courseCode": "157C10380",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "會資系四甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MA325",
+  "instructors": [
+    {
+      "name": "彭正中"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

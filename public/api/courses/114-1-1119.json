@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1119",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料力學(一)",
+  "selectCode": "1119",
+  "courseCode": "209C00171",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二乙",
+  "combinedClassName": "",
+  "time": "(四)5-6",
+  "classroom": "模603",
+  "instructors": [
+    {
+      "name": "廖俊忠"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

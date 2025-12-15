@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1289",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "品質管理",
+  "selectCode": "1289",
+  "courseCode": "205C00144",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部二技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "技工四甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "育400電腦教室",
+  "instructors": [
+    {
+      "name": "蘇明鴻"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 20,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

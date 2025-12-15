@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1115",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "品質管制實務",
+  "selectCode": "1115",
+  "courseCode": "209C10358",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模二丙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "模603",
+  "instructors": [
+    {
+      "name": "羅桂蘭"
+    }
+  ],
+  "enrolled": 80,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4658",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "泰語(一)",
+  "selectCode": "4658",
+  "courseCode": "043C10128",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "選修",
+  "className": "外語四技一甲(建",
+  "combinedClassName": "",
+  "time": "(三)7-8",
+  "classroom": "育202",
+  "instructors": [
+    {
+      "name": "潘婉玲"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "108學年度後入學學生通過英語免修計入外語畢業學分。",
+  "lectureHours": 2,
+  "labHours": 0
+}

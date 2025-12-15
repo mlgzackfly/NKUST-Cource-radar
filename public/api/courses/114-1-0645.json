@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0645",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "FPGA影像處理晶片設計",
+  "selectCode": "0645",
+  "courseCode": "222H10165",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "電子工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專電子工程一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "資809",
+  "instructors": [
+    {
+      "name": "謝慶發"
+    }
+  ],
+  "enrolled": 10,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

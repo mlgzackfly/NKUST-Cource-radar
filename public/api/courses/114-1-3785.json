@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3785",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分",
+  "selectCode": "3785",
+  "courseCode": "231C00348",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系一甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "MA212",
+  "instructors": [
+    {
+      "name": "辛沛翰"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "新聘兼任教師:辛沛翰",
+  "lectureHours": 3,
+  "labHours": 0
+}

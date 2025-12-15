@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0970",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "0970",
+  "courseCode": "222C00141",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子一乙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "育505",
+  "instructors": [
+    {
+      "name": "楊素華"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

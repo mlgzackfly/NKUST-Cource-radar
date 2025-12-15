@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1093",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電腦繪圖",
+  "selectCode": "1093",
+  "courseCode": "209C10565",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模一丙",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "模208",
+  "instructors": [
+    {
+      "name": "黃廣淼"
+    }
+  ],
+  "enrolled": 43,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

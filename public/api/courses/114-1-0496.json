@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0496",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料探勘",
+  "selectCode": "0496",
+  "courseCode": "221A10010",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "資工系博士班一甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "陳俊豪"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 56,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0920",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "線性代數",
+  "selectCode": "0920",
+  "courseCode": "227C10425",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三丙",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "蘇科翰"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

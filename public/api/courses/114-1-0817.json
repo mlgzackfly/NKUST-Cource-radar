@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0817",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "動力學",
+  "selectCode": "0817",
+  "courseCode": "202F00061",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技機械系三甲",
+  "combinedClassName": "",
+  "time": "(六)4,5-6",
+  "classroom": "機408",
+  "instructors": [
+    {
+      "name": "林阿德"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

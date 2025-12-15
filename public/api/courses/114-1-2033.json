@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2033",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "供應鏈與物流管理",
+  "selectCode": "2033",
+  "courseCode": "232C10213",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企四甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MB525A",
+  "instructors": [
+    {
+      "name": "余銘忠"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

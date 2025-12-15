@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0568",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料檢測技術",
+  "selectCode": "0568",
+  "courseCode": "208A10015",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "化材系博士班一甲",
+  "combinedClassName": "碩化材一甲",
+  "time": "(二)5-7",
+  "classroom": "化809",
+  "instructors": [
+    {
+      "name": "何國賢"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 35,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

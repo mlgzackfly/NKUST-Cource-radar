@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0587",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "半導體材料",
+  "selectCode": "0587",
+  "courseCode": "208F10127",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技化材系四甲",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "育303",
+  "instructors": [
+    {
+      "name": "施政宏"
+    }
+  ],
+  "enrolled": 12,
+  "capacity": 85,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

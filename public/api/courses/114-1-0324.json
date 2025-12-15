@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0324",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "期貨交易實務",
+  "selectCode": "0324",
+  "courseCode": "236F10061",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技金資系四甲",
+  "combinedClassName": "",
+  "time": "(四)12-13",
+  "classroom": "資001",
+  "instructors": [
+    {
+      "name": "陳文賢"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

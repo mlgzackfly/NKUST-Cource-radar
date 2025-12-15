@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3892",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "地方財政",
+  "selectCode": "3892",
+  "courseCode": "237F10183",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "進二技財稅系四甲",
+  "combinedClassName": "",
+  "time": "(五)10-11",
+  "classroom": "育203",
+  "instructors": [
+    {
+      "name": "許義忠"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0066",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0066",
+  "courseCode": "121B00124",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "光電工程研究所",
+  "requiredOrElective": "必修",
+  "className": "光電碩士班二甲",
+  "combinedClassName": "",
+  "time": "(五)5-6",
+  "classroom": "育105",
+  "instructors": [
+    {
+      "name": "林憶芳"
+    }
+  ],
+  "enrolled": 42,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

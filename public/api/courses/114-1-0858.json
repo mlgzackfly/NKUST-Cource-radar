@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0858",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電路學(一)",
+  "selectCode": "0858",
+  "courseCode": "227C00150",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電一甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "慧芳講堂",
+  "instructors": [
+    {
+      "name": "辜德典"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

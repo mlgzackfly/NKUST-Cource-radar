@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5286",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "全民國防教育軍事訓練課程-全民國防",
+  "selectCode": "5286",
+  "courseCode": "060C10007",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "軍訓",
+  "requiredOrElective": "選修",
+  "className": "四軍一甲(建工)",
+  "combinedClassName": "",
+  "time": "(五)3-4",
+  "classroom": "土408",
+  "instructors": [
+    {
+      "name": "林昭君"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

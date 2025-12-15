@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2119",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "初級日語會話(一)",
+  "selectCode": "2119",
+  "courseCode": "235F00205",
+  "credits": 4,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進四觀光一甲",
+  "combinedClassName": "",
+  "time": "(一)10-11(四)12-13",
+  "classroom": "育304",
+  "instructors": [
+    {
+      "name": "郭育志"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4557",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(社會)智慧財產權法",
+  "selectCode": "4557",
+  "courseCode": "042F00266",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "進博雅二技三甲",
+  "combinedClassName": "",
+  "time": "(日)7-8",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "徐良維"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1055",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電路學(一)",
+  "selectCode": "1055",
+  "courseCode": "222F00081",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系一乙",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "育503",
+  "instructors": [
+    {
+      "name": "劉淑白"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

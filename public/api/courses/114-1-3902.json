@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3902",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "會計學(一)",
+  "selectCode": "3902",
+  "courseCode": "237F00161",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "進四技財稅系一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "管國珍"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

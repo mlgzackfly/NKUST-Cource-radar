@@ -1,0 +1,45 @@
+{
+  "id": "114-1-3822",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "3822",
+  "courseCode": "231C00374",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系四乙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "李仕雄"
+    },
+    {
+      "name": "林欣瑾"
+    },
+    {
+      "name": "侯易佑"
+    },
+    {
+      "name": "張俊陽"
+    },
+    {
+      "name": "廖奕雯"
+    },
+    {
+      "name": "謝佩珊"
+    }
+  ],
+  "enrolled": 43,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1722",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數位科技藝術創作",
+  "selectCode": "1722",
+  "courseCode": "252H10043",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "碩專文化創意二甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "育400電腦教室",
+  "instructors": [
+    {
+      "name": "林皇耀"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 21,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

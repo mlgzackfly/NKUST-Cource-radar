@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0986",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微算機原理",
+  "selectCode": "0986",
+  "courseCode": "222C10398",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子二乙",
+  "combinedClassName": "",
+  "time": "(二)7-9",
+  "classroom": "資704",
+  "instructors": [
+    {
+      "name": "鄭瑞川"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

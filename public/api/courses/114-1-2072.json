@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2072",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理經濟學",
+  "selectCode": "2072",
+  "courseCode": "232H10024",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "碩專企業管理一甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "行408",
+  "instructors": [
+    {
+      "name": "李政峯"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

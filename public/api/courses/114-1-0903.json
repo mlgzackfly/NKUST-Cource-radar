@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0903",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程機率與統計",
+  "selectCode": "0903",
+  "courseCode": "227C10461",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三乙",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "育101",
+  "instructors": [
+    {
+      "name": "何姿瑩"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

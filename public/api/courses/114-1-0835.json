@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0835",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料實驗",
+  "selectCode": "0835",
+  "courseCode": "202F00021",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技機械系三甲",
+  "combinedClassName": "",
+  "time": "(一)11-13",
+  "classroom": "材料實驗室",
+  "instructors": [
+    {
+      "name": "林明宏"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

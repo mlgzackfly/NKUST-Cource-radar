@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0823",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "熱流實驗",
+  "selectCode": "0823",
+  "courseCode": "202F00018",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技機械系四甲",
+  "combinedClassName": "",
+  "time": "(日)1-3",
+  "classroom": "機103",
+  "instructors": [
+    {
+      "name": "林世銘"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

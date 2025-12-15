@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1235",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "動力學",
+  "selectCode": "1235",
+  "courseCode": "209E00146",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模四甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "育201",
+  "instructors": [
+    {
+      "name": "吳佳璟"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

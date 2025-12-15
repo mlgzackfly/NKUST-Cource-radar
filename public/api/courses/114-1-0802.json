@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0802",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光學成像系統",
+  "selectCode": "0802",
+  "courseCode": "202B10065",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "機械系碩士班二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "機306",
+  "instructors": [
+    {
+      "name": "陳昭先"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

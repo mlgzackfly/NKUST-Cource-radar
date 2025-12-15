@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1234",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數值控制機械實務",
+  "selectCode": "1234",
+  "courseCode": "209E00254",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模三甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "模208",
+  "instructors": [
+    {
+      "name": "洪宗彬"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 3
+}

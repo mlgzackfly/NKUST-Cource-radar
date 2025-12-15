@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0254",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "0254",
+  "courseCode": "234F00023",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系一甲",
+  "combinedClassName": "",
+  "time": "(六)10-11",
+  "classroom": "育105",
+  "instructors": [
+    {
+      "name": "陳昇鴻"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

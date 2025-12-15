@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2775",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "投資學",
+  "selectCode": "2775",
+  "courseCode": "157F10239",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技會資系三甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "育102",
+  "instructors": [
+    {
+      "name": "陳威州"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

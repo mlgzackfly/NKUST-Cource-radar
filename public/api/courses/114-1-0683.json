@@ -1,0 +1,75 @@
+{
+  "id": "114-1-0683",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0683",
+  "courseCode": "201C00471",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土三乙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王和源"
+    },
+    {
+      "name": "王裕仁"
+    },
+    {
+      "name": "吳崇豪"
+    },
+    {
+      "name": "吳翌禎"
+    },
+    {
+      "name": "林智強"
+    },
+    {
+      "name": "莊正昀"
+    },
+    {
+      "name": "許信翔"
+    },
+    {
+      "name": "許博淵"
+    },
+    {
+      "name": "陳松靖"
+    },
+    {
+      "name": "黃亦敏"
+    },
+    {
+      "name": "黃忠發"
+    },
+    {
+      "name": "黃凱翔"
+    },
+    {
+      "name": "劉瀚聰"
+    },
+    {
+      "name": "潘煌鍟"
+    },
+    {
+      "name": "藍文浩"
+    },
+    {
+      "name": "蘇育民"
+    }
+  ],
+  "enrolled": 121,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點:指導教師研討室",
+  "lectureHours": 2,
+  "labHours": 0
+}

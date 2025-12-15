@@ -1,0 +1,48 @@
+{
+  "id": "114-1-5265",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "5265",
+  "courseCode": "209E00330",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王心德"
+    },
+    {
+      "name": "林俊宏"
+    },
+    {
+      "name": "林恒勝"
+    },
+    {
+      "name": "洪宗彬"
+    },
+    {
+      "name": "許文政"
+    },
+    {
+      "name": "黃條嵩"
+    },
+    {
+      "name": "鄭瑞鴻"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

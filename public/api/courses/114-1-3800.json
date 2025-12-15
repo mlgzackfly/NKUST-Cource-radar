@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3800",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "統計學",
+  "selectCode": "3800",
+  "courseCode": "231C00081",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系二乙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "MA213",
+  "instructors": [
+    {
+      "name": "張添香"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

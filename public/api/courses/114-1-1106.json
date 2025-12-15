@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1106",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "製造程序",
+  "selectCode": "1106",
+  "courseCode": "209C00103",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模一丙",
+  "combinedClassName": "",
+  "time": "(三)3-4",
+  "classroom": "模103",
+  "instructors": [
+    {
+      "name": "葉松瑋"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

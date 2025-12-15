@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3874",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "稅務會計(一)",
+  "selectCode": "3874",
+  "courseCode": "237C10310",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "四財稅三甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "MA208",
+  "instructors": [
+    {
+      "name": "李彗綾"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 59,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

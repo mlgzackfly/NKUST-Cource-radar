@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0968",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物理(一)",
+  "selectCode": "0968",
+  "courseCode": "222C00136",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子一乙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "邱建良"
+    }
+  ],
+  "enrolled": 81,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

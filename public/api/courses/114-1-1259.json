@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1259",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "環境遙測",
+  "selectCode": "1259",
+  "courseCode": "201A10073",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "土木工程系土木工程科技博士班",
+  "requiredOrElective": "選修",
+  "className": "土木系博士班一甲",
+  "combinedClassName": "土木碩士一甲,四土四乙,四土四甲",
+  "time": "(二)2-4",
+  "classroom": "土702",
+  "instructors": [
+    {
+      "name": "黃凱翔"
+    }
+  ],
+  "enrolled": 65,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

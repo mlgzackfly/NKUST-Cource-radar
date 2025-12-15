@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1672",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "領導學",
+  "selectCode": "1672",
+  "courseCode": "251C10250",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "選修",
+  "className": "四人四甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "HS507",
+  "instructors": [
+    {
+      "name": "陳必碩"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3821",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智慧精準醫療實作",
+  "selectCode": "3821",
+  "courseCode": "231C10378",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "智慧商務系四乙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "MA211",
+  "instructors": [
+    {
+      "name": "龔千芬"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 54,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

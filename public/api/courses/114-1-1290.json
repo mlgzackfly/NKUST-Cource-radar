@@ -1,0 +1,33 @@
+{
+  "id": "114-1-1290",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "1290",
+  "courseCode": "205C00048",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部二技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "技工四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "林伯鴻"
+    },
+    {
+      "name": "黃瑞展"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點:各研討室",
+  "lectureHours": 2,
+  "labHours": 0
+}

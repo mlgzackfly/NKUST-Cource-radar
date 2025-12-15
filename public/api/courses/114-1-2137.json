@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2137",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "宴會與會議管理",
+  "selectCode": "2137",
+  "courseCode": "235F10185",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "進四觀光四甲",
+  "combinedClassName": "",
+  "time": "(五)10-11",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "王玉如"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

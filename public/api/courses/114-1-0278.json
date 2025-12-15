@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0278",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財金英文",
+  "selectCode": "0278",
+  "courseCode": "236C10449",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "四金資一甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "MB422",
+  "instructors": [
+    {
+      "name": "何姍嬬"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 65,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 2,
+  "labHours": 0
+}

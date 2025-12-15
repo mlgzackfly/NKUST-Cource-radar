@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2087",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理學",
+  "selectCode": "2087",
+  "courseCode": "235C00163",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "四觀二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "MB209",
+  "instructors": [
+    {
+      "name": "李力昌"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

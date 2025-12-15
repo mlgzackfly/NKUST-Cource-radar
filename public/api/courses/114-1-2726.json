@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2726",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "成本會計(一)",
+  "selectCode": "2726",
+  "courseCode": "157C00271",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系二乙",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MA319",
+  "instructors": [
+    {
+      "name": "謝宛庭"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

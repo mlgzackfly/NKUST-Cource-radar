@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2010",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "2010",
+  "courseCode": "235H00001",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "觀光管理系觀光與餐旅管理碩士班",
+  "requiredOrElective": "必修",
+  "className": "碩專觀光餐旅一甲",
+  "combinedClassName": "",
+  "time": "(五)10-11",
+  "classroom": "西101",
+  "instructors": [
+    {
+      "name": "李力昌"
+    },
+    {
+      "name": "張雪楓"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

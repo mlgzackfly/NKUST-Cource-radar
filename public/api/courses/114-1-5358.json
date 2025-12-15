@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5358",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "結構系統",
+  "selectCode": "5358",
+  "courseCode": "201F10108",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技土木系四甲",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "土709",
+  "instructors": [
+    {
+      "name": "陳啓中"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

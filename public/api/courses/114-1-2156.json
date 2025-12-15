@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2156",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業倫理與永續發展",
+  "selectCode": "2156",
+  "courseCode": "234H00094",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "國際企業系碩士班[建工/燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "碩專國際企業二甲",
+  "combinedClassName": "",
+  "time": "(六)6",
+  "classroom": "行402",
+  "instructors": [
+    {
+      "name": "陳昇鴻"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0882",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子學實習(一)",
+  "selectCode": "0882",
+  "courseCode": "227C00053",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電二乙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "電401",
+  "instructors": [
+    {
+      "name": "賴俊如"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

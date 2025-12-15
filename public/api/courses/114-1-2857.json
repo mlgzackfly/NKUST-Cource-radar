@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2857",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "永續風險管理ESG理論與實務",
+  "selectCode": "2857",
+  "courseCode": "154H10099",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "風險管理與保險系碩士專班",
+  "requiredOrElective": "選修",
+  "className": "風管碩專班一甲",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "行502",
+  "instructors": [
+    {
+      "name": "林旺賜"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 20,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0602",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "線性系統分析與設計",
+  "selectCode": "0602",
+  "courseCode": "227B10075",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "電機工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩電二甲",
+  "combinedClassName": "",
+  "time": "(三)6-8",
+  "classroom": "電603",
+  "instructors": [
+    {
+      "name": "李立"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

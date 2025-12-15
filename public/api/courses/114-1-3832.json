@@ -1,0 +1,36 @@
+{
+  "id": "114-1-3832",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討",
+  "selectCode": "3832",
+  "courseCode": "231H00012",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "碩專智慧商務一甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "模103",
+  "instructors": [
+    {
+      "name": "林欣瑾"
+    },
+    {
+      "name": "侯易佑"
+    },
+    {
+      "name": "謝佩珊"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

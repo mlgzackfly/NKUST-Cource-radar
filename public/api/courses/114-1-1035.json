@@ -1,0 +1,33 @@
+{
+  "id": "114-1-1035",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "保健物理專論",
+  "selectCode": "1035",
+  "courseCode": "222A10118",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子一甲",
+  "combinedClassName": "碩子一甲",
+  "time": "(四)6-8",
+  "classroom": "資406B",
+  "instructors": [
+    {
+      "name": "李財福"
+    },
+    {
+      "name": "謝楊威"
+    }
+  ],
+  "enrolled": 18,
+  "capacity": 10,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0238",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "行銷管理",
+  "selectCode": "0238",
+  "courseCode": "234F10117",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "進二技國企系三甲",
+  "combinedClassName": "",
+  "time": "(六)7-8",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "黃筱鈞"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

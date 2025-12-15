@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0468",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資訊工程概論",
+  "selectCode": "0468",
+  "courseCode": "221C10157",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "四資工一甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "資002",
+  "instructors": [
+    {
+      "name": "楊新風"
+    }
+  ],
+  "enrolled": 72,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

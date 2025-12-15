@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1274",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程經濟與財務管理",
+  "selectCode": "1274",
+  "courseCode": "201H10040",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "土木工程系土木工程與防災科技",
+  "requiredOrElective": "選修",
+  "className": "碩專土木防災一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "土503",
+  "instructors": [
+    {
+      "name": "王裕仁"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 43,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

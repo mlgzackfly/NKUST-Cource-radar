@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3868",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業社會責任與永續發展",
+  "selectCode": "3868",
+  "courseCode": "237C10370",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "四財稅二甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "MA207",
+  "instructors": [
+    {
+      "name": "潘易德"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 60,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

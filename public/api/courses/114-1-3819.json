@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3819",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智聯網創新應用專題",
+  "selectCode": "3819",
+  "courseCode": "231C10338",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "智慧商務系四乙",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "MA211",
+  "instructors": [
+    {
+      "name": "侯易佑"
+    }
+  ],
+  "enrolled": 43,
+  "capacity": 54,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

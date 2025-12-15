@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3841",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財政稅務專題研究",
+  "selectCode": "3841",
+  "courseCode": "401A10077",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "商業智慧學院博士班",
+  "requiredOrElective": "選修",
+  "className": "商業智慧學院博一",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "西302C",
+  "instructors": [
+    {
+      "name": "姚名鴻"
+    }
+  ],
+  "enrolled": 2,
+  "capacity": 10,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

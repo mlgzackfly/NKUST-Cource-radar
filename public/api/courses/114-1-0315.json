@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0315",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理學",
+  "selectCode": "0315",
+  "courseCode": "236F00020",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "進四技金資系三甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "育303",
+  "instructors": [
+    {
+      "name": "何姍嬬"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

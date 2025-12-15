@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0899",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "線性代數",
+  "selectCode": "0899",
+  "courseCode": "227C10425",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "電B02",
+  "instructors": [
+    {
+      "name": "何姿瑩"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

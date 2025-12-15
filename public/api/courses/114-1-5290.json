@@ -1,0 +1,51 @@
+{
+  "id": "114-1-5290",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "5290",
+  "courseCode": "236C00447",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "四金資三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王聖文"
+    },
+    {
+      "name": "何姍嬬"
+    },
+    {
+      "name": "林育秀"
+    },
+    {
+      "name": "姜林杰祐"
+    },
+    {
+      "name": "張嘉倩"
+    },
+    {
+      "name": "程言信"
+    },
+    {
+      "name": "楊耿杰"
+    },
+    {
+      "name": "鄭智陽"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點:指導教師研討室",
+  "lectureHours": 3,
+  "labHours": 0
+}

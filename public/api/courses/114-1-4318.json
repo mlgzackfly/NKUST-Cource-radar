@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4318",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(歷史)台灣社會與文化",
+  "selectCode": "4318",
+  "courseCode": "042C00862",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(四)3-4",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "蔡博任"
+    }
+  ],
+  "enrolled": 50,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

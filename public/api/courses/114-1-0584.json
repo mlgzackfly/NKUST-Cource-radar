@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0584",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "輸送現象與單元操作(一)",
+  "selectCode": "0584",
+  "courseCode": "208F00068",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技化材系三甲",
+  "combinedClassName": "",
+  "time": "(二)13(四)12-13",
+  "classroom": "土708,土709",
+  "instructors": [
+    {
+      "name": "陳日恒"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 85,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

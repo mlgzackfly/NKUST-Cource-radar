@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0061",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機器深度學習",
+  "selectCode": "0061",
+  "courseCode": "121B10194",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "光電工程研究所",
+  "requiredOrElective": "選修",
+  "className": "光電碩士班一甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "育105",
+  "instructors": [
+    {
+      "name": "王敬文"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

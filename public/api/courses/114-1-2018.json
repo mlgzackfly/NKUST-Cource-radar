@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2018",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經濟學(一)",
+  "selectCode": "2018",
+  "courseCode": "232C00119",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "必修",
+  "className": "四企一甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MB524",
+  "instructors": [
+    {
+      "name": "葉惠忠"
+    }
+  ],
+  "enrolled": 69,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

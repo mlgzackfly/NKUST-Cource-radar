@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4141",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務應用文",
+  "selectCode": "4141",
+  "courseCode": "041F00358",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "進基礎二技三甲",
+  "combinedClassName": "進二技國企系三甲",
+  "time": "(日)5-6",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "李佩圜"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 進技國企三甲",
+  "lectureHours": 2,
+  "labHours": 0
+}

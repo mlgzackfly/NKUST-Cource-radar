@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1034",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電工程",
+  "selectCode": "1034",
+  "courseCode": "222A10161",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子一甲",
+  "combinedClassName": "碩子一甲",
+  "time": "(四)5-7",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "邱建良"
+    }
+  ],
+  "enrolled": 8,
+  "capacity": 54,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

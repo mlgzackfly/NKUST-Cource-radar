@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2080",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "觀光英語(一)",
+  "selectCode": "2080",
+  "courseCode": "235C10472",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "四觀一甲",
+  "combinedClassName": "",
+  "time": "(五)3-4",
+  "classroom": "MB207",
+  "instructors": [
+    {
+      "name": "王玉如"
+    }
+  ],
+  "enrolled": 41,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

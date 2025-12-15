@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0257",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理學",
+  "selectCode": "0257",
+  "courseCode": "234F00089",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系一甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "廖明瑜"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

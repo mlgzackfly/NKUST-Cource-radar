@@ -1,0 +1,54 @@
+{
+  "id": "114-1-0777",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0777",
+  "courseCode": "202C00071",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機三乙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "何信宗"
+    },
+    {
+      "name": "林章生"
+    },
+    {
+      "name": "徐金城"
+    },
+    {
+      "name": "許兆民"
+    },
+    {
+      "name": "郭士綱"
+    },
+    {
+      "name": "陳信宏"
+    },
+    {
+      "name": "陳昭先"
+    },
+    {
+      "name": "劉昭恕"
+    },
+    {
+      "name": "羅雪芬"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

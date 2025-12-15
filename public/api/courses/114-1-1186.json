@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1186",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "程式語言(一)",
+  "selectCode": "1186",
+  "courseCode": "209F10270",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技模具系四甲",
+  "combinedClassName": "進四技模具系二甲,進四技模具系三甲",
+  "time": "(一)10-12",
+  "classroom": "模210",
+  "instructors": [
+    {
+      "name": "楊曜榮"
+    }
+  ],
+  "enrolled": 69,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

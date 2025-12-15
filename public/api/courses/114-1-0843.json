@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0843",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數控工具機與實習",
+  "selectCode": "0843",
+  "courseCode": "202F00039",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技機械系四甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "機306",
+  "instructors": [
+    {
+      "name": "黃華志"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

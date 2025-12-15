@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0265",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "創業管理",
+  "selectCode": "0265",
+  "courseCode": "234F10230",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "進四技國企系三甲",
+  "combinedClassName": "",
+  "time": "(三)11-12",
+  "classroom": "育105",
+  "instructors": [
+    {
+      "name": "陳怡君"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

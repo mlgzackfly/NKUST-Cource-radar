@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1227",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "熱處理與實驗",
+  "selectCode": "1227",
+  "courseCode": "209E00261",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模三甲",
+  "combinedClassName": "",
+  "time": "(五)5-8",
+  "classroom": "模308",
+  "instructors": [
+    {
+      "name": "伏和中"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 4
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5313",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "模具製造實習(一)",
+  "selectCode": "5313",
+  "courseCode": "209C00568",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模三乙",
+  "combinedClassName": "",
+  "time": "(三)1-4",
+  "classroom": "多201",
+  "instructors": [
+    {
+      "name": "黃條嵩"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 4
+}

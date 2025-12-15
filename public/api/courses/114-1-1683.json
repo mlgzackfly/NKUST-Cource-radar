@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1683",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "情緒管理",
+  "selectCode": "1683",
+  "courseCode": "251H10020",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "人力資源發展系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專人力資源一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "行403",
+  "instructors": [
+    {
+      "name": "吳淑敏"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

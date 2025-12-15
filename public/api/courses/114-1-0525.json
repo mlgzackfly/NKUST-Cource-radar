@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0525",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電化學",
+  "selectCode": "0525",
+  "courseCode": "208C10171",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "四化材二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "育203",
+  "instructors": [
+    {
+      "name": "潘俊仁"
+    }
+  ],
+  "enrolled": 41,
+  "capacity": 56,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

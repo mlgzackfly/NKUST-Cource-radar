@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0989",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電路學(二)",
+  "selectCode": "0989",
+  "courseCode": "222C00161",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子二乙",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "潘建源"
+    }
+  ],
+  "enrolled": 72,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

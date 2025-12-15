@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0852",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "冷凍空調原理",
+  "selectCode": "0852",
+  "courseCode": "202H10029",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "碩專機械工程二甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "機204",
+  "instructors": [
+    {
+      "name": "徐金城"
+    }
+  ],
+  "enrolled": 10,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

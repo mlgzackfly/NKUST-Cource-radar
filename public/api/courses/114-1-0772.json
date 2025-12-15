@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0772",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機械設計",
+  "selectCode": "0772",
+  "courseCode": "202C00188",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "機402",
+  "instructors": [
+    {
+      "name": "賴榮哲"
+    }
+  ],
+  "enrolled": 62,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

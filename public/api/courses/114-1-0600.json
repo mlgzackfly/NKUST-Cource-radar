@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0600",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0600",
+  "courseCode": "208H10011",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "化學工程與材料工程系碩士班[建",
+  "requiredOrElective": "選修",
+  "className": "碩專化學材料二甲",
+  "combinedClassName": "",
+  "time": "(二)11-12",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "鄭力誠"
+    }
+  ],
+  "enrolled": 18,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

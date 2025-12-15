@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0008",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "循環經濟與創業",
+  "selectCode": "0008",
+  "courseCode": "030C10025",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "創新創業發展處",
+  "requiredOrElective": "選修",
+  "className": "創創處二甲",
+  "combinedClassName": "",
+  "time": "(四)5-6",
+  "classroom": "育304",
+  "instructors": [
+    {
+      "name": "陳青正"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 20,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

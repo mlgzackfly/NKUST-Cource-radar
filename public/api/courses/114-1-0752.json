@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0752",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "鑄造學",
+  "selectCode": "0752",
+  "courseCode": "202C10388",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機二甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "機407",
+  "instructors": [
+    {
+      "name": "張淵程"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0891",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "綠能科技",
+  "selectCode": "0891",
+  "courseCode": "227C10590",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電二丙",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "育101",
+  "instructors": [
+    {
+      "name": "馬哈茂德"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 63,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

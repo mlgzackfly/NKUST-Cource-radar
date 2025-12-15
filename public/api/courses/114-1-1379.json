@@ -1,0 +1,42 @@
+{
+  "id": "114-1-1379",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "1379",
+  "courseCode": "106C00031",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "能源與冷凍空調工程系",
+  "requiredOrElective": "必修",
+  "className": "日四能源冷凍三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王文豫"
+    },
+    {
+      "name": "吳兆穎"
+    },
+    {
+      "name": "李俊翰"
+    },
+    {
+      "name": "林昱良"
+    },
+    {
+      "name": "彭相武"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 31,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "專題實驗室教室 吳兆穎老師HS318、林昱良老師HS317、彭相武老師HS314、王文豫老師HS314、李俊翰老師MA109B",
+  "lectureHours": 3,
+  "labHours": 0
+}

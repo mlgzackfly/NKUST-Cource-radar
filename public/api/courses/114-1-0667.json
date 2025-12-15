@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0667",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程數學(一)",
+  "selectCode": "0667",
+  "courseCode": "201C00134",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土二甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "土709",
+  "instructors": [
+    {
+      "name": "陳世豪"
+    }
+  ],
+  "enrolled": 81,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

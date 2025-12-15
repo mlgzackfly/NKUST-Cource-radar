@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3805",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料視覺化",
+  "selectCode": "3805",
+  "courseCode": "231C10370",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "智慧商務系二乙",
+  "combinedClassName": "智慧商務系二甲",
+  "time": "(五)5-7",
+  "classroom": "MA217B",
+  "instructors": [
+    {
+      "name": "謝佩珊"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4048",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中文閱讀與表達(一)",
+  "selectCode": "4048",
+  "courseCode": "041C00176",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "基礎四技一甲(建",
+  "combinedClassName": "四子一丙",
+  "time": "(二)5-6",
+  "classroom": "行402",
+  "instructors": [
+    {
+      "name": "蕭麗娟"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 四子一丙，本課程不可抵充實務應用文。",
+  "lectureHours": 2,
+  "labHours": 0
+}

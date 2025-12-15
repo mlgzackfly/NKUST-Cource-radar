@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0786",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "應用電子學",
+  "selectCode": "0786",
+  "courseCode": "202C00159",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機三丙",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "機402",
+  "instructors": [
+    {
+      "name": "何信宗"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

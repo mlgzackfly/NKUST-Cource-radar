@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0695",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程力學",
+  "selectCode": "0695",
+  "courseCode": "201F00032",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技土木系三甲",
+  "combinedClassName": "",
+  "time": "(日)4,5-6",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "高政宏"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

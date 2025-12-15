@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1296",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理數學",
+  "selectCode": "1296",
+  "courseCode": "205C10188",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "四工一甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "育401",
+  "instructors": [
+    {
+      "name": "謝廣漢"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 90,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

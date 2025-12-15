@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1260",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "衛星定位測量",
+  "selectCode": "1260",
+  "courseCode": "201A10044",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "土木工程系土木工程科技博士班",
+  "requiredOrElective": "選修",
+  "className": "土木系博士班一甲",
+  "combinedClassName": "土木碩士一甲,四土四乙,四土四甲",
+  "time": "(一)5-7",
+  "classroom": "育206",
+  "instructors": [
+    {
+      "name": "藍文浩"
+    }
+  ],
+  "enrolled": 41,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

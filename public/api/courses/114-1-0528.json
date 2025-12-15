@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0528",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "生物化學",
+  "selectCode": "0528",
+  "courseCode": "208C10150",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "四化材二乙",
+  "combinedClassName": "",
+  "time": "(四)7-8",
+  "classroom": "育303",
+  "instructors": [
+    {
+      "name": "吳瑞泰"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,51 @@
+{
+  "id": "114-1-5353",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "學期實習(一)",
+  "selectCode": "5353",
+  "courseCode": "209C10559",
+  "credits": 9,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模四丙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王心德"
+    },
+    {
+      "name": "吳佳璟"
+    },
+    {
+      "name": "林恒勝"
+    },
+    {
+      "name": "張致遠"
+    },
+    {
+      "name": "許進忠"
+    },
+    {
+      "name": "郭承憲"
+    },
+    {
+      "name": "黃條嵩"
+    },
+    {
+      "name": "葉松瑋"
+    }
+  ],
+  "enrolled": 19,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 9
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1243",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "1243",
+  "courseCode": "209B00119",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "模具工程系碩士班[建工/燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "碩模一甲",
+  "combinedClassName": "",
+  "time": "(五)6-7",
+  "classroom": "模205",
+  "instructors": [
+    {
+      "name": "許進忠"
+    }
+  ],
+  "enrolled": 72,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

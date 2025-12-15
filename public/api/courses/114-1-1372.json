@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1372",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "能源與冷凍空調概論",
+  "selectCode": "1372",
+  "courseCode": "106C00005",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "能源與冷凍空調工程系",
+  "requiredOrElective": "必修",
+  "className": "日四能源冷凍一甲",
+  "combinedClassName": "",
+  "time": "(三)7-8",
+  "classroom": "HS328",
+  "instructors": [
+    {
+      "name": "李俊翰"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

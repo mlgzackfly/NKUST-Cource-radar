@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2732",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理會計(一)",
+  "selectCode": "2732",
+  "courseCode": "157C00273",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MA112",
+  "instructors": [
+    {
+      "name": "蕭哲芬"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

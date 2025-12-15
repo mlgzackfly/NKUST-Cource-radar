@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0998",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電材料",
+  "selectCode": "0998",
+  "courseCode": "222C10452",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子三甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "育202",
+  "instructors": [
+    {
+      "name": "楊素華"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

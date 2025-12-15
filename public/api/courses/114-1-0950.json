@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0950",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電機應用",
+  "selectCode": "0950",
+  "courseCode": "227F10149",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技電機系二甲",
+  "combinedClassName": "",
+  "time": "(六)6-8",
+  "classroom": "土409",
+  "instructors": [
+    {
+      "name": "馬哈茂德"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 63,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

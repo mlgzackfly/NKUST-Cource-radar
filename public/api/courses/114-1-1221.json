@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1221",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電機學與實驗",
+  "selectCode": "1221",
+  "courseCode": "209E00234",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模二甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "模514",
+  "instructors": [
+    {
+      "name": "溫志群"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

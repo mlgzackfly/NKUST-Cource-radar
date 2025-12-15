@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0552",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高分子加工與應用",
+  "selectCode": "0552",
+  "courseCode": "208C10216",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "四化材三乙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "育303",
+  "instructors": [
+    {
+      "name": "陳永忠"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

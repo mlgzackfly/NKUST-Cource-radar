@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1246",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "金屬材料與表面改質處理",
+  "selectCode": "1246",
+  "courseCode": "209H10047",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "模具工程系應用工程科學[建工/燕",
+  "requiredOrElective": "選修",
+  "className": "碩專模具應科二甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "模505",
+  "instructors": [
+    {
+      "name": "歐士輔"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

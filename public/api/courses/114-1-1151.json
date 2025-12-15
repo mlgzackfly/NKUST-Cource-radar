@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1151",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電腦輔助模具製造實習",
+  "selectCode": "1151",
+  "courseCode": "209C10290",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模三丙",
+  "combinedClassName": "四模三乙,四模三甲",
+  "time": "(四)1-4",
+  "classroom": "模210",
+  "instructors": [
+    {
+      "name": "許昭和"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

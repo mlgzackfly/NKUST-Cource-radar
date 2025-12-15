@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2720",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財務管理",
+  "selectCode": "2720",
+  "courseCode": "157C10387",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "會資系二甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "MB104",
+  "instructors": [
+    {
+      "name": "蕭哲芬"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

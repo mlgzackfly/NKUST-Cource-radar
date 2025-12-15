@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0932",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高等工程數學",
+  "selectCode": "0932",
+  "courseCode": "227F00098",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技電機系三甲",
+  "combinedClassName": "",
+  "time": "(六)4,5-6",
+  "classroom": "電603",
+  "instructors": [
+    {
+      "name": "陳碩聰"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

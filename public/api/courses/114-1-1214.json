@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1214",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數學(三)",
+  "selectCode": "1214",
+  "courseCode": "209E00286",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模二甲",
+  "combinedClassName": "",
+  "time": "(四)3-4",
+  "classroom": "育201",
+  "instructors": [
+    {
+      "name": "郝沛毅"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0984",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電路學(二)",
+  "selectCode": "0984",
+  "courseCode": "222C00161",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子二甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "施惠鈞"
+    }
+  ],
+  "enrolled": 82,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

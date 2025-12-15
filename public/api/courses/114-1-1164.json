@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1164",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "燃料電池特論",
+  "selectCode": "1164",
+  "courseCode": "209A10010",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "博模一甲",
+  "combinedClassName": "碩模一甲",
+  "time": "(一)2-4",
+  "classroom": "模103",
+  "instructors": [
+    {
+      "name": "郭俊賢"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

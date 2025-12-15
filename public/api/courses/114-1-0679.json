@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0679",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "土壤力學實驗",
+  "selectCode": "0679",
+  "courseCode": "201C00038",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土三甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "土101",
+  "instructors": [
+    {
+      "name": "張志誠"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

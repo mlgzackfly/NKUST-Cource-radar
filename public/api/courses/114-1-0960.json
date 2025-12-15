@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0960",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機器學習",
+  "selectCode": "0960",
+  "courseCode": "227F10154",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技電機系四甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "電503",
+  "instructors": [
+    {
+      "name": "蕭盈璋"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

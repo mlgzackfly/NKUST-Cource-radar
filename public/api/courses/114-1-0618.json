@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0618",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "英文科技論文寫作",
+  "selectCode": "0618",
+  "courseCode": "227A10061",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電機工程系博士班",
+  "requiredOrElective": "選修",
+  "className": "博電一甲",
+  "combinedClassName": "碩電一甲,碩電二甲",
+  "time": "(二)5-7",
+  "classroom": "電B02",
+  "instructors": [
+    {
+      "name": "馬哈茂德"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 40,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

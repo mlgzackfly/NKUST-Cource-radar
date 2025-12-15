@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2159",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高階經營專題研討",
+  "selectCode": "2159",
+  "courseCode": "232H00068",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "企業管理系高階經營管理碩士在職",
+  "requiredOrElective": "選修",
+  "className": "企管系高階碩專一",
+  "combinedClassName": "",
+  "time": "(六)10",
+  "classroom": "西103",
+  "instructors": [
+    {
+      "name": "盧正壽"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

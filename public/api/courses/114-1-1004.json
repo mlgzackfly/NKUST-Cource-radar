@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1004",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程軟體實務應用",
+  "selectCode": "1004",
+  "courseCode": "222C10254",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子三乙",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "資001",
+  "instructors": [
+    {
+      "name": "鄭瑞川"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

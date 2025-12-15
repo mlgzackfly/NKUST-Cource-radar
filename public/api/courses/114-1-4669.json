@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4669",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "日語(一)",
+  "selectCode": "4669",
+  "courseCode": "043C10228",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "選修",
+  "className": "外語四技一甲(燕",
+  "combinedClassName": "",
+  "time": "(三)1-2",
+  "classroom": "HS315",
+  "instructors": [
+    {
+      "name": "張柏湟"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "限非應日系學生修讀，108學年度後入學學生通過英語免修計入外語畢業學分。",
+  "lectureHours": 2,
+  "labHours": 0
+}

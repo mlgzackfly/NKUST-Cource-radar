@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0512",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料科學導論",
+  "selectCode": "0512",
+  "courseCode": "208C00139",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材一乙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "楊文都"
+    }
+  ],
+  "enrolled": 68,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

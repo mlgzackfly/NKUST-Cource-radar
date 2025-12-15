@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5105",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)-適應體育",
+  "selectCode": "5105",
+  "courseCode": "050C00066",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體二甲(建工)",
+  "combinedClassName": "",
+  "time": "(一)7-8",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "鄭建民"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程委員會議通過之遠距課程(同步+非同步)】此門課程不開放網路選課，欲修讀該課程者，請參閱體育室網頁資訊(本校適應體育實施辦法) https://peo.nkust.edu.tw/index.php 上課地點：學生活動中心三樓視聽教室。",
+  "lectureHours": 2,
+  "labHours": 0
+}

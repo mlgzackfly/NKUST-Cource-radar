@@ -1,0 +1,33 @@
+{
+  "id": "114-1-1074",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子實習(三)",
+  "selectCode": "1074",
+  "courseCode": "222F00062",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系三乙",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "資405",
+  "instructors": [
+    {
+      "name": "陳聰毅"
+    },
+    {
+      "name": "鄭平守"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

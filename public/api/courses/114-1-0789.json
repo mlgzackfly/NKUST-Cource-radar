@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0789",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "有限元素分析",
+  "selectCode": "0789",
+  "courseCode": "202C10380",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機四甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "機307",
+  "instructors": [
+    {
+      "name": "蔡立仁"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

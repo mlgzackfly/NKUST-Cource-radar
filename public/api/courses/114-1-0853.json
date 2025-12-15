@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0853",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "半導體物理與元件",
+  "selectCode": "0853",
+  "courseCode": "202H10034",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "碩專機械工程二甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "機402",
+  "instructors": [
+    {
+      "name": "黃靖謙"
+    }
+  ],
+  "enrolled": 41,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

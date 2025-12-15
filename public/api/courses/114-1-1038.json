@@ -1,0 +1,36 @@
+{
+  "id": "114-1-1038",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人工智慧於健康福祉應用",
+  "selectCode": "1038",
+  "courseCode": "222A10252",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子一甲",
+  "combinedClassName": "碩子一甲",
+  "time": "(四)2-4",
+  "classroom": "資504",
+  "instructors": [
+    {
+      "name": "王鴻猷"
+    },
+    {
+      "name": "李財福"
+    },
+    {
+      "name": "林志學"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

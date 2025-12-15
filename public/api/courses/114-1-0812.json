@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0812",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0812",
+  "courseCode": "202A00060",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "機械系博士班二甲",
+  "combinedClassName": "",
+  "time": "(五)6-7",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "陳昭先"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

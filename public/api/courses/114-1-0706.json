@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0706",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "土壤力學",
+  "selectCode": "0706",
+  "courseCode": "201E00119",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "土509",
+  "instructors": [
+    {
+      "name": "蕭達鴻"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

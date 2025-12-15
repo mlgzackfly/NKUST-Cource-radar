@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2058",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "知識管理",
+  "selectCode": "2058",
+  "courseCode": "232F10116",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "進四技企管系三甲",
+  "combinedClassName": "",
+  "time": "(一)12-13",
+  "classroom": "育404",
+  "instructors": [
+    {
+      "name": "方隆慶"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

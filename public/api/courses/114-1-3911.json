@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3911",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "民事訴訟法暨強制執行法",
+  "selectCode": "3911",
+  "courseCode": "237F10313",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "進四技財稅系三甲",
+  "combinedClassName": "",
+  "time": "(二)10-11",
+  "classroom": "育205",
+  "instructors": [
+    {
+      "name": "李志偉"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

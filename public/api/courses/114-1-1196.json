@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1196",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物理(一)",
+  "selectCode": "1196",
+  "courseCode": "209E00123",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模一甲",
+  "combinedClassName": "",
+  "time": "(一)1-2",
+  "classroom": "育201",
+  "instructors": [
+    {
+      "name": "張致遠"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

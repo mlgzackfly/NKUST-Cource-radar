@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1688",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "產業分析研究",
+  "selectCode": "1688",
+  "courseCode": "251H10088",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "人力資源發展系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專人力資源一甲",
+  "combinedClassName": "",
+  "time": "(三)10-12",
+  "classroom": "行403",
+  "instructors": [
+    {
+      "name": "周秝宸"
+    }
+  ],
+  "enrolled": 9,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

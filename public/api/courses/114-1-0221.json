@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0221",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "顧客關係管理",
+  "selectCode": "0221",
+  "courseCode": "234C10283",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "四國企三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "MB324",
+  "instructors": [
+    {
+      "name": "林易杰"
+    },
+    {
+      "name": "鄭兆宏"
+    }
+  ],
+  "enrolled": 42,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

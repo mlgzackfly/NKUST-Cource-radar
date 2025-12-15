@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0726",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "化學",
+  "selectCode": "0726",
+  "courseCode": "202C00168",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機一甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "機402",
+  "instructors": [
+    {
+      "name": "鄭宗杰"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

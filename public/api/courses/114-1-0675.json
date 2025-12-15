@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0675",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程經濟",
+  "selectCode": "0675",
+  "courseCode": "201C00115",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土二乙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "王廷魁"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

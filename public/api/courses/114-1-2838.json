@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2838",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財務資訊與決策",
+  "selectCode": "2838",
+  "courseCode": "157H00025",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "會計資訊系碩士在職專班",
+  "requiredOrElective": "必修",
+  "className": "碩專會計資訊一乙",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育500",
+  "instructors": [
+    {
+      "name": "沈文華"
+    }
+  ],
+  "enrolled": 8,
+  "capacity": 20,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

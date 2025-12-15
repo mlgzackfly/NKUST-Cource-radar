@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1039",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數位訊號處理晶片設計",
+  "selectCode": "1039",
+  "courseCode": "222A10256",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子一甲",
+  "combinedClassName": "碩子一甲",
+  "time": "(二)5-7",
+  "classroom": "資809",
+  "instructors": [
+    {
+      "name": "朱紹儀"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 49,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

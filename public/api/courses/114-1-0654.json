@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0654",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "0654",
+  "courseCode": "201C00125",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土一乙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "土609",
+  "instructors": [
+    {
+      "name": "陳世豪"
+    }
+  ],
+  "enrolled": 66,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

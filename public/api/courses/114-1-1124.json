@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1124",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料試驗實習",
+  "selectCode": "1124",
+  "courseCode": "209C00567",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二乙",
+  "combinedClassName": "",
+  "time": "(二)1-4",
+  "classroom": "模308",
+  "instructors": [
+    {
+      "name": "蔡孟修"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 4
+}

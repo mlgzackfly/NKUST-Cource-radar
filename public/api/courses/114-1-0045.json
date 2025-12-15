@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0045",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "AIGC 與文創商品的整合行銷實務",
+  "selectCode": "0045",
+  "courseCode": "901C10004",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "創新設計學院",
+  "requiredOrElective": "選修",
+  "className": "創新學院一甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "HS608",
+  "instructors": [
+    {
+      "name": "林育靚"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 29,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

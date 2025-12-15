@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2029",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "投資學",
+  "selectCode": "2029",
+  "courseCode": "232C10214",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MB522",
+  "instructors": [
+    {
+      "name": "盧正壽"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

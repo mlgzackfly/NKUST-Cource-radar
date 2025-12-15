@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2025",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子商務",
+  "selectCode": "2025",
+  "courseCode": "232C10247",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企二甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "MB525A",
+  "instructors": [
+    {
+      "name": "馬維銘"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3807",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "大數據商業分析與決策",
+  "selectCode": "3807",
+  "courseCode": "231C00324",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系三甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MA324",
+  "instructors": [
+    {
+      "name": "黃河銓"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

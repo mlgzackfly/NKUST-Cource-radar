@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4556",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(人文)西方音樂的軌跡",
+  "selectCode": "4556",
+  "courseCode": "042F00118",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "進博雅二技三甲",
+  "combinedClassName": "",
+  "time": "(日)7-8",
+  "classroom": "行409",
+  "instructors": [
+    {
+      "name": "林世凌"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

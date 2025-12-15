@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0884",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電機應用",
+  "selectCode": "0884",
+  "courseCode": "227C10260",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電二乙",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "育101",
+  "instructors": [
+    {
+      "name": "陳曦照"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

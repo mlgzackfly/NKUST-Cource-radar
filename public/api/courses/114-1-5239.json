@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5239",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)",
+  "selectCode": "5239",
+  "courseCode": "050F00015",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "進四體育二甲",
+  "combinedClassName": "進四技財稅系二甲",
+  "time": "(四)12-13",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "李健美"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "本體育課程屬多元運動項目，其課程場地會依授課內容進行調整，詳細上課地點請參閱體育室網頁資訊 https://reurl.cc/pY8O64",
+  "lectureHours": 2,
+  "labHours": 0
+}

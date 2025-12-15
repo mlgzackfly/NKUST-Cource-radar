@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0253",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際禮儀",
+  "selectCode": "0253",
+  "courseCode": "234F10158",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "進四技國企系一甲",
+  "combinedClassName": "",
+  "time": "(四)10-11",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "蕭雅娟"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

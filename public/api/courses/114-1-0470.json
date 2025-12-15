@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0470",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物件導向程式設計",
+  "selectCode": "0470",
+  "courseCode": "221C00073",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "四資工二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "資001",
+  "instructors": [
+    {
+      "name": "羅孟彥"
+    }
+  ],
+  "enrolled": 73,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

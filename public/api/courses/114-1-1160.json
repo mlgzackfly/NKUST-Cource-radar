@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1160",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高分子加工原理",
+  "selectCode": "1160",
+  "courseCode": "209A10086",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "博模一甲",
+  "combinedClassName": "碩模一甲",
+  "time": "(三)2-4",
+  "classroom": "模208",
+  "instructors": [
+    {
+      "name": "黃俊欽"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

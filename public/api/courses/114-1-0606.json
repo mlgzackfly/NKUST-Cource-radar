@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0606",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電力系統運轉",
+  "selectCode": "0606",
+  "courseCode": "227H10081",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "電機工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專電機工程二甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "電505",
+  "instructors": [
+    {
+      "name": "詹東昇"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

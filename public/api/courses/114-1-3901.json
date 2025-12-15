@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3901",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "3901",
+  "courseCode": "237F00155",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "進四技財稅系一甲",
+  "combinedClassName": "",
+  "time": "(二)10-11",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "姚名鴻"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

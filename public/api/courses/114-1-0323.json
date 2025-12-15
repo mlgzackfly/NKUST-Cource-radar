@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0323",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "投資理財實務",
+  "selectCode": "0323",
+  "courseCode": "236F10071",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技金資系四甲",
+  "combinedClassName": "",
+  "time": "(四)10-11",
+  "classroom": "育303",
+  "instructors": [
+    {
+      "name": "李吉峯"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

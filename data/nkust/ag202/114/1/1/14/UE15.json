@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2025-12-13T21:49:52.436Z",
+  "scrapedAt": "2025-12-15T15:07:59.021Z",
   "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
   "request": {
     "yms_yms": "114#1",
@@ -13,7 +13,7 @@
   },
   "unit": {
     "id": "UE15",
-    "label": "UE15"
+    "label": "(電機與資訊學院)資訊工程系"
   },
   "warning": null,
   "header": [

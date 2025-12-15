@@ -1,0 +1,33 @@
+{
+  "id": "114-1-5328",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "綠色工程導論",
+  "selectCode": "5328",
+  "courseCode": "223C10001",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "智慧機電學院",
+  "requiredOrElective": "選修",
+  "className": "智慧機電院課程三",
+  "combinedClassName": "四土三乙,四土三甲,四子三乙,四子三甲,四工三甲,四化材",
+  "time": "(五)2-4",
+  "classroom": "育404",
+  "instructors": [
+    {
+      "name": "余志成"
+    },
+    {
+      "name": "鄭力誠"
+    }
+  ],
+  "enrolled": 37,
+  "capacity": 41,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

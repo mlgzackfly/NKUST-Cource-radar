@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1702",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "3D繪圖",
+  "selectCode": "1702",
+  "courseCode": "252C10288",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創二甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "HS609",
+  "instructors": [
+    {
+      "name": "陳崇文"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 30,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

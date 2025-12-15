@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3790",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分",
+  "selectCode": "3790",
+  "courseCode": "231C00348",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系一乙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "MA212",
+  "instructors": [
+    {
+      "name": "蘇懿"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "新聘兼任教師:蘇懿",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1131",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "模具製圖實習(一)",
+  "selectCode": "1131",
+  "courseCode": "209C00183",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二丙",
+  "combinedClassName": "",
+  "time": "(二)5-8",
+  "classroom": "模501",
+  "instructors": [
+    {
+      "name": "姚創文"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

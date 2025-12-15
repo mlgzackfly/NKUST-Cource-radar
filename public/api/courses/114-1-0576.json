@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0576",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程數學(一)",
+  "selectCode": "0576",
+  "courseCode": "208F00062",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技化材系二甲",
+  "combinedClassName": "",
+  "time": "(一)10-11(二)10",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "陳日恒"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 75,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

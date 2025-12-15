@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0658",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工場實作實習(一)",
+  "selectCode": "0658",
+  "courseCode": "201C00033",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土一甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "土609",
+  "instructors": [
+    {
+      "name": "張高豪"
+    }
+  ],
+  "enrolled": 76,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

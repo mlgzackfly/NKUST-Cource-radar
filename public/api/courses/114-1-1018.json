@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1018",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電元件與半導體量測",
+  "selectCode": "1018",
+  "courseCode": "222C10531",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "資504",
+  "instructors": [
+    {
+      "name": "薛丁仁"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

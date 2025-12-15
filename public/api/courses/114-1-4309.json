@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4309",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(人文)世界音樂與多元文化",
+  "selectCode": "4309",
+  "courseCode": "042C00843",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(四)3-4",
+  "classroom": "育302",
+  "instructors": [
+    {
+      "name": "邱亭雅"
+    }
+  ],
+  "enrolled": 52,
+  "capacity": 50,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 2,
+  "labHours": 0
+}

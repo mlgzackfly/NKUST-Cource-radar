@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0692",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "契約管理",
+  "selectCode": "0692",
+  "courseCode": "201C00143",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土四乙",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "土709",
+  "instructors": [
+    {
+      "name": "黃忠發"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

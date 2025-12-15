@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1313",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "新產品創新策略導論",
+  "selectCode": "1313",
+  "courseCode": "205C10289",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "四工四甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "育402",
+  "instructors": [
+    {
+      "name": "鄭宜芳"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

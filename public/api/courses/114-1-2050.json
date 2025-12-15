@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2050",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經濟學(一)",
+  "selectCode": "2050",
+  "courseCode": "232F00041",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "必修",
+  "className": "進四技企管系一甲",
+  "combinedClassName": "",
+  "time": "(一)10-11",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "葉惠忠"
+    }
+  ],
+  "enrolled": 52,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

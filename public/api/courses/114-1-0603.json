@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0603",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0603",
+  "courseCode": "227B00175",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "電機工程系碩士班",
+  "requiredOrElective": "必修",
+  "className": "碩電二甲",
+  "combinedClassName": "",
+  "time": "(五)6-7",
+  "classroom": "慧芳講堂",
+  "instructors": [
+    {
+      "name": "莊錦俊"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

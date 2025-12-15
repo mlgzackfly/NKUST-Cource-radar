@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0699",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電腦應用實作實習",
+  "selectCode": "0699",
+  "courseCode": "201F00147",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技土木系三甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "土302A",
+  "instructors": [
+    {
+      "name": "林智強"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 72,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

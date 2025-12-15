@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2128",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "餐飲成本控制",
+  "selectCode": "2128",
+  "courseCode": "235F00212",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進四觀光二甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "黃艷玲"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

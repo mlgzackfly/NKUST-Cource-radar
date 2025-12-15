@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1628",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "化學",
+  "selectCode": "1628",
+  "courseCode": "204C00003",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系一甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "MA104",
+  "instructors": [
+    {
+      "name": "吳香樺"
+    }
+  ],
+  "enrolled": 37,
+  "capacity": 37,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4353",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(歷史)哲學基本問題",
+  "selectCode": "4353",
+  "courseCode": "042C00903",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(燕",
+  "combinedClassName": "",
+  "time": "(四)7-8",
+  "classroom": "HS210",
+  "instructors": [
+    {
+      "name": "楊晨輝"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

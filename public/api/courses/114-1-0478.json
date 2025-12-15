@@ -1,0 +1,60 @@
+{
+  "id": "114-1-0478",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0478",
+  "courseCode": "221C00029",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "四資工三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王志強"
+    },
+    {
+      "name": "林威成"
+    },
+    {
+      "name": "林聯發"
+    },
+    {
+      "name": "張雲龍"
+    },
+    {
+      "name": "張道行"
+    },
+    {
+      "name": "陳俊豪"
+    },
+    {
+      "name": "陳洳瑾"
+    },
+    {
+      "name": "黃淵科"
+    },
+    {
+      "name": "楊孟翰"
+    },
+    {
+      "name": "羅孟彥"
+    },
+    {
+      "name": "鐘文鈺"
+    }
+  ],
+  "enrolled": 73,
+  "capacity": 75,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "指導教師研討室",
+  "lectureHours": 3,
+  "labHours": 0
+}

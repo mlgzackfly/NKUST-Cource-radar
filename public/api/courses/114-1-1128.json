@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1128",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "動力學",
+  "selectCode": "1128",
+  "courseCode": "209C00212",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二丙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "模601",
+  "instructors": [
+    {
+      "name": "林俊宏"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

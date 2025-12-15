@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0839",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "複合材料",
+  "selectCode": "0839",
+  "courseCode": "202F10161",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技機械系三甲",
+  "combinedClassName": "",
+  "time": "(四)11-13",
+  "classroom": "機404",
+  "instructors": [
+    {
+      "name": "王光國"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

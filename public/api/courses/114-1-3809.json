@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3809",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智慧商務平台規劃與設計",
+  "selectCode": "3809",
+  "courseCode": "231C10332",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "智慧商務系三乙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MA324",
+  "instructors": [
+    {
+      "name": "許瓊文"
+    }
+  ],
+  "enrolled": 43,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3872",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "期貨與選擇權",
+  "selectCode": "3872",
+  "courseCode": "237C00197",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MA207",
+  "instructors": [
+    {
+      "name": "汪青萍"
+    }
+  ],
+  "enrolled": 50,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

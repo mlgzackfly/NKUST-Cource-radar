@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4858",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(三)",
+  "selectCode": "4858",
+  "courseCode": "043C00004",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語四技二甲(燕",
+  "combinedClassName": "",
+  "time": "(三)1-2",
+  "classroom": "MA208",
+  "instructors": [
+    {
+      "name": "吳美芳"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "不開放選課：由外語中心依級數分班【限企管-會乙-財稅修讀：高2】",
+  "lectureHours": 2,
+  "labHours": 0
+}

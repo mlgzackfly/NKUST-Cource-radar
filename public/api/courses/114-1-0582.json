@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0582",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物理化學實驗",
+  "selectCode": "0582",
+  "courseCode": "208F00026",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技化材系三甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "多501",
+  "instructors": [
+    {
+      "name": "蔡平賜"
+    }
+  ],
+  "enrolled": 18,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

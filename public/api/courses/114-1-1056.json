@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1056",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數位邏輯",
+  "selectCode": "1056",
+  "courseCode": "222F00111",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系一乙",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "育505",
+  "instructors": [
+    {
+      "name": "黃冠渝"
+    }
+  ],
+  "enrolled": 37,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,51 @@
+{
+  "id": "114-1-1670",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "1670",
+  "courseCode": "251C00286",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "必修",
+  "className": "四人四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "吳淑敏"
+    },
+    {
+      "name": "周秝宸"
+    },
+    {
+      "name": "翁慈君"
+    },
+    {
+      "name": "陳必碩"
+    },
+    {
+      "name": "陳儀蓉"
+    },
+    {
+      "name": "黄瓊慧"
+    },
+    {
+      "name": "董玉娟"
+    },
+    {
+      "name": "鄭昱宏"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點各研討室",
+  "lectureHours": 3,
+  "labHours": 0
+}

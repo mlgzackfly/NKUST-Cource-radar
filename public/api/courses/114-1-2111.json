@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2111",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "服務業品質管理",
+  "selectCode": "2111",
+  "courseCode": "235F00072",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進二技觀光系四甲",
+  "combinedClassName": "",
+  "time": "(六)7-8",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "陳美存"
+    }
+  ],
+  "enrolled": 12,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

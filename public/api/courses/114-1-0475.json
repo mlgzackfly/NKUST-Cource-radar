@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0475",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "作業系統",
+  "selectCode": "0475",
+  "courseCode": "221C00083",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "四資工三甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "育501",
+  "instructors": [
+    {
+      "name": "王志強"
+    }
+  ],
+  "enrolled": 72,
+  "capacity": 71,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0216",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際商用英文(一)",
+  "selectCode": "0216",
+  "courseCode": "234C10301",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "四國企二甲",
+  "combinedClassName": "",
+  "time": "(五)3-4",
+  "classroom": "MB322",
+  "instructors": [
+    {
+      "name": "邱魏頌正"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 2,
+  "labHours": 0
+}

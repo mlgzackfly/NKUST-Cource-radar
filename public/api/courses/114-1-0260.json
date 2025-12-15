@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0260",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "統計學(一)",
+  "selectCode": "0260",
+  "courseCode": "234F00084",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系二甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "施麗婷"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

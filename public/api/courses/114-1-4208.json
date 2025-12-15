@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4208",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "校訂(六)創意與創新",
+  "selectCode": "4208",
+  "courseCode": "042C01628",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技一甲(燕",
+  "combinedClassName": "",
+  "time": "(四)7-8",
+  "classroom": "HS222",
+  "instructors": [
+    {
+      "name": "鄭弘琦"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "107-111學年入學生修讀通過者，認列為「核心(三)創意與創新」。",
+  "lectureHours": 2,
+  "labHours": 0
+}

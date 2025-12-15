@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1704",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "導演導播攝錄影實務",
+  "selectCode": "1704",
+  "courseCode": "252C10242",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創二甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "HS609",
+  "instructors": [
+    {
+      "name": "蔡明孝"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

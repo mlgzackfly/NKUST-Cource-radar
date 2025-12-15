@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2135",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "餐旅業實例研討",
+  "selectCode": "2135",
+  "courseCode": "235F10090",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "進四觀光三甲",
+  "combinedClassName": "",
+  "time": "(三)11-12",
+  "classroom": "西101",
+  "instructors": [
+    {
+      "name": "郭德賓"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

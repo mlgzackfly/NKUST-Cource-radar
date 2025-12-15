@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0648",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "半導體元件製程",
+  "selectCode": "0648",
+  "courseCode": "222H10111",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "電子工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專電子工程二甲",
+  "combinedClassName": "",
+  "time": "(六)8-10",
+  "classroom": "資406B",
+  "instructors": [
+    {
+      "name": "邱建良"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 10,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

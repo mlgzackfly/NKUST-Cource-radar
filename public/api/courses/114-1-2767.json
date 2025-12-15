@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2767",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經濟學",
+  "selectCode": "2767",
+  "courseCode": "157F00228",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "進四技會資系一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育101",
+  "instructors": [
+    {
+      "name": "蘇寶玉"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

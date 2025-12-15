@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4146",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中文閱讀與表達(一)",
+  "selectCode": "4146",
+  "courseCode": "041F00380",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "進基礎四技一甲",
+  "combinedClassName": "進四技電子系一乙",
+  "time": "(五)10-11",
+  "classroom": "育501",
+  "instructors": [
+    {
+      "name": "譚妮如"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 進四子一乙，本課程不可抵充實務應用文。",
+  "lectureHours": 2,
+  "labHours": 0
+}

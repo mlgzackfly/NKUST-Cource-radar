@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2757",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "成本會計(一)",
+  "selectCode": "2757",
+  "courseCode": "157F00266",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "進二技會資系四甲",
+  "combinedClassName": "",
+  "time": "(日)3-4",
+  "classroom": "育102",
+  "instructors": [
+    {
+      "name": "林坤霖"
+    }
+  ],
+  "enrolled": 19,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

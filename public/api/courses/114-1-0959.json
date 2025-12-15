@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0959",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光學設計",
+  "selectCode": "0959",
+  "courseCode": "227F10298",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技電機系四甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "電506",
+  "instructors": [
+    {
+      "name": "李孝貽"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

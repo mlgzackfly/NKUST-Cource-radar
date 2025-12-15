@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2745",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專業倫理",
+  "selectCode": "2745",
+  "courseCode": "157C00182",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系四甲",
+  "combinedClassName": "",
+  "time": "(五)6",
+  "classroom": "MA115",
+  "instructors": [
+    {
+      "name": "侯乃文"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0885",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電腦輔助邏輯電路解析暨實習",
+  "selectCode": "0885",
+  "courseCode": "227C10420",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電二乙",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "電505",
+  "instructors": [
+    {
+      "name": "吳鴻源"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1377",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數值分析",
+  "selectCode": "1377",
+  "courseCode": "106C00017",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "能源與冷凍空調工程系",
+  "requiredOrElective": "必修",
+  "className": "日四能源冷凍二甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "HS319",
+  "instructors": [
+    {
+      "name": "王文豫"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

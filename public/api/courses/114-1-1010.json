@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1010",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "離散數學",
+  "selectCode": "1010",
+  "courseCode": "222C10337",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子三丙",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "張財榮"
+    }
+  ],
+  "enrolled": 37,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

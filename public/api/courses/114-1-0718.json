@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0718",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "防洪工程",
+  "selectCode": "0718",
+  "courseCode": "201E10261",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "選修",
+  "className": "五土三甲",
+  "combinedClassName": "",
+  "time": "(四)7-9",
+  "classroom": "活動中心G302",
+  "instructors": [
+    {
+      "name": "許博淵"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

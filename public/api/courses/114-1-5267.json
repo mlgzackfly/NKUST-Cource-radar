@@ -1,0 +1,57 @@
+{
+  "id": "114-1-5267",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "5267",
+  "courseCode": "232C00252",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "必修",
+  "className": "四企四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王崇昱"
+    },
+    {
+      "name": "朱培宏"
+    },
+    {
+      "name": "余銘忠"
+    },
+    {
+      "name": "李政峯"
+    },
+    {
+      "name": "林思吟"
+    },
+    {
+      "name": "翁鶯娟"
+    },
+    {
+      "name": "黃義俊"
+    },
+    {
+      "name": "楊敏里"
+    },
+    {
+      "name": "溫丹瑋"
+    },
+    {
+      "name": "蘇騰昇"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

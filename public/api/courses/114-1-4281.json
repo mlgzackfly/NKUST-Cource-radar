@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4281",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(社會)運動休閒與健康",
+  "selectCode": "4281",
+  "courseCode": "042C00877",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(二)3-4",
+  "classroom": "視聽教室",
+  "instructors": [
+    {
+      "name": "鄭建民"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程委員會議通過之遠距課程(同步+非同步)】",
+  "lectureHours": 2,
+  "labHours": 0
+}

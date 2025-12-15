@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1127",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料力學(一)",
+  "selectCode": "1127",
+  "courseCode": "209C00171",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二丙",
+  "combinedClassName": "",
+  "time": "(一)3-4",
+  "classroom": "模205",
+  "instructors": [
+    {
+      "name": "林香君"
+    }
+  ],
+  "enrolled": 102,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

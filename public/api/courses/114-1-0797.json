@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0797",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微磨潤學",
+  "selectCode": "0797",
+  "courseCode": "202C10292",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機四丙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "機204",
+  "instructors": [
+    {
+      "name": "黃華志"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

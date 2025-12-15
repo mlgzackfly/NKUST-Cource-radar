@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0966",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數位實習",
+  "selectCode": "0966",
+  "courseCode": "222C00068",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子一甲",
+  "combinedClassName": "",
+  "time": "(一)5-8",
+  "classroom": "資405",
+  "instructors": [
+    {
+      "name": "邱建良"
+    }
+  ],
+  "enrolled": 62,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0244",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "商用英語(一)",
+  "selectCode": "0244",
+  "courseCode": "234F10241",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "進二技國企系三甲",
+  "combinedClassName": "",
+  "time": "(六)12-13",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "徐毓隆"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

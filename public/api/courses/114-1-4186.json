@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4186",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "校訂(三)生命與倫理",
+  "selectCode": "4186",
+  "courseCode": "042C01625",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技一甲(建",
+  "combinedClassName": "",
+  "time": "(五)5-6",
+  "classroom": "育403",
+  "instructors": [
+    {
+      "name": "鍾雅萍"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "107-111學年入學生修讀通過者，認列為「核心(二)生命與倫理」",
+  "lectureHours": 2,
+  "labHours": 0
+}

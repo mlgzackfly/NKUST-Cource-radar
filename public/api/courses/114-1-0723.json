@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0723",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "鋼結構設計",
+  "selectCode": "0723",
+  "courseCode": "201E00256",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土四甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "土508",
+  "instructors": [
+    {
+      "name": "林智強"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2774",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中級會計學(一)實習",
+  "selectCode": "2774",
+  "courseCode": "157F00260",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "進四技會資系二甲",
+  "combinedClassName": "",
+  "time": "(二)10-11",
+  "classroom": "育201",
+  "instructors": [
+    {
+      "name": "李合龍"
+    },
+    {
+      "name": "謝宛庭"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 2
+}

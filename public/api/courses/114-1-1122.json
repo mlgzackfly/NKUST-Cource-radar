@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1122",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數控工具機與實習",
+  "selectCode": "1122",
+  "courseCode": "209C00142",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二乙",
+  "combinedClassName": "",
+  "time": "(三)1-4",
+  "classroom": "模210",
+  "instructors": [
+    {
+      "name": "郭承憲"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

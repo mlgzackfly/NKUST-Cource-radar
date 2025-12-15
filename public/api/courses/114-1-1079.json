@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1079",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "網路應用程式設計",
+  "selectCode": "1079",
+  "courseCode": "222F10160",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "進四技電子系四乙",
+  "combinedClassName": "",
+  "time": "(六)8-10",
+  "classroom": "資405",
+  "instructors": [
+    {
+      "name": "張子鴻"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

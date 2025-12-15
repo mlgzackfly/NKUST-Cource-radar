@@ -1,0 +1,36 @@
+{
+  "id": "114-1-2780",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "2780",
+  "courseCode": "157F00237",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "進四技會資系四甲",
+  "combinedClassName": "",
+  "time": "(二)9(三)9(六)9",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "郝逸華"
+    },
+    {
+      "name": "曾玉琦"
+    },
+    {
+      "name": "趙雅儀"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

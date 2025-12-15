@@ -1,0 +1,54 @@
+{
+  "id": "114-1-0784",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0784",
+  "courseCode": "202C00071",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機三丙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "方得華"
+    },
+    {
+      "name": "江家慶"
+    },
+    {
+      "name": "林銘哲"
+    },
+    {
+      "name": "陳建羽"
+    },
+    {
+      "name": "陳道星"
+    },
+    {
+      "name": "蔡明章"
+    },
+    {
+      "name": "鄭宗杰"
+    },
+    {
+      "name": "鄭振宗"
+    },
+    {
+      "name": "羅雪芬"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

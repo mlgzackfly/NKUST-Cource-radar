@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2101",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "顧客關係管理",
+  "selectCode": "2101",
+  "courseCode": "235C10210",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "四觀四甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "MB208",
+  "instructors": [
+    {
+      "name": "袁徵霖"
+    }
+  ],
+  "enrolled": 19,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2133",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "觀光餐旅消費行為",
+  "selectCode": "2133",
+  "courseCode": "235F00219",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進四觀光三甲",
+  "combinedClassName": "",
+  "time": "(二)10-11",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "林玠恒"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1162",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "1162",
+  "courseCode": "209A00004",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "博模一甲",
+  "combinedClassName": "",
+  "time": "(五)6-7",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "林恒勝"
+    }
+  ],
+  "enrolled": 2,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "教室為模具系205",
+  "lectureHours": 2,
+  "labHours": 0
+}

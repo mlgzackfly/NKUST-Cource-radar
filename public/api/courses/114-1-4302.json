@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4302",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(全球)水資源與環境",
+  "selectCode": "4302",
+  "courseCode": "042C01673",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(四)5-6",
+  "classroom": "土509",
+  "instructors": [
+    {
+      "name": "許博淵"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

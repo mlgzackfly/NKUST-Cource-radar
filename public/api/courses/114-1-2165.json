@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2165",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業資源規劃專題研討",
+  "selectCode": "2165",
+  "courseCode": "232H00082",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "企業管理系高階經營管理碩士在職",
+  "requiredOrElective": "選修",
+  "className": "企管系高階碩專二",
+  "combinedClassName": "",
+  "time": "(日)7-8",
+  "classroom": "西103",
+  "instructors": [
+    {
+      "name": "朱培宏"
+    },
+    {
+      "name": "溫丹瑋"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

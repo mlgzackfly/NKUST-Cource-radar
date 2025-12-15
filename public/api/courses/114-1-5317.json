@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5317",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "英語聽講訓練(一)",
+  "selectCode": "5317",
+  "courseCode": "043E00030",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語五專三甲(建",
+  "combinedClassName": "",
+  "time": "(二)3-4",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "王淑雱"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "級數：初",
+  "lectureHours": 2,
+  "labHours": 0
+}

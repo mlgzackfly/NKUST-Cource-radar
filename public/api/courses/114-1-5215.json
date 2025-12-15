@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5215",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)-撞球",
+  "selectCode": "5215",
+  "courseCode": "050C00064",
+  "credits": 0,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體二甲(燕巢)",
+  "combinedClassName": "",
+  "time": "(五)3-4",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王幼鈴"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：圖資大樓樂活中心五樓。",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4139",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務應用文",
+  "selectCode": "4139",
+  "courseCode": "041F00358",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "進基礎二技三甲",
+  "combinedClassName": "進二技土木系三甲",
+  "time": "(六)10-11",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "沈素因"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 進技土三甲",
+  "lectureHours": 2,
+  "labHours": 0
+}

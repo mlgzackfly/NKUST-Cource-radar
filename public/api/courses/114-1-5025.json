@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5025",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(一)",
+  "selectCode": "5025",
+  "courseCode": "050C00037",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體一甲(建工)",
+  "combinedClassName": "四土一甲",
+  "time": "(四)5-6",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "林政達"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "本體育課程屬多元運動項目，其課程場地會依授課內容進行調整，詳細上課地點請參閱體育室網頁資訊 https://reurl.cc/pY8O64",
+  "lectureHours": 2,
+  "labHours": 0
+}

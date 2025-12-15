@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4668",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "跨文化主題-科技與生活",
+  "selectCode": "4668",
+  "courseCode": "043C10110",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "選修",
+  "className": "外語四技一甲(建",
+  "combinedClassName": "",
+  "time": "(一)7-8",
+  "classroom": "東201",
+  "instructors": [
+    {
+      "name": "左宗宏"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "限非應英系學生修讀(108學年度後入學學生通過英語免修計入畢業學分)",
+  "lectureHours": 2,
+  "labHours": 0
+}

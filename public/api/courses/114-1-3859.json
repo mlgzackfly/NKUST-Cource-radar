@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3859",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "不動產交易法規",
+  "selectCode": "3859",
+  "courseCode": "237C10380",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "四財稅一甲",
+  "combinedClassName": "",
+  "time": "(二)7-8",
+  "classroom": "MA206",
+  "instructors": [
+    {
+      "name": "魏文欽"
+    }
+  ],
+  "enrolled": 92,
+  "capacity": 87,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1098",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機程式",
+  "selectCode": "1098",
+  "courseCode": "209C00564",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模一乙",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "模210",
+  "instructors": [
+    {
+      "name": "胡逸群"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5106",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)-體適能",
+  "selectCode": "5106",
+  "courseCode": "050C00071",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體二甲(建工)",
+  "combinedClassName": "",
+  "time": "(三)3-4",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "陳秀惠"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 34,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：活動中心地下一樓舞蹈教室。",
+  "lectureHours": 2,
+  "labHours": 0
+}

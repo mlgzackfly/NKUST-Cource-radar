@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0796",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工廠管理",
+  "selectCode": "0796",
+  "courseCode": "202C10372",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機四丙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "土408",
+  "instructors": [
+    {
+      "name": "李光義"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 66,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

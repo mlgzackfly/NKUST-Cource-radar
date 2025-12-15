@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1185",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "能源材料",
+  "selectCode": "1185",
+  "courseCode": "209F10135",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技模具系四甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "模510",
+  "instructors": [
+    {
+      "name": "林俊宏"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3835",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "商業智慧研究",
+  "selectCode": "3835",
+  "courseCode": "231H10071",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "碩專智慧商務二甲",
+  "combinedClassName": "",
+  "time": "(三)10-12",
+  "classroom": "模103",
+  "instructors": [
+    {
+      "name": "張俊陽"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

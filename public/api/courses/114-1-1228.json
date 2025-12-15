@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1228",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機器人學與應用",
+  "selectCode": "1228",
+  "courseCode": "209E10219",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "選修",
+  "className": "五模三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "鄭瑞鴻"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：雙科館2樓模102產品中心",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0023",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "創客微學分(一)",
+  "selectCode": "0023",
+  "courseCode": "030C10001",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "創新創業發展處",
+  "requiredOrElective": "選修",
+  "className": "創創處二甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "謝文川"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 15,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "【課程主題】ChatGPT(Azure OpenAI)對談機器人開發實作 【上課時間】 09/27(六)09:00-18:00、09/28(日)09:00-18:00 【上課地點】 建工校區 東105教室 【注意事項】修讀本課程前，須通過環安衛教育訓練線上學習課程。",
+  "lectureHours": 1,
+  "labHours": 0
+}

@@ -1,0 +1,60 @@
+{
+  "id": "114-1-0495",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "0495",
+  "courseCode": "221A00001",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "資工系博士班一甲",
+  "combinedClassName": "",
+  "time": "(四)8-9",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "王志強"
+    },
+    {
+      "name": "林威成"
+    },
+    {
+      "name": "林聯發"
+    },
+    {
+      "name": "張雲龍"
+    },
+    {
+      "name": "張道行"
+    },
+    {
+      "name": "陳俊豪"
+    },
+    {
+      "name": "陳洳瑾"
+    },
+    {
+      "name": "黃淵科"
+    },
+    {
+      "name": "楊孟翰"
+    },
+    {
+      "name": "羅孟彥"
+    },
+    {
+      "name": "鐘文鈺"
+    }
+  ],
+  "enrolled": 1,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

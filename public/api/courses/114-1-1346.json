@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1346",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程經濟",
+  "selectCode": "1346",
+  "courseCode": "205F00048",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "進四技工管系二甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "資001",
+  "instructors": [
+    {
+      "name": "吳貴彬"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0507",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機概論",
+  "selectCode": "0507",
+  "courseCode": "208C10268",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "四化材一甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "東105",
+  "instructors": [
+    {
+      "name": "郭東義"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

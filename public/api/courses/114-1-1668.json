@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1668",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "薪資管理",
+  "selectCode": "1668",
+  "courseCode": "251C00108",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "必修",
+  "className": "四人三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "HS517",
+  "instructors": [
+    {
+      "name": "陳必碩"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

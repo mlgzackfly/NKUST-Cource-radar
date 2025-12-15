@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0693",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "土壤力學",
+  "selectCode": "0693",
+  "courseCode": "201F10105",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技土木系三甲",
+  "combinedClassName": "",
+  "time": "(六)5-7",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "蕭達鴻"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

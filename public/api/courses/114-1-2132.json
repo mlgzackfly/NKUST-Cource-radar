@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2132",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "觀光行銷",
+  "selectCode": "2132",
+  "courseCode": "235F00062",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進四觀光三甲",
+  "combinedClassName": "",
+  "time": "(二)12-13",
+  "classroom": "育402",
+  "instructors": [
+    {
+      "name": "林雅敏"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

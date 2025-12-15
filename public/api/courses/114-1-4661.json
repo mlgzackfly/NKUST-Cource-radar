@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4661",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "華語(三)",
+  "selectCode": "4661",
+  "courseCode": "043C10067",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "選修",
+  "className": "外語四技一甲(建",
+  "combinedClassName": "",
+  "time": "(一)10-11",
+  "classroom": "行410",
+  "instructors": [
+    {
+      "name": "邱佩緹"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "限國際學生修讀",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3854",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "商用英文",
+  "selectCode": "3854",
+  "courseCode": "237C10369",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "四財稅一甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MA209",
+  "instructors": [
+    {
+      "name": "張慕融"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 65,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1637",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "動力學",
+  "selectCode": "1637",
+  "courseCode": "204C00013",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系二甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "HS303",
+  "instructors": [
+    {
+      "name": "楊政達"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

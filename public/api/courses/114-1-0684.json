@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0684",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "鋼筋混凝土",
+  "selectCode": "0684",
+  "courseCode": "201C00140",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土三甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "潘煌鍟"
+    }
+  ],
+  "enrolled": 80,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

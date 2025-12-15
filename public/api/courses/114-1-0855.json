@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0855",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機概論",
+  "selectCode": "0855",
+  "courseCode": "227C00128",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電一甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "電506",
+  "instructors": [
+    {
+      "name": "黃文祥"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

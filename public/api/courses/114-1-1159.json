@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1159",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "快速原形與快速模具實習",
+  "selectCode": "1159",
+  "courseCode": "209C10291",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模四丙",
+  "combinedClassName": "四模四乙,四模四甲",
+  "time": "(五)1-4",
+  "classroom": "模308",
+  "instructors": [
+    {
+      "name": "蔡孟修"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0287",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人壽保險經營管理",
+  "selectCode": "0287",
+  "courseCode": "236C10030",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "四金資三甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "MB404",
+  "instructors": [
+    {
+      "name": "謝坤民"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 57,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

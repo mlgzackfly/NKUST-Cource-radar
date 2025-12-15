@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0967",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專業領域發展探索",
+  "selectCode": "0967",
+  "courseCode": "222C10629",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子一甲",
+  "combinedClassName": "",
+  "time": "(四)1",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "王鴻猷"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 54,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

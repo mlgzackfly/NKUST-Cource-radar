@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5136",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)-網球",
+  "selectCode": "5136",
+  "courseCode": "050C00058",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體二甲(建工)",
+  "combinedClassName": "",
+  "time": "(四)7-8",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "林暐庭"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 26,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：網球場。",
+  "lectureHours": 2,
+  "labHours": 0
+}

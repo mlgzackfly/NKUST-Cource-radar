@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4625",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(一)",
+  "selectCode": "4625",
+  "courseCode": "043C00006",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語四技一甲(建",
+  "combinedClassName": "四子一乙,四子一丙,四子一甲",
+  "time": "(二)7-8",
+  "classroom": "東201",
+  "instructors": [
+    {
+      "name": "王佩玲"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "不開放選課：由外語中心依級數分班【限電子群修讀：高2】",
+  "lectureHours": 2,
+  "labHours": 0
+}

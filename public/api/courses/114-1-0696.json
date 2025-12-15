@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0696",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程經濟學",
+  "selectCode": "0696",
+  "courseCode": "201F00029",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技土木系三甲",
+  "combinedClassName": "",
+  "time": "(日)1-3",
+  "classroom": "土708",
+  "instructors": [
+    {
+      "name": "王廷魁"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

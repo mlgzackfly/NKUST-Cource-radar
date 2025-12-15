@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0771",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "熱傳學",
+  "selectCode": "0771",
+  "courseCode": "202C00182",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機三甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "土308",
+  "instructors": [
+    {
+      "name": "李純怡"
+    }
+  ],
+  "enrolled": 62,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1639",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電機學",
+  "selectCode": "1639",
+  "courseCode": "204C00012",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系二甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "MA104",
+  "instructors": [
+    {
+      "name": "張宗偉"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

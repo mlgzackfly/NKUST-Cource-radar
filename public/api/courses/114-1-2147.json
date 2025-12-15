@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2147",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際行銷",
+  "selectCode": "2147",
+  "courseCode": "234H10066",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "國際企業系碩士班[建工/燕巢校區]",
+  "requiredOrElective": "選修",
+  "className": "碩專國際企業一甲",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "行510",
+  "instructors": [
+    {
+      "name": "李曉青"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

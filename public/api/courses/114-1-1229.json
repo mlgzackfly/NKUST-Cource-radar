@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1229",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "應用文",
+  "selectCode": "1229",
+  "courseCode": "209E00285",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模三甲",
+  "combinedClassName": "",
+  "time": "(二)1-2",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "蕭麗娟"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "1.班級:五模三甲 實體+非同步+同步遠距課程 2.此課程不可抵日四技實務應用文",
+  "lectureHours": 2,
+  "labHours": 0
+}

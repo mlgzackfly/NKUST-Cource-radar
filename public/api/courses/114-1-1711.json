@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1711",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "文創產業英文",
+  "selectCode": "1711",
+  "courseCode": "252C10280",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創三甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "HS416",
+  "instructors": [
+    {
+      "name": "魏綺慧"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1241",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "鍛造模設計實務",
+  "selectCode": "1241",
+  "courseCode": "209E00260",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模四甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "模103",
+  "instructors": [
+    {
+      "name": "許進忠"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 3
+}

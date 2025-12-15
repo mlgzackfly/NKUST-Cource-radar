@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0463",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "論文",
+  "selectCode": "0463",
+  "courseCode": "201B00156",
+  "credits": 6,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "土木工程系碩士班",
+  "requiredOrElective": "必修",
+  "className": "土木碩士二甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王裕仁"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 6,
+  "labHours": 0
+}

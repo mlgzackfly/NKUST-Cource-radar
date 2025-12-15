@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0211",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財務管理",
+  "selectCode": "0211",
+  "courseCode": "234C00100",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企二甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MB322",
+  "instructors": [
+    {
+      "name": "曾貝莉"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

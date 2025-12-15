@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1383",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "冷凍空調工程規劃與管理",
+  "selectCode": "1383",
+  "courseCode": "106C10045",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "能源與冷凍空調工程系",
+  "requiredOrElective": "選修",
+  "className": "日四能源冷凍三甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "MA108",
+  "instructors": [
+    {
+      "name": "施廷潤"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

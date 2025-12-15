@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3877",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專業倫理",
+  "selectCode": "3877",
+  "courseCode": "237C00153",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅四甲",
+  "combinedClassName": "",
+  "time": "(一)4",
+  "classroom": "MA207",
+  "instructors": [
+    {
+      "name": "郭恆宏"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

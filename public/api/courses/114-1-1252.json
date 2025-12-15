@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1252",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高等混凝土技術",
+  "selectCode": "1252",
+  "courseCode": "201A10045",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "土木工程系土木工程科技博士班",
+  "requiredOrElective": "選修",
+  "className": "土木系博士班一甲",
+  "combinedClassName": "土木碩士一甲",
+  "time": "(三)2-4",
+  "classroom": "土609",
+  "instructors": [
+    {
+      "name": "王和源"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

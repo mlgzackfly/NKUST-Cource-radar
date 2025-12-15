@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1703",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "視覺文化符碼",
+  "selectCode": "1703",
+  "courseCode": "252C10241",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創二甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "HS415",
+  "instructors": [
+    {
+      "name": "龍裕鴻"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,39 @@
+{
+  "id": "114-1-0925",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "學期實習(一)",
+  "selectCode": "0925",
+  "courseCode": "227C10623",
+  "credits": 9,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "李孝貽"
+    },
+    {
+      "name": "李明展"
+    },
+    {
+      "name": "黃科瑋"
+    },
+    {
+      "name": "詹東昇"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 9
+}

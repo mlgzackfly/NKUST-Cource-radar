@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3915",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "研究方法",
+  "selectCode": "3915",
+  "courseCode": "237H00092",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "碩專財政稅務一甲",
+  "combinedClassName": "",
+  "time": "(三)10-12",
+  "classroom": "行503",
+  "instructors": [
+    {
+      "name": "蕭大正"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

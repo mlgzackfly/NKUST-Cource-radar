@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0502",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料庫系統導論",
+  "selectCode": "0502",
+  "courseCode": "221H10055",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "碩專資訊工程二甲",
+  "combinedClassName": "",
+  "time": "(三)10-12",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "黃淵科"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0889",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子學實習(一)",
+  "selectCode": "0889",
+  "courseCode": "227C00053",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電二丙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "電401",
+  "instructors": [
+    {
+      "name": "陳附仁"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1811",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用科技英文閱讀",
+  "selectCode": "1811",
+  "courseCode": "161F00028",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "應用英語系",
+  "requiredOrElective": "選修",
+  "className": "進二技應英系四甲",
+  "combinedClassName": "",
+  "time": "(日)1-2",
+  "classroom": "育203",
+  "instructors": [
+    {
+      "name": "羅雅芬"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

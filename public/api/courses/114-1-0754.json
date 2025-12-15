@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0754",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電檢測",
+  "selectCode": "0754",
+  "courseCode": "202C00174",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機二乙",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "機408",
+  "instructors": [
+    {
+      "name": "江家慶"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

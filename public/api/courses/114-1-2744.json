@@ -1,0 +1,51 @@
+{
+  "id": "114-1-2744",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "2744",
+  "courseCode": "157C00432",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王泓達"
+    },
+    {
+      "name": "林靜香"
+    },
+    {
+      "name": "張樹木"
+    },
+    {
+      "name": "陳育仁"
+    },
+    {
+      "name": "趙雅儀"
+    },
+    {
+      "name": "蔡秋田"
+    },
+    {
+      "name": "蕭哲芬"
+    },
+    {
+      "name": "羅玉婷"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

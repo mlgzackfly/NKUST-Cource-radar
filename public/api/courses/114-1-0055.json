@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0055",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "太陽能電池物理與技術",
+  "selectCode": "0055",
+  "courseCode": "121B10157",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "光電工程研究所",
+  "requiredOrElective": "選修",
+  "className": "光電碩士班一甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "行402",
+  "instructors": [
+    {
+      "name": "陳國峰"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

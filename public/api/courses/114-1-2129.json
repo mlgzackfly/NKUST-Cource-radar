@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2129",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "領隊導遊實務",
+  "selectCode": "2129",
+  "courseCode": "235F10170",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "進四觀光二甲",
+  "combinedClassName": "",
+  "time": "(一)10-11",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "陳美存"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

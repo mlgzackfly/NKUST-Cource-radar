@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4965",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(一)",
+  "selectCode": "4965",
+  "courseCode": "043F00009",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "進外語四技一甲",
+  "combinedClassName": "進四技電子系一甲",
+  "time": "(五)12-13",
+  "classroom": "育403",
+  "instructors": [
+    {
+      "name": "許瓏勳"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

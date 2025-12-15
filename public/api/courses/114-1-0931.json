@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0931",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "信號與系統",
+  "selectCode": "0931",
+  "courseCode": "227F10226",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技電機系三甲",
+  "combinedClassName": "",
+  "time": "(日)9-11",
+  "classroom": "土309",
+  "instructors": [
+    {
+      "name": "黃志成"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

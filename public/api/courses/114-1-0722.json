@@ -1,0 +1,57 @@
+{
+  "id": "114-1-0722",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0722",
+  "courseCode": "201E00278",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "吳崇豪"
+    },
+    {
+      "name": "沈茂松"
+    },
+    {
+      "name": "林智強"
+    },
+    {
+      "name": "張志誠"
+    },
+    {
+      "name": "莊正昀"
+    },
+    {
+      "name": "郭文田"
+    },
+    {
+      "name": "陳松靖"
+    },
+    {
+      "name": "黃凱翔"
+    },
+    {
+      "name": "劉瀚聰"
+    },
+    {
+      "name": "藍文浩"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點:指導教師研討室",
+  "lectureHours": 2,
+  "labHours": 0
+}

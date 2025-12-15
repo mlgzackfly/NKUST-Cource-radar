@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0068",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "射頻通訊電路設計",
+  "selectCode": "0068",
+  "courseCode": "121B10151",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "光電工程研究所",
+  "requiredOrElective": "選修",
+  "className": "光電碩士班二甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "光電所第一研討室",
+  "instructors": [
+    {
+      "name": "林憶芳"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 14,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

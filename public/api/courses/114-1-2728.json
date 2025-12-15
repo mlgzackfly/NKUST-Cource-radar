@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2728",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "稅務法規",
+  "selectCode": "2728",
+  "courseCode": "157C00257",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系二乙",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "MA319",
+  "instructors": [
+    {
+      "name": "黃豪臣"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

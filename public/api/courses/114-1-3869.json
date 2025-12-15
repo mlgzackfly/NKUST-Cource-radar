@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3869",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "所得稅法規(一)",
+  "selectCode": "3869",
+  "courseCode": "237C00164",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅三甲",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "MA207",
+  "instructors": [
+    {
+      "name": "魏文欽"
+    }
+  ],
+  "enrolled": 62,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

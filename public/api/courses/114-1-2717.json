@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2717",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理學",
+  "selectCode": "2717",
+  "courseCode": "157C10383",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "會資系一乙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "MA318",
+  "instructors": [
+    {
+      "name": "沈文華"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

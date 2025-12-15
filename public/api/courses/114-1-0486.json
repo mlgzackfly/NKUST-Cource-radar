@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0486",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資訊安全",
+  "selectCode": "0486",
+  "courseCode": "221C10115",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "四資工四甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "育503",
+  "instructors": [
+    {
+      "name": "吳明和"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2076",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "旅館管理概論",
+  "selectCode": "2076",
+  "courseCode": "235C00159",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "四觀一甲",
+  "combinedClassName": "",
+  "time": "(四)5-6",
+  "classroom": "MB207",
+  "instructors": [
+    {
+      "name": "李一民"
+    }
+  ],
+  "enrolled": 52,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

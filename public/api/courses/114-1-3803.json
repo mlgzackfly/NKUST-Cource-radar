@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3803",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "大數據資料倉儲",
+  "selectCode": "3803",
+  "courseCode": "231C00364",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系二乙",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "MA217B",
+  "instructors": [
+    {
+      "name": "陳彥君"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "新聘專任教師:陳彥君",
+  "lectureHours": 3,
+  "labHours": 0
+}

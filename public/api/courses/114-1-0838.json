@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0838",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電機實驗",
+  "selectCode": "0838",
+  "courseCode": "202F00019",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技機械系三甲",
+  "combinedClassName": "",
+  "time": "(六)11-13",
+  "classroom": "機203",
+  "instructors": [
+    {
+      "name": "涂勝龍"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

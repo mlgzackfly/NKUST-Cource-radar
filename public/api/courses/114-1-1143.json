@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1143",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "熱流學",
+  "selectCode": "1143",
+  "courseCode": "209C00227",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模三乙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "土709",
+  "instructors": [
+    {
+      "name": "徐中華"
+    }
+  ],
+  "enrolled": 65,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

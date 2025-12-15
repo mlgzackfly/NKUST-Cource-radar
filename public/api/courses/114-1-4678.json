@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4678",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(一)",
+  "selectCode": "4678",
+  "courseCode": "043C00006",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語四技一甲(燕",
+  "combinedClassName": "",
+  "time": "(四)1-2",
+  "classroom": "MB524",
+  "instructors": [
+    {
+      "name": "許呈瑟"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "不開放選課：由外語中心依級數分班【限企管-智商-能源修讀：初】",
+  "lectureHours": 2,
+  "labHours": 0
+}

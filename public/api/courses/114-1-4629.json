@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4629",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(一)",
+  "selectCode": "4629",
+  "courseCode": "043C00006",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語四技一甲(建",
+  "combinedClassName": "",
+  "time": "(三)1-2",
+  "classroom": "行403",
+  "instructors": [
+    {
+      "name": "唐綺霞"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "不開放選課：由外語中心依級數分班【限化甲-資工-土乙修讀：高1】",
+  "lectureHours": 2,
+  "labHours": 0
+}

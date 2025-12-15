@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2016",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "2016",
+  "courseCode": "232C00057",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "必修",
+  "className": "四企一甲",
+  "combinedClassName": "",
+  "time": "(五)5-6",
+  "classroom": "MB524",
+  "instructors": [
+    {
+      "name": "蘇騰昇"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

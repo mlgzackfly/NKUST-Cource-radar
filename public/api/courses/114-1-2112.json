@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2112",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "2112",
+  "courseCode": "235F00047",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進二技觀光系四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "陳美存"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

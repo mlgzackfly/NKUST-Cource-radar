@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1664",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業管理",
+  "selectCode": "1664",
+  "courseCode": "251C10272",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "選修",
+  "className": "四人三甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "HS517",
+  "instructors": [
+    {
+      "name": "周秝宸"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

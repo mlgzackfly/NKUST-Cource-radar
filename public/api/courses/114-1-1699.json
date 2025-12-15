@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1699",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "兒童文學",
+  "selectCode": "1699",
+  "courseCode": "252C00061",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "必修",
+  "className": "四文創二甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "HS415",
+  "instructors": [
+    {
+      "name": "徐錦成"
+    }
+  ],
+  "enrolled": 65,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

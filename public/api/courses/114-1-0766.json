@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0766",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "田口式品質設計",
+  "selectCode": "0766",
+  "courseCode": "202C10399",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "機403",
+  "instructors": [
+    {
+      "name": "陳建羽"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1363",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "醫學工程特論",
+  "selectCode": "1363",
+  "courseCode": "215H10020",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "模具工程系應用工程科學[建工/燕",
+  "requiredOrElective": "選修",
+  "className": "碩專模具應科一甲",
+  "combinedClassName": "",
+  "time": "(六)7-9",
+  "classroom": "模605",
+  "instructors": [
+    {
+      "name": "徐中華"
+    }
+  ],
+  "enrolled": 10,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

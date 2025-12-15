@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1120",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "動力學",
+  "selectCode": "1120",
+  "courseCode": "209C00212",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二乙",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "模505",
+  "instructors": [
+    {
+      "name": "廖俊忠"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

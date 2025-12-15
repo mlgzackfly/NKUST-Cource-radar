@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0259",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財務管理",
+  "selectCode": "0259",
+  "courseCode": "234F00077",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系二甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "陳昇鴻"
+    },
+    {
+      "name": "鍾朝偉"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

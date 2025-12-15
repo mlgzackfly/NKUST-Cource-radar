@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0943",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機概論",
+  "selectCode": "0943",
+  "courseCode": "227F00074",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技電機系一甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "電506",
+  "instructors": [
+    {
+      "name": "賴俊如"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

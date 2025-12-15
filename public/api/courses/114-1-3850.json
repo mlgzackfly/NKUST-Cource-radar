@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3850",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理會計理論研討",
+  "selectCode": "3850",
+  "courseCode": "401A10049",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "商業智慧學院博士班",
+  "requiredOrElective": "選修",
+  "className": "商業智慧學院博二",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "西302C",
+  "instructors": [
+    {
+      "name": "黃豪臣"
+    }
+  ],
+  "enrolled": 3,
+  "capacity": 10,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

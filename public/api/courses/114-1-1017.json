@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1017",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程英文(一)",
+  "selectCode": "1017",
+  "courseCode": "222C10414",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四丙",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "資501A",
+  "instructors": [
+    {
+      "name": "王怡人"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

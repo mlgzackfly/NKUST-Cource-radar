@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0902",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "可程式邏輯控制器暨實習",
+  "selectCode": "0902",
+  "courseCode": "227C10618",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "電601",
+  "instructors": [
+    {
+      "name": "陳建璋"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

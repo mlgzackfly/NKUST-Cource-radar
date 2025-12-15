@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4023",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "本土語文/臺灣手語",
+  "selectCode": "4023",
+  "courseCode": "041E00115",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "基礎五專三甲(建",
+  "combinedClassName": "五土三甲,五模三甲",
+  "time": "(四)5-6",
+  "classroom": "土609",
+  "instructors": [
+    {
+      "name": "黃小民"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 五模三甲、五土三甲(合班)，本課程教授閩南語。",
+  "lectureHours": 2,
+  "labHours": 0
+}

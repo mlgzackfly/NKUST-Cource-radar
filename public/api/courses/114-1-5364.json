@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5364",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "網路行銷研究",
+  "selectCode": "5364",
+  "courseCode": "401A10058",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "商業智慧學院博士班",
+  "requiredOrElective": "選修",
+  "className": "商業智慧學院博一",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "行506",
+  "instructors": [
+    {
+      "name": "傅振瑞"
+    }
+  ],
+  "enrolled": 5,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

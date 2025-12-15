@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1288",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高績效主管實務",
+  "selectCode": "1288",
+  "courseCode": "205H10105",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "工業工程與管理系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專工業管理一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "土308",
+  "instructors": [
+    {
+      "name": "吳杉堯"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 67,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2068",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "談判與溝通",
+  "selectCode": "2068",
+  "courseCode": "232F10117",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "進四技企管系四甲",
+  "combinedClassName": "",
+  "time": "(二)12-13",
+  "classroom": "育404",
+  "instructors": [
+    {
+      "name": "鐘志明"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

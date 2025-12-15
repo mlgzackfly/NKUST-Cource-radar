@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0285",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理學",
+  "selectCode": "0285",
+  "courseCode": "236C10451",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "四金資二甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "MB423",
+  "instructors": [
+    {
+      "name": "何姍嬬"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

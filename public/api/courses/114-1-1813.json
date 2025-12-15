@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1813",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中英筆譯",
+  "selectCode": "1813",
+  "courseCode": "161F00022",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "應用英語系",
+  "requiredOrElective": "必修",
+  "className": "進二技應英系四甲",
+  "combinedClassName": "",
+  "time": "(六)7-8",
+  "classroom": "育203",
+  "instructors": [
+    {
+      "name": "邱晨馨"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

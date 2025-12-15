@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2707",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "會計學",
+  "selectCode": "2707",
+  "courseCode": "157C00470",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系一甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MB105",
+  "instructors": [
+    {
+      "name": "王泓達"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1712",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "視覺藝術與生活美學",
+  "selectCode": "1712",
+  "courseCode": "252C10098",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創三甲",
+  "combinedClassName": "",
+  "time": "(一)5-6",
+  "classroom": "HS416",
+  "instructors": [
+    {
+      "name": "林育靚"
+    }
+  ],
+  "enrolled": 42,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

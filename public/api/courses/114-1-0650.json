@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0650",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人工智慧概論",
+  "selectCode": "0650",
+  "courseCode": "201C10377",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "選修",
+  "className": "四土一乙",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "土302A",
+  "instructors": [
+    {
+      "name": "莊正昀"
+    }
+  ],
+  "enrolled": 86,
+  "capacity": 72,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

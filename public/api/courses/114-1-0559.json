@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0559",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機輔助設計與實習",
+  "selectCode": "0559",
+  "courseCode": "208C00068",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材四甲",
+  "combinedClassName": "",
+  "time": "(一)8-9",
+  "classroom": "資002",
+  "instructors": [
+    {
+      "name": "溫新宜"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

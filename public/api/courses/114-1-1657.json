@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1657",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "組織行為",
+  "selectCode": "1657",
+  "courseCode": "251C00102",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "必修",
+  "className": "四人二甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "HS529",
+  "instructors": [
+    {
+      "name": "董玉娟"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

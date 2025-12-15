@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0549",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "儀器分析實驗",
+  "selectCode": "0549",
+  "courseCode": "208C00066",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材三乙",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "化402",
+  "instructors": [
+    {
+      "name": "黃政偉"
+    }
+  ],
+  "enrolled": 50,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

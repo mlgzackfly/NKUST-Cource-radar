@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1154",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高分子奈米複合材料",
+  "selectCode": "1154",
+  "courseCode": "209C10456",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模四丙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "模605",
+  "instructors": [
+    {
+      "name": "謝宗翰"
+    }
+  ],
+  "enrolled": 80,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

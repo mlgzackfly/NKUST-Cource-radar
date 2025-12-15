@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0223",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國貿理論與政策",
+  "selectCode": "0223",
+  "courseCode": "234C00113",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企三甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MB324",
+  "instructors": [
+    {
+      "name": "李仁耀"
+    },
+    {
+      "name": "蔡建樹"
+    }
+  ],
+  "enrolled": 62,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0975",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機概論",
+  "selectCode": "0975",
+  "courseCode": "222C00138",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子一丙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "資001",
+  "instructors": [
+    {
+      "name": "黃冠渝"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

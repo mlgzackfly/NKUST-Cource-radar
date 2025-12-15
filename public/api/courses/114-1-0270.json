@@ -1,0 +1,36 @@
+{
+  "id": "114-1-0270",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業專題研究(二)",
+  "selectCode": "0270",
+  "courseCode": "234F00016",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系四甲",
+  "combinedClassName": "",
+  "time": "(二)9(三)9(四)9",
+  "classroom": "育103",
+  "instructors": [
+    {
+      "name": "方沴淳"
+    },
+    {
+      "name": "李政勳"
+    },
+    {
+      "name": "廖明瑜"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

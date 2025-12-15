@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0629",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0629",
+  "courseCode": "227A00151",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電機工程系博士班",
+  "requiredOrElective": "必修",
+  "className": "博電二甲",
+  "combinedClassName": "",
+  "time": "(五)6-7",
+  "classroom": "電603",
+  "instructors": [
+    {
+      "name": "辜德典"
+    }
+  ],
+  "enrolled": 10,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

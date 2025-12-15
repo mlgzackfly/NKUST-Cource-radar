@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0208",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經濟學(一)",
+  "selectCode": "0208",
+  "courseCode": "234C00103",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企一甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MB323",
+  "instructors": [
+    {
+      "name": "李建慧"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

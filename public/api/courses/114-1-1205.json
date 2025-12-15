@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1205",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "全民國防教育(一)",
+  "selectCode": "1205",
+  "courseCode": "209E00053",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模一甲",
+  "combinedClassName": "",
+  "time": "(五)1",
+  "classroom": "模111",
+  "instructors": [
+    {
+      "name": "林昭君"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 31,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 1,
+  "labHours": 0
+}

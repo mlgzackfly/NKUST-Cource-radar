@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4571",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(全球)世界風情",
+  "selectCode": "4571",
+  "courseCode": "042F00346",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "進博雅四技一甲",
+  "combinedClassName": "",
+  "time": "(四)12-13",
+  "classroom": "土709",
+  "instructors": [
+    {
+      "name": "劉宗智"
+    }
+  ],
+  "enrolled": 50,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

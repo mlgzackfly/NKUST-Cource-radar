@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2126",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "進階日語會話(一)",
+  "selectCode": "2126",
+  "courseCode": "235F00207",
+  "credits": 4,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進四觀光二甲",
+  "combinedClassName": "",
+  "time": "(二)12-13(五)12-13",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "劉若涵"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

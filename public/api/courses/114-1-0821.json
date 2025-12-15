@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0821",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "表面處理",
+  "selectCode": "0821",
+  "courseCode": "202F10233",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技機械系四甲",
+  "combinedClassName": "",
+  "time": "(六)4,5-6",
+  "classroom": "機409",
+  "instructors": [
+    {
+      "name": "涂勝龍"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

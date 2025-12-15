@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1272",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "大地防災技術專論",
+  "selectCode": "1272",
+  "courseCode": "201H10066",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "土木工程系土木工程與防災科技",
+  "requiredOrElective": "選修",
+  "className": "碩專土木防災一甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "土608",
+  "instructors": [
+    {
+      "name": "黃亦敏"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2020",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "成本會計",
+  "selectCode": "2020",
+  "courseCode": "232C10192",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企二甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MB523",
+  "instructors": [
+    {
+      "name": "莊建富"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

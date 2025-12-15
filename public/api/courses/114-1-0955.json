@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0955",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微處理機暨實習",
+  "selectCode": "0955",
+  "courseCode": "227F00364",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技電機系三甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "電503",
+  "instructors": [
+    {
+      "name": "孫崇訓"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

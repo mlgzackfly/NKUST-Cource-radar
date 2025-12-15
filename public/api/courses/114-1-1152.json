@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1152",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "自動化實驗",
+  "selectCode": "1152",
+  "courseCode": "209C00571",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模三丙",
+  "combinedClassName": "",
+  "time": "(五)5-8",
+  "classroom": "模210",
+  "instructors": [
+    {
+      "name": "溫志群"
+    }
+  ],
+  "enrolled": 74,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

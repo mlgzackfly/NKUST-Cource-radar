@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4822",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(三)",
+  "selectCode": "4822",
+  "courseCode": "043C00004",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語四技二甲(建",
+  "combinedClassName": "四電二乙,四電二丙,四電二甲",
+  "time": "(一)3-4",
+  "classroom": "東203",
+  "instructors": [
+    {
+      "name": "王佩玲"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "不開放選課：由外語中心依級數分班【限電機群修讀：高2】",
+  "lectureHours": 2,
+  "labHours": 0
+}

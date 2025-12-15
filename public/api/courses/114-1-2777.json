@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2777",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理會計(一)",
+  "selectCode": "2777",
+  "courseCode": "157F00077",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "進四技會資系三甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "育102",
+  "instructors": [
+    {
+      "name": "郝逸華"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

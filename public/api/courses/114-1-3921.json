@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3921",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "當代金融時事分析",
+  "selectCode": "3921",
+  "courseCode": "237H10200",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "碩專財政稅務二甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "行508",
+  "instructors": [
+    {
+      "name": "柯伯昇"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 46,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2060",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業資源規劃",
+  "selectCode": "2060",
+  "courseCode": "232F10122",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "進四技企管系三甲",
+  "combinedClassName": "",
+  "time": "(四)12-13",
+  "classroom": "育404",
+  "instructors": [
+    {
+      "name": "朱培宏"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

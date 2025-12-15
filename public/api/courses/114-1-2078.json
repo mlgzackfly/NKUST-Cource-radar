@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2078",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經濟學",
+  "selectCode": "2078",
+  "courseCode": "235C00167",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "四觀一甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MB207",
+  "instructors": [
+    {
+      "name": "劉志興"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

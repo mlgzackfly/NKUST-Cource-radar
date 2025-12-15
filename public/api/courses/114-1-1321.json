@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1321",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "永續碳管理",
+  "selectCode": "1321",
+  "courseCode": "205A10059",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "工管系博班一甲",
+  "combinedClassName": "碩工一甲",
+  "time": "(四)2-4",
+  "classroom": "育400電腦教室",
+  "instructors": [
+    {
+      "name": "薛明憲"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 5,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課教室另有綠能創新實驗室。",
+  "lectureHours": 3,
+  "labHours": 0
+}

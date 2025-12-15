@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0705",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程規劃設計風險評估及施工安全",
+  "selectCode": "0705",
+  "courseCode": "201F00148",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技土木系四甲",
+  "combinedClassName": "",
+  "time": "(六)5-7",
+  "classroom": "土709",
+  "instructors": [
+    {
+      "name": "潘煌鍟"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

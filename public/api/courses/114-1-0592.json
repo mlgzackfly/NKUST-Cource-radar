@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0592",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "0592",
+  "courseCode": "208B00067",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "化學工程與材料工程系碩士班[建",
+  "requiredOrElective": "必修",
+  "className": "碩化材一甲",
+  "combinedClassName": "",
+  "time": "(五)5-6",
+  "classroom": "曉東講堂",
+  "instructors": [
+    {
+      "name": "何國賢"
+    },
+    {
+      "name": "吳忠信"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 90,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1245",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討",
+  "selectCode": "1245",
+  "courseCode": "209H00002",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "模具工程系碩士班[建工/燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "碩專模具工程一甲",
+  "combinedClassName": "",
+  "time": "(六)10-11",
+  "classroom": "模205",
+  "instructors": [
+    {
+      "name": "徐中華"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

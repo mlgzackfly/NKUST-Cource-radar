@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1161",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高等數值分析",
+  "selectCode": "1161",
+  "courseCode": "209A10044",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "博模一甲",
+  "combinedClassName": "碩模一甲",
+  "time": "(四)5-7",
+  "classroom": "模208",
+  "instructors": [
+    {
+      "name": "吳佳璟"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 35,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

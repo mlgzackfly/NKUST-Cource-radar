@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1094",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "製造程序",
+  "selectCode": "1094",
+  "courseCode": "209C00103",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模一甲",
+  "combinedClassName": "",
+  "time": "(三)7-8",
+  "classroom": "模605",
+  "instructors": [
+    {
+      "name": "張朝誠"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

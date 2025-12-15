@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2090",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "日語聽講實習(三)",
+  "selectCode": "2090",
+  "courseCode": "235C00592",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "四觀二甲",
+  "combinedClassName": "",
+  "time": "(一)5-6(四)3-4",
+  "classroom": "MB209",
+  "instructors": [
+    {
+      "name": "林秉敏"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 2
+}

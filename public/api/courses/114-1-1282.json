@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1282",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "企業資源規劃",
+  "selectCode": "1282",
+  "courseCode": "205H10046",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "工業工程與管理系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專工業管理一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "土509",
+  "instructors": [
+    {
+      "name": "黃瑞展"
+    }
+  ],
+  "enrolled": 37,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

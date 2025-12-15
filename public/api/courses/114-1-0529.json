@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0529",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "有機化學(一)",
+  "selectCode": "0529",
+  "courseCode": "208C00266",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材二乙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "杜秀中"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

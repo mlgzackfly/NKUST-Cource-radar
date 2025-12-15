@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1633",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "車輛工程概論",
+  "selectCode": "1633",
+  "courseCode": "204C00025",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系一甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MA104",
+  "instructors": [
+    {
+      "name": "龐大成"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 37,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1045",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "1045",
+  "courseCode": "222A00248",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "博子二甲",
+  "combinedClassName": "",
+  "time": "(一)3-4",
+  "classroom": "資504",
+  "instructors": [
+    {
+      "name": "陳昭和"
+    }
+  ],
+  "enrolled": 16,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

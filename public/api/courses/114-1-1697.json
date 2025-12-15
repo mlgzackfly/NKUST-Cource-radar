@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1697",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "海報設計",
+  "selectCode": "1697",
+  "courseCode": "252C10284",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創一甲",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "HS418",
+  "instructors": [
+    {
+      "name": "陳育民"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

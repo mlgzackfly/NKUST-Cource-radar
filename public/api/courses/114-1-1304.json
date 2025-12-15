@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1304",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智慧生產導論",
+  "selectCode": "1304",
+  "courseCode": "205C00315",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "四工二甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "資002",
+  "instructors": [
+    {
+      "name": "許桓瑜"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

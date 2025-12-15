@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1054",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "1054",
+  "courseCode": "222F00087",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系一乙",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "資401",
+  "instructors": [
+    {
+      "name": "謝東利"
+    }
+  ],
+  "enrolled": 41,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

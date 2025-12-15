@@ -1,0 +1,105 @@
+{
+  "id": "114-1-1138",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題-專題製作(一)",
+  "selectCode": "1138",
+  "courseCode": "209C00051",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模三丙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王心德"
+    },
+    {
+      "name": "伏和中"
+    },
+    {
+      "name": "吳佳璟"
+    },
+    {
+      "name": "林宛儒"
+    },
+    {
+      "name": "林恒勝"
+    },
+    {
+      "name": "姚創文"
+    },
+    {
+      "name": "洪宗彬"
+    },
+    {
+      "name": "胡逸群"
+    },
+    {
+      "name": "徐中華"
+    },
+    {
+      "name": "常閎智"
+    },
+    {
+      "name": "張致遠"
+    },
+    {
+      "name": "張高華"
+    },
+    {
+      "name": "張朝誠"
+    },
+    {
+      "name": "許文政"
+    },
+    {
+      "name": "許進忠"
+    },
+    {
+      "name": "郭承憲"
+    },
+    {
+      "name": "郭俊賢"
+    },
+    {
+      "name": "黃俊欽"
+    },
+    {
+      "name": "黃條嵩"
+    },
+    {
+      "name": "溫志群"
+    },
+    {
+      "name": "葉松瑋"
+    },
+    {
+      "name": "廖俊忠"
+    },
+    {
+      "name": "歐士輔"
+    },
+    {
+      "name": "蔡孟修"
+    },
+    {
+      "name": "鄭瑞鴻"
+    },
+    {
+      "name": "謝宗翰"
+    }
+  ],
+  "enrolled": 189,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

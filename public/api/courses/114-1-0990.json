@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0990",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程數學(一)",
+  "selectCode": "0990",
+  "courseCode": "222C00148",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "四子二丙",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "育501",
+  "instructors": [
+    {
+      "name": "潘天賜"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

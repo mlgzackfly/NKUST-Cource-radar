@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2106",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "旅行社管理",
+  "selectCode": "2106",
+  "courseCode": "235F00223",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進二技觀光系三甲",
+  "combinedClassName": "",
+  "time": "(六)3-4",
+  "classroom": "育304",
+  "instructors": [
+    {
+      "name": "黃永全"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

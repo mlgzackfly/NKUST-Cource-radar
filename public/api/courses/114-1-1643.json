@@ -1,0 +1,45 @@
+{
+  "id": "114-1-1643",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "1643",
+  "courseCode": "204C00023",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "王文彬"
+    },
+    {
+      "name": "林克衛"
+    },
+    {
+      "name": "陳建安"
+    },
+    {
+      "name": "楊政達"
+    },
+    {
+      "name": "蕭育仁"
+    },
+    {
+      "name": "龐大成"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點:指導教師研討室",
+  "lectureHours": 2,
+  "labHours": 0
+}

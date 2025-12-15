@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0570",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "X-ray繞射學",
+  "selectCode": "0570",
+  "courseCode": "208A10026",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "化材系博士班一甲",
+  "combinedClassName": "碩化材一甲",
+  "time": "(五)2-4",
+  "classroom": "化809",
+  "instructors": [
+    {
+      "name": "高立衡"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

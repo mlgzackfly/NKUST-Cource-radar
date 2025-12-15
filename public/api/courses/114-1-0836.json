@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0836",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "流體力學",
+  "selectCode": "0836",
+  "courseCode": "202F00060",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技機械系三甲",
+  "combinedClassName": "",
+  "time": "(二)10-11(四)10",
+  "classroom": "機404",
+  "instructors": [
+    {
+      "name": "李純怡"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

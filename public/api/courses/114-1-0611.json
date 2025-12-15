@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0611",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電系統設計專論",
+  "selectCode": "0611",
+  "courseCode": "227H10073",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "電機工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專電機工程二甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "電506",
+  "instructors": [
+    {
+      "name": "李孝貽"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

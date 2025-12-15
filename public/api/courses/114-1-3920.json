@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3920",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "時間序列分析",
+  "selectCode": "3920",
+  "courseCode": "237H00238",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "碩專財政稅務二甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "彭琪祿"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5321",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "創新與創業實務",
+  "selectCode": "5321",
+  "courseCode": "205C10196",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "四工四甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "育500",
+  "instructors": [
+    {
+      "name": "林國義"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 21,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

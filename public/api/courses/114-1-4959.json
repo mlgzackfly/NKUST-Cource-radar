@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4959",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(一)",
+  "selectCode": "4959",
+  "courseCode": "043F00009",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "進外語四技一甲",
+  "combinedClassName": "進四觀光一甲",
+  "time": "(五)12-13",
+  "classroom": "育202",
+  "instructors": [
+    {
+      "name": "吳雅雯"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

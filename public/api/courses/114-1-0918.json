@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0918",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電路理論",
+  "selectCode": "0918",
+  "courseCode": "227C10287",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三丙",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "陸緯庭"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

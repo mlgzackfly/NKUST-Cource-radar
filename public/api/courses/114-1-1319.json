@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1319",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理績效評估",
+  "selectCode": "1319",
+  "courseCode": "205A10045",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "工管系博班一甲",
+  "combinedClassName": "碩工一甲",
+  "time": "(二)6-8",
+  "classroom": "土401A",
+  "instructors": [
+    {
+      "name": "楊富強"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 12,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

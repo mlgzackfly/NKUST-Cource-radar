@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2122",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "會計學",
+  "selectCode": "2122",
+  "courseCode": "235F00079",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進四觀光一甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "育304",
+  "instructors": [
+    {
+      "name": "劉志興"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

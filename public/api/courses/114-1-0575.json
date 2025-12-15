@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0575",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "論文",
+  "selectCode": "0575",
+  "courseCode": "208A00038",
+  "credits": 6,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "化材系博士班二甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "陳弘穎"
+    }
+  ],
+  "enrolled": 2,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "研究室",
+  "lectureHours": 6,
+  "labHours": 0
+}

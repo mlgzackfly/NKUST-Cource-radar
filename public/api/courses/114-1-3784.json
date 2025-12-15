@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3784",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "程式設計",
+  "selectCode": "3784",
+  "courseCode": "231C00090",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系一甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "MA218",
+  "instructors": [
+    {
+      "name": "侯易佑"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

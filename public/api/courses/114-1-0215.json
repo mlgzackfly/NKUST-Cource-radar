@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0215",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業管理(一)",
+  "selectCode": "0215",
+  "courseCode": "234C00085",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企二甲",
+  "combinedClassName": "",
+  "time": "(四)3-4",
+  "classroom": "MB322",
+  "instructors": [
+    {
+      "name": "王綺楓"
+    }
+  ],
+  "enrolled": 59,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

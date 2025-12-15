@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5137",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)-體適能瑜珈",
+  "selectCode": "5137",
+  "courseCode": "050C00061",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體二甲(建工)",
+  "combinedClassName": "",
+  "time": "(二)7-8",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "趙學瑾"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 34,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：活動中心地下一樓舞蹈教室。",
+  "lectureHours": 2,
+  "labHours": 0
+}

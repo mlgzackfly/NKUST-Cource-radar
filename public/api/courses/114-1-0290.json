@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0290",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "金融機構管理",
+  "selectCode": "0290",
+  "courseCode": "236C00147",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "四金資三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "MB404",
+  "instructors": [
+    {
+      "name": "傅德麟"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 57,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

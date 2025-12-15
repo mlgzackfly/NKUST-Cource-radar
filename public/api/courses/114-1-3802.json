@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3802",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "程式設計(三)",
+  "selectCode": "3802",
+  "courseCode": "231C00089",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系二乙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "MA217B",
+  "instructors": [
+    {
+      "name": "陳彥君"
+    }
+  ],
+  "enrolled": 50,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "新聘專任教師:陳彥君",
+  "lectureHours": 3,
+  "labHours": 0
+}

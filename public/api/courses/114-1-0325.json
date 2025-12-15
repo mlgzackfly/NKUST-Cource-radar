@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0325",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "金融資訊專題",
+  "selectCode": "0325",
+  "courseCode": "236H10071",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "碩專金融資訊一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "西102",
+  "instructors": [
+    {
+      "name": "姜林杰祐"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

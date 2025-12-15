@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0520",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "生物化學",
+  "selectCode": "0520",
+  "courseCode": "208C10150",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "四化材二甲",
+  "combinedClassName": "",
+  "time": "(二)3-4",
+  "classroom": "行402",
+  "instructors": [
+    {
+      "name": "陳樹人"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

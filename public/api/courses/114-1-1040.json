@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1040",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "線性類比電路分析與合成",
+  "selectCode": "1040",
+  "courseCode": "222A10258",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "博子一甲",
+  "combinedClassName": "碩子一甲",
+  "time": "(三)2-4",
+  "classroom": "資504",
+  "instructors": [
+    {
+      "name": "王鴻猷"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

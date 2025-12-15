@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3861",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "投資學",
+  "selectCode": "3861",
+  "courseCode": "237C00208",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅二甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MA208",
+  "instructors": [
+    {
+      "name": "汪青萍"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 59,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

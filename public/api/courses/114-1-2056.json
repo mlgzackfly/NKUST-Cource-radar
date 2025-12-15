@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2056",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "品牌管理",
+  "selectCode": "2056",
+  "courseCode": "232F10106",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "進四技企管系二甲",
+  "combinedClassName": "",
+  "time": "(四)10-11",
+  "classroom": "育403",
+  "instructors": [
+    {
+      "name": "王崇昱"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1698",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "文化創意產業概論",
+  "selectCode": "1698",
+  "courseCode": "252C00244",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "必修",
+  "className": "四文創一甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "HS427",
+  "instructors": [
+    {
+      "name": "楊雅玲"
+    }
+  ],
+  "enrolled": 74,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

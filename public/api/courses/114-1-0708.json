@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0708",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程測量",
+  "selectCode": "0708",
+  "courseCode": "201E10236",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "選修",
+  "className": "五土三甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "土509",
+  "instructors": [
+    {
+      "name": "謝嘉聲"
+    }
+  ],
+  "enrolled": 18,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

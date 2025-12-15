@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2154",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "論文",
+  "selectCode": "2154",
+  "courseCode": "234H00092",
+  "credits": 6,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "國際企業系碩士班[建工/燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "碩專國際企業二甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "陳昇鴻"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 6,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0801",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "影像處理與機械視覺",
+  "selectCode": "0801",
+  "courseCode": "202B10029",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "機械系碩士班二甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "機307",
+  "instructors": [
+    {
+      "name": "許光城"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

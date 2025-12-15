@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0477",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料壓縮",
+  "selectCode": "0477",
+  "courseCode": "221C10111",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "四資工三甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "育302",
+  "instructors": [
+    {
+      "name": "鐘文鈺"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

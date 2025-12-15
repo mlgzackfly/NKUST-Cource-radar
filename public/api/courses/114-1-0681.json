@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0681",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "流體力學",
+  "selectCode": "0681",
+  "courseCode": "201C00139",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土三乙",
+  "combinedClassName": "",
+  "time": "(三)7(五)2-3",
+  "classroom": "土702",
+  "instructors": [
+    {
+      "name": "張高豪"
+    }
+  ],
+  "enrolled": 145,
+  "capacity": 140,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

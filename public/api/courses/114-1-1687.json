@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1687",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "團隊建立與發展研究",
+  "selectCode": "1687",
+  "courseCode": "251H10026",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "人力資源發展系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專人力資源一甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "行403",
+  "instructors": [
+    {
+      "name": "鄭昱宏"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2723",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料分析與統計",
+  "selectCode": "2723",
+  "courseCode": "157C00435",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系二甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "MB104",
+  "instructors": [
+    {
+      "name": "羅玉婷"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

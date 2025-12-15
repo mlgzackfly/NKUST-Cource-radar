@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4176",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "校訂(一)藝術美感探索",
+  "selectCode": "4176",
+  "courseCode": "042C01623",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技一甲(建",
+  "combinedClassName": "",
+  "time": "(四)3-4",
+  "classroom": "行409",
+  "instructors": [
+    {
+      "name": "林世凌"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 27,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "107-111學年入學生必須至學分抵免系統申請抵充【博雅(人文)藝術與美感探索】，始可認列為博雅課程學分數",
+  "lectureHours": 2,
+  "labHours": 0
+}

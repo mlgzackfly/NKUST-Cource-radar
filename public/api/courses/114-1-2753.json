@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2753",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "商用套裝軟體(一)",
+  "selectCode": "2753",
+  "courseCode": "157F00060",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "進二技會資系三甲",
+  "combinedClassName": "",
+  "time": "(日)5-6",
+  "classroom": "東105",
+  "instructors": [
+    {
+      "name": "許芸禎"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

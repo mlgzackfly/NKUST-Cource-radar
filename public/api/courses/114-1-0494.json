@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0494",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0494",
+  "courseCode": "221B00077",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "碩資工二甲",
+  "combinedClassName": "",
+  "time": "(一)7-8",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "林威成"
+    },
+    {
+      "name": "林聯發"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

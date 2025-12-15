@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0751",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "熱力學",
+  "selectCode": "0751",
+  "courseCode": "202C00176",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機二甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "機407",
+  "instructors": [
+    {
+      "name": "王珉玟"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0326",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "固定收益證券",
+  "selectCode": "0326",
+  "courseCode": "236H10080",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "碩專金融資訊一甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "西102",
+  "instructors": [
+    {
+      "name": "張嘉倩"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

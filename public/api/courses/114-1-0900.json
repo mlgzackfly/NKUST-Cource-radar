@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0900",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "綠色電能轉換",
+  "selectCode": "0900",
+  "courseCode": "227C10290",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "莊慧仁"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

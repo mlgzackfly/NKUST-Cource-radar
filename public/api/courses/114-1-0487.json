@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0487",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "分散式系統",
+  "selectCode": "0487",
+  "courseCode": "221C10169",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "四資工四甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "黃淵科"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

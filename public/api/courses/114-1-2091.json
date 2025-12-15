@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2091",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "西餐烹調實習",
+  "selectCode": "2091",
+  "courseCode": "235C10602",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "四觀二甲",
+  "combinedClassName": "",
+  "time": "(五)5-8",
+  "classroom": "MB108",
+  "instructors": [
+    {
+      "name": "曾俊吉"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 25,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 2
+}

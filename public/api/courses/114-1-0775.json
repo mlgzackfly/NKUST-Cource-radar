@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0775",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "振動學",
+  "selectCode": "0775",
+  "courseCode": "202C10256",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機三乙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "土308",
+  "instructors": [
+    {
+      "name": "林章生"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

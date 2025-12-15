@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0865",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人機互動",
+  "selectCode": "0865",
+  "courseCode": "227C10620",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電一乙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "電503",
+  "instructors": [
+    {
+      "name": "林珮瑜"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

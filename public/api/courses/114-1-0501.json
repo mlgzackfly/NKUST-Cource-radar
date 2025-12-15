@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0501",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高等人工智慧",
+  "selectCode": "0501",
+  "courseCode": "221H10008",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "碩專資訊工程二甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "育405",
+  "instructors": [
+    {
+      "name": "張道行"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 48,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

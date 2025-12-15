@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1384",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "太陽能轉換器",
+  "selectCode": "1384",
+  "courseCode": "106C10064",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "能源與冷凍空調工程系",
+  "requiredOrElective": "選修",
+  "className": "日四能源冷凍三甲",
+  "combinedClassName": "",
+  "time": "(三)7-8",
+  "classroom": "MA108",
+  "instructors": [
+    {
+      "name": "林昱良"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1306",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "供應鏈管理",
+  "selectCode": "1306",
+  "courseCode": "205C10278",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "四工三甲",
+  "combinedClassName": "技工四甲",
+  "time": "(三)7-9",
+  "classroom": "育403",
+  "instructors": [
+    {
+      "name": "林明勳"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

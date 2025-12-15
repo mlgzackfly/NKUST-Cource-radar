@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1219",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "英語文(三)",
+  "selectCode": "1219",
+  "courseCode": "209E00222",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模二甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "留國泰"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "初階",
+  "lectureHours": 3,
+  "labHours": 0
+}

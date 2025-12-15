@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1208",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "圖學實習",
+  "selectCode": "1208",
+  "courseCode": "209E00313",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模一甲",
+  "combinedClassName": "",
+  "time": "(一)5-8",
+  "classroom": "模501",
+  "instructors": [
+    {
+      "name": "胡逸群"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 4,
+  "labHours": 0
+}

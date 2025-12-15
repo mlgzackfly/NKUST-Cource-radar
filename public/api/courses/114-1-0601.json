@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0601",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "0601",
+  "courseCode": "227B00173",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "電機工程系碩士班",
+  "requiredOrElective": "必修",
+  "className": "碩電一甲",
+  "combinedClassName": "",
+  "time": "(五)6-7",
+  "classroom": "電小劇場",
+  "instructors": [
+    {
+      "name": "周阜毅"
+    }
+  ],
+  "enrolled": 80,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

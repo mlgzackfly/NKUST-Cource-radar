@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1108",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機械製造實習",
+  "selectCode": "1108",
+  "courseCode": "209C10258",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "四模一丙",
+  "combinedClassName": "四模一乙,四模一甲",
+  "time": "(一)5-8",
+  "classroom": "多201",
+  "instructors": [
+    {
+      "name": "陳騰輝"
+    }
+  ],
+  "enrolled": 68,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "新聘專任教師",
+  "lectureHours": 4,
+  "labHours": 0
+}

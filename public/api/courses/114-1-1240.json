@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1240",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "自動化工程實務",
+  "selectCode": "1240",
+  "courseCode": "209E10256",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "選修",
+  "className": "五模四甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "育201",
+  "instructors": [
+    {
+      "name": "劉順財"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 3
+}

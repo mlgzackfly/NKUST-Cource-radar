@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3913",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "證券投資分析",
+  "selectCode": "3913",
+  "courseCode": "237F10233",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "進四技財稅系四甲",
+  "combinedClassName": "",
+  "time": "(四)10-11",
+  "classroom": "育206",
+  "instructors": [
+    {
+      "name": "劉信宏"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

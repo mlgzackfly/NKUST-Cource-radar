@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1174",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程材料",
+  "selectCode": "1174",
+  "courseCode": "209F00075",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技模具系二甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "模603",
+  "instructors": [
+    {
+      "name": "葉松瑋"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

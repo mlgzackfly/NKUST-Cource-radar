@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0560",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "書報討論(一)",
+  "selectCode": "0560",
+  "courseCode": "208C00038",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材四乙",
+  "combinedClassName": "",
+  "time": "(二)7-8",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "吳瑞泰"
+    },
+    {
+      "name": "黃政偉"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

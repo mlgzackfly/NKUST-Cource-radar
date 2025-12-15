@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1314",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物聯網與雲端運算應用",
+  "selectCode": "1314",
+  "courseCode": "205C10254",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "四工四甲",
+  "combinedClassName": "技工四甲",
+  "time": "(二)2-4",
+  "classroom": "育400電腦教室",
+  "instructors": [
+    {
+      "name": "林輝鐸"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 20,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

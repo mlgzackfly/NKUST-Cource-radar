@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4286",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(科技)現今科技議題",
+  "selectCode": "4286",
+  "courseCode": "042C00522",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(五)5-6",
+  "classroom": "東105",
+  "instructors": [
+    {
+      "name": "蔡叔翹"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 37,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1178",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數值分析",
+  "selectCode": "1178",
+  "courseCode": "209F10179",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技模具系三甲",
+  "combinedClassName": "",
+  "time": "(六)10-12",
+  "classroom": "模210",
+  "instructors": [
+    {
+      "name": "李政鋼"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

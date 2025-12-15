@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0893",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "自動控制",
+  "selectCode": "0893",
+  "courseCode": "227C00155",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電三甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "慧芳講堂",
+  "instructors": [
+    {
+      "name": "李明展"
+    }
+  ],
+  "enrolled": 68,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

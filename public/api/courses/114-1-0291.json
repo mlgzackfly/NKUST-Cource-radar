@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0291",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人工智慧與機器學習",
+  "selectCode": "0291",
+  "courseCode": "236C00431",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "四金資三甲",
+  "combinedClassName": "",
+  "time": "(一)5-6",
+  "classroom": "MB425A",
+  "instructors": [
+    {
+      "name": "王聖文"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

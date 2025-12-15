@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1344",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "創意思解",
+  "selectCode": "1344",
+  "courseCode": "205F00055",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "進四技工管系一甲",
+  "combinedClassName": "",
+  "time": "(六)4,5-6",
+  "classroom": "育202",
+  "instructors": [
+    {
+      "name": "黃筱鈞"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "新聘黃筱鈞兼任教師。",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0805",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "有限元素法",
+  "selectCode": "0805",
+  "courseCode": "202A10016",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "機械系博士班二甲",
+  "combinedClassName": "",
+  "time": "(三)5-7",
+  "classroom": "機307",
+  "instructors": [
+    {
+      "name": "黃世疇"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

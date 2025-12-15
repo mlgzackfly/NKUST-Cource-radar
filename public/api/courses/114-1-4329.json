@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4329",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(科技)漫談人工智慧",
+  "selectCode": "4329",
+  "courseCode": "042C00845",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(三)3-4",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "李俊宏"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 15,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0686",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "交通安全",
+  "selectCode": "0686",
+  "courseCode": "201C10467",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "選修",
+  "className": "四土三乙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "育206",
+  "instructors": [
+    {
+      "name": "蘇育民"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0961",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電力系統保護協調",
+  "selectCode": "0961",
+  "courseCode": "227F10305",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技電機系四甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "電603",
+  "instructors": [
+    {
+      "name": "黃鐘慶"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

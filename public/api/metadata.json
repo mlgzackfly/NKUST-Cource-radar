@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-15T15:17:07.885Z",
+  "totalCourses": 1916,
+  "totalSemesters": 1,
+  "semesters": [
+    "114-1"
+  ],
+  "apiUrl": "https://your-username.github.io/nkust/api"
+}

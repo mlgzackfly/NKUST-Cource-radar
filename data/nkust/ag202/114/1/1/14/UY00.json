@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-15T15:08:35.821Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "114#1",
+    "cmp_area_id": "1",
+    "dgr_id": "14",
+    "unt_id": "UY00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UY00",
+    "label": "(智慧機電學院)智慧機電學院"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "5328",
+      "campus": "建工校區",
+      "division": "日間部四技",
+      "department": "智慧機電學院",
+      "className": "智慧機電院課程三",
+      "combinedClassName": "四土三乙,四土三甲,四子三乙,四子三甲,四工三甲,四化材",
+      "courseCode": "223C10001",
+      "courseName": "綠色工程導論",
+      "credits": 3,
+      "lectureHours": 3,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "余志成,鄭力誠",
+      "classroom": "育404",
+      "enrolled": 37,
+      "capacity": 41,
+      "time": "(五)2-4",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

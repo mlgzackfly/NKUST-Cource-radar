@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0328",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "證券投資與資產配置",
+  "selectCode": "0328",
+  "courseCode": "236H10076",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "碩專金融資訊一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "行402",
+  "instructors": [
+    {
+      "name": "程言信"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

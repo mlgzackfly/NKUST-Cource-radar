@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3837",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智慧金融應用",
+  "selectCode": "3837",
+  "courseCode": "231H10062",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "碩專智慧商務二甲",
+  "combinedClassName": "碩專智慧商務一甲",
+  "time": "(一)10-12",
+  "classroom": "模103",
+  "instructors": [
+    {
+      "name": "徐淑芳"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

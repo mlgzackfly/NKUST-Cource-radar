@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3906",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "統計學(一)",
+  "selectCode": "3906",
+  "courseCode": "237F00157",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "進四技財稅系二甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "資002",
+  "instructors": [
+    {
+      "name": "陳東俊"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 72,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

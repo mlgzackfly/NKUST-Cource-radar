@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1181",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "自動化工程概論",
+  "selectCode": "1181",
+  "courseCode": "209F00070",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技模具系三甲",
+  "combinedClassName": "",
+  "time": "(三)11-12",
+  "classroom": "模505",
+  "instructors": [
+    {
+      "name": "許文政"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1218",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "英語文(三)",
+  "selectCode": "1218",
+  "courseCode": "209E00222",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模二甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "模111",
+  "instructors": [
+    {
+      "name": "陳盈蓁"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 31,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "高階",
+  "lectureHours": 3,
+  "labHours": 0
+}

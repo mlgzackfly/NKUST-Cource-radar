@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4618",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(一)",
+  "selectCode": "4618",
+  "courseCode": "043C00006",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部二技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "外語二技三甲(建",
+  "combinedClassName": "技模三甲",
+  "time": "(三)3-4",
+  "classroom": "東105",
+  "instructors": [
+    {
+      "name": "陳正山"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,66 @@
+{
+  "id": "114-1-0219",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0219",
+  "courseCode": "234C00284",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企三甲",
+  "combinedClassName": "",
+  "time": "(一)8",
+  "classroom": "MB324",
+  "instructors": [
+    {
+      "name": "方沴淳"
+    },
+    {
+      "name": "王綺楓"
+    },
+    {
+      "name": "李仁耀"
+    },
+    {
+      "name": "李建慧"
+    },
+    {
+      "name": "李政勳"
+    },
+    {
+      "name": "李曉青"
+    },
+    {
+      "name": "林亮宏"
+    },
+    {
+      "name": "邱魏頌正"
+    },
+    {
+      "name": "留淑芳"
+    },
+    {
+      "name": "陳怡君"
+    },
+    {
+      "name": "陳昇鴻"
+    },
+    {
+      "name": "廖明瑜"
+    },
+    {
+      "name": "鄭兆宏"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0869",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電路學(一)",
+  "selectCode": "0869",
+  "courseCode": "227C00150",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電一丙",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "育503",
+  "instructors": [
+    {
+      "name": "陳文平"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

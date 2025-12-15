@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1067",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子學(二)",
+  "selectCode": "1067",
+  "courseCode": "222F00096",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系二乙",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "育503",
+  "instructors": [
+    {
+      "name": "沈茂田"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

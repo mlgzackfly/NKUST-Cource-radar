@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3786",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "會計學",
+  "selectCode": "3786",
+  "courseCode": "231C00080",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系一甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "MA212",
+  "instructors": [
+    {
+      "name": "林欣瑾"
+    }
+  ],
+  "enrolled": 47,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

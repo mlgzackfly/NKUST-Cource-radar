@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0305",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經濟學(一)",
+  "selectCode": "0305",
+  "courseCode": "236F00015",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "進四技金資系一甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "高秋芬"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

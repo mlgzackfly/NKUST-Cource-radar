@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1090",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物理(一)",
+  "selectCode": "1090",
+  "courseCode": "209C00230",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模一甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "育304",
+  "instructors": [
+    {
+      "name": "李榮銓"
+    }
+  ],
+  "enrolled": 52,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

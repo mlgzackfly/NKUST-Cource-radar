@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2752",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "行銷管理",
+  "selectCode": "2752",
+  "courseCode": "157F10123",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "進二技會資系三甲",
+  "combinedClassName": "",
+  "time": "(六)12(日)10",
+  "classroom": "育101",
+  "instructors": [
+    {
+      "name": "吳芬蘭"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

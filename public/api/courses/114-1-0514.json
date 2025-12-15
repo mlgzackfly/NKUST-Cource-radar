@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0514",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "0514",
+  "courseCode": "208C00115",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材一乙",
+  "combinedClassName": "",
+  "time": "(二)6-8",
+  "classroom": "化材B1-07(化001)",
+  "instructors": [
+    {
+      "name": "陳弘穎"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

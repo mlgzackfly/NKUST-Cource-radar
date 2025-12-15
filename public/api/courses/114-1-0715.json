@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0715",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "建築資訊模型技術與應用",
+  "selectCode": "0715",
+  "courseCode": "201E00233",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土三甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "活動中心G302",
+  "instructors": [
+    {
+      "name": "張昇"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

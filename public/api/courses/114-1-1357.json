@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1357",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "全面品質管理",
+  "selectCode": "1357",
+  "courseCode": "205F10149",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "進四技工管系四甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "土509",
+  "instructors": [
+    {
+      "name": "邱伯智"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 75,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

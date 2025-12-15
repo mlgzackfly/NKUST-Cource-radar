@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0517",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "化學工程概論",
+  "selectCode": "0517",
+  "courseCode": "208C00101",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材一乙",
+  "combinedClassName": "",
+  "time": "(三)7-8",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "溫新宜"
+    }
+  ],
+  "enrolled": 65,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

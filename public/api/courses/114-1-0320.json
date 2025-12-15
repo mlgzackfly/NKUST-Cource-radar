@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0320",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "行銷管理",
+  "selectCode": "0320",
+  "courseCode": "236F10073",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技金資系四甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "行510",
+  "instructors": [
+    {
+      "name": "曹耀鈞"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 46,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

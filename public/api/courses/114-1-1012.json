@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1012",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "半導體製程",
+  "selectCode": "1012",
+  "courseCode": "222C10411",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "資701",
+  "instructors": [
+    {
+      "name": "劉志益"
+    }
+  ],
+  "enrolled": 103,
+  "capacity": 105,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

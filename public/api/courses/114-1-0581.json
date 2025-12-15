@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0581",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "複合材料",
+  "selectCode": "0581",
+  "courseCode": "208F10114",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技化材系二甲",
+  "combinedClassName": "",
+  "time": "(六)2-4",
+  "classroom": "育301",
+  "instructors": [
+    {
+      "name": "呂居樺"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 88,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

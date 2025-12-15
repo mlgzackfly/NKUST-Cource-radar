@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0867",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機概論",
+  "selectCode": "0867",
+  "courseCode": "227C00128",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電一丙",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "電506",
+  "instructors": [
+    {
+      "name": "賴俊如"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

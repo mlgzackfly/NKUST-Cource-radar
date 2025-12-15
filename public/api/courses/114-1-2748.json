@@ -1,0 +1,45 @@
+{
+  "id": "114-1-2748",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "2748",
+  "courseCode": "157C00432",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "會資系四乙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "呂瑞芳"
+    },
+    {
+      "name": "李合龍"
+    },
+    {
+      "name": "沈文華"
+    },
+    {
+      "name": "林宗輝"
+    },
+    {
+      "name": "曾玉琦"
+    },
+    {
+      "name": "謝宛庭"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,69 @@
+{
+  "id": "114-1-0897",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0897",
+  "courseCode": "227C00061",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "李孝貽"
+    },
+    {
+      "name": "李明展"
+    },
+    {
+      "name": "李俊宏"
+    },
+    {
+      "name": "卓明遠"
+    },
+    {
+      "name": "周阜毅"
+    },
+    {
+      "name": "孫崇訓"
+    },
+    {
+      "name": "梁廷宇"
+    },
+    {
+      "name": "莊錦俊"
+    },
+    {
+      "name": "陳文平"
+    },
+    {
+      "name": "陳附仁"
+    },
+    {
+      "name": "陳建璋"
+    },
+    {
+      "name": "辜德典"
+    },
+    {
+      "name": "黃科瑋"
+    },
+    {
+      "name": "蘇俊連"
+    }
+  ],
+  "enrolled": 57,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

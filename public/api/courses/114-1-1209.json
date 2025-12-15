@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1209",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程材料",
+  "selectCode": "1209",
+  "courseCode": "209E00230",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模二甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "育201",
+  "instructors": [
+    {
+      "name": "歐士輔"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

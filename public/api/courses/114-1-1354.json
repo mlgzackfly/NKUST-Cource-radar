@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1354",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人因工程生理基礎",
+  "selectCode": "1354",
+  "courseCode": "205F10129",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "進四技工管系三甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "土508",
+  "instructors": [
+    {
+      "name": "李堃源"
+    }
+  ],
+  "enrolled": 19,
+  "capacity": 75,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

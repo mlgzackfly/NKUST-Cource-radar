@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1140",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "塑膠模設計",
+  "selectCode": "1140",
+  "courseCode": "209C00236",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模三乙",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "模603",
+  "instructors": [
+    {
+      "name": "胡逸群"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

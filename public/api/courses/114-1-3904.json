@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3904",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "民法(一)",
+  "selectCode": "3904",
+  "courseCode": "237F10221",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "進四技財稅系一甲",
+  "combinedClassName": "",
+  "time": "(四)10-11",
+  "classroom": "育204",
+  "instructors": [
+    {
+      "name": "徐平一"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

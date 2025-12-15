@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0567",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "環境檢測",
+  "selectCode": "0567",
+  "courseCode": "208A10014",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "化材系博士班一甲",
+  "combinedClassName": "碩化材一甲",
+  "time": "(三)6-8",
+  "classroom": "司208",
+  "instructors": [
+    {
+      "name": "張健桂"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

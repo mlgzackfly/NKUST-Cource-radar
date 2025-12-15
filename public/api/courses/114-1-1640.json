@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1640",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "熱力學",
+  "selectCode": "1640",
+  "courseCode": "204C00014",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系二甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "HS303",
+  "instructors": [
+    {
+      "name": "林克衛"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

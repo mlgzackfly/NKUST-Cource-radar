@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0710",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "非破壞檢測",
+  "selectCode": "0710",
+  "courseCode": "201E10235",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "選修",
+  "className": "五土三甲",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "土509",
+  "instructors": [
+    {
+      "name": "陳松靖"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

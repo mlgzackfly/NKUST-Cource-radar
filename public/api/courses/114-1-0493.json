@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0493",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "強化學習",
+  "selectCode": "0493",
+  "courseCode": "221B10072",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "碩資工二甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "謝哲光"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

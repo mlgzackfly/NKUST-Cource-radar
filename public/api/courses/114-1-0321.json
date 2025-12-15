@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0321",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際金融",
+  "selectCode": "0321",
+  "courseCode": "236F10053",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技金資系四甲",
+  "combinedClassName": "",
+  "time": "(一)12-13",
+  "classroom": "育206",
+  "instructors": [
+    {
+      "name": "曾貝莉"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

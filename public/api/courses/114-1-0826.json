@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0826",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微積分(一)",
+  "selectCode": "0826",
+  "courseCode": "202F00056",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技機械系一甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "機409",
+  "instructors": [
+    {
+      "name": "陳建羽"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

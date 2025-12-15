@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0689",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "基礎工程",
+  "selectCode": "0689",
+  "courseCode": "201C00156",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土三乙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "土608",
+  "instructors": [
+    {
+      "name": "黃亦敏"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

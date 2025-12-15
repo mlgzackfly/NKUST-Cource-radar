@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1210",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工廠實習(三)",
+  "selectCode": "1210",
+  "courseCode": "209E00229",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模二甲",
+  "combinedClassName": "",
+  "time": "(二)5-8",
+  "classroom": "多201",
+  "instructors": [
+    {
+      "name": "余征諴"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 4
+}

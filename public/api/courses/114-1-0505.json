@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0505",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料科學導論",
+  "selectCode": "0505",
+  "courseCode": "208C00139",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材一甲",
+  "combinedClassName": "",
+  "time": "(四)1-3",
+  "classroom": "化材B1-07(化001)",
+  "instructors": [
+    {
+      "name": "陳弘穎"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 71,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

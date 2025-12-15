@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1132",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料試驗實習",
+  "selectCode": "1132",
+  "courseCode": "209C00567",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "四模二丙",
+  "combinedClassName": "",
+  "time": "(一)5-8",
+  "classroom": "模308",
+  "instructors": [
+    {
+      "name": "葉松瑋"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 4
+}

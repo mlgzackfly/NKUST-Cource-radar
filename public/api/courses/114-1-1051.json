@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1051",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數位邏輯",
+  "selectCode": "1051",
+  "courseCode": "222F00111",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "資809",
+  "instructors": [
+    {
+      "name": "連志原"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 49,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

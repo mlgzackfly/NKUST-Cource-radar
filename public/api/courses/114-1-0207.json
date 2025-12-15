@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0207",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "會計學(一)",
+  "selectCode": "0207",
+  "courseCode": "234C00109",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企一甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "MB323",
+  "instructors": [
+    {
+      "name": "陳昇鴻"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

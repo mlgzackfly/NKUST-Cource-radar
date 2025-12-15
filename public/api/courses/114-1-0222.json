@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0222",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業經營策略",
+  "selectCode": "0222",
+  "courseCode": "234C00120",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企三甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "MB324",
+  "instructors": [
+    {
+      "name": "王綺楓"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

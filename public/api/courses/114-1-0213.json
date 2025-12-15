@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0213",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "貨幣銀行",
+  "selectCode": "0213",
+  "courseCode": "234C00118",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企二甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MB322",
+  "instructors": [
+    {
+      "name": "李建慧"
+    },
+    {
+      "name": "楊世瑞"
+    }
+  ],
+  "enrolled": 67,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

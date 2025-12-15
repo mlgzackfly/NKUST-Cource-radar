@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4326",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(人文)文學與電影",
+  "selectCode": "4326",
+  "courseCode": "042C01549",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技二甲(建",
+  "combinedClassName": "",
+  "time": "(三)3-4",
+  "classroom": "育403",
+  "instructors": [
+    {
+      "name": "黃潔莉"
+    }
+  ],
+  "enrolled": 39,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "請留意本課程授課方式為全英授課。",
+  "lectureHours": 2,
+  "labHours": 0
+}

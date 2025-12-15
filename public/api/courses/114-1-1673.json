@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1673",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "適應心理學",
+  "selectCode": "1673",
+  "courseCode": "251C10236",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "選修",
+  "className": "四人四甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "HS516",
+  "instructors": [
+    {
+      "name": "鄭昱宏"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 65,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "【經113-2校課程會議通過補助之英語授課課程】",
+  "lectureHours": 3,
+  "labHours": 0
+}

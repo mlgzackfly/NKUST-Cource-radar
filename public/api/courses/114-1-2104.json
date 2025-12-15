@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2104",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "學期實習-海外實習(一)",
+  "selectCode": "2104",
+  "courseCode": "235C10552",
+  "credits": 10,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "四觀四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "李力昌"
+    },
+    {
+      "name": "林玠恒"
+    }
+  ],
+  "enrolled": 7,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 10
+}

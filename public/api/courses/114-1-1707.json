@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1707",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "小說創作",
+  "selectCode": "1707",
+  "courseCode": "252C10224",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "HS416",
+  "instructors": [
+    {
+      "name": "徐錦成"
+    }
+  ],
+  "enrolled": 19,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

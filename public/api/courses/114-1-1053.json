@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1053",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物理(一)",
+  "selectCode": "1053",
+  "courseCode": "222F00114",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "必修",
+  "className": "進四技電子系一乙",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育503",
+  "instructors": [
+    {
+      "name": "鄭乃仁"
+    }
+  ],
+  "enrolled": 45,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

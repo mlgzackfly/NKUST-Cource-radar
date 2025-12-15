@@ -1,0 +1,45 @@
+{
+  "id": "114-1-0541",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "0541",
+  "courseCode": "208C10271",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "選修",
+  "className": "四化材三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "吳瑞泰"
+    },
+    {
+      "name": "倪偵翔"
+    },
+    {
+      "name": "高立衡"
+    },
+    {
+      "name": "郭仲文"
+    },
+    {
+      "name": "鄭力誠"
+    },
+    {
+      "name": "簡秀紋"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "研討室",
+  "lectureHours": 1,
+  "labHours": 0
+}

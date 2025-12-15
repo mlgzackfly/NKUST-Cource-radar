@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1721",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "研究方法",
+  "selectCode": "1721",
+  "courseCode": "252H00001",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "文化創意產業系",
+  "requiredOrElective": "必修",
+  "className": "碩專文化創意一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育400電腦教室",
+  "instructors": [
+    {
+      "name": "李穎杰"
+    }
+  ],
+  "enrolled": 9,
+  "capacity": 21,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

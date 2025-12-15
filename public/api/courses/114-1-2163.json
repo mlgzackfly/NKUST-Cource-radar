@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2163",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "策略管理專題研討",
+  "selectCode": "2163",
+  "courseCode": "232H00066",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "企業管理系高階經營管理碩士在職",
+  "requiredOrElective": "必修",
+  "className": "企管系高階碩專二",
+  "combinedClassName": "",
+  "time": "(六)7-8",
+  "classroom": "西103",
+  "instructors": [
+    {
+      "name": "楊敏里"
+    },
+    {
+      "name": "溫丹瑋"
+    }
+  ],
+  "enrolled": 19,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2778",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際會計準則公報詮釋",
+  "selectCode": "2778",
+  "courseCode": "157F10210",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "會計資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技會資系三甲",
+  "combinedClassName": "",
+  "time": "(六)5-7",
+  "classroom": "育201",
+  "instructors": [
+    {
+      "name": "李合龍"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

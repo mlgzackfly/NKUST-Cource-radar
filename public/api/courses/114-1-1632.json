@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1632",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電腦輔助製圖",
+  "selectCode": "1632",
+  "courseCode": "204C10035",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "選修",
+  "className": "日四技車輛系一甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "HS319",
+  "instructors": [
+    {
+      "name": "王文彬"
+    }
+  ],
+  "enrolled": 42,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

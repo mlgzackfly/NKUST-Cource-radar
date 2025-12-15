@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2094",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "觀光行銷",
+  "selectCode": "2094",
+  "courseCode": "235C00155",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "四觀三甲",
+  "combinedClassName": "",
+  "time": "(二)3-4",
+  "classroom": "MB201",
+  "instructors": [
+    {
+      "name": "黃永全"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

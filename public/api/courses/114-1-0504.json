@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0504",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "0504",
+  "courseCode": "221H00002",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "碩專資訊工程二甲",
+  "combinedClassName": "",
+  "time": "(五)12-13",
+  "classroom": "育405",
+  "instructors": [
+    {
+      "name": "張雲龍"
+    },
+    {
+      "name": "張道行"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

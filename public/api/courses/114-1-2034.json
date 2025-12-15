@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2034",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "學期實習(一)",
+  "selectCode": "2034",
+  "courseCode": "232C10236",
+  "credits": 9,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "四企四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "林思吟"
+    },
+    {
+      "name": "楊敏里"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 9
+}

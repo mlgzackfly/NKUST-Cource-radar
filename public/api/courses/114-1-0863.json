@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0863",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電路學(一)",
+  "selectCode": "0863",
+  "courseCode": "227C00150",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "四電一乙",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "電603",
+  "instructors": [
+    {
+      "name": "詹東昇"
+    }
+  ],
+  "enrolled": 63,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

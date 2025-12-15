@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4958",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(一)",
+  "selectCode": "4958",
+  "courseCode": "043F00009",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "進外語四技一甲",
+  "combinedClassName": "進四技工管系一甲,進四技會資系一甲",
+  "time": "(六)12-13",
+  "classroom": "育206",
+  "instructors": [
+    {
+      "name": "鄭文文"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4554",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "博雅(全球)全球議題與趨勢",
+  "selectCode": "4554",
+  "courseCode": "042F00451",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "進博雅二技三甲",
+  "combinedClassName": "",
+  "time": "(日)7-8",
+  "classroom": "育401",
+  "instructors": [
+    {
+      "name": "許育瑞"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

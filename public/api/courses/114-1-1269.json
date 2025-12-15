@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1269",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(三)",
+  "selectCode": "1269",
+  "courseCode": "201A00103",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "土木工程系土木工程科技博士班",
+  "requiredOrElective": "必修",
+  "className": "土木系博士班二甲",
+  "combinedClassName": "",
+  "time": "(三)5-6",
+  "classroom": "土503",
+  "instructors": [
+    {
+      "name": "黃忠發"
+    }
+  ],
+  "enrolled": 3,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0497",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "巨量資料分析",
+  "selectCode": "0497",
+  "courseCode": "221A10020",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "資工系博士班一甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "育400電腦教室",
+  "instructors": [
+    {
+      "name": "林威成"
+    }
+  ],
+  "enrolled": 5,
+  "capacity": 22,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

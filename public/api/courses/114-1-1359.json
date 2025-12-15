@@ -1,0 +1,42 @@
+{
+  "id": "114-1-1359",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(二)",
+  "selectCode": "1359",
+  "courseCode": "205F00008",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "進四技工管系四甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "邱伯智"
+    },
+    {
+      "name": "張正文"
+    },
+    {
+      "name": "黃瑞展"
+    },
+    {
+      "name": "薛明憲"
+    },
+    {
+      "name": "蘇明鴻"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點:各研討室",
+  "lectureHours": 2,
+  "labHours": 0
+}

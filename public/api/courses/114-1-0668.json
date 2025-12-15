@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0668",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "水文學",
+  "selectCode": "0668",
+  "courseCode": "201C10315",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "選修",
+  "className": "四土二乙",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "土302A",
+  "instructors": [
+    {
+      "name": "許博淵"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 72,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

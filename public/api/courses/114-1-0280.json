@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0280",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "投資學",
+  "selectCode": "0280",
+  "courseCode": "236C00021",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "四金資二甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "MB423",
+  "instructors": [
+    {
+      "name": "程言信"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

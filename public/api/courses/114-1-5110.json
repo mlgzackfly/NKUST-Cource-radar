@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5110",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)-桌球",
+  "selectCode": "5110",
+  "courseCode": "050C00054",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體二甲(建工)",
+  "combinedClassName": "",
+  "time": "(二)3-4",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "宋靜宜"
+    }
+  ],
+  "enrolled": 37,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：活動中心地下一樓桌球教室。",
+  "lectureHours": 2,
+  "labHours": 0
+}

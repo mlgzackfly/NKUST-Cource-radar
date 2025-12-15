@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2009",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "研究方法",
+  "selectCode": "2009",
+  "courseCode": "235H00003",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "觀光管理系觀光與餐旅管理碩士班",
+  "requiredOrElective": "必修",
+  "className": "碩專觀光餐旅一甲",
+  "combinedClassName": "",
+  "time": "(三)10-12",
+  "classroom": "行507",
+  "instructors": [
+    {
+      "name": "陳光華"
+    }
+  ],
+  "enrolled": 11,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

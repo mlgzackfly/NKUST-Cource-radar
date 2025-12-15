@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2854",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "研究方法",
+  "selectCode": "2854",
+  "courseCode": "154H10076",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "風險管理與保險系碩士專班",
+  "requiredOrElective": "選修",
+  "className": "風管碩專班一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "東105",
+  "instructors": [
+    {
+      "name": "郭訓志"
+    }
+  ],
+  "enrolled": 7,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

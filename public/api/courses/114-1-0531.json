@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0531",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "有機化學實驗",
+  "selectCode": "0531",
+  "courseCode": "208C00048",
+  "credits": 1,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材二乙",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "多501",
+  "instructors": [
+    {
+      "name": "郭仲文"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

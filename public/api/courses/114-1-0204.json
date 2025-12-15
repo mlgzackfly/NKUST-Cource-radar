@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0204",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際貿易實務",
+  "selectCode": "0204",
+  "courseCode": "234C00097",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企一甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MB323",
+  "instructors": [
+    {
+      "name": "陳怡君"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 55,
+  "englishTaught": "是",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

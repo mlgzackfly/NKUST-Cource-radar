@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4192",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "校訂(五)海洋科技與永續",
+  "selectCode": "4192",
+  "courseCode": "042C01627",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "博雅教育中心",
+  "requiredOrElective": "必修",
+  "className": "博雅四技一甲(建",
+  "combinedClassName": "",
+  "time": "(五)7-8",
+  "classroom": "育304",
+  "instructors": [
+    {
+      "name": "許介瑋"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "107-111學年入學生修讀通過者，認列為「核心(一)海洋科技探索」",
+  "lectureHours": 2,
+  "labHours": 0
+}

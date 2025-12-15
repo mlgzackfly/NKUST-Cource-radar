@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1167",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "準分子雷射與微細加工",
+  "selectCode": "1167",
+  "courseCode": "209A10106",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "博模一甲",
+  "combinedClassName": "碩模一甲",
+  "time": "(一)5-7",
+  "classroom": "模601",
+  "instructors": [
+    {
+      "name": "洪宗彬"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

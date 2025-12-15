@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0633",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "微機電概論",
+  "selectCode": "0633",
+  "courseCode": "222B10068",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "電子工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩子一甲",
+  "combinedClassName": "",
+  "time": "(三)5-7",
+  "classroom": "資704",
+  "instructors": [
+    {
+      "name": "謝東利"
+    }
+  ],
+  "enrolled": 13,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

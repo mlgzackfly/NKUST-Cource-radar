@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1177",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "模具製圖實習(一)",
+  "selectCode": "1177",
+  "courseCode": "209F00261",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技模具系二甲",
+  "combinedClassName": "",
+  "time": "(六)10-12",
+  "classroom": "模501",
+  "instructors": [
+    {
+      "name": "陳明源"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 0,
+  "labHours": 3
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1068",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "半導體物理",
+  "selectCode": "1068",
+  "courseCode": "222F10136",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "進四技電子系三乙",
+  "combinedClassName": "",
+  "time": "(六)8-10",
+  "classroom": "育502",
+  "instructors": [
+    {
+      "name": "蔡明峯"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

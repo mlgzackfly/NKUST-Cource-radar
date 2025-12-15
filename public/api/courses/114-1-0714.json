@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0714",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(五)",
+  "selectCode": "0714",
+  "courseCode": "201E00005",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "土木工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五土三甲",
+  "combinedClassName": "",
+  "time": "(一)1-2",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "魏春娥"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：第1-8周籃、排球場，第10-18周羽球館",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1173",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程製圖",
+  "selectCode": "1173",
+  "courseCode": "209F10244",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技模具系一甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "模501",
+  "instructors": [
+    {
+      "name": "蕭國鴻"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

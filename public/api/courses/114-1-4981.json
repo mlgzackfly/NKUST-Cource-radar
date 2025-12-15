@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4981",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實用英文(三)",
+  "selectCode": "4981",
+  "courseCode": "043F00010",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "外語教育中心",
+  "requiredOrElective": "必修",
+  "className": "進外語四技二甲",
+  "combinedClassName": "進四技機械系二甲",
+  "time": "(六)10-11",
+  "classroom": "育205",
+  "instructors": [
+    {
+      "name": "黃冠偉"
+    }
+  ],
+  "enrolled": 38,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

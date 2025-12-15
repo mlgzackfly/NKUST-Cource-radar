@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1279",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "書報討論(一)",
+  "selectCode": "1279",
+  "courseCode": "205B00170",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "工業工程與管理系碩士班",
+  "requiredOrElective": "必修",
+  "className": "碩工二甲",
+  "combinedClassName": "",
+  "time": "(三)7-8",
+  "classroom": "育402",
+  "instructors": [
+    {
+      "name": "黃瑞展"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

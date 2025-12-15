@@ -1,0 +1,36 @@
+{
+  "id": "114-1-1020",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "學期實習(一)",
+  "selectCode": "1020",
+  "courseCode": "222C10563",
+  "credits": 10,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四丙",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "丁信文"
+    },
+    {
+      "name": "王鴻猷"
+    },
+    {
+      "name": "張萬榮"
+    }
+  ],
+  "enrolled": 8,
+  "capacity": 0,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "不開放選課，由系辦掛課。",
+  "lectureHours": 0,
+  "labHours": 10
+}

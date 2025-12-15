@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0909",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "積體電路應用",
+  "selectCode": "0909",
+  "courseCode": "227C10296",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三乙",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "育101",
+  "instructors": [
+    {
+      "name": "張健軒"
+    }
+  ],
+  "enrolled": 28,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

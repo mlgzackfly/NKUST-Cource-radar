@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4039",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中文閱讀與表達(一)",
+  "selectCode": "4039",
+  "courseCode": "041C00176",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "基礎四技一甲(建",
+  "combinedClassName": "四機一乙",
+  "time": "(一)1-2",
+  "classroom": "育404",
+  "instructors": [
+    {
+      "name": "莊燕玉"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 四機一乙(02)，本課程不可抵充實務應用文。",
+  "lectureHours": 2,
+  "labHours": 0
+}

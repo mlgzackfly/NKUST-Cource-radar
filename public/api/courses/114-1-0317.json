@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0317",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "財富管理專題",
+  "selectCode": "0317",
+  "courseCode": "236F10022",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "選修",
+  "className": "進四技金資系三甲",
+  "combinedClassName": "",
+  "time": "(一)12-13",
+  "classroom": "育303",
+  "instructors": [
+    {
+      "name": "張榮泰"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 56,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

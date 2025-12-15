@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0248",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "經貿時勢分析",
+  "selectCode": "0248",
+  "courseCode": "234F10164",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "進二技國企系四甲",
+  "combinedClassName": "",
+  "time": "(六)3-4",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "吳孟珍"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0251",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業經營策略",
+  "selectCode": "0251",
+  "courseCode": "234F10258",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "進二技國企系四甲",
+  "combinedClassName": "",
+  "time": "(六)1-2",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "鄭文銘"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

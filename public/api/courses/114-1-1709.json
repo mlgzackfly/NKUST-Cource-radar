@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1709",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "影音媒體寫作",
+  "selectCode": "1709",
+  "courseCode": "252C10286",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "文化創意產業系",
+  "requiredOrElective": "選修",
+  "className": "四文創三甲",
+  "combinedClassName": "",
+  "time": "(一)2-4",
+  "classroom": "HS609",
+  "instructors": [
+    {
+      "name": "楊雅玲"
+    }
+  ],
+  "enrolled": 24,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

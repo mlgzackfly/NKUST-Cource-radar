@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1332",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "作業研究",
+  "selectCode": "1332",
+  "courseCode": "205F00047",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "進二技工管系四甲",
+  "combinedClassName": "",
+  "time": "(六)4,5-6",
+  "classroom": "土508",
+  "instructors": [
+    {
+      "name": "王釗鴻"
+    }
+  ],
+  "enrolled": 17,
+  "capacity": 75,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

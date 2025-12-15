@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1323",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "數據科學",
+  "selectCode": "1323",
+  "courseCode": "205A10050",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "選修",
+  "className": "工管系博班一甲",
+  "combinedClassName": "碩工一甲",
+  "time": "(一)5-7",
+  "classroom": "土703",
+  "instructors": [
+    {
+      "name": "林谷鴻"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0682",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "基礎工程",
+  "selectCode": "0682",
+  "courseCode": "201C00156",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "土木工程系",
+  "requiredOrElective": "必修",
+  "className": "四土三甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "土609",
+  "instructors": [
+    {
+      "name": "蕭達鴻"
+    }
+  ],
+  "enrolled": 73,
+  "capacity": 78,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2092",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "海洋觀光",
+  "selectCode": "2092",
+  "courseCode": "235C10389",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "四觀三甲",
+  "combinedClassName": "",
+  "time": "(二)7-8",
+  "classroom": "MB201",
+  "instructors": [
+    {
+      "name": "陳美存"
+    }
+  ],
+  "enrolled": 15,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0818",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "精密製造",
+  "selectCode": "0818",
+  "courseCode": "202F00067",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技機械系三甲",
+  "combinedClassName": "",
+  "time": "(日)4,5-6",
+  "classroom": "機408",
+  "instructors": [
+    {
+      "name": "江慶銘"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

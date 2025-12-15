@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0831",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "精密製造",
+  "selectCode": "0831",
+  "courseCode": "202F00067",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技機械系二甲",
+  "combinedClassName": "",
+  "time": "(三)11-13",
+  "classroom": "機403",
+  "instructors": [
+    {
+      "name": "黃俊維"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

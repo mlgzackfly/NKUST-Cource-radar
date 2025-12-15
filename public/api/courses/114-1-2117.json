@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2117",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "遊程規劃設計",
+  "selectCode": "2117",
+  "courseCode": "235F10169",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進二技觀光系四甲",
+  "combinedClassName": "",
+  "time": "(六)3-4",
+  "classroom": "育305",
+  "instructors": [
+    {
+      "name": "張淑娟"
+    }
+  ],
+  "enrolled": 14,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

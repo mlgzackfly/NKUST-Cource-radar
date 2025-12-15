@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0279",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人身保險",
+  "selectCode": "0279",
+  "courseCode": "236C00011",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "金融資訊系",
+  "requiredOrElective": "必修",
+  "className": "四金資二甲",
+  "combinedClassName": "",
+  "time": "(二)3-4",
+  "classroom": "MB423",
+  "instructors": [
+    {
+      "name": "謝坤民"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

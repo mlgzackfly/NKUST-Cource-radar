@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0748",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料力學",
+  "selectCode": "0748",
+  "courseCode": "202C00187",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機二甲",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "機407",
+  "instructors": [
+    {
+      "name": "許中豪"
+    }
+  ],
+  "enrolled": 68,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

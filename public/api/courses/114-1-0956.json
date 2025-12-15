@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0956",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "Python程式設計",
+  "selectCode": "0956",
+  "courseCode": "227F10335",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技電機系三甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "電B05B",
+  "instructors": [
+    {
+      "name": "張維漢"
+    }
+  ],
+  "enrolled": 40,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

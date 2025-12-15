@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0951",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "邏輯設計暨實習",
+  "selectCode": "0951",
+  "courseCode": "227F00363",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技電機系二甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "電401",
+  "instructors": [
+    {
+      "name": "陳文平"
+    }
+  ],
+  "enrolled": 48,
+  "capacity": 63,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

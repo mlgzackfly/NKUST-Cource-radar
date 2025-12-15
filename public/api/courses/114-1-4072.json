@@ -1,0 +1,30 @@
+{
+  "id": "114-1-4072",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中文閱讀與表達(一)",
+  "selectCode": "4072",
+  "courseCode": "041C00176",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "基礎教育中心",
+  "requiredOrElective": "必修",
+  "className": "基礎四技一甲(燕",
+  "combinedClassName": "智慧商務系一甲",
+  "time": "(四)3-4",
+  "classroom": "MA212",
+  "instructors": [
+    {
+      "name": "楊惠娟"
+    }
+  ],
+  "enrolled": 44,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "班級: 智慧商務一甲，本課程不可抵充實務應用文。",
+  "lectureHours": 2,
+  "labHours": 0
+}

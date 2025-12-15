@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1365",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "電子電路與系統",
+  "selectCode": "1365",
+  "courseCode": "229B10018",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部碩士",
+  "department": "電資工程與科技管理外國學生碩士",
+  "requiredOrElective": "選修",
+  "className": "電資科技外碩一甲",
+  "combinedClassName": "",
+  "time": "(三)6-8",
+  "classroom": "資504",
+  "instructors": [
+    {
+      "name": "王鴻猷"
+    }
+  ],
+  "enrolled": 8,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

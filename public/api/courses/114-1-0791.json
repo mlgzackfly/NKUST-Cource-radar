@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0791",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "壓力容器製造與檢驗",
+  "selectCode": "0791",
+  "courseCode": "202C10416",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機四丙",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "機403",
+  "instructors": [
+    {
+      "name": "林銘哲"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

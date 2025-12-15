@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1671",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "人力資源資訊管理系統",
+  "selectCode": "1671",
+  "courseCode": "251C00110",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "人力資源發展系",
+  "requiredOrElective": "必修",
+  "className": "四人四甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "HS519",
+  "instructors": [
+    {
+      "name": "翁慈君"
+    }
+  ],
+  "enrolled": 61,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

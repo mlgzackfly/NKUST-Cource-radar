@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2124",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "觀光資源管理",
+  "selectCode": "2124",
+  "courseCode": "235F10115",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "進四觀光一甲",
+  "combinedClassName": "",
+  "time": "(二)10-11",
+  "classroom": "育304",
+  "instructors": [
+    {
+      "name": "林雅敏"
+    }
+  ],
+  "enrolled": 54,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1016",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高速數位系統設計與模擬驗證",
+  "selectCode": "1016",
+  "courseCode": "222C10328",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "資504",
+  "instructors": [
+    {
+      "name": "王陳肇"
+    }
+  ],
+  "enrolled": 12,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

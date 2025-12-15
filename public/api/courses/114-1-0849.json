@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0849",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討",
+  "selectCode": "0849",
+  "courseCode": "202H00001",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "碩專機械工程一甲",
+  "combinedClassName": "",
+  "time": "(三)10-11",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "陳道星"
+    },
+    {
+      "name": "鄭宗杰"
+    }
+  ],
+  "enrolled": 33,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

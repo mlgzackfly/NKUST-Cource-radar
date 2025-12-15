@@ -1,0 +1,36 @@
+{
+  "id": "114-1-5259",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "實務專題(一)",
+  "selectCode": "5259",
+  "courseCode": "235F00047",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "進四觀光三甲",
+  "combinedClassName": "",
+  "time": "",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "李力昌"
+    },
+    {
+      "name": "林玠恒"
+    },
+    {
+      "name": "陳美存"
+    }
+  ],
+  "enrolled": 29,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0499",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專題研討(一)",
+  "selectCode": "0499",
+  "courseCode": "221H00004",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "碩專資訊工程一甲",
+  "combinedClassName": "",
+  "time": "(五)10-11",
+  "classroom": "育405",
+  "instructors": [
+    {
+      "name": "林聯發"
+    },
+    {
+      "name": "黃淵科"
+    }
+  ],
+  "enrolled": 19,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

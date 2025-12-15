@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0734",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物理(一)",
+  "selectCode": "0734",
+  "courseCode": "202C00163",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機一乙",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "機403",
+  "instructors": [
+    {
+      "name": "鄭振宗"
+    }
+  ],
+  "enrolled": 51,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

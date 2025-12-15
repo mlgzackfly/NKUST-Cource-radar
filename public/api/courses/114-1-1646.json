@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1646",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "應用電子學",
+  "selectCode": "1646",
+  "courseCode": "204C00022",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系三甲",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "MA104",
+  "instructors": [
+    {
+      "name": "張宗偉"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

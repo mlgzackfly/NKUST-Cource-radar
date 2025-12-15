@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0939",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "特殊電機",
+  "selectCode": "0939",
+  "courseCode": "227F10315",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "進二技電機系四甲",
+  "combinedClassName": "",
+  "time": "(六)4,5-6",
+  "classroom": "慧芳講堂",
+  "instructors": [
+    {
+      "name": "卓胡誼"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

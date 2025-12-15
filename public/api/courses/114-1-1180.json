@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1180",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機構學",
+  "selectCode": "1180",
+  "courseCode": "209F00094",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技模具系三甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "模605",
+  "instructors": [
+    {
+      "name": "張致遠"
+    }
+  ],
+  "enrolled": 71,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0646",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "應用程式設計",
+  "selectCode": "0646",
+  "courseCode": "222H10129",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "電子工程系碩士班",
+  "requiredOrElective": "選修",
+  "className": "碩專電子工程一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "資501A",
+  "instructors": [
+    {
+      "name": "洪盟峯"
+    }
+  ],
+  "enrolled": 8,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

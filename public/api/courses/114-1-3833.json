@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3833",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "多變量分析",
+  "selectCode": "3833",
+  "courseCode": "231H10056",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "智慧商務系",
+  "requiredOrElective": "選修",
+  "className": "碩專智慧商務一甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "張添香"
+    }
+  ],
+  "enrolled": 21,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

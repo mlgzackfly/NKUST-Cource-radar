@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0819",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "自動控制",
+  "selectCode": "0819",
+  "courseCode": "202F00071",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "進二技機械系四甲",
+  "combinedClassName": "",
+  "time": "(五)10-12",
+  "classroom": "機409",
+  "instructors": [
+    {
+      "name": "龐大成"
+    }
+  ],
+  "enrolled": 27,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

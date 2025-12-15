@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2763",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高等會計學(一)",
+  "selectCode": "2763",
+  "courseCode": "157F00268",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "會計資訊系",
+  "requiredOrElective": "必修",
+  "className": "進二技會資系四甲",
+  "combinedClassName": "",
+  "time": "(日)7-8",
+  "classroom": "育102",
+  "instructors": [
+    {
+      "name": "李合龍"
+    }
+  ],
+  "enrolled": 18,
+  "capacity": 45,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

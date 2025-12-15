@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1025",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "軟體工程",
+  "selectCode": "1025",
+  "courseCode": "222C10343",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四丙",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "資405",
+  "instructors": [
+    {
+      "name": "陳聰毅"
+    }
+  ],
+  "enrolled": 34,
+  "capacity": 50,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

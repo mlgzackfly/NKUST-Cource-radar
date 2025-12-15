@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0268",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際行銷管理",
+  "selectCode": "0268",
+  "courseCode": "234F00091",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "進四技國企系四甲",
+  "combinedClassName": "",
+  "time": "(一)11-13",
+  "classroom": "育205",
+  "instructors": [
+    {
+      "name": "鄭文銘"
+    }
+  ],
+  "enrolled": 42,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

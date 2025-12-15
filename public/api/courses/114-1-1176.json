@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1176",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "材料科學與工程",
+  "selectCode": "1176",
+  "courseCode": "209F10265",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "選修",
+  "className": "進四技模具系二甲",
+  "combinedClassName": "進四技模具系一甲",
+  "time": "(六)7-9",
+  "classroom": "模603",
+  "instructors": [
+    {
+      "name": "龔啟良"
+    }
+  ],
+  "enrolled": 42,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

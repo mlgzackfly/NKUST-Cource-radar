@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3795",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料庫管理",
+  "selectCode": "3795",
+  "courseCode": "231C00323",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系二甲",
+  "combinedClassName": "",
+  "time": "(三)2-4",
+  "classroom": "MA218",
+  "instructors": [
+    {
+      "name": "鄞俊波"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

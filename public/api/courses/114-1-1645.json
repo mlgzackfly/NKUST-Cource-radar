@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1645",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機構學",
+  "selectCode": "1645",
+  "courseCode": "204C10042",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "選修",
+  "className": "日四技車輛系三甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "MA104",
+  "instructors": [
+    {
+      "name": "龐大成"
+    }
+  ],
+  "enrolled": 6,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

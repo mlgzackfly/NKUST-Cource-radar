@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2096",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "餐旅創業管理",
+  "selectCode": "2096",
+  "courseCode": "235C10217",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "四觀三甲",
+  "combinedClassName": "",
+  "time": "(四)3-4",
+  "classroom": "MB208",
+  "instructors": [
+    {
+      "name": "余政隆"
+    }
+  ],
+  "enrolled": 31,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

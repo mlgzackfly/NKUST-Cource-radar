@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1013",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電元件",
+  "selectCode": "1013",
+  "courseCode": "222C10368",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電子工程系[建工|燕巢校區 ]",
+  "requiredOrElective": "選修",
+  "className": "四子四甲",
+  "combinedClassName": "",
+  "time": "(五)2-4",
+  "classroom": "育102",
+  "instructors": [
+    {
+      "name": "李俊哲"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 58,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

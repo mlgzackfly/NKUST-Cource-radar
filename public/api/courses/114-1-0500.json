@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0500",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "進階電子商務",
+  "selectCode": "0500",
+  "courseCode": "221H10028",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "碩專資訊工程二甲",
+  "combinedClassName": "",
+  "time": "(一)10-12",
+  "classroom": "東104",
+  "instructors": [
+    {
+      "name": "張雲龍"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

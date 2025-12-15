@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0247",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際金融",
+  "selectCode": "0247",
+  "courseCode": "234F10257",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部二技",
+  "department": "國際企業系",
+  "requiredOrElective": "選修",
+  "className": "進二技國企系四甲",
+  "combinedClassName": "",
+  "time": "(日)1-2",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "吳若瑋"
+    }
+  ],
+  "enrolled": 23,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

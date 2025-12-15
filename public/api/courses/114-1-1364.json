@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1364",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "專利工程實務",
+  "selectCode": "1364",
+  "courseCode": "215H10029",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "模具工程系應用工程科學[建工/燕",
+  "requiredOrElective": "選修",
+  "className": "碩專模具應科二甲",
+  "combinedClassName": "碩專模具工程一甲,碩專模具工程二甲,碩專模具應科一甲",
+  "time": "(五)10-12",
+  "classroom": "模208",
+  "instructors": [
+    {
+      "name": "姚創文"
+    }
+  ],
+  "enrolled": 20,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3876",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "信託稅務規劃",
+  "selectCode": "3876",
+  "courseCode": "237C10261",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "選修",
+  "className": "四財稅三甲",
+  "combinedClassName": "",
+  "time": "(二)7-8",
+  "classroom": "MA207",
+  "instructors": [
+    {
+      "name": "黃素芬"
+    }
+  ],
+  "enrolled": 52,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

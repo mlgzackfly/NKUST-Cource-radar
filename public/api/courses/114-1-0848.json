@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0848",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "高分子加工",
+  "selectCode": "0848",
+  "courseCode": "202H10017",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "碩專機械工程二甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "機204",
+  "instructors": [
+    {
+      "name": "王珉玟"
+    }
+  ],
+  "enrolled": 5,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

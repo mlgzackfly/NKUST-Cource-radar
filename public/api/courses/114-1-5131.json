@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5131",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(三)-羽球",
+  "selectCode": "5131",
+  "courseCode": "050C00055",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "四體二甲(建工)",
+  "combinedClassName": "",
+  "time": "(四)5-6",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "劉安球"
+    }
+  ],
+  "enrolled": 35,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課地點：活動中心三樓羽球館。首週集合地點羽球館。當前羽球館施工期程尚未確定，羽球課程將視實際情況，彈性調整為室外球類課程/室內課程，相關安排將依施工進度進行滾動修正。",
+  "lectureHours": 2,
+  "labHours": 0
+}

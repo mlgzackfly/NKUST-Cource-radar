@@ -1,0 +1,33 @@
+{
+  "id": "114-1-0210",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "行銷管理",
+  "selectCode": "0210",
+  "courseCode": "234C00101",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "國際企業系",
+  "requiredOrElective": "必修",
+  "className": "四國企二甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "MB322",
+  "instructors": [
+    {
+      "name": "李曉青"
+    },
+    {
+      "name": "蔡政宏"
+    }
+  ],
+  "enrolled": 56,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

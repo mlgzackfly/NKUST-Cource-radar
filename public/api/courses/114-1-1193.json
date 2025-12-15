@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1193",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工廠實習(一)",
+  "selectCode": "1193",
+  "courseCode": "209E00073",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模一甲",
+  "combinedClassName": "",
+  "time": "(二)5-8",
+  "classroom": "多101",
+  "instructors": [
+    {
+      "name": "常閎智"
+    }
+  ],
+  "enrolled": 26,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "待聘教師-常閎智",
+  "lectureHours": 4,
+  "labHours": 0
+}

@@ -1,0 +1,36 @@
+{
+  "id": "114-1-3788",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "智慧商務導論",
+  "selectCode": "3788",
+  "courseCode": "231C00350",
+  "credits": 1,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "智慧商務系",
+  "requiredOrElective": "必修",
+  "className": "智慧商務系一乙",
+  "combinedClassName": "",
+  "time": "(五)6",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "李仕雄"
+    },
+    {
+      "name": "許瓊文"
+    },
+    {
+      "name": "廖奕雯"
+    }
+  ],
+  "enrolled": 95,
+  "capacity": 100,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "上課教室:MA117",
+  "lectureHours": 1,
+  "labHours": 0
+}

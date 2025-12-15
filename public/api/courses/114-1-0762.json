@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0762",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "動力學",
+  "selectCode": "0762",
+  "courseCode": "202C00175",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "必修",
+  "className": "四機二丙",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "機409",
+  "instructors": [
+    {
+      "name": "許中豪"
+    }
+  ],
+  "enrolled": 58,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

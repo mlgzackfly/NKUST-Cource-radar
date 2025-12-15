@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1340",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "物理",
+  "selectCode": "1340",
+  "courseCode": "205F00065",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "工業工程與管理系",
+  "requiredOrElective": "必修",
+  "className": "進四技工管系一甲",
+  "combinedClassName": "",
+  "time": "(二)10-12",
+  "classroom": "育401",
+  "instructors": [
+    {
+      "name": "符志強"
+    }
+  ],
+  "enrolled": 22,
+  "capacity": 90,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

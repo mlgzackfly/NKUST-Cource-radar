@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2083",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "日語聽講實習(一)",
+  "selectCode": "2083",
+  "courseCode": "235C00590",
+  "credits": 2,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "必修",
+  "className": "四觀一甲",
+  "combinedClassName": "",
+  "time": "(一)5-6(五)7-8",
+  "classroom": "MB207",
+  "instructors": [
+    {
+      "name": "李椿華"
+    }
+  ],
+  "enrolled": 49,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 2
+}

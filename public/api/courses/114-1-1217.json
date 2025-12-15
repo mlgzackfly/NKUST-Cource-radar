@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1217",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "平面電腦輔助繪圖",
+  "selectCode": "1217",
+  "courseCode": "209E00315",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部五專",
+  "department": "模具工程科[建工|燕巢校區]",
+  "requiredOrElective": "必修",
+  "className": "五模二甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "模208",
+  "instructors": [
+    {
+      "name": "鄭瑞鴻"
+    }
+  ],
+  "enrolled": 30,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

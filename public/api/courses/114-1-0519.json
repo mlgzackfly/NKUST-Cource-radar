@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0519",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "工程數學(一)",
+  "selectCode": "0519",
+  "courseCode": "208C00119",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材二甲",
+  "combinedClassName": "",
+  "time": "(三)7-9",
+  "classroom": "化材B1-07(化001)",
+  "instructors": [
+    {
+      "name": "高立衡"
+    }
+  ],
+  "enrolled": 32,
+  "capacity": 35,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0521",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "有機化學(一)",
+  "selectCode": "0521",
+  "courseCode": "208C00266",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "化學工程與材料工程系",
+  "requiredOrElective": "必修",
+  "className": "四化材二甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "化材B1-07(化001)",
+  "instructors": [
+    {
+      "name": "顏福杉"
+    }
+  ],
+  "enrolled": 71,
+  "capacity": 71,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

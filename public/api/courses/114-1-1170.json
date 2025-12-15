@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1170",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "計算機程式",
+  "selectCode": "1170",
+  "courseCode": "209F00260",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "模具工程系",
+  "requiredOrElective": "必修",
+  "className": "進四技模具系一甲",
+  "combinedClassName": "",
+  "time": "(四)10-12",
+  "classroom": "模210",
+  "instructors": [
+    {
+      "name": "張高華"
+    }
+  ],
+  "enrolled": 43,
+  "capacity": 65,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

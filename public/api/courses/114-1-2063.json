@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2063",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "國際企業管理",
+  "selectCode": "2063",
+  "courseCode": "232F10163",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "企業管理系",
+  "requiredOrElective": "選修",
+  "className": "進四技企管系四甲",
+  "combinedClassName": "",
+  "time": "(一)12-13",
+  "classroom": "育402",
+  "instructors": [
+    {
+      "name": "胡育豪"
+    }
+  ],
+  "enrolled": 46,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

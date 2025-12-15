@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0768",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "能源應用",
+  "selectCode": "0768",
+  "courseCode": "202C10315",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機三甲",
+  "combinedClassName": "",
+  "time": "(二)5-7",
+  "classroom": "機407",
+  "instructors": [
+    {
+      "name": "王健至"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

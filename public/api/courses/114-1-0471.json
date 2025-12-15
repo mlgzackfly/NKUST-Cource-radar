@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0471",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "資料結構",
+  "selectCode": "0471",
+  "courseCode": "221C00074",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "必修",
+  "className": "四資工二甲",
+  "combinedClassName": "",
+  "time": "(四)2-4",
+  "classroom": "育501",
+  "instructors": [
+    {
+      "name": "林聯發"
+    }
+  ],
+  "enrolled": 90,
+  "capacity": 80,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

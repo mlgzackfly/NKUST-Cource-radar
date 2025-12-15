@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0809",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "光電工程",
+  "selectCode": "0809",
+  "courseCode": "202A10045",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部博士",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "機械系博士班二甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "機203",
+  "instructors": [
+    {
+      "name": "江家慶"
+    }
+  ],
+  "enrolled": 64,
+  "capacity": 60,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

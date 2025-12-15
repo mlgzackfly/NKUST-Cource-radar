@@ -1,0 +1,30 @@
+{
+  "id": "114-1-2127",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "餐旅組織行為及人際關係",
+  "selectCode": "2127",
+  "courseCode": "235F10134",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "觀光管理系",
+  "requiredOrElective": "選修",
+  "className": "進四觀光二甲",
+  "combinedClassName": "",
+  "time": "(一)12-13",
+  "classroom": "育104",
+  "instructors": [
+    {
+      "name": "陳品榕"
+    }
+  ],
+  "enrolled": 55,
+  "capacity": 55,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

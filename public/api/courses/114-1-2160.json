@@ -1,0 +1,33 @@
+{
+  "id": "114-1-2160",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "管理經濟專題研討",
+  "selectCode": "2160",
+  "courseCode": "232H00069",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "碩士在職專班",
+  "department": "企業管理系高階經營管理碩士在職",
+  "requiredOrElective": "選修",
+  "className": "企管系高階碩專一",
+  "combinedClassName": "",
+  "time": "(六)1-2",
+  "classroom": "西103",
+  "instructors": [
+    {
+      "name": "李政峯"
+    },
+    {
+      "name": "盧正壽"
+    }
+  ],
+  "enrolled": 12,
+  "capacity": 30,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

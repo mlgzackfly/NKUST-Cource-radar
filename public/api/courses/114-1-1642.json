@@ -1,0 +1,30 @@
+{
+  "id": "114-1-1642",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "自動控制",
+  "selectCode": "1642",
+  "courseCode": "204C00021",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "車輛工程系",
+  "requiredOrElective": "必修",
+  "className": "日四技車輛系三甲",
+  "combinedClassName": "",
+  "time": "(二)2-4",
+  "classroom": "HS316",
+  "instructors": [
+    {
+      "name": "陳建安"
+    }
+  ],
+  "enrolled": 36,
+  "capacity": 36,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

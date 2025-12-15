@@ -1,0 +1,30 @@
+{
+  "id": "114-1-3860",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "中級會計學(一)",
+  "selectCode": "3860",
+  "courseCode": "237C00366",
+  "credits": 3,
+  "campus": "燕巢校區",
+  "division": "日間部四技",
+  "department": "財政稅務系",
+  "requiredOrElective": "必修",
+  "className": "四財稅二甲",
+  "combinedClassName": "",
+  "time": "(五)5-7",
+  "classroom": "MA206",
+  "instructors": [
+    {
+      "name": "陳國興"
+    }
+  ],
+  "enrolled": 60,
+  "capacity": 87,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

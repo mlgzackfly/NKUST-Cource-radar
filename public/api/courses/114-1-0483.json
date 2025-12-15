@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0483",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "APP程式設計(一)",
+  "selectCode": "0483",
+  "courseCode": "221C10179",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "資訊工程系",
+  "requiredOrElective": "選修",
+  "className": "四資工三甲",
+  "combinedClassName": "",
+  "time": "(一)5-7",
+  "classroom": "資002",
+  "instructors": [
+    {
+      "name": "何丞世"
+    }
+  ],
+  "enrolled": 70,
+  "capacity": 70,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

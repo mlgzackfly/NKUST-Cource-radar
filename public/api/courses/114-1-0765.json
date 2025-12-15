@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0765",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "綠色能源",
+  "selectCode": "0765",
+  "courseCode": "202C10283",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機二丙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "機409",
+  "instructors": [
+    {
+      "name": "李純怡"
+    }
+  ],
+  "enrolled": 53,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}

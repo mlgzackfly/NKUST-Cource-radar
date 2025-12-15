@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0737",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機械工程概論",
+  "selectCode": "0737",
+  "courseCode": "202C10214",
+  "credits": 2,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "機械工程系",
+  "requiredOrElective": "選修",
+  "className": "四機一乙",
+  "combinedClassName": "",
+  "time": "(二)5-6",
+  "classroom": "機403",
+  "instructors": [
+    {
+      "name": "許中豪"
+    }
+  ],
+  "enrolled": 50,
+  "capacity": 64,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 2,
+  "labHours": 0
+}

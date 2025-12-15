@@ -1,0 +1,30 @@
+{
+  "id": "114-1-5221",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "體育(一)",
+  "selectCode": "5221",
+  "courseCode": "050F00013",
+  "credits": 0,
+  "campus": "建工校區",
+  "division": "進修部四技",
+  "department": "體育課程",
+  "requiredOrElective": "必修",
+  "className": "進四體育一甲",
+  "combinedClassName": "進四技模具系一甲",
+  "time": "(五)12-13",
+  "classroom": "",
+  "instructors": [
+    {
+      "name": "周鼎淯"
+    }
+  ],
+  "enrolled": 25,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "本體育課程屬多元運動項目，其課程場地會依授課內容進行調整，詳細上課地點請參閱體育室網頁資訊 https://reurl.cc/pY8O64",
+  "lectureHours": 2,
+  "labHours": 0
+}

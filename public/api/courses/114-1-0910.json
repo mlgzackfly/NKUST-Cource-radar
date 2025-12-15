@@ -1,0 +1,30 @@
+{
+  "id": "114-1-0910",
+  "year": "114",
+  "term": "1",
+  "semester": "114-1",
+  "courseName": "機器學習",
+  "selectCode": "0910",
+  "courseCode": "227C10545",
+  "credits": 3,
+  "campus": "建工校區",
+  "division": "日間部四技",
+  "department": "電機工程系",
+  "requiredOrElective": "選修",
+  "className": "四電三乙",
+  "combinedClassName": "",
+  "time": "(四)5-7",
+  "classroom": "電B05B",
+  "instructors": [
+    {
+      "name": "黃科瑋"
+    }
+  ],
+  "enrolled": 18,
+  "capacity": 40,
+  "englishTaught": "否",
+  "distanceLearning": "否",
+  "note": "",
+  "lectureHours": 3,
+  "labHours": 0
+}
