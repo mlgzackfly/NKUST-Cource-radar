@@ -179,13 +179,13 @@ export function CoursesFilters({ initial }: Props) {
                 </div>
               </div>
 
-              <div className="ts-space" />
+              <div style={{ height: "1.5rem" }} />
               <div className="ts-wrap is-compact">
-                <button type="submit" className="ts-button is-primary">
+                <button type="submit" className="ts-button is-primary" style={{ padding: "0.75rem 1.5rem" }}>
                   套用篩選
                 </button>
                 {hasAnyFilter ? (
-                  <a className="ts-button is-ghost" href="/courses">
+                  <a className="ts-button is-ghost" href="/courses" style={{ padding: "0.75rem 1.5rem" }}>
                     清除全部
                   </a>
                 ) : null}

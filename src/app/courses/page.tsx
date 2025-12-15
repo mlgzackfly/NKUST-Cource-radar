@@ -23,6 +23,8 @@ type CoursesPageProps = {
         campus?: string;
         division?: string;
         department?: string;
+        sort?: string;
+        order?: string;
       }>;
 };
 
@@ -35,6 +37,8 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   const campus = clean(sp.campus);
   const division = clean(sp.division);
   const department = clean(sp.department);
+  const sort = clean(sp.sort) || "updatedAt";
+  const order = clean(sp.order) || "desc";
 
   if (!prisma) {
     return (
@@ -71,6 +75,20 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   if (division) andFilters.push({ division });
   if (department) andFilters.push({ department });
 
+  // Sort field mapping (instructorName will be handled client-side)
+  const sortFieldMap: Record<string, string> = {
+    "updatedAt": "updatedAt",
+    "courseName": "courseName",
+    "year": "year",
+    "department": "department",
+    "campus": "campus"
+  };
+
+  // Check if sorting by instructor (needs client-side sorting)
+  const sortByInstructor = sort === "instructorName";
+  const sortField = sortByInstructor ? "updatedAt" : (sortFieldMap[sort] || "updatedAt");
+  const sortOrder = order === "asc" ? "asc" : "desc";
+
   // Use full-text search if query is provided
   let courses: CourseListItem[];
 
@@ -104,6 +122,15 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
         params.push(department);
       }
 
+      // Build ORDER BY clause
+      let orderByClause = "";
+      if (q && q.length > 0) {
+        // When searching, prioritize relevance first
+        orderByClause = `ts_rank(c."searchVector", plainto_tsquery('simple', $1)) DESC, c."${sortField}" ${sortOrder.toUpperCase()}`;
+      } else {
+        orderByClause = `c."${sortField}" ${sortOrder.toUpperCase()}`;
+      }
+
       const rawCourses = (await prisma.$queryRawUnsafe(
         `SELECT
           c.id,
@@ -114,9 +141,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
           c.term
         FROM "Course" c
         WHERE ${conditions.join(' AND ')}
-        ORDER BY
-          ts_rank(c."searchVector", plainto_tsquery('simple', $1)) DESC,
-          c."updatedAt" DESC
+        ORDER BY ${orderByClause}
         LIMIT 50`,
         ...params
       )) as Array<{
@@ -158,7 +183,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       // Regular query without search
       courses = await prisma.course.findMany({
         where: andFilters.length ? { AND: andFilters } : {},
-        orderBy: { updatedAt: "desc" },
+        orderBy: { [sortField]: sortOrder },
         take: 50,
         select: {
           id: true,
@@ -179,6 +204,16 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
     // Database connection error - return empty result
     console.error('Failed to fetch courses:', error);
     courses = [];
+  }
+
+  // Client-side sorting for instructor name
+  if (sortByInstructor && courses.length > 0) {
+    courses.sort((a, b) => {
+      const aInstructor = a.instructors[0]?.instructor.name || "";
+      const bInstructor = b.instructors[0]?.instructor.name || "";
+      const comparison = aInstructor.localeCompare(bInstructor, 'zh-Hant-TW');
+      return sortOrder === "asc" ? comparison : -comparison;
+    });
   }
 
   const hasAnyFilter = Boolean(q || year || term || campus || division || department);
@@ -220,43 +255,12 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                 </div>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
               {hasAnyFilter && (
-                <button
-                  onClick={() => window.location.href = '/courses'}
-                  className="ts-button is-small is-ghost"
-                  style={{ fontSize: "0.875rem" }}
-                >
+                <Link href="/courses" className="ts-button is-small is-ghost" style={{ fontSize: "0.875rem" }}>
                   清除篩選
-                </button>
+                </Link>
               )}
-              {/* View toggle - Future enhancement */}
-              <div style={{ display: "flex", gap: "0.25rem", padding: "0.25rem", background: "var(--ts-gray-100)", borderRadius: "6px" }}>
-                <button style={{
-                  padding: "0.375rem 0.75rem",
-                  fontSize: "0.8125rem",
-                  fontWeight: 600,
-                  background: "white",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                  boxShadow: "0 1px 2px rgba(0,0,0,0.05)"
-                }}>
-                  表格
-                </button>
-                <button style={{
-                  padding: "0.375rem 0.75rem",
-                  fontSize: "0.8125rem",
-                  fontWeight: 600,
-                  background: "transparent",
-                  border: "none",
-                  borderRadius: "4px",
-                  cursor: "pointer",
-                  color: "var(--ts-gray-600)"
-                }}>
-                  卡片
-                </button>
-              </div>
             </div>
           </div>
 
@@ -285,7 +289,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
               </div>
             </div>
           ) : (
-            <CourseTable courses={courses} />
+            <CourseTable courses={courses} currentSort={sort} currentOrder={order} />
           )}
         </div>
       </div>
