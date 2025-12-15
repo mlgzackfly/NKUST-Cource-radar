@@ -14,6 +14,8 @@ type Suggestion = {
   type: "course" | "instructor" | "department";
   text: string;
   label: string;
+  id?: string;
+  meta?: string;
 };
 
 type Props = {
@@ -139,10 +141,15 @@ export function CoursesFilters({ initial }: Props) {
   };
 
   const selectSuggestion = (suggestion: Suggestion) => {
-    // Navigate directly with the search query
-    const params = new URLSearchParams();
-    params.set('q', suggestion.text);
-    window.location.href = `/courses?${params.toString()}`;
+    // For courses with ID, navigate directly to course detail page
+    if (suggestion.type === "course" && suggestion.id) {
+      window.location.href = `/courses/${suggestion.id}`;
+    } else {
+      // For others, perform a search
+      const params = new URLSearchParams();
+      params.set('q', suggestion.text);
+      window.location.href = `/courses?${params.toString()}`;
+    }
   };
 
   return (
@@ -216,14 +223,29 @@ export function CoursesFilters({ initial }: Props) {
                           ? "var(--ts-info-600)"
                           : "var(--ts-warning-600)",
                         fontWeight: 600,
-                        fontSize: "0.75rem"
+                        fontSize: "0.75rem",
+                        flexShrink: 0
                       }}
                     >
                       {suggestion.type === "course" ? "課程" : suggestion.type === "instructor" ? "教師" : "系所"}
                     </span>
-                    <span style={{ fontSize: "0.9375rem", color: "var(--app-text)" }}>
-                      {suggestion.label}
-                    </span>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: "0.9375rem", color: "var(--app-text)", fontWeight: 500 }}>
+                        {suggestion.label}
+                      </div>
+                      {suggestion.meta && (
+                        <div style={{
+                          fontSize: "0.8125rem",
+                          color: "var(--app-muted)",
+                          marginTop: "0.25rem",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          whiteSpace: "nowrap"
+                        }}>
+                          {suggestion.meta}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
