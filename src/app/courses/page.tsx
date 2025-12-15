@@ -245,8 +245,8 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   return (
     <div className="app-container" style={{ paddingTop: "2rem", paddingBottom: "4rem" }}>
       {/* Header & Search */}
-      <div className="ts-box is-raised" style={{ marginBottom: "2rem" }}>
-        <div className="ts-content" style={{ padding: "2rem" }}>
+      <div className="ts-box is-raised" style={{ marginBottom: "2rem", overflow: "visible" }}>
+        <div className="ts-content" style={{ padding: "2rem", overflow: "visible" }}>
           <div className="ts-header is-large" style={{ fontSize: "1.875rem", fontWeight: 700, marginBottom: "0.75rem" }}>課程列表</div>
           <div className="app-muted" style={{ fontSize: "1.0625rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
             先用關鍵字搜尋,再用進階篩選縮小範圍。
