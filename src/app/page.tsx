@@ -56,11 +56,10 @@ export default async function HomePage() {
               letterSpacing: "-0.03em",
               marginBottom: "1.5rem",
               lineHeight: 1.1,
-              background: "linear-gradient(135deg, var(--ts-gray-900), var(--ts-gray-700))",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent"
+              color: "var(--ts-gray-900)",
+              padding: "0.1em 0"
             }}>
-              選課,不只是憑感覺
+              選課，不只是憑感覺
             </h1>
 
             {/* Subtitle - Simple & Clear */}
@@ -195,7 +194,7 @@ export default async function HomePage() {
                 <div>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--ts-gray-900)" }}>完全匿名保護</h3>
                   <p className="app-muted" style={{ lineHeight: 1.75, fontSize: "1rem" }}>
-                    所有評價一律匿名顯示,保護你的身份安全。你可以選擇顯示系所,讓評價更有參考價值。
+                    所有評價一律匿名顯示，保護你的身份安全。你可以選擇顯示系所，讓評價更有參考價值。
                   </p>
                 </div>
               </div>
@@ -204,7 +203,7 @@ export default async function HomePage() {
                 <div>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--ts-gray-900)" }}>品質嚴格把關</h3>
                   <p className="app-muted" style={{ lineHeight: 1.75, fontSize: "1rem" }}>
-                    每位使用者每門課只能留一則評價,避免灌水和惡意刷評。可以編輯更新內容,保留版本紀錄。
+                    每位使用者每門課只能留一則評價，避免灌水和惡意刷評。可以編輯更新內容，保留版本紀錄。
                   </p>
                 </div>
               </div>
@@ -213,7 +212,7 @@ export default async function HomePage() {
                 <div>
                   <h3 style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem", color: "var(--ts-gray-900)" }}>多維度評分</h3>
                   <p className="app-muted" style={{ lineHeight: 1.75, fontSize: "1rem" }}>
-                    涼度、實用性、作業量、出席要求等多個維度,讓你全方位了解課程特性。
+                    涼度、實用性、作業量、出席要求等多個維度，讓你全方位了解課程特性。
                   </p>
                 </div>
               </div>
@@ -227,7 +226,7 @@ export default async function HomePage() {
             準備好了嗎?
           </h2>
           <p className="app-muted" style={{ fontSize: "1.0625rem", lineHeight: 1.7, marginBottom: "2rem" }}>
-            立即開始查詢課程,讓選課不再是一場賭注
+            立即開始查詢課程，讓選課不再是一場賭注
           </p>
           <Link href="/courses" className="ts-button is-large is-primary" style={{ padding: "1rem 2.5rem", fontWeight: 600, fontSize: "1.0625rem", borderRadius: "10px" }}>
             開始探索課程

@@ -5,8 +5,8 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { SemesterSelector } from "@/components/SemesterSelector";
 
 export const metadata = {
-  title: "高科選課雷達 | 選課,不只是憑感覺",
-  description: "提供 NKUST 課程查詢與匿名評價,讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊,做出更明智的選課決定。",
+  title: "高科選課雷達 | 選課，不只是憑感覺",
+  description: "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊，做出更明智的選課決定。",
 };
 
 export const viewport = {
@@ -73,9 +73,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <footer className="app-footer" style={{ marginTop: 24, paddingBottom: 24 }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
                 <div className="app-muted">
-                  高科選課雷達 | 選課,不只是憑感覺
+                  高科選課雷達 | 選課，不只是憑感覺
                   <br />
-                  此為非官方專案,資訊僅供參考。
+                  此為非官方專案，資訊僅供參考。
                 </div>
                 <a href="https://github.com/mlgzack/nkust-course-review" target="_blank" rel="noopener noreferrer" className="ts-button is-ghost is-small">
                   GitHub
