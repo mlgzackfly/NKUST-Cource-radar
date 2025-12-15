@@ -1,0 +1,23 @@
+{
+  "scrapedAt": "2025-12-13T21:49:48.037Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "114#1",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "campuses": [
+    {
+      "id": "1",
+      "degrees": [
+        {
+          "id": "14",
+          "units": 1,
+          "courses": 30,
+          "indexFile": "data/nkust/ag202/114/1/1/14/index.json"
+        }
+      ]
+    }
+  ]
+}

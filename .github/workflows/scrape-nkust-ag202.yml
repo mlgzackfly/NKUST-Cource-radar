@@ -1,0 +1,66 @@
+name: Scrape NKUST course data (ag202)
+
+on:
+  workflow_dispatch:
+    inputs:
+      yms_yms:
+        description: "Academic year/term, e.g. 114#1"
+        required: false
+        default: "114#1"
+      cmp_area_id:
+        description: "Campus area id, e.g. 0=全校區, or ALL"
+        required: false
+        default: "0"
+      dgr_id:
+        description: "Degree id, e.g. 14=日間部四技, or ALL"
+        required: false
+        default: "ALL"
+      scrape_all_units:
+        description: "1 to scrape all departments/units under the selected degree"
+        required: false
+        default: "1"
+  schedule:
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund --no-package-lock
+
+      - name: Scrape
+        run: npm run scrape:nkust-ag202
+        env:
+          NKUST_YMS_YMS: ${{ inputs.yms_yms || '114#1' }}
+          NKUST_CMP_AREA_ID: ${{ inputs.cmp_area_id || '0' }}
+          NKUST_DGR_ID: ${{ inputs.dgr_id || 'ALL' }}
+          NKUST_SCRAPE_ALL_UNITS: ${{ inputs.scrape_all_units || '1' }}
+
+      - name: Commit data changes (if any)
+        run: |
+          if git diff --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/nkust/ag202
+          git commit -m "chore(data): update NKUST course data"
+          git push
+
+

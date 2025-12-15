@@ -1,0 +1,31 @@
+{
+  "name": "nkust-course-review",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev --port 3000 --hostname 127.0.0.1",
+    "build": "next build",
+    "start": "next start --port 3000",
+    "prisma": "prisma",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:import:nkust-ag202": "node scripts/db/import-nkust-ag202.mjs",
+    "scrape:nkust-ag202": "node scripts/scrape/nkust-ag202.mjs"
+  },
+  "dependencies": {
+    "@prisma/client": "6.19.1",
+    "@types/recharts": "^2.0.0",
+    "cheerio": "1.1.2",
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "recharts": "^2.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.19.2",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "prisma": "6.19.1",
+    "typescript": "5.9.3"
+  }
+}

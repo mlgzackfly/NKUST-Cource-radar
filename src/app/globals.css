@@ -1,0 +1,339 @@
+/* =========================================================
+   App-specific layout polish.
+   - Colors follow Tocas UI variables directly (no custom palette)
+   - ThemeToggle uses html.is-dark / html.is-light (Tocas convention)
+   ========================================================= */
+
+:root {
+  --app-bg: var(--ts-page-background-default);
+  --app-text: var(--ts-gray-800);
+  --app-muted: var(--ts-gray-700);
+  --app-border: var(--ts-gray-200);
+  --app-surface: var(--ts-gray-50);
+  --app-surface-2: var(--ts-gray-75);
+  --app-focus: 0 0 0 0.2rem color-mix(in srgb, var(--ts-primary-500) 25%, transparent);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+body {
+  color: var(--app-text);
+  background: var(--app-bg);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+/* =========================================================
+   Layout
+   ========================================================= */
+
+.app-container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--app-surface) 92%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--app-border) 75%, transparent);
+}
+
+.app-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 72px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.ts-box {
+  border-radius: 16px !important;
+  border: 1px solid var(--app-border) !important;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.02), 0 4px 12px 0 rgba(0,0,0,0.03) !important;
+  transition: box-shadow 200ms var(--ts-easing-standard), transform 200ms var(--ts-easing-standard);
+}
+
+.ts-box.is-interactive:hover {
+  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.06), 0 12px 32px 0 rgba(0,0,0,0.08) !important;
+  transform: translateY(-2px);
+}
+
+.ts-box:not(.is-interactive):hover {
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.04), 0 8px 24px 0 rgba(0,0,0,0.06) !important;
+}
+
+.ts-header.is-large {
+  font-size: 2.25rem !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.5px !important;
+  line-height: 1.2 !important;
+}
+
+.ts-header.is-medium {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+}
+
+.ts-header.is-small {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+}
+
+.app-hero {
+  background: linear-gradient(
+    145deg,
+    var(--app-surface),
+    color-mix(in srgb, var(--app-surface) 95%, var(--app-text) 2%)
+  ) !important;
+}
+
+.app-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.app-header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-brand {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.app-main {
+  flex: 1;
+  padding-top: 18px;
+  padding-bottom: 28px;
+}
+
+.app-footer {
+  margin-top: 8px;
+  padding-bottom: 26px;
+  color: var(--app-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 560px) {
+  .app-header-inner {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .app-nav {
+    width: 100%;
+  }
+  .app-header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+.app-muted {
+  color: var(--app-muted);
+}
+
+/* =========================================================
+   Course detail (custom)
+   ========================================================= */
+
+.app-course-hero {
+  background: linear-gradient(
+    135deg,
+    var(--app-surface),
+    color-mix(in srgb, var(--app-surface) 90%, var(--app-text) 3%)
+  );
+}
+
+.app-course-hero-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.app-course-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Course detail responsive layout */
+.app-course-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .app-course-detail-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   Filters (custom)
+   ========================================================= */
+
+.app-courses-results-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.app-filter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.app-search {
+  flex: 1 1 360px;
+  min-width: 240px;
+}
+
+.app-filter-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.app-filter-details {
+  flex-basis: 100%;
+  width: 100%;
+}
+
+.app-details-summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--app-border);
+  background: color-mix(in srgb, var(--app-surface-2) 85%, transparent);
+  cursor: pointer;
+  user-select: none;
+  font-weight: 750;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+.app-details-summary::after {
+  content: "▾";
+  opacity: 0.7;
+  display: inline-block;
+  transition: transform 140ms ease, opacity 140ms ease;
+}
+
+details[open] > .app-details-summary::after {
+  transform: rotate(180deg);
+}
+
+.app-details-summary:focus-visible {
+  outline: none;
+  box-shadow: var(--app-focus);
+}
+
+.app-filter-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1024px) {
+  .app-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .app-filter-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.app-filter-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* =========================================================
+   Home polish
+   ========================================================= */
+
+.app-home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.app-home-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+}
+
+@keyframes keyframes-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-fade-in-up {
+  animation: keyframes-fade-in-up 500ms var(--ts-easing-standard) forwards;
+}

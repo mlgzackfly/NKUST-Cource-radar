@@ -1,0 +1,237 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ReviewStatus {
+  ACTIVE
+  HIDDEN
+  REMOVED
+}
+
+enum ReportStatus {
+  OPEN
+  RESOLVED
+  REJECTED
+}
+
+enum AdminActionType {
+  HIDE_REVIEW
+  UNHIDE_REVIEW
+  REMOVE_REVIEW
+  BAN_USER
+  REQUEST_EDIT
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+  bannedAt  DateTime?
+
+  // relations
+  reviews       Review[]
+  helpfulVotes  HelpfulVote[]
+  comments      Comment[]
+  reports       Report[]
+  adminActions  AdminAction[] @relation("AdminActor")
+  adminActionsAsTarget AdminAction[] @relation("AdminTargetUser")
+}
+
+model Course {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Stable key for idempotent imports (derived from source request + selectCode/courseCode)
+  sourceKey String @unique
+
+  // Source fields (from nkust ag202)
+  year      String
+  term      String
+  campus    String?
+  division  String?
+  degreeId  String? // dgr_id
+  campusId  String? // cmp_area_id
+  unitId    String? // unt_id
+  department String?
+
+  selectCode String?
+  courseCode String?
+  courseName String
+  className  String?
+  combinedClassName String?
+
+  credits      Float?
+  lectureHours Float?
+  labHours     Float?
+  requiredOrElective String?
+
+  classroom String?
+  time      String?
+
+  enrolled Int?
+  capacity Int?
+
+  englishTaught     String?
+  distanceLearning  String?
+  note              String?
+
+  // Full-text search vector (populated by trigger)
+  searchVector Unsupported("tsvector")?
+
+  // relations
+  instructors CourseInstructor[]
+  reviews      Review[]
+
+  @@index([year, term])
+  @@index([updatedAt])
+  @@index([courseName])
+  @@index([courseCode])
+  @@index([selectCode])
+  @@index([campus])
+  @@index([division])
+  @@index([department])
+  @@index([year, term, department])
+  @@index([year, term, campus])
+  @@index([searchVector], map: "Course_searchVector_idx", type: Gin)
+}
+
+model Instructor {
+  id        String   @id @default(cuid())
+  name      String
+  createdAt DateTime @default(now())
+
+  courses CourseInstructor[]
+
+  @@index([name])
+  @@unique([name])
+}
+
+model CourseInstructor {
+  courseId     String
+  instructorId String
+  role         String? // future use
+
+  course     Course     @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  instructor Instructor @relation(fields: [instructorId], references: [id], onDelete: Cascade)
+
+  @@id([courseId, instructorId])
+}
+
+model Review {
+  id        String      @id @default(cuid())
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+  status    ReviewStatus @default(ACTIVE)
+
+  // ownership (not exposed publicly)
+  userId   String
+  courseId String
+  user     User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course   Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  // current content
+  coolness     Int? // 1-5 or null (N/A)
+  usefulness   Int?
+  workload     Int?
+  attendance   Int?
+  body         String?
+  authorDept   String? // displayed; still anonymous
+
+  // relations
+  versions      ReviewVersion[]
+  comments      Comment[]
+  helpfulVotes  HelpfulVote[]
+  reports       Report[]
+  adminActionsAsTarget AdminAction[] @relation("AdminTargetReview")
+
+  @@unique([userId, courseId]) // one user one review per course
+  @@index([courseId, createdAt])
+}
+
+model ReviewVersion {
+  id        String   @id @default(cuid())
+  reviewId  String
+  createdAt DateTime @default(now())
+
+  // snapshot
+  coolness     Int?
+  usefulness   Int?
+  workload     Int?
+  attendance   Int?
+  body         String?
+  authorDept   String?
+
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+
+  @@index([reviewId, createdAt])
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  reviewId String
+  userId   String
+  body     String
+
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([reviewId, createdAt])
+}
+
+model HelpfulVote {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  reviewId String
+  userId   String
+
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([reviewId, userId])
+  @@index([reviewId])
+}
+
+model Report {
+  id        String       @id @default(cuid())
+  createdAt DateTime     @default(now())
+  status    ReportStatus @default(OPEN)
+
+  reviewId String
+  userId   String
+  reason   String
+
+  review Review @relation(fields: [reviewId], references: [id], onDelete: Cascade)
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([reviewId, createdAt])
+}
+
+model AdminAction {
+  id        String          @id @default(cuid())
+  createdAt DateTime        @default(now())
+  type      AdminActionType
+  note      String?
+
+  actorId String
+  actor   User @relation("AdminActor", fields: [actorId], references: [id], onDelete: Cascade)
+
+  targetUserId  String?
+  targetUser    User? @relation("AdminTargetUser", fields: [targetUserId], references: [id], onDelete: SetNull)
+
+  targetReviewId String?
+  targetReview   Review? @relation("AdminTargetReview", fields: [targetReviewId], references: [id], onDelete: SetNull)
+
+  @@index([type, createdAt])
+}
+
+
