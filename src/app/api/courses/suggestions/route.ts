@@ -22,20 +22,21 @@ export async function GET(request: NextRequest) {
   }
 
   try {
-    // Use PostgreSQL full-text search for fast suggestions
+    // Use ILIKE for partial matching (better for CJK languages)
     const courseResults = (await prisma.$queryRawUnsafe(
-      `SELECT DISTINCT c."courseName" as text
+      `SELECT DISTINCT ON (c."courseName") c."courseName" as text
        FROM "Course" c
-       WHERE c."searchVector" @@ plainto_tsquery('simple', $1)
-       ORDER BY ts_rank(c."searchVector", plainto_tsquery('simple', $1)) DESC
+       WHERE c."courseName" ILIKE $1 OR c."courseCode" ILIKE $1 OR c."selectCode" ILIKE $1
+       ORDER BY c."courseName"
        LIMIT 5`,
-      query
+      `%${query}%`
     )) as Array<{ text: string }>;
 
     const instructorResults = (await prisma.$queryRawUnsafe(
       `SELECT DISTINCT i.name as text
        FROM "Instructor" i
        WHERE i.name ILIKE $1
+       ORDER BY i.name
        LIMIT 3`,
       `%${query}%`
     )) as Array<{ text: string }>;
@@ -44,6 +45,7 @@ export async function GET(request: NextRequest) {
       `SELECT DISTINCT c.department as text
        FROM "Course" c
        WHERE c.department IS NOT NULL AND c.department ILIKE $1
+       ORDER BY c.department
        LIMIT 3`,
       `%${query}%`
     )) as Array<{ text: string }>;
