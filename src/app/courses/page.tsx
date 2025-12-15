@@ -387,7 +387,12 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
                       if (isActive) {
                         return (
-                          <button key={pageNum} className="ts-button is-secondary" disabled>
+                          <button
+                            key={pageNum}
+                            className="ts-button is-secondary"
+                            disabled
+                            style={{ minWidth: "2.5rem", padding: "0.5rem 0.75rem" }}
+                          >
                             {pageNum}
                           </button>
                         );
@@ -408,6 +413,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                             page: pageNum.toString(),
                           }).toString()}`}
                           className="ts-button"
+                          style={{ minWidth: "2.5rem", padding: "0.5rem 0.75rem" }}
                         >
                           {pageNum}
                         </Link>
