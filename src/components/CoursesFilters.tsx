@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type FilterOptions = {
   years: string[];
@@ -8,6 +8,12 @@ type FilterOptions = {
   campuses: string[];
   divisions: string[];
   departments: string[];
+};
+
+type Suggestion = {
+  type: "course" | "instructor" | "department";
+  text: string;
+  label: string;
 };
 
 type Props = {
@@ -26,6 +32,15 @@ export function CoursesFilters({ initial }: Props) {
   const [options, setOptions] = useState<FilterOptions | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Autocomplete state
+  const [searchQuery, setSearchQuery] = useState(initial.q || "");
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
+  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const hasAnyFilter = Boolean(
     initial.q || initial.year || initial.term || initial.campus || initial.division || initial.department,
@@ -53,18 +68,169 @@ export function CoursesFilters({ initial }: Props) {
       .finally(() => setLoading(false));
   }, [open, options, loading]);
 
+  // Fetch suggestions with debouncing
+  useEffect(() => {
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    if (searchQuery.length < 2) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+
+    debounceTimerRef.current = setTimeout(() => {
+      fetch(`/api/courses/suggestions?q=${encodeURIComponent(searchQuery)}`)
+        .then(res => res.json())
+        .then(data => {
+          setSuggestions(data.suggestions || []);
+          setShowSuggestions(true);
+        })
+        .catch(() => {
+          setSuggestions([]);
+        });
+    }, 300);
+
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, [searchQuery]);
+
+  // Handle click outside to close suggestions
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        suggestionsRef.current &&
+        !suggestionsRef.current.contains(e.target as Node) &&
+        searchInputRef.current &&
+        !searchInputRef.current.contains(e.target as Node)
+      ) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(e.target.value);
+    setSelectedIndex(-1);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showSuggestions || suggestions.length === 0) return;
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelectedIndex(prev => (prev + 1) % suggestions.length);
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelectedIndex(prev => (prev - 1 + suggestions.length) % suggestions.length);
+    } else if (e.key === "Enter" && selectedIndex >= 0) {
+      e.preventDefault();
+      selectSuggestion(suggestions[selectedIndex]);
+    } else if (e.key === "Escape") {
+      setShowSuggestions(false);
+    }
+  };
+
+  const selectSuggestion = (suggestion: Suggestion) => {
+    setSearchQuery(suggestion.text);
+    setShowSuggestions(false);
+    setSelectedIndex(-1);
+    // Submit the form
+    if (searchInputRef.current?.form) {
+      searchInputRef.current.form.requestSubmit();
+    }
+  };
+
   return (
     <>
       <form method="get" action="/courses" aria-label="課程搜尋與篩選">
         <div className="ts-grid is-relaxed">
-          <div className="column is-fluid">
+          <div className="column is-fluid" style={{ position: "relative" }}>
             <div className="ts-input is-solid is-fluid">
               <input
+                ref={searchInputRef}
                 name="q"
-                defaultValue={initial.q}
+                value={searchQuery}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                onFocus={() => {
+                  if (suggestions.length > 0) {
+                    setShowSuggestions(true);
+                  }
+                }}
                 placeholder="搜尋：課名 / 永久課號 / 選課代號 / 系所"
+                autoComplete="off"
               />
             </div>
+            {showSuggestions && suggestions.length > 0 && (
+              <div
+                ref={suggestionsRef}
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  right: 0,
+                  marginTop: "0.5rem",
+                  backgroundColor: "var(--app-surface)",
+                  border: "1px solid var(--app-border)",
+                  borderRadius: "12px",
+                  boxShadow: "0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15)",
+                  maxHeight: "320px",
+                  overflowY: "auto",
+                  zIndex: 100
+                }}
+              >
+                {suggestions.map((suggestion, index) => (
+                  <div
+                    key={`${suggestion.type}-${suggestion.text}-${index}`}
+                    onClick={() => selectSuggestion(suggestion)}
+                    onMouseEnter={() => setSelectedIndex(index)}
+                    style={{
+                      padding: "0.75rem 1rem",
+                      cursor: "pointer",
+                      backgroundColor: selectedIndex === index ? "var(--app-table-hover-bg)" : "transparent",
+                      borderBottom: index < suggestions.length - 1 ? "1px solid var(--app-border)" : "none",
+                      transition: "background-color 0.15s",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "0.75rem"
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "0.875rem",
+                        padding: "0.25rem 0.5rem",
+                        borderRadius: "6px",
+                        backgroundColor: suggestion.type === "course"
+                          ? "color-mix(in srgb, var(--ts-primary-500) 15%, transparent)"
+                          : suggestion.type === "instructor"
+                          ? "color-mix(in srgb, var(--ts-info-500) 15%, transparent)"
+                          : "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
+                        color: suggestion.type === "course"
+                          ? "var(--ts-primary-600)"
+                          : suggestion.type === "instructor"
+                          ? "var(--ts-info-600)"
+                          : "var(--ts-warning-600)",
+                        fontWeight: 600,
+                        fontSize: "0.75rem"
+                      }}
+                    >
+                      {suggestion.type === "course" ? "課程" : suggestion.type === "instructor" ? "教師" : "系所"}
+                    </span>
+                    <span style={{ fontSize: "0.9375rem", color: "var(--app-text)" }}>
+                      {suggestion.label}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
           <div className="column">
             <button type="submit" className="ts-button is-primary is-fluid">
