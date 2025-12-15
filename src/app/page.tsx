@@ -45,7 +45,7 @@ export default async function HomePage() {
                 color: "var(--ts-gray-700)",
                 letterSpacing: "0.025em"
               }}>
-                NKUST 課程評價平台
+                高科選課雷達
               </span>
             </div>
 
