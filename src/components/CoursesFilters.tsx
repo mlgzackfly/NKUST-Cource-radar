@@ -21,8 +21,6 @@ type Suggestion = {
 type Props = {
   initial: {
     q?: string;
-    year?: string;
-    term?: string;
     campus?: string;
     division?: string;
     department?: string;
@@ -45,7 +43,7 @@ export function CoursesFilters({ initial }: Props) {
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const hasAnyFilter = Boolean(
-    initial.q || initial.year || initial.term || initial.campus || initial.division || initial.department,
+    initial.q || initial.campus || initial.division || initial.department,
   );
 
   useEffect(() => {
@@ -283,38 +281,6 @@ export function CoursesFilters({ initial }: Props) {
             <fieldset className="ts-fieldset">
               <legend>進階篩選</legend>
               <div className="app-filter-grid">
-                <div className="ts-control is-stacked is-fluid">
-                  <div className="label">學年</div>
-                  <div className="content">
-                    <div className="ts-select is-solid is-fluid">
-                      <select name="year" defaultValue={initial.year ?? ""}>
-                        <option value="">全部</option>
-                        {options.years.map((v) => (
-                          <option key={v} value={v}>
-                            {v}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="ts-control is-stacked is-fluid">
-                  <div className="label">學期</div>
-                  <div className="content">
-                    <div className="ts-select is-solid is-fluid">
-                      <select name="term" defaultValue={initial.term ?? ""}>
-                        <option value="">全部</option>
-                        {options.terms.map((v) => (
-                          <option key={v} value={v}>
-                            {v}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="ts-control is-stacked is-fluid">
                   <div className="label">校區</div>
                   <div className="content">

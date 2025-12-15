@@ -18,8 +18,7 @@ type CoursesPageProps = {
   searchParams?:
     | Promise<{
         q?: string;
-        year?: string;
-        term?: string;
+        semester?: string;
         campus?: string;
         division?: string;
         department?: string;
@@ -33,8 +32,19 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   const sp = (await searchParams) ?? {};
   const clean = (v: string | undefined) => (v ? v.trim() : undefined) || undefined;
   const q = clean(sp.q);
-  const year = clean(sp.year);
-  const term = clean(sp.term);
+  const semester = clean(sp.semester);
+
+  // Parse semester into year and term (format: "114-1")
+  let year: string | undefined;
+  let term: string | undefined;
+  if (semester) {
+    const parts = semester.split('-');
+    if (parts.length === 2) {
+      year = parts[0];
+      term = parts[1];
+    }
+  }
+
   const campus = clean(sp.campus);
   const division = clean(sp.division);
   const department = clean(sp.department);
@@ -237,7 +247,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
     });
   }
 
-  const hasAnyFilter = Boolean(q || year || term || campus || division || department);
+  const hasAnyFilter = Boolean(q || semester || campus || division || department);
   const totalPages = Math.ceil(totalCount / PER_PAGE);
   const startItem = totalCount === 0 ? 0 : offset + 1;
   const endItem = Math.min(offset + PER_PAGE, totalCount);
@@ -254,8 +264,6 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
           <CoursesFilters
             initial={{
               q,
-              year,
-              term,
               campus,
               division,
               department,
@@ -324,8 +332,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                     <Link
                       href={`/courses?${new URLSearchParams({
                         ...(q && { q }),
-                        ...(year && { year }),
-                        ...(term && { term }),
+                        ...(semester && { semester }),
                         ...(campus && { campus }),
                         ...(division && { division }),
                         ...(department && { department }),
@@ -403,8 +410,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                           key={pageNum}
                           href={`/courses?${new URLSearchParams({
                             ...(q && { q }),
-                            ...(year && { year }),
-                            ...(term && { term }),
+                            ...(semester && { semester }),
                             ...(campus && { campus }),
                             ...(division && { division }),
                             ...(department && { department }),
@@ -426,8 +432,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                     <Link
                       href={`/courses?${new URLSearchParams({
                         ...(q && { q }),
-                        ...(year && { year }),
-                        ...(term && { term }),
+                        ...(semester && { semester }),
                         ...(campus && { campus }),
                         ...(division && { division }),
                         ...(department && { department }),

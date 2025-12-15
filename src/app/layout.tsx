@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import "./globals.css";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SemesterSelector } from "@/components/SemesterSelector";
 
 export const metadata = {
   title: "高科選課雷達 | 選課,不只是憑感覺",
@@ -57,6 +58,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   </nav>
                 </div>
                 <div className="app-header-right">
+                  <SemesterSelector />
                   <ThemeToggle />
                 </div>
               </div>
