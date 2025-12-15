@@ -139,13 +139,10 @@ export function CoursesFilters({ initial }: Props) {
   };
 
   const selectSuggestion = (suggestion: Suggestion) => {
-    setSearchQuery(suggestion.text);
-    setShowSuggestions(false);
-    setSelectedIndex(-1);
-    // Submit the form
-    if (searchInputRef.current?.form) {
-      searchInputRef.current.form.requestSubmit();
-    }
+    // Navigate directly with the search query
+    const params = new URLSearchParams();
+    params.set('q', suggestion.text);
+    window.location.href = `/courses?${params.toString()}`;
   };
 
   return (
