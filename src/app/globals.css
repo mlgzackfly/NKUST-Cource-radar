@@ -14,6 +14,17 @@
   --app-focus: 0 0 0 0.2rem color-mix(in srgb, var(--ts-primary-500) 25%, transparent);
 }
 
+/* Dark mode overrides */
+html.is-dark {
+  --app-bg: var(--ts-page-background-default);
+  --app-text: var(--ts-gray-200);
+  --app-muted: var(--ts-gray-400);
+  --app-border: var(--ts-gray-700);
+  --app-surface: var(--ts-gray-800);
+  --app-surface-2: var(--ts-gray-750);
+  --app-focus: 0 0 0 0.2rem color-mix(in srgb, var(--ts-primary-400) 25%, transparent);
+}
+
 html,
 body {
   padding: 0;
@@ -336,4 +347,18 @@ details[open] > .app-details-summary::after {
 
 .anim-fade-in-up {
   animation: keyframes-fade-in-up 500ms var(--ts-easing-standard) forwards;
+}
+
+/* =========================================================
+   Table hover colors for dark mode compatibility
+   ========================================================= */
+
+:root {
+  --app-table-hover-bg: var(--ts-gray-50);
+  --app-table-border: var(--ts-gray-200);
+}
+
+html.is-dark {
+  --app-table-hover-bg: var(--ts-gray-700);
+  --app-table-border: var(--ts-gray-700);
 }

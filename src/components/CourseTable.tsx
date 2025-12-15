@@ -62,11 +62,11 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
       {/* Table view - Notion/Airtable style */}
       <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
         <thead>
-          <tr style={{ borderBottom: "2px solid var(--ts-gray-200)" }}>
+          <tr style={{ borderBottom: "2px solid var(--app-table-border)" }}>
             <th
               style={headerStyle(true)}
               onClick={() => handleSort("courseName")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--ts-gray-50)"}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
             >
               課程名稱{getSortIcon("courseName")}
@@ -74,7 +74,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
             <th
               style={{ ...headerStyle(true), minWidth: "150px" }}
               onClick={() => handleSort("instructorName")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--ts-gray-50)"}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
             >
               教師{getSortIcon("instructorName")}
@@ -82,7 +82,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
             <th
               style={{ ...headerStyle(true), minWidth: "120px" }}
               onClick={() => handleSort("department")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--ts-gray-50)"}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
             >
               系所{getSortIcon("department")}
@@ -90,7 +90,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
             <th
               style={{ ...headerStyle(true), textAlign: "center", minWidth: "100px" }}
               onClick={() => handleSort("year")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--ts-gray-50)"}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
             >
               學期{getSortIcon("year")}
@@ -98,7 +98,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
             <th
               style={{ ...headerStyle(true), textAlign: "center", minWidth: "90px" }}
               onClick={() => handleSort("campus")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--ts-gray-50)"}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
             >
               校區{getSortIcon("campus")}
@@ -113,11 +113,11 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
                 key={c.id}
                 onClick={() => window.location.href = `/courses/${c.id}`}
                 style={{
-                  borderBottom: index < courses.length - 1 ? "1px solid var(--ts-gray-150)" : "none",
+                  borderBottom: index < courses.length - 1 ? "1px solid var(--app-table-border)" : "none",
                   cursor: "pointer",
                   transition: "background-color 0.15s"
                 }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--ts-gray-50)"}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
               >
                 <td style={{ padding: "1rem", fontSize: "0.9375rem", fontWeight: 600, color: "var(--ts-gray-900)" }}>
