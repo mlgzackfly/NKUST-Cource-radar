@@ -1,0 +1,26 @@
+{
+  "scrapedAt": "2025-12-15T15:37:08.655Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "114#1",
+    "cmpAreaId": "5",
+    "dgrId": "27",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UR06",
+      "label": "(海事學院)航運技術系碩士班",
+      "courses": 4,
+      "file": "data/nkust/ag202/114/1/5/27/UR06.json"
+    },
+    {
+      "id": "UR12",
+      "label": "(海事學院)海事資訊科技系碩士班",
+      "courses": 6,
+      "file": "data/nkust/ag202/114/1/5/27/UR12.json"
+    }
+  ]
+}

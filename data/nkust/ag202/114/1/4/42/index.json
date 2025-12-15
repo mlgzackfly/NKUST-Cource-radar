@@ -1,0 +1,26 @@
+{
+  "scrapedAt": "2025-12-15T15:34:05.478Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "114#1",
+    "cmpAreaId": "4",
+    "dgrId": "42",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UR11",
+      "label": "(海事學院)輪機產學攜手專班",
+      "courses": 14,
+      "file": "data/nkust/ag202/114/1/4/42/UR11.json"
+    },
+    {
+      "id": "XB02",
+      "label": "(共同教育學院)博雅教育中心",
+      "courses": 1,
+      "file": "data/nkust/ag202/114/1/4/42/XB02.json"
+    }
+  ]
+}

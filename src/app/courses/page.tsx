@@ -25,6 +25,7 @@ type CoursesPageProps = {
         department?: string;
         sort?: string;
         order?: string;
+        page?: string;
       }>;
 };
 
@@ -39,6 +40,10 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   const department = clean(sp.department);
   const sort = clean(sp.sort) || "updatedAt";
   const order = clean(sp.order) || "desc";
+  const page = Math.max(1, parseInt(clean(sp.page) || "1", 10));
+
+  const PER_PAGE = 50;
+  const offset = (page - 1) * PER_PAGE;
 
   if (!prisma) {
     return (
@@ -91,6 +96,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
   // Use full-text search if query is provided
   let courses: CourseListItem[];
+  let totalCount = 0;
 
   try {
     if (q && q.length > 0) {
@@ -98,7 +104,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       // This is MUCH faster than LIKE '%keyword%'
 
       // Build dynamic SQL parts
-      const conditions: string[] = [`c."searchVector" @@ plainto_tsquery('simple', ${q})`];
+      const conditions: string[] = [`c."searchVector" @@ plainto_tsquery('simple', $1)`];
       const params: any[] = [q];
 
       if (year) {
@@ -131,6 +137,15 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
         orderByClause = `c."${sortField}" ${sortOrder.toUpperCase()}`;
       }
 
+      // Get total count
+      const countResult = (await prisma.$queryRawUnsafe(
+        `SELECT COUNT(*)::int as count
+        FROM "Course" c
+        WHERE ${conditions.join(' AND ')}`,
+        ...params
+      )) as Array<{ count: number }>;
+      totalCount = countResult[0]?.count || 0;
+
       const rawCourses = (await prisma.$queryRawUnsafe(
         `SELECT
           c.id,
@@ -142,7 +157,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
         FROM "Course" c
         WHERE ${conditions.join(' AND ')}
         ORDER BY ${orderByClause}
-        LIMIT 50`,
+        LIMIT ${PER_PAGE} OFFSET ${offset}`,
         ...params
       )) as Array<{
         id: string;
@@ -181,10 +196,16 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       }));
     } else {
       // Regular query without search
+      const whereClause = andFilters.length ? { AND: andFilters } : {};
+
+      // Get total count
+      totalCount = await prisma.course.count({ where: whereClause });
+
       courses = await prisma.course.findMany({
-        where: andFilters.length ? { AND: andFilters } : {},
+        where: whereClause,
         orderBy: { [sortField]: sortOrder },
-        take: 50,
+        skip: offset,
+        take: PER_PAGE,
         select: {
           id: true,
           courseName: true,
@@ -217,6 +238,9 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   }
 
   const hasAnyFilter = Boolean(q || year || term || campus || division || department);
+  const totalPages = Math.ceil(totalCount / PER_PAGE);
+  const startItem = totalCount === 0 ? 0 : offset + 1;
+  const endItem = Math.min(offset + PER_PAGE, totalCount);
 
   return (
     <div className="app-container" style={{ paddingTop: "2rem", paddingBottom: "4rem" }}>
@@ -251,7 +275,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                   {hasAnyFilter ? "篩選結果" : "所有課程"}
                 </div>
                 <div style={{ fontSize: "0.875rem", color: "var(--ts-gray-500)" }}>
-                  {courses.length === 0 ? "無資料" : `${courses.length} 筆${courses.length === 50 ? " · 僅顯示前 50 筆" : ""}`}
+                  {totalCount === 0 ? "無資料" : `共 ${totalCount} 筆 · 顯示 ${startItem}-${endItem}`}
                 </div>
               </div>
             </div>
@@ -289,7 +313,132 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
               </div>
             </div>
           ) : (
-            <CourseTable courses={courses} currentSort={sort} currentOrder={order} />
+            <>
+              <CourseTable courses={courses} currentSort={sort} currentOrder={order} />
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "0.5rem" }}>
+                  {/* Previous Button */}
+                  {page > 1 ? (
+                    <Link
+                      href={`/courses?${new URLSearchParams({
+                        ...(q && { q }),
+                        ...(year && { year }),
+                        ...(term && { term }),
+                        ...(campus && { campus }),
+                        ...(division && { division }),
+                        ...(department && { department }),
+                        ...(sort && { sort }),
+                        ...(order && { order }),
+                        page: (page - 1).toString(),
+                      }).toString()}`}
+                      className="ts-button is-icon"
+                    >
+                      ←
+                    </Link>
+                  ) : (
+                    <button className="ts-button is-icon is-disabled" disabled>←</button>
+                  )}
+
+                  {/* Page Numbers */}
+                  {(() => {
+                    const pages: (number | string)[] = [];
+                    const showPages = 5; // Show 5 page numbers at a time
+
+                    if (totalPages <= showPages + 2) {
+                      // Show all pages if total is small
+                      for (let i = 1; i <= totalPages; i++) {
+                        pages.push(i);
+                      }
+                    } else {
+                      // Always show first page
+                      pages.push(1);
+
+                      let start = Math.max(2, page - 1);
+                      let end = Math.min(totalPages - 1, page + 1);
+
+                      // Adjust range if at edges
+                      if (page <= 3) {
+                        end = Math.min(showPages - 1, totalPages - 1);
+                      } else if (page >= totalPages - 2) {
+                        start = Math.max(2, totalPages - showPages + 2);
+                      }
+
+                      if (start > 2) pages.push("...");
+
+                      for (let i = start; i <= end; i++) {
+                        pages.push(i);
+                      }
+
+                      if (end < totalPages - 1) pages.push("...");
+
+                      // Always show last page
+                      pages.push(totalPages);
+                    }
+
+                    return pages.map((p, idx) => {
+                      if (p === "...") {
+                        return <span key={`ellipsis-${idx}`} style={{ padding: "0 0.5rem", color: "var(--ts-gray-400)" }}>...</span>;
+                      }
+
+                      const pageNum = p as number;
+                      const isActive = pageNum === page;
+
+                      if (isActive) {
+                        return (
+                          <button key={pageNum} className="ts-button is-secondary" disabled>
+                            {pageNum}
+                          </button>
+                        );
+                      }
+
+                      return (
+                        <Link
+                          key={pageNum}
+                          href={`/courses?${new URLSearchParams({
+                            ...(q && { q }),
+                            ...(year && { year }),
+                            ...(term && { term }),
+                            ...(campus && { campus }),
+                            ...(division && { division }),
+                            ...(department && { department }),
+                            ...(sort && { sort }),
+                            ...(order && { order }),
+                            page: pageNum.toString(),
+                          }).toString()}`}
+                          className="ts-button"
+                        >
+                          {pageNum}
+                        </Link>
+                      );
+                    });
+                  })()}
+
+                  {/* Next Button */}
+                  {page < totalPages ? (
+                    <Link
+                      href={`/courses?${new URLSearchParams({
+                        ...(q && { q }),
+                        ...(year && { year }),
+                        ...(term && { term }),
+                        ...(campus && { campus }),
+                        ...(division && { division }),
+                        ...(department && { department }),
+                        ...(sort && { sort }),
+                        ...(order && { order }),
+                        page: (page + 1).toString(),
+                      }).toString()}`}
+                      className="ts-button is-icon"
+                    >
+                      →
+                    </Link>
+                  ) : (
+                    <button className="ts-button is-icon is-disabled" disabled>→</button>
+                  )}
+                </div>
+              )}
+            </>
           )}
         </div>
       </div>

@@ -1,0 +1,20 @@
+{
+  "scrapedAt": "2025-12-15T15:36:30.085Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "114#1",
+    "cmpAreaId": "5",
+    "dgrId": "18",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UR14",
+      "label": "(海事學院)海事學院海事科技產學合作博士班",
+      "courses": 11,
+      "file": "data/nkust/ag202/114/1/5/18/UR14.json"
+    }
+  ]
+}

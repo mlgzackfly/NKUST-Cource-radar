@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-15T15:29:41.897Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "114#1",
+    "cmp_area_id": "4",
+    "dgr_id": "14",
+    "unt_id": "XM00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "XM00",
+    "label": "(軍訓室)軍訓"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "5001",
+      "campus": "楠梓校區",
+      "division": "日間部四技",
+      "department": "軍訓",
+      "className": "四軍一甲(楠梓)",
+      "combinedClassName": "",
+      "courseCode": "060C10007",
+      "courseName": "全民國防教育軍事訓練課程-全民國防",
+      "credits": 0,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "林昭君,曾瀚廷,蔡佩圜",
+      "classroom": "3202教室",
+      "enrolled": 56,
+      "capacity": 55,
+      "time": "(五)5-6",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}
