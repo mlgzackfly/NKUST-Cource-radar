@@ -285,7 +285,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
         </div>
 
         {/* Right Sidebar - Sticky Rating Summary */}
-        <aside style={{ position: "sticky", top: "2rem", alignSelf: "start" }}>
+        <aside style={{ position: "sticky", top: "calc(72px + 2rem)", alignSelf: "start" }}>
           <div className="ts-box is-raised" style={{ border: "2px solid var(--ts-gray-200)" }}>
             <div className="ts-content" style={{ padding: "2rem" }}>
               {/* Rating Header */}
