@@ -3,6 +3,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { getCourseRatingSummary } from "@/lib/reviewSummary";
 import CourseSummaryChart from "@/components/CourseSummaryChart";
+import { CourseTimeTable } from "@/components/CourseTimeTable";
 
 type CoursePageProps = {
   params: Promise<{ id: string }>;
@@ -259,6 +260,17 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 )}
               </div>
             </div>
+
+            {/* Course Time Table */}
+            {typedCourse.time && (
+              <div className="ts-box is-raised">
+                <div className="ts-content" style={{ padding: "2rem" }}>
+                  <div className="ts-header" style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}>課程時間表</div>
+                  <CourseTimeTable timeString={typedCourse.time} courseName={typedCourse.courseName} />
+                </div>
+              </div>
+            )}
+
             {typedCourse.note ? (
               <div className="ts-box is-raised">
                 <div className="ts-content" style={{ padding: "2rem" }}>
