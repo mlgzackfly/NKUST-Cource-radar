@@ -67,8 +67,8 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
       return names.join("、");
     }
 
-    // Show first 2 instructors and indicate total count
-    return `${names.slice(0, 2).join("、")} 等${names.length}人`;
+    // Show first 2 instructors with ellipsis
+    return `${names.slice(0, 2).join("、")}...`;
   };
 
   return (
