@@ -1,27 +1,31 @@
 <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background Circle -->
-  <circle cx="60" cy="60" r="58" fill="#3B82F6" stroke="#2563EB" stroke-width="2"/>
+  <!-- Subtle gradient background -->
+  <defs>
+    <linearGradient id="bg-large" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+  </defs>
 
-  <!-- Radar Circles -->
-  <circle cx="60" cy="60" r="45" fill="none" stroke="#60A5FA" stroke-width="1.5" opacity="0.6"/>
-  <circle cx="60" cy="60" r="35" fill="none" stroke="#60A5FA" stroke-width="1.5" opacity="0.7"/>
-  <circle cx="60" cy="60" r="25" fill="none" stroke="#60A5FA" stroke-width="1.5" opacity="0.8"/>
+  <!-- Rounded background -->
+  <rect width="120" height="120" rx="24" fill="url(#bg-large)"/>
+  <rect width="120" height="120" rx="24" fill="#64748B" opacity="0.03"/>
 
-  <!-- Radar Scan Line (animated effect) -->
-  <line x1="60" y1="60" x2="60" y2="15" stroke="#DBEAFE" stroke-width="2" opacity="0.9"/>
+  <!-- Minimal radar circles (subtle, centered) -->
+  <circle cx="60" cy="60" r="38" fill="none" stroke="#64748B" stroke-width="1.5" opacity="0.10"/>
+  <circle cx="60" cy="60" r="28" fill="none" stroke="#64748B" stroke-width="1.5" opacity="0.15"/>
+  <circle cx="60" cy="60" r="18" fill="none" stroke="#64748B" stroke-width="1.5" opacity="0.20"/>
+  <circle cx="60" cy="60" r="10" fill="none" stroke="#64748B" stroke-width="1.5" opacity="0.25"/>
 
-  <!-- Center Dot -->
-  <circle cx="60" cy="60" r="4" fill="#DBEAFE"/>
+  <!-- Center dot -->
+  <circle cx="60" cy="60" r="3" fill="#64748B" opacity="0.35"/>
 
-  <!-- Book Icon (Education Element) -->
-  <g transform="translate(48, 72)">
-    <path d="M2 0C2 0 0 0.5 0 2V18C0 19.5 2 20 2 20H22C22 20 24 19.5 24 18V2C24 0.5 22 0 22 0H2Z" fill="#DBEAFE"/>
-    <path d="M12 0V20" stroke="#3B82F6" stroke-width="1.5"/>
-    <path d="M2 4H22" stroke="#3B82F6" stroke-width="1"/>
-  </g>
+  <!-- Subtle scan lines (minimal accent) -->
+  <line x1="60" y1="60" x2="60" y2="30" stroke="#64748B" stroke-width="2" opacity="0.15" stroke-linecap="round"/>
+  <line x1="60" y1="60" x2="82" y2="45" stroke="#64748B" stroke-width="1.5" opacity="0.12" stroke-linecap="round"/>
 
-  <!-- Star Points (Course Selection) -->
-  <circle cx="85" cy="35" r="3" fill="#FCD34D" opacity="0.9"/>
-  <circle cx="35" cy="35" r="3" fill="#FCD34D" opacity="0.9"/>
-  <circle cx="85" cy="60" r="3" fill="#FCD34D" opacity="0.9"/>
+  <!-- Small accent dots (course markers) -->
+  <circle cx="82" cy="38" r="2.5" fill="#64748B" opacity="0.25"/>
+  <circle cx="38" cy="38" r="2.5" fill="#64748B" opacity="0.25"/>
+  <circle cx="85" cy="60" r="2.5" fill="#64748B" opacity="0.25"/>
 </svg>
