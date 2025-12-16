@@ -175,7 +175,7 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                       key={day}
                       rowSpan={cellInfo.rowspan}
                       style={{
-                        padding: 0,
+                        padding: hasClass ? "0.75rem 1rem" : "0.75rem 1rem",
                         textAlign: "center",
                         verticalAlign: "stretch",
                         borderBottom:
@@ -198,11 +198,10 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                             fontSize: "0.8125rem",
                             fontWeight: 600,
                             color: "var(--ts-primary-700)",
-                            padding: "0.75rem 1rem",
+                            padding: "0.5rem",
                             borderRadius: "6px",
                             background: "color-mix(in srgb, var(--ts-primary-500) 12%, transparent)",
                             border: "1px solid color-mix(in srgb, var(--ts-primary-500) 20%, transparent)",
-                            margin: "0.75rem 1rem",
                           }}
                         >
                           {courseName ? (
