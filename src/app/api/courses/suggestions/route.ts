@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
       `SELECT DISTINCT i.id, i.name as text
        FROM "Instructor" i
        WHERE i.name ILIKE $1
-       ORDER BY i.name
+       ORDER BY text
        LIMIT 3`,
       `%${query}%`
     )) as Array<{ id: string; text: string }>;
@@ -64,7 +64,7 @@ export async function GET(request: NextRequest) {
       `SELECT DISTINCT c.department as text
        FROM "Course" c
        WHERE c.department IS NOT NULL AND c.department ILIKE $1
-       ORDER BY c.department
+       ORDER BY text
        LIMIT 3`,
       `%${query}%`
     )) as Array<{ text: string }>;
