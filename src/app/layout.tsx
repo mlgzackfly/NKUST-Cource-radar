@@ -3,6 +3,8 @@ import Link from "next/link";
 import Image from "next/image";
 import "./globals.css";
 import { SemesterSelector } from "@/components/SemesterSelector";
+import { SessionProvider } from "@/components/SessionProvider";
+import { UserMenu } from "@/components/UserMenu";
 
 export const metadata = {
   title: "高科選課雷達 | 選課，不只是憑感覺",
@@ -43,50 +45,53 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <div className="app-shell">
-          <header className="app-header">
+        <SessionProvider>
+          <div className="app-shell">
+            <header className="app-header">
+              <div className="app-container">
+                <div className="app-header-inner">
+                  <div className="app-header-left">
+                    <Link href="/" className="app-brand" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                      <Image src="/icon.svg" alt="Logo" width={28} height={28} />
+                      高科選課雷達
+                    </Link>
+                    <nav className="app-nav" aria-label="主導覽">
+                      <Link className="ts-button is-ghost is-short" href="/">
+                        首頁
+                      </Link>
+                      <Link className="ts-button is-ghost is-short" href="/courses">
+                        課程
+                      </Link>
+                    </nav>
+                  </div>
+                  <div className="app-header-right">
+                    <SemesterSelector />
+                    <UserMenu />
+                  </div>
+                </div>
+              </div>
+            </header>
+
+            <main className="app-main">
+              {children}
+            </main>
+
             <div className="app-container">
-              <div className="app-header-inner">
-                <div className="app-header-left">
-                  <Link href="/" className="app-brand" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                    <Image src="/icon.svg" alt="Logo" width={28} height={28} />
-                    高科選課雷達
-                  </Link>
-                  <nav className="app-nav" aria-label="主導覽">
-                    <Link className="ts-button is-ghost is-short" href="/">
-                      首頁
-                    </Link>
-                    <Link className="ts-button is-ghost is-short" href="/courses">
-                      課程
-                    </Link>
-                  </nav>
+              <footer className="app-footer" style={{ marginTop: 24, paddingBottom: 24 }}>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+                  <div className="app-muted">
+                    高科選課雷達 | 選課，不只是憑感覺
+                    <br />
+                    此為非官方專案，資訊僅供參考。
+                  </div>
+                  <a href="https://github.com/mlgzack/nkust-course-review" target="_blank" rel="noopener noreferrer" className="ts-button is-ghost is-small">
+                    GitHub
+                  </a>
                 </div>
-                <div className="app-header-right">
-                  <SemesterSelector />
-                </div>
-              </div>
+              </footer>
             </div>
-          </header>
-
-          <main className="app-main">
-            {children}
-          </main>
-
-          <div className="app-container">
-            <footer className="app-footer" style={{ marginTop: 24, paddingBottom: 24 }}>
-              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-                <div className="app-muted">
-                  高科選課雷達 | 選課，不只是憑感覺
-                  <br />
-                  此為非官方專案，資訊僅供參考。
-                </div>
-                <a href="https://github.com/mlgzack/nkust-course-review" target="_blank" rel="noopener noreferrer" className="ts-button is-ghost is-small">
-                  GitHub
-                </a>
-              </div>
-            </footer>
           </div>
-        </div>
+        </SessionProvider>
       </body>
     </html>
   );
