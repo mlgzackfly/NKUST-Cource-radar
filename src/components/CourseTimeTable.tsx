@@ -37,6 +37,52 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
   // Always show periods M, 1-9 (excluding night periods 10-13)
   const allPeriods: PeriodKey[] = ["M", 1, 2, 3, 4, "A", 5, 6, 7, 8, 9];
 
+  // Helper to calculate rowspan for merged cells
+  // Returns { rowspan, skip } for each day-period combination
+  const getCellInfo = (day: number, periodIdx: number): { rowspan: number; skip: boolean } => {
+    const period = allPeriods[periodIdx];
+
+    // Find the slot for this day
+    const daySlot = slots.find((s) => s.day === day);
+    if (!daySlot || !daySlot.periods.includes(period)) {
+      return { rowspan: 1, skip: false };
+    }
+
+    // Check if this is the start of a consecutive block
+    const periodIndexInSlot = daySlot.periods.indexOf(period);
+    if (periodIndexInSlot === -1) {
+      return { rowspan: 1, skip: false };
+    }
+
+    // If not the first period in the slot, skip this cell (it's merged)
+    if (periodIndexInSlot > 0) {
+      const prevPeriod = daySlot.periods[periodIndexInSlot - 1];
+      const prevPeriodIdx = allPeriods.indexOf(prevPeriod);
+      // Check if previous period is consecutive (previous row)
+      if (prevPeriodIdx === periodIdx - 1) {
+        return { rowspan: 1, skip: true };
+      }
+    }
+
+    // Count consecutive periods
+    let rowspan = 1;
+    for (let i = periodIndexInSlot + 1; i < daySlot.periods.length; i++) {
+      const currentPeriod = daySlot.periods[i];
+      const prevPeriod = daySlot.periods[i - 1];
+      const currentIdx = allPeriods.indexOf(currentPeriod);
+      const prevIdx = allPeriods.indexOf(prevPeriod);
+
+      // Check if consecutive
+      if (currentIdx === prevIdx + 1) {
+        rowspan++;
+      } else {
+        break;
+      }
+    }
+
+    return { rowspan, skip: false };
+  };
+
   return (
     <div style={{ overflow: "auto" }}>
       <table
@@ -115,15 +161,27 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                   </div>
                 </td>
                 {displayDays.map((day) => {
+                  const cellInfo = getCellInfo(day, periodIdx);
+
+                  // Skip cells that are merged by rowspan
+                  if (cellInfo.skip) {
+                    return null;
+                  }
+
                   const hasClass = hasClassAt(slots, day, period);
+
                   return (
                     <td
                       key={day}
+                      rowSpan={cellInfo.rowspan}
                       style={{
                         padding: "0.75rem 1rem",
                         textAlign: "center",
+                        verticalAlign: "middle",
                         borderBottom:
-                          periodIdx < allPeriods.length - 1 ? "1px solid var(--app-table-border)" : "none",
+                          periodIdx + cellInfo.rowspan - 1 < allPeriods.length - 1
+                            ? "1px solid var(--app-table-border)"
+                            : "none",
                         background: hasClass
                           ? "color-mix(in srgb, var(--ts-primary-500) 8%, transparent)"
                           : "transparent",
