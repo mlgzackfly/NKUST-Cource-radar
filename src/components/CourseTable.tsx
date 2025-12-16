@@ -10,6 +10,8 @@ type CourseListItem = {
   campus: string | null;
   year: string;
   term: string;
+  time: string | null;
+  classroom: string | null;
   instructors: Array<{ instructor: { name: string } }>;
 };
 
@@ -57,6 +59,18 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
     transition: "background-color 0.15s"
   });
 
+  const formatInstructors = (instructors: Array<{ instructor: { name: string } }>) => {
+    if (!instructors || instructors.length === 0) return "—";
+
+    const names = instructors.map((x) => x.instructor.name);
+    if (names.length <= 2) {
+      return names.join("、");
+    }
+
+    // Show first 2 instructors and indicate total count
+    return `${names.slice(0, 2).join("、")} 等${names.length}人`;
+  };
+
   return (
     <div style={{ overflow: "auto" }}>
       {/* Table view - Notion/Airtable style */}
@@ -78,6 +92,12 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
               onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
             >
               教師{getSortIcon("instructorName")}
+            </th>
+            <th style={{ ...headerStyle(false), minWidth: "100px" }}>
+              上課時間
+            </th>
+            <th style={{ ...headerStyle(false), minWidth: "90px" }}>
+              教室
             </th>
             <th
               style={{ ...headerStyle(true), minWidth: "120px" }}
@@ -107,7 +127,6 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
         </thead>
         <tbody>
           {courses.map((c, index) => {
-            const instructors = c.instructors.map((x) => x.instructor.name).join("、");
             return (
               <tr
                 key={c.id}
@@ -124,7 +143,13 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
                   {c.courseName}
                 </td>
                 <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-700)" }}>
-                  {instructors || "—"}
+                  {formatInstructors(c.instructors)}
+                </td>
+                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}>
+                  {c.time || "—"}
+                </td>
+                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}>
+                  {c.classroom || "—"}
                 </td>
                 <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}>
                   {c.department || "—"}

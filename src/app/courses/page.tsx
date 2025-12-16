@@ -11,6 +11,8 @@ type CourseListItem = {
   campus: string | null;
   year: string;
   term: string;
+  time: string | null;
+  classroom: string | null;
   instructors: Array<{ instructor: { name: string } }>;
 };
 
@@ -163,7 +165,9 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
           c.department,
           c.campus,
           c.year,
-          c.term
+          c.term,
+          c.time,
+          c.classroom
         FROM "Course" c
         WHERE ${conditions.join(' AND ')}
         ORDER BY ${orderByClause}
@@ -176,6 +180,8 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
         campus: string | null;
         year: string;
         term: string;
+        time: string | null;
+        classroom: string | null;
       }>;
 
       // Fetch instructors separately for better performance
@@ -223,6 +229,8 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
           campus: true,
           year: true,
           term: true,
+          time: true,
+          classroom: true,
           instructors: {
             select: {
               instructor: { select: { name: true } },
