@@ -175,9 +175,9 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                       key={day}
                       rowSpan={cellInfo.rowspan}
                       style={{
-                        padding: "0.75rem 1rem",
+                        padding: 0,
                         textAlign: "center",
-                        verticalAlign: "middle",
+                        verticalAlign: "stretch",
                         borderBottom:
                           periodIdx + cellInfo.rowspan - 1 < allPeriods.length - 1
                             ? "1px solid var(--app-table-border)"
@@ -191,13 +191,18 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                       {hasClass && (
                         <div
                           style={{
+                            height: "100%",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                             fontSize: "0.8125rem",
                             fontWeight: 600,
                             color: "var(--ts-primary-700)",
-                            padding: "0.5rem",
+                            padding: "0.75rem 1rem",
                             borderRadius: "6px",
                             background: "color-mix(in srgb, var(--ts-primary-500) 12%, transparent)",
                             border: "1px solid color-mix(in srgb, var(--ts-primary-500) 20%, transparent)",
+                            margin: "0.75rem 1rem",
                           }}
                         >
                           {courseName ? (
@@ -207,7 +212,6 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                                 textOverflow: "ellipsis",
                                 whiteSpace: "nowrap",
                                 maxWidth: "120px",
-                                margin: "0 auto",
                               }}
                             >
                               {courseName}
