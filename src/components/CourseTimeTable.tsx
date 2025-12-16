@@ -2,8 +2,6 @@
 
 import {
   parseCourseTime,
-  getActiveDays,
-  getAllPeriods,
   hasClassAt,
   DAY_LABELS,
   TIME_PERIODS,
@@ -33,11 +31,11 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
     );
   }
 
-  const activeDays = getActiveDays(slots);
-  const allPeriods = getAllPeriods(slots);
+  // Always show Monday to Friday (1-5)
+  const displayDays = [1, 2, 3, 4, 5];
 
-  // Filter out weekends if they don't have classes
-  const displayDays = activeDays.filter((day) => day !== 0 && day !== 6 ? true : activeDays.includes(day));
+  // Always show periods M, 1-9 (excluding night periods 10-13)
+  const allPeriods: PeriodKey[] = ["M", 1, 2, 3, 4, "A", 5, 6, 7, 8, 9];
 
   return (
     <div style={{ overflow: "auto" }}>
