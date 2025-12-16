@@ -1,0 +1,27 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="58" fill="#3B82F6" stroke="#2563EB" stroke-width="2"/>
+
+  <!-- Radar Circles -->
+  <circle cx="60" cy="60" r="45" fill="none" stroke="#60A5FA" stroke-width="1.5" opacity="0.6"/>
+  <circle cx="60" cy="60" r="35" fill="none" stroke="#60A5FA" stroke-width="1.5" opacity="0.7"/>
+  <circle cx="60" cy="60" r="25" fill="none" stroke="#60A5FA" stroke-width="1.5" opacity="0.8"/>
+
+  <!-- Radar Scan Line (animated effect) -->
+  <line x1="60" y1="60" x2="60" y2="15" stroke="#DBEAFE" stroke-width="2" opacity="0.9"/>
+
+  <!-- Center Dot -->
+  <circle cx="60" cy="60" r="4" fill="#DBEAFE"/>
+
+  <!-- Book Icon (Education Element) -->
+  <g transform="translate(48, 72)">
+    <path d="M2 0C2 0 0 0.5 0 2V18C0 19.5 2 20 2 20H22C22 20 24 19.5 24 18V2C24 0.5 22 0 22 0H2Z" fill="#DBEAFE"/>
+    <path d="M12 0V20" stroke="#3B82F6" stroke-width="1.5"/>
+    <path d="M2 4H22" stroke="#3B82F6" stroke-width="1"/>
+  </g>
+
+  <!-- Star Points (Course Selection) -->
+  <circle cx="85" cy="35" r="3" fill="#FCD34D" opacity="0.9"/>
+  <circle cx="35" cy="35" r="3" fill="#FCD34D" opacity="0.9"/>
+  <circle cx="85" cy="60" r="3" fill="#FCD34D" opacity="0.9"/>
+</svg>

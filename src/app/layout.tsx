@@ -1,11 +1,15 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import "./globals.css";
 import { SemesterSelector } from "@/components/SemesterSelector";
 
 export const metadata = {
   title: "高科選課雷達 | 選課，不只是憑感覺",
   description: "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊，做出更明智的選課決定。",
+  icons: {
+    icon: '/icon.svg',
+  },
 };
 
 export const viewport = {
@@ -44,7 +48,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <div className="app-container">
               <div className="app-header-inner">
                 <div className="app-header-left">
-                  <Link href="/" className="app-brand">
+                  <Link href="/" className="app-brand" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <Image src="/icon.svg" alt="Logo" width={28} height={28} />
                     高科選課雷達
                   </Link>
                   <nav className="app-nav" aria-label="主導覽">
