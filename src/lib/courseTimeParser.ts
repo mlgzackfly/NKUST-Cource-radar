@@ -76,13 +76,23 @@ export function parseCourseTime(timeString: string | null): TimeSlot[] {
     const periods: PeriodKey[] = [];
 
     // Define period order
-    const periodOrder: PeriodKey[] = ["M", "1", "2", "3", "4", "A", "5", "6", "7", "8", "9", "10", "11", "12", "13"];
+    const periodOrder: PeriodKey[] = ["M", 1, 2, 3, 4, "A", 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+    // Helper to convert string to PeriodKey
+    const toPeriodKey = (s: string): PeriodKey | null => {
+      if (s === "M" || s === "A") return s;
+      const num = parseInt(s, 10);
+      if (!isNaN(num) && num >= 1 && num <= 13) return num as PeriodKey;
+      return null;
+    };
 
     if (periodPart.includes("-")) {
       // Range like "2-4" or "M-2"
       const [start, end] = periodPart.split("-");
-      const startIdx = periodOrder.indexOf(start as PeriodKey);
-      const endIdx = periodOrder.indexOf(end as PeriodKey);
+      const startKey = toPeriodKey(start);
+      const endKey = toPeriodKey(end);
+      const startIdx = startKey !== null ? periodOrder.indexOf(startKey) : -1;
+      const endIdx = endKey !== null ? periodOrder.indexOf(endKey) : -1;
 
       if (startIdx !== -1 && endIdx !== -1) {
         for (let i = startIdx; i <= endIdx; i++) {
@@ -91,8 +101,9 @@ export function parseCourseTime(timeString: string | null): TimeSlot[] {
       }
     } else {
       // Single period like "M" or "5"
-      if (periodPart in TIME_PERIODS) {
-        periods.push(periodPart as PeriodKey);
+      const key = toPeriodKey(periodPart);
+      if (key !== null && key in TIME_PERIODS) {
+        periods.push(key);
       }
     }
 
@@ -147,7 +158,7 @@ export function getAllPeriods(slots: TimeSlot[]): PeriodKey[] {
   });
 
   // Use correct period order (M, 1-9, A, 10-13)
-  const periodOrder: PeriodKey[] = ["M", "1", "2", "3", "4", "A", "5", "6", "7", "8", "9", "10", "11", "12", "13"];
+  const periodOrder: PeriodKey[] = ["M", 1, 2, 3, 4, "A", 5, 6, 7, 8, 9, 10, 11, 12, 13];
   return periodOrder.filter((p) => periodSet.has(p));
 }
 
