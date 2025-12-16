@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import "./globals.css";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { SemesterSelector } from "@/components/SemesterSelector";
 
 export const metadata = {
@@ -59,7 +58,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 </div>
                 <div className="app-header-right">
                   <SemesterSelector />
-                  <ThemeToggle />
                 </div>
               </div>
             </div>
