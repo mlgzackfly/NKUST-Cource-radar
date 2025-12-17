@@ -28,10 +28,13 @@ enum AdminActionType {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  createdAt DateTime @default(now())
-  bannedAt  DateTime?
+  id            String    @id @default(cuid())
+  email         String    @unique
+  emailVerified DateTime? // Required by NextAuth
+  name          String?   // Optional for NextAuth
+  image         String?   // Optional for NextAuth
+  createdAt     DateTime  @default(now())
+  bannedAt      DateTime?
 
   // NextAuth relations
   accounts      Account[]
@@ -84,6 +87,11 @@ model Course {
   englishTaught     String?
   distanceLearning  String?
   note              String?
+
+  // Syllabus (授課大綱)
+  syllabusUrl       String? // URL to fetch syllabus
+  syllabusHtml      String? // Raw HTML content
+  syllabusData      Json?   // Parsed structured data
 
   // Full-text search vector (populated by trigger)
   searchVector Unsupported("tsvector")?
@@ -144,6 +152,7 @@ model Review {
   usefulness   Int?
   workload     Int?
   attendance   Int?
+  grading      Int? // 給分甜度 (1-5 or null)
   body         String?
   authorDept   String? // displayed; still anonymous
 
@@ -168,6 +177,7 @@ model ReviewVersion {
   usefulness   Int?
   workload     Int?
   attendance   Int?
+  grading      Int?
   body         String?
   authorDept   String?
 

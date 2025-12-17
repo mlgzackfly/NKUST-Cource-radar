@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { getCourseRatingSummary } from "@/lib/reviewSummary";
 
 type ReviewRow = {
@@ -29,9 +30,14 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     }) as Response;
   }
 
-  const { userId } = await auth();
-  const user = userId ? await currentUser() : null;
-  const email = user?.primaryEmailAddress?.emailAddress;
+  const session = await getServerSession(authOptions);
+  const email = session?.user?.email;
+
+  // Debug logging
+  console.log("=== Reviews API Debug ===");
+  console.log("Session:", session ? "✓ Exists" : "✗ Not found");
+  console.log("Email:", email || "✗ Not found");
+  console.log("Is NKUST user:", email?.toLowerCase().endsWith("@nkust.edu.tw"));
 
   const sort = new URL(request.url).searchParams.get("sort") || "latest";
   const take = Math.min(Number(new URL(request.url).searchParams.get("take") || "20"), 50);

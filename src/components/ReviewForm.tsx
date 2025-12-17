@@ -1,19 +1,27 @@
 "use client";
 
 import { useState } from "react";
-import { useUser, SignInButton } from "@clerk/nextjs";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
-export function ReviewForm({ courseId }: { courseId: string }) {
-  const { isLoaded, isSignedIn } = useUser();
+export function ReviewForm({
+  courseId,
+  userHasReviewed = false
+}: {
+  courseId: string;
+  userHasReviewed?: boolean;
+}) {
+  const { data: session, status } = useSession();
   const router = useRouter();
 
   const [coolness, setCoolness] = useState<RatingValue>(null);
   const [usefulness, setUsefulness] = useState<RatingValue>(null);
   const [workload, setWorkload] = useState<RatingValue>(null);
   const [attendance, setAttendance] = useState<RatingValue>(null);
+  const [grading, setGrading] = useState<RatingValue>(null);
   const [body, setBody] = useState("");
   const [authorDept, setAuthorDept] = useState("");
 
@@ -21,7 +29,7 @@ export function ReviewForm({ courseId }: { courseId: string }) {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  if (!isLoaded) {
+  if (status === "loading") {
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
@@ -32,7 +40,7 @@ export function ReviewForm({ courseId }: { courseId: string }) {
     );
   }
 
-  if (!isSignedIn) {
+  if (!session) {
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
@@ -40,11 +48,22 @@ export function ReviewForm({ courseId }: { courseId: string }) {
           <div className="app-muted" style={{ marginBottom: "1.5rem" }}>
             登入後即可撰寫評價
           </div>
-          <SignInButton mode="modal">
-            <button className="ts-button is-primary">
-              登入撰寫
-            </button>
-          </SignInButton>
+          <Link href="/auth/signin" className="ts-button is-primary">
+            登入撰寫
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (userHasReviewed) {
+    return (
+      <div className="ts-box is-raised">
+        <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
+          <div className="ts-header" style={{ marginBottom: "0.5rem" }}>您已評論過此課程</div>
+          <div className="app-muted">
+            每門課程只能評論一次，您的評論已顯示在下方列表中
+          </div>
         </div>
       </div>
     );
@@ -53,7 +72,7 @@ export function ReviewForm({ courseId }: { courseId: string }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!coolness && !usefulness && !workload && !attendance) {
+    if (!coolness && !usefulness && !workload && !attendance && !grading) {
       setError("至少需要填寫一項評分");
       return;
     }
@@ -71,6 +90,7 @@ export function ReviewForm({ courseId }: { courseId: string }) {
           usefulness,
           workload,
           attendance,
+          grading,
           body: body.trim() || null,
           authorDept: authorDept.trim() || null
         })
@@ -140,6 +160,12 @@ export function ReviewForm({ courseId }: { courseId: string }) {
               description="點名頻率 (5 = 每堂點，1 = 不點名)"
               value={attendance}
               onChange={setAttendance}
+            />
+            <RatingInput
+              label="給分甜度"
+              description="給分寬鬆程度 (5 = 很甜，1 = 很硬)"
+              value={grading}
+              onChange={setGrading}
             />
           </div>
 

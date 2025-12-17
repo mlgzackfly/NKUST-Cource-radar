@@ -4,7 +4,7 @@ import Image from "next/image";
 import "./globals.css";
 import { SemesterSelector } from "@/components/SemesterSelector";
 import { UserMenu } from "@/components/UserMenu";
-import { ClerkProvider } from '@clerk/nextjs';
+import { SessionProvider } from "@/components/SessionProvider";
 
 export const metadata = {
   title: "高科選課雷達 | 選課，不只是憑感覺",
@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
       <body>
-        <ClerkProvider>
+        <SessionProvider>
           <div className="app-shell">
             <header className="app-header">
               <div className="app-container">
@@ -91,7 +91,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </footer>
             </div>
           </div>
-        </ClerkProvider>
+        </SessionProvider>
       </body>
     </html>
   );

@@ -5,6 +5,7 @@ import { fileURLToPath } from "node:url";
 import { execFile } from "node:child_process";
 import { promisify } from "node:util";
 import { load } from "cheerio";
+import { scrapeSyllabus } from "./nkust-ag064-syllabus.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -249,6 +250,7 @@ async function main() {
   const unitId = env("NKUST_UNT_ID", "");
 
   const scrapeAllUnits = parseBool(env("NKUST_SCRAPE_ALL_UNITS", "0"));
+  const scrapeSyllabusEnabled = parseBool(env("NKUST_SCRAPE_SYLLABUS", "0"));
 
   const clyear = env("NKUST_CLYEAR", "%");
   const week = env("NKUST_WEEK", "%");
@@ -327,6 +329,24 @@ async function main() {
         });
 
         const parsed = parseCoursesFromHtml(html);
+
+        // Fetch syllabus for each course if enabled
+        if (scrapeSyllabusEnabled) {
+          console.log(`Scraping syllabi for ${parsed.courses.length} courses...`);
+          for (const course of parsed.courses) {
+            if (course.syllabus) {
+              try {
+                const syllabusData = await scrapeSyllabus(course.syllabus);
+                course.syllabusData = syllabusData;
+                // Add a small delay to avoid overwhelming the server
+                await new Promise(r => setTimeout(r, 500));
+              } catch (err) {
+                console.error(`Failed to scrape syllabus for ${course.courseName}:`, err.message);
+              }
+            }
+          }
+        }
+
         const payload = {
           scrapedAt: new Date().toISOString(),
           sourceUrl: SOURCE_URL,

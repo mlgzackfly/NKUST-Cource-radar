@@ -1,9 +1,13 @@
 "use client";
 
-import { useUser, SignInButton } from "@clerk/nextjs";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type Review = {
   id: string;
+  userId: string;
   createdAt: string;
   coolness: number | null;
   usefulness: number | null;
@@ -13,10 +17,16 @@ type Review = {
   authorDept: string | null;
 };
 
-export function ReviewList({ reviews }: { reviews: Review[] | null }) {
-  const { isLoaded, isSignedIn } = useUser();
+type ReviewListProps = {
+  reviews: Review[] | null;
+  currentUserId: string | null;
+  courseId: string;
+};
 
-  if (!isLoaded) {
+export function ReviewList({ reviews, currentUserId, courseId }: ReviewListProps) {
+  const { data: session, status } = useSession();
+
+  if (status === "loading") {
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "3rem 2rem", textAlign: "center" }}>
@@ -26,7 +36,7 @@ export function ReviewList({ reviews }: { reviews: Review[] | null }) {
     );
   }
 
-  if (!isSignedIn) {
+  if (!session) {
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "3rem 2rem", textAlign: "center" }}>
@@ -35,11 +45,9 @@ export function ReviewList({ reviews }: { reviews: Review[] | null }) {
           <div className="app-muted" style={{ marginBottom: "1.5rem" }}>
             為了保護評論者隱私，需要登入後才能查看完整評論內容
           </div>
-          <SignInButton mode="modal">
-            <button className="ts-button is-primary">
-              登入查看
-            </button>
-          </SignInButton>
+          <Link href="/auth/signin" className="ts-button is-primary">
+            登入查看
+          </Link>
         </div>
       </div>
     );
@@ -65,25 +73,183 @@ export function ReviewList({ reviews }: { reviews: Review[] | null }) {
 
       <div style={{ display: "grid", gap: "1.5rem" }}>
         {reviews.map((review) => (
-          <ReviewCard key={review.id} review={review} />
+          <ReviewCard
+            key={review.id}
+            review={review}
+            isOwner={currentUserId === review.userId}
+            courseId={courseId}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-function ReviewCard({ review }: { review: Review }) {
+type ReviewCardProps = {
+  review: Review;
+  isOwner: boolean;
+  courseId: string;
+};
+
+function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [coolness, setCoolness] = useState<number | null>(review.coolness);
+  const [usefulness, setUsefulness] = useState<number | null>(review.usefulness);
+  const [workload, setWorkload] = useState<number | null>(review.workload);
+  const [attendance, setAttendance] = useState<number | null>(review.attendance);
+  const [body, setBody] = useState(review.body || "");
+  const [authorDept, setAuthorDept] = useState(review.authorDept || "");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
+
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
     return date.toLocaleDateString("zh-TW", { year: "numeric", month: "2-digit", day: "2-digit" });
   };
 
+  const handleSave = async () => {
+    if (!coolness && !usefulness && !workload && !attendance) {
+      setError("至少需要填寫一項評分");
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch(`/api/reviews/${review.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          coolness,
+          usefulness,
+          workload,
+          attendance,
+          body: body.trim() || null,
+          authorDept: authorDept.trim() || null
+        })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "更新失敗");
+      }
+
+      setIsEditing(false);
+      router.refresh();
+    } catch (err: any) {
+      setError(err.message || "更新失敗，請稍後再試");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleCancel = () => {
+    setCoolness(review.coolness);
+    setUsefulness(review.usefulness);
+    setWorkload(review.workload);
+    setAttendance(review.attendance);
+    setBody(review.body || "");
+    setAuthorDept(review.authorDept || "");
+    setError(null);
+    setIsEditing(false);
+  };
+
+  if (isEditing) {
+    return (
+      <div className="ts-box is-raised">
+        <div className="ts-content" style={{ padding: "1.5rem" }}>
+          <div style={{ marginBottom: "1.5rem" }}>
+            <div className="ts-header" style={{ fontSize: "1.125rem" }}>編輯評論</div>
+          </div>
+
+          {/* Rating Dimensions */}
+          <div style={{ display: "grid", gap: "1.5rem", marginBottom: "1.5rem" }}>
+            <RatingInput label="涼度" value={coolness} onChange={setCoolness} />
+            <RatingInput label="實用性" value={usefulness} onChange={setUsefulness} />
+            <RatingInput label="作業量" value={workload} onChange={setWorkload} />
+            <RatingInput label="點名" value={attendance} onChange={setAttendance} />
+          </div>
+
+          {/* Text Review */}
+          <div className="ts-control is-stacked" style={{ marginBottom: "1.5rem" }}>
+            <div className="label">文字評論 (選填)</div>
+            <div className="content">
+              <textarea
+                className="ts-input is-fluid"
+                rows={6}
+                placeholder="分享您的修課心得、優缺點、建議..."
+                value={body}
+                onChange={(e) => setBody(e.target.value)}
+                maxLength={2000}
+                style={{ resize: "vertical" }}
+              />
+            </div>
+          </div>
+
+          {/* Author Department */}
+          <div className="ts-control is-stacked" style={{ marginBottom: "1.5rem" }}>
+            <div className="label">您的系所 (選填)</div>
+            <div className="content">
+              <div className="ts-input is-fluid">
+                <input
+                  type="text"
+                  placeholder="例：資訊工程系"
+                  value={authorDept}
+                  onChange={(e) => setAuthorDept(e.target.value)}
+                  maxLength={50}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Error */}
+          {error && (
+            <div className="ts-notice is-negative" style={{ marginBottom: "1.5rem" }}>
+              <div className="content">{error}</div>
+            </div>
+          )}
+
+          {/* Actions */}
+          <div style={{ display: "flex", gap: "0.75rem" }}>
+            <button
+              onClick={handleSave}
+              className="ts-button is-primary"
+              disabled={loading}
+            >
+              {loading ? "儲存中..." : "儲存"}
+            </button>
+            <button
+              onClick={handleCancel}
+              className="ts-button is-outlined"
+              disabled={loading}
+            >
+              取消
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="ts-box is-raised">
       <div className="ts-content" style={{ padding: "1.5rem" }}>
         {/* Header */}
-        <div style={{ fontSize: "0.875rem", color: "var(--app-muted)", marginBottom: "1rem" }}>
-          {review.authorDept || "匿名使用者"} · {formatDate(review.createdAt)}
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+          <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
+            {review.authorDept || "匿名使用者"} · {formatDate(review.createdAt)}
+          </div>
+          {isOwner && (
+            <button
+              onClick={() => setIsEditing(true)}
+              className="ts-button is-ghost is-small"
+            >
+              編輯
+            </button>
+          )}
         </div>
 
         {/* Ratings */}
@@ -114,6 +280,45 @@ function ReviewCard({ review }: { review: Review }) {
             {review.body}
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
+
+function RatingInput({
+  label,
+  value,
+  onChange
+}: {
+  label: string;
+  value: RatingValue;
+  onChange: (value: RatingValue) => void;
+}) {
+  return (
+    <div>
+      <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>{label}</div>
+      <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+        {[1, 2, 3, 4, 5].map((rating) => (
+          <button
+            key={rating}
+            type="button"
+            onClick={() => onChange(rating as RatingValue)}
+            className={value === rating ? "ts-button is-primary" : "ts-button is-outlined"}
+            style={{ width: "3rem", height: "3rem", fontSize: "1.125rem" }}
+          >
+            {rating}
+          </button>
+        ))}
+        <button
+          type="button"
+          onClick={() => onChange(null)}
+          className="ts-button is-ghost"
+          style={{ marginLeft: "0.5rem" }}
+        >
+          N/A
+        </button>
       </div>
     </div>
   );

@@ -79,6 +79,9 @@ async function upsertCourseFromRow({ meta, row }) {
       englishTaught: row.englishTaught || null,
       distanceLearning: row.distanceLearning || null,
       note: row.note || null,
+      syllabusUrl: row.syllabusData?.url || null,
+      syllabusHtml: row.syllabusData?.html || null,
+      syllabusData: row.syllabusData?.data ? JSON.parse(JSON.stringify(row.syllabusData.data)) : null,
     },
     update: {
       // keep latest scraped values
@@ -101,6 +104,9 @@ async function upsertCourseFromRow({ meta, row }) {
       englishTaught: row.englishTaught || null,
       distanceLearning: row.distanceLearning || null,
       note: row.note || null,
+      syllabusUrl: row.syllabusData?.url || null,
+      syllabusHtml: row.syllabusData?.html || null,
+      syllabusData: row.syllabusData?.data ? JSON.parse(JSON.stringify(row.syllabusData.data)) : null,
     },
     select: { id: true },
   });

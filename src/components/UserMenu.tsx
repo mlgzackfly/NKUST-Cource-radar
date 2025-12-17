@@ -1,11 +1,11 @@
 "use client";
 
-import { useUser, useClerk, SignInButton } from "@clerk/nextjs";
+import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 
 export function UserMenu() {
-  const { isLoaded, isSignedIn, user } = useUser();
-  const { signOut } = useClerk();
+  const { data: session, status } = useSession();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -19,21 +19,19 @@ export function UserMenu() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  if (!isLoaded) {
+  if (status === "loading") {
     return <div className="ts-button is-ghost is-short is-loading">載入中...</div>;
   }
 
-  if (!isSignedIn) {
+  if (!session) {
     return (
-      <SignInButton mode="modal">
-        <button className="ts-button is-primary is-short">
-          登入
-        </button>
-      </SignInButton>
+      <Link href="/auth/signin" className="ts-button is-primary is-short">
+        登入
+      </Link>
     );
   }
 
-  const email = user.primaryEmailAddress?.emailAddress || "";
+  const email = session.user?.email || "";
   const emailPrefix = email.split("@")[0] || "User";
 
   return (
@@ -71,7 +69,7 @@ export function UserMenu() {
 
           <button
             onClick={() => {
-              signOut();
+              signOut({ callbackUrl: "/" });
               setShowMenu(false);
             }}
             style={{
