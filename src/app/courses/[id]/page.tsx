@@ -4,6 +4,8 @@ import { prisma } from "@/lib/db";
 import { getCourseRatingSummary } from "@/lib/reviewSummary";
 import CourseSummaryChart from "@/components/CourseSummaryChart";
 import { CourseTimeTable } from "@/components/CourseTimeTable";
+import { ReviewForm } from "@/components/ReviewForm";
+import { ReviewList } from "@/components/ReviewList";
 
 type CoursePageProps = {
   params: Promise<{ id: string }>;
@@ -73,6 +75,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
   let course;
   let summary = null;
+  let reviewsData = null;
 
   try {
     course = await prisma.course.findUnique({
@@ -115,6 +118,21 @@ export default async function CoursePage({ params }: CoursePageProps) {
     }
 
     summary = await getCourseRatingSummary(typedCourse.id);
+
+    // Fetch reviews from API
+    try {
+      const baseUrl = process.env.NEXTAUTH_URL || 'http://localhost:3000';
+      const reviewsRes = await fetch(`${baseUrl}/api/courses/${p.id}/reviews`, {
+        cache: 'no-store'
+      });
+      if (reviewsRes.ok) {
+        const data = await reviewsRes.json();
+        reviewsData = data.reviews;
+      }
+    } catch (reviewError) {
+      console.error('Failed to fetch reviews:', reviewError);
+      // Continue rendering without reviews
+    }
   } catch (error) {
     console.error('Failed to fetch course:', error);
     return (
@@ -281,6 +299,12 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 </div>
               </div>
             ) : null}
+
+            {/* Review Form */}
+            <ReviewForm courseId={typedCourse.id} />
+
+            {/* Review List */}
+            <ReviewList reviews={reviewsData} />
           </div>
         </div>
 
@@ -329,7 +353,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
               <div className="ts-notice is-outlined" style={{ margin: 0 }}>
                 <div className="title" style={{ fontSize: "0.9375rem" }}>互動功能</div>
                 <div className="content" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
-                  文字評論、留言、按「有幫助」等互動功能需登入(登入功能後續補上)。
+                  文字評論需登入 @nkust.edu.tw 信箱。留言、按「有幫助」等功能後續推出。
                 </div>
               </div>
             </div>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { getViewerFromRequest } from "@/lib/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/authOptions";
 import { getCourseRatingSummary } from "@/lib/reviewSummary";
 
 type ReviewRow = {
@@ -29,16 +30,21 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     }) as Response;
   }
 
-  const viewer = getViewerFromRequest(request);
+  const session = await getServerSession(authOptions);
   const sort = new URL(request.url).searchParams.get("sort") || "latest";
   const take = Math.min(Number(new URL(request.url).searchParams.get("take") || "20"), 50);
 
-  // Until real login exists:
-  // - anonymous: summary only
-  // - logged-in (nkust email): return review list
-  if (viewer.kind === "anonymous" || !viewer.isNkust) {
+  // Check if user is logged in with @nkust.edu.tw email
+  const isNkustUser = session?.user?.email?.toLowerCase().endsWith("@nkust.edu.tw");
+
+  if (!isNkustUser) {
     const summary = await getCourseRatingSummary(p.id);
-    return NextResponse.json({ courseId: p.id, summary, reviews: null, visibility: "summary_only" }) as Response;
+    return NextResponse.json({
+      courseId: p.id,
+      summary,
+      reviews: null,
+      visibility: "summary_only"
+    }) as Response;
   }
 
   const orderBy =
