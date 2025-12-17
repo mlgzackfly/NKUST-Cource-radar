@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { useUser, SignInButton } from "@clerk/nextjs";
 
 type Review = {
   id: string;
@@ -14,9 +14,19 @@ type Review = {
 };
 
 export function ReviewList({ reviews }: { reviews: Review[] | null }) {
-  const { data: session } = useSession();
+  const { isLoaded, isSignedIn } = useUser();
 
-  if (!session) {
+  if (!isLoaded) {
+    return (
+      <div className="ts-box is-raised">
+        <div className="ts-content" style={{ padding: "3rem 2rem", textAlign: "center" }}>
+          <div className="app-muted">載入中...</div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "3rem 2rem", textAlign: "center" }}>
@@ -25,9 +35,11 @@ export function ReviewList({ reviews }: { reviews: Review[] | null }) {
           <div className="app-muted" style={{ marginBottom: "1.5rem" }}>
             為了保護評論者隱私，需要登入後才能查看完整評論內容
           </div>
-          <a href="/auth/signin" className="ts-button is-primary">
-            登入查看
-          </a>
+          <SignInButton mode="modal">
+            <button className="ts-button is-primary">
+              登入查看
+            </button>
+          </SignInButton>
         </div>
       </div>
     );

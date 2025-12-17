@@ -1,13 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { useSession } from "next-auth/react";
+import { useUser, SignInButton } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
 type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
 export function ReviewForm({ courseId }: { courseId: string }) {
-  const { data: session } = useSession();
+  const { isLoaded, isSignedIn } = useUser();
   const router = useRouter();
 
   const [coolness, setCoolness] = useState<RatingValue>(null);
@@ -21,7 +21,18 @@ export function ReviewForm({ courseId }: { courseId: string }) {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  if (!session) {
+  if (!isLoaded) {
+    return (
+      <div className="ts-box is-raised">
+        <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
+          <div className="ts-header" style={{ marginBottom: "1rem" }}>撰寫課程評價</div>
+          <div className="app-muted">載入中...</div>
+        </div>
+      </div>
+    );
+  }
+
+  if (!isSignedIn) {
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
@@ -29,9 +40,11 @@ export function ReviewForm({ courseId }: { courseId: string }) {
           <div className="app-muted" style={{ marginBottom: "1.5rem" }}>
             登入後即可撰寫評價
           </div>
-          <a href="/auth/signin" className="ts-button is-primary">
-            登入撰寫
-          </a>
+          <SignInButton mode="modal">
+            <button className="ts-button is-primary">
+              登入撰寫
+            </button>
+          </SignInButton>
         </div>
       </div>
     );

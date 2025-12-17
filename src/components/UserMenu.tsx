@@ -1,11 +1,11 @@
 "use client";
 
-import { useSession, signOut } from "next-auth/react";
+import { useUser, useClerk, SignInButton } from "@clerk/nextjs";
 import { useState, useRef, useEffect } from "react";
-import Link from "next/link";
 
 export function UserMenu() {
-  const { data: session, status } = useSession();
+  const { isLoaded, isSignedIn, user } = useUser();
+  const { signOut } = useClerk();
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -19,19 +19,22 @@ export function UserMenu() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  if (status === "loading") {
+  if (!isLoaded) {
     return <div className="ts-button is-ghost is-short is-loading">載入中...</div>;
   }
 
-  if (!session) {
+  if (!isSignedIn) {
     return (
-      <Link href="/auth/signin" className="ts-button is-primary is-short">
-        登入
-      </Link>
+      <SignInButton mode="modal">
+        <button className="ts-button is-primary is-short">
+          登入
+        </button>
+      </SignInButton>
     );
   }
 
-  const emailPrefix = session.user?.email?.split("@")[0] || "User";
+  const email = user.primaryEmailAddress?.emailAddress || "";
+  const emailPrefix = email.split("@")[0] || "User";
 
   return (
     <div ref={menuRef} style={{ position: "relative" }}>
@@ -62,13 +65,13 @@ export function UserMenu() {
           <div style={{ padding: "0.75rem 1rem", borderBottom: "1px solid var(--app-border)" }}>
             <div style={{ fontSize: "0.875rem", fontWeight: 600 }}>{emailPrefix}</div>
             <div style={{ fontSize: "0.75rem", color: "var(--app-muted)", marginTop: "0.25rem" }}>
-              {session.user?.email}
+              {email}
             </div>
           </div>
 
           <button
             onClick={() => {
-              signOut({ callbackUrl: "/" });
+              signOut();
               setShowMenu(false);
             }}
             style={{

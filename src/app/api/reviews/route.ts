@@ -1,18 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/authOptions";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { prisma } from "@/lib/db";
 
 export async function POST(request: NextRequest) {
   try {
-    const session = await getServerSession(authOptions);
+    const { userId } = await auth();
 
-    if (!session?.user?.email) {
+    if (!userId) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    const user = await currentUser();
+    const email = user?.primaryEmailAddress?.emailAddress;
+
+    if (!email) {
+      return NextResponse.json({ error: "No email found" }, { status: 400 });
+    }
+
     // 驗證 @nkust.edu.tw
-    if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
+    if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
       return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
     }
 
@@ -29,20 +35,20 @@ export async function POST(request: NextRequest) {
     }
 
     // 找到或建立使用者
-    const user = await prisma!.user.upsert({
-      where: { email: session.user.email },
-      create: { email: session.user.email },
+    const dbUser = await prisma!.user.upsert({
+      where: { email },
+      create: { email },
       update: {}
     });
 
     // 檢查是否被禁用
-    if (user.bannedAt) {
+    if (dbUser.bannedAt) {
       return NextResponse.json({ error: "User is banned" }, { status: 403 });
     }
 
     // 檢查是否已評論過
     const existing = await prisma!.review.findUnique({
-      where: { userId_courseId: { userId: user.id, courseId } }
+      where: { userId_courseId: { userId: dbUser.id, courseId } }
     });
 
     if (existing) {
@@ -52,7 +58,7 @@ export async function POST(request: NextRequest) {
     // 建立評論
     const review = await prisma!.review.create({
       data: {
-        userId: user.id,
+        userId: dbUser.id,
         courseId,
         coolness,
         usefulness,
