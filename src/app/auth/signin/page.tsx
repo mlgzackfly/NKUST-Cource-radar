@@ -90,6 +90,17 @@ export default function SignIn() {
               >
                 {loading ? "傳送中..." : "傳送登入連結"}
               </button>
+
+              <div style={{ marginTop: "1rem", fontSize: "0.8125rem", color: "var(--ts-gray-600)", lineHeight: 1.6, textAlign: "center" }}>
+                繼續即表示您同意我們的{" "}
+                <Link href="/privacy" style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}>
+                  隱私權政策
+                </Link>
+                {" "}和{" "}
+                <Link href="/cookies" style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}>
+                  Cookie 使用說明
+                </Link>
+              </div>
             </form>
 
             <div className="ts-notice is-outlined" style={{ marginTop: "1.5rem" }}>

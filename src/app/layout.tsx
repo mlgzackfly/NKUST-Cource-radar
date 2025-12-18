@@ -78,11 +78,21 @@ export default function RootLayout({ children }: { children: ReactNode }) {
 
             <div className="app-container">
               <footer className="app-footer" style={{ marginTop: 24, paddingBottom: 24 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
-                  <div className="app-muted">
-                    高科選課雷達 | 選課，不只是憑感覺
-                    <br />
-                    此為非官方專案，資訊僅供參考。
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 24, flexWrap: "wrap" }}>
+                  <div>
+                    <div className="app-muted" style={{ marginBottom: "0.75rem" }}>
+                      高科選課雷達 | 選課，不只是憑感覺
+                      <br />
+                      此為非官方專案，資訊僅供參考。
+                    </div>
+                    <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+                      <Link href="/privacy" style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                        隱私權政策
+                      </Link>
+                      <Link href="/cookies" style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                        Cookie 使用說明
+                      </Link>
+                    </div>
                   </div>
                   <a href="https://github.com/mlgzack/nkust-course-review" target="_blank" rel="noopener noreferrer" className="ts-button is-ghost is-small">
                     GitHub
