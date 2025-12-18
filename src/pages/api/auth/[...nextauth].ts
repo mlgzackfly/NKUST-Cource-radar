@@ -8,6 +8,11 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma!),
+  session: {
+    strategy: "database",
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+    updateAge: 24 * 60 * 60, // 24 hours
+  },
   providers: [
     EmailProvider({
       server: "", // Not used with custom sendVerificationRequest
