@@ -13,6 +13,7 @@ type Review = {
   usefulness: number | null;
   workload: number | null;
   attendance: number | null;
+  grading: number | null;
   body: string | null;
   authorDept: string | null;
 };
@@ -97,6 +98,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
   const [usefulness, setUsefulness] = useState<number | null>(review.usefulness);
   const [workload, setWorkload] = useState<number | null>(review.workload);
   const [attendance, setAttendance] = useState<number | null>(review.attendance);
+  const [grading, setGrading] = useState<number | null>(review.grading);
   const [body, setBody] = useState(review.body || "");
   const [authorDept, setAuthorDept] = useState(review.authorDept || "");
   const [loading, setLoading] = useState(false);
@@ -109,7 +111,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
   };
 
   const handleSave = async () => {
-    if (!coolness && !usefulness && !workload && !attendance) {
+    if (!coolness && !usefulness && !workload && !attendance && !grading) {
       setError("至少需要填寫一項評分");
       return;
     }
@@ -126,6 +128,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
           usefulness,
           workload,
           attendance,
+          grading,
           body: body.trim() || null,
           authorDept: authorDept.trim() || null
         })
@@ -151,6 +154,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
     setUsefulness(review.usefulness);
     setWorkload(review.workload);
     setAttendance(review.attendance);
+    setGrading(review.grading);
     setBody(review.body || "");
     setAuthorDept(review.authorDept || "");
     setError(null);
@@ -171,6 +175,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             <RatingInput label="實用性" value={usefulness} onChange={setUsefulness} />
             <RatingInput label="作業量" value={workload} onChange={setWorkload} />
             <RatingInput label="點名" value={attendance} onChange={setAttendance} />
+            <RatingInput label="給分甜度" value={grading} onChange={setGrading} />
           </div>
 
           {/* Text Review */}
@@ -265,6 +270,9 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
           )}
           {review.attendance !== null && (
             <RatingBadge label="點名" value={review.attendance} />
+          )}
+          {review.grading !== null && (
+            <RatingBadge label="給分甜度" value={review.grading} />
           )}
         </div>
 

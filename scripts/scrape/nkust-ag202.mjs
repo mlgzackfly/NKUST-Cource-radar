@@ -136,6 +136,19 @@ function parseUnitOptions(html) {
   return options;
 }
 
+function parseSemesterOptions(html) {
+  const $ = load(html);
+  const options = [];
+  $("#yms_yms option").each((_, opt) => {
+    const value = $(opt).attr("value") ?? "";
+    const label = textOf($, opt);
+    if (value && value.includes("#")) {
+      options.push({ value, label });
+    }
+  });
+  return options;
+}
+
 function findResultTable($) {
   const tables = $("table").toArray();
   for (const table of tables) {
@@ -243,19 +256,8 @@ async function writeJson(filePath, data) {
   await fs.writeFile(filePath, JSON.stringify(data, null, 2) + "\n", "utf8");
 }
 
-async function main() {
-  const ymsYms = env("NKUST_YMS_YMS", "114#1");
-  const cmpAreaRaw = env("NKUST_CMP_AREA_ID", "0");
-  const dgrRaw = env("NKUST_DGR_ID", "ALL");
-  const unitId = env("NKUST_UNT_ID", "");
-
-  const scrapeAllUnits = parseBool(env("NKUST_SCRAPE_ALL_UNITS", "0"));
-  const scrapeSyllabusEnabled = parseBool(env("NKUST_SCRAPE_SYLLABUS", "0"));
-
-  const clyear = env("NKUST_CLYEAR", "%");
-  const week = env("NKUST_WEEK", "%");
-  const period = env("NKUST_PERIOD", "%");
-
+async function scrapeSemester(ymsYms, options) {
+  const { cmpAreaRaw, dgrRaw, unitId, scrapeAllUnits, scrapeSyllabusEnabled, clyear, week, period } = options;
   const { year, term } = splitYmsYms(ymsYms);
 
   const landingHtml = await getAg202LandingHtml();
@@ -396,6 +398,64 @@ async function main() {
   console.log(
     `Scraped ${runIndex.campuses.length} campus(es), ${dgrIds.length} degree(s) into data/nkust/ag202/${year}/${term}`,
   );
+}
+
+async function main() {
+  const ymsYmsRaw = env("NKUST_AG202_YMS_YMS", "") || env("NKUST_YMS_YMS", "114#1");
+  const cmpAreaRaw = env("NKUST_CMP_AREA_ID", "0");
+  const dgrRaw = env("NKUST_DGR_ID", "ALL");
+  const unitId = env("NKUST_UNT_ID", "");
+
+  const scrapeAllUnits = parseBool(env("NKUST_SCRAPE_ALL_UNITS", "0"));
+  const scrapeSyllabusEnabled = parseBool(env("NKUST_SCRAPE_SYLLABUS", "0"));
+
+  const clyear = env("NKUST_CLYEAR", "%");
+  const week = env("NKUST_WEEK", "%");
+  const period = env("NKUST_PERIOD", "%");
+
+  const options = {
+    cmpAreaRaw,
+    dgrRaw,
+    unitId,
+    scrapeAllUnits,
+    scrapeSyllabusEnabled,
+    clyear,
+    week,
+    period,
+  };
+
+  // Check if user wants to scrape all semesters
+  if (isAllToken(ymsYmsRaw)) {
+    console.log("Detecting all available semesters...");
+    const landingHtml = await getAg202LandingHtml();
+    const semesterOptions = parseSemesterOptions(landingHtml);
+
+    console.log(`Found ${semesterOptions.length} semesters to scrape`);
+    console.log(`Semesters: ${semesterOptions.map(s => s.value).join(", ")}`);
+
+    for (let i = 0; i < semesterOptions.length; i++) {
+      const semester = semesterOptions[i];
+      console.log(`\n[${i + 1}/${semesterOptions.length}] Scraping semester ${semester.value} (${semester.label})...`);
+
+      try {
+        await scrapeSemester(semester.value, options);
+      } catch (err) {
+        console.error(`Failed to scrape semester ${semester.value}:`, err.message);
+        // Continue with next semester instead of failing entirely
+      }
+
+      // Add delay between semesters to avoid overwhelming the server
+      if (i < semesterOptions.length - 1) {
+        console.log("Waiting 2 seconds before next semester...");
+        await new Promise(r => setTimeout(r, 2000));
+      }
+    }
+
+    console.log("\nAll semesters scraping completed!");
+  } else {
+    // Scrape single semester
+    await scrapeSemester(ymsYmsRaw, options);
+  }
 }
 
 main().catch((err) => {

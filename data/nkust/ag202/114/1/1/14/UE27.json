@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2025-12-15T15:08:17.620Z",
+  "scrapedAt": "2025-12-18T10:15:11.696Z",
   "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
   "request": {
     "yms_yms": "114#1",
@@ -904,7 +904,7 @@
       "lectureHours": 3,
       "labHours": 0,
       "requiredOrElective": "必修",
-      "instructor": "莊錦俊",
+      "instructor": "何姿瑩,莊錦俊",
       "classroom": "土409",
       "enrolled": 63,
       "capacity": 63,
@@ -1571,7 +1571,7 @@
       "lectureHours": 3,
       "labHours": 0,
       "requiredOrElective": "必修",
-      "instructor": "莊錦俊",
+      "instructor": "莊錦俊,陳附仁",
       "classroom": "育503",
       "enrolled": 60,
       "capacity": 70,

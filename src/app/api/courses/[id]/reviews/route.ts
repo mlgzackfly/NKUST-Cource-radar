@@ -12,6 +12,7 @@ type ReviewRow = {
   usefulness: number | null;
   workload: number | null;
   attendance: number | null;
+  grading: number | null;
   body: string | null;
   authorDept: string | null;
   _count: { helpfulVotes: number; comments: number };
@@ -72,6 +73,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       usefulness: true,
       workload: true,
       attendance: true,
+      grading: true,
       body: true,
       authorDept: true,
       _count: {

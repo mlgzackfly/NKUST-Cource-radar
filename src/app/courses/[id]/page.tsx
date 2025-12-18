@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { getCourseRatingSummary } from "@/lib/reviewSummary";
+import { formatSemester, formatTerm } from "@/lib/semesterFormatter";
 import CourseSummaryChart from "@/components/CourseSummaryChart";
 import { CourseTimeTable } from "@/components/CourseTimeTable";
 import { ReviewForm } from "@/components/ReviewForm";
@@ -229,8 +230,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
   };
 
   const chips = [
-    { label: "學年", value: typedCourse.year },
-    { label: "學期", value: typedCourse.term },
+    { label: "學年", value: `${typedCourse.year}學年度` },
+    { label: "學期", value: formatTerm(typedCourse.term) },
     typedCourse.campus ? { label: "校區", value: typedCourse.campus } : null,
     typedCourse.division ? { label: "學制", value: typedCourse.division } : null,
     typedCourse.department ? { label: "系所", value: typedCourse.department } : null,
@@ -271,10 +272,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
             </div>
           </div>
 
-          <div className="ts-header is-large" style={{ marginBottom: "0.75rem" }}>{typedCourse.courseName}</div>
+          <div className="ts-header is-large" style={{ marginBottom: "0.5rem" }}>{typedCourse.courseName}</div>
+          {typedCourse.syllabusData?.courseNameEn && (
+            <div style={{ fontSize: "1.125rem", color: "var(--ts-gray-600)", marginBottom: "0.75rem", fontWeight: 500 }}>
+              {typedCourse.syllabusData.courseNameEn}
+            </div>
+          )}
           <div className="app-muted" style={{ lineHeight: 1.6, fontSize: "0.95rem" }}>
             {instructors ? `教師：${instructors} · ` : ""}
-            {typedCourse.department || "—"} · {typedCourse.campus || "—"} · {typedCourse.year}#{typedCourse.term}
+            {typedCourse.department || "—"} · {typedCourse.campus || "—"} · {formatSemester(typedCourse.year, typedCourse.term)}
           </div>
         </div>
       </div>
@@ -366,18 +372,6 @@ export default async function CoursePage({ params }: CoursePageProps) {
                     授課大綱
                   </div>
 
-                  {typedCourse.syllabusData.courseName && (
-                    <div style={{ marginBottom: "1rem" }}>
-                      <strong>課程名稱：</strong>{typedCourse.syllabusData.courseName}
-                    </div>
-                  )}
-
-                  {typedCourse.syllabusData.courseNameEn && (
-                    <div style={{ marginBottom: "1rem" }}>
-                      <strong>英文名稱：</strong>{typedCourse.syllabusData.courseNameEn}
-                    </div>
-                  )}
-
                   {typedCourse.syllabusData.objectives && (
                     <div style={{ marginBottom: "1.5rem" }}>
                       <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>課程目標</div>
@@ -415,7 +409,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
                         padding: "1rem",
                         backgroundColor: "var(--app-surface)",
                         borderRadius: "8px",
-                        lineHeight: 1.7
+                        lineHeight: 1.7,
+                        whiteSpace: "pre-wrap"
                       }}>
                         {typedCourse.syllabusData.teachingMethod}
                       </div>
@@ -429,7 +424,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
                         padding: "1rem",
                         backgroundColor: "var(--app-surface)",
                         borderRadius: "8px",
-                        lineHeight: 1.7
+                        lineHeight: 1.7,
+                        whiteSpace: "pre-wrap"
                       }}>
                         {typedCourse.syllabusData.evaluation}
                       </div>
@@ -443,7 +439,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
                         padding: "1rem",
                         backgroundColor: "var(--app-surface)",
                         borderRadius: "8px",
-                        lineHeight: 1.7
+                        lineHeight: 1.7,
+                        whiteSpace: "pre-wrap"
                       }}>
                         {typedCourse.syllabusData.textbooks}
                       </div>
@@ -457,7 +454,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
                         padding: "1rem",
                         backgroundColor: "var(--app-surface)",
                         borderRadius: "8px",
-                        lineHeight: 1.7
+                        lineHeight: 1.7,
+                        whiteSpace: "pre-wrap"
                       }}>
                         {typedCourse.syllabusData.references}
                       </div>
