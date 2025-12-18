@@ -167,6 +167,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
             usefulness: true,
             workload: true,
             attendance: true,
+            grading: true,
             body: true,
             authorDept: true,
             _count: {
@@ -503,30 +504,6 @@ export default async function CoursePage({ params }: CoursePageProps) {
               <div style={{ marginBottom: "1.5rem" }}>
                 <CourseSummaryChart summary={summary} />
               </div>
-
-              {/* Quick Stats */}
-              {summary.totalReviews > 0 && (
-                <div style={{
-                  padding: "1rem",
-                  background: "var(--ts-gray-50)",
-                  borderRadius: "8px",
-                  marginBottom: "1.5rem"
-                }}>
-                  <div style={{ fontSize: "0.8125rem", fontWeight: 600, color: "var(--ts-gray-600)", marginBottom: "0.5rem", textTransform: "uppercase", letterSpacing: "0.05em" }}>
-                    快速查看
-                  </div>
-                  <div style={{ display: "grid", gap: "0.5rem", fontSize: "0.875rem" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
-                      <span style={{ color: "var(--ts-gray-700)" }}>平均涼度</span>
-                      <span style={{ fontWeight: 600 }}>{summary.avg.coolness?.toFixed(1) || "—"}</span>
-                    </div>
-                    <div style={{ display: "flex", justifyContent: "space-between" }}>
-                      <span style={{ color: "var(--ts-gray-700)" }}>平均實用性</span>
-                      <span style={{ fontWeight: 600 }}>{summary.avg.usefulness?.toFixed(1) || "—"}</span>
-                    </div>
-                  </div>
-                </div>
-              )}
 
               {/* Action Notice - 只對未登入使用者顯示 */}
               {!isNkustUser && (
