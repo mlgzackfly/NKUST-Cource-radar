@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
+import { HomeSearch } from "@/components/HomeSearch";
 
 function formatCount(n: number) {
   return new Intl.NumberFormat("zh-Hant-TW").format(n);
@@ -74,64 +75,26 @@ export default async function HomePage() {
             </p>
 
             {/* Minimalist Search Bar */}
-            <form method="get" action="/courses" aria-label="首頁快速查課">
-              <div style={{ maxWidth: 600, margin: "0 auto 1.5rem" }}>
-                <div style={{
-                  display: "flex",
-                  gap: "0.75rem",
-                  padding: "0.5rem",
-                  background: "white",
-                  borderRadius: "12px",
-                  border: "1px solid var(--ts-gray-200)",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02)",
-                  transition: "box-shadow 0.2s, border-color 0.2s"
-                }}>
-                  <input
-                    name="q"
-                    placeholder="搜尋課程或系所..."
-                    style={{
-                      flex: 1,
-                      border: "none",
-                      outline: "none",
-                      fontSize: "1rem",
-                      padding: "0.75rem 1rem",
-                      background: "transparent"
-                    }}
-                  />
-                  <button
-                    type="submit"
-                    className="ts-button is-primary"
-                    style={{
-                      borderRadius: "8px",
-                      padding: "0.75rem 2rem",
-                      fontWeight: 600,
-                      fontSize: "1rem"
-                    }}
-                  >
-                    搜尋
-                  </button>
-                </div>
-              </div>
+            <HomeSearch />
 
-              {/* Minimal quick links */}
-              <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "4rem" }}>
-                <Link href="/courses?q=%E8%B3%87%E6%96%99%E5%BA%AB" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-                  資料庫
-                </Link>
-                <span style={{ color: "var(--ts-gray-300)" }}>·</span>
-                <Link href="/courses?q=%E5%BE%AE%E7%A9%8D%E5%88%86" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-                  微積分
-                </Link>
-                <span style={{ color: "var(--ts-gray-300)" }}>·</span>
-                <Link href="/courses?q=%E8%B3%87%E5%B7%A5" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-                  資工
-                </Link>
-                <span style={{ color: "var(--ts-gray-300)" }}>·</span>
-                <Link href="/courses?q=%E6%BC%94%E7%AE%97%E6%B3%95" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
-                  演算法
-                </Link>
-              </div>
-            </form>
+            {/* Minimal quick links */}
+            <div style={{ display: "flex", gap: "0.75rem", justifyContent: "center", flexWrap: "wrap", marginBottom: "4rem" }}>
+              <Link href="/courses?q=%E8%B3%87%E6%96%99%E5%BA%AB" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                資料庫
+              </Link>
+              <span style={{ color: "var(--ts-gray-300)" }}>·</span>
+              <Link href="/courses?q=%E5%BE%AE%E7%A9%8D%E5%88%86" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                微積分
+              </Link>
+              <span style={{ color: "var(--ts-gray-300)" }}>·</span>
+              <Link href="/courses?q=%E8%B3%87%E5%B7%A5" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                資工
+              </Link>
+              <span style={{ color: "var(--ts-gray-300)" }}>·</span>
+              <Link href="/courses?q=%E6%BC%94%E7%AE%97%E6%B3%95" style={{ color: "var(--ts-gray-600)", fontSize: "0.9375rem", textDecoration: "underline", textUnderlineOffset: "4px" }}>
+                演算法
+              </Link>
+            </div>
 
             {/* Minimal stats - Simple numbers */}
             {prisma && (courseCount !== null || instructorCount !== null || reviewCount !== null) ? (
