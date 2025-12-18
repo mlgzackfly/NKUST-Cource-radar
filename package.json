@@ -9,9 +9,13 @@
     "prisma": "prisma",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
     "db:import:nkust-ag202": "node scripts/db/import-nkust-ag202.mjs",
     "scrape:nkust-ag202": "node scripts/scrape/nkust-ag202.mjs",
-    "build:api": "node scripts/api/build-static-api.mjs"
+    "build:api": "node scripts/api/build-static-api.mjs",
+    "check-env": "node scripts/check-env.mjs",
+    "init-data": "node scripts/init-data.mjs",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
