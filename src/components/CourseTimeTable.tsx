@@ -34,8 +34,15 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
   // Always show Monday to Friday (1-5)
   const displayDays = [1, 2, 3, 4, 5];
 
-  // Always show periods M, 1-9 (excluding night periods 10-13)
-  const allPeriods: PeriodKey[] = ["M", 1, 2, 3, 4, "A", 5, 6, 7, 8, 9];
+  // Check if there are any night periods (10-13) in the course
+  const hasNightPeriods = slots.some((slot) =>
+    slot.periods.some((p) => typeof p === "number" && p >= 10 && p <= 13)
+  );
+
+  // Show periods M, 1-9 by default, and include 10-13 if there are night classes
+  const allPeriods: PeriodKey[] = hasNightPeriods
+    ? ["M", 1, 2, 3, 4, "A", 5, 6, 7, 8, 9, 10, 11, 12, 13]
+    : ["M", 1, 2, 3, 4, "A", 5, 6, 7, 8, 9];
 
   // Helper to calculate rowspan for merged cells
   // Returns { rowspan, skip } for each day-period combination
