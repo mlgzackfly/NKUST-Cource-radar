@@ -17,7 +17,7 @@ function VerifyContent() {
           <div className="ts-content" style={{ padding: "2.5rem", textAlign: "center" }}>
             <div style={{ fontSize: "4rem", marginBottom: "1.5rem" }}>📧</div>
 
-            <div className="ts-header" style={{ fontSize: "1.75rem", fontWeight: 700, marginBottom: "1rem", textAlign: "center" }}>
+            <div style={{ fontSize: "1.75rem", fontWeight: 700, marginBottom: "1rem", textAlign: "center" }}>
               檢查您的信箱
             </div>
 
