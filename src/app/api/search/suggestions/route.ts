@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import type { Prisma } from "@prisma/client";
 
-type CourseType = Awaited<ReturnType<typeof prisma.course.findMany>>[number];
-type InstructorType = Awaited<ReturnType<typeof prisma.instructor.findMany>>[number];
+type PrismaClientType = NonNullable<typeof prisma>;
+type CourseType = Awaited<ReturnType<PrismaClientType['course']['findMany']>>[number];
+type InstructorType = Awaited<ReturnType<PrismaClientType['instructor']['findMany']>>[number];
 
 type CourseSuggestion = Pick<CourseType, "id" | "courseName" | "department">;
 type InstructorSuggestion = Pick<InstructorType, "name">;
