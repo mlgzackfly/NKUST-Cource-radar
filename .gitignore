@@ -2,6 +2,7 @@ node_modules/
 .next/
 dist/
 tmp/
+tsconfig.tsbuildinfo
 
 # env (never commit secrets)
 .env
