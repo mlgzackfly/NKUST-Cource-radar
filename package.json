@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev --port 3000 --hostname 127.0.0.1",
     "build": "next build",
-    "start": "next start --port 3000",
+    "start": "next start",
     "prisma": "prisma",
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate dev",
