@@ -81,10 +81,18 @@ export function CoursesFilters({ initial }: Props) {
     }
 
     debounceTimerRef.current = setTimeout(() => {
-      fetch(`/api/courses/suggestions?q=${encodeURIComponent(searchQuery)}`)
+      fetch(`/api/search/suggestions?q=${encodeURIComponent(searchQuery)}`)
         .then(res => res.json())
         .then(data => {
-          setSuggestions(data.suggestions || []);
+          // Map API response to internal suggestion format
+          const mappedSuggestions = (data || []).map((item: any) => ({
+            type: item.type === 'course' ? 'course' : item.type === 'department' ? 'department' : 'instructor',
+            text: item.value,
+            label: item.label,
+            id: item.id,
+            meta: item.department
+          }));
+          setSuggestions(mappedSuggestions);
           setShowSuggestions(true);
         })
         .catch(() => {

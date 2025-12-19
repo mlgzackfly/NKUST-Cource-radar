@@ -89,8 +89,8 @@ export function HomeSearch() {
   };
 
   return (
-    <form onSubmit={handleSubmit} aria-label="首頁快速查課" style={{ position: "relative" }}>
-      <div style={{ maxWidth: 600, margin: "0 auto 1.5rem" }}>
+    <form onSubmit={handleSubmit} aria-label="首頁快速查課">
+      <div style={{ maxWidth: 600, margin: "0 auto 1.5rem", position: "relative" }}>
         <div
           style={{
             display: "flex",
@@ -152,8 +152,6 @@ export function HomeSearch() {
               top: "calc(100% - 0.5rem)",
               left: 0,
               right: 0,
-              maxWidth: 600,
-              margin: "0 auto",
               background: "white",
               borderRadius: "0 0 12px 12px",
               boxShadow: "0 8px 24px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04)",
