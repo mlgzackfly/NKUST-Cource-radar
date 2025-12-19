@@ -207,7 +207,6 @@ export function CoursesFilters({ initial }: Props) {
                   >
                     <span
                       style={{
-                        fontSize: "0.875rem",
                         padding: "0.25rem 0.5rem",
                         borderRadius: "6px",
                         backgroundColor: suggestion.type === "course"

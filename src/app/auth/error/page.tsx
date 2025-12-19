@@ -2,8 +2,11 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Suspense } from "react";
 
-export default function AuthError() {
+export const dynamic = 'force-dynamic';
+
+function ErrorContent() {
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
 
@@ -47,5 +50,19 @@ export default function AuthError() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function AuthError() {
+  return (
+    <Suspense fallback={
+      <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
+        <div style={{ maxWidth: "440px", margin: "0 auto", textAlign: "center" }}>
+          載入中...
+        </div>
+      </div>
+    }>
+      <ErrorContent />
+    </Suspense>
   );
 }

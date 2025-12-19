@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
+
 type Review = {
   id: string;
   userId: string;
@@ -94,11 +96,11 @@ type ReviewCardProps = {
 
 function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
   const [isEditing, setIsEditing] = useState(false);
-  const [coolness, setCoolness] = useState<number | null>(review.coolness);
-  const [usefulness, setUsefulness] = useState<number | null>(review.usefulness);
-  const [workload, setWorkload] = useState<number | null>(review.workload);
-  const [attendance, setAttendance] = useState<number | null>(review.attendance);
-  const [grading, setGrading] = useState<number | null>(review.grading);
+  const [coolness, setCoolness] = useState<RatingValue>(review.coolness as RatingValue);
+  const [usefulness, setUsefulness] = useState<RatingValue>(review.usefulness as RatingValue);
+  const [workload, setWorkload] = useState<RatingValue>(review.workload as RatingValue);
+  const [attendance, setAttendance] = useState<RatingValue>(review.attendance as RatingValue);
+  const [grading, setGrading] = useState<RatingValue>(review.grading as RatingValue);
   const [body, setBody] = useState(review.body || "");
   const [authorDept, setAuthorDept] = useState(review.authorDept || "");
   const [loading, setLoading] = useState(false);
@@ -150,11 +152,11 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
   };
 
   const handleCancel = () => {
-    setCoolness(review.coolness);
-    setUsefulness(review.usefulness);
-    setWorkload(review.workload);
-    setAttendance(review.attendance);
-    setGrading(review.grading);
+    setCoolness(review.coolness as RatingValue);
+    setUsefulness(review.usefulness as RatingValue);
+    setWorkload(review.workload as RatingValue);
+    setAttendance(review.attendance as RatingValue);
+    setGrading(review.grading as RatingValue);
     setBody(review.body || "");
     setAuthorDept(review.authorDept || "");
     setError(null);
@@ -292,8 +294,6 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
     </div>
   );
 }
-
-type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
 function RatingInput({
   label,

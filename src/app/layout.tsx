@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Suspense } from "react";
 import "./globals.css";
 import { SemesterSelector } from "@/components/SemesterSelector";
 import { UserMenu } from "@/components/UserMenu";
@@ -65,7 +66,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     </nav>
                   </div>
                   <div className="app-header-right">
-                    <SemesterSelector />
+                    <Suspense fallback={null}>
+                      <SemesterSelector />
+                    </Suspense>
                     <UserMenu />
                   </div>
                 </div>

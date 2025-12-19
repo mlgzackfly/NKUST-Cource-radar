@@ -52,12 +52,10 @@ function RadarChartComponent({ data }: { data: Array<{ name: string; value: numb
       center: ['50%', '45%'],
       radius: '65%',
       splitNumber: 5,
-      name: {
-        textStyle: {
-          color: '#374151',
-          fontSize: 13,
-          fontWeight: 500
-        }
+      axisName: {
+        color: '#374151',
+        fontSize: 13,
+        fontWeight: 500
       },
       splitLine: {
         lineStyle: {

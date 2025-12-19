@@ -2,8 +2,11 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { Suspense } from "react";
 
-export default function VerifyRequest() {
+export const dynamic = 'force-dynamic';
+
+function VerifyContent() {
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
 
@@ -44,5 +47,19 @@ export default function VerifyRequest() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function VerifyRequest() {
+  return (
+    <Suspense fallback={
+      <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
+        <div style={{ maxWidth: "440px", margin: "0 auto", textAlign: "center" }}>
+          載入中...
+        </div>
+      </div>
+    }>
+      <VerifyContent />
+    </Suspense>
   );
 }

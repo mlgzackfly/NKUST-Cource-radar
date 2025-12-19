@@ -134,7 +134,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
       const session = await getServerSession(authOptions);
       isNkustUser = session?.user?.email?.toLowerCase().endsWith("@nkust.edu.tw") ?? false;
 
-      if (isNkustUser && session.user?.email) {
+      if (isNkustUser && session?.user?.email) {
         // Check if user has already reviewed this course
         const user = await prisma.user.findUnique({
           where: { email: session.user.email }
@@ -180,7 +180,20 @@ export default async function CoursePage({ params }: CoursePageProps) {
           },
         });
 
-        reviewsData = reviews.map((r) => ({
+        reviewsData = reviews.map((r: {
+          id: string;
+          userId: string;
+          createdAt: Date;
+          updatedAt: Date;
+          coolness: number | null;
+          usefulness: number | null;
+          workload: number | null;
+          attendance: number | null;
+          grading: number | null;
+          body: string | null;
+          authorDept: string | null;
+          _count: { helpfulVotes: number; comments: number };
+        }) => ({
           ...r,
           createdAt: r.createdAt.toISOString(),
           updatedAt: r.updatedAt.toISOString(),
