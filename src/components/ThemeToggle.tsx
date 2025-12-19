@@ -21,10 +21,10 @@ function nextMode(mode: ThemeMode): ThemeMode {
 }
 
 export function ThemeToggle() {
-  const [mode, setMode] = useState<ThemeMode>("auto");
+  const [mode, setMode] = useState<ThemeMode>("light");
 
   useEffect(() => {
-    const saved = (localStorage.getItem(STORAGE_KEY) as ThemeMode | null) ?? "auto";
+    const saved = (localStorage.getItem(STORAGE_KEY) as ThemeMode | null) ?? "light";
     setMode(saved);
     applyTheme(saved);
   }, []);

@@ -12,6 +12,7 @@
     "db:migrate:deploy": "prisma migrate deploy",
     "db:import:nkust-ag202": "node scripts/db/import-nkust-ag202.mjs",
     "db:check": "node scripts/check-database.mjs",
+    "fix:search": "node scripts/fix-search-vector.mjs",
     "scrape:nkust-ag202": "node scripts/scrape/nkust-ag202.mjs",
     "build:api": "node scripts/api/build-static-api.mjs",
     "check-env": "node scripts/check-env.mjs",

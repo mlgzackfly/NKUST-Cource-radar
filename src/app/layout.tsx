@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             __html: `
 (function () {
   try {
-    var mode = localStorage.getItem('nkust-theme') || 'auto';
+    var mode = localStorage.getItem('nkust-theme') || 'light';
     var root = document.documentElement;
     root.classList.remove('is-dark', 'is-light');
     if (mode === 'dark') root.classList.add('is-dark');
