@@ -8,14 +8,14 @@ export async function POST(request: Request): Promise<Response> {
     const session = await getServerSession(authOptions);
 
     if (!session?.user?.email) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
     }
 
     const email = session.user.email;
 
     // 驗證 @nkust.edu.tw
     if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
+      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
     }
 
     const body = await request.json();
@@ -23,11 +23,11 @@ export async function POST(request: Request): Promise<Response> {
 
     // 驗證
     if (!courseId) {
-      return NextResponse.json({ error: "courseId is required" }, { status: 400 });
+      return NextResponse.json({ error: "courseId is required" }, { status: 400 }) as Response;
     }
 
     if (!coolness && !usefulness && !workload && !attendance && !grading) {
-      return NextResponse.json({ error: "At least one rating is required" }, { status: 400 });
+      return NextResponse.json({ error: "At least one rating is required" }, { status: 400 }) as Response;
     }
 
     // 找到或建立使用者
@@ -39,7 +39,7 @@ export async function POST(request: Request): Promise<Response> {
 
     // 檢查是否被禁用
     if (dbUser.bannedAt) {
-      return NextResponse.json({ error: "User is banned" }, { status: 403 });
+      return NextResponse.json({ error: "User is banned" }, { status: 403 }) as Response;
     }
 
     // 檢查是否已評論過
@@ -48,7 +48,7 @@ export async function POST(request: Request): Promise<Response> {
     });
 
     if (existing) {
-      return NextResponse.json({ error: "You have already reviewed this course" }, { status: 409 });
+      return NextResponse.json({ error: "You have already reviewed this course" }, { status: 409 }) as Response;
     }
 
     // 建立評論
@@ -81,13 +81,13 @@ export async function POST(request: Request): Promise<Response> {
       }
     });
 
-    return NextResponse.json({ success: true, reviewId: review.id }, { status: 201 });
+    return NextResponse.json({ success: true, reviewId: review.id }, { status: 201 }) as Response;
 
   } catch (error) {
     console.error("Failed to create review:", error);
     return NextResponse.json(
       { error: "Internal server error", details: String(error) },
       { status: 500 }
-    );
+    ) as Response;
   }
 }

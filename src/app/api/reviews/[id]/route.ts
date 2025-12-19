@@ -12,12 +12,12 @@ export async function PUT(
     const session = await getServerSession(authOptions);
 
     if (!session?.user?.email) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
     }
 
     // 驗證 @nkust.edu.tw
     if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
+      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
     }
 
     const body = await request.json();
@@ -25,7 +25,7 @@ export async function PUT(
 
     // 驗證至少有一個評分
     if (!coolness && !usefulness && !workload && !attendance && !grading) {
-      return NextResponse.json({ error: "At least one rating is required" }, { status: 400 });
+      return NextResponse.json({ error: "At least one rating is required" }, { status: 400 }) as Response;
     }
 
     // 找到使用者
@@ -34,7 +34,7 @@ export async function PUT(
     });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 });
+      return NextResponse.json({ error: "User not found" }, { status: 404 }) as Response;
     }
 
     // 檢查評論是否存在且屬於該使用者
@@ -43,11 +43,11 @@ export async function PUT(
     });
 
     if (!existingReview) {
-      return NextResponse.json({ error: "Review not found" }, { status: 404 });
+      return NextResponse.json({ error: "Review not found" }, { status: 404 }) as Response;
     }
 
     if (existingReview.userId !== user.id) {
-      return NextResponse.json({ error: "You can only edit your own reviews" }, { status: 403 });
+      return NextResponse.json({ error: "You can only edit your own reviews" }, { status: 403 }) as Response;
     }
 
     // 更新評論
@@ -78,13 +78,13 @@ export async function PUT(
       }
     });
 
-    return NextResponse.json({ success: true, reviewId: updatedReview.id });
+    return NextResponse.json({ success: true, reviewId: updatedReview.id }) as Response;
 
   } catch (error) {
     console.error("Failed to update review:", error);
     return NextResponse.json(
       { error: "Internal server error", details: String(error) },
       { status: 500 }
-    );
+    ) as Response;
   }
 }

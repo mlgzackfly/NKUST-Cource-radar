@@ -6,11 +6,11 @@ export async function GET(request: Request): Promise<Response> {
   const q = searchParams.get("q")?.trim();
 
   if (!q || q.length < 2) {
-    return NextResponse.json([]);
+    return NextResponse.json([]) as Response;
   }
 
   if (!prisma) {
-    return NextResponse.json([]);
+    return NextResponse.json([]) as Response;
   }
 
   try {
@@ -37,7 +37,7 @@ export async function GET(request: Request): Promise<Response> {
 
     // Remove duplicates from courses by courseName
     const seenNames = new Set<string>();
-    const courses = coursesRaw.filter(c => {
+    const courses = coursesRaw.filter((c: { id: string; courseName: string; department: string | null; rank: number }) => {
       if (seenNames.has(c.courseName)) {
         return false;
       }
@@ -46,23 +46,23 @@ export async function GET(request: Request): Promise<Response> {
     });
 
     const suggestions = [
-      ...courses.map(c => ({
+      ...courses.map((c: { id: string; courseName: string; department: string | null }) => ({
         type: 'course' as const,
         value: c.courseName,
         label: c.courseName,
         department: c.department,
         id: c.id
       })),
-      ...departments.map(d => ({
+      ...departments.map((d: { department: string }) => ({
         type: 'department' as const,
         value: d.department,
         label: d.department
       }))
     ];
 
-    return NextResponse.json(suggestions);
+    return NextResponse.json(suggestions) as Response;
   } catch (error) {
     console.error('Search suggestions error:', error);
-    return NextResponse.json([]);
+    return NextResponse.json([]) as Response;
   }
 }
