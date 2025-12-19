@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import { Prisma } from "@prisma/client";
+import * as Prisma from "@prisma/client";
 
 type CourseSuggestion = Pick<Prisma.Course, "id" | "courseName" | "department">;
 type InstructorSuggestion = Pick<Prisma.Instructor, "name">;
