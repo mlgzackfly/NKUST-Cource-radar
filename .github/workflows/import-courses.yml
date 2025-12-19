@@ -1,0 +1,188 @@
+name: Import Course Data
+
+on:
+  # 手動觸發，可選擇學期
+  workflow_dispatch:
+    inputs:
+      year:
+        description: '學年度 (例如: 114)'
+        required: true
+        default: '114'
+        type: string
+      term:
+        description: '學期 (1 或 2)'
+        required: true
+        default: '1'
+        type: choice
+        options:
+          - '1'
+          - '2'
+      scrape_syllabus:
+        description: '是否爬取課程大綱 (會增加 3-5 倍時間)'
+        required: false
+        default: false
+        type: boolean
+
+  # 定時執行：每學期開始時自動爬取（2 月和 9 月的第一天）
+  schedule:
+    # 每年 2 月 1 日凌晨 2 點 (UTC)，爬取上學期資料
+    - cron: '0 2 1 2 *'
+    # 每年 9 月 1 日凌晨 2 點 (UTC)，爬取本學期資料
+    - cron: '0 2 1 9 *'
+
+jobs:
+  import-data:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120  # 2 小時超時限制
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Generate Prisma Client
+        run: npx prisma generate
+
+      - name: 🎯 Set semester variables
+        id: semester
+        run: |
+          # 如果是手動觸發，使用輸入的參數
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "year=${{ inputs.year }}" >> $GITHUB_OUTPUT
+            echo "term=${{ inputs.term }}" >> $GITHUB_OUTPUT
+            echo "scrape_syllabus=${{ inputs.scrape_syllabus }}" >> $GITHUB_OUTPUT
+          else
+            # 定時任務：根據月份決定學期
+            MONTH=$(date +%m)
+            YEAR=$(date +%Y)
+
+            if [ "$MONTH" = "02" ]; then
+              # 2 月爬取上學期 (去年度第 1 學期)
+              ACADEMIC_YEAR=$((YEAR - 1912 - 1))
+              TERM="1"
+            else
+              # 9 月爬取本學期 (本年度第 1 學期)
+              ACADEMIC_YEAR=$((YEAR - 1911))
+              TERM="1"
+            fi
+
+            echo "year=$ACADEMIC_YEAR" >> $GITHUB_OUTPUT
+            echo "term=$TERM" >> $GITHUB_OUTPUT
+            echo "scrape_syllabus=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 📊 Check existing data
+        id: check
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          YEAR=${{ steps.semester.outputs.year }}
+          TERM=${{ steps.semester.outputs.term }}
+
+          echo "正在檢查 $YEAR 學年度第 $TERM 學期的現有資料..."
+
+          COUNT=$(psql "$DATABASE_URL" -t -c "
+            SELECT COUNT(*)
+            FROM \"Course\"
+            WHERE year = '$YEAR' AND term = '$TERM';
+          " | tr -d ' ')
+
+          echo "existing_count=$COUNT" >> $GITHUB_OUTPUT
+
+          if [ "$COUNT" -gt 0 ]; then
+            echo "⚠️  已存在 $COUNT 筆課程資料"
+            echo "should_skip=true" >> $GITHUB_OUTPUT
+          else
+            echo "✓ 尚無資料，準備爬取"
+            echo "should_skip=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 🕷️ Scrape course data
+        if: steps.check.outputs.should_skip != 'true'
+        env:
+          NKUST_IMPORT_YEAR: ${{ steps.semester.outputs.year }}
+          NKUST_IMPORT_TERM: ${{ steps.semester.outputs.term }}
+          NKUST_SCRAPE_SYLLABUS: ${{ steps.semester.outputs.scrape_syllabus }}
+        run: |
+          echo "📚 開始爬取 $NKUST_IMPORT_YEAR 學年度第 $NKUST_IMPORT_TERM 學期課程..."
+          echo "爬取課程大綱: $NKUST_SCRAPE_SYLLABUS"
+
+          npm run scrape:nkust-ag202
+
+          echo "✓ 爬取完成"
+
+      - name: 📥 Import to database
+        if: steps.check.outputs.should_skip != 'true'
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NKUST_IMPORT_YEAR: ${{ steps.semester.outputs.year }}
+          NKUST_IMPORT_TERM: ${{ steps.semester.outputs.term }}
+        run: |
+          echo "💾 開始匯入資料庫..."
+
+          npm run db:import:nkust-ag202
+
+          echo "✓ 匯入完成"
+
+      - name: 📊 Verify import
+        if: steps.check.outputs.should_skip != 'true'
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          YEAR=${{ steps.semester.outputs.year }}
+          TERM=${{ steps.semester.outputs.term }}
+
+          echo "正在驗證匯入結果..."
+
+          # 查詢匯入的課程數量
+          COURSE_COUNT=$(psql "$DATABASE_URL" -t -c "
+            SELECT COUNT(*)
+            FROM \"Course\"
+            WHERE year = '$YEAR' AND term = '$TERM';
+          " | tr -d ' ')
+
+          # 查詢教師數量
+          INSTRUCTOR_COUNT=$(psql "$DATABASE_URL" -t -c "
+            SELECT COUNT(DISTINCT ci.\"instructorId\")
+            FROM \"CourseInstructor\" ci
+            JOIN \"Course\" c ON c.id = ci.\"courseId\"
+            WHERE c.year = '$YEAR' AND c.term = '$TERM';
+          " | tr -d ' ')
+
+          echo "📈 匯入統計："
+          echo "  學期: $YEAR 學年度第 $TERM 學期"
+          echo "  課程數: $COURSE_COUNT"
+          echo "  教師數: $INSTRUCTOR_COUNT"
+
+          if [ "$COURSE_COUNT" -lt 100 ]; then
+            echo "❌ 課程數量異常偏低，可能匯入失敗"
+            exit 1
+          fi
+
+          echo "✅ 驗證通過"
+
+      - name: 📋 Summary
+        if: always()
+        run: |
+          YEAR=${{ steps.semester.outputs.year }}
+          TERM=${{ steps.semester.outputs.term }}
+
+          if [ "${{ steps.check.outputs.should_skip }}" = "true" ]; then
+            echo "⏭️  跳過匯入：$YEAR 學年度第 $TERM 學期已有 ${{ steps.check.outputs.existing_count }} 筆資料"
+          else
+            echo "✅ 完成匯入：$YEAR 學年度第 $TERM 學期"
+          fi
+
+      - name: 🔔 Notify on failure
+        if: failure()
+        run: |
+          echo "❌ 匯入失敗，請查看執行日誌"
+          echo "學期: ${{ steps.semester.outputs.year }} 學年度第 ${{ steps.semester.outputs.term }} 學期"

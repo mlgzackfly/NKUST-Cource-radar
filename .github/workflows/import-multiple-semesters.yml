@@ -1,0 +1,167 @@
+name: Import Multiple Semesters
+
+on:
+  # 僅支援手動觸發
+  workflow_dispatch:
+    inputs:
+      semesters:
+        description: '要匯入的學期（格式: 113-1,113-2,114-1）'
+        required: true
+        default: '113-1,113-2,114-1'
+        type: string
+      scrape_syllabus:
+        description: '是否爬取課程大綱 (會增加 3-5 倍時間)'
+        required: false
+        default: false
+        type: boolean
+
+jobs:
+  import-multiple:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360  # 6 小時超時限制
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Generate Prisma Client
+        run: npx prisma generate
+
+      - name: 📚 Parse semesters
+        id: parse
+        run: |
+          SEMESTERS="${{ inputs.semesters }}"
+          echo "semesters=$SEMESTERS" >> $GITHUB_OUTPUT
+
+          # 計算學期數量
+          COUNT=$(echo "$SEMESTERS" | tr ',' '\n' | wc -l)
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+
+          echo "準備匯入 $COUNT 個學期: $SEMESTERS"
+
+      - name: 🕷️ Import semesters
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NKUST_SCRAPE_SYLLABUS: ${{ inputs.scrape_syllabus }}
+        run: |
+          SEMESTERS="${{ steps.parse.outputs.semesters }}"
+          SCRAPE_SYLLABUS="${{ inputs.scrape_syllabus }}"
+
+          echo "開始批次匯入..."
+          echo "爬取課程大綱: $SCRAPE_SYLLABUS"
+          echo ""
+
+          SUCCESS_COUNT=0
+          SKIP_COUNT=0
+          FAIL_COUNT=0
+
+          # 分割學期字串並逐個處理
+          IFS=',' read -ra SEMESTER_LIST <<< "$SEMESTERS"
+
+          for semester in "${SEMESTER_LIST[@]}"; do
+            # 移除空白
+            semester=$(echo "$semester" | xargs)
+
+            # 解析學年和學期
+            YEAR=$(echo "$semester" | cut -d'-' -f1)
+            TERM=$(echo "$semester" | cut -d'-' -f2)
+
+            echo "========================================="
+            echo "📚 處理: $YEAR 學年度第 $TERM 學期"
+            echo "========================================="
+
+            # 檢查是否已有資料
+            EXISTING=$(psql "$DATABASE_URL" -t -c "
+              SELECT COUNT(*)
+              FROM \"Course\"
+              WHERE year = '$YEAR' AND term = '$TERM';
+            " | tr -d ' ')
+
+            if [ "$EXISTING" -gt 0 ]; then
+              echo "⏭️  已存在 $EXISTING 筆資料，跳過"
+              SKIP_COUNT=$((SKIP_COUNT + 1))
+              echo ""
+              continue
+            fi
+
+            # 爬取資料
+            echo "🕷️  開始爬取..."
+            if NKUST_IMPORT_YEAR=$YEAR NKUST_IMPORT_TERM=$TERM npm run scrape:nkust-ag202; then
+              echo "✓ 爬取完成"
+            else
+              echo "❌ 爬取失敗"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
+              echo ""
+              continue
+            fi
+
+            # 匯入資料庫
+            echo "💾 開始匯入..."
+            if NKUST_IMPORT_YEAR=$YEAR NKUST_IMPORT_TERM=$TERM npm run db:import:nkust-ag202; then
+              echo "✓ 匯入完成"
+
+              # 驗證
+              NEW_COUNT=$(psql "$DATABASE_URL" -t -c "
+                SELECT COUNT(*)
+                FROM \"Course\"
+                WHERE year = '$YEAR' AND term = '$TERM';
+              " | tr -d ' ')
+
+              echo "📈 新增課程: $NEW_COUNT"
+              SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
+            else
+              echo "❌ 匯入失敗"
+              FAIL_COUNT=$((FAIL_COUNT + 1))
+            fi
+
+            echo ""
+          done
+
+          # 最終統計
+          echo "========================================="
+          echo "📊 批次匯入完成"
+          echo "========================================="
+          echo "總學期數: ${{ steps.parse.outputs.count }}"
+          echo "成功: $SUCCESS_COUNT"
+          echo "跳過: $SKIP_COUNT"
+          echo "失敗: $FAIL_COUNT"
+          echo ""
+
+          # 查詢總資料量
+          TOTAL_COURSES=$(psql "$DATABASE_URL" -t -c "SELECT COUNT(*) FROM \"Course\";" | tr -d ' ')
+          TOTAL_INSTRUCTORS=$(psql "$DATABASE_URL" -t -c "SELECT COUNT(*) FROM \"Instructor\";" | tr -d ' ')
+
+          echo "資料庫總計："
+          echo "  課程總數: $TOTAL_COURSES"
+          echo "  教師總數: $TOTAL_INSTRUCTORS"
+
+          # 按學期統計
+          echo ""
+          echo "各學期課程數："
+          psql "$DATABASE_URL" -c "
+            SELECT year || ' 學年度第 ' || term || ' 學期' as semester,
+                   COUNT(*) as courses
+            FROM \"Course\"
+            GROUP BY year, term
+            ORDER BY year DESC, term DESC;
+          "
+
+          # 如果有失敗，退出碼設為 1
+          if [ "$FAIL_COUNT" -gt 0 ]; then
+            exit 1
+          fi
+
+      - name: 📋 Summary
+        if: always()
+        run: |
+          echo "批次匯入任務完成"
+          echo "請查看上方日誌了解詳細結果"
