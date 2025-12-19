@@ -87,9 +87,6 @@ export async function GET(request: Request): Promise<Response> {
 
     return NextResponse.json(suggestions) as Response;
   } catch (error) {
-
-    return NextResponse.json(suggestions) as Response;
-  } catch (error) {
     console.error('Search suggestions error:', error);
     return NextResponse.json([]) as Response;
   }
