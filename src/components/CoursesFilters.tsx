@@ -154,32 +154,33 @@ export function CoursesFilters({ initial }: Props) {
     <>
       <form method="get" action="/courses" aria-label="課程搜尋與篩選">
         <div className="ts-grid is-relaxed">
-          <div className="column is-fluid" style={{ position: "relative" }}>
-            <div className="ts-input is-solid is-fluid">
-              <input
-                ref={searchInputRef}
-                name="q"
-                value={searchQuery}
-                onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
-                onFocus={() => {
-                  if (suggestions.length > 0) {
-                    setShowSuggestions(true);
-                  }
-                }}
-                placeholder="搜尋：課名 / 永久課號 / 選課代號 / 系所"
-                autoComplete="off"
-              />
-            </div>
-            {showSuggestions && suggestions.length > 0 && (
-              <div
-                ref={suggestionsRef}
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: 0,
-                  right: 0,
-                  marginTop: "0.5rem",
+          <div className="column is-fluid">
+            <div style={{ position: "relative" }}>
+              <div className="ts-input is-solid is-fluid">
+                <input
+                  ref={searchInputRef}
+                  name="q"
+                  value={searchQuery}
+                  onChange={handleInputChange}
+                  onKeyDown={handleKeyDown}
+                  onFocus={() => {
+                    if (suggestions.length > 0) {
+                      setShowSuggestions(true);
+                    }
+                  }}
+                  placeholder="搜尋：課名 / 永久課號 / 選課代號 / 系所"
+                  autoComplete="off"
+                />
+              </div>
+              {showSuggestions && suggestions.length > 0 && (
+                <div
+                  ref={suggestionsRef}
+                  style={{
+                    position: "absolute",
+                    top: "100%",
+                    left: 0,
+                    right: 0,
+                    marginTop: "0.5rem",
                   backgroundColor: "var(--app-surface)",
                   border: "1px solid var(--app-border)",
                   borderRadius: "12px",
@@ -247,6 +248,7 @@ export function CoursesFilters({ initial }: Props) {
                 ))}
               </div>
             )}
+            </div>
           </div>
           <div className="column">
             <button type="submit" className="ts-button is-primary is-fluid">
