@@ -26,8 +26,12 @@ function SignInForm() {
     setError(null);
 
     try {
+      // 統一將 email 本地部分轉為大寫（如 c109193108@nkust.edu.tw -> C109193108@nkust.edu.tw）
+      const [localPart, domain] = email.split("@");
+      const normalizedEmail = `${localPart.toUpperCase()}@${domain.toLowerCase()}`;
+
       const result = await signIn("email", {
-        email,
+        email: normalizedEmail,
         redirect: false,
         callbackUrl,
       });
@@ -35,7 +39,7 @@ function SignInForm() {
       if (result?.error) {
         setError("登入失敗，請稍後再試");
       } else {
-        window.location.href = `/auth/verify-request?email=${encodeURIComponent(email)}`;
+        window.location.href = `/auth/verify-request?email=${encodeURIComponent(normalizedEmail)}`;
       }
     } catch (err) {
       setError("發生錯誤，請稍後再試");

@@ -17,16 +17,27 @@ export const authOptions: NextAuthOptions = {
     EmailProvider({
       server: "", // Not used with custom sendVerificationRequest
       from: process.env.EMAIL_FROM!,
+      normalizeIdentifier(identifier: string): string {
+        // 統一將 email 本地部分轉為大寫
+        const [localPart, domain] = identifier.split("@");
+        return `${localPart.toUpperCase()}@${domain.toLowerCase()}`;
+      },
       sendVerificationRequest: async ({ identifier: email, url }) => {
         console.log("=== sendVerificationRequest called ===");
-        console.log("Email:", email);
+        console.log("Email (original):", email);
+
+        // 統一將 email 本地部分轉為大寫（如 c109193108@nkust.edu.tw -> C109193108@nkust.edu.tw）
+        const [localPart, domain] = email.split("@");
+        const normalizedEmail = `${localPart.toUpperCase()}@${domain.toLowerCase()}`;
+
+        console.log("Email (normalized):", normalizedEmail);
         console.log("URL:", url);
         console.log("RESEND_API_KEY:", process.env.RESEND_API_KEY ? "✓ Set" : "✗ Not set");
         console.log("EMAIL_FROM:", process.env.EMAIL_FROM);
 
         // 驗證 @nkust.edu.tw
-        if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
-          console.error("❌ Email validation failed:", email);
+        if (!normalizedEmail.toLowerCase().endsWith("@nkust.edu.tw")) {
+          console.error("❌ Email validation failed:", normalizedEmail);
           throw new Error("Only @nkust.edu.tw emails are allowed");
         }
 
@@ -36,7 +47,7 @@ export const authOptions: NextAuthOptions = {
           console.log("Sending email via Resend...");
           const result = await resend.emails.send({
             from: process.env.EMAIL_FROM!,
-            to: email,
+            to: normalizedEmail,
             subject: "登入 高科選課雷達",
             html: `
               <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
