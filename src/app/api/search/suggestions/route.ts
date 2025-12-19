@@ -14,24 +14,32 @@ export async function GET(request: Request): Promise<Response> {
   }
 
   try {
-    // Search for courses and departments using full-text search
-    const [coursesRaw, departments] = await Promise.all([
-      // Get top 5 matching courses
+    // Search for courses, instructors, and departments using full-text search
+    const [coursesRaw, instructorsRaw, departments] = await Promise.all([
+      // Get top 8 matching courses (prioritize courses)
       prisma.$queryRaw<Array<{ id: string; courseName: string; department: string | null; rank: number }>>`
         SELECT c.id, c."courseName", c.department, ts_rank(c."searchVector", plainto_tsquery('simple', ${q})) as rank
         FROM "Course" c
         WHERE c."searchVector" @@ plainto_tsquery('simple', ${q})
         ORDER BY rank DESC
-        LIMIT 5
+        LIMIT 8
       `,
-      // Get unique departments matching the query
+      // Get matching instructors
+      prisma.$queryRaw<Array<{ name: string; department: string | null }>>`
+        SELECT DISTINCT i.name, i.department
+        FROM "Instructor" i
+        WHERE i.name ILIKE ${'%' + q + '%'}
+        ORDER BY i.name
+        LIMIT 3
+      `,
+      // Get unique departments matching the query (only 2)
       prisma.$queryRaw<Array<{ department: string }>>`
         SELECT DISTINCT c.department
         FROM "Course" c
         WHERE c.department IS NOT NULL
           AND c.department ILIKE ${'%' + q + '%'}
         ORDER BY c.department
-        LIMIT 3
+        LIMIT 2
       `
     ]);
 
@@ -45,6 +53,7 @@ export async function GET(request: Request): Promise<Response> {
       return true;
     });
 
+    // Build suggestions with priority: courses > instructors > departments
     const suggestions = [
       ...courses.map((c: { id: string; courseName: string; department: string | null }) => ({
         type: 'course' as const,
@@ -52,6 +61,12 @@ export async function GET(request: Request): Promise<Response> {
         label: c.courseName,
         department: c.department,
         id: c.id
+      })),
+      ...instructorsRaw.map((i: { name: string; department: string | null }) => ({
+        type: 'instructor' as const,
+        value: i.name,
+        label: i.name,
+        department: i.department
       })),
       ...departments.map((d: { department: string }) => ({
         type: 'department' as const,

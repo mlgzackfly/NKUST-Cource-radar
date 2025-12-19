@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
 type Suggestion = {
-  type: 'course' | 'department';
+  type: 'course' | 'instructor' | 'department';
   value: string;
   label: string;
   department?: string | null;
@@ -149,15 +149,15 @@ export function HomeSearch() {
             ref={suggestionsRef}
             style={{
               position: "absolute",
-              top: "calc(100% - 0.5rem)",
+              top: "100%",
               left: 0,
               right: 0,
+              marginTop: "0.5rem",
               background: "white",
-              borderRadius: "0 0 12px 12px",
-              boxShadow: "0 8px 24px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04)",
+              borderRadius: "12px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15)",
               border: "1px solid var(--ts-gray-200)",
-              borderTop: "1px solid var(--ts-gray-100)",
-              maxHeight: "400px",
+              maxHeight: "320px",
               overflowY: "auto",
               zIndex: 1000,
             }}
@@ -169,33 +169,46 @@ export function HomeSearch() {
                 onClick={() => handleSuggestionClick(suggestion)}
                 style={{
                   width: "100%",
-                  padding: "0.875rem 1.25rem",
+                  padding: "0.75rem 1rem",
                   border: "none",
-                  background: selectedIndex === index ? "var(--ts-gray-50)" : "transparent",
+                  background: selectedIndex === index ? "var(--app-table-hover-bg)" : "transparent",
                   cursor: "pointer",
                   textAlign: "left",
                   display: "flex",
                   alignItems: "center",
                   gap: "0.75rem",
                   transition: "background-color 0.15s",
-                  borderBottom: index < suggestions.length - 1 ? "1px solid var(--ts-gray-100)" : "none",
+                  borderBottom: index < suggestions.length - 1 ? "1px solid var(--app-border)" : "none",
                 }}
                 onMouseEnter={() => setSelectedIndex(index)}
               >
                 <span
                   style={{
-                    fontSize: "1.125rem",
-                    flexShrink: 0,
+                    padding: "0.25rem 0.5rem",
+                    borderRadius: "6px",
+                    backgroundColor: suggestion.type === "course"
+                      ? "color-mix(in srgb, var(--ts-primary-500) 15%, transparent)"
+                      : suggestion.type === "instructor"
+                      ? "color-mix(in srgb, var(--ts-info-500) 15%, transparent)"
+                      : "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
+                    color: suggestion.type === "course"
+                      ? "var(--ts-primary-600)"
+                      : suggestion.type === "instructor"
+                      ? "var(--ts-info-600)"
+                      : "var(--ts-warning-600)",
+                    fontWeight: 600,
+                    fontSize: "0.75rem",
+                    flexShrink: 0
                   }}
                 >
-                  {suggestion.type === 'course' ? '📚' : '🏫'}
+                  {suggestion.type === 'course' ? '課程' : suggestion.type === 'instructor' ? '教師' : '系所'}
                 </span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div
                     style={{
                       fontSize: "0.9375rem",
                       fontWeight: 500,
-                      color: "var(--ts-gray-900)",
+                      color: "var(--app-text)",
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       whiteSpace: "nowrap",
@@ -207,23 +220,17 @@ export function HomeSearch() {
                     <div
                       style={{
                         fontSize: "0.8125rem",
-                        color: "var(--ts-gray-500)",
-                        marginTop: "0.125rem",
+                        color: "var(--app-muted)",
+                        marginTop: "0.25rem",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        whiteSpace: "nowrap"
                       }}
                     >
                       {suggestion.department}
                     </div>
                   )}
                 </div>
-                <span
-                  style={{
-                    fontSize: "0.8125rem",
-                    color: "var(--ts-gray-400)",
-                    flexShrink: 0,
-                  }}
-                >
-                  {suggestion.type === 'course' ? '課程' : '系所'}
-                </span>
               </button>
             ))}
           </div>
