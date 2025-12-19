@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
+import { Course as PrismaCourse, Instructor as PrismaInstructor } from "@prisma/client";
+
+type CourseSuggestion = Pick<PrismaCourse, "id" | "courseName" | "department">;
+type InstructorSuggestion = Pick<PrismaInstructor, "name">;
+type DepartmentSuggestion = Pick<PrismaCourse, "department">;
 
 export async function GET(request: Request): Promise<Response> {
   const { searchParams } = new URL(request.url);
@@ -30,7 +35,7 @@ export async function GET(request: Request): Promise<Response> {
         orderBy: {
           courseName: 'asc',
         },
-      }),
+      }) as Promise<CourseSuggestion[]>, // Cast to CourseSuggestion[]
       // Get matching instructors
       prisma.instructor.findMany({
         where: {
@@ -44,7 +49,7 @@ export async function GET(request: Request): Promise<Response> {
         orderBy: {
           name: 'asc',
         },
-      }),
+      }) as Promise<InstructorSuggestion[]>, // Cast to InstructorSuggestion[]
       // Get unique departments matching the query
       prisma.course.findMany({
         where: {
@@ -58,19 +63,19 @@ export async function GET(request: Request): Promise<Response> {
         orderBy: {
           department: 'asc',
         },
-      }),
+      }) as Promise<DepartmentSuggestion[]>, // Cast to DepartmentSuggestion[]
     ]);
 
     // Build suggestions with priority: courses > instructors > departments
     const suggestions = [
-      ...courses.map((c) => ({
+      ...courses.map((c: CourseSuggestion) => ({
         type: 'course' as const,
         value: c.courseName,
         label: c.courseName,
         department: c.department,
         id: c.id
       })),
-      ...instructors.map((i) => ({
+      ...instructors.map((i: InstructorSuggestion) => ({
         type: 'instructor' as const,
         value: i.name,
         label: i.name,
@@ -78,7 +83,7 @@ export async function GET(request: Request): Promise<Response> {
       })),
       ...departments
         .filter(d => d.department !== null)
-        .map((d) => ({
+        .map((d: DepartmentSuggestion) => ({
         type: 'department' as const,
         value: d.department!,
         label: d.department!,
