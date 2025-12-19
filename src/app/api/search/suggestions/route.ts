@@ -1,10 +1,13 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
-import type { Course, Instructor, Prisma } from "@prisma/client";
+import type { Prisma } from "@prisma/client";
 
-type CourseSuggestion = Pick<Course, "id" | "courseName" | "department">;
-type InstructorSuggestion = Pick<Instructor, "name">;
-type DepartmentSuggestion = Pick<Course, "department">;
+type CourseType = Awaited<ReturnType<typeof prisma.course.findMany>>[number];
+type InstructorType = Awaited<ReturnType<typeof prisma.instructor.findMany>>[number];
+
+type CourseSuggestion = Pick<CourseType, "id" | "courseName" | "department">;
+type InstructorSuggestion = Pick<InstructorType, "name">;
+type DepartmentSuggestion = Pick<CourseType, "department">;
 
 export async function GET(request: Request): Promise<Response> {
   const { searchParams } = new URL(request.url);
