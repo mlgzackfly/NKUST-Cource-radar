@@ -297,6 +297,112 @@ pg_dump $DATABASE_URL > backup.sql
    - 定期檢查 logs
    - 設定異常告警
 
+## 部署時間說明
+
+### 預期部署時間：4-6 分鐘
+
+部署過程包含以下步驟：
+
+| 步驟 | 預計時間 | 說明 |
+|------|---------|------|
+| 📦 安裝依賴 | 1-2 分鐘 | `npm install` 下載所有依賴套件 |
+| 🔧 Prisma Generate | 30-60 秒 | `postinstall` 鉤子中生成資料庫客戶端 |
+| 🏗️ Next.js 建構 | 2-3 分鐘 | TypeScript 編譯、頁面預渲染等 |
+| 🚀 啟動服務 | 10-20 秒 | 應用程式啟動並開始監聽端口 |
+
+### 為什麼需要這麼長時間？
+
+1. **依賴套件多** (node_modules ~650MB)
+   - Next.js、React、Prisma 等大型框架
+   - ECharts、NextAuth 等功能庫
+
+2. **TypeScript 編譯**
+   - 嚴格類型檢查
+   - 多個組件和頁面需要編譯
+
+3. **Prisma 生成**
+   - 根據 schema 生成資料庫客戶端程式碼
+   - 這是必要步驟，無法跳過
+
+### 優化建議
+
+1. **使用 Zeabur 的建構緩存**（通常自動啟用）
+2. **確保 .gitignore 正確**：排除 `node_modules`、`.next`、`dist` 等
+3. **考慮使用 pnpm**：可減少 20-30% 安裝時間
+
+## 數據匯入說明
+
+### 當前數據狀態
+
+您的部署應該包含：
+- **114 學年度第 1 學期**的完整課程數據
+- 約 **5,600-5,900 筆課程**
+- 覆蓋所有校區、學制、系所
+
+### 這些數據從哪裡來？
+
+1. **本地爬取的數據**：存放在 `./data/nkust/ag202/` 目錄
+2. **部署時匯入**：透過 `scripts/db/import-nkust-ag202.mjs` 匯入資料庫
+3. **資料庫連線**：使用 Zeabur PostgreSQL 或您設置的資料庫
+
+### 如何匯入更多學期的數據？
+
+#### 選項 1：使用提供的批次匯入腳本（推薦）
+
+```bash
+# 一次性爬取並匯入多個學期
+node scripts/import-all-semesters.mjs
+```
+
+這個腳本會自動：
+- 爬取 113-1, 113-2, 114-1 三個學期
+- 跳過已存在的數據
+- 預計總時間：1.5-3 小時
+
+#### 選項 2：手動匯入單一學期
+
+```bash
+# 設置要匯入的學期
+export NKUST_IMPORT_YEAR=113
+export NKUST_IMPORT_TERM=2
+
+# 1. 爬取課程數據（30-60 分鐘）
+npm run scrape:nkust-ag202
+
+# 2. 匯入資料庫（5-10 分鐘）
+npm run db:import:nkust-ag202
+```
+
+#### 選項 3：設置定期自動更新
+
+使用 GitHub Actions 定期更新數據。參考 `.github/workflows/` 中的範例配置。
+
+### 為什麼不在部署時自動爬取？
+
+1. **時間太長**：單一學期需要 30-60 分鐘
+2. **可能超時**：Zeabur 有建構時間限制
+3. **網路穩定性**：爬蟲需要穩定的網路連線
+4. **資源消耗**：可能影響部署效能
+
+建議做法：
+- 在本地或 CI/CD 環境中定期爬取
+- 將資料直接匯入資料庫
+- 部署時應用程式直接從資料庫讀取
+
+### 檢查當前數據量
+
+```bash
+# 連線到資料庫查詢
+psql $DATABASE_URL -c "
+  SELECT year, term, COUNT(*) as courses
+  FROM \"Course\"
+  GROUP BY year, term
+  ORDER BY year DESC, term DESC;
+"
+```
+
+或在應用程式中查看課程列表頁面。
+
 ## 效能優化
 
 1. **資料庫索引**
