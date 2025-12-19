@@ -14,66 +14,79 @@ export async function GET(request: Request): Promise<Response> {
   }
 
   try {
-    // Search for courses, instructors, and departments using full-text search
-    const [coursesRaw, instructorsRaw, departments] = await Promise.all([
-      // Get top 8 matching courses (prioritize courses)
-      prisma.$queryRaw<Array<{ id: string; courseName: string; department: string | null; rank: number }>>`
-        SELECT c.id, c."courseName", c.department, ts_rank(c."searchVector", plainto_tsquery('simple', ${q})) as rank
-        FROM "Course" c
-        WHERE c."searchVector" @@ plainto_tsquery('simple', ${q})
-        ORDER BY rank DESC
-        LIMIT 8
-      `,
+    const [courses, instructors, departments] = await Promise.all([
+      // Get top 8 matching courses
+      prisma.course.findMany({
+        where: {
+          courseName: { contains: q },
+        },
+        distinct: ['courseName'],
+        take: 8,
+        select: {
+          id: true,
+          courseName: true,
+          department: true,
+        },
+        orderBy: {
+          courseName: 'asc',
+        },
+      }),
       // Get matching instructors
-      prisma.$queryRaw<Array<{ name: string; department: string | null }>>`
-        SELECT DISTINCT i.name, i.department
-        FROM "Instructor" i
-        WHERE i.name ILIKE ${'%' + q + '%'}
-        ORDER BY i.name
-        LIMIT 3
-      `,
-      // Get unique departments matching the query (only 2)
-      prisma.$queryRaw<Array<{ department: string }>>`
-        SELECT DISTINCT c.department
-        FROM "Course" c
-        WHERE c.department IS NOT NULL
-          AND c.department ILIKE ${'%' + q + '%'}
-        ORDER BY c.department
-        LIMIT 2
-      `
+      prisma.instructor.findMany({
+        where: {
+          name: { contains: q },
+        },
+        distinct: ['name'],
+        take: 3,
+        select: {
+          name: true,
+        },
+        orderBy: {
+          name: 'asc',
+        },
+      }),
+      // Get unique departments matching the query
+      prisma.course.findMany({
+        where: {
+          department: { contains: q },
+        },
+        distinct: ['department'],
+        take: 2,
+        select: {
+          department: true,
+        },
+        orderBy: {
+          department: 'asc',
+        },
+      }),
     ]);
-
-    // Remove duplicates from courses by courseName
-    const seenNames = new Set<string>();
-    const courses = coursesRaw.filter((c: { id: string; courseName: string; department: string | null; rank: number }) => {
-      if (seenNames.has(c.courseName)) {
-        return false;
-      }
-      seenNames.add(c.courseName);
-      return true;
-    });
 
     // Build suggestions with priority: courses > instructors > departments
     const suggestions = [
-      ...courses.map((c: { id: string; courseName: string; department: string | null }) => ({
+      ...courses.map((c) => ({
         type: 'course' as const,
         value: c.courseName,
         label: c.courseName,
         department: c.department,
         id: c.id
       })),
-      ...instructorsRaw.map((i: { name: string; department: string | null }) => ({
+      ...instructors.map((i) => ({
         type: 'instructor' as const,
         value: i.name,
         label: i.name,
-        department: i.department
+        department: null
       })),
-      ...departments.map((d: { department: string }) => ({
+      ...departments
+        .filter(d => d.department !== null)
+        .map((d) => ({
         type: 'department' as const,
-        value: d.department,
-        label: d.department
+        value: d.department!,
+        label: d.department!,
       }))
     ];
+
+    return NextResponse.json(suggestions) as Response;
+  } catch (error) {
 
     return NextResponse.json(suggestions) as Response;
   } catch (error) {

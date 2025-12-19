@@ -38,7 +38,7 @@ async function fixSearchVector() {
     }
 
     // 3. 檢查有多少課程的 searchVector 是 NULL
-    const result = await prisma.$queryRaw<[{ count: bigint }]>`
+    const result = await prisma.$queryRaw`
       SELECT COUNT(*) as count
       FROM "Course"
       WHERE "searchVector" IS NULL
@@ -111,7 +111,7 @@ async function fixSearchVector() {
 
     // 8. 驗證修復結果
     console.log('8️⃣ 驗證修復結果...');
-    const verifyResult = await prisma.$queryRaw<[{ count: bigint }]>`
+    const verifyResult = await prisma.$queryRaw`
       SELECT COUNT(*) as count
       FROM "Course"
       WHERE "searchVector" IS NOT NULL
@@ -124,7 +124,7 @@ async function fixSearchVector() {
 
       // 測試搜尋
       console.log('9️⃣ 測試搜尋功能...');
-      const testResults = await prisma.$queryRaw<Array<{ courseName: string }>>`
+      const testResults = await prisma.$queryRaw`
         SELECT "courseName"
         FROM "Course"
         WHERE "searchVector" @@ plainto_tsquery('simple', '程式')

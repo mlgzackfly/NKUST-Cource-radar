@@ -127,6 +127,7 @@ export function HomeSearch() {
               fontSize: "1rem",
               padding: "0.75rem 1rem",
               background: "transparent",
+              color: "var(--ts-gray-800)",
             }}
           />
           <button
