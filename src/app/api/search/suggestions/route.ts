@@ -2,9 +2,10 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import type { Prisma } from "@prisma/client";
 
-type CourseSuggestion = Pick<Prisma.Course, "id" | "courseName" | "department">;
-type InstructorSuggestion = Pick<Prisma.Instructor, "name">;
-type DepartmentSuggestion = Pick<Prisma.Course, "department">;
+type CourseSuggestion = any; // Temporarily replaced for diagnosis
+type InstructorSuggestion = any; // Temporarily replaced for diagnosis
+type DepartmentSuggestion = any; // Temporarily replaced for diagnosis
+
 
 export async function GET(request: Request): Promise<Response> {
   const { searchParams } = new URL(request.url);
