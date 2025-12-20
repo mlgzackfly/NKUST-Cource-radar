@@ -80,7 +80,7 @@ async function fetchTextWithFallback(url, init) {
   } catch (err) {
     if (!isTlsCertError(err)) throw err;
     // Fallback to system curl to avoid Node TLS chain issues on some environments.
-    const args = ["-fsSL"];
+    const args = ["-fsSL", "-k"];
     if (init?.method && init.method.toUpperCase() !== "GET") {
       args.push("-X", init.method.toUpperCase());
     }
