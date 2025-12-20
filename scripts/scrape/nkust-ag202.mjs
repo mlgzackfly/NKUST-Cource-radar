@@ -70,7 +70,22 @@ async function fetchWithRetry(url, init, { retries = 3, backoffMs = 500 } = {}) 
 
 function isTlsCertError(err) {
   const code = err?.cause?.code || err?.code;
-  return code === "UNABLE_TO_VERIFY_LEAF_SIGNATURE";
+  const message = err?.message || "";
+
+  // Check for various TLS/SSL certificate errors
+  const tlsErrors = [
+    "UNABLE_TO_VERIFY_LEAF_SIGNATURE",
+    "UNABLE_TO_GET_ISSUER_CERT",
+    "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
+    "SELF_SIGNED_CERT_IN_CHAIN",
+    "CERT_HAS_EXPIRED",
+    "DEPTH_ZERO_SELF_SIGNED_CERT",
+  ];
+
+  // Also check if error message contains SSL/TLS/certificate keywords
+  const isCertMessageError = /certificate|ssl|tls|cert/i.test(message);
+
+  return tlsErrors.includes(code) || isCertMessageError;
 }
 
 async function fetchTextWithFallback(url, init) {
