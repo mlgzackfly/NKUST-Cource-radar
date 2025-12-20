@@ -1,9 +1,8 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import https from "node:https";
 import { fileURLToPath } from "node:url";
-import { execFile } from "node:child_process";
-import { promisify } from "node:util";
 import { load } from "cheerio";
 import { scrapeSyllabus } from "./nkust-ag064-syllabus.mjs";
 
@@ -11,7 +10,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const SOURCE_URL = "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp";
-const execFileAsync = promisify(execFile);
 
 function env(name, fallback) {
   const v = process.env[name];
@@ -68,72 +66,62 @@ async function fetchWithRetry(url, init, { retries = 3, backoffMs = 500 } = {}) 
   throw lastErr;
 }
 
-function isTlsCertError(err) {
-  const code = err?.cause?.code || err?.code;
-  const message = err?.message || "";
-
-  // Check for various TLS/SSL certificate errors
-  const tlsErrors = [
-    "UNABLE_TO_VERIFY_LEAF_SIGNATURE",
-    "UNABLE_TO_GET_ISSUER_CERT",
-    "UNABLE_TO_GET_ISSUER_CERT_LOCALLY",
-    "SELF_SIGNED_CERT_IN_CHAIN",
-    "CERT_HAS_EXPIRED",
-    "DEPTH_ZERO_SELF_SIGNED_CERT",
-  ];
-
-  // Also check if error message contains SSL/TLS/certificate keywords
-  const isCertMessageError = /certificate|ssl|tls|cert/i.test(message);
-
-  return tlsErrors.includes(code) || isCertMessageError;
-}
-
 async function fetchTextWithFallback(url, init) {
-  // For NKUST website, directly use curl with -k to bypass SSL verification
-  // since it consistently has SSL certificate issues
+  // For NKUST website, use https.request directly to bypass SSL verification
   if (url.includes("webap.nkust.edu.tw")) {
-    const args = ["-fsSL", "-k"];
-    if (init?.method && init.method.toUpperCase() !== "GET") {
-      args.push("-X", init.method.toUpperCase());
-    }
-    if (init?.headers) {
-      for (const [k, v] of Object.entries(init.headers)) {
-        args.push("-H", `${k}: ${v}`);
-      }
-    }
-    if (init?.body) {
-      args.push("--data", String(init.body));
-    }
-    args.push(url);
+    return new Promise((resolve, reject) => {
+      const urlObj = new URL(url);
+      const body = init?.body || '';
+      const headers = {
+        ...(init?.headers || {}),
+      };
 
-    const { stdout } = await execFileAsync("curl", args, { maxBuffer: 20 * 1024 * 1024 });
-    return stdout;
+      // Add Content-Length for POST requests
+      if (body) {
+        headers['Content-Length'] = Buffer.byteLength(body);
+      }
+
+      const options = {
+        hostname: urlObj.hostname,
+        port: urlObj.port || 443,
+        path: urlObj.pathname + urlObj.search,
+        method: init?.method || 'GET',
+        headers,
+        rejectUnauthorized: false,
+      };
+
+      const req = https.request(options, (res) => {
+        let data = '';
+        res.setEncoding('utf8');
+        res.on('data', (chunk) => { data += chunk; });
+        res.on('end', () => {
+          if (res.statusCode >= 400) {
+            reject(new Error(`HTTP ${res.statusCode} ${res.statusMessage}`));
+          } else {
+            resolve(data);
+          }
+        });
+      });
+
+      req.on('error', reject);
+      req.on('timeout', () => {
+        req.destroy();
+        reject(new Error('Request timeout'));
+      });
+
+      req.setTimeout(30000); // 30 seconds timeout
+
+      if (body) {
+        req.write(body);
+      }
+
+      req.end();
+    });
   }
 
-  // For other URLs, try fetch first, then fallback to curl if TLS error
-  try {
-    const res = await fetchWithRetry(url, init);
-    return await res.text();
-  } catch (err) {
-    if (!isTlsCertError(err)) throw err;
-    // Fallback to system curl to avoid Node TLS chain issues on some environments.
-    const args = ["-fsSL", "-k"];
-    if (init?.method && init.method.toUpperCase() !== "GET") {
-      args.push("-X", init.method.toUpperCase());
-    }
-    if (init?.headers) {
-      for (const [k, v] of Object.entries(init.headers)) {
-        args.push("-H", `${k}: ${v}`);
-      }
-    }
-    if (init?.body) {
-      args.push("--data", String(init.body));
-    }
-    args.push(url);
-
-    const { stdout } = await execFileAsync("curl", args, { maxBuffer: 20 * 1024 * 1024 });
-    return stdout;
-  }
+  // For other URLs, use standard fetch
+  const res = await fetchWithRetry(url, init);
+  return await res.text();
 }
 
 async function postAg202(paramsObj) {
