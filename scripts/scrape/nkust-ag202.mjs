@@ -89,6 +89,28 @@ function isTlsCertError(err) {
 }
 
 async function fetchTextWithFallback(url, init) {
+  // For NKUST website, directly use curl with -k to bypass SSL verification
+  // since it consistently has SSL certificate issues
+  if (url.includes("webap.nkust.edu.tw")) {
+    const args = ["-fsSL", "-k"];
+    if (init?.method && init.method.toUpperCase() !== "GET") {
+      args.push("-X", init.method.toUpperCase());
+    }
+    if (init?.headers) {
+      for (const [k, v] of Object.entries(init.headers)) {
+        args.push("-H", `${k}: ${v}`);
+      }
+    }
+    if (init?.body) {
+      args.push("--data", String(init.body));
+    }
+    args.push(url);
+
+    const { stdout } = await execFileAsync("curl", args, { maxBuffer: 20 * 1024 * 1024 });
+    return stdout;
+  }
+
+  // For other URLs, try fetch first, then fallback to curl if TLS error
   try {
     const res = await fetchWithRetry(url, init);
     return await res.text();
