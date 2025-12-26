@@ -4,12 +4,12 @@ import { prisma } from "@/lib/db";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ): Promise<Response> {
   try {
     await requireAdmin();
 
-    const userId = params.id;
+    const { id: userId } = await params;
 
     // 獲取使用者基本資訊
     const user = await prisma!.user.findUnique({
@@ -68,7 +68,7 @@ export async function GET(
 
     // 獲取使用者發出的檢舉
     const reportsMade = await prisma!.report.findMany({
-      where: { reporterId: userId },
+      where: { userId },
       orderBy: { createdAt: "desc" },
       select: {
         id: true,

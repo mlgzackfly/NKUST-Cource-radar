@@ -4,12 +4,12 @@ import { prisma } from "@/lib/db";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ): Promise<Response> {
   try {
     await requireAdmin();
 
-    const userId = params.id;
+    const { id: userId } = await params;
 
     // 獲取使用者的評論按月統計
     const reviewsByMonth = await prisma!.$queryRaw<Array<{ month: Date; count: bigint }>>`
