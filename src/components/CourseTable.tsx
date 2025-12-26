@@ -12,7 +12,7 @@ type CourseListItem = {
   term: string;
   time: string | null;
   classroom: string | null;
-  instructors: Array<{ instructor: { name: string } }>;
+  instructors: Array<{ instructor: { id: string; name: string } }>;
 };
 
 type CourseTableProps = {
@@ -59,19 +59,18 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
     transition: "background-color 0.15s"
   });
 
-  const renderInstructors = (instructors: Array<{ instructor: { name: string } }>) => {
+  const renderInstructors = (instructors: Array<{ instructor: { id: string; name: string } }>) => {
     if (!instructors || instructors.length === 0) return <span>—</span>;
 
-    const names = instructors.map((x) => x.instructor.name);
-    const displayNames = names.length <= 2 ? names : names.slice(0, 2);
-    const hasMore = names.length > 2;
+    const displayInstructors = instructors.length <= 2 ? instructors : instructors.slice(0, 2);
+    const hasMore = instructors.length > 2;
 
     return (
       <span>
-        {displayNames.map((name, index) => (
-          <span key={name}>
+        {displayInstructors.map((item, index) => (
+          <span key={item.instructor.id}>
             <Link
-              href={`/instructors/${encodeURIComponent(name)}`}
+              href={`/instructors/${item.instructor.id}`}
               onClick={(e) => e.stopPropagation()}
               style={{
                 color: "var(--ts-primary-500)",
@@ -81,9 +80,9 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
               onMouseEnter={(e) => e.currentTarget.style.textDecoration = "underline"}
               onMouseLeave={(e) => e.currentTarget.style.textDecoration = "none"}
             >
-              {name}
+              {item.instructor.name}
             </Link>
-            {index < displayNames.length - 1 && "、"}
+            {index < displayInstructors.length - 1 && "、"}
           </span>
         ))}
         {hasMore && "..."}

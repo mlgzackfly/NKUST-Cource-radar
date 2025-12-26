@@ -41,7 +41,7 @@ type CourseDetail = {
   note: string | null;
   syllabusUrl: string | null;
   syllabusData: any | null;
-  instructors: Array<{ instructor: { name: string } }>;
+  instructors: Array<{ instructor: { id: string; name: string } }>;
 };
 
 function FieldRow({ label, value }: { label: string; value: string | number | null | undefined }) {
@@ -117,7 +117,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
         syllabusData: true,
         instructors: {
           select: {
-            instructor: { select: { name: true } },
+            instructor: { select: { id: true, name: true } },
           },
         },
       },

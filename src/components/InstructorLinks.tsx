@@ -3,7 +3,7 @@
 import Link from "next/link";
 
 type InstructorLinksProps = {
-  instructors: Array<{ instructor: { name: string } }>;
+  instructors: Array<{ instructor: { id: string; name: string } }>;
   separator?: string;
 };
 
@@ -12,14 +12,12 @@ export function InstructorLinks({ instructors, separator = "、" }: InstructorLi
     return <span>—</span>;
   }
 
-  const names = instructors.map((x) => x.instructor.name);
-
   return (
     <span>
-      {names.map((name, index) => (
-        <span key={name}>
+      {instructors.map((item, index) => (
+        <span key={item.instructor.id}>
           <Link
-            href={`/instructors/${encodeURIComponent(name)}`}
+            href={`/instructors/${item.instructor.id}`}
             style={{
               color: "var(--ts-primary-500)",
               textDecoration: "none",
@@ -28,9 +26,9 @@ export function InstructorLinks({ instructors, separator = "、" }: InstructorLi
             onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
             onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
           >
-            {name}
+            {item.instructor.name}
           </Link>
-          {index < names.length - 1 && separator}
+          {index < instructors.length - 1 && separator}
         </span>
       ))}
     </span>

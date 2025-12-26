@@ -63,7 +63,7 @@ export async function GET(request: Request): Promise<Response> {
       term: true,
       instructors: {
         select: {
-          instructor: { select: { name: true } },
+          instructor: { select: { id: true, name: true } },
         },
       },
     },
@@ -72,7 +72,7 @@ export async function GET(request: Request): Promise<Response> {
   return NextResponse.json({
     courses: (courses as any[]).map((c: any) => ({
       ...c,
-      instructors: (c.instructors as any[]).map((x: any) => x.instructor.name),
+      instructors: (c.instructors as any[]).map((x: any) => x.instructor),
     })),
   }) as Response;
 }

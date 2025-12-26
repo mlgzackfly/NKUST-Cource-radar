@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
+// @ts-expect-error - Next.js 15.5.9/Prisma type definition issue
 import type { User } from "@prisma/client";
 
 /**

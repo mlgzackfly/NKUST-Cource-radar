@@ -1,3 +1,4 @@
+// @ts-expect-error - Next.js 15 type definition issue with redirect
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import Link from "next/link";

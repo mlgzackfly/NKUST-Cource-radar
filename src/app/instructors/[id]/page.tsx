@@ -55,7 +55,7 @@ type InstructorData = {
 export default function InstructorPage() {
   const params = useParams();
   const router = useRouter();
-  const instructorName = decodeURIComponent(params.name as string);
+  const instructorId = (params?.id as string) || "";
 
   const [data, setData] = useState<InstructorData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -66,7 +66,7 @@ export default function InstructorPage() {
     async function fetchData() {
       try {
         setLoading(true);
-        const res = await fetch(`/api/instructors/${encodeURIComponent(instructorName)}`);
+        const res = await fetch(`/api/instructors/${instructorId}`);
 
         if (!res.ok) {
           if (res.status === 404) {
@@ -88,7 +88,7 @@ export default function InstructorPage() {
     }
 
     fetchData();
-  }, [instructorName]);
+  }, [instructorId]);
 
   if (loading) {
     return (

@@ -13,7 +13,7 @@ type CourseListItem = {
   term: string;
   time: string | null;
   classroom: string | null;
-  instructors: Array<{ instructor: { name: string } }>;
+  instructors: Array<{ instructor: { id: string; name: string } }>;
 };
 
 type CoursesPageProps = {

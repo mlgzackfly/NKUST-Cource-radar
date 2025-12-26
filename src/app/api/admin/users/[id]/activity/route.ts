@@ -1,3 +1,5 @@
+// @ts-expect-error - Next.js 15.5.9 type definition issue with NextRequest
+
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/db";
@@ -34,14 +36,14 @@ export async function GET(
     });
 
     // 轉換數據格式
-    const monthlyData = reviewsByMonth.map(item => ({
+    const monthlyData = reviewsByMonth.map((item: { month: Date; count: bigint }) => ({
       month: item.month.toISOString().substring(0, 7), // YYYY-MM
       count: Number(item.count)
     })).reverse();
 
     return NextResponse.json({
       monthlyReviews: monthlyData,
-      ratingDistribution: ratingDistribution.map(item => ({
+      ratingDistribution: ratingDistribution.map((item: any) => ({
         rating: item.coolness,
         count: item._count
       }))

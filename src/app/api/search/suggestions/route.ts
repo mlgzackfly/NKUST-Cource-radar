@@ -6,7 +6,7 @@ type CourseType = Awaited<ReturnType<PrismaClientType['course']['findMany']>>[nu
 type InstructorType = Awaited<ReturnType<PrismaClientType['instructor']['findMany']>>[number];
 
 type CourseSuggestion = Pick<CourseType, "id" | "courseName" | "department">;
-type InstructorSuggestion = Pick<InstructorType, "name">;
+type InstructorSuggestion = Pick<InstructorType, "id" | "name">;
 type DepartmentSuggestion = Pick<CourseType, "department">;
 
 export async function GET(request: Request): Promise<Response> {
@@ -47,6 +47,7 @@ export async function GET(request: Request): Promise<Response> {
         distinct: ['name'],
         take: 3,
         select: {
+          id: true,
           name: true,
         },
         orderBy: {
@@ -82,7 +83,8 @@ export async function GET(request: Request): Promise<Response> {
         type: 'instructor' as const,
         value: i.name,
         label: i.name,
-        department: null
+        department: null,
+        id: i.id
       })),
       ...departments
         .filter(d => d.department !== null)

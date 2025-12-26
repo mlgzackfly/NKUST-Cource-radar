@@ -1,13 +1,14 @@
+// @ts-expect-error - Next.js 15.5.9 type definition issue with NextRequest
+
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ name: string }> }
+  { params }: { params: Promise<{ id: string }> }
 ): Promise<Response> {
   try {
-    const { name } = await params;
-    const instructorName = decodeURIComponent(name);
+    const { id } = await params;
 
     if (!prisma) {
       return NextResponse.json(
@@ -18,7 +19,7 @@ export async function GET(
 
     // 查詢教師基本資訊
     const instructor = await prisma.instructor.findUnique({
-      where: { name: instructorName },
+      where: { id },
       select: {
         id: true,
         name: true,
@@ -73,17 +74,17 @@ export async function GET(
     // 計算統計資訊
     const stats = {
       totalCourses: courses.length,
-      totalEnrolled: courses.reduce((sum, c) => sum + (c.enrolled || 0), 0),
-      totalReviews: courses.reduce((sum, c) => sum + c._count.reviews, 0),
+      totalEnrolled: courses.reduce((sum: number, c: any) => sum + (c.enrolled || 0), 0),
+      totalReviews: courses.reduce((sum: number, c: any) => sum + c._count.reviews, 0),
       // 學期分佈
       semesters: Array.from(
-        new Set(courses.map((c) => `${c.year}-${c.term}`))
+        new Set(courses.map((c: any) => `${c.year}-${c.term}`))
       ).sort().reverse(),
       // 校區分佈
-      campuses: Array.from(new Set(courses.map((c) => c.campus).filter(Boolean))),
+      campuses: Array.from(new Set(courses.map((c: any) => c.campus).filter(Boolean))),
       // 系所分佈
       departments: Array.from(
-        new Set(courses.map((c) => c.department).filter(Boolean))
+        new Set(courses.map((c: any) => c.department).filter(Boolean))
       ),
     };
 

@@ -148,9 +148,9 @@ export function CoursesFilters({ initial }: Props) {
 
   const selectSuggestion = (suggestion: Suggestion) => {
     // 根據建議類型導航到不同頁面
-    if (suggestion.type === "instructor") {
+    if (suggestion.type === "instructor" && suggestion.id) {
       // 點擊教師建議 -> 直接進入教師檔案頁面
-      window.location.href = `/instructors/${encodeURIComponent(suggestion.text)}`;
+      window.location.href = `/instructors/${suggestion.id}`;
     } else if (suggestion.type === "course" && suggestion.id) {
       // 點擊課程建議 -> 直接進入課程詳情頁面
       window.location.href = `/courses/${suggestion.id}`;
