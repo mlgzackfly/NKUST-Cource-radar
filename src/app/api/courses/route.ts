@@ -36,6 +36,15 @@ export async function GET(request: Request): Promise<Response> {
               { courseCode: { contains: q } },
               { selectCode: { contains: q } },
               { department: { contains: q } },
+              {
+                instructors: {
+                  some: {
+                    instructor: {
+                      name: { contains: q }
+                    }
+                  }
+                }
+              },
             ],
           }
         : {}),
