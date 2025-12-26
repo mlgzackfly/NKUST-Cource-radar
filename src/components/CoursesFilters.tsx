@@ -147,11 +147,15 @@ export function CoursesFilters({ initial }: Props) {
   };
 
   const selectSuggestion = (suggestion: Suggestion) => {
-    // For courses with ID, navigate directly to course detail page
-    if (suggestion.type === "course" && suggestion.id) {
+    // 根據建議類型導航到不同頁面
+    if (suggestion.type === "instructor") {
+      // 點擊教師建議 -> 直接進入教師檔案頁面
+      window.location.href = `/instructors/${encodeURIComponent(suggestion.text)}`;
+    } else if (suggestion.type === "course" && suggestion.id) {
+      // 點擊課程建議 -> 直接進入課程詳情頁面
       window.location.href = `/courses/${suggestion.id}`;
     } else {
-      // For others, perform a search
+      // 其他類型（系所等）-> 進入課程搜尋頁面
       const params = new URLSearchParams();
       params.set('q', suggestion.text);
       window.location.href = `/courses?${params.toString()}`;
@@ -176,7 +180,7 @@ export function CoursesFilters({ initial }: Props) {
                       setShowSuggestions(true);
                     }
                   }}
-                  placeholder="搜尋：課名 / 永久課號 / 選課代號 / 系所"
+                  placeholder="搜尋：課名 / 永久課號 / 選課代號 / 教師 / 系所"
                   autoComplete="off"
                 />
               </div>

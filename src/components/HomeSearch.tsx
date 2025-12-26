@@ -67,7 +67,18 @@ export function HomeSearch() {
   const handleSuggestionClick = (suggestion: Suggestion) => {
     setQuery(suggestion.value);
     setShowSuggestions(false);
-    router.push(`/courses?q=${encodeURIComponent(suggestion.value)}`);
+
+    // 根據建議類型導航到不同頁面
+    if (suggestion.type === 'instructor') {
+      // 點擊教師建議 -> 直接進入教師檔案頁面
+      router.push(`/instructors/${encodeURIComponent(suggestion.value)}`);
+    } else if (suggestion.type === 'course' && suggestion.id) {
+      // 點擊課程建議 -> 直接進入課程詳情頁面
+      router.push(`/courses/${suggestion.id}`);
+    } else {
+      // 其他類型（系所等）-> 進入課程搜尋頁面
+      router.push(`/courses?q=${encodeURIComponent(suggestion.value)}`);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
@@ -119,7 +130,7 @@ export function HomeSearch() {
               }
             }}
             onKeyDown={handleKeyDown}
-            placeholder="搜尋課程或系所..."
+            placeholder="搜尋課程、教師或系所..."
             style={{
               flex: 1,
               border: "none",
