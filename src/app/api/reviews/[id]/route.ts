@@ -88,3 +88,58 @@ export async function PUT(
     ) as Response;
   }
 }
+
+export async function DELETE(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Response> {
+  try {
+    const p = await params;
+    const session = await getServerSession(authOptions);
+
+    if (!session?.user?.email) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+    }
+
+    // 驗證 @nkust.edu.tw
+    if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
+      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
+    }
+
+    // 找到使用者
+    const user = await prisma!.user.findUnique({
+      where: { email: session.user.email }
+    });
+
+    if (!user) {
+      return NextResponse.json({ error: "User not found" }, { status: 404 }) as Response;
+    }
+
+    // 檢查評論是否存在且屬於該使用者
+    const existingReview = await prisma!.review.findUnique({
+      where: { id: p.id }
+    });
+
+    if (!existingReview) {
+      return NextResponse.json({ error: "Review not found" }, { status: 404 }) as Response;
+    }
+
+    if (existingReview.userId !== user.id) {
+      return NextResponse.json({ error: "You can only delete your own reviews" }, { status: 403 }) as Response;
+    }
+
+    // 刪除評論（cascade 會自動刪除相關的 votes, comments, reports 等）
+    await prisma!.review.delete({
+      where: { id: p.id }
+    });
+
+    return NextResponse.json({ success: true, message: "Review deleted successfully" }) as Response;
+
+  } catch (error) {
+    console.error("Failed to delete review:", error);
+    return NextResponse.json(
+      { error: "Internal server error", details: String(error) },
+      { status: 500 }
+    ) as Response;
+  }
+}

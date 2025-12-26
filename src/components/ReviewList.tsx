@@ -111,6 +111,9 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
   const [authorDept, setAuthorDept] = useState(review.authorDept || "");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showReportDialog, setShowReportDialog] = useState(false);
+  const [reportReason, setReportReason] = useState("");
+  const [reportLoading, setReportLoading] = useState(false);
   const router = useRouter();
 
   const formatDate = (dateStr: string) => {
@@ -167,6 +170,62 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
     setAuthorDept(review.authorDept || "");
     setError(null);
     setIsEditing(false);
+  };
+
+  const handleDelete = async () => {
+    if (!confirm("確定要刪除這則評論嗎？此操作無法復原。")) {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch(`/api/reviews/${review.id}`, {
+        method: "DELETE"
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "刪除失敗");
+      }
+
+      alert("評論已刪除");
+      router.refresh();
+    } catch (err: any) {
+      alert(err.message || "刪除失敗，請稍後再試");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleReport = async () => {
+    if (!reportReason.trim()) {
+      alert("請輸入檢舉理由");
+      return;
+    }
+
+    setReportLoading(true);
+    try {
+      const res = await fetch(`/api/reviews/${review.id}/report`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ reason: reportReason.trim() })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "檢舉失敗");
+      }
+
+      alert("檢舉已送出，感謝您的回報");
+      setShowReportDialog(false);
+      setReportReason("");
+    } catch (err: any) {
+      alert(err.message || "檢舉失敗，請稍後再試");
+    } finally {
+      setReportLoading(false);
+    }
   };
 
   if (isEditing) {
@@ -256,12 +315,22 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             {review.authorDept || "匿名使用者"} · {formatDate(review.createdAt)}
           </div>
           {isOwner && (
-            <button
-              onClick={() => setIsEditing(true)}
-              className="ts-button is-ghost is-small"
-            >
-              編輯
-            </button>
+            <div style={{ display: "flex", gap: "0.5rem" }}>
+              <button
+                onClick={() => setIsEditing(true)}
+                className="ts-button is-ghost is-small"
+                disabled={loading}
+              >
+                編輯
+              </button>
+              <button
+                onClick={handleDelete}
+                className="ts-button is-ghost is-small is-negative"
+                disabled={loading}
+              >
+                刪除
+              </button>
+            </div>
           )}
         </div>
 
@@ -303,13 +372,101 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
           paddingTop: '1rem',
           borderTop: '1px solid var(--ts-gray-200)'
         }}>
-          <VoteButtons
-            reviewId={review.id}
-            votes={review.votes}
-            isOwnReview={isOwner}
-          />
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <VoteButtons
+              reviewId={review.id}
+              votes={review.votes}
+              isOwnReview={isOwner}
+            />
+            {!isOwner && (
+              <button
+                onClick={() => setShowReportDialog(true)}
+                className="ts-button is-small is-outlined"
+                disabled={loading}
+              >
+                🚩 檢舉
+              </button>
+            )}
+          </div>
         </div>
       </div>
+
+      {/* 檢舉對話框 */}
+      {showReportDialog && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000
+          }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setShowReportDialog(false);
+              setReportReason("");
+            }
+          }}
+        >
+          <div
+            className="ts-box"
+            style={{
+              width: "90%",
+              maxWidth: "500px",
+              backgroundColor: "var(--ts-gray-50)"
+            }}
+          >
+            <div className="ts-content" style={{ padding: "1.5rem" }}>
+              <div className="ts-header" style={{ fontSize: "1.125rem", marginBottom: "1rem" }}>
+                檢舉評論
+              </div>
+
+              <div className="ts-control is-stacked" style={{ marginBottom: "1.5rem" }}>
+                <div className="label">檢舉理由 (500字以內)</div>
+                <div className="content">
+                  <textarea
+                    className="ts-input is-fluid"
+                    rows={5}
+                    placeholder="請說明檢舉理由，例如：內容不實、人身攻擊、違反使用規範..."
+                    value={reportReason}
+                    onChange={(e) => setReportReason(e.target.value)}
+                    maxLength={500}
+                    style={{ resize: "vertical" }}
+                  />
+                </div>
+                <div className="text" style={{ marginTop: "0.5rem", fontSize: "0.875rem", color: "var(--app-muted)" }}>
+                  {reportReason.length}/500
+                </div>
+              </div>
+
+              <div style={{ display: "flex", gap: "0.75rem" }}>
+                <button
+                  onClick={handleReport}
+                  className="ts-button is-negative"
+                  disabled={reportLoading || !reportReason.trim()}
+                >
+                  {reportLoading ? "送出中..." : "送出檢舉"}
+                </button>
+                <button
+                  onClick={() => {
+                    setShowReportDialog(false);
+                    setReportReason("");
+                  }}
+                  className="ts-button is-outlined"
+                  disabled={reportLoading}
+                >
+                  取消
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

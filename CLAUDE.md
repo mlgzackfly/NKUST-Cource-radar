@@ -73,7 +73,8 @@ node scripts/clear-reviews.mjs  # 清除所有評論 (危險操作)
    - **權限分級**：
      - 未登入：只能看評分摘要（雷達圖、平均分）
      - 已登入 @nkust.edu.tw：可查看文字評論內容、發布評價
-   - **尚未實作的功能**：留言 (Comment)、按「有幫助」(HelpfulVote)、檢舉 (Report) 等互動功能後續推出
+   - **已實作功能**：讚/倒讚投票 (HelpfulVote)、檢舉 (Report)、刪除自己的評論
+   - **尚未實作的功能**：留言 (Comment)
 
 3. **全文搜尋**：
    - Course 表有 `searchVector` 欄位 (tsvector type)
@@ -88,9 +89,9 @@ node scripts/clear-reviews.mjs  # 清除所有評論 (危險操作)
 - `CourseInstructor`：課程-教師多對多關聯
 - `Review`：評價 (unique constraint on userId + courseId) ✓ 已實作
 - `ReviewVersion`：評價編輯歷史 ✓ 已實作
-- `HelpfulVote`：有幫助投票 (Schema 已定義，功能尚未實作)
+- `HelpfulVote`：讚/倒讚投票 (支援 UPVOTE/DOWNVOTE) ✓ 已實作
+- `Report`：檢舉評論 ✓ 已實作
 - `Comment`：留言 (Schema 已定義，功能尚未實作)
-- `Report`：檢舉 (Schema 已定義，功能尚未實作)
 - `AdminAction`：管理員操作記錄 (Schema 已定義，功能尚未實作)
 
 **NextAuth Models**：
@@ -112,15 +113,16 @@ node scripts/clear-reviews.mjs  # 清除所有評論 (危險操作)
 - `GET /api/courses/[id]/reviews`：課程評價列表 (需登入 @nkust.edu.tw)
 - `GET /api/courses/[id]/summary`：評分摘要 (公開)
 - `POST /api/reviews`：新增評價 (需登入)
-- `PATCH /api/reviews/[id]`：編輯評價 (需登入)
+- `PUT /api/reviews/[id]`：編輯評價 (需登入)
+- `DELETE /api/reviews/[id]`：刪除評價 (需登入，僅自己的評論)
 - `POST /api/reviews/[id]/vote`：對評論投票（讚/倒讚）(需登入)
 - `DELETE /api/reviews/[id]/vote`：取消投票 (需登入)
+- `POST /api/reviews/[id]/report`：檢舉評論 (需登入)
 - `GET /api/courses/filters`：取得篩選選項 (學期/校區/系所等)
 - `GET /api/search/suggestions`：搜尋建議
 
 **尚未實作** (Schema 已定義，API 待開發)：
 - 留言功能：`POST /api/reviews/[id]/comments`
-- 檢舉功能：`POST /api/reviews/[id]/report`
 
 ## 重要開發注意事項
 
