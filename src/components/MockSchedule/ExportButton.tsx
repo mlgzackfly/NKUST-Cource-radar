@@ -19,12 +19,16 @@ export function ExportButton({ scheduleRef }: ExportButtonProps) {
     try {
       setExporting(true);
 
+      // 獲取背景色（支援 light/dark mode）
+      const isDarkMode = document.documentElement.getAttribute("data-theme") === "dark";
+      const backgroundColor = isDarkMode ? "#1a1a1a" : "#ffffff";
+
       // 使用 html2canvas 渲染課表為圖片
       const canvas = await html2canvas(scheduleRef.current, {
-        backgroundColor: getComputedStyle(document.documentElement).getPropertyValue(
-          "--app-surface"
-        ),
+        backgroundColor,
         scale: 2, // 高解析度
+        useCORS: true, // 允許跨域圖片
+        logging: false, // 關閉除錯訊息
       });
 
       // 下載圖片
@@ -35,7 +39,7 @@ export function ExportButton({ scheduleRef }: ExportButtonProps) {
       link.click();
     } catch (error) {
       console.error("匯出失敗:", error);
-      alert("匯出失敗，請稍後再試");
+      alert(`匯出失敗：${error instanceof Error ? error.message : "未知錯誤"}`);
     } finally {
       setExporting(false);
     }

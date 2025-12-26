@@ -19,7 +19,7 @@ export function SchedulePanel({
   onRemoveCourse,
   onClearAll,
 }: SchedulePanelProps) {
-  const scheduleRef = useRef<HTMLDivElement>(null);
+  const scheduleRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <div style={{ position: "sticky", top: "80px" }}>
