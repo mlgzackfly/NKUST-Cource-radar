@@ -53,9 +53,7 @@ export interface CourseForSelection {
   term: string;
   classroom: string | null;
   instructors: Array<{
-    instructor: {
-      id: string;
-      name: string;
-    };
+    id: string;
+    name: string;
   }>;
 }

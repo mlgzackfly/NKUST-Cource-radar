@@ -52,7 +52,11 @@ export default async function MockSchedulePage({ searchParams }: PageProps) {
         },
       });
 
-      sharedCourses = courses as CourseForSelection[];
+      // 扁平化 instructors 結構以符合 CourseForSelection 型別
+      sharedCourses = (courses as any[]).map((c: any) => ({
+        ...c,
+        instructors: (c.instructors as any[]).map((x: any) => x.instructor),
+      }));
     } catch (error) {
       console.error("載入分享課程失敗:", error);
     }

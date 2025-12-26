@@ -134,7 +134,7 @@ function convertToSelectedCourse(course: CourseForSelection): SelectedCourse {
     courseName: course.courseName,
     credits: course.credits,
     time: course.time,
-    instructorNames: course.instructors.map((i) => i.instructor.name),
+    instructorNames: course.instructors.map((i) => i.name),
     department: course.department,
     year: course.year,
     term: course.term,

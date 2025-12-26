@@ -190,7 +190,7 @@ export function CourseSearchPanel({
                         </Link>
 
                         <div style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", marginBottom: "0.5rem" }}>
-                          {course.instructors.map((i) => i.instructor.name).join("、") || "—"}
+                          {course.instructors.map((i) => i.name).join("、") || "—"}
                           {course.time && ` | ${course.time}`}
                           {course.classroom && ` | ${course.classroom}`}
                         </div>
