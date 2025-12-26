@@ -101,13 +101,14 @@ export function CourseSearchPanel({
 
           {/* 搜尋框 */}
           <div style={{ marginBottom: "1rem" }}>
-            <input
-              type="text"
-              className="ts-input is-fluid"
-              placeholder="輸入課程名稱、課號或教師姓名..."
-              value={searchQuery}
-              onChange={(e) => handleQueryChange(e.target.value)}
-            />
+            <div className="ts-input is-solid is-fluid">
+              <input
+                type="text"
+                placeholder="輸入課程名稱、課號或教師姓名..."
+                value={searchQuery}
+                onChange={(e) => handleQueryChange(e.target.value)}
+              />
+            </div>
           </div>
 
           {/* 學期選擇器 */}
@@ -115,16 +116,17 @@ export function CourseSearchPanel({
             <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.875rem", fontWeight: 600 }}>
               學期
             </label>
-            <select
-              className="ts-select is-fluid"
-              value={semester}
-              onChange={(e) => handleSemesterChange(e.target.value)}
-            >
-              <option value="114-1">114 學年第 1 學期</option>
-              <option value="114-2">114 學年第 2 學期</option>
-              <option value="113-1">113 學年第 1 學期</option>
-              <option value="113-2">113 學年第 2 學期</option>
-            </select>
+            <div className="ts-select is-solid is-fluid">
+              <select
+                value={semester}
+                onChange={(e) => handleSemesterChange(e.target.value)}
+              >
+                <option value="114-1">114 學年第 1 學期</option>
+                <option value="114-2">114 學年第 2 學期</option>
+                <option value="113-1">113 學年第 1 學期</option>
+                <option value="113-2">113 學年第 2 學期</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
