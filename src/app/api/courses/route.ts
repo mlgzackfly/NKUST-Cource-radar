@@ -61,6 +61,9 @@ export async function GET(request: Request): Promise<Response> {
       campus: true,
       year: true,
       term: true,
+      credits: true,
+      time: true,
+      classroom: true,
       instructors: {
         select: {
           instructor: { select: { id: true, name: true } },
