@@ -18,6 +18,12 @@ type Review = {
   grading: number | null;
   body: string | null;
   authorDept: string | null;
+  votes: {
+    upvotes: number;
+    downvotes: number;
+    netScore: number;
+    currentUserVote: 'UPVOTE' | 'DOWNVOTE' | null;
+  };
 };
 
 type ReviewListProps = {
@@ -290,6 +296,19 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             {review.body}
           </div>
         )}
+
+        {/* 投票按鈕 */}
+        <div style={{
+          marginTop: '1rem',
+          paddingTop: '1rem',
+          borderTop: '1px solid var(--ts-gray-200)'
+        }}>
+          <VoteButtons
+            reviewId={review.id}
+            votes={review.votes}
+            isOwnReview={isOwner}
+          />
+        </div>
       </div>
     </div>
   );
@@ -351,6 +370,109 @@ function RatingBadge({ label, value }: { label: string; value: number }) {
     }}>
       <span style={{ color: "var(--app-muted)" }}>{label}</span>
       <span style={{ fontWeight: 700, color: getColor(value) }}>{value}</span>
+    </div>
+  );
+}
+
+function VoteButtons({
+  reviewId,
+  votes,
+  isOwnReview
+}: {
+  reviewId: string;
+  votes: Review['votes'];
+  isOwnReview: boolean;
+}) {
+  const [voteState, setVoteState] = useState(votes);
+  const [loading, setLoading] = useState(false);
+
+  const handleVote = async (voteType: 'UPVOTE' | 'DOWNVOTE') => {
+    if (isOwnReview) {
+      alert('無法對自己的評論投票');
+      return;
+    }
+
+    setLoading(true);
+    const originalState = voteState;
+
+    try {
+      // 若點擊已選的票型，則取消投票
+      if (voteState.currentUserVote === voteType) {
+        const res = await fetch(`/api/reviews/${reviewId}/vote`, {
+          method: 'DELETE',
+        });
+        if (!res.ok) throw new Error();
+
+        const data = await res.json();
+        setVoteState({ ...data.counts, currentUserVote: null });
+      } else {
+        // 投票或更改票型
+        const res = await fetch(`/api/reviews/${reviewId}/vote`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ voteType }),
+        });
+        if (!res.ok) throw new Error();
+
+        const data = await res.json();
+        setVoteState({
+          ...data.counts,
+          currentUserVote: voteType,
+        });
+      }
+    } catch (error) {
+      alert('操作失敗，請稍後再試');
+      setVoteState(originalState);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+      {/* 讚按鈕 */}
+      <button
+        onClick={() => handleVote('UPVOTE')}
+        disabled={loading || isOwnReview}
+        className={`ts-button is-small ${
+          voteState.currentUserVote === 'UPVOTE'
+            ? 'is-primary'
+            : 'is-outlined'
+        }`}
+        style={{ minWidth: '4rem' }}
+        title={isOwnReview ? '無法對自己的評論投票' : '有幫助'}
+      >
+        <span style={{ fontSize: '1rem' }}>👍</span>
+        <span style={{ marginLeft: '0.25rem' }}>{voteState.upvotes}</span>
+      </button>
+
+      {/* 倒讚按鈕 */}
+      <button
+        onClick={() => handleVote('DOWNVOTE')}
+        disabled={loading || isOwnReview}
+        className={`ts-button is-small ${
+          voteState.currentUserVote === 'DOWNVOTE'
+            ? 'is-negative'
+            : 'is-outlined'
+        }`}
+        style={{ minWidth: '4rem' }}
+        title={isOwnReview ? '無法對自己的評論投票' : '沒幫助'}
+      >
+        <span style={{ fontSize: '1rem' }}>👎</span>
+        <span style={{ marginLeft: '0.25rem' }}>{voteState.downvotes}</span>
+      </button>
+
+      {/* 淨分數 */}
+      <span
+        style={{
+          marginLeft: '0.5rem',
+          fontSize: '0.875rem',
+          color: 'var(--app-muted)',
+          fontWeight: 600
+        }}
+      >
+        淨分數：{voteState.netScore > 0 ? '+' : ''}{voteState.netScore}
+      </span>
     </div>
   );
 }

@@ -6,6 +6,7 @@ import { getCourseRatingSummary } from "@/lib/reviewSummary";
 
 type ReviewRow = {
   id: string;
+  userId: string;
   createdAt: Date;
   updatedAt: Date;
   coolness: number | null;
@@ -16,6 +17,7 @@ type ReviewRow = {
   body: string | null;
   authorDept: string | null;
   _count: { helpfulVotes: number; comments: number };
+  helpfulVotes: Array<{ voteType: string; userId: string }>;
 };
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }): Promise<Response> {
@@ -61,12 +63,23 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       ? [{ helpfulVotes: { _count: "desc" as const } }, { createdAt: "desc" as const }]
       : [{ createdAt: "desc" as const }];
 
+  // 取得當前使用者 ID
+  let currentUserId: string | null = null;
+  if (email) {
+    const user = await prisma.user.findUnique({
+      where: { email },
+      select: { id: true }
+    });
+    currentUserId = user?.id || null;
+  }
+
   const reviews = await prisma.review.findMany({
     where: { courseId: p.id, status: "ACTIVE" },
     orderBy,
     take,
     select: {
       id: true,
+      userId: true,
       createdAt: true,
       updatedAt: true,
       coolness: true,
@@ -82,17 +95,44 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
           comments: true,
         },
       },
+      helpfulVotes: {
+        select: {
+          voteType: true,
+          userId: true
+        }
+      }
     },
   });
 
   return NextResponse.json({
     courseId: p.id,
-    reviews: (reviews as ReviewRow[]).map((r) => ({
-      ...r,
-      helpfulCount: r._count.helpfulVotes,
-      commentCount: r._count.comments,
-      _count: undefined,
-    })),
+    reviews: (reviews as ReviewRow[]).map((r) => {
+      const upvotes = r.helpfulVotes.filter(v => v.voteType === 'UPVOTE').length;
+      const downvotes = r.helpfulVotes.filter(v => v.voteType === 'DOWNVOTE').length;
+      const currentUserVote = r.helpfulVotes.find(v => v.userId === currentUserId)?.voteType || null;
+
+      return {
+        id: r.id,
+        userId: r.userId,
+        createdAt: r.createdAt,
+        updatedAt: r.updatedAt,
+        coolness: r.coolness,
+        usefulness: r.usefulness,
+        workload: r.workload,
+        attendance: r.attendance,
+        grading: r.grading,
+        body: r.body,
+        authorDept: r.authorDept,
+        votes: {
+          upvotes,
+          downvotes,
+          netScore: upvotes - downvotes,
+          currentUserVote
+        },
+        helpfulCount: r._count.helpfulVotes,
+        commentCount: r._count.comments
+      };
+    }),
     visibility: "full",
   }) as Response;
 }

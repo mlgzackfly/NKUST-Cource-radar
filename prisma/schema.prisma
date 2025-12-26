@@ -27,6 +27,11 @@ enum AdminActionType {
   REQUEST_EDIT
 }
 
+enum VoteType {
+  UPVOTE
+  DOWNVOTE
+}
+
 model User {
   id            String    @id @default(cuid())
   email         String    @unique
@@ -204,6 +209,7 @@ model Comment {
 model HelpfulVote {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
+  voteType  VoteType @default(UPVOTE)
 
   reviewId String
   userId   String
@@ -213,6 +219,7 @@ model HelpfulVote {
 
   @@unique([reviewId, userId])
   @@index([reviewId])
+  @@index([reviewId, voteType])
 }
 
 model Report {

@@ -177,6 +177,12 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 comments: true,
               },
             },
+            helpfulVotes: {
+              select: {
+                voteType: true,
+                userId: true
+              }
+            }
           },
         });
 
@@ -193,13 +199,34 @@ export default async function CoursePage({ params }: CoursePageProps) {
           body: string | null;
           authorDept: string | null;
           _count: { helpfulVotes: number; comments: number };
-        }) => ({
-          ...r,
-          createdAt: r.createdAt.toISOString(),
-          updatedAt: r.updatedAt.toISOString(),
-          helpfulCount: r._count.helpfulVotes,
-          commentCount: r._count.comments,
-        }));
+          helpfulVotes: Array<{ voteType: string; userId: string }>;
+        }) => {
+          const upvotes = r.helpfulVotes.filter(v => v.voteType === 'UPVOTE').length;
+          const downvotes = r.helpfulVotes.filter(v => v.voteType === 'DOWNVOTE').length;
+          const currentUserVote = r.helpfulVotes.find(v => v.userId === currentUserId)?.voteType || null;
+
+          return {
+            id: r.id,
+            userId: r.userId,
+            createdAt: r.createdAt.toISOString(),
+            updatedAt: r.updatedAt.toISOString(),
+            coolness: r.coolness,
+            usefulness: r.usefulness,
+            workload: r.workload,
+            attendance: r.attendance,
+            grading: r.grading,
+            body: r.body,
+            authorDept: r.authorDept,
+            votes: {
+              upvotes,
+              downvotes,
+              netScore: upvotes - downvotes,
+              currentUserVote
+            },
+            helpfulCount: r._count.helpfulVotes,
+            commentCount: r._count.comments
+          };
+        });
       }
     } catch (reviewError) {
       console.error('Failed to fetch reviews:', reviewError);
@@ -515,16 +542,6 @@ export default async function CoursePage({ params }: CoursePageProps) {
               <div style={{ marginBottom: "1.5rem" }}>
                 <CourseSummaryChart summary={summary} />
               </div>
-
-              {/* Action Notice - 只對未登入使用者顯示 */}
-              {!isNkustUser && (
-                <div className="ts-notice is-outlined" style={{ margin: 0 }}>
-                  <div className="title" style={{ fontSize: "0.9375rem" }}>互動功能</div>
-                  <div className="content" style={{ fontSize: "0.875rem", lineHeight: 1.6 }}>
-                    文字評論需登入 @nkust.edu.tw 信箱。留言、按「有幫助」等功能後續推出。
-                  </div>
-                </div>
-              )}
             </div>
           </div>
         </aside>
