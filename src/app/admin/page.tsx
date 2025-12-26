@@ -1,3 +1,5 @@
+import { TrendsCharts } from "./TrendsCharts";
+
 export default async function AdminDashboard() {
   // 呼叫 stats API 取得統計資料
   const baseUrl = process.env.NEXTAUTH_URL || "http://localhost:3000";
@@ -48,6 +50,9 @@ export default async function AdminDashboard() {
           ]}
         />
       </div>
+
+      {/* 趨勢圖表 */}
+      <TrendsCharts />
     </div>
   );
 }
