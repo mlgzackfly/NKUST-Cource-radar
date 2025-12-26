@@ -64,13 +64,13 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
     <div style={{ overflow: "auto" }}>
       <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
         <thead>
-          <tr style={{ borderBottom: "2px solid var(--ts-gray-300)" }}>
+          <tr style={{ borderBottom: "2px solid #d1d5db" }}>
             <th
               style={{
                 padding: "0.5rem",
                 fontSize: "0.75rem",
                 fontWeight: 600,
-                color: "var(--ts-gray-600)",
+                color: "#4b5563",
                 textAlign: "center",
                 width: "60px",
               }}
@@ -84,7 +84,7 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
                   padding: "0.5rem",
                   fontSize: "0.75rem",
                   fontWeight: 600,
-                  color: "var(--ts-gray-600)",
+                  color: "#4b5563",
                   textAlign: "center",
                 }}
               >
@@ -97,12 +97,12 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
           {periods.map((period) => {
             const periodInfo = TIME_PERIODS[period];
             return (
-              <tr key={period} style={{ borderBottom: "1px solid var(--ts-gray-200)" }}>
+              <tr key={period} style={{ borderBottom: "1px solid #e5e7eb" }}>
                 <td
                   style={{
                     padding: "0.5rem",
                     fontSize: "0.75rem",
-                    color: "var(--ts-gray-600)",
+                    color: "#4b5563",
                     textAlign: "center",
                     verticalAlign: "top",
                   }}
@@ -138,11 +138,11 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
                                 fontSize: "0.75rem",
                                 borderRadius: "4px",
                                 background: courseSlot.isConflict
-                                  ? "color-mix(in srgb, var(--ts-negative-500) 15%, transparent)"
-                                  : "color-mix(in srgb, var(--ts-primary-500) 12%, transparent)",
+                                  ? "rgba(239, 68, 68, 0.15)"
+                                  : "rgba(59, 130, 246, 0.12)",
                                 border: courseSlot.isConflict
-                                  ? "2px solid var(--ts-negative-500)"
-                                  : "1px solid var(--ts-primary-300)",
+                                  ? "2px solid #ef4444"
+                                  : "1px solid #93c5fd",
                                 position: "relative",
                                 cursor: "pointer",
                               }}
@@ -172,7 +172,7 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
                               <div
                                 style={{
                                   fontSize: "0.688rem",
-                                  color: "var(--ts-gray-700)",
+                                  color: "#374151",
                                   marginTop: "0.25rem",
                                   overflow: "hidden",
                                   textOverflow: "ellipsis",
