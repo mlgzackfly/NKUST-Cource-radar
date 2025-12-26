@@ -62,7 +62,7 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
 
   return (
     <div style={{ overflow: "auto" }}>
-      <table style={{ width: "100%", minWidth: "800px", borderCollapse: "separate", borderSpacing: 0 }}>
+      <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
         <thead>
           <tr style={{ borderBottom: "2px solid #d1d5db" }}>
             <th
