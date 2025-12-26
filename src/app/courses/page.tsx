@@ -190,16 +190,16 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
         where: { courseId: { in: courseIds } },
         select: {
           courseId: true,
-          instructor: { select: { name: true } }
+          instructor: { select: { id: true, name: true } }
         }
       });
 
       // Group instructors by courseId
-      type InstructorItem = { courseId: string; instructor: { name: string } };
+      type InstructorItem = { courseId: string; instructor: { id: string; name: string } };
       const instructorsByCourse = instructorsData.reduce(
-        (acc: Record<string, Array<{ instructor: { name: string } }>>, ci: InstructorItem) => {
+        (acc: Record<string, Array<{ instructor: { id: string; name: string } }>>, ci: InstructorItem) => {
           if (!acc[ci.courseId]) acc[ci.courseId] = [];
-          acc[ci.courseId].push({ instructor: { name: ci.instructor.name } });
+          acc[ci.courseId].push({ instructor: { id: ci.instructor.id, name: ci.instructor.name } });
           return acc;
         },
         {}
@@ -233,7 +233,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
           classroom: true,
           instructors: {
             select: {
-              instructor: { select: { name: true } },
+              instructor: { select: { id: true, name: true } },
             },
           },
         },
