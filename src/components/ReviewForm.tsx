@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { Snackbar } from "./Snackbar";
 
 type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
@@ -103,6 +104,15 @@ export function ReviewForm({
       }
 
       setSuccess(true);
+      // Reset form
+      setCoolness(null);
+      setUsefulness(null);
+      setWorkload(null);
+      setAttendance(null);
+      setGrading(null);
+      setBody("");
+      setAuthorDept("");
+
       setTimeout(() => {
         router.refresh();
       }, 1500);
@@ -114,21 +124,15 @@ export function ReviewForm({
     }
   };
 
-  if (success) {
-    return (
-      <div className="ts-box is-raised">
-        <div className="ts-content" style={{ padding: "2rem" }}>
-          <div className="ts-notice is-positive">
-            <div className="title">評價已送出</div>
-            <div className="content">感謝您的分享！</div>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="ts-box is-raised">
+      {success && (
+        <Snackbar
+          message="評價已送出，感謝您的分享！"
+          type="success"
+          onClose={() => setSuccess(false)}
+        />
+      )}
       <div className="ts-content" style={{ padding: "2rem" }}>
         <div className="ts-header" style={{ fontSize: "1.5rem", marginBottom: "1.5rem" }}>
           撰寫課程評價

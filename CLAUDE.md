@@ -87,15 +87,16 @@ node scripts/clear-reviews.mjs  # 清除所有評論 (危險操作)
 - `Course`：課程主體，包含 `sourceKey` (唯一索引，用於 idempotent import)
 - `Instructor`：教師 (name unique)
 - `CourseInstructor`：課程-教師多對多關聯
-- `Review`：評價 (unique constraint on userId + courseId) ✓ 已實作
+- `Review`：評價 (unique constraint on userId + courseId，含 status: ACTIVE/HIDDEN/REMOVED) ✓ 已實作
 - `ReviewVersion`：評價編輯歷史 ✓ 已實作
 - `HelpfulVote`：讚/倒讚投票 (支援 UPVOTE/DOWNVOTE) ✓ 已實作
-- `Report`：檢舉評論 ✓ 已實作
+- `Report`：檢舉評論 (含 status: OPEN/RESOLVED/REJECTED) ✓ 已實作
 - `Comment`：留言 (Schema 已定義，功能尚未實作)
-- `AdminAction`：管理員操作記錄 (Schema 已定義，功能尚未實作)
+- `AdminAction`：管理員操作記錄 ✓ 已實作
 
 **NextAuth Models**：
-- `User`, `Account`, `Session`, `VerificationToken`
+- `User`：使用者 (含 role: USER/ADMIN, bannedAt 欄位)
+- `Account`, `Session`, `VerificationToken`
 
 ### 認證系統 (NextAuth)
 
@@ -123,6 +124,49 @@ node scripts/clear-reviews.mjs  # 清除所有評論 (危險操作)
 
 **尚未實作** (Schema 已定義，API 待開發)：
 - 留言功能：`POST /api/reviews/[id]/comments`
+
+### 管理員系統
+
+系統已實作完整的管理員權限管理與後台介面。
+
+**權限設計**：
+- User model 包含 `role` 欄位 (USER | ADMIN)
+- Session 包含 `role` 資訊，可在 client/server 端檢查
+- 集中式權限檢查：`src/lib/auth.ts`
+  - `requireAdmin()`：要求管理員權限
+  - `requireNkustUser()`：要求高科大使用者權限
+  - `getCurrentUser()`：取得當前使用者
+  - `isAdmin()`：檢查是否為管理員
+
+**管理員 API**：
+- `GET /api/admin/stats`：系統統計（使用者、評論、檢舉數量）
+- `GET /api/admin/reports`：檢舉列表（支援 status 篩選、分頁）
+- `PATCH /api/admin/reports/[id]`：處理檢舉 (resolve/reject)
+- `PATCH /api/admin/reviews/[id]`：管理評論狀態 (hide/unhide/remove)
+- `GET /api/admin/users`：使用者列表（支援搜尋、篩選、分頁）
+- `PATCH /api/admin/users/[id]`：封禁/解封使用者 (ban/unban)
+- `GET /api/admin/actions`：管理員操作記錄（支援 type 篩選、分頁）
+
+**管理員後台**：
+- 路徑：`/admin`
+- Server-side 權限檢查（非管理員自動 redirect）
+- 功能：
+  - 儀表板：系統統計總覽
+  - 檢舉管理：查看、解決、拒絕檢舉
+  - 評論管理：查看、隱藏、恢復、移除評論（開發中）
+  - 使用者管理：查看、封禁、解封使用者
+  - 操作記錄：所有管理員操作的審計日誌
+
+**安全性**：
+- 所有管理員操作都記錄到 `AdminAction` table
+- 管理員無法封禁自己
+- 封禁使用者後所有 API 請求被拒絕
+- 多層權限檢查：Server-side API + Client-side UI
+
+**初始化管理員**：
+```bash
+node scripts/init-admin.mjs  # 將 C109193108@nkust.edu.tw 設為管理員
+```
 
 ## 重要開發注意事項
 

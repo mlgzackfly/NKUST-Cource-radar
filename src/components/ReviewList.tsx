@@ -4,6 +4,7 @@ import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Snackbar } from "./Snackbar";
 
 type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
@@ -114,6 +115,8 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
   const [showReportDialog, setShowReportDialog] = useState(false);
   const [reportReason, setReportReason] = useState("");
   const [reportLoading, setReportLoading] = useState(false);
+  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [snackbar, setSnackbar] = useState<{ message: string; type: "success" | "error" } | null>(null);
   const router = useRouter();
 
   const formatDate = (dateStr: string) => {
@@ -172,12 +175,9 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
     setIsEditing(false);
   };
 
-  const handleDelete = async () => {
-    if (!confirm("確定要刪除這則評論嗎？此操作無法復原。")) {
-      return;
-    }
-
+  const confirmDelete = async () => {
     setLoading(true);
+    setShowDeleteConfirm(false);
     try {
       const res = await fetch(`/api/reviews/${review.id}`, {
         method: "DELETE"
@@ -189,10 +189,12 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
         throw new Error(data.error || "刪除失敗");
       }
 
-      alert("評論已刪除");
-      router.refresh();
+      setSnackbar({ message: "評論已刪除", type: "success" });
+      setTimeout(() => {
+        router.refresh();
+      }, 1500);
     } catch (err: any) {
-      alert(err.message || "刪除失敗，請稍後再試");
+      setSnackbar({ message: err.message || "刪除失敗，請稍後再試", type: "error" });
     } finally {
       setLoading(false);
     }
@@ -200,7 +202,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
 
   const handleReport = async () => {
     if (!reportReason.trim()) {
-      alert("請輸入檢舉理由");
+      setSnackbar({ message: "請輸入檢舉理由", type: "error" });
       return;
     }
 
@@ -218,11 +220,11 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
         throw new Error(data.error || "檢舉失敗");
       }
 
-      alert("檢舉已送出，感謝您的回報");
+      setSnackbar({ message: "檢舉已送出，感謝您的回報", type: "success" });
       setShowReportDialog(false);
       setReportReason("");
     } catch (err: any) {
-      alert(err.message || "檢舉失敗，請稍後再試");
+      setSnackbar({ message: err.message || "檢舉失敗，請稍後再試", type: "error" });
     } finally {
       setReportLoading(false);
     }
@@ -324,7 +326,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
                 編輯
               </button>
               <button
-                onClick={handleDelete}
+                onClick={() => setShowDeleteConfirm(true)}
                 className="ts-button is-ghost is-small is-negative"
                 disabled={loading}
               >
@@ -466,6 +468,72 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             </div>
           </div>
         </div>
+      )}
+
+      {/* 刪除確認對話框 */}
+      {showDeleteConfirm && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000
+          }}
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              setShowDeleteConfirm(false);
+            }
+          }}
+        >
+          <div
+            className="ts-box"
+            style={{
+              width: "90%",
+              maxWidth: "400px",
+              backgroundColor: "var(--ts-gray-50)"
+            }}
+          >
+            <div className="ts-content" style={{ padding: "1.5rem" }}>
+              <div className="ts-header" style={{ fontSize: "1.125rem", marginBottom: "1rem" }}>
+                刪除評論
+              </div>
+              <div style={{ marginBottom: "1.5rem", color: "var(--app-muted)" }}>
+                確定要刪除這則評論嗎？此操作無法復原。
+              </div>
+              <div style={{ display: "flex", gap: "0.75rem" }}>
+                <button
+                  onClick={confirmDelete}
+                  className="ts-button is-negative"
+                  disabled={loading}
+                >
+                  {loading ? "刪除中..." : "確定刪除"}
+                </button>
+                <button
+                  onClick={() => setShowDeleteConfirm(false)}
+                  className="ts-button is-outlined"
+                  disabled={loading}
+                >
+                  取消
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Snackbar */}
+      {snackbar && (
+        <Snackbar
+          message={snackbar.message}
+          type={snackbar.type}
+          onClose={() => setSnackbar(null)}
+        />
       )}
     </div>
   );
@@ -618,18 +686,6 @@ function VoteButtons({
         <span style={{ fontSize: '1rem' }}>👎</span>
         <span style={{ marginLeft: '0.25rem' }}>{voteState.downvotes}</span>
       </button>
-
-      {/* 淨分數 */}
-      <span
-        style={{
-          marginLeft: '0.5rem',
-          fontSize: '0.875rem',
-          color: 'var(--app-muted)',
-          fontWeight: 600
-        }}
-      >
-        淨分數：{voteState.netScore > 0 ? '+' : ''}{voteState.netScore}
-      </span>
     </div>
   );
 }

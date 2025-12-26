@@ -67,6 +67,29 @@ export function UserMenu() {
             </div>
           </div>
 
+          {session.user?.role === "ADMIN" && (
+            <Link
+              href="/admin"
+              onClick={() => setShowMenu(false)}
+              style={{
+                display: "block",
+                width: "100%",
+                padding: "0.75rem 1rem",
+                textAlign: "left",
+                textDecoration: "none",
+                fontSize: "0.9375rem",
+                color: "var(--ts-primary-500)",
+                fontWeight: 500,
+                borderBottom: "1px solid var(--app-border)",
+                transition: "background-color 0.15s"
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+            >
+              ⚙️ 管理員控制台
+            </Link>
+          )}
+
           <button
             onClick={() => {
               signOut({ callbackUrl: "/" });

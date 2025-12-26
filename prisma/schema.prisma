@@ -32,6 +32,11 @@ enum VoteType {
   DOWNVOTE
 }
 
+enum UserRole {
+  USER
+  ADMIN
+}
+
 model User {
   id            String    @id @default(cuid())
   email         String    @unique
@@ -40,6 +45,7 @@ model User {
   image         String?   // Optional for NextAuth
   createdAt     DateTime  @default(now())
   bannedAt      DateTime?
+  role          UserRole  @default(USER)
 
   // NextAuth relations
   accounts      Account[]
