@@ -59,16 +59,36 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
     transition: "background-color 0.15s"
   });
 
-  const formatInstructors = (instructors: Array<{ instructor: { name: string } }>) => {
-    if (!instructors || instructors.length === 0) return "—";
+  const renderInstructors = (instructors: Array<{ instructor: { name: string } }>) => {
+    if (!instructors || instructors.length === 0) return <span>—</span>;
 
     const names = instructors.map((x) => x.instructor.name);
-    if (names.length <= 2) {
-      return names.join("、");
-    }
+    const displayNames = names.length <= 2 ? names : names.slice(0, 2);
+    const hasMore = names.length > 2;
 
-    // Show first 2 instructors with ellipsis
-    return `${names.slice(0, 2).join("、")}...`;
+    return (
+      <span>
+        {displayNames.map((name, index) => (
+          <span key={name}>
+            <Link
+              href={`/instructors/${encodeURIComponent(name)}`}
+              onClick={(e) => e.stopPropagation()}
+              style={{
+                color: "var(--ts-primary-500)",
+                textDecoration: "none",
+                fontWeight: 500,
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.textDecoration = "underline"}
+              onMouseLeave={(e) => e.currentTarget.style.textDecoration = "none"}
+            >
+              {name}
+            </Link>
+            {index < displayNames.length - 1 && "、"}
+          </span>
+        ))}
+        {hasMore && "..."}
+      </span>
+    );
   };
 
   return (
@@ -143,7 +163,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
                   {c.courseName}
                 </td>
                 <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-700)" }}>
-                  {formatInstructors(c.instructors)}
+                  {renderInstructors(c.instructors)}
                 </td>
                 <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}>
                   {c.time || "—"}

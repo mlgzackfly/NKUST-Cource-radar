@@ -7,6 +7,7 @@ import CourseSummaryChart from "@/components/CourseSummaryChart";
 import { CourseTimeTable } from "@/components/CourseTimeTable";
 import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewList } from "@/components/ReviewList";
+import { InstructorLinks } from "@/components/InstructorLinks";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
@@ -319,7 +320,11 @@ export default async function CoursePage({ params }: CoursePageProps) {
             </div>
           )}
           <div className="app-muted" style={{ lineHeight: 1.6, fontSize: "0.95rem" }}>
-            {instructors ? `教師：${instructors} · ` : ""}
+            {typedCourse.instructors.length > 0 && (
+              <>
+                教師：<InstructorLinks instructors={typedCourse.instructors} /> ·{" "}
+              </>
+            )}
             {typedCourse.department || "—"} · {typedCourse.campus || "—"} · {formatSemester(typedCourse.year, typedCourse.term)}
           </div>
         </div>
@@ -335,7 +340,16 @@ export default async function CoursePage({ params }: CoursePageProps) {
                 <div className="ts-header" style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}>課程資訊</div>
                 <table className="ts-table is-basic" style={{ fontSize: "0.9375rem" }}>
                   <tbody>
-                    <FieldRow label="教師" value={instructors || null} />
+                    <tr>
+                      <th style={{ width: "30%", verticalAlign: "top", padding: "0.75rem 1rem", fontWeight: 600, color: "var(--ts-gray-700)" }}>教師</th>
+                      <td style={{ padding: "0.75rem 1rem", color: "var(--ts-gray-900)" }}>
+                        {typedCourse.instructors.length > 0 ? (
+                          <InstructorLinks instructors={typedCourse.instructors} />
+                        ) : (
+                          <span>—</span>
+                        )}
+                      </td>
+                    </tr>
                     <FieldRow label="選課代號" value={typedCourse.selectCode} />
                     <FieldRow label="永久課號" value={typedCourse.courseCode} />
                     <FieldRow label="班級" value={typedCourse.className} />
