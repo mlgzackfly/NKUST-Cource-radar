@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import Link from "next/link";
+import { AdminNavLink } from "./AdminNavLink";
 
 export default async function AdminLayout({
   children,
@@ -37,11 +38,11 @@ export default async function AdminLayout({
         </div>
 
         <nav>
-          <NavLink href="/admin" icon="📊">儀表板</NavLink>
-          <NavLink href="/admin/reports" icon="🚩">檢舉管理</NavLink>
-          <NavLink href="/admin/reviews" icon="💬">評論管理</NavLink>
-          <NavLink href="/admin/users" icon="👥">使用者管理</NavLink>
-          <NavLink href="/admin/actions" icon="📝">操作記錄</NavLink>
+          <AdminNavLink href="/admin" icon="📊">儀表板</AdminNavLink>
+          <AdminNavLink href="/admin/reports" icon="🚩">檢舉管理</AdminNavLink>
+          <AdminNavLink href="/admin/reviews" icon="💬">評論管理</AdminNavLink>
+          <AdminNavLink href="/admin/users" icon="👥">使用者管理</AdminNavLink>
+          <AdminNavLink href="/admin/actions" icon="📝">操作記錄</AdminNavLink>
 
           <div style={{ padding: "1rem 1.5rem", marginTop: "1rem", borderTop: "1px solid var(--ts-gray-200)" }}>
             <Link href="/" className="ts-button is-outlined is-fluid" style={{ fontSize: "0.875rem" }}>
@@ -56,32 +57,5 @@ export default async function AdminLayout({
         {children}
       </main>
     </div>
-  );
-}
-
-function NavLink({ href, icon, children }: { href: string; icon: string; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      style={{
-        display: "flex",
-        alignItems: "center",
-        gap: "0.75rem",
-        padding: "0.75rem 1.5rem",
-        fontSize: "0.938rem",
-        color: "var(--ts-gray-800)",
-        textDecoration: "none",
-        transition: "background-color 0.2s"
-      }}
-      className="admin-nav-link"
-    >
-      <span>{icon}</span>
-      <span>{children}</span>
-      <style jsx>{`
-        .admin-nav-link:hover {
-          background-color: var(--ts-gray-100);
-        }
-      `}</style>
-    </Link>
   );
 }
