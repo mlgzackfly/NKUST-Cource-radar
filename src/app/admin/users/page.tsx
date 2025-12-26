@@ -298,8 +298,8 @@ export default function UsersPage() {
               </thead>
               <tbody>
                 {users.map(user => (
-                  <>
-                    <tr key={user.id} style={{ cursor: "pointer" }}>
+                  <React.Fragment key={user.id}>
+                    <tr style={{ cursor: "pointer" }}>
                       <td onClick={(e) => e.stopPropagation()}>
                         {user.role !== "ADMIN" && (
                           <input
@@ -351,7 +351,7 @@ export default function UsersPage() {
                         </td>
                       </tr>
                     )}
-                  </>
+                  </React.Fragment>
                 ))}
               </tbody>
             </table>
