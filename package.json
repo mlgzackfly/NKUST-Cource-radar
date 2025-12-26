@@ -26,6 +26,7 @@
     "cheerio": "1.1.2",
     "echarts": "^6.0.0",
     "echarts-for-react": "^3.0.5",
+    "html2canvas": "^1.4.1",
     "next": "^15.5.9",
     "next-auth": "^4.24.13",
     "node-fetch": "^2.7.0",

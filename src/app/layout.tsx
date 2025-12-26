@@ -63,6 +63,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                       <Link className="ts-button is-ghost is-short" href="/courses">
                         課程
                       </Link>
+                      <Link className="ts-button is-ghost is-short" href="/mock-schedule">
+                        模擬選課
+                      </Link>
                     </nav>
                   </div>
                   <div className="app-header-right">
