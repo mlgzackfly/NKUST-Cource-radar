@@ -43,6 +43,37 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         {/* Core: Tocas UI (for built-in light/dark palette & components) */}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/tocas.min.css" />
+        {/* Override Tocas UI icon fonts with absolute CDN URLs */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            @font-face {
+              font-family: icons;
+              src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-solid-900.woff2) format("woff2"),
+                   url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-solid-900.ttf) format("truetype");
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: iconsbrands;
+              src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-brands-400.woff2) format("woff2"),
+                   url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-brands-400.ttf) format("truetype");
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+            }
+
+            @font-face {
+              font-family: iconsregular;
+              src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-regular-400.woff2) format("woff2"),
+                   url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-regular-400.ttf) format("truetype");
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+            }
+          `
+        }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
