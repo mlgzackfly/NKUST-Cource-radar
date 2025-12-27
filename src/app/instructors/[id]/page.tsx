@@ -249,19 +249,23 @@ export default function InstructorPage() {
             </div>
 
             {/* 學期篩選 */}
-            <select
-              value={selectedSemester}
-              onChange={(e) => setSelectedSemester(e.target.value)}
-              className="ts-select"
-              style={{ minWidth: "150px" }}
-            >
-              <option value="all">全部學期</option>
-              {data.stats.semesters.map(sem => (
-                <option key={sem} value={sem}>
-                  {sem.replace("-", " 學年第 ")} 學期
-                </option>
-              ))}
-            </select>
+            <div className="ts-control">
+              <div className="content">
+                <div className="ts-select is-solid" style={{ minWidth: "150px" }}>
+                  <select
+                    value={selectedSemester}
+                    onChange={(e) => setSelectedSemester(e.target.value)}
+                  >
+                    <option value="all">全部學期</option>
+                    {data.stats.semesters.map(sem => (
+                      <option key={sem} value={sem}>
+                        {sem.replace("-", " 學年第 ")} 學期
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
 
           {filteredCourses.length === 0 ? (

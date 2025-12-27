@@ -13,6 +13,11 @@ type CourseSearchPanelProps = {
   };
 };
 
+type SemesterOption = {
+  value: string;
+  label: string;
+};
+
 export function CourseSearchPanel({
   selectedCourseIds,
   onAddCourse,
@@ -20,11 +25,13 @@ export function CourseSearchPanel({
 }: CourseSearchPanelProps) {
   const [searchQuery, setSearchQuery] = useState("");
   const [semester, setSemester] = useState(
-    initialSemester ? `${initialSemester.year}-${initialSemester.term}` : "114-1"
+    initialSemester ? `${initialSemester.year}-${initialSemester.term}` : ""
   );
   const [courses, setCourses] = useState<CourseForSelection[]>([]);
   const [loading, setLoading] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
+  const [semesters, setSemesters] = useState<SemesterOption[]>([]);
+  const [semestersLoading, setSemestersLoading] = useState(false);
 
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -81,6 +88,52 @@ export function CourseSearchPanel({
     }
   };
 
+  // 載入學期選項
+  useEffect(() => {
+    setSemestersLoading(true);
+    fetch("/api/courses/filters", { cache: "force-cache" })
+      .then(async (res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return await res.json();
+      })
+      .then((data) => {
+        // 組合 year 和 term 成為學期選項
+        const years = data.years || [];
+        const terms = data.terms || [];
+
+        const semesterSet = new Set<string>();
+        years.forEach((year: string) => {
+          terms.forEach((term: string) => {
+            semesterSet.add(`${year}-${term}`);
+          });
+        });
+
+        const semesterOptions = Array.from(semesterSet)
+          .sort((a, b) => b.localeCompare(a)) // 按新到舊排序
+          .map(sem => {
+            const [year, term] = sem.split('-');
+            return {
+              value: sem,
+              label: `${year} 學年第 ${term} 學期`
+            };
+          });
+
+        setSemesters(semesterOptions);
+
+        // 如果沒有 initialSemester，預設選擇最新的學期
+        if (!initialSemester && semesterOptions.length > 0) {
+          setSemester(semesterOptions[0].value);
+        }
+      })
+      .catch((error) => {
+        console.error("載入學期選項失敗:", error);
+        setSemesters([]);
+      })
+      .finally(() => {
+        setSemestersLoading(false);
+      });
+  }, [initialSemester]);
+
   // 清理 timer
   useEffect(() => {
     return () => {
@@ -120,11 +173,15 @@ export function CourseSearchPanel({
               <select
                 value={semester}
                 onChange={(e) => handleSemesterChange(e.target.value)}
+                disabled={semestersLoading || semesters.length === 0}
               >
-                <option value="114-1">114 學年第 1 學期</option>
-                <option value="114-2">114 學年第 2 學期</option>
-                <option value="113-1">113 學年第 1 學期</option>
-                <option value="113-2">113 學年第 2 學期</option>
+                {semestersLoading && <option value="">載入中...</option>}
+                {!semestersLoading && semesters.length === 0 && <option value="">無可用學期</option>}
+                {!semestersLoading && semesters.map((sem) => (
+                  <option key={sem.value} value={sem.value}>
+                    {sem.label}
+                  </option>
+                ))}
               </select>
             </div>
           </div>
