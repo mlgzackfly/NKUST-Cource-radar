@@ -414,7 +414,7 @@ html.is-dark {
   left: 0;
   right: 0;
   z-index: 100;
-  display: none; /* 預設隱藏，在行動裝置顯示 */
+  display: none !important; /* 預設隱藏，在行動裝置顯示 */
   background: var(--app-surface);
   border-top: 1px solid var(--app-border);
   box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
