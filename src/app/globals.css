@@ -417,3 +417,23 @@ html.is-dark {
     display: flex !important;
   }
 }
+
+/* =========================================================
+   Touch Feedback for Mobile Devices
+   ========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+  /* 所有按鈕 */
+  .ts-button:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+    transition: all 0.1s ease;
+  }
+
+  /* 卡片和可點擊元素 */
+  .ts-box:active,
+  [role="button"]:active {
+    transform: scale(0.995);
+    transition: all 0.1s ease;
+  }
+}
