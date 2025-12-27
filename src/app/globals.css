@@ -405,16 +405,37 @@ html.is-dark {
 }
 
 /* =========================================================
-   Hamburger Menu for Extra Small Screens
+   Bottom Navigation for Mobile (Tocas UI App Navbar)
    ========================================================= */
 
-@media (max-width: 400px) {
+.ts-app-navbar.is-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none; /* 預設隱藏，在行動裝置顯示 */
+  background: var(--app-surface);
+  border-top: 1px solid var(--app-border);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+  /* Safe Area Insets for iOS */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@media (max-width: 768px) {
+  /* 行動裝置顯示底部導航 */
+  .ts-app-navbar.is-bottom {
+    display: flex !important;
+  }
+
+  /* 隱藏 Header 的導航按鈕 */
   .app-nav {
     display: none !important;
   }
 
-  .mobile-menu-button {
-    display: flex !important;
+  /* 給主要內容加上底部間距，避免被底部導航遮擋 */
+  .app-main {
+    padding-bottom: 80px; /* 底部導航高度 + 額外空間 */
   }
 }
 

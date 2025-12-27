@@ -6,7 +6,7 @@ import "./globals.css";
 import { SemesterSelector } from "@/components/SemesterSelector";
 import { UserMenu } from "@/components/UserMenu";
 import { SessionProvider } from "@/components/SessionProvider";
-import { MobileMenu } from "@/components/MobileMenu";
+import { BottomNavbar } from "@/components/BottomNavbar";
 
 export const metadata = {
   title: "高科選課雷達 | 選課，不只是憑感覺",
@@ -58,7 +58,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                       <Image src="/icon.svg" alt="Logo" width={28} height={28} />
                       高科選課雷達
                     </Link>
-                    <MobileMenu />
                     <nav className="app-nav" aria-label="主導覽">
                       <Link className="ts-button is-ghost is-short" href="/">
                         首頁
@@ -109,6 +108,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 </div>
               </footer>
             </div>
+
+            {/* Bottom Navigation for Mobile */}
+            <BottomNavbar />
           </div>
         </SessionProvider>
       </body>
