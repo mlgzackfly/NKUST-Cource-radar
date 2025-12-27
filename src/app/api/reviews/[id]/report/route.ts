@@ -91,19 +91,8 @@ export async function POST(
       return NextResponse.json({ error: "Cannot report your own review" }, { status: 403 }) as Response;
     }
 
-    // 檢查是否已經檢舉過
-    const existingReport = await prisma!.report.findFirst({
-      where: {
-        reviewId: p.id,
-        userId: user.id
-      }
-    });
-
-    if (existingReport) {
-      return NextResponse.json({ error: "You have already reported this review" }, { status: 400 }) as Response;
-    }
-
     // 建立檢舉
+    // 資料庫層級的 unique constraint 會防止重複檢舉
     const report = await prisma!.report.create({
       data: {
         reviewId: p.id,
@@ -122,6 +111,14 @@ export async function POST(
 
   } catch (error) {
     console.error("Failed to report review:", error);
+
+    // 處理 unique constraint violation (已經檢舉過)
+    if ((error as any).code === 'P2002') {
+      return NextResponse.json(
+        { error: "You have already reported this review" },
+        { status: 400 }
+      ) as Response;
+    }
 
     // 不洩露錯誤詳情給客戶端
     return NextResponse.json(
