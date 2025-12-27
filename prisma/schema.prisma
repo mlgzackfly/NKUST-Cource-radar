@@ -37,6 +37,15 @@ enum UserRole {
   ADMIN
 }
 
+enum TagCategory {
+  CONTENT      // 內容類型
+  DIFFICULTY   // 難度
+  TEACHING     // 教學風格
+  WORKLOAD     // 作業量
+  GRADING      // 給分
+  SPECIALTY    // 特色
+}
+
 model User {
   id            String    @id @default(cuid())
   email         String    @unique
@@ -57,6 +66,8 @@ model User {
   comments      Comment[]
   reports       Report[]
   favorites     Favorite[]
+  interactions  UserInteraction[]
+  recommendations RecommendationCache[]
   adminActions  AdminAction[] @relation("AdminActor")
   adminActionsAsTarget AdminAction[] @relation("AdminTargetUser")
 }
@@ -112,6 +123,9 @@ model Course {
   instructors CourseInstructor[]
   reviews      Review[]
   favorites    Favorite[]
+  tags         CourseTag[]
+  interactions UserInteraction[]
+  recommendations RecommendationCache[]
 
   @@index([year, term])
   @@index([updatedAt])
@@ -314,6 +328,67 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// ===== Phase 2: 標籤與推薦系統 =====
+
+model Tag {
+  id        String      @id @default(cuid())
+  name      String      @unique
+  category  TagCategory
+  color     String?
+  createdAt DateTime    @default(now())
+
+  courseTags CourseTag[]
+
+  @@index([category])
+}
+
+model CourseTag {
+  courseId  String
+  tagId     String
+  score     Float   @default(1.0)  // 標籤相關性分數
+  source    String  @default("AUTO")  // AUTO | MANUAL | USER_VOTE
+  createdAt DateTime @default(now())
+
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  tag    Tag    @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  @@id([courseId, tagId])
+  @@index([tagId, score])
+}
+
+model UserInteraction {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  userId    String
+  courseId  String
+  type      String   // VIEW | REVIEW | FAVORITE | SEARCH
+  weight    Float    @default(1.0)
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([courseId, type])
+}
+
+model RecommendationCache {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  courseId  String
+  score     Float
+  reason    String   // COLLABORATIVE | CONTENT | TRENDING | PERSONALIZED
+  expiresAt DateTime
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId, score])
+  @@index([expiresAt])
 }
 
 

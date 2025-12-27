@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { HomeSearch } from "@/components/HomeSearch";
+import { RecommendationSection } from "@/components/RecommendationSection";
 
 function formatCount(n: number) {
   return new Intl.NumberFormat("zh-Hant-TW").format(n);
@@ -139,6 +140,11 @@ export default async function HomePage() {
 
       {/* Main Content - Minimalist Sections */}
       <div className="app-container" style={{ paddingTop: "clamp(4rem, 10vh, 6rem)", paddingBottom: "6rem" }}>
+        {/* Recommendation Section */}
+        <div style={{ marginBottom: "clamp(4rem, 10vh, 6rem)" }}>
+          <RecommendationSection />
+        </div>
+
         {/* Features Section - Simple List */}
         <div style={{ marginBottom: "clamp(4rem, 10vh, 6rem)" }}>
           <div style={{ textAlign: "center", marginBottom: "4rem", maxWidth: 600, margin: "0 auto 4rem" }}>
