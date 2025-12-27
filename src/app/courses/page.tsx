@@ -92,7 +92,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   if (division) andFilters.push({ division });
   if (department) andFilters.push({ department });
 
-  // Sort field mapping (instructorName will be handled client-side)
+  // Sort field whitelist for Prisma queries
   const sortFieldMap: Record<string, string> = {
     "updatedAt": "updatedAt",
     "courseName": "courseName",
@@ -101,10 +101,29 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
     "campus": "campus"
   };
 
+  // Complete ORDER BY clause mapping for raw SQL queries to prevent SQL injection
+  // Each combination is pre-defined, no string concatenation needed
+  const ORDER_BY_MAP: Record<string, string> = {
+    "updatedAt-asc": 'c."updatedAt" ASC',
+    "updatedAt-desc": 'c."updatedAt" DESC',
+    "courseName-asc": 'c."courseName" ASC',
+    "courseName-desc": 'c."courseName" DESC',
+    "year-asc": 'c."year" ASC',
+    "year-desc": 'c."year" DESC',
+    "department-asc": 'c."department" ASC',
+    "department-desc": 'c."department" DESC',
+    "campus-asc": 'c."campus" ASC',
+    "campus-desc": 'c."campus" DESC',
+  };
+
   // Check if sorting by instructor (needs client-side sorting)
   const sortByInstructor = sort === "instructorName";
   const sortField = sortByInstructor ? "updatedAt" : (sortFieldMap[sort] || "updatedAt");
   const sortOrder = order === "asc" ? "asc" : "desc";
+
+  // Get pre-defined ORDER BY clause for raw SQL (prevents string concatenation)
+  const sortKey = `${sortField}-${sortOrder}`;
+  const baseOrderBy = ORDER_BY_MAP[sortKey] || ORDER_BY_MAP["updatedAt-desc"];
 
   // Use full-text search if query is provided
   let courses: CourseListItem[];
@@ -140,13 +159,13 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
         params.push(department);
       }
 
-      // Build ORDER BY clause
+      // Build ORDER BY clause using pre-defined mappings
       let orderByClause = "";
       if (q && q.length > 0) {
-        // When searching, prioritize relevance first
-        orderByClause = `ts_rank(c."searchVector", plainto_tsquery('simple', $1)) DESC, c."${sortField}" ${sortOrder.toUpperCase()}`;
+        // When searching, prioritize relevance first, then apply secondary sort
+        orderByClause = `ts_rank(c."searchVector", plainto_tsquery('simple', $1)) DESC, ${baseOrderBy}`;
       } else {
-        orderByClause = `c."${sortField}" ${sortOrder.toUpperCase()}`;
+        orderByClause = baseOrderBy;
       }
 
       // Get total count
