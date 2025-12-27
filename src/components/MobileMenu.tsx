@@ -1,12 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const navItems = [
     { href: "/", label: "首頁" },
@@ -14,20 +20,7 @@ export function MobileMenu() {
     { href: "/mock-schedule", label: "模擬選課" },
   ];
 
-  return (
-    <>
-      {/* Hamburger Button */}
-      <button
-        className="mobile-menu-button ts-button is-icon is-ghost"
-        onClick={() => setIsOpen(!isOpen)}
-        style={{ display: "none" }}
-        aria-label="開啟選單"
-      >
-        <span style={{ fontSize: "1.25rem" }}>☰</span>
-      </button>
-
-      {/* Mobile Menu Overlay */}
-      {isOpen && (
+  const overlayContent = isOpen && (
         <div
           style={{
             position: "fixed",
@@ -81,7 +74,22 @@ export function MobileMenu() {
             </nav>
           </div>
         </div>
-      )}
+      );
+
+  return (
+    <>
+      {/* Hamburger Button */}
+      <button
+        className="mobile-menu-button ts-button is-icon is-ghost"
+        onClick={() => setIsOpen(!isOpen)}
+        style={{ display: "none" }}
+        aria-label="開啟選單"
+      >
+        <span style={{ fontSize: "1.25rem" }}>☰</span>
+      </button>
+
+      {/* Mobile Menu Overlay - Rendered via Portal */}
+      {mounted && overlayContent && createPortal(overlayContent, document.body)}
     </>
   );
 }
