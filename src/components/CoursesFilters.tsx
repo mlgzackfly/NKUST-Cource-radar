@@ -24,6 +24,12 @@ type Props = {
     campus?: string;
     division?: string;
     department?: string;
+    sortBy?: string;
+    sortOrder?: string;
+    minRating?: string;
+    maxWorkload?: string;
+    minGrading?: string;
+    timeSlot?: string;
   };
 };
 
@@ -43,7 +49,9 @@ export function CoursesFilters({ initial }: Props) {
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const hasAnyFilter = Boolean(
-    initial.q || initial.campus || initial.division || initial.department,
+    initial.q || initial.campus || initial.division || initial.department ||
+    initial.sortBy || initial.sortOrder || initial.minRating ||
+    initial.maxWorkload || initial.minGrading || initial.timeSlot,
   );
 
   useEffect(() => {
@@ -338,6 +346,91 @@ export function CoursesFilters({ initial }: Props) {
                           </option>
                         ))}
                       </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ts-control is-stacked is-fluid">
+                  <div className="label">排序方式</div>
+                  <div className="content">
+                    <div className="ts-select is-solid is-fluid">
+                      <select name="sortBy" defaultValue={initial.sortBy ?? "latest"}>
+                        <option value="latest">最新更新</option>
+                        <option value="name">課程名稱</option>
+                        <option value="credits">學分數</option>
+                        <option value="rating">平均評分</option>
+                        <option value="reviews">評論數量</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ts-control is-stacked is-fluid">
+                  <div className="label">排序順序</div>
+                  <div className="content">
+                    <div className="ts-select is-solid is-fluid">
+                      <select name="sortOrder" defaultValue={initial.sortOrder ?? "desc"}>
+                        <option value="desc">遞減</option>
+                        <option value="asc">遞增</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ts-control is-stacked is-fluid">
+                  <div className="label">最低評分</div>
+                  <div className="content">
+                    <div className="ts-select is-solid is-fluid">
+                      <select name="minRating" defaultValue={initial.minRating ?? ""}>
+                        <option value="">不限</option>
+                        <option value="1">1 分以上</option>
+                        <option value="2">2 分以上</option>
+                        <option value="3">3 分以上</option>
+                        <option value="4">4 分以上</option>
+                        <option value="4.5">4.5 分以上</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ts-control is-stacked is-fluid">
+                  <div className="label">最高作業量</div>
+                  <div className="content">
+                    <div className="ts-select is-solid is-fluid">
+                      <select name="maxWorkload" defaultValue={initial.maxWorkload ?? ""}>
+                        <option value="">不限</option>
+                        <option value="2">2 分以下（輕鬆）</option>
+                        <option value="3">3 分以下（適中）</option>
+                        <option value="4">4 分以下</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ts-control is-stacked is-fluid">
+                  <div className="label">最低給分甜度</div>
+                  <div className="content">
+                    <div className="ts-select is-solid is-fluid">
+                      <select name="minGrading" defaultValue={initial.minGrading ?? ""}>
+                        <option value="">不限</option>
+                        <option value="3">3 分以上</option>
+                        <option value="4">4 分以上（甜課）</option>
+                        <option value="4.5">4.5 分以上（超甜）</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="ts-control is-stacked is-fluid">
+                  <div className="label">時段篩選</div>
+                  <div className="content">
+                    <div className="ts-input is-solid is-fluid">
+                      <input
+                        type="text"
+                        name="timeSlot"
+                        defaultValue={initial.timeSlot ?? ""}
+                        placeholder="例如: 1-2 (星期一 2-3 節)"
+                      />
                     </div>
                   </div>
                 </div>

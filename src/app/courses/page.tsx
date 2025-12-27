@@ -27,6 +27,12 @@ type CoursesPageProps = {
         sort?: string;
         order?: string;
         page?: string;
+        sortBy?: string;
+        sortOrder?: string;
+        minRating?: string;
+        maxWorkload?: string;
+        minGrading?: string;
+        timeSlot?: string;
       }>;
 };
 
@@ -53,6 +59,14 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   const sort = clean(sp.sort) || "updatedAt";
   const order = clean(sp.order) || "desc";
   const page = Math.max(1, parseInt(clean(sp.page) || "1", 10));
+
+  // 進階篩選參數
+  const sortBy = clean(sp.sortBy);
+  const sortOrder = clean(sp.sortOrder);
+  const minRating = clean(sp.minRating);
+  const maxWorkload = clean(sp.maxWorkload);
+  const minGrading = clean(sp.minGrading);
+  const timeSlot = clean(sp.timeSlot);
 
   const PER_PAGE = 50;
   const offset = (page - 1) * PER_PAGE;
@@ -274,10 +288,33 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
     });
   }
 
-  const hasAnyFilter = Boolean(q || semester || campus || division || department);
+  const hasAnyFilter = Boolean(
+    q || semester || campus || division || department ||
+    sortBy || sortOrder || minRating || maxWorkload || minGrading || timeSlot
+  );
   const totalPages = Math.ceil(totalCount / PER_PAGE);
   const startItem = totalCount === 0 ? 0 : offset + 1;
   const endItem = Math.min(offset + PER_PAGE, totalCount);
+
+  // Helper 函數：產生分頁 query string
+  const buildPaginationParams = (pageNum: number) => {
+    return new URLSearchParams({
+      ...(q && { q }),
+      ...(semester && { semester }),
+      ...(campus && { campus }),
+      ...(division && { division }),
+      ...(department && { department }),
+      ...(sort && { sort }),
+      ...(order && { order }),
+      ...(sortBy && { sortBy }),
+      ...(sortOrder && { sortOrder }),
+      ...(minRating && { minRating }),
+      ...(maxWorkload && { maxWorkload }),
+      ...(minGrading && { minGrading }),
+      ...(timeSlot && { timeSlot }),
+      page: pageNum.toString(),
+    }).toString();
+  };
 
   return (
     <div className="app-container" style={{ paddingTop: "2rem", paddingBottom: "4rem" }}>
@@ -294,6 +331,12 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
               campus,
               division,
               department,
+              sortBy,
+              sortOrder,
+              minRating,
+              maxWorkload,
+              minGrading,
+              timeSlot,
             }}
           />
         </div>
@@ -357,16 +400,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                   {/* Previous Button */}
                   {page > 1 ? (
                     <Link
-                      href={`/courses?${new URLSearchParams({
-                        ...(q && { q }),
-                        ...(semester && { semester }),
-                        ...(campus && { campus }),
-                        ...(division && { division }),
-                        ...(department && { department }),
-                        ...(sort && { sort }),
-                        ...(order && { order }),
-                        page: (page - 1).toString(),
-                      }).toString()}`}
+                      href={`/courses?${buildPaginationParams(page - 1)}`}
                       className="ts-button is-icon"
                     >
                       ←
@@ -435,16 +469,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                       return (
                         <Link
                           key={pageNum}
-                          href={`/courses?${new URLSearchParams({
-                            ...(q && { q }),
-                            ...(semester && { semester }),
-                            ...(campus && { campus }),
-                            ...(division && { division }),
-                            ...(department && { department }),
-                            ...(sort && { sort }),
-                            ...(order && { order }),
-                            page: pageNum.toString(),
-                          }).toString()}`}
+                          href={`/courses?${buildPaginationParams(pageNum)}`}
                           className="ts-button"
                           style={{ minWidth: "3rem", padding: "0.625rem 1rem" }}
                         >
@@ -457,16 +482,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                   {/* Next Button */}
                   {page < totalPages ? (
                     <Link
-                      href={`/courses?${new URLSearchParams({
-                        ...(q && { q }),
-                        ...(semester && { semester }),
-                        ...(campus && { campus }),
-                        ...(division && { division }),
-                        ...(department && { department }),
-                        ...(sort && { sort }),
-                        ...(order && { order }),
-                        page: (page + 1).toString(),
-                      }).toString()}`}
+                      href={`/courses?${buildPaginationParams(page + 1)}`}
                       className="ts-button is-icon"
                     >
                       →

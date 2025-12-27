@@ -15,7 +15,7 @@ type CommentSectionProps = {
   reviewId: string;
 };
 
-export default function CommentSection({ reviewId }: CommentSectionProps) {
+export function CommentSection({ reviewId }: CommentSectionProps) {
   const { data: session, status } = useSession();
   const [comments, setComments] = useState<Comment[]>([]);
   const [total, setTotal] = useState(0);

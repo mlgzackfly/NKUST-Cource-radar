@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Snackbar } from "./Snackbar";
+import { CommentSection } from "./CommentSection";
 
 type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
@@ -373,7 +374,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
           paddingTop: '1rem',
           borderTop: '1px solid var(--ts-gray-200)'
         }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <VoteButtons
               reviewId={review.id}
               votes={review.votes}
@@ -389,6 +390,9 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
               </button>
             )}
           </div>
+
+          {/* 留言區塊 */}
+          <CommentSection reviewId={review.id} />
         </div>
       </div>
 

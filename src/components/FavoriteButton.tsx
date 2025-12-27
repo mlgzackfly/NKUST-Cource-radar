@@ -10,7 +10,7 @@ type FavoriteButtonProps = {
   onToggle?: (isFavorited: boolean) => void;
 };
 
-export default function FavoriteButton({
+export function FavoriteButton({
   courseId,
   initialFavorited = false,
   size = "medium",

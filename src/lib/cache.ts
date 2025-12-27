@@ -1,4 +1,4 @@
-import { redis } from "./redis";
+import { redis, getRedisType, getStandardRedis } from "./redis";
 
 /**
  * 快取過期時間設定 (秒)
@@ -32,8 +32,18 @@ export async function getCached<T>(
   }
 
   try {
-    // 嘗試從快取取得資料
-    const cached = await redis.get<string>(key);
+    const redisType = getRedisType();
+    let cached: string | null = null;
+
+    // 根據 Redis 類型使用不同的 API
+    if (redisType === "standard") {
+      const standardRedis = getStandardRedis();
+      if (standardRedis) {
+        cached = await standardRedis.get(key);
+      }
+    } else if (redisType === "upstash") {
+      cached = await redis.get<string>(key);
+    }
 
     if (cached) {
       // 快取命中，解析並回傳
@@ -44,7 +54,14 @@ export async function getCached<T>(
     const data = await fetchFn();
 
     // 將資料存入快取
-    await redis.setex(key, ttl, JSON.stringify(data));
+    if (redisType === "standard") {
+      const standardRedis = getStandardRedis();
+      if (standardRedis) {
+        await standardRedis.setex(key, ttl, JSON.stringify(data));
+      }
+    } else if (redisType === "upstash") {
+      await redis.setex(key, ttl, JSON.stringify(data));
+    }
 
     return data;
   } catch (error) {
@@ -69,7 +86,16 @@ export async function setCache<T>(
   if (!redis) return;
 
   try {
-    await redis.setex(key, ttl, JSON.stringify(value));
+    const redisType = getRedisType();
+
+    if (redisType === "standard") {
+      const standardRedis = getStandardRedis();
+      if (standardRedis) {
+        await standardRedis.setex(key, ttl, JSON.stringify(value));
+      }
+    } else if (redisType === "upstash") {
+      await redis.setex(key, ttl, JSON.stringify(value));
+    }
   } catch (error) {
     console.error("Error setting cache:", error);
   }
@@ -84,17 +110,23 @@ export async function deleteCache(key: string): Promise<void> {
   if (!redis) return;
 
   try {
-    await redis.del(key);
+    const redisType = getRedisType();
+
+    if (redisType === "standard") {
+      const standardRedis = getStandardRedis();
+      if (standardRedis) {
+        await standardRedis.del(key);
+      }
+    } else if (redisType === "upstash") {
+      await redis.del(key);
+    }
   } catch (error) {
     console.error("Error deleting cache:", error);
   }
 }
 
 /**
- * 批次刪除快取（使用 pattern 匹配）
- *
- * 注意：Upstash Redis 不支援 KEYS 命令，因此需要手動維護 key 列表
- * 建議使用具體的 key 而非 pattern
+ * 批次刪除快取
  *
  * @param keys 要刪除的快取鍵值陣列
  */
@@ -102,7 +134,16 @@ export async function deleteCacheBatch(keys: string[]): Promise<void> {
   if (!redis || keys.length === 0) return;
 
   try {
-    await redis.del(...keys);
+    const redisType = getRedisType();
+
+    if (redisType === "standard") {
+      const standardRedis = getStandardRedis();
+      if (standardRedis) {
+        await standardRedis.del(...keys);
+      }
+    } else if (redisType === "upstash") {
+      await redis.del(...keys);
+    }
   } catch (error) {
     console.error("Error batch deleting cache:", error);
   }

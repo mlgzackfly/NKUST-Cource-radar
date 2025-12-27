@@ -8,6 +8,7 @@ import { CourseTimeTable } from "@/components/CourseTimeTable";
 import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewList } from "@/components/ReviewList";
 import { InstructorLinks } from "@/components/InstructorLinks";
+import { FavoriteButton } from "@/components/FavoriteButton";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
@@ -294,7 +295,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <Link className="ts-button is-ghost is-short" href="/courses">
               ← 回課程列表
             </Link>
-            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
               {typedCourse.year && typedCourse.term ? (
                 <Link className="ts-button is-outlined is-short" href={coursesHref({ year: typedCourse.year, term: typedCourse.term })}>
                   同學期
@@ -310,6 +311,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
                   同校區
                 </Link>
               ) : null}
+              <FavoriteButton courseId={typedCourse.id} />
             </div>
           </div>
 
