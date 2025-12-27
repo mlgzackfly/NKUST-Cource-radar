@@ -1,4 +1,36 @@
 /* =========================================================
+   Tocas UI Icons Font Fix
+   - Override relative paths with absolute CDN URLs
+   ========================================================= */
+
+@font-face {
+  font-family: icons;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-solid-900.woff2) format("woff2"),
+       url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-solid-900.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iconsbrands;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-brands-400.woff2) format("woff2"),
+       url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-brands-400.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iconsregular;
+  src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-regular-400.woff2) format("woff2"),
+       url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-regular-400.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+/* =========================================================
    App-specific layout polish.
    - Colors follow Tocas UI variables directly (no custom palette)
    - ThemeToggle uses html.is-dark / html.is-light (Tocas convention)
