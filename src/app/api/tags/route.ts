@@ -36,7 +36,7 @@ export async function GET(request: Request): Promise<Response> {
     });
 
     return NextResponse.json({
-      tags: tags.map((tag) => ({
+      tags: tags.map((tag: any) => ({
         id: tag.id,
         name: tag.name,
         category: tag.category,

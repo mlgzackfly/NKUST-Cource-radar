@@ -118,7 +118,7 @@ class UnifiedRateLimiter {
     // 優先使用 Redis
     if (redisRateLimiters && type && redisRateLimiters[type]) {
       try {
-        const result = await redisRateLimiters[type].limit(identifier);
+        const result = await (redisRateLimiters[type] as any).limit(identifier);
         return {
           success: result.success,
           remaining: result.remaining,
@@ -164,9 +164,7 @@ class UnifiedRateLimiter {
 }
 
 // 全域單例
-const rateLimiter = new UnifiedRateLimiter();
-
-export default rateLimiter;
+export const rateLimiter = new UnifiedRateLimiter();
 
 /**
  * 預設的速率限制設定

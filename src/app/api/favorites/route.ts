@@ -1,12 +1,19 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { requireNkustUser } from "@/lib/auth";
 import { rateLimiter } from "@/lib/ratelimit";
 import { getCourseRatingSummary } from "@/lib/reviewSummary";
 
 // POST /api/favorites - 新增收藏
-export async function POST(request: NextRequest) {
+export async function POST(request: Request): Promise<Response> {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "資料庫連線失敗" },
+        { status: 503 }
+      ) as Response;
+    }
+
     // 檢查使用者是否已登入且為高科大學生
     const user = await requireNkustUser();
 
@@ -23,7 +30,7 @@ export async function POST(request: NextRequest) {
             "Retry-After": String(Math.ceil((rateLimit.resetTime - Date.now()) / 1000)),
           },
         }
-      );
+      ) as Response;
     }
 
     // 解析 request body
@@ -35,7 +42,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: "課程 ID 不可為空" },
         { status: 400 }
-      );
+      ) as Response;
     }
 
     // 檢查課程是否存在
@@ -44,7 +51,7 @@ export async function POST(request: NextRequest) {
     });
 
     if (!course) {
-      return NextResponse.json({ error: "課程不存在" }, { status: 404 });
+      return NextResponse.json({ error: "課程不存在" }, { status: 404 }) as Response;
     }
 
     // 建立收藏（使用 create，若已存在則會拋出錯誤）
@@ -62,14 +69,14 @@ export async function POST(request: NextRequest) {
           favoriteId: favorite.id,
         },
         { status: 201 }
-      );
+      ) as Response;
     } catch (error: any) {
       // P2002 是 Prisma 的 unique constraint violation 錯誤
       if (error.code === "P2002") {
         return NextResponse.json(
           { error: "已經收藏過此課程" },
           { status: 400 }
-        );
+        ) as Response;
       }
       throw error;
     }
@@ -78,21 +85,28 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(
       { error: "新增收藏失敗，請稍後再試" },
       { status: 500 }
-    );
+    ) as Response;
   }
 }
 
 // GET /api/favorites - 取得收藏列表
-export async function GET(request: NextRequest) {
+export async function GET(request: Request): Promise<Response> {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "資料庫連線失敗" },
+        { status: 503 }
+      ) as Response;
+    }
+
     // 檢查使用者是否已登入且為高科大學生
     const user = await requireNkustUser();
 
     // 解析查詢參數
-    const searchParams = request.nextUrl.searchParams;
-    const year = searchParams.get("year");
-    const term = searchParams.get("term");
-    const sort = searchParams.get("sort") || "latest"; // latest | oldest | name
+    const url = new URL(request.url);
+    const year = url.searchParams.get("year");
+    const term = url.searchParams.get("term");
+    const sort = url.searchParams.get("sort") || "latest"; // latest | oldest | name
 
     // 建立查詢條件
     const where: any = {
@@ -145,7 +159,7 @@ export async function GET(request: NextRequest) {
 
     // 格式化回傳資料
     const formattedFavorites = await Promise.all(
-      favorites.map(async (favorite) => {
+      favorites.map(async (favorite: any) => {
         const course = favorite.course;
 
         // 取得評分摘要
@@ -163,7 +177,7 @@ export async function GET(request: NextRequest) {
             credits: course.credits,
             time: course.time,
             classroom: course.classroom,
-            instructors: course.instructors.map((ci) => ({
+            instructors: course.instructors.map((ci: any) => ({
               id: ci.instructor.id,
               name: ci.instructor.name,
             })),
@@ -175,12 +189,12 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       favorites: formattedFavorites,
-    });
+    }) as Response;
   } catch (error) {
     console.error("Error fetching favorites:", error);
     return NextResponse.json(
       { error: "取得收藏列表失敗，請稍後再試" },
       { status: 500 }
-    );
+    ) as Response;
   }
 }

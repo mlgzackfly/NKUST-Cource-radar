@@ -74,11 +74,11 @@ export async function GET(request: Request): Promise<Response> {
 
       if (cached.length > 0) {
         return NextResponse.json({
-          recommendations: cached.map((c) => ({
+          recommendations: cached.map((c: any) => ({
             ...c.course,
             score: c.score,
             reason: c.reason,
-            instructors: c.course.instructors.map((i) => i.instructor),
+            instructors: c.course.instructors.map((i: any) => i.instructor),
           })),
           cached: true,
         }) as Response;
@@ -126,7 +126,7 @@ export async function GET(request: Request): Promise<Response> {
     }
 
     // 3. 取得課程詳細資訊
-    const courseIds = results.map((r) => r.courseId);
+    const courseIds = results.map((r: any) => r.courseId);
     const courses = await prisma.course.findMany({
       where: { id: { in: courseIds } },
       select: {
@@ -147,7 +147,7 @@ export async function GET(request: Request): Promise<Response> {
     });
 
     // 建立 courseId -> course 映射
-    const courseMap = new Map(courses.map((c) => [c.id, c]));
+    const courseMap = new Map(courses.map((c: any) => [c.id, c]));
 
     // 4. 更新快取（異步，不等待）
     const expiresAt = new Date();
@@ -155,7 +155,7 @@ export async function GET(request: Request): Promise<Response> {
 
     prisma.recommendationCache
       .createMany({
-        data: results.map((r) => ({
+        data: results.map((r: any) => ({
           userId: user.id,
           courseId: r.courseId,
           score: r.score,
@@ -164,22 +164,22 @@ export async function GET(request: Request): Promise<Response> {
         })),
         skipDuplicates: true,
       })
-      .catch((err) => console.error("Failed to cache recommendations:", err));
+      .catch((err: any) => console.error("Failed to cache recommendations:", err));
 
     // 5. 回傳結果
     const recommendations = results
-      .map((r) => {
-        const course = courseMap.get(r.courseId);
+      .map((r: any) => {
+        const course: any = courseMap.get(r.courseId);
         if (!course) return null;
 
         return {
           ...course,
           score: r.score,
           reason: r.reason,
-          instructors: course.instructors.map((i) => i.instructor),
+          instructors: course.instructors.map((i: any) => i.instructor),
         };
       })
-      .filter((r) => r !== null);
+      .filter((r: any) => r !== null);
 
     return NextResponse.json({
       recommendations,

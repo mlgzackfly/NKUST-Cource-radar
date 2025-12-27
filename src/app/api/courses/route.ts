@@ -67,7 +67,7 @@ export async function GET(request: Request): Promise<Response> {
   };
 
   // 決定排序方式
-  let orderBy: Prisma.CourseOrderByWithRelationInput | Prisma.CourseOrderByWithRelationInput[] = { updatedAt: "desc" };
+  let orderBy: any = { updatedAt: "desc" };
 
   if (sortBy === "name") {
     orderBy = { courseName: sortOrder as "asc" | "desc" };
@@ -119,21 +119,21 @@ export async function GET(request: Request): Promise<Response> {
     reviewCount: number;
   };
 
-  let coursesWithStats: CourseWithStats[] = courses.map((course) => {
+  let coursesWithStats: CourseWithStats[] = courses.map((course: any) => {
     const reviews = course.reviews;
     const reviewCount = reviews.length;
 
     // 計算平均值（coolness 作為 overall rating）
     const avgRating = reviewCount > 0
-      ? reviews.reduce((sum, r) => sum + (r.coolness || 0), 0) / reviewCount
+      ? reviews.reduce((sum: number, r: any) => sum + (r.coolness || 0), 0) / reviewCount
       : 0;
 
     const avgWorkload = reviewCount > 0
-      ? reviews.reduce((sum, r) => sum + (r.workload || 0), 0) / reviewCount
+      ? reviews.reduce((sum: number, r: any) => sum + (r.workload || 0), 0) / reviewCount
       : 0;
 
     const avgGrading = reviewCount > 0
-      ? reviews.reduce((sum, r) => sum + (r.grading || 0), 0) / reviewCount
+      ? reviews.reduce((sum: number, r: any) => sum + (r.grading || 0), 0) / reviewCount
       : 0;
 
     return {

@@ -39,7 +39,7 @@ export async function getCollaborativeRecommendations(
 
     if (userInteractions.length === 0) return [];
 
-    const userCourseIds = userInteractions.map((i) => i.courseId);
+    const userCourseIds = userInteractions.map((i: any) => i.courseId);
 
     // 2. 找出與這些課程有互動的其他使用者（相似使用者）
     const similarUsers = await prisma.userInteraction.findMany({
@@ -54,7 +54,7 @@ export async function getCollaborativeRecommendations(
 
     if (similarUsers.length === 0) return [];
 
-    const similarUserIds = similarUsers.map((u) => u.userId);
+    const similarUserIds = similarUsers.map((u: any) => u.userId);
 
     // 3. 找出相似使用者喜歡但當前使用者未接觸的課程
     const recommendations = await prisma.userInteraction.groupBy({
@@ -68,7 +68,7 @@ export async function getCollaborativeRecommendations(
       take: limit,
     });
 
-    return recommendations.map((rec, index) => ({
+    return recommendations.map((rec: any, index: number) => ({
       courseId: rec.courseId,
       score: 1.0 - index * 0.05, // 遞減評分
       reason: "COLLABORATIVE" as RecommendationType,
@@ -108,8 +108,8 @@ export async function getContentBasedRecommendations(
     ]);
 
     const likedCourseIds = [
-      ...userReviews.map((r) => r.courseId),
-      ...userFavorites.map((f) => f.courseId),
+      ...userReviews.map((r: any) => r.courseId),
+      ...userFavorites.map((f: any) => f.courseId),
     ];
 
     if (likedCourseIds.length === 0) return [];
@@ -126,11 +126,11 @@ export async function getContentBasedRecommendations(
     });
 
     // 3. 建立相似度權重
-    const departments = likedCourses.map((c) => c.department).filter(Boolean);
-    const instructorIds = likedCourses.flatMap((c) =>
-      c.instructors.map((i) => i.instructorId)
+    const departments = likedCourses.map((c: any) => c.department).filter(Boolean);
+    const instructorIds = likedCourses.flatMap((c: any) =>
+      c.instructors.map((i: any) => i.instructorId)
     );
-    const tagIds = likedCourses.flatMap((c) => c.tags.map((t) => t.tagId));
+    const tagIds = likedCourses.flatMap((c: any) => c.tags.map((t: any) => t.tagId));
 
     // 4. 找出相似課程（未接觸過的）
     const similarCourses = await prisma.course.findMany({
@@ -160,7 +160,7 @@ export async function getContentBasedRecommendations(
     });
 
     // 5. 計算相似度分數
-    const scoredCourses = similarCourses.map((course) => {
+    const scoredCourses = similarCourses.map((course: any) => {
       let score = 0;
 
       // 同系所：+0.3
@@ -169,8 +169,8 @@ export async function getContentBasedRecommendations(
       }
 
       // 同教師：+0.4
-      const courseInstructorIds = course.instructors.map((i) => i.instructorId);
-      const commonInstructors = courseInstructorIds.filter((id) =>
+      const courseInstructorIds = course.instructors.map((i: any) => i.instructorId);
+      const commonInstructors = courseInstructorIds.filter((id: any) =>
         instructorIds.includes(id)
       );
       if (commonInstructors.length > 0) {
@@ -178,8 +178,8 @@ export async function getContentBasedRecommendations(
       }
 
       // 相同標籤：每個 +0.2（最多 +0.6）
-      const courseTagIds = course.tags.map((t) => t.tagId);
-      const commonTags = courseTagIds.filter((id) => tagIds.includes(id));
+      const courseTagIds = course.tags.map((t: any) => t.tagId);
+      const commonTags = courseTagIds.filter((id: any) => tagIds.includes(id));
       score += Math.min(commonTags.length * 0.2, 0.6);
 
       return {
@@ -191,8 +191,8 @@ export async function getContentBasedRecommendations(
 
     // 6. 排序並限制數量
     return scoredCourses
-      .filter((c) => c.score > 0)
-      .sort((a, b) => b.score - a.score)
+      .filter((c: any) => c.score > 0)
+      .sort((a: any, b: any) => b.score - a.score)
       .slice(0, limit);
   } catch (error) {
     console.error("Content-based filtering error:", error);
@@ -218,7 +218,7 @@ export async function getTrendingRecommendations(
       distinct: ["courseId"],
     });
 
-    const excludeCourseIds = userInteractions.map((i) => i.courseId);
+    const excludeCourseIds = userInteractions.map((i: any) => i.courseId);
 
     // 2. 取得全站平均評分
     const globalAvg = await prisma.review.aggregate({
@@ -250,10 +250,10 @@ export async function getTrendingRecommendations(
       take: 100, // 先取 100 門，再排序
     });
 
-    const scoredCourses = courses.map((course) => {
+    const scoredCourses = courses.map((course: any) => {
       const v = course.reviews.length; // 評論數
       const R =
-        course.reviews.reduce((sum, r) => sum + (r.coolness || 0), 0) / v; // 平均評分
+        course.reviews.reduce((sum: any, r: any) => sum + (r.coolness || 0), 0) / v; // 平均評分
 
       // IMDb 公式：Score = (v / (v + m)) * R + (m / (v + m)) * C
       const score = (v / (v + m)) * R + (m / (v + m)) * C;
@@ -266,7 +266,7 @@ export async function getTrendingRecommendations(
     });
 
     // 4. 排序並限制數量
-    return scoredCourses.sort((a, b) => b.score - a.score).slice(0, limit);
+    return scoredCourses.sort((a: any, b: any) => b.score - a.score).slice(0, limit);
   } catch (error) {
     console.error("Trending recommendations error:", error);
     return [];
@@ -300,13 +300,13 @@ export async function getPersonalizedRecommendations(
 
     // 計算平均偏好
     const avgCoolness =
-      userReviews.reduce((sum, r) => sum + (r.coolness || 0), 0) /
+      userReviews.reduce((sum: any, r: any) => sum + (r.coolness || 0), 0) /
       userReviews.length;
     const avgUsefulness =
-      userReviews.reduce((sum, r) => sum + (r.usefulness || 0), 0) /
+      userReviews.reduce((sum: any, r: any) => sum + (r.usefulness || 0), 0) /
       userReviews.length;
     const avgGrading =
-      userReviews.reduce((sum, r) => sum + (r.grading || 0), 0) /
+      userReviews.reduce((sum: any, r: any) => sum + (r.grading || 0), 0) /
       userReviews.length;
 
     // 2. 判斷偏好類型
@@ -321,7 +321,7 @@ export async function getPersonalizedRecommendations(
       distinct: ["courseId"],
     });
 
-    const excludeCourseIds = userInteractions.map((i) => i.courseId);
+    const excludeCourseIds = userInteractions.map((i: any) => i.courseId);
 
     // 4. 根據偏好找課程
     const courses = await prisma.course.findMany({
@@ -346,18 +346,18 @@ export async function getPersonalizedRecommendations(
     });
 
     // 5. 計算匹配分數
-    const scoredCourses = courses.map((course) => {
+    const scoredCourses = courses.map((course: any) => {
       const reviews = course.reviews;
       if (reviews.length === 0) {
         return { courseId: course.id, score: 0, reason: "PERSONALIZED" as RecommendationType };
       }
 
       const avgCourseCoolness =
-        reviews.reduce((sum, r) => sum + (r.coolness || 0), 0) / reviews.length;
+        reviews.reduce((sum: any, r: any) => sum + (r.coolness || 0), 0) / reviews.length;
       const avgCourseUsefulness =
-        reviews.reduce((sum, r) => sum + (r.usefulness || 0), 0) / reviews.length;
+        reviews.reduce((sum: any, r: any) => sum + (r.usefulness || 0), 0) / reviews.length;
       const avgCourseGrading =
-        reviews.reduce((sum, r) => sum + (r.grading || 0), 0) / reviews.length;
+        reviews.reduce((sum: any, r: any) => sum + (r.grading || 0), 0) / reviews.length;
 
       let score = 0;
       if (prefersCool && avgCourseCoolness >= 4) score += 0.4;
@@ -373,8 +373,8 @@ export async function getPersonalizedRecommendations(
 
     // 6. 排序並限制數量
     return scoredCourses
-      .filter((c) => c.score > 0)
-      .sort((a, b) => b.score - a.score)
+      .filter((c: any) => c.score > 0)
+      .sort((a: any, b: any) => b.score - a.score)
       .slice(0, limit);
   } catch (error) {
     console.error("Personalized recommendations error:", error);
@@ -459,7 +459,7 @@ export async function getHybridRecommendations(
       reason,
     }));
 
-    return results.sort((a, b) => b.score - a.score).slice(0, limit);
+    return results.sort((a: any, b: any) => b.score - a.score).slice(0, limit);
   } catch (error) {
     console.error("Hybrid recommendations error:", error);
     return [];
@@ -515,7 +515,7 @@ export async function getColdStartRecommendations(
         take: Math.floor(limit / 2),
       });
 
-      const deptRecommendations = deptCourses.map((course, index) => ({
+      const deptRecommendations = deptCourses.map((course: any, index: number) => ({
         courseId: course.id,
         score: 0.8 - index * 0.05,
         reason: "CONTENT" as RecommendationType,

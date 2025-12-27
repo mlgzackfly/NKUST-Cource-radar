@@ -56,17 +56,21 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   const campus = clean(sp.campus);
   const division = clean(sp.division);
   const department = clean(sp.department);
-  const sort = clean(sp.sort) || "updatedAt";
-  const order = clean(sp.order) || "desc";
+
+  // 整合舊的 sort/order 與新的 sortBy/sortOrder
+  const sortBy = clean(sp.sortBy) || clean(sp.sort) || "updatedAt";
+  const sortDirection = clean(sp.sortOrder) || clean(sp.order) || "desc";
   const page = Math.max(1, parseInt(clean(sp.page) || "1", 10));
 
   // 進階篩選參數
-  const sortBy = clean(sp.sortBy);
-  const sortOrder = clean(sp.sortOrder);
   const minRating = clean(sp.minRating);
   const maxWorkload = clean(sp.maxWorkload);
   const minGrading = clean(sp.minGrading);
   const timeSlot = clean(sp.timeSlot);
+
+  // 保留舊的變數名稱以兼容現有代碼
+  const sort = sortBy;
+  const order = sortDirection;
 
   const PER_PAGE = 50;
   const offset = (page - 1) * PER_PAGE;
@@ -290,7 +294,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
   const hasAnyFilter = Boolean(
     q || semester || campus || division || department ||
-    sortBy || sortOrder || minRating || maxWorkload || minGrading || timeSlot
+    minRating || maxWorkload || minGrading || timeSlot
   );
   const totalPages = Math.ceil(totalCount / PER_PAGE);
   const startItem = totalCount === 0 ? 0 : offset + 1;

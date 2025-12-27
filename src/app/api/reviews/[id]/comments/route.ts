@@ -1,14 +1,21 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 import { requireNkustUser } from "@/lib/auth";
 import { rateLimiter } from "@/lib/ratelimit";
 
 // POST /api/reviews/[id]/comments - 新增留言
 export async function POST(
-  request: NextRequest,
+  request: Request,
   { params }: { params: Promise<{ id: string }> }
-) {
+): Promise<Response> {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "資料庫連線失敗" },
+        { status: 503 }
+      ) as Response;
+    }
+
     // 檢查使用者是否已登入且為高科大學生
     const user = await requireNkustUser();
     const { id: reviewId } = await params;
@@ -26,7 +33,7 @@ export async function POST(
             "Retry-After": String(Math.ceil((rateLimit.resetTime - Date.now()) / 1000)),
           },
         }
-      );
+      ) as Response;
     }
 
     // 檢查評論是否存在
@@ -35,7 +42,7 @@ export async function POST(
     });
 
     if (!review) {
-      return NextResponse.json({ error: "評論不存在" }, { status: 404 });
+      return NextResponse.json({ error: "評論不存在" }, { status: 404 }) as Response;
     }
 
     // 解析 request body
@@ -44,19 +51,19 @@ export async function POST(
 
     // 驗證留言內容
     if (!commentBody || typeof commentBody !== "string") {
-      return NextResponse.json({ error: "留言內容不可為空" }, { status: 400 });
+      return NextResponse.json({ error: "留言內容不可為空" }, { status: 400 }) as Response;
     }
 
     const trimmedBody = commentBody.trim();
     if (trimmedBody.length === 0) {
-      return NextResponse.json({ error: "留言內容不可為空" }, { status: 400 });
+      return NextResponse.json({ error: "留言內容不可為空" }, { status: 400 }) as Response;
     }
 
     if (trimmedBody.length > 500) {
       return NextResponse.json(
         { error: "留言內容過長（最多 500 字）" },
         { status: 400 }
-      );
+      ) as Response;
     }
 
     // 建立留言
@@ -74,22 +81,29 @@ export async function POST(
         commentId: comment.id,
       },
       { status: 201 }
-    );
+    ) as Response;
   } catch (error) {
     console.error("Error creating comment:", error);
     return NextResponse.json(
       { error: "建立留言失敗，請稍後再試" },
       { status: 500 }
-    );
+    ) as Response;
   }
 }
 
 // GET /api/reviews/[id]/comments - 取得留言列表
 export async function GET(
-  request: NextRequest,
+  request: Request,
   { params }: { params: Promise<{ id: string }> }
-) {
+): Promise<Response> {
   try {
+    if (!prisma) {
+      return NextResponse.json(
+        { error: "資料庫連線失敗" },
+        { status: 503 }
+      ) as Response;
+    }
+
     // 檢查使用者是否已登入（取得當前使用者 ID，未登入則為 null）
     const user = await requireNkustUser().catch(() => null);
     const { id: reviewId } = await params;
@@ -100,16 +114,16 @@ export async function GET(
     });
 
     if (!review) {
-      return NextResponse.json({ error: "評論不存在" }, { status: 404 });
+      return NextResponse.json({ error: "評論不存在" }, { status: 404 }) as Response;
     }
 
     // 解析分頁參數
-    const searchParams = request.nextUrl.searchParams;
+    const url = new URL(request.url);
     const limit = Math.min(
-      parseInt(searchParams.get("limit") || "20"),
+      parseInt(url.searchParams.get("limit") || "20"),
       100
     );
-    const offset = parseInt(searchParams.get("offset") || "0");
+    const offset = parseInt(url.searchParams.get("offset") || "0");
 
     // 查詢留言
     const [comments, total] = await Promise.all([
@@ -136,7 +150,7 @@ export async function GET(
     ]);
 
     // 格式化留言（匿名化）
-    const formattedComments = comments.map((comment) => {
+    const formattedComments = comments.map((comment: any) => {
       // 從 email 提取系所資訊（例如 C109193108@nkust.edu.tw → 資訊系）
       const email = comment.user.email;
       const localPart = email.split("@")[0];
@@ -163,7 +177,7 @@ export async function GET(
       comments: formattedComments,
       total,
       hasMore: offset + limit < total,
-    });
+    }) as Response;
   } catch (error) {
     console.error("Error fetching comments:", error);
 
@@ -172,12 +186,12 @@ export async function GET(
       return NextResponse.json(
         { error: "需要登入才能查看留言" },
         { status: 401 }
-      );
+      ) as Response;
     }
 
     return NextResponse.json(
       { error: "取得留言失敗，請稍後再試" },
       { status: 500 }
-    );
+    ) as Response;
   }
 }

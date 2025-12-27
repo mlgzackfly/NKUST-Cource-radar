@@ -40,7 +40,7 @@ export async function GET(
     });
 
     return NextResponse.json({
-      tags: courseTags.map((ct) => ({
+      tags: courseTags.map((ct: any) => ({
         ...ct.tag,
         score: ct.score,
         source: ct.source,

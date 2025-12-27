@@ -3,7 +3,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
 import { validateReviewRatings, validateText } from "@/lib/validation";
-import rateLimiter, { RATE_LIMITS } from "@/lib/ratelimit";
+import { rateLimiter, RATE_LIMITS } from "@/lib/ratelimit";
 
 export async function PUT(
   request: Request,
