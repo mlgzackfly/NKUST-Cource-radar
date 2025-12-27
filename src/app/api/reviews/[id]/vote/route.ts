@@ -97,8 +97,10 @@ export async function POST(
 
   } catch (error) {
     console.error("Failed to vote on review:", error);
+
+    // 不洩露錯誤詳情給客戶端
     return NextResponse.json(
-      { error: "Internal server error", details: String(error) },
+      { error: "Internal server error" },
       { status: 500 }
     ) as Response;
   }
@@ -159,8 +161,10 @@ export async function DELETE(
 
   } catch (error) {
     console.error("Failed to delete vote:", error);
+
+    // 不洩露錯誤詳情給客戶端
     return NextResponse.json(
-      { error: "Internal server error", details: String(error) },
+      { error: "Internal server error" },
       { status: 500 }
     ) as Response;
   }

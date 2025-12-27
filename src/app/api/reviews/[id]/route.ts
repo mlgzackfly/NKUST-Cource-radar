@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
+import { validateReviewRatings, validateText } from "@/lib/validation";
 
 export async function PUT(
   request: Request,
@@ -21,11 +22,35 @@ export async function PUT(
     }
 
     const body = await request.json();
-    const { coolness, usefulness, workload, attendance, grading, body: reviewBody, authorDept } = body;
+    const { body: reviewBody, authorDept } = body;
 
-    // 驗證至少有一個評分
-    if (!coolness && !usefulness && !workload && !attendance && !grading) {
-      return NextResponse.json({ error: "At least one rating is required" }, { status: 400 }) as Response;
+    // 驗證評分（範圍 1-5）
+    let validatedRatings;
+    try {
+      validatedRatings = validateReviewRatings({
+        coolness: body.coolness,
+        usefulness: body.usefulness,
+        workload: body.workload,
+        attendance: body.attendance,
+        grading: body.grading,
+      });
+    } catch (error) {
+      return NextResponse.json(
+        { error: error instanceof Error ? error.message : "Invalid rating values" },
+        { status: 400 }
+      ) as Response;
+    }
+
+    // 驗證文字長度
+    let validatedBody, validatedDept;
+    try {
+      validatedBody = validateText(reviewBody, 2000, "Review body");
+      validatedDept = validateText(authorDept, 100, "Department");
+    } catch (error) {
+      return NextResponse.json(
+        { error: error instanceof Error ? error.message : "Invalid text length" },
+        { status: 400 }
+      ) as Response;
     }
 
     // 找到使用者
@@ -50,17 +75,17 @@ export async function PUT(
       return NextResponse.json({ error: "You can only edit your own reviews" }, { status: 403 }) as Response;
     }
 
-    // 更新評論
+    // 更新評論（使用驗證後的數值）
     const updatedReview = await prisma!.review.update({
       where: { id: p.id },
       data: {
-        coolness,
-        usefulness,
-        workload,
-        attendance,
-        grading,
-        body: reviewBody?.trim() || null,
-        authorDept: authorDept?.trim() || null,
+        coolness: validatedRatings.coolness,
+        usefulness: validatedRatings.usefulness,
+        workload: validatedRatings.workload,
+        attendance: validatedRatings.attendance,
+        grading: validatedRatings.grading,
+        body: validatedBody,
+        authorDept: validatedDept,
       }
     });
 
@@ -68,13 +93,13 @@ export async function PUT(
     await prisma!.reviewVersion.create({
       data: {
         reviewId: updatedReview.id,
-        coolness,
-        usefulness,
-        workload,
-        attendance,
-        grading,
-        body: reviewBody?.trim() || null,
-        authorDept: authorDept?.trim() || null
+        coolness: validatedRatings.coolness,
+        usefulness: validatedRatings.usefulness,
+        workload: validatedRatings.workload,
+        attendance: validatedRatings.attendance,
+        grading: validatedRatings.grading,
+        body: validatedBody,
+        authorDept: validatedDept
       }
     });
 
@@ -82,8 +107,10 @@ export async function PUT(
 
   } catch (error) {
     console.error("Failed to update review:", error);
+
+    // 不洩露錯誤詳情給客戶端
     return NextResponse.json(
-      { error: "Internal server error", details: String(error) },
+      { error: "Internal server error" },
       { status: 500 }
     ) as Response;
   }
@@ -137,8 +164,10 @@ export async function DELETE(
 
   } catch (error) {
     console.error("Failed to delete review:", error);
+
+    // 不洩露錯誤詳情給客戶端
     return NextResponse.json(
-      { error: "Internal server error", details: String(error) },
+      { error: "Internal server error" },
       { status: 500 }
     ) as Response;
   }
