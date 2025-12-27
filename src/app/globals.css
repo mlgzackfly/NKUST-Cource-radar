@@ -494,8 +494,26 @@ html.is-dark {
 
 /* Mobile 優化課表顯示 */
 @media (max-width: 768px) {
+  /* 防止課表撐開頁面寬度 - 在多個層級設定 */
+  .mock-schedule-layout {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  #schedule-export-area {
+    max-width: 100%;
+  }
+
+  #schedule-export-area .ts-content {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    overflow-x: hidden; /* 防止內容撐開 */
+  }
+
   .schedule-table-wrapper {
-    /* 確保課表可以水平滾動，但不影響外層容器 */
+    /* 只有課表本身允許水平滾動 */
+    overflow-x: auto !important;
+    overflow-y: visible !important;
     -webkit-overflow-scrolling: touch;
   }
 
