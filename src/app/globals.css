@@ -437,3 +437,26 @@ html.is-dark {
     transition: all 0.1s ease;
   }
 }
+
+/* =========================================================
+   Font Size Optimization for Small Screens
+   ========================================================= */
+
+@media (max-width: 375px) {
+  /* 確保最小字體可讀性 */
+  body {
+    font-size: 15px; /* 預設 16px → 15px */
+  }
+
+  /* 小字不要過小 */
+  .ts-text.is-small,
+  [style*="font-size: 0.75rem"],
+  [style*="font-size: 0.8125rem"] {
+    font-size: 0.8125rem !important; /* 13px */
+  }
+
+  /* 次要文字 */
+  [style*="font-size: 0.875rem"] {
+    font-size: 0.875rem !important; /* 保持 14px */
+  }
+}

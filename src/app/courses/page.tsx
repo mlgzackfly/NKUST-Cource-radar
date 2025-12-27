@@ -378,7 +378,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                   {/* Page Numbers */}
                   {(() => {
                     const pages: (number | string)[] = [];
-                    const showPages = 5; // Show 5 page numbers at a time
+                    const showPages = 3; // Show 3 page numbers for better mobile UX
 
                     if (totalPages <= showPages + 2) {
                       // Show all pages if total is small
