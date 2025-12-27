@@ -1,6 +1,9 @@
+import { redisRateLimiters } from "./redis";
+
 /**
- * 簡單的記憶體 based Rate Limiter
- * 適合小型應用，不需要 Redis
+ * Rate Limiter 整合 Redis 和記憶體 fallback
+ * - 優先使用 Redis (Upstash Ratelimit)
+ * - Redis 不可用時自動降級到記憶體 limiter
  */
 
 interface RateLimitEntry {
@@ -8,7 +11,10 @@ interface RateLimitEntry {
   resetTime: number;
 }
 
-class RateLimiter {
+/**
+ * 記憶體 based Rate Limiter (Fallback)
+ */
+class MemoryRateLimiter {
   private cache: Map<string, RateLimitEntry> = new Map();
   private cleanupInterval: NodeJS.Timeout | null = null;
 
@@ -30,10 +36,6 @@ class RateLimiter {
 
   /**
    * 檢查是否超過速率限制
-   * @param identifier - 識別符（通常是 IP 或 user ID）
-   * @param limit - 時間窗口內的最大請求數
-   * @param windowMs - 時間窗口（毫秒）
-   * @returns { success: boolean, remaining: number, resetTime: number }
    */
   check(
     identifier: string,
@@ -43,7 +45,6 @@ class RateLimiter {
     const now = Date.now();
     const entry = this.cache.get(identifier);
 
-    // 如果沒有記錄或已過期，建立新記錄
     if (!entry || now > entry.resetTime) {
       const resetTime = now + windowMs;
       this.cache.set(identifier, {
@@ -57,7 +58,6 @@ class RateLimiter {
       };
     }
 
-    // 如果超過限制
     if (entry.count >= limit) {
       return {
         success: false,
@@ -66,7 +66,6 @@ class RateLimiter {
       };
     }
 
-    // 增加計數
     entry.count++;
     return {
       success: true,
@@ -75,30 +74,18 @@ class RateLimiter {
     };
   }
 
-  /**
-   * 重置特定識別符的限制
-   */
   reset(identifier: string): void {
     this.cache.delete(identifier);
   }
 
-  /**
-   * 取得目前快取大小（用於監控）
-   */
   getSize(): number {
     return this.cache.size;
   }
 
-  /**
-   * 清理所有記錄
-   */
   clear(): void {
     this.cache.clear();
   }
 
-  /**
-   * 停止清理定時器
-   */
   destroy(): void {
     if (this.cleanupInterval) {
       clearInterval(this.cleanupInterval);
@@ -107,8 +94,77 @@ class RateLimiter {
   }
 }
 
+// 記憶體 limiter 單例（作為 fallback）
+const memoryRateLimiter = new MemoryRateLimiter();
+
+/**
+ * 統一的 Rate Limiter 介面
+ * 自動選擇 Redis 或記憶體實作
+ */
+class UnifiedRateLimiter {
+  /**
+   * 檢查速率限制
+   * @param identifier - 識別符（通常是 IP 或 user ID）
+   * @param limit - 時間窗口內的最大請求數
+   * @param windowMs - 時間窗口（毫秒）
+   * @param type - 限制類型（用於 Redis）
+   */
+  async checkAsync(
+    identifier: string,
+    limit: number,
+    windowMs: number,
+    type?: keyof typeof redisRateLimiters
+  ): Promise<{ success: boolean; remaining: number; resetTime: number }> {
+    // 優先使用 Redis
+    if (redisRateLimiters && type && redisRateLimiters[type]) {
+      try {
+        const result = await redisRateLimiters[type].limit(identifier);
+        return {
+          success: result.success,
+          remaining: result.remaining,
+          resetTime: result.reset,
+        };
+      } catch (error) {
+        console.warn("Redis rate limiter failed, falling back to memory:", error);
+        // Fallback to memory
+      }
+    }
+
+    // Fallback: 使用記憶體 limiter
+    return memoryRateLimiter.check(identifier, limit, windowMs);
+  }
+
+  /**
+   * 同步檢查（僅使用記憶體 limiter）
+   * 保留向後相容性
+   */
+  check(
+    identifier: string,
+    limit: number,
+    windowMs: number
+  ): { success: boolean; remaining: number; resetTime: number } {
+    return memoryRateLimiter.check(identifier, limit, windowMs);
+  }
+
+  reset(identifier: string): void {
+    memoryRateLimiter.reset(identifier);
+  }
+
+  getSize(): number {
+    return memoryRateLimiter.getSize();
+  }
+
+  clear(): void {
+    memoryRateLimiter.clear();
+  }
+
+  destroy(): void {
+    memoryRateLimiter.destroy();
+  }
+}
+
 // 全域單例
-const rateLimiter = new RateLimiter();
+const rateLimiter = new UnifiedRateLimiter();
 
 export default rateLimiter;
 

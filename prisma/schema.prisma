@@ -56,6 +56,7 @@ model User {
   helpfulVotes  HelpfulVote[]
   comments      Comment[]
   reports       Report[]
+  favorites     Favorite[]
   adminActions  AdminAction[] @relation("AdminActor")
   adminActionsAsTarget AdminAction[] @relation("AdminTargetUser")
 }
@@ -110,6 +111,7 @@ model Course {
   // relations
   instructors CourseInstructor[]
   reviews      Review[]
+  favorites    Favorite[]
 
   @@index([year, term])
   @@index([updatedAt])
@@ -226,6 +228,21 @@ model HelpfulVote {
   @@unique([reviewId, userId])
   @@index([reviewId])
   @@index([reviewId, voteType])
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+
+  userId   String
+  courseId String
+
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, courseId])
+  @@index([userId, createdAt])
+  @@index([courseId])
 }
 
 model Report {
