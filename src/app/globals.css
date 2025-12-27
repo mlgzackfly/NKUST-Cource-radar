@@ -426,10 +426,16 @@ html.is-dark {
   /* 行動裝置顯示底部導航 */
   .ts-app-navbar.is-bottom {
     display: flex !important;
+    justify-content: space-around; /* 均勻分散 */
   }
 
   /* 隱藏 Header 的導航按鈕 */
   .app-nav {
+    display: none !important;
+  }
+
+  /* 在 Mobile 隱藏使用者選單（改用底部導航的「我的」） */
+  .desktop-only-user-menu {
     display: none !important;
   }
 

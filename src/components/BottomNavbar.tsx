@@ -2,9 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 export function BottomNavbar() {
   const pathname = usePathname();
+  const { data: session } = useSession();
 
   const navItems = [
     {
@@ -22,10 +24,15 @@ export function BottomNavbar() {
       label: "模擬選課",
       icon: "📅"
     },
+    {
+      href: session ? "/profile" : "/auth/signin",
+      label: "我的",
+      icon: session ? "👤" : "🔐"
+    },
   ];
 
   return (
-    <div className="ts-app-navbar is-bottom">
+    <div className="ts-app-navbar is-bottom is-fluid">
       {navItems.map((item) => (
         <Link
           key={item.href}

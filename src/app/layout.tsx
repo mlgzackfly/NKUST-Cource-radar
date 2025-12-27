@@ -74,7 +74,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <Suspense fallback={null}>
                       <SemesterSelector />
                     </Suspense>
-                    <UserMenu />
+                    <div className="desktop-only-user-menu">
+                      <UserMenu />
+                    </div>
                   </div>
                 </div>
               </div>
