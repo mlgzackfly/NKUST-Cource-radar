@@ -7,7 +7,7 @@ import { prisma } from "@/lib/db";
 export async function PATCH(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     const admin = await requireAdmin();
     const p = await params;
@@ -15,10 +15,10 @@ export async function PATCH(
     const { action, note } = body; // action: "hide" | "unhide" | "remove"
 
     if (!["hide", "unhide", "remove"].includes(action)) {
-      return NextResponse.json(
+      return Response.json(
         { error: "Invalid action. Must be 'hide', 'unhide', or 'remove'" },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     // 查找評論
@@ -28,7 +28,7 @@ export async function PATCH(
     });
 
     if (!review) {
-      return NextResponse.json({ error: "Review not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "Review not found" }, { status: 404 });
     }
 
     // 決定新狀態和操作類型
@@ -63,24 +63,24 @@ export async function PATCH(
       }
     });
 
-    return NextResponse.json({
+    return Response.json({
       success: true,
       review: updatedReview
-    }) as Response;
+    });
 
   } catch (error: any) {
     console.error("Failed to manage review:", error);
 
     if (error?.message === "Unauthorized") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
     if (error?.message === "Admin access required") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 }) as Response;
+      return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

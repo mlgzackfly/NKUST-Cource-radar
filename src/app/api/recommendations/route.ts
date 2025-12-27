@@ -21,16 +21,16 @@ import {
  */
 export async function GET(request: Request): Promise<Response> {
   if (!prisma) {
-    return NextResponse.json(
+    return Response.json(
       { error: "Database not available" },
       { status: 503 }
-    ) as Response;
+    );
   }
 
   try {
     const user = await getCurrentUser();
     if (!user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const { searchParams } = new URL(request.url);
@@ -73,7 +73,7 @@ export async function GET(request: Request): Promise<Response> {
       });
 
       if (cached.length > 0) {
-        return NextResponse.json({
+        return Response.json({
           recommendations: cached.map((c: any) => ({
             ...c.course,
             score: c.score,
@@ -81,7 +81,7 @@ export async function GET(request: Request): Promise<Response> {
             instructors: c.course.instructors.map((i: any) => i.instructor),
           })),
           cached: true,
-        }) as Response;
+        });
       }
     }
 
@@ -119,10 +119,10 @@ export async function GET(request: Request): Promise<Response> {
     }
 
     if (results.length === 0) {
-      return NextResponse.json({
+      return Response.json({
         recommendations: [],
         cached: false,
-      }) as Response;
+      });
     }
 
     // 3. 取得課程詳細資訊
@@ -181,15 +181,15 @@ export async function GET(request: Request): Promise<Response> {
       })
       .filter((r: any) => r !== null);
 
-    return NextResponse.json({
+    return Response.json({
       recommendations,
       cached: false,
-    }) as Response;
+    });
   } catch (error: any) {
     console.error("Recommendations API error:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: error.message || "Failed to get recommendations" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

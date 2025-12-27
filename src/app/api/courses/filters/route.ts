@@ -6,10 +6,10 @@ export const revalidate = 3600;
 
 export async function GET(): Promise<Response> {
   if (!prisma) {
-    return NextResponse.json(
+    return Response.json(
       { error: "DATABASE_URL is not set. API is running without DB." },
       { status: 503 },
-    ) as Response;
+    );
   }
 
   const [years, terms, campuses, divisions, departments] = (await Promise.all([
@@ -49,7 +49,7 @@ export async function GET(): Promise<Response> {
     Array<{ department: string | null }>,
   ];
 
-  return NextResponse.json(
+  return Response.json(
     {
       years: years.map((x) => x.year),
       terms: terms.map((x) => x.term),
@@ -63,7 +63,7 @@ export async function GET(): Promise<Response> {
         "Cache-Control": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
       },
     },
-  ) as Response;
+  );
 }
 
 

@@ -14,11 +14,11 @@ export async function GET(request: Request): Promise<Response> {
   const q = searchParams.get("q")?.trim();
 
   if (!q || q.length < 2) {
-    return NextResponse.json([]) as Response;
+    return Response.json([]);
   }
 
   if (!prisma) {
-    return NextResponse.json([]) as Response;
+    return Response.json([]);
   }
 
   try {
@@ -95,9 +95,9 @@ export async function GET(request: Request): Promise<Response> {
       }))
     ];
 
-    return NextResponse.json(suggestions) as Response;
+    return Response.json(suggestions);
   } catch (error) {
     console.error('Search suggestions error:', error);
-    return NextResponse.json([]) as Response;
+    return Response.json([]);
   }
 }

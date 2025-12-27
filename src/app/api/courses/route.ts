@@ -4,10 +4,10 @@ import type { Prisma } from "@prisma/client";
 
 export async function GET(request: Request): Promise<Response> {
   if (!prisma) {
-    return NextResponse.json(
+    return Response.json(
       { courses: [], warning: "DATABASE_URL is not set. API is running without DB." },
       { status: 503 },
-    ) as Response;
+    );
   }
 
   const { searchParams } = new URL(request.url);
@@ -185,7 +185,7 @@ export async function GET(request: Request): Promise<Response> {
     };
   });
 
-  return NextResponse.json({ courses: result }) as Response;
+  return Response.json({ courses: result });
 }
 
 

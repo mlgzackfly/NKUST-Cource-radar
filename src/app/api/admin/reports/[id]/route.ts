@@ -7,7 +7,7 @@ import { prisma } from "@/lib/db";
 export async function PATCH(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     const admin = await requireAdmin();
     const p = await params;
@@ -15,10 +15,10 @@ export async function PATCH(
     const { action, note } = body; // action: "resolve" | "reject"
 
     if (!["resolve", "reject"].includes(action)) {
-      return NextResponse.json(
+      return Response.json(
         { error: "Invalid action. Must be 'resolve' or 'reject'" },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     // 查找檢舉
@@ -27,14 +27,14 @@ export async function PATCH(
     });
 
     if (!report) {
-      return NextResponse.json({ error: "Report not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "Report not found" }, { status: 404 });
     }
 
     if (report.status !== "OPEN") {
-      return NextResponse.json(
+      return Response.json(
         { error: "Report has already been handled" },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     // 更新檢舉狀態
@@ -54,24 +54,24 @@ export async function PATCH(
       }
     });
 
-    return NextResponse.json({
+    return Response.json({
       success: true,
       report: updatedReport
-    }) as Response;
+    });
 
   } catch (error: any) {
     console.error("Failed to handle report:", error);
 
     if (error?.message === "Unauthorized") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
     if (error?.message === "Admin access required") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 }) as Response;
+      return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

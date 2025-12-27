@@ -7,7 +7,7 @@ import { prisma } from "@/lib/db";
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     await requireAdmin();
 
@@ -27,7 +27,7 @@ export async function GET(
     });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "User not found" }, { status: 404 });
     }
 
     // 獲取使用者的評論
@@ -148,27 +148,27 @@ export async function GET(
       }
     };
 
-    return NextResponse.json({
+    return Response.json({
       user,
       reviews,
       reportsMade,
       reportsReceived,
       stats
-    }) as Response;
+    });
 
   } catch (error: any) {
     console.error("Failed to get user details:", error);
 
     if (error?.message === "Unauthorized") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
     if (error?.message === "Admin access required") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 }) as Response;
+      return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

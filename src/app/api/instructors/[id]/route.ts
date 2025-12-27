@@ -6,15 +6,15 @@ import { prisma } from "@/lib/db";
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     const { id } = await params;
 
     if (!prisma) {
-      return NextResponse.json(
+      return Response.json(
         { error: "Database not available" },
         { status: 503 }
-      ) as Response;
+      );
     }
 
     // 查詢教師基本資訊
@@ -28,10 +28,10 @@ export async function GET(
     });
 
     if (!instructor) {
-      return NextResponse.json(
+      return Response.json(
         { error: "Instructor not found" },
         { status: 404 }
-      ) as Response;
+      );
     }
 
     // 查詢該教師所有課程
@@ -112,7 +112,7 @@ export async function GET(
       },
     });
 
-    return NextResponse.json({
+    return Response.json({
       instructor,
       courses,
       stats,
@@ -126,12 +126,12 @@ export async function GET(
         },
         totalReviews: reviewStats._count.id,
       },
-    }) as Response;
+    });
   } catch (error: any) {
     console.error("Failed to get instructor details:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

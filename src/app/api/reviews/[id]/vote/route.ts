@@ -7,13 +7,13 @@ import { rateLimiter, RATE_LIMITS } from "@/lib/ratelimit";
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
 
     if (!session?.user?.email) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const email = session.user.email;
@@ -28,7 +28,7 @@ export async function POST(
 
     if (!rateLimit.success) {
       const resetIn = Math.ceil((rateLimit.resetTime - Date.now()) / 1000);
-      return NextResponse.json(
+      return Response.json(
         {
           error: "Too many requests",
           retryAfter: resetIn,
@@ -42,12 +42,12 @@ export async function POST(
             "X-RateLimit-Reset": String(Math.floor(rateLimit.resetTime / 1000)),
           },
         }
-      ) as Response;
+      );
     }
 
     // 驗證 @nkust.edu.tw
     if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
+      return Response.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
     }
 
     const body = await request.json();
@@ -55,7 +55,7 @@ export async function POST(
 
     // 驗證 voteType
     if (voteType !== 'UPVOTE' && voteType !== 'DOWNVOTE') {
-      return NextResponse.json({ error: "Invalid vote type. Must be 'UPVOTE' or 'DOWNVOTE'" }, { status: 400 }) as Response;
+      return Response.json({ error: "Invalid vote type. Must be 'UPVOTE' or 'DOWNVOTE'" }, { status: 400 });
     }
 
     // 找到使用者
@@ -64,12 +64,12 @@ export async function POST(
     });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "User not found" }, { status: 404 });
     }
 
     // 檢查使用者是否被 ban
     if (user.bannedAt) {
-      return NextResponse.json({ error: "User is banned" }, { status: 403 }) as Response;
+      return Response.json({ error: "User is banned" }, { status: 403 });
     }
 
     // 檢查評論是否存在
@@ -79,12 +79,12 @@ export async function POST(
     });
 
     if (!review) {
-      return NextResponse.json({ error: "Review not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "Review not found" }, { status: 404 });
     }
 
     // 禁止對自己的評論投票
     if (review.userId === user.id) {
-      return NextResponse.json({ error: "Cannot vote on your own review" }, { status: 403 }) as Response;
+      return Response.json({ error: "Cannot vote on your own review" }, { status: 403 });
     }
 
     // 使用 upsert 處理投票（新投票或更改票型）
@@ -115,7 +115,7 @@ export async function POST(
       })
     ]);
 
-    return NextResponse.json({
+    return Response.json({
       success: true,
       vote: { voteType },
       counts: {
@@ -123,29 +123,29 @@ export async function POST(
         downvotes,
         netScore: upvotes - downvotes
       }
-    }) as Response;
+    });
 
   } catch (error) {
     console.error("Failed to vote on review:", error);
 
     // 不洩露錯誤詳情給客戶端
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }
 
 export async function DELETE(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
 
     if (!session?.user?.email) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const email = session.user.email;
@@ -160,7 +160,7 @@ export async function DELETE(
 
     if (!rateLimit.success) {
       const resetIn = Math.ceil((rateLimit.resetTime - Date.now()) / 1000);
-      return NextResponse.json(
+      return Response.json(
         {
           error: "Too many requests",
           retryAfter: resetIn,
@@ -174,12 +174,12 @@ export async function DELETE(
             "X-RateLimit-Reset": String(Math.floor(rateLimit.resetTime / 1000)),
           },
         }
-      ) as Response;
+      );
     }
 
     // 驗證 @nkust.edu.tw
     if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
+      return Response.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
     }
 
     // 找到使用者
@@ -188,7 +188,7 @@ export async function DELETE(
     });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "User not found" }, { status: 404 });
     }
 
     // 刪除投票（idempotent - 不存在也不報錯）
@@ -209,22 +209,22 @@ export async function DELETE(
       })
     ]);
 
-    return NextResponse.json({
+    return Response.json({
       success: true,
       counts: {
         upvotes,
         downvotes,
         netScore: upvotes - downvotes
       }
-    }) as Response;
+    });
 
   } catch (error) {
     console.error("Failed to delete vote:", error);
 
     // 不洩露錯誤詳情給客戶端
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

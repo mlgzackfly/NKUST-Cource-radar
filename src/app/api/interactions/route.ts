@@ -14,16 +14,16 @@ import { getCurrentUser } from "@/lib/auth";
  */
 export async function POST(request: Request): Promise<Response> {
   if (!prisma) {
-    return NextResponse.json(
+    return Response.json(
       { error: "Database not available" },
       { status: 503 }
-    ) as Response;
+    );
   }
 
   try {
     const user = await getCurrentUser();
     if (!user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const body = await request.json();
@@ -31,18 +31,18 @@ export async function POST(request: Request): Promise<Response> {
 
     // 驗證參數
     if (!courseId || !type) {
-      return NextResponse.json(
+      return Response.json(
         { error: "courseId and type are required" },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     const validTypes = ["VIEW", "REVIEW", "FAVORITE", "SEARCH"];
     if (!validTypes.includes(type)) {
-      return NextResponse.json(
+      return Response.json(
         { error: `type must be one of: ${validTypes.join(", ")}` },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     // 檢查課程是否存在
@@ -52,7 +52,7 @@ export async function POST(request: Request): Promise<Response> {
     });
 
     if (!course) {
-      return NextResponse.json({ error: "Course not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "Course not found" }, { status: 404 });
     }
 
     // 記錄互動
@@ -72,19 +72,19 @@ export async function POST(request: Request): Promise<Response> {
       });
     }
 
-    return NextResponse.json({
+    return Response.json({
       success: true,
       interaction: {
         id: interaction.id,
         type: interaction.type,
         createdAt: interaction.createdAt,
       },
-    }) as Response;
+    });
   } catch (error: any) {
     console.error("Interaction API error:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: error.message || "Failed to record interaction" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

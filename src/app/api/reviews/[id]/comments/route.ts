@@ -7,13 +7,13 @@ import { rateLimiter } from "@/lib/ratelimit";
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     if (!prisma) {
-      return NextResponse.json(
+      return Response.json(
         { error: "資料庫連線失敗" },
         { status: 503 }
-      ) as Response;
+      );
     }
 
     // 檢查使用者是否已登入且為高科大學生
@@ -25,7 +25,7 @@ export async function POST(
     const rateLimit = rateLimiter.check(rateLimitKey, 10, 60 * 1000);
 
     if (!rateLimit.success) {
-      return NextResponse.json(
+      return Response.json(
         { error: "操作太頻繁，請稍後再試" },
         {
           status: 429,
@@ -33,7 +33,7 @@ export async function POST(
             "Retry-After": String(Math.ceil((rateLimit.resetTime - Date.now()) / 1000)),
           },
         }
-      ) as Response;
+      );
     }
 
     // 檢查評論是否存在
@@ -42,7 +42,7 @@ export async function POST(
     });
 
     if (!review) {
-      return NextResponse.json({ error: "評論不存在" }, { status: 404 }) as Response;
+      return Response.json({ error: "評論不存在" }, { status: 404 });
     }
 
     // 解析 request body
@@ -51,19 +51,19 @@ export async function POST(
 
     // 驗證留言內容
     if (!commentBody || typeof commentBody !== "string") {
-      return NextResponse.json({ error: "留言內容不可為空" }, { status: 400 }) as Response;
+      return Response.json({ error: "留言內容不可為空" }, { status: 400 });
     }
 
     const trimmedBody = commentBody.trim();
     if (trimmedBody.length === 0) {
-      return NextResponse.json({ error: "留言內容不可為空" }, { status: 400 }) as Response;
+      return Response.json({ error: "留言內容不可為空" }, { status: 400 });
     }
 
     if (trimmedBody.length > 500) {
-      return NextResponse.json(
+      return Response.json(
         { error: "留言內容過長（最多 500 字）" },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     // 建立留言
@@ -75,19 +75,19 @@ export async function POST(
       },
     });
 
-    return NextResponse.json(
+    return Response.json(
       {
         success: true,
         commentId: comment.id,
       },
       { status: 201 }
-    ) as Response;
+    );
   } catch (error) {
     console.error("Error creating comment:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: "建立留言失敗，請稍後再試" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }
 
@@ -95,13 +95,13 @@ export async function POST(
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     if (!prisma) {
-      return NextResponse.json(
+      return Response.json(
         { error: "資料庫連線失敗" },
         { status: 503 }
-      ) as Response;
+      );
     }
 
     // 檢查使用者是否已登入（取得當前使用者 ID，未登入則為 null）
@@ -114,7 +114,7 @@ export async function GET(
     });
 
     if (!review) {
-      return NextResponse.json({ error: "評論不存在" }, { status: 404 }) as Response;
+      return Response.json({ error: "評論不存在" }, { status: 404 });
     }
 
     // 解析分頁參數
@@ -173,25 +173,25 @@ export async function GET(
       };
     });
 
-    return NextResponse.json({
+    return Response.json({
       comments: formattedComments,
       total,
       hasMore: offset + limit < total,
-    }) as Response;
+    });
   } catch (error) {
     console.error("Error fetching comments:", error);
 
     // 如果是未登入錯誤，回傳空列表
     if ((error as Error).message?.includes("需要使用")) {
-      return NextResponse.json(
+      return Response.json(
         { error: "需要登入才能查看留言" },
         { status: 401 }
-      ) as Response;
+      );
     }
 
-    return NextResponse.json(
+    return Response.json(
       { error: "取得留言失敗，請稍後再試" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

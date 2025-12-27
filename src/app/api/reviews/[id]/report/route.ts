@@ -7,13 +7,13 @@ import { rateLimiter, RATE_LIMITS } from "@/lib/ratelimit";
 export async function POST(
   request: Request,
   { params }: { params: Promise<{ id: string }> }
-): Promise<Response> {
+) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
 
     if (!session?.user?.email) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const email = session.user.email;
@@ -28,7 +28,7 @@ export async function POST(
 
     if (!rateLimit.success) {
       const resetIn = Math.ceil((rateLimit.resetTime - Date.now()) / 1000);
-      return NextResponse.json(
+      return Response.json(
         {
           error: "Too many requests",
           retryAfter: resetIn,
@@ -42,12 +42,12 @@ export async function POST(
             "X-RateLimit-Reset": String(Math.floor(rateLimit.resetTime / 1000)),
           },
         }
-      ) as Response;
+      );
     }
 
     // 驗證 @nkust.edu.tw
     if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
+      return Response.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
     }
 
     const body = await request.json();
@@ -55,11 +55,11 @@ export async function POST(
 
     // 驗證檢舉理由
     if (!reason || typeof reason !== 'string' || reason.trim().length === 0) {
-      return NextResponse.json({ error: "Report reason is required" }, { status: 400 }) as Response;
+      return Response.json({ error: "Report reason is required" }, { status: 400 });
     }
 
     if (reason.trim().length > 500) {
-      return NextResponse.json({ error: "Report reason is too long (max 500 characters)" }, { status: 400 }) as Response;
+      return Response.json({ error: "Report reason is too long (max 500 characters)" }, { status: 400 });
     }
 
     // 找到使用者
@@ -68,12 +68,12 @@ export async function POST(
     });
 
     if (!user) {
-      return NextResponse.json({ error: "User not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "User not found" }, { status: 404 });
     }
 
     // 檢查使用者是否被 ban
     if (user.bannedAt) {
-      return NextResponse.json({ error: "User is banned" }, { status: 403 }) as Response;
+      return Response.json({ error: "User is banned" }, { status: 403 });
     }
 
     // 檢查評論是否存在
@@ -83,12 +83,12 @@ export async function POST(
     });
 
     if (!review) {
-      return NextResponse.json({ error: "Review not found" }, { status: 404 }) as Response;
+      return Response.json({ error: "Review not found" }, { status: 404 });
     }
 
     // 禁止檢舉自己的評論
     if (review.userId === user.id) {
-      return NextResponse.json({ error: "Cannot report your own review" }, { status: 403 }) as Response;
+      return Response.json({ error: "Cannot report your own review" }, { status: 403 });
     }
 
     // 建立檢舉
@@ -101,29 +101,29 @@ export async function POST(
       }
     });
 
-    return NextResponse.json({
+    return Response.json({
       success: true,
       report: {
         id: report.id,
         createdAt: report.createdAt
       }
-    }) as Response;
+    });
 
   } catch (error) {
     console.error("Failed to report review:", error);
 
     // 處理 unique constraint violation (已經檢舉過)
     if ((error as any).code === 'P2002') {
-      return NextResponse.json(
+      return Response.json(
         { error: "You have already reported this review" },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     // 不洩露錯誤詳情給客戶端
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

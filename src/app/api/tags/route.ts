@@ -9,10 +9,10 @@ import { prisma } from "@/lib/db";
  */
 export async function GET(request: Request): Promise<Response> {
   if (!prisma) {
-    return NextResponse.json(
+    return Response.json(
       { error: "Database not available" },
       { status: 503 }
-    ) as Response;
+    );
   }
 
   try {
@@ -35,7 +35,7 @@ export async function GET(request: Request): Promise<Response> {
       },
     });
 
-    return NextResponse.json({
+    return Response.json({
       tags: tags.map((tag: any) => ({
         id: tag.id,
         name: tag.name,
@@ -43,12 +43,12 @@ export async function GET(request: Request): Promise<Response> {
         color: tag.color,
         courseCount: tag._count.courseTags,
       })),
-    }) as Response;
+    });
   } catch (error: any) {
     console.error("Tags API error:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: error.message || "Failed to fetch tags" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

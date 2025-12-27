@@ -24,13 +24,13 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
   const p = await params;
   if (!prisma) {
     const summary = await getCourseRatingSummary(p.id);
-    return NextResponse.json({
+    return Response.json({
       courseId: p.id,
       summary,
       reviews: null,
       visibility: "summary_only",
       warning: "DATABASE_URL is not set. API is running without DB.",
-    }) as Response;
+    });
   }
 
   const session = await getServerSession(authOptions);
@@ -44,12 +44,12 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
 
   if (!isNkustUser) {
     const summary = await getCourseRatingSummary(p.id);
-    return NextResponse.json({
+    return Response.json({
       courseId: p.id,
       summary,
       reviews: null,
       visibility: "summary_only"
-    }) as Response;
+    });
   }
 
   const orderBy =
@@ -98,7 +98,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     },
   });
 
-  return NextResponse.json({
+  return Response.json({
     courseId: p.id,
     reviews: (reviews as ReviewRow[]).map((r) => {
       const upvotes = r.helpfulVotes.filter(v => v.voteType === 'UPVOTE').length;
@@ -128,5 +128,5 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       };
     }),
     visibility: "full",
-  }) as Response;
+  });
 }

@@ -11,12 +11,12 @@ type Params = Promise<{ id: string }>;
 export async function GET(
   request: Request,
   { params }: { params: Params }
-): Promise<Response> {
+) {
   if (!prisma) {
-    return NextResponse.json(
+    return Response.json(
       { error: "Database not available" },
       { status: 503 }
-    ) as Response;
+    );
   }
 
   try {
@@ -39,18 +39,18 @@ export async function GET(
       },
     });
 
-    return NextResponse.json({
+    return Response.json({
       tags: courseTags.map((ct: any) => ({
         ...ct.tag,
         score: ct.score,
         source: ct.source,
       })),
-    }) as Response;
+    });
   } catch (error: any) {
     console.error("Course tags API error:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: error.message || "Failed to fetch course tags" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

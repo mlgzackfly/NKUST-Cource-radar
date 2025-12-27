@@ -8,10 +8,10 @@ import { getCourseRatingSummary } from "@/lib/reviewSummary";
 export async function POST(request: Request): Promise<Response> {
   try {
     if (!prisma) {
-      return NextResponse.json(
+      return Response.json(
         { error: "資料庫連線失敗" },
         { status: 503 }
-      ) as Response;
+      );
     }
 
     // 檢查使用者是否已登入且為高科大學生
@@ -22,7 +22,7 @@ export async function POST(request: Request): Promise<Response> {
     const rateLimit = rateLimiter.check(rateLimitKey, 10, 60 * 1000);
 
     if (!rateLimit.success) {
-      return NextResponse.json(
+      return Response.json(
         { error: "操作太頻繁，請稍後再試" },
         {
           status: 429,
@@ -30,7 +30,7 @@ export async function POST(request: Request): Promise<Response> {
             "Retry-After": String(Math.ceil((rateLimit.resetTime - Date.now()) / 1000)),
           },
         }
-      ) as Response;
+      );
     }
 
     // 解析 request body
@@ -39,10 +39,10 @@ export async function POST(request: Request): Promise<Response> {
 
     // 驗證課程 ID
     if (!courseId || typeof courseId !== "string") {
-      return NextResponse.json(
+      return Response.json(
         { error: "課程 ID 不可為空" },
         { status: 400 }
-      ) as Response;
+      );
     }
 
     // 檢查課程是否存在
@@ -51,7 +51,7 @@ export async function POST(request: Request): Promise<Response> {
     });
 
     if (!course) {
-      return NextResponse.json({ error: "課程不存在" }, { status: 404 }) as Response;
+      return Response.json({ error: "課程不存在" }, { status: 404 });
     }
 
     // 建立收藏（使用 create，若已存在則會拋出錯誤）
@@ -63,29 +63,29 @@ export async function POST(request: Request): Promise<Response> {
         },
       });
 
-      return NextResponse.json(
+      return Response.json(
         {
           success: true,
           favoriteId: favorite.id,
         },
         { status: 201 }
-      ) as Response;
+      );
     } catch (error: any) {
       // P2002 是 Prisma 的 unique constraint violation 錯誤
       if (error.code === "P2002") {
-        return NextResponse.json(
+        return Response.json(
           { error: "已經收藏過此課程" },
           { status: 400 }
-        ) as Response;
+        );
       }
       throw error;
     }
   } catch (error) {
     console.error("Error creating favorite:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: "新增收藏失敗，請稍後再試" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }
 
@@ -93,10 +93,10 @@ export async function POST(request: Request): Promise<Response> {
 export async function GET(request: Request): Promise<Response> {
   try {
     if (!prisma) {
-      return NextResponse.json(
+      return Response.json(
         { error: "資料庫連線失敗" },
         { status: 503 }
-      ) as Response;
+      );
     }
 
     // 檢查使用者是否已登入且為高科大學生
@@ -187,14 +187,14 @@ export async function GET(request: Request): Promise<Response> {
       })
     );
 
-    return NextResponse.json({
+    return Response.json({
       favorites: formattedFavorites,
-    }) as Response;
+    });
   } catch (error) {
     console.error("Error fetching favorites:", error);
-    return NextResponse.json(
+    return Response.json(
       { error: "取得收藏列表失敗，請稍後再試" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }

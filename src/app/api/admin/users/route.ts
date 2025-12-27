@@ -4,7 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
-export async function GET(request: NextRequest): Promise<Response> {
+export async function GET(request: NextRequest) {
   try {
     await requireAdmin();
 
@@ -51,7 +51,7 @@ export async function GET(request: NextRequest): Promise<Response> {
       prisma!.user.count({ where })
     ]);
 
-    return NextResponse.json({
+    return Response.json({
       users,
       pagination: {
         total,
@@ -59,21 +59,21 @@ export async function GET(request: NextRequest): Promise<Response> {
         limit,
         totalPages: Math.ceil(total / limit)
       }
-    }) as Response;
+    });
 
   } catch (error: any) {
     console.error("Failed to get users:", error);
 
     if (error?.message === "Unauthorized") {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
+      return Response.json({ error: "Unauthorized" }, { status: 401 });
     }
     if (error?.message === "Admin access required") {
-      return NextResponse.json({ error: "Forbidden" }, { status: 403 }) as Response;
+      return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return NextResponse.json(
+    return Response.json(
       { error: "Internal server error" },
       { status: 500 }
-    ) as Response;
+    );
   }
 }
