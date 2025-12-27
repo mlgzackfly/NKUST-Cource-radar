@@ -297,7 +297,7 @@ export default function InstructorPage() {
                     e.currentTarget.style.backgroundColor = "var(--ts-gray-50)";
                   }}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.75rem" }}>
+                  <div className="instructor-course-header" style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.75rem" }}>
                     <div>
                       <div style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.25rem" }}>
                         {course.courseName}
@@ -306,7 +306,7 @@ export default function InstructorPage() {
                         {course.courseCode} | {course.year} 學年第 {course.term} 學期
                       </div>
                     </div>
-                    <div style={{ textAlign: "right" }}>
+                    <div className="instructor-course-stats" style={{ textAlign: "right" }}>
                       {course.enrolled !== null && (
                         <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
                           選課人數：{course.enrolled}

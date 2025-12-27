@@ -499,6 +499,11 @@ html.is-dark {
     -webkit-overflow-scrolling: touch;
   }
 
+  /* 固定課表最小寬度，避免新增課程時寬度跳動 */
+  .schedule-table-wrapper table {
+    min-width: 500px !important;
+  }
+
   .schedule-table-wrapper .period-column {
     width: 48px !important;
     padding: 0.375rem !important;
@@ -506,6 +511,7 @@ html.is-dark {
   }
 
   .schedule-table-wrapper .day-column {
+    min-width: 80px !important;
     padding: 0.375rem !important;
     font-size: 0.688rem !important;
   }
@@ -541,5 +547,21 @@ html.is-dark {
   .schedule-table-wrapper .day-column {
     padding: 0.25rem !important;
     font-size: 0.625rem !important;
+  }
+}
+
+/* =========================================================
+   Instructor Page Course List Responsive
+   ========================================================= */
+
+/* Mobile: 課程卡片改為直排 */
+@media (max-width: 768px) {
+  .instructor-course-header {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .instructor-course-stats {
+    text-align: left !important;
   }
 }
