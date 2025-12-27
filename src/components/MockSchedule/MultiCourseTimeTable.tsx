@@ -61,11 +61,12 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
   });
 
   return (
-    <div style={{ overflow: "auto" }}>
+    <div style={{ overflow: "auto" }} className="schedule-table-wrapper">
       <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
         <thead>
           <tr style={{ borderBottom: "2px solid #d1d5db" }}>
             <th
+              className="period-column"
               style={{
                 padding: "0.5rem",
                 fontSize: "0.75rem",
@@ -80,6 +81,7 @@ export function MultiCourseTimeTable({ selectedCourses, conflicts }: MultiCourse
             {days.map((day) => (
               <th
                 key={day.key}
+                className="day-column"
                 style={{
                   padding: "0.5rem",
                   fontSize: "0.75rem",

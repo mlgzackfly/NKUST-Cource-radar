@@ -487,3 +487,59 @@ html.is-dark {
     font-size: 0.875rem !important; /* 保持 14px */
   }
 }
+
+/* =========================================================
+   Mock Schedule Timetable Responsive
+   ========================================================= */
+
+/* Mobile 優化課表顯示 */
+@media (max-width: 768px) {
+  .schedule-table-wrapper {
+    /* 確保課表可以水平滾動，但不影響外層容器 */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .schedule-table-wrapper .period-column {
+    width: 48px !important;
+    padding: 0.375rem !important;
+    font-size: 0.688rem !important;
+  }
+
+  .schedule-table-wrapper .day-column {
+    padding: 0.375rem !important;
+    font-size: 0.688rem !important;
+  }
+
+  .schedule-table-wrapper td {
+    padding: 0.25rem !important;
+    min-height: 50px !important;
+  }
+
+  /* 課程格子在 mobile 上縮小 padding 和字體 */
+  .schedule-table-wrapper td > div > div {
+    padding: 0.375rem !important;
+    font-size: 0.688rem !important;
+  }
+
+  .schedule-table-wrapper td > div > div > div:first-child {
+    font-size: 0.688rem !important;
+  }
+
+  .schedule-table-wrapper td > div > div > div:last-child {
+    font-size: 0.625rem !important;
+  }
+}
+
+/* Extra Small Mobile: 更小的課表尺寸 */
+@media (max-width: 400px) {
+  .schedule-table-wrapper .period-column {
+    width: 42px !important;
+    padding: 0.25rem !important;
+    font-size: 0.625rem !important;
+  }
+
+  .schedule-table-wrapper .day-column {
+    padding: 0.25rem !important;
+    font-size: 0.625rem !important;
+  }
+}

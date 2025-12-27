@@ -93,7 +93,7 @@ export function ScheduleLayout({ initialCourses = [], initialSemester }: Schedul
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: "minmax(0, 1fr) 480px",
+        gridTemplateColumns: "minmax(0, 1fr) minmax(400px, 520px)",
         gap: "2rem",
       }}
       className="mock-schedule-layout"
@@ -115,9 +115,17 @@ export function ScheduleLayout({ initialCourses = [], initialSemester }: Schedul
 
       {/* 響應式 CSS */}
       <style jsx>{`
+        /* Tablet: 單欄佈局 */
         @media (max-width: 1024px) {
           .mock-schedule-layout {
             grid-template-columns: 1fr !important;
+          }
+        }
+
+        /* Mobile: 確保課表面板有完整寬度 */
+        @media (max-width: 768px) {
+          .mock-schedule-layout {
+            gap: 1.5rem !important;
           }
         }
       `}</style>
