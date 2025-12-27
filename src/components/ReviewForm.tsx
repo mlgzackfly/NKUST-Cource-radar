@@ -258,14 +258,20 @@ function RatingInput({
           {description}
         </div>
       </div>
-      <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
+      <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap" }}>
         {[1, 2, 3, 4, 5].map((rating) => (
           <button
             key={rating}
             type="button"
             onClick={() => onChange(rating as RatingValue)}
             className={value === rating ? "ts-button is-primary" : "ts-button is-outlined"}
-            style={{ width: "3rem", height: "3rem", fontSize: "1.125rem" }}
+            style={{
+              width: "3rem",
+              height: "3rem",
+              fontSize: "1.125rem",
+              minWidth: "44px",
+              minHeight: "44px"
+            }}
           >
             {rating}
           </button>

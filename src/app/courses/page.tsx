@@ -353,7 +353,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "0.5rem" }}>
+                <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
                   {/* Previous Button */}
                   {page > 1 ? (
                     <Link
@@ -425,7 +425,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                             key={pageNum}
                             className="ts-button is-secondary"
                             disabled
-                            style={{ minWidth: "2.5rem", padding: "0.5rem 0.75rem" }}
+                            style={{ minWidth: "3rem", padding: "0.625rem 1rem" }}
                           >
                             {pageNum}
                           </button>
@@ -446,7 +446,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                             page: pageNum.toString(),
                           }).toString()}`}
                           className="ts-button"
-                          style={{ minWidth: "2.5rem", padding: "0.5rem 0.75rem" }}
+                          style={{ minWidth: "3rem", padding: "0.625rem 1rem" }}
                         >
                           {pageNum}
                         </Link>

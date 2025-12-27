@@ -35,6 +35,8 @@ body {
 body {
   color: var(--app-text);
   background: var(--app-bg);
+  /* 確保內容不被 iOS 底部 Home Indicator 遮擋 */
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 a {
@@ -72,6 +74,8 @@ code {
   backdrop-filter: blur(12px);
   background: color-mix(in srgb, var(--app-surface) 92%, transparent);
   border-bottom: 1px solid color-mix(in srgb, var(--app-border) 75%, transparent);
+  /* Safe Area Insets for iOS */
+  padding-top: env(safe-area-inset-top);
 }
 
 .app-header-inner {
@@ -361,4 +365,28 @@ details[open] > .app-details-summary::after {
 html.is-dark {
   --app-table-hover-bg: var(--ts-gray-700);
   --app-table-border: var(--ts-gray-700);
+}
+
+/* =========================================================
+   Mobile Touch Target Optimization
+   ========================================================= */
+
+@media (max-width: 768px) {
+  /* 確保小按鈕在手機上有足夠的觸控面積 */
+  .ts-button.is-small {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.625rem 1rem;
+  }
+
+  /* Icon 按鈕也需要最小尺寸 */
+  .ts-button.is-icon {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* 增加按鈕組的間距 */
+  .mobile-button-group {
+    gap: 0.75rem !important;
+  }
 }

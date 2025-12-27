@@ -316,7 +316,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             {review.authorDept || "匿名使用者"} · {formatDate(review.createdAt)}
           </div>
           {isOwner && (
-            <div style={{ display: "flex", gap: "0.5rem" }}>
+            <div style={{ display: "flex", gap: "0.75rem" }} className="mobile-button-group">
               <button
                 onClick={() => setIsEditing(true)}
                 className="ts-button is-ghost is-small"
@@ -419,6 +419,8 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             style={{
               width: "90%",
               maxWidth: "500px",
+              maxHeight: "min(90vh, 600px)",
+              overflowY: "auto",
               backgroundColor: "var(--ts-gray-50)"
             }}
           >
@@ -495,6 +497,8 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             style={{
               width: "90%",
               maxWidth: "400px",
+              maxHeight: "min(90vh, 500px)",
+              overflowY: "auto",
               backgroundColor: "var(--ts-gray-50)"
             }}
           >
@@ -653,7 +657,7 @@ function VoteButtons({
   };
 
   return (
-    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }} className="mobile-button-group">
       {/* 讚按鈕 */}
       <button
         onClick={() => handleVote('UPVOTE')}
@@ -663,7 +667,7 @@ function VoteButtons({
             ? 'is-primary'
             : 'is-outlined'
         }`}
-        style={{ minWidth: '4rem' }}
+        style={{ minWidth: '4.5rem' }}
         title={isOwnReview ? '無法對自己的評論投票' : '有幫助'}
       >
         <span style={{ fontSize: '1rem' }}>👍</span>
@@ -679,7 +683,7 @@ function VoteButtons({
             ? 'is-negative'
             : 'is-outlined'
         }`}
-        style={{ minWidth: '4rem' }}
+        style={{ minWidth: '4.5rem' }}
         title={isOwnReview ? '無法對自己的評論投票' : '沒幫助'}
       >
         <span style={{ fontSize: '1rem' }}>👎</span>

@@ -18,6 +18,7 @@ export const metadata = {
 export const viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover" as const, // 支援 iPhone X 以上的 Safe Area
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
