@@ -23,28 +23,30 @@ export const authOptions: NextAuthOptions = {
         return `${localPart.toUpperCase()}@${domain.toLowerCase()}`;
       },
       sendVerificationRequest: async ({ identifier: email, url }) => {
-        console.log("=== sendVerificationRequest called ===");
-        console.log("Email (original):", email);
+        const isDev = process.env.NODE_ENV === "development";
 
         // 統一將 email 本地部分轉為大寫（如 c109193108@nkust.edu.tw -> C109193108@nkust.edu.tw）
         const [localPart, domain] = email.split("@");
         const normalizedEmail = `${localPart.toUpperCase()}@${domain.toLowerCase()}`;
 
-        console.log("Email (normalized):", normalizedEmail);
-        console.log("URL:", url);
-        console.log("RESEND_API_KEY:", process.env.RESEND_API_KEY ? "✓ Set" : "✗ Not set");
-        console.log("EMAIL_FROM:", process.env.EMAIL_FROM);
+        // 只在開發環境顯示詳細 log
+        if (isDev) {
+          console.log("=== sendVerificationRequest called ===");
+          // 遮罩 email（只顯示部分）
+          const maskedEmail = normalizedEmail.replace(/(.{3})(.*)(@.+)/, "$1***$3");
+          console.log("Email:", maskedEmail);
+          console.log("RESEND_API_KEY:", process.env.RESEND_API_KEY ? "✓ Set" : "✗ Not set");
+        }
 
         // 驗證 @nkust.edu.tw
         if (!normalizedEmail.toLowerCase().endsWith("@nkust.edu.tw")) {
-          console.error("❌ Email validation failed:", normalizedEmail);
+          if (isDev) {
+            console.error("❌ Email validation failed");
+          }
           throw new Error("Only @nkust.edu.tw emails are allowed");
         }
 
-        console.log("✓ Email validation passed");
-
         try {
-          console.log("Sending email via Resend...");
           const result = await resend.emails.send({
             from: process.env.EMAIL_FROM!,
             to: normalizedEmail,
@@ -63,9 +65,15 @@ export const authOptions: NextAuthOptions = {
               </div>
             `,
           });
-          console.log("✓ Email sent successfully!", result);
+
+          if (isDev) {
+            console.log("✓ Email sent successfully!");
+          }
         } catch (error) {
-          console.error("❌ Failed to send email:", error);
+          console.error("Failed to send verification email");
+          if (isDev) {
+            console.error("Error details:", error);
+          }
           throw new Error("Failed to send verification email");
         }
       },

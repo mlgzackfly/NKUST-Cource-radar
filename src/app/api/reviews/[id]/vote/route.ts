@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
+import rateLimiter, { RATE_LIMITS } from "@/lib/ratelimit";
 
 export async function POST(
   request: Request,
@@ -15,8 +16,37 @@ export async function POST(
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
     }
 
+    const email = session.user.email;
+
+    // Rate limiting: 每用戶每分鐘最多 20 次投票操作
+    const rateLimitKey = `vote:${email}`;
+    const rateLimit = rateLimiter.check(
+      rateLimitKey,
+      RATE_LIMITS.vote.limit,
+      RATE_LIMITS.vote.window
+    );
+
+    if (!rateLimit.success) {
+      const resetIn = Math.ceil((rateLimit.resetTime - Date.now()) / 1000);
+      return NextResponse.json(
+        {
+          error: "Too many requests",
+          retryAfter: resetIn,
+        },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(resetIn),
+            "X-RateLimit-Limit": String(RATE_LIMITS.vote.limit),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": String(Math.floor(rateLimit.resetTime / 1000)),
+          },
+        }
+      ) as Response;
+    }
+
     // 驗證 @nkust.edu.tw
-    if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
+    if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
       return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
     }
 
@@ -30,7 +60,7 @@ export async function POST(
 
     // 找到使用者
     const user = await prisma!.user.findUnique({
-      where: { email: session.user.email }
+      where: { email }
     });
 
     if (!user) {
@@ -118,14 +148,43 @@ export async function DELETE(
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 }) as Response;
     }
 
+    const email = session.user.email;
+
+    // Rate limiting: 每用戶每分鐘最多 20 次投票操作
+    const rateLimitKey = `vote:${email}`;
+    const rateLimit = rateLimiter.check(
+      rateLimitKey,
+      RATE_LIMITS.vote.limit,
+      RATE_LIMITS.vote.window
+    );
+
+    if (!rateLimit.success) {
+      const resetIn = Math.ceil((rateLimit.resetTime - Date.now()) / 1000);
+      return NextResponse.json(
+        {
+          error: "Too many requests",
+          retryAfter: resetIn,
+        },
+        {
+          status: 429,
+          headers: {
+            "Retry-After": String(resetIn),
+            "X-RateLimit-Limit": String(RATE_LIMITS.vote.limit),
+            "X-RateLimit-Remaining": "0",
+            "X-RateLimit-Reset": String(Math.floor(rateLimit.resetTime / 1000)),
+          },
+        }
+      ) as Response;
+    }
+
     // 驗證 @nkust.edu.tw
-    if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
+    if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
       return NextResponse.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 }) as Response;
     }
 
     // 找到使用者
     const user = await prisma!.user.findUnique({
-      where: { email: session.user.email }
+      where: { email }
     });
 
     if (!user) {
