@@ -20,7 +20,20 @@ export function MobileMenu() {
     { href: "/mock-schedule", label: "模擬選課" },
   ];
 
-  const overlayContent = isOpen && (
+  return (
+    <>
+      {/* Hamburger Button */}
+      <button
+        className="mobile-menu-button ts-button is-icon is-ghost"
+        onClick={() => setIsOpen(!isOpen)}
+        style={{ display: "none" }}
+        aria-label="開啟選單"
+      >
+        <span style={{ fontSize: "1.25rem" }}>☰</span>
+      </button>
+
+      {/* Mobile Menu Overlay - Rendered via Portal */}
+      {mounted && isOpen && createPortal(
         <div
           style={{
             position: "fixed",
@@ -29,7 +42,7 @@ export function MobileMenu() {
             right: 0,
             bottom: 0,
             backgroundColor: "rgba(0, 0, 0, 0.5)",
-            zIndex: 999,
+            zIndex: 9999,
           }}
           onClick={() => setIsOpen(false)}
         >
@@ -44,6 +57,7 @@ export function MobileMenu() {
               boxShadow: "4px 0 12px rgba(0,0,0,0.15)",
               padding: "1.5rem",
               overflowY: "auto",
+              zIndex: 10000,
             }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -73,23 +87,9 @@ export function MobileMenu() {
               ))}
             </nav>
           </div>
-        </div>
-      );
-
-  return (
-    <>
-      {/* Hamburger Button */}
-      <button
-        className="mobile-menu-button ts-button is-icon is-ghost"
-        onClick={() => setIsOpen(!isOpen)}
-        style={{ display: "none" }}
-        aria-label="開啟選單"
-      >
-        <span style={{ fontSize: "1.25rem" }}>☰</span>
-      </button>
-
-      {/* Mobile Menu Overlay - Rendered via Portal */}
-      {mounted && overlayContent && createPortal(overlayContent, document.body)}
+        </div>,
+        document.body
+      )}
     </>
   );
 }
