@@ -10,7 +10,7 @@ type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
 type Review = {
   id: string;
-  userId: string;
+  isOwnReview: boolean;  // ✅ 使用布林值而非 userId
   createdAt: string;
   coolness: number | null;
   usefulness: number | null;
@@ -29,11 +29,10 @@ type Review = {
 
 type ReviewListProps = {
   reviews: Review[] | null;
-  currentUserId: string | null;
   courseId: string;
 };
 
-export function ReviewList({ reviews, currentUserId, courseId }: ReviewListProps) {
+export function ReviewList({ reviews, courseId }: ReviewListProps) {
   const { data: session, status } = useSession();
 
   if (status === "loading") {
@@ -86,7 +85,7 @@ export function ReviewList({ reviews, currentUserId, courseId }: ReviewListProps
           <ReviewCard
             key={review.id}
             review={review}
-            isOwner={currentUserId === review.userId}
+            isOwner={review.isOwnReview}
             courseId={courseId}
           />
         ))}

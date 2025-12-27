@@ -36,12 +36,6 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
   const session = await getServerSession(authOptions);
   const email = session?.user?.email;
 
-  // Debug logging
-  console.log("=== Reviews API Debug ===");
-  console.log("Session:", session ? "✓ Exists" : "✗ Not found");
-  console.log("Email:", email || "✗ Not found");
-  console.log("Is NKUST user:", email?.toLowerCase().endsWith("@nkust.edu.tw"));
-
   const sort = new URL(request.url).searchParams.get("sort") || "latest";
   const take = Math.min(Number(new URL(request.url).searchParams.get("take") || "20"), 50);
 
@@ -113,7 +107,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
 
       return {
         id: r.id,
-        userId: r.userId,
+        isOwnReview: r.userId === currentUserId, // ✅ 只告訴是否為自己的評論，不洩露 userId
         createdAt: r.createdAt,
         updatedAt: r.updatedAt,
         coolness: r.coolness,

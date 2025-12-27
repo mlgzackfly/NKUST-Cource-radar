@@ -208,7 +208,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
 
           return {
             id: r.id,
-            userId: r.userId,
+            isOwnReview: r.userId === currentUserId,  // ✅ 使用布林值而非 userId
             createdAt: r.createdAt.toISOString(),
             updatedAt: r.updatedAt.toISOString(),
             coolness: r.coolness,
@@ -536,7 +536,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <ReviewForm courseId={typedCourse.id} userHasReviewed={userHasReviewed} />
 
             {/* Review List */}
-            <ReviewList reviews={reviewsData} currentUserId={currentUserId} courseId={typedCourse.id} />
+            <ReviewList reviews={reviewsData} courseId={typedCourse.id} />
           </div>
         </div>
 
