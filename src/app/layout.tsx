@@ -47,7 +47,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <style dangerouslySetInnerHTML={{
           __html: `
             @font-face {
-              font-family: icons;
+              font-family: tocas-icons-fixed;
               src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-solid-900.woff2) format("woff2"),
                    url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-solid-900.ttf) format("truetype");
               font-style: normal;
@@ -56,7 +56,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             }
 
             @font-face {
-              font-family: iconsbrands;
+              font-family: tocas-icons-brands-fixed;
               src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-brands-400.woff2) format("woff2"),
                    url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-brands-400.ttf) format("truetype");
               font-style: normal;
@@ -65,12 +65,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             }
 
             @font-face {
-              font-family: iconsregular;
+              font-family: tocas-icons-regular-fixed;
               src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-regular-400.woff2) format("woff2"),
                    url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-regular-400.ttf) format("truetype");
               font-style: normal;
               font-weight: 400;
               font-display: swap;
+            }
+
+            /* Force Tocas UI components to use our fixed icon fonts */
+            .ts-select::after,
+            .ts-icon,
+            [class*="ts-icon-"] {
+              font-family: tocas-icons-fixed !important;
             }
           `
         }} />
