@@ -403,3 +403,17 @@ html.is-dark {
     display: block !important;
   }
 }
+
+/* =========================================================
+   Hamburger Menu for Extra Small Screens
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .app-nav {
+    display: none !important;
+  }
+
+  .mobile-menu-button {
+    display: flex !important;
+  }
+}
