@@ -390,3 +390,16 @@ html.is-dark {
     gap: 0.75rem !important;
   }
 }
+
+/* =========================================================
+   Course Table Responsive
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .desktop-course-table {
+    display: none !important;
+  }
+  .mobile-course-cards {
+    display: block !important;
+  }
+}

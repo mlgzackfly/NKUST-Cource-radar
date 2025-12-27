@@ -90,10 +90,135 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
     );
   };
 
+  // Mobile Card View Component
+  function CourseCard({ course }: { course: CourseListItem }) {
+    return (
+      <div
+        onClick={() => router.push(`/courses/${course.id}`)}
+        style={{
+          backgroundColor: "var(--app-surface)",
+          border: "1px solid var(--app-border)",
+          borderRadius: "12px",
+          padding: "1rem",
+          cursor: "pointer",
+          transition: "all 0.15s",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)";
+          e.currentTarget.style.borderColor = "var(--ts-primary-500)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "var(--app-surface)";
+          e.currentTarget.style.borderColor = "var(--app-border)";
+        }}
+      >
+        {/* 課程名稱 */}
+        <div style={{ fontWeight: 600, fontSize: "1rem", marginBottom: "0.5rem" }}>
+          {course.courseName}
+        </div>
+
+        {/* 系所與校區 */}
+        <div style={{
+          display: "flex",
+          gap: "0.5rem",
+          marginBottom: "0.75rem",
+          flexWrap: "wrap"
+        }}>
+          {course.department && (
+            <span style={{
+              fontSize: "0.75rem",
+              padding: "0.25rem 0.5rem",
+              backgroundColor: "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
+              color: "var(--ts-warning-600)",
+              borderRadius: "4px",
+              fontWeight: 500
+            }}>
+              {course.department}
+            </span>
+          )}
+          {course.campus && (
+            <span style={{
+              fontSize: "0.75rem",
+              padding: "0.25rem 0.5rem",
+              backgroundColor: "color-mix(in srgb, var(--ts-info-500) 15%, transparent)",
+              color: "var(--ts-info-600)",
+              borderRadius: "4px"
+            }}>
+              {course.campus}
+            </span>
+          )}
+        </div>
+
+        {/* 教師 */}
+        <div style={{
+          fontSize: "0.875rem",
+          color: "var(--app-text)",
+          marginBottom: "0.5rem",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem"
+        }}>
+          <span style={{ color: "var(--app-muted)", minWidth: "3rem" }}>教師</span>
+          <span>
+            {course.instructors && course.instructors.length > 0
+              ? course.instructors.map((item, index) => (
+                  <span key={item.instructor.id}>
+                    <span style={{ color: "var(--ts-primary-500)", fontWeight: 500 }}>
+                      {item.instructor.name}
+                    </span>
+                    {index < course.instructors.length - 1 && "、"}
+                  </span>
+                ))
+              : "—"}
+          </span>
+        </div>
+
+        {/* 時間與教室 */}
+        {course.time && (
+          <div style={{
+            fontSize: "0.875rem",
+            color: "var(--app-text)",
+            marginBottom: "0.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem"
+          }}>
+            <span style={{ color: "var(--app-muted)", minWidth: "3rem" }}>時間</span>
+            <span>{course.time}</span>
+          </div>
+        )}
+
+        {course.classroom && (
+          <div style={{
+            fontSize: "0.875rem",
+            color: "var(--app-text)",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem"
+          }}>
+            <span style={{ color: "var(--app-muted)", minWidth: "3rem" }}>教室</span>
+            <span>{course.classroom}</span>
+          </div>
+        )}
+      </div>
+    );
+  }
+
   return (
-    <div style={{ overflow: "auto" }}>
-      {/* Table view - Notion/Airtable style */}
-      <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
+    <>
+      {/* Mobile Card View */}
+      <div className="mobile-course-cards" style={{ display: "none" }}>
+        <div style={{ display: "grid", gap: "1rem" }}>
+          {courses.map((course) => (
+            <CourseCard key={course.id} course={course} />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Table View */}
+      <div className="desktop-course-table" style={{ overflow: "auto" }}>
+        {/* Table view - Notion/Airtable style */}
+        <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
         <thead>
           <tr style={{ borderBottom: "2px solid var(--app-table-border)" }}>
             <th
@@ -193,6 +318,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
           })}
         </tbody>
       </table>
-    </div>
+      </div>
+    </>
   );
 }
