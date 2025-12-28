@@ -67,6 +67,25 @@ export function UserMenu() {
             </div>
           </div>
 
+          <Link
+            href="/favorites"
+            onClick={() => setShowMenu(false)}
+            style={{
+              display: "block",
+              width: "100%",
+              padding: "0.75rem 1rem",
+              textAlign: "left",
+              textDecoration: "none",
+              fontSize: "0.9375rem",
+              color: "var(--app-text)",
+              transition: "background-color 0.15s"
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+          >
+            ⭐ 我的收藏
+          </Link>
+
           {session.user?.role === "ADMIN" && (
             <Link
               href="/admin"
@@ -80,7 +99,6 @@ export function UserMenu() {
                 fontSize: "0.9375rem",
                 color: "var(--ts-primary-500)",
                 fontWeight: 500,
-                borderBottom: "1px solid var(--app-border)",
                 transition: "background-color 0.15s"
               }}
               onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
@@ -104,6 +122,7 @@ export function UserMenu() {
               cursor: "pointer",
               fontSize: "0.9375rem",
               color: "var(--ts-negative-500)",
+              borderTop: "1px solid var(--app-border)",
               transition: "background-color 0.15s"
             }}
             onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
