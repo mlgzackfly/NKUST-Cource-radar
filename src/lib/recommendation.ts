@@ -1,4 +1,10 @@
 import { prisma } from "./db";
+import {
+  parseStudentIdFromEmail,
+  getDepartmentCategory,
+  getRelatedDepartments,
+  getDepartmentName,
+} from "./studentIdParser";
 
 /**
  * 推薦演算法核心
@@ -468,6 +474,13 @@ export async function getHybridRecommendations(
 
 /**
  * 冷啟動解決方案：新使用者推薦
+ *
+ * 根據學號解析系所，推薦：
+ * 1. 同系所的課程（最新學期優先）
+ * 2. 相關類別系所的課程
+ * 3. 全站熱門/最新課程
+ *
+ * 注意：此函數不依賴評論數據，適用於初期沒有評論的情況
  */
 export async function getColdStartRecommendations(
   userEmail: string,
@@ -476,57 +489,132 @@ export async function getColdStartRecommendations(
   if (!prisma) return [];
 
   try {
-    // 1. 從 email 判斷系所（例如 C109193108 → 資工系）
-    const emailPrefix = userEmail.split("@")[0];
-    let department: string | null = null;
+    // 1. 解析學號取得系所資訊
+    const studentInfo = parseStudentIdFromEmail(userEmail);
+    const deptCode = studentInfo?.departmentCode;
+    const deptName = deptCode ? getDepartmentName(deptCode) : null;
+    const deptCategory = deptCode ? getDepartmentCategory(deptCode) : null;
 
-    // 簡單的系所判斷邏輯（可根據實際情況擴充）
-    if (emailPrefix.startsWith("C1")) {
-      department = "資訊工程系";
-    } else if (emailPrefix.startsWith("E1")) {
-      department = "電機工程系";
-    } else if (emailPrefix.startsWith("M1")) {
-      department = "機械工程系";
-    }
-    // ... 可以擴充更多系所
+    const recommendations: RecommendationResult[] = [];
+    const seenCourseIds = new Set<string>();
 
-    // 2. 取得熱門課程
-    const trending = await getTrendingRecommendations("", limit);
-
-    // 3. 如果有判斷出系所，加入系所熱門課程
-    if (department) {
-      const deptCourses = await prisma.course.findMany({
+    // 2. 同系所的課程（優先級最高，按學期倒序）
+    if (deptName) {
+      const deptSearchTerm = deptName.replace(/（.*）$/, ""); // 移除括號說明
+      const sameDeptCourses = await prisma.course.findMany({
         where: {
-          department,
-          reviews: {
-            some: {
-              status: "ACTIVE",
-              coolness: { gte: 4 },
-            },
-          },
+          department: { contains: deptSearchTerm },
         },
         select: {
           id: true,
-          reviews: {
-            where: { status: "ACTIVE", coolness: { not: null } },
-            select: { coolness: true },
-          },
+          year: true,
+          term: true,
+          _count: { select: { reviews: true } },
         },
-        take: Math.floor(limit / 2),
+        orderBy: [{ year: "desc" }, { term: "desc" }],
+        take: Math.floor(limit * 0.5),
       });
 
-      const deptRecommendations = deptCourses.map((course: any, index: number) => ({
-        courseId: course.id,
-        score: 0.8 - index * 0.05,
-        reason: "CONTENT" as RecommendationType,
-      }));
-
-      // 混合：50% 熱門 + 50% 系所相關
-      return [...deptRecommendations, ...trending.slice(0, Math.floor(limit / 2))];
+      sameDeptCourses.forEach((course: any, index: number) => {
+        if (!seenCourseIds.has(course.id)) {
+          seenCourseIds.add(course.id);
+          // 依學期新舊和評論數給分
+          const yearScore = (parseInt(course.year) - 100) / 20; // 正規化年份
+          const reviewBonus = Math.min(course._count.reviews * 0.05, 0.2);
+          recommendations.push({
+            courseId: course.id,
+            score: 0.9 - index * 0.015 + yearScore * 0.1 + reviewBonus,
+            reason: "CONTENT" as RecommendationType,
+          });
+        }
+      });
     }
 
-    // 4. 無法判斷系所，只回傳熱門課程
-    return trending;
+    // 3. 相關類別系所的課程
+    if (deptCategory && recommendations.length < limit) {
+      const relatedDeptCodes = getRelatedDepartments(deptCode!);
+      const relatedDeptNames = relatedDeptCodes
+        .map((code) => getDepartmentName(code))
+        .filter(Boolean) as string[];
+
+      if (relatedDeptNames.length > 0) {
+        const relatedCourses = await prisma.course.findMany({
+          where: {
+            OR: relatedDeptNames.map((name) => ({
+              department: { contains: name.replace(/（.*）$/, "") },
+            })),
+            id: { notIn: Array.from(seenCourseIds) },
+          },
+          select: {
+            id: true,
+            year: true,
+            term: true,
+            _count: { select: { reviews: true } },
+          },
+          orderBy: [{ year: "desc" }, { term: "desc" }],
+          take: Math.floor(limit * 0.3),
+        });
+
+        relatedCourses.forEach((course: any, index: number) => {
+          if (!seenCourseIds.has(course.id)) {
+            seenCourseIds.add(course.id);
+            const yearScore = (parseInt(course.year) - 100) / 20;
+            const reviewBonus = Math.min(course._count.reviews * 0.05, 0.2);
+            recommendations.push({
+              courseId: course.id,
+              score: 0.7 - index * 0.015 + yearScore * 0.1 + reviewBonus,
+              reason: "CONTENT" as RecommendationType,
+            });
+          }
+        });
+      }
+    }
+
+    // 4. 補足熱門/最新課程（有評論的優先，無評論則取最新）
+    const remainingSlots = limit - recommendations.length;
+    if (remainingSlots > 0) {
+      // 先嘗試取得有評論的熱門課程
+      const trending = await getTrendingRecommendations("", remainingSlots);
+
+      if (trending.length > 0) {
+        trending.forEach((rec) => {
+          if (!seenCourseIds.has(rec.courseId)) {
+            seenCourseIds.add(rec.courseId);
+            recommendations.push({
+              ...rec,
+              score: rec.score * 0.6,
+            });
+          }
+        });
+      }
+
+      // 如果還不夠，取最新的課程
+      const stillNeeded = limit - recommendations.length;
+      if (stillNeeded > 0) {
+        const latestCourses = await prisma.course.findMany({
+          where: {
+            id: { notIn: Array.from(seenCourseIds) },
+          },
+          select: { id: true, year: true },
+          orderBy: [{ year: "desc" }, { term: "desc" }],
+          take: stillNeeded,
+        });
+
+        latestCourses.forEach((course: any, index: number) => {
+          if (!seenCourseIds.has(course.id)) {
+            seenCourseIds.add(course.id);
+            recommendations.push({
+              courseId: course.id,
+              score: 0.5 - index * 0.01,
+              reason: "TRENDING" as RecommendationType,
+            });
+          }
+        });
+      }
+    }
+
+    // 5. 排序並回傳
+    return recommendations.sort((a, b) => b.score - a.score).slice(0, limit);
   } catch (error) {
     console.error("Cold start recommendations error:", error);
     return [];
