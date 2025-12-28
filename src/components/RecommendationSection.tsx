@@ -229,12 +229,15 @@ export function RecommendationSection() {
               scrollbarWidth: "none",
             }}
           >
-            {/* 左側間距 - 使用 min-width 確保不被壓縮 */}
-            <div style={{ minWidth: "0.5rem", flexShrink: 0 }} aria-hidden="true" />
-
-            {recommendations.map((course) => (
-              <Link
+            {recommendations.map((course, index) => (
+              <div
                 key={course.id}
+                style={{
+                  marginLeft: index === 0 ? "1.5rem" : undefined,
+                  flexShrink: 0,
+                }}
+              >
+              <Link
                 href={`/courses/${course.id}`}
                 style={{
                   textDecoration: "none",
@@ -349,9 +352,10 @@ export function RecommendationSection() {
                   )}
                 </div>
               </Link>
+              </div>
             ))}
             {/* 右側間距 */}
-            <div style={{ minWidth: "0.5rem", flexShrink: 0 }} aria-hidden="true" />
+            <div style={{ minWidth: "1.5rem", flexShrink: 0 }} aria-hidden="true" />
           </div>
         )}
 
