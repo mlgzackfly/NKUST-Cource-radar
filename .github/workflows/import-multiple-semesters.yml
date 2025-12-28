@@ -95,7 +95,7 @@ jobs:
 
             # 爬取資料
             echo "🕷️  開始爬取..."
-            if NKUST_IMPORT_YEAR=$YEAR NKUST_IMPORT_TERM=$TERM npm run scrape:nkust-ag202; then
+            if NKUST_AG202_YMS_YMS="${YEAR}#${TERM}" NKUST_IMPORT_YEAR=$YEAR NKUST_IMPORT_TERM=$TERM npm run scrape:nkust-ag202; then
               echo "✓ 爬取完成"
             else
               echo "❌ 爬取失敗"

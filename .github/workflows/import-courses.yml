@@ -108,6 +108,7 @@ jobs:
       - name: 🕷️ Scrape course data
         if: steps.check.outputs.should_skip != 'true'
         env:
+          NKUST_AG202_YMS_YMS: ${{ steps.semester.outputs.year }}#${{ steps.semester.outputs.term }}
           NKUST_IMPORT_YEAR: ${{ steps.semester.outputs.year }}
           NKUST_IMPORT_TERM: ${{ steps.semester.outputs.term }}
           NKUST_SCRAPE_SYLLABUS: ${{ steps.semester.outputs.scrape_syllabus }}

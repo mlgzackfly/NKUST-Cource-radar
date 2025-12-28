@@ -18,10 +18,18 @@ const prisma = new PrismaClient();
 
 // 要匯入的學期列表（學年#學期）
 const SEMESTERS = [
+  { year: '109', term: '1', label: '109 學年度第 1 學期' },
+  { year: '109', term: '2', label: '109 學年度第 2 學期' },
+  { year: '110', term: '1', label: '110 學年度第 1 學期' },
+  { year: '110', term: '2', label: '110 學年度第 2 學期' },
+  { year: '111', term: '1', label: '111 學年度第 1 學期' },
+  { year: '111', term: '2', label: '111 學年度第 2 學期' },
+  { year: '112', term: '1', label: '112 學年度第 1 學期' },
+  { year: '112', term: '2', label: '112 學年度第 2 學期' },
   { year: '113', term: '1', label: '113 學年度第 1 學期' },
   { year: '113', term: '2', label: '113 學年度第 2 學期' },
   { year: '114', term: '1', label: '114 學年度第 1 學期' },
-  // 可以繼續添加更多學期
+  { year: '114', term: '2', label: '114 學年度第 2 學期' },
 ];
 
 async function importAllSemesters() {
@@ -59,6 +67,7 @@ async function importAllSemesters() {
 
       const env = {
         ...process.env,
+        NKUST_AG202_YMS_YMS: `${semester.year}#${semester.term}`,
         NKUST_IMPORT_YEAR: semester.year,
         NKUST_IMPORT_TERM: semester.term,
         NKUST_SCRAPE_SYLLABUS: '0', // 不爬取課程大綱（太慢）
