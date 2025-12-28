@@ -68,6 +68,7 @@ model User {
   favorites     Favorite[]
   interactions  UserInteraction[]
   recommendations RecommendationCache[]
+  comparisonHistory ComparisonHistory[]
   adminActions  AdminAction[] @relation("AdminActor")
   adminActionsAsTarget AdminAction[] @relation("AdminTargetUser")
 }
@@ -389,6 +390,17 @@ model RecommendationCache {
   @@unique([userId, courseId])
   @@index([userId, score])
   @@index([expiresAt])
+}
+
+model ComparisonHistory {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  userId    String
+  courseIds String[] // Array of course IDs being compared
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
 }
 
 

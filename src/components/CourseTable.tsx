@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
+import { CompareButton, CompareFloatingBar } from "./CompareButton";
 
 type CourseListItem = {
   id: string;
@@ -200,6 +201,18 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
             <span>{course.classroom}</span>
           </div>
         )}
+
+        {/* 比較按鈕 */}
+        <div
+          style={{ marginTop: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid var(--app-border)" }}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <CompareButton
+            courseId={course.id}
+            courseName={course.courseName}
+            variant="button"
+          />
+        </div>
       </div>
     );
   }
@@ -267,6 +280,9 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
             >
               校區{getSortIcon("campus")}
             </th>
+            <th style={{ ...headerStyle(false), textAlign: "center", minWidth: "60px" }}>
+              比較
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -313,12 +329,25 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
                 <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)", textAlign: "center" }}>
                   {c.campus || "—"}
                 </td>
+                <td
+                  style={{ padding: "0.5rem", textAlign: "center" }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <CompareButton
+                    courseId={c.id}
+                    courseName={c.courseName}
+                    variant="icon"
+                  />
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
       </div>
+
+      {/* 浮動比較列 */}
+      <CompareFloatingBar />
     </>
   );
 }
