@@ -1,8 +1,29 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+
+// SVG 垃圾桶圖示
+function TrashIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <polyline points="3 6 5 6 21 6" />
+      <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+      <line x1="10" y1="11" x2="10" y2="17" />
+      <line x1="14" y1="11" x2="14" y2="17" />
+    </svg>
+  );
+}
 
 type RatingSummary = {
   count: number;
@@ -32,25 +53,48 @@ type Favorite = {
   };
 };
 
-type FavoriteListProps = {
-  initialYear?: string;
-  initialTerm?: string;
+type FilterOptions = {
+  years: string[];
+  terms: string[];
 };
 
-export default function FavoriteList({ initialYear, initialTerm }: FavoriteListProps) {
+export default function FavoriteList() {
   const { data: session, status } = useSession();
   const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [year, setYear] = useState(initialYear || "");
-  const [term, setTerm] = useState(initialTerm || "");
+  const [year, setYear] = useState("");
+  const [term, setTerm] = useState("");
   const [sort, setSort] = useState("latest");
+  const [filterOptions, setFilterOptions] = useState<FilterOptions>({ years: [], terms: [] });
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [deleting, setDeleting] = useState(false);
+
+  // 載入篩選選項
+  useEffect(() => {
+    async function loadFilterOptions() {
+      try {
+        const res = await fetch("/api/courses/filters");
+        if (res.ok) {
+          const data = await res.json();
+          setFilterOptions({
+            years: data.years || [],
+            terms: data.terms || [],
+          });
+        }
+      } catch (err) {
+        console.error("Error loading filter options:", err);
+      }
+    }
+    loadFilterOptions();
+  }, []);
 
   // 載入收藏列表
-  const loadFavorites = async () => {
+  const loadFavorites = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
+      setSelectedIds(new Set());
 
       const url = new URL("/api/favorites", window.location.origin);
       if (year) url.searchParams.set("year", year);
@@ -71,7 +115,7 @@ export default function FavoriteList({ initialYear, initialTerm }: FavoriteListP
     } finally {
       setLoading(false);
     }
-  };
+  }, [year, term, sort]);
 
   // 初始載入
   useEffect(() => {
@@ -80,14 +124,10 @@ export default function FavoriteList({ initialYear, initialTerm }: FavoriteListP
     } else if (status === "unauthenticated") {
       setLoading(false);
     }
-  }, [status, year, term, sort]);
+  }, [status, loadFavorites]);
 
-  // 刪除收藏
+  // 刪除單一收藏
   const handleRemove = async (favoriteId: string) => {
-    if (!confirm("確定要取消收藏此課程嗎？")) {
-      return;
-    }
-
     try {
       const res = await fetch(`/api/favorites/${favoriteId}`, {
         method: "DELETE",
@@ -99,11 +139,65 @@ export default function FavoriteList({ initialYear, initialTerm }: FavoriteListP
         throw new Error(data.error || "取消收藏失敗");
       }
 
-      // 重新載入列表
-      await loadFavorites();
+      // 從列表中移除
+      setFavorites((prev) => prev.filter((f) => f.id !== favoriteId));
+      setSelectedIds((prev) => {
+        const next = new Set(prev);
+        next.delete(favoriteId);
+        return next;
+      });
     } catch (err) {
       console.error("Error removing favorite:", err);
       alert((err as Error).message);
+    }
+  };
+
+  // 批次刪除選中的收藏
+  const handleBatchRemove = async () => {
+    if (selectedIds.size === 0) return;
+
+    if (!confirm(`確定要取消收藏這 ${selectedIds.size} 門課程嗎？`)) {
+      return;
+    }
+
+    setDeleting(true);
+    try {
+      const deletePromises = Array.from(selectedIds).map((id) =>
+        fetch(`/api/favorites/${id}`, { method: "DELETE" })
+      );
+
+      await Promise.all(deletePromises);
+
+      // 從列表中移除
+      setFavorites((prev) => prev.filter((f) => !selectedIds.has(f.id)));
+      setSelectedIds(new Set());
+    } catch (err) {
+      console.error("Error batch removing favorites:", err);
+      alert("部分刪除失敗，請重新整理頁面");
+    } finally {
+      setDeleting(false);
+    }
+  };
+
+  // 切換選中狀態
+  const toggleSelect = (id: string) => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) {
+        next.delete(id);
+      } else {
+        next.add(id);
+      }
+      return next;
+    });
+  };
+
+  // 全選/取消全選
+  const toggleSelectAll = () => {
+    if (selectedIds.size === favorites.length) {
+      setSelectedIds(new Set());
+    } else {
+      setSelectedIds(new Set(favorites.map((f) => f.id)));
     }
   };
 
@@ -145,50 +239,90 @@ export default function FavoriteList({ initialYear, initialTerm }: FavoriteListP
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
             gap: "1rem",
           }}
         >
-          <div className="ts-control">
-            <label className="label" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
+          <div>
+            <label style={{ display: "block", fontSize: "0.813rem", marginBottom: "0.5rem", color: "var(--app-muted)" }}>
               學年
             </label>
-            <input
-              type="text"
-              className="ts-input"
-              placeholder="例：114"
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-            />
+            <div className="ts-select is-fluid">
+              <select value={year} onChange={(e) => setYear(e.target.value)}>
+                <option value="">全部學年</option>
+                {filterOptions.years.map((y) => (
+                  <option key={y} value={y}>{y} 學年</option>
+                ))}
+              </select>
+            </div>
           </div>
-          <div className="ts-control">
-            <label className="label" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
+          <div>
+            <label style={{ display: "block", fontSize: "0.813rem", marginBottom: "0.5rem", color: "var(--app-muted)" }}>
               學期
             </label>
-            <input
-              type="text"
-              className="ts-input"
-              placeholder="例：1"
-              value={term}
-              onChange={(e) => setTerm(e.target.value)}
-            />
+            <div className="ts-select is-fluid">
+              <select value={term} onChange={(e) => setTerm(e.target.value)}>
+                <option value="">全部學期</option>
+                {filterOptions.terms.map((t) => (
+                  <option key={t} value={t}>第 {t} 學期</option>
+                ))}
+              </select>
+            </div>
           </div>
-          <div className="ts-control">
-            <label className="label" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
-              排序
+          <div>
+            <label style={{ display: "block", fontSize: "0.813rem", marginBottom: "0.5rem", color: "var(--app-muted)" }}>
+              排序方式
             </label>
-            <select
-              className="ts-select"
-              value={sort}
-              onChange={(e) => setSort(e.target.value)}
-            >
-              <option value="latest">最新收藏</option>
-              <option value="oldest">最早收藏</option>
-              <option value="name">課程名稱</option>
-            </select>
+            <div className="ts-select is-fluid">
+              <select value={sort} onChange={(e) => setSort(e.target.value)}>
+                <option value="latest">最新收藏</option>
+                <option value="oldest">最早收藏</option>
+                <option value="name">課程名稱</option>
+              </select>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* 批次操作列 */}
+      {!loading && favorites.length > 0 && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "1rem",
+            padding: "0.75rem 1rem",
+            backgroundColor: "var(--app-surface)",
+            borderRadius: "8px",
+            border: "1px solid var(--app-border)",
+          }}
+        >
+          <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}>
+            <input
+              type="checkbox"
+              checked={selectedIds.size === favorites.length && favorites.length > 0}
+              onChange={toggleSelectAll}
+              style={{ width: "18px", height: "18px" }}
+            />
+            <span style={{ fontSize: "0.875rem" }}>
+              {selectedIds.size > 0 ? `已選取 ${selectedIds.size} 項` : "全選"}
+            </span>
+          </label>
+
+          {selectedIds.size > 0 && (
+            <button
+              className="ts-button is-small is-negative is-outlined"
+              onClick={handleBatchRemove}
+              disabled={deleting}
+              style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+            >
+              <TrashIcon size={14} />
+              {deleting ? "刪除中..." : `刪除選取 (${selectedIds.size})`}
+            </button>
+          )}
+        </div>
+      )}
 
       {/* 載入中 */}
       {loading && (
@@ -208,7 +342,7 @@ export default function FavoriteList({ initialYear, initialTerm }: FavoriteListP
       {!loading && !error && favorites.length === 0 && (
         <div className="ts-box" style={{ padding: "2rem", textAlign: "center" }}>
           <div style={{ color: "var(--app-muted)", marginBottom: "1rem" }}>
-            目前還沒有收藏任何課程
+            {year || term ? "沒有符合篩選條件的收藏" : "目前還沒有收藏任何課程"}
           </div>
           <Link href="/courses" className="ts-button is-outlined">
             前往課程列表
@@ -217,63 +351,87 @@ export default function FavoriteList({ initialYear, initialTerm }: FavoriteListP
       )}
 
       {!loading && favorites.length > 0 && (
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
           {favorites.map((favorite) => {
             const avgRating = calculateAvgRating(favorite.course.summary);
+            const isSelected = selectedIds.has(favorite.id);
+
             return (
               <div
                 key={favorite.id}
                 className="ts-box"
                 style={{
-                  padding: "1.5rem",
+                  padding: "1rem 1.25rem",
                   backgroundColor: "var(--app-surface)",
-                  transition: "box-shadow 200ms",
+                  transition: "box-shadow 200ms, border-color 200ms",
+                  borderColor: isSelected ? "var(--ts-primary-500)" : undefined,
                 }}
               >
                 <div
                   style={{
                     display: "flex",
-                    justifyContent: "space-between",
                     alignItems: "flex-start",
                     gap: "1rem",
                   }}
                 >
-                  <div style={{ flex: 1 }}>
-                    <Link
-                      href={`/courses/${favorite.course.id}`}
-                      style={{
-                        fontSize: "1.125rem",
-                        fontWeight: 600,
-                        color: "var(--ts-primary-500)",
-                        textDecoration: "none",
-                        marginBottom: "0.5rem",
-                        display: "block",
-                      }}
-                    >
-                      {favorite.course.courseName}
-                    </Link>
+                  {/* 選取框 */}
+                  <input
+                    type="checkbox"
+                    checked={isSelected}
+                    onChange={() => toggleSelect(favorite.id)}
+                    style={{ width: "18px", height: "18px", marginTop: "0.25rem", cursor: "pointer" }}
+                  />
+
+                  {/* 課程資訊 */}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem" }}>
+                      <Link
+                        href={`/courses/${favorite.course.id}`}
+                        style={{
+                          fontSize: "1rem",
+                          fontWeight: 600,
+                          color: "var(--ts-primary-500)",
+                          textDecoration: "none",
+                        }}
+                      >
+                        {favorite.course.courseName}
+                      </Link>
+
+                      {avgRating && (
+                        <span
+                          style={{
+                            fontSize: "0.875rem",
+                            fontWeight: 600,
+                            color: "var(--ts-primary-500)",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          ★ {avgRating}
+                        </span>
+                      )}
+                    </div>
 
                     <div
                       style={{
-                        fontSize: "0.875rem",
+                        fontSize: "0.813rem",
                         color: "var(--app-muted)",
-                        marginBottom: "0.75rem",
+                        marginTop: "0.375rem",
                       }}
                     >
                       {favorite.course.courseCode && `${favorite.course.courseCode} · `}
                       {favorite.course.year} 學年第 {favorite.course.term} 學期
                       {favorite.course.credits && ` · ${favorite.course.credits} 學分`}
+                      {favorite.course.summary.count > 0 && ` · ${favorite.course.summary.count} 則評論`}
                     </div>
 
                     {favorite.course.instructors.length > 0 && (
-                      <div style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
-                        <strong>教師：</strong>
+                      <div style={{ fontSize: "0.813rem", marginTop: "0.375rem" }}>
                         {favorite.course.instructors.map((i, idx) => (
                           <span key={i.id}>
                             <Link
                               href={`/instructors/${i.id}`}
                               style={{
-                                color: "var(--ts-primary-500)",
+                                color: "var(--app-text)",
                                 textDecoration: "none",
                               }}
                             >
@@ -286,33 +444,21 @@ export default function FavoriteList({ initialYear, initialTerm }: FavoriteListP
                     )}
 
                     {favorite.course.time && (
-                      <div style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
-                        <strong>時間：</strong>
+                      <div style={{ fontSize: "0.813rem", marginTop: "0.375rem", color: "var(--app-muted)" }}>
                         {favorite.course.time}
-                        {favorite.course.classroom && ` · ${favorite.course.classroom}`}
-                      </div>
-                    )}
-
-                    {avgRating && (
-                      <div style={{ fontSize: "0.875rem" }}>
-                        <strong>平均評分：</strong>
-                        <span style={{ color: "var(--ts-primary-500)", fontWeight: 600 }}>
-                          {avgRating}
-                        </span>
-                        <span style={{ color: "var(--app-muted)" }}>
-                          {" "}
-                          / 5.0（{favorite.course.summary.count} 則評論）
-                        </span>
+                        {favorite.course.classroom && ` @ ${favorite.course.classroom}`}
                       </div>
                     )}
                   </div>
 
+                  {/* 刪除按鈕 */}
                   <button
                     className="ts-button is-small is-ghost"
                     onClick={() => handleRemove(favorite.id)}
-                    style={{ color: "var(--ts-negative-500)" }}
+                    style={{ color: "var(--ts-negative-500)", padding: "0.5rem" }}
+                    title="取消收藏"
                   >
-                    <i className="icon is-trash"></i>
+                    <TrashIcon size={16} />
                   </button>
                 </div>
               </div>
