@@ -226,11 +226,11 @@ export function RecommendationSection() {
               scrollBehavior: "smooth",
               paddingTop: "0.5rem",
               paddingBottom: "1rem",
-              paddingLeft: "1.5rem",
-              paddingRight: "1.5rem",
               scrollbarWidth: "none",
             }}
           >
+            {/* 左側間距 - 使用 min-width 確保不被壓縮 */}
+            <div style={{ minWidth: "0.5rem", flexShrink: 0 }} aria-hidden="true" />
 
             {recommendations.map((course) => (
               <Link
@@ -350,6 +350,8 @@ export function RecommendationSection() {
                 </div>
               </Link>
             ))}
+            {/* 右側間距 */}
+            <div style={{ minWidth: "0.5rem", flexShrink: 0 }} aria-hidden="true" />
           </div>
         )}
 
