@@ -1,6 +1,27 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+
+  // 圖片優化設定
+  images: {
+    formats: ["image/avif", "image/webp"],
+    minimumCacheTTL: 60 * 60 * 24 * 30, // 30 天
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256],
+  },
+
+  // 實驗性功能
+  experimental: {
+    // 優化套件匯入
+    optimizePackageImports: ["echarts", "echarts-for-react"],
+  },
+
+  // 壓縮設定
+  compress: true,
+
+  // 產生原始碼映射（僅開發）
+  productionBrowserSourceMaps: false,
+
   webpack: (config, { dev }) => {
     // Avoid occasional corrupted dev output in .next/ that can lead to
     // "Cannot find module './xxx.js'" (missing server chunks).

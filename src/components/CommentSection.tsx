@@ -1,315 +1,296 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useSession } from "next-auth/react";
 
-type Comment = {
+interface Comment {
   id: string;
   body: string;
   createdAt: string;
   isOwnComment: boolean;
   authorDept: string | null;
-};
+}
 
-type CommentSectionProps = {
+interface CommentSectionProps {
   reviewId: string;
-};
+  initialCommentCount?: number;
+}
 
-export function CommentSection({ reviewId }: CommentSectionProps) {
+export function CommentSection({ reviewId, initialCommentCount = 0 }: CommentSectionProps) {
   const { data: session, status } = useSession();
   const [comments, setComments] = useState<Comment[]>([]);
-  const [total, setTotal] = useState(0);
-  const [hasMore, setHasMore] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const [showAll, setShowAll] = useState(false);
-  const [newCommentBody, setNewCommentBody] = useState("");
-  const [submitting, setSubmitting] = useState(false);
+  const [total, setTotal] = useState(initialCommentCount);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [newComment, setNewComment] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
 
-  // 載入留言
-  const loadComments = async (limit?: number) => {
+  const fetchComments = useCallback(async () => {
+    if (status !== "authenticated") return;
+    
+    setLoading(true);
+    setError(null);
+
     try {
-      setLoading(true);
-      const url = new URL(`/api/reviews/${reviewId}/comments`, window.location.origin);
-      if (limit) url.searchParams.set("limit", String(limit));
-
-      const res = await fetch(url);
-      const data = await res.json();
-
+      const res = await fetch(`/api/reviews/${reviewId}/comments`);
       if (!res.ok) {
-        throw new Error(data.error || "載入留言失敗");
+        if (res.status === 401) {
+          setError("請先登入才能查看留言");
+          return;
+        }
+        throw new Error("Failed to fetch comments");
       }
 
+      const data = await res.json();
       setComments(data.comments);
       setTotal(data.total);
       setHasMore(data.hasMore);
     } catch (err) {
-      console.error("Error loading comments:", err);
-      setError((err as Error).message);
+      setError("載入留言失敗");
+      console.error(err);
     } finally {
       setLoading(false);
     }
-  };
-
-  // 初始載入（顯示前 3 則）
-  useEffect(() => {
-    if (status === "authenticated") {
-      loadComments(3);
-    }
   }, [reviewId, status]);
 
-  // 新增留言
+  useEffect(() => {
+    if (isExpanded && comments.length === 0 && !loading) {
+      fetchComments();
+    }
+  }, [isExpanded, comments.length, loading, fetchComments]);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!newComment.trim() || submitting) return;
 
-    if (!newCommentBody.trim()) {
-      alert("留言內容不可為空");
-      return;
-    }
-
-    if (!session) {
-      alert("需要登入才能留言");
-      return;
-    }
+    setSubmitting(true);
+    setError(null);
 
     try {
-      setSubmitting(true);
-      setError(null);
-
       const res = await fetch(`/api/reviews/${reviewId}/comments`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ body: newCommentBody }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ body: newComment.trim() }),
       });
 
-      const data = await res.json();
-
       if (!res.ok) {
-        throw new Error(data.error || "新增留言失敗");
+        const data = await res.json();
+        throw new Error(data.error || "Failed to post comment");
       }
 
-      // 成功後清空輸入框並重新載入留言
-      setNewCommentBody("");
-      await loadComments(showAll ? undefined : 3);
-    } catch (err) {
-      console.error("Error submitting comment:", err);
-      setError((err as Error).message);
+      setNewComment("");
+      // 重新載入留言
+      await fetchComments();
+    } catch (err: any) {
+      setError(err.message || "發送留言失敗");
     } finally {
       setSubmitting(false);
     }
   };
 
-  // 刪除留言
   const handleDelete = async (commentId: string) => {
-    if (!confirm("確定要刪除此留言嗎？")) {
-      return;
-    }
+    if (!confirm("確定要刪除這則留言嗎？")) return;
 
     try {
-      const res = await fetch(`/api/comments/${commentId}`, {
+      const res = await fetch(`/api/reviews/${reviewId}/comments/${commentId}`, {
         method: "DELETE",
       });
 
-      const data = await res.json();
-
       if (!res.ok) {
-        throw new Error(data.error || "刪除留言失敗");
+        throw new Error("Failed to delete comment");
       }
 
-      // 成功後重新載入留言
-      await loadComments(showAll ? undefined : 3);
+      // 從列表中移除
+      setComments((prev) => prev.filter((c) => c.id !== commentId));
+      setTotal((prev) => prev - 1);
     } catch (err) {
-      console.error("Error deleting comment:", err);
-      alert((err as Error).message);
+      setError("刪除留言失敗");
     }
   };
 
-  // 展開所有留言
-  const handleShowAll = () => {
-    setShowAll(true);
-    loadComments();
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString("zh-TW", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
   };
 
-  // 未登入時不顯示留言區塊
+  // 未登入時顯示提示
   if (status === "unauthenticated") {
     return (
-      <div
-        className="ts-box"
-        style={{
-          padding: "1rem",
-          marginTop: "1rem",
-          backgroundColor: "var(--app-surface)",
-          borderRadius: "8px",
-        }}
-      >
-        <div style={{ textAlign: "center", color: "var(--app-muted)" }}>
-          登入後即可查看與發表留言
-        </div>
+      <div style={{ marginTop: "1rem" }}>
+        <button
+          type="button"
+          className="ts-button is-ghost is-small"
+          onClick={() => setIsExpanded(!isExpanded)}
+          style={{ color: "var(--ts-gray-500)" }}
+        >
+          <span style={{ marginRight: "0.5rem" }}>💬</span>
+          留言 ({initialCommentCount})
+        </button>
+        {isExpanded && (
+          <div
+            className="ts-box is-hollowed"
+            style={{ marginTop: "0.75rem", padding: "1rem", textAlign: "center" }}
+          >
+            <p style={{ color: "var(--ts-gray-500)", marginBottom: "0.5rem" }}>
+              登入後即可查看與發送留言
+            </p>
+            <a href="/auth/signin" className="ts-button is-small is-outlined">
+              登入
+            </a>
+          </div>
+        )}
       </div>
     );
   }
 
   return (
-    <div
-      className="ts-box"
-      style={{
-        padding: "1.5rem",
-        marginTop: "1rem",
-        backgroundColor: "var(--app-surface)",
-        borderRadius: "8px",
-      }}
-    >
-      <div
-        style={{
-          fontSize: "0.875rem",
-          fontWeight: 600,
-          marginBottom: "1rem",
-          color: "var(--app-text)",
-        }}
+    <div style={{ marginTop: "1rem" }}>
+      {/* 展開/收合按鈕 */}
+      <button
+        type="button"
+        className="ts-button is-ghost is-small"
+        onClick={() => setIsExpanded(!isExpanded)}
+        style={{ color: "var(--ts-gray-500)" }}
       >
-        留言 {total > 0 && `(${total})`}
-      </div>
+        <span style={{ marginRight: "0.5rem" }}>💬</span>
+        留言 ({total})
+        <span style={{ marginLeft: "0.5rem", fontSize: "0.75rem" }}>
+          {isExpanded ? "▲" : "▼"}
+        </span>
+      </button>
 
-      {/* 載入中 */}
-      {loading && comments.length === 0 && (
-        <div style={{ textAlign: "center", color: "var(--app-muted)", padding: "1rem" }}>
-          載入中...
-        </div>
-      )}
-
-      {/* 錯誤訊息 */}
-      {error && (
-        <div
-          className="ts-notice is-negative"
-          style={{ marginBottom: "1rem" }}
-        >
-          {error}
-        </div>
-      )}
-
-      {/* 留言列表 */}
-      {!loading && comments.length === 0 && (
-        <div
-          style={{
-            textAlign: "center",
-            color: "var(--app-muted)",
-            padding: "1rem",
-          }}
-        >
-          目前還沒有留言
-        </div>
-      )}
-
-      {comments.length > 0 && (
-        <div style={{ marginBottom: "1rem" }}>
-          {comments.map((comment) => (
+      {isExpanded && (
+        <div style={{ marginTop: "0.75rem" }}>
+          {/* 錯誤訊息 */}
+          {error && (
             <div
-              key={comment.id}
-              style={{
-                padding: "0.75rem",
-                marginBottom: "0.75rem",
-                backgroundColor: "var(--app-bg)",
-                borderRadius: "6px",
-                border: "1px solid var(--app-border)",
-              }}
+              className="ts-notice is-negative is-small"
+              style={{ marginBottom: "0.75rem" }}
             >
+              {error}
+            </div>
+          )}
+
+          {/* 留言輸入框 */}
+          {status === "authenticated" && (
+            <form onSubmit={handleSubmit} style={{ marginBottom: "1rem" }}>
+              <div style={{ display: "flex", gap: "0.5rem" }}>
+                <input
+                  type="text"
+                  className="ts-input"
+                  placeholder="寫一則留言..."
+                  value={newComment}
+                  onChange={(e) => setNewComment(e.target.value)}
+                  maxLength={500}
+                  disabled={submitting}
+                  style={{ flex: 1 }}
+                />
+                <button
+                  type="submit"
+                  className="ts-button is-primary"
+                  disabled={!newComment.trim() || submitting}
+                >
+                  {submitting ? "..." : "送出"}
+                </button>
+              </div>
               <div
                 style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "flex-start",
-                  marginBottom: "0.5rem",
+                  fontSize: "0.75rem",
+                  color: "var(--ts-gray-400)",
+                  marginTop: "0.25rem",
+                  textAlign: "right",
                 }}
               >
+                {newComment.length}/500
+              </div>
+            </form>
+          )}
+
+          {/* 留言列表 */}
+          {loading ? (
+            <div style={{ textAlign: "center", padding: "1rem", color: "var(--ts-gray-500)" }}>
+              載入中...
+            </div>
+          ) : comments.length === 0 ? (
+            <div
+              style={{
+                textAlign: "center",
+                padding: "1rem",
+                color: "var(--ts-gray-400)",
+                fontSize: "0.875rem",
+              }}
+            >
+              尚無留言，成為第一個留言的人吧！
+            </div>
+          ) : (
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              {comments.map((comment) => (
                 <div
+                  key={comment.id}
+                  className="ts-box is-hollowed"
                   style={{
-                    fontSize: "0.75rem",
-                    color: "var(--app-muted)",
+                    padding: "0.75rem 1rem",
+                    backgroundColor: comment.isOwnComment
+                      ? "color-mix(in srgb, var(--ts-primary-500) 5%, transparent)"
+                      : undefined,
                   }}
                 >
-                  {comment.authorDept || "匿名使用者"} ·{" "}
-                  {new Date(comment.createdAt).toLocaleDateString("zh-TW")}
-                </div>
-                {comment.isOwnComment && (
-                  <button
-                    className="ts-button is-small is-ghost"
-                    onClick={() => handleDelete(comment.id)}
+                  <div
                     style={{
-                      padding: "0.25rem 0.5rem",
-                      fontSize: "0.75rem",
-                      color: "var(--ts-negative-500)",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      marginBottom: "0.5rem",
                     }}
                   >
-                    刪除
-                  </button>
-                )}
-              </div>
-              <div
-                style={{
-                  fontSize: "0.875rem",
-                  color: "var(--app-text)",
-                  whiteSpace: "pre-wrap",
-                  wordBreak: "break-word",
-                }}
-              >
-                {comment.body}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+                    <div style={{ fontSize: "0.75rem", color: "var(--ts-gray-500)" }}>
+                      <span style={{ fontWeight: 500 }}>
+                        {comment.isOwnComment ? "你" : comment.authorDept || "匿名"}
+                      </span>
+                      <span style={{ margin: "0 0.5rem" }}>·</span>
+                      <span>{formatDate(comment.createdAt)}</span>
+                    </div>
+                    {comment.isOwnComment && (
+                      <button
+                        type="button"
+                        className="ts-button is-ghost is-small is-negative"
+                        onClick={() => handleDelete(comment.id)}
+                        style={{ padding: "0.25rem 0.5rem", fontSize: "0.75rem" }}
+                      >
+                        刪除
+                      </button>
+                    )}
+                  </div>
+                  <div style={{ fontSize: "0.9375rem", lineHeight: 1.6 }}>
+                    {comment.body}
+                  </div>
+                </div>
+              ))}
 
-      {/* 顯示更多按鈕 */}
-      {!showAll && hasMore && (
-        <div style={{ textAlign: "center", marginBottom: "1rem" }}>
-          <button
-            className="ts-button is-small is-outlined"
-            onClick={handleShowAll}
-            disabled={loading}
-          >
-            {loading ? "載入中..." : `顯示全部 ${total} 則留言`}
-          </button>
-        </div>
-      )}
-
-      {/* 新增留言表單 */}
-      {session && (
-        <form onSubmit={handleSubmit}>
-          <div className="ts-control is-fluid" style={{ marginBottom: "0.75rem" }}>
-            <textarea
-              className="ts-input"
-              placeholder="輸入你的留言..."
-              rows={3}
-              value={newCommentBody}
-              onChange={(e) => setNewCommentBody(e.target.value)}
-              disabled={submitting}
-              maxLength={500}
-              style={{
-                resize: "vertical",
-                minHeight: "80px",
-              }}
-            />
-            <div
-              style={{
-                fontSize: "0.75rem",
-                color: "var(--app-muted)",
-                marginTop: "0.25rem",
-                textAlign: "right",
-              }}
-            >
-              {newCommentBody.length}/500
+              {hasMore && (
+                <button
+                  type="button"
+                  className="ts-button is-ghost is-small"
+                  onClick={() => {
+                    // TODO: 實作載入更多
+                  }}
+                  style={{ alignSelf: "center" }}
+                >
+                  載入更多...
+                </button>
+              )}
             </div>
-          </div>
-          <button
-            type="submit"
-            className="ts-button is-primary is-small"
-            disabled={submitting || !newCommentBody.trim()}
-          >
-            {submitting ? "發送中..." : "發送留言"}
-          </button>
-        </form>
+          )}
+        </div>
       )}
     </div>
   );

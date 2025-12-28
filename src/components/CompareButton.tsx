@@ -2,6 +2,56 @@
 
 import { useState, useEffect, useCallback } from "react";
 
+// SVG 比較圖示 (標準天秤)
+function CompareIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      {/* 中間支柱 */}
+      <line x1="12" y1="3" x2="12" y2="21" />
+      {/* 底座 */}
+      <line x1="8" y1="21" x2="16" y2="21" />
+      {/* 頂端三角 */}
+      <polygon points="12,3 10,6 14,6" fill="currentColor" stroke="none" />
+      {/* 橫桿 */}
+      <line x1="4" y1="7" x2="20" y2="7" />
+      {/* 左秤盤 */}
+      <path d="M4 7 L2 14 L6 14 Z" />
+      <ellipse cx="4" cy="14" rx="3" ry="1" />
+      {/* 右秤盤 */}
+      <path d="M20 7 L18 14 L22 14 Z" />
+      <ellipse cx="20" cy="14" rx="3" ry="1" />
+    </svg>
+  );
+}
+
+// SVG X 圖示
+function XIcon({ size = 14 }: { size?: number }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </svg>
+  );
+}
+
 interface CompareButtonProps {
   courseId: string;
   courseName: string;
@@ -94,7 +144,7 @@ export function CompareButton({
           color: isInList ? "var(--ts-primary-500)" : "var(--ts-gray-500)",
         }}
       >
-        <span className="ts-icon is-scale-balanced-icon" />
+        <CompareIcon size={18} />
       </button>
     );
   }
@@ -105,7 +155,7 @@ export function CompareButton({
       onClick={handleClick}
       className={`ts-button ${isInList ? "is-outlined is-primary" : "is-outlined"} ${className}`}
     >
-      <span className="ts-icon is-scale-icon" style={{ marginRight: "0.5rem" }} />
+      <span style={{ marginRight: "0.5rem", display: "inline-flex" }}><CompareIcon size={16} /></span>
       {isInList ? "已加入比較" : "加入比較"}
       {listCount > 0 && !isInList && (
         <span
@@ -238,7 +288,7 @@ export function CompareFloatingBar() {
                     onClick={() => removeItem(item.id)}
                     title="移除"
                   >
-                    <span className="ts-icon is-xmark-icon" />
+                    <XIcon size={14} />
                   </button>
                 </div>
               ))}
@@ -274,8 +324,9 @@ export function CompareFloatingBar() {
               type="button"
               className="ts-button is-ghost is-small"
               onClick={() => setIsExpanded(true)}
+              style={{ display: "flex", alignItems: "center" }}
             >
-              <span className="ts-icon is-scale-icon" style={{ marginRight: "0.5rem" }} />
+              <span style={{ marginRight: "0.5rem", display: "inline-flex" }}><CompareIcon size={16} /></span>
               比較列表 ({list.length})
             </button>
             <a

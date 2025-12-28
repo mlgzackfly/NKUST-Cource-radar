@@ -13,6 +13,16 @@ export const metadata = {
   description: "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊，做出更明智的選課決定。",
   icons: {
     icon: '/icon.svg',
+    apple: '/icons/icon-192.svg',
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: '選課雷達',
+  },
+  formatDetection: {
+    telephone: false,
   },
 };
 
@@ -20,6 +30,10 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover" as const, // 支援 iPhone X 以上的 Safe Area
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1a2e" },
+  ],
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
@@ -153,6 +167,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <BottomNavbar />
           </div>
         </SessionProvider>
+        {/* Service Worker Registration */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js').then(function(registration) {
+                    console.log('[SW] Registration successful:', registration.scope);
+                  }).catch(function(error) {
+                    console.log('[SW] Registration failed:', error);
+                  });
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );
