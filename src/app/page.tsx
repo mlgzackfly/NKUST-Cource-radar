@@ -3,6 +3,9 @@ import { prisma } from "@/lib/db";
 import { HomeSearch } from "@/components/HomeSearch";
 import { RecommendationSection } from "@/components/RecommendationSection";
 
+// Force dynamic rendering to always fetch fresh stats
+export const dynamic = "force-dynamic";
+
 function formatCount(n: number) {
   return new Intl.NumberFormat("zh-Hant-TW").format(n);
 }
