@@ -1,3 +1,5 @@
+"use client";
+
 export default function OfflinePage() {
   return (
     <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>

@@ -40,10 +40,12 @@ export default async function AdminLayout({
 
         <nav>
           <AdminNavLink href="/admin" icon="📊">儀表板</AdminNavLink>
+          <AdminNavLink href="/admin/instructors" icon="👨‍🏫">教師儀表板</AdminNavLink>
           <AdminNavLink href="/admin/reports" icon="🚩">檢舉管理</AdminNavLink>
           <AdminNavLink href="/admin/reviews" icon="💬">評論管理</AdminNavLink>
           <AdminNavLink href="/admin/users" icon="👥">使用者管理</AdminNavLink>
           <AdminNavLink href="/admin/actions" icon="📝">操作記錄</AdminNavLink>
+          <AdminNavLink href="/admin/export" icon="📤">數據匯出</AdminNavLink>
 
           <div style={{ padding: "1rem 1.5rem", marginTop: "1rem", borderTop: "1px solid var(--ts-gray-200)" }}>
             <Link href="/" className="ts-button is-outlined is-fluid" style={{ fontSize: "0.875rem" }}>
