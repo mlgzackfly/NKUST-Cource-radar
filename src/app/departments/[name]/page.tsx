@@ -61,11 +61,7 @@ interface DepartmentStats {
 }
 
 // 計算綜合評分
-const getOverallRating = (rating: {
-  coolness: number;
-  usefulness: number;
-  grading: number;
-}) => {
+const getOverallRating = (rating: { coolness: number; usefulness: number; grading: number }) => {
   const values = [rating.coolness, rating.usefulness, rating.grading].filter((v) => v > 0);
   if (values.length === 0) return 0;
   return values.reduce((a, b) => a + b, 0) / values.length;
@@ -234,7 +230,9 @@ export default function DepartmentPage({ params }: { params: Promise<{ name: str
     <div className="app-container" style={{ padding: "2rem 1rem", paddingBottom: "4rem" }}>
       {/* 標題區 */}
       <div style={{ marginBottom: "1.5rem" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+        <div
+          style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}
+        >
           <Link href="/courses" className="ts-button is-ghost is-icon" title="返回">
             <span className="ts-icon is-arrow-left-icon" />
           </Link>
@@ -349,10 +347,8 @@ export default function DepartmentPage({ params }: { params: Promise<{ name: str
                         width: "24px",
                         height: "24px",
                         borderRadius: "50%",
-                        background:
-                          index < 3 ? "var(--ts-warning-100)" : "var(--ts-gray-100)",
-                        color:
-                          index < 3 ? "var(--ts-warning-700)" : "var(--ts-gray-600)",
+                        background: index < 3 ? "var(--ts-warning-100)" : "var(--ts-gray-100)",
+                        color: index < 3 ? "var(--ts-warning-700)" : "var(--ts-gray-600)",
                         fontSize: "0.75rem",
                         fontWeight: 600,
                         display: "flex",
@@ -415,10 +411,8 @@ export default function DepartmentPage({ params }: { params: Promise<{ name: str
                         width: "24px",
                         height: "24px",
                         borderRadius: "50%",
-                        background:
-                          index < 3 ? "var(--ts-primary-100)" : "var(--ts-gray-100)",
-                        color:
-                          index < 3 ? "var(--ts-primary-700)" : "var(--ts-gray-600)",
+                        background: index < 3 ? "var(--ts-primary-100)" : "var(--ts-gray-100)",
+                        color: index < 3 ? "var(--ts-primary-700)" : "var(--ts-gray-600)",
                         fontSize: "0.75rem",
                         fontWeight: 600,
                         display: "flex",

@@ -21,10 +21,7 @@ import {
  */
 export async function GET(request: Request): Promise<Response> {
   if (!prisma) {
-    return Response.json(
-      { error: "Database not available" },
-      { status: 503 }
-    );
+    return Response.json({ error: "Database not available" }, { status: 503 });
   }
 
   try {

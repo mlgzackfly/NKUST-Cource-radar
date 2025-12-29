@@ -46,7 +46,9 @@ export function Snackbar({ message, type = "success", onClose, duration = 3000 }
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: `
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
         @keyframes slideUp {
           from {
             transform: translateX(-50%) translateY(100%);
@@ -57,7 +59,9 @@ export function Snackbar({ message, type = "success", onClose, duration = 3000 }
             opacity: 1;
           }
         }
-      `}} />
+      `,
+        }}
+      />
       <div
         style={{
           position: "fixed",
@@ -65,7 +69,7 @@ export function Snackbar({ message, type = "success", onClose, duration = 3000 }
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 2000,
-          animation: "slideUp 0.3s ease-out"
+          animation: "slideUp 0.3s ease-out",
         }}
       >
         <div
@@ -79,13 +83,11 @@ export function Snackbar({ message, type = "success", onClose, duration = 3000 }
             alignItems: "center",
             gap: "0.75rem",
             minWidth: "300px",
-            maxWidth: "500px"
+            maxWidth: "500px",
           }}
         >
           {getIcon() && (
-            <span style={{ fontSize: "1.25rem", fontWeight: "bold" }}>
-              {getIcon()}
-            </span>
+            <span style={{ fontSize: "1.25rem", fontWeight: "bold" }}>{getIcon()}</span>
           )}
           <span style={{ flex: 1 }}>{message}</span>
           <button
@@ -98,10 +100,10 @@ export function Snackbar({ message, type = "success", onClose, duration = 3000 }
               fontSize: "1.25rem",
               padding: "0",
               opacity: 0.8,
-              lineHeight: 1
+              lineHeight: 1,
             }}
-            onMouseEnter={(e) => e.currentTarget.style.opacity = "1"}
-            onMouseLeave={(e) => e.currentTarget.style.opacity = "0.8"}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = "1")}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = "0.8")}
           >
             ×
           </button>

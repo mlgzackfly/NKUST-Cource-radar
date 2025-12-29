@@ -5,10 +5,7 @@ import { prisma } from "@/lib/db";
 import { validateReviewRatings, validateText } from "@/lib/validation";
 import { rateLimiter, RATE_LIMITS } from "@/lib/ratelimit";
 
-export async function PUT(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
@@ -85,7 +82,7 @@ export async function PUT(
 
     // 找到使用者
     const user = await prisma!.user.findUnique({
-      where: { email }
+      where: { email },
     });
 
     if (!user) {
@@ -94,7 +91,7 @@ export async function PUT(
 
     // 檢查評論是否存在且屬於該使用者
     const existingReview = await prisma!.review.findUnique({
-      where: { id: p.id }
+      where: { id: p.id },
     });
 
     if (!existingReview) {
@@ -116,7 +113,7 @@ export async function PUT(
         grading: validatedRatings.grading,
         body: validatedBody,
         authorDept: validatedDept,
-      }
+      },
     });
 
     // 建立版本快照
@@ -129,27 +126,20 @@ export async function PUT(
         attendance: validatedRatings.attendance,
         grading: validatedRatings.grading,
         body: validatedBody,
-        authorDept: validatedDept
-      }
+        authorDept: validatedDept,
+      },
     });
 
     return Response.json({ success: true, reviewId: updatedReview.id });
-
   } catch (error) {
     console.error("Failed to update review:", error);
 
     // 不洩露錯誤詳情給客戶端
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }
 
-export async function DELETE(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
@@ -194,7 +184,7 @@ export async function DELETE(
 
     // 找到使用者
     const user = await prisma!.user.findUnique({
-      where: { email }
+      where: { email },
     });
 
     if (!user) {
@@ -203,7 +193,7 @@ export async function DELETE(
 
     // 檢查評論是否存在且屬於該使用者
     const existingReview = await prisma!.review.findUnique({
-      where: { id: p.id }
+      where: { id: p.id },
     });
 
     if (!existingReview) {
@@ -216,18 +206,14 @@ export async function DELETE(
 
     // 刪除評論（cascade 會自動刪除相關的 votes, comments, reports 等）
     await prisma!.review.delete({
-      where: { id: p.id }
+      where: { id: p.id },
     });
 
     return Response.json({ success: true, message: "Review deleted successfully" });
-
   } catch (error) {
     console.error("Failed to delete review:", error);
 
     // 不洩露錯誤詳情給客戶端
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

@@ -3,7 +3,10 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="app-container">
-      <div className="ts-grid is-relaxed is-vertical is-center-aligned" style={{minHeight: "50vh"}}>
+      <div
+        className="ts-grid is-relaxed is-vertical is-center-aligned"
+        style={{ minHeight: "50vh" }}
+      >
         <div className="column is-fluid">
           <div className="ts-header is-huge is-heavy has-text-centered">404</div>
           <div className="ts-header is-large has-text-centered">找不到頁面</div>
@@ -24,4 +27,3 @@ export default function NotFound() {
     </div>
   );
 }
-

@@ -81,9 +81,19 @@ export default function AdminInstructorsPage() {
 
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "1.5rem",
+        }}
+      >
         <h1 style={{ fontSize: "1.75rem", fontWeight: 700 }}>教師儀表板</h1>
-        <Link href="/api/admin/export?type=instructors&format=csv" className="ts-button is-outlined is-small">
+        <Link
+          href="/api/admin/export?type=instructors&format=csv"
+          className="ts-button is-outlined is-small"
+        >
           匯出 CSV
         </Link>
       </div>
@@ -105,10 +115,7 @@ export default function AdminInstructorsPage() {
         <table className="ts-table is-striped" style={{ width: "100%", minWidth: "600px" }}>
           <thead>
             <tr>
-              <th
-                style={{ cursor: "pointer" }}
-                onClick={() => handleSort("name")}
-              >
+              <th style={{ cursor: "pointer" }} onClick={() => handleSort("name")}>
                 教師姓名
                 <SortIcon field="name" />
               </th>
@@ -157,8 +164,8 @@ export default function AdminInstructorsPage() {
                             instructor.avgRating >= 4
                               ? "var(--ts-positive-500)"
                               : instructor.avgRating >= 3
-                              ? "var(--ts-warning-500)"
-                              : "var(--ts-negative-500)",
+                                ? "var(--ts-warning-500)"
+                                : "var(--ts-negative-500)",
                           fontWeight: 600,
                         }}
                       >

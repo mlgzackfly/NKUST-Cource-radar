@@ -11,10 +11,7 @@ import type { SelectedCourse, ConflictMap } from "@/types/mockSchedule";
  * @param time2 第二門課程的時間字串
  * @returns true 表示有衝堂，false 表示無衝堂
  */
-export function hasTimeConflict(
-  time1: string | null,
-  time2: string | null
-): boolean {
+export function hasTimeConflict(time1: string | null, time2: string | null): boolean {
   // 若任一課程無上課時間（如實習、專題），則不衝堂
   if (!time1 || !time2) return false;
 
@@ -28,9 +25,7 @@ export function hasTimeConflict(
         // 必須是同一天
         if (slot1.day === slot2.day) {
           // 檢查節次陣列是否有交集
-          const hasOverlap = slot1.periods.some((period) =>
-            slot2.periods.includes(period)
-          );
+          const hasOverlap = slot1.periods.some((period) => slot2.periods.includes(period));
           if (hasOverlap) return true;
         }
       }

@@ -8,7 +8,7 @@ export async function GET(): Promise<Response> {
   if (!prisma) {
     return Response.json(
       { error: "DATABASE_URL is not set. API is running without DB." },
-      { status: 503 },
+      { status: 503 }
     );
   }
 
@@ -57,5 +57,3 @@ export async function GET(): Promise<Response> {
     departments: departments.map((x) => x.department).filter(Boolean),
   });
 }
-
-

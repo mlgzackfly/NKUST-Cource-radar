@@ -12,22 +12,22 @@ export function BottomNavbar() {
     {
       href: "/",
       label: "首頁",
-      icon: "🏠"
+      icon: "🏠",
     },
     {
       href: "/courses",
       label: "課程",
-      icon: "📚"
+      icon: "📚",
     },
     {
       href: "/mock-schedule",
       label: "模擬選課",
-      icon: "📅"
+      icon: "📅",
     },
     {
       href: session ? "/profile" : "/auth/signin",
       label: "我的",
-      icon: session ? "👤" : "🔐"
+      icon: session ? "👤" : "🔐",
     },
   ];
 

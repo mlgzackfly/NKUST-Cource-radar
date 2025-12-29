@@ -26,15 +26,9 @@ export function ScheduleStats({
   return (
     <div className="ts-box is-secondary" style={{ padding: "1.5rem" }}>
       {/* 統計數字 */}
-      <div
-        className="ts-grid is-3-columns"
-        style={{ gap: "1rem", marginBottom: "1.5rem" }}
-      >
+      <div className="ts-grid is-3-columns" style={{ gap: "1rem", marginBottom: "1.5rem" }}>
         <div style={{ textAlign: "center" }}>
-          <div
-            className="app-muted"
-            style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}
-          >
+          <div className="app-muted" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
             總學分
           </div>
           <div
@@ -49,32 +43,21 @@ export function ScheduleStats({
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <div
-            className="app-muted"
-            style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}
-          >
+          <div className="app-muted" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
             課程數
           </div>
-          <div style={{ fontSize: "2rem", fontWeight: 700 }}>
-            {selectedCourses.length}
-          </div>
+          <div style={{ fontSize: "2rem", fontWeight: 700 }}>{selectedCourses.length}</div>
         </div>
 
         <div style={{ textAlign: "center" }}>
-          <div
-            className="app-muted"
-            style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}
-          >
+          <div className="app-muted" style={{ fontSize: "0.875rem", marginBottom: "0.5rem" }}>
             衝堂
           </div>
           <div
             style={{
               fontSize: "2rem",
               fontWeight: 700,
-              color:
-                conflictCount > 0
-                  ? "var(--ts-negative-600)"
-                  : "var(--ts-gray-500)",
+              color: conflictCount > 0 ? "var(--ts-negative-600)" : "var(--ts-gray-500)",
             }}
           >
             {conflictCount > 0 ? `${conflictCount} ⚠️` : "無"}

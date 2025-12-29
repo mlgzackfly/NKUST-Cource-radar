@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
 type Suggestion = {
-  type: 'course' | 'instructor' | 'department';
+  type: "course" | "instructor" | "department";
   value: string;
   label: string;
   department?: string | null;
@@ -34,7 +34,7 @@ export function HomeSearch() {
           setSuggestions(data);
         }
       } catch (error) {
-        console.error('Failed to fetch suggestions:', error);
+        console.error("Failed to fetch suggestions:", error);
       }
     };
 
@@ -69,10 +69,10 @@ export function HomeSearch() {
     setShowSuggestions(false);
 
     // 根據建議類型導航到不同頁面
-    if (suggestion.type === 'instructor' && suggestion.id) {
+    if (suggestion.type === "instructor" && suggestion.id) {
       // 點擊教師建議 -> 直接進入教師檔案頁面
       router.push(`/instructors/${suggestion.id}`);
-    } else if (suggestion.type === 'course' && suggestion.id) {
+    } else if (suggestion.type === "course" && suggestion.id) {
       // 點擊課程建議 -> 直接進入課程詳情頁面
       router.push(`/courses/${suggestion.id}`);
     } else {
@@ -110,9 +110,10 @@ export function HomeSearch() {
             background: "white",
             borderRadius: "12px",
             border: "1px solid var(--ts-gray-200)",
-            boxShadow: showSuggestions && suggestions.length > 0
-              ? "0 8px 24px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04)"
-              : "0 4px 12px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02)",
+            boxShadow:
+              showSuggestions && suggestions.length > 0
+                ? "0 8px 24px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04)"
+                : "0 4px 12px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.02)",
             transition: "box-shadow 0.2s, border-color 0.2s",
           }}
         >
@@ -190,7 +191,8 @@ export function HomeSearch() {
                   alignItems: "center",
                   gap: "0.75rem",
                   transition: "background-color 0.15s",
-                  borderBottom: index < suggestions.length - 1 ? "1px solid var(--app-border)" : "none",
+                  borderBottom:
+                    index < suggestions.length - 1 ? "1px solid var(--app-border)" : "none",
                 }}
                 onMouseEnter={() => setSelectedIndex(index)}
               >
@@ -198,22 +200,28 @@ export function HomeSearch() {
                   style={{
                     padding: "0.25rem 0.5rem",
                     borderRadius: "6px",
-                    backgroundColor: suggestion.type === "course"
-                      ? "color-mix(in srgb, var(--ts-primary-500) 15%, transparent)"
-                      : suggestion.type === "instructor"
-                      ? "color-mix(in srgb, var(--ts-info-500) 15%, transparent)"
-                      : "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
-                    color: suggestion.type === "course"
-                      ? "var(--ts-primary-600)"
-                      : suggestion.type === "instructor"
-                      ? "var(--ts-info-600)"
-                      : "var(--ts-warning-600)",
+                    backgroundColor:
+                      suggestion.type === "course"
+                        ? "color-mix(in srgb, var(--ts-primary-500) 15%, transparent)"
+                        : suggestion.type === "instructor"
+                          ? "color-mix(in srgb, var(--ts-info-500) 15%, transparent)"
+                          : "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
+                    color:
+                      suggestion.type === "course"
+                        ? "var(--ts-primary-600)"
+                        : suggestion.type === "instructor"
+                          ? "var(--ts-info-600)"
+                          : "var(--ts-warning-600)",
                     fontWeight: 600,
                     fontSize: "0.75rem",
-                    flexShrink: 0
+                    flexShrink: 0,
                   }}
                 >
-                  {suggestion.type === 'course' ? '課程' : suggestion.type === 'instructor' ? '教師' : '系所'}
+                  {suggestion.type === "course"
+                    ? "課程"
+                    : suggestion.type === "instructor"
+                      ? "教師"
+                      : "系所"}
                 </span>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div
@@ -236,7 +244,7 @@ export function HomeSearch() {
                         marginTop: "0.25rem",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
-                        whiteSpace: "nowrap"
+                        whiteSpace: "nowrap",
                       }}
                     >
                       {suggestion.department}

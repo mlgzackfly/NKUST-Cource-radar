@@ -30,10 +30,7 @@ export async function POST(request: NextRequest) {
 
     // 驗證 @nkust.edu.tw email
     if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return Response.json(
-        { error: "Only @nkust.edu.tw emails allowed" },
-        { status: 403 }
-      );
+      return Response.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
     }
 
     const body = await request.json();
@@ -41,10 +38,7 @@ export async function POST(request: NextRequest) {
 
     // 驗證 courseIds
     if (!Array.isArray(courseIds) || courseIds.length < 2 || courseIds.length > 4) {
-      return Response.json(
-        { error: "Must compare between 2 and 4 courses" },
-        { status: 400 }
-      );
+      return Response.json({ error: "Must compare between 2 and 4 courses" }, { status: 400 });
     }
 
     // 找到使用者
@@ -130,8 +124,7 @@ export async function POST(request: NextRequest) {
           }
           if (usefulnessValues.length > 0) {
             stats.avgUsefulness =
-              usefulnessValues.reduce((a: number, b: number) => a + b, 0) /
-              usefulnessValues.length;
+              usefulnessValues.reduce((a: number, b: number) => a + b, 0) / usefulnessValues.length;
           }
           if (workloadValues.length > 0) {
             stats.avgWorkload =
@@ -139,8 +132,7 @@ export async function POST(request: NextRequest) {
           }
           if (attendanceValues.length > 0) {
             stats.avgAttendance =
-              attendanceValues.reduce((a: number, b: number) => a + b, 0) /
-              attendanceValues.length;
+              attendanceValues.reduce((a: number, b: number) => a + b, 0) / attendanceValues.length;
           }
           if (gradingValues.length > 0) {
             stats.avgGrading =
@@ -159,10 +151,7 @@ export async function POST(request: NextRequest) {
     const validCourses = courses.filter((c) => c !== null);
 
     if (validCourses.length < 2) {
-      return Response.json(
-        { error: "At least 2 valid courses required" },
-        { status: 400 }
-      );
+      return Response.json({ error: "At least 2 valid courses required" }, { status: 400 });
     }
 
     // 儲存比較歷史
@@ -179,9 +168,6 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error("Failed to compare courses:", error);
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

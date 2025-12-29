@@ -49,9 +49,16 @@ export function CoursesFilters({ initial }: Props) {
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const hasAnyFilter = Boolean(
-    initial.q || initial.campus || initial.division || initial.department ||
-    initial.sortBy || initial.sortOrder || initial.minRating ||
-    initial.maxWorkload || initial.minGrading || initial.timeSlot,
+    initial.q ||
+    initial.campus ||
+    initial.division ||
+    initial.department ||
+    initial.sortBy ||
+    initial.sortOrder ||
+    initial.minRating ||
+    initial.maxWorkload ||
+    initial.minGrading ||
+    initial.timeSlot
   );
 
   useEffect(() => {
@@ -90,15 +97,20 @@ export function CoursesFilters({ initial }: Props) {
 
     debounceTimerRef.current = setTimeout(() => {
       fetch(`/api/search/suggestions?q=${encodeURIComponent(searchQuery)}`)
-        .then(res => res.json())
-        .then(data => {
+        .then((res) => res.json())
+        .then((data) => {
           // Map API response to internal suggestion format
           const mappedSuggestions = (data || []).map((item: any) => ({
-            type: item.type === 'course' ? 'course' : item.type === 'department' ? 'department' : 'instructor',
+            type:
+              item.type === "course"
+                ? "course"
+                : item.type === "department"
+                  ? "department"
+                  : "instructor",
             text: item.value,
             label: item.label,
             id: item.id,
-            meta: item.department
+            meta: item.department,
           }));
           setSuggestions(mappedSuggestions);
           setShowSuggestions(true);
@@ -142,10 +154,10 @@ export function CoursesFilters({ initial }: Props) {
 
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setSelectedIndex(prev => (prev + 1) % suggestions.length);
+      setSelectedIndex((prev) => (prev + 1) % suggestions.length);
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setSelectedIndex(prev => (prev - 1 + suggestions.length) % suggestions.length);
+      setSelectedIndex((prev) => (prev - 1 + suggestions.length) % suggestions.length);
     } else if (e.key === "Enter" && selectedIndex >= 0) {
       e.preventDefault();
       selectSuggestion(suggestions[selectedIndex]);
@@ -165,7 +177,7 @@ export function CoursesFilters({ initial }: Props) {
     } else {
       // 其他類型（系所等）-> 進入課程搜尋頁面
       const params = new URLSearchParams();
-      params.set('q', suggestion.text);
+      params.set("q", suggestion.text);
       window.location.href = `/courses?${params.toString()}`;
     }
   };
@@ -201,73 +213,89 @@ export function CoursesFilters({ initial }: Props) {
                     left: 0,
                     right: 0,
                     marginTop: "0.5rem",
-                  backgroundColor: "var(--app-surface)",
-                  border: "1px solid var(--app-border)",
-                  borderRadius: "12px",
-                  boxShadow: "0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15)",
-                  maxHeight: "320px",
-                  overflowY: "auto",
-                  zIndex: 100
-                }}
-              >
-                {suggestions.map((suggestion, index) => (
-                  <div
-                    key={`${suggestion.type}-${suggestion.text}-${index}`}
-                    onClick={() => selectSuggestion(suggestion)}
-                    onMouseEnter={() => setSelectedIndex(index)}
-                    style={{
-                      padding: "0.75rem 1rem",
-                      cursor: "pointer",
-                      backgroundColor: selectedIndex === index ? "var(--app-table-hover-bg)" : "transparent",
-                      borderBottom: index < suggestions.length - 1 ? "1px solid var(--app-border)" : "none",
-                      transition: "background-color 0.15s",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "0.75rem"
-                    }}
-                  >
-                    <span
+                    backgroundColor: "var(--app-surface)",
+                    border: "1px solid var(--app-border)",
+                    borderRadius: "12px",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15)",
+                    maxHeight: "320px",
+                    overflowY: "auto",
+                    zIndex: 100,
+                  }}
+                >
+                  {suggestions.map((suggestion, index) => (
+                    <div
+                      key={`${suggestion.type}-${suggestion.text}-${index}`}
+                      onClick={() => selectSuggestion(suggestion)}
+                      onMouseEnter={() => setSelectedIndex(index)}
                       style={{
-                        padding: "0.25rem 0.5rem",
-                        borderRadius: "6px",
-                        backgroundColor: suggestion.type === "course"
-                          ? "color-mix(in srgb, var(--ts-primary-500) 15%, transparent)"
-                          : suggestion.type === "instructor"
-                          ? "color-mix(in srgb, var(--ts-info-500) 15%, transparent)"
-                          : "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
-                        color: suggestion.type === "course"
-                          ? "var(--ts-primary-600)"
-                          : suggestion.type === "instructor"
-                          ? "var(--ts-info-600)"
-                          : "var(--ts-warning-600)",
-                        fontWeight: 600,
-                        fontSize: "0.75rem",
-                        flexShrink: 0
+                        padding: "0.75rem 1rem",
+                        cursor: "pointer",
+                        backgroundColor:
+                          selectedIndex === index ? "var(--app-table-hover-bg)" : "transparent",
+                        borderBottom:
+                          index < suggestions.length - 1 ? "1px solid var(--app-border)" : "none",
+                        transition: "background-color 0.15s",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.75rem",
                       }}
                     >
-                      {suggestion.type === "course" ? "課程" : suggestion.type === "instructor" ? "教師" : "系所"}
-                    </span>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div style={{ fontSize: "0.9375rem", color: "var(--app-text)", fontWeight: 500 }}>
-                        {suggestion.label}
-                      </div>
-                      {suggestion.meta && (
-                        <div style={{
-                          fontSize: "0.8125rem",
-                          color: "var(--app-muted)",
-                          marginTop: "0.25rem",
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          whiteSpace: "nowrap"
-                        }}>
-                          {suggestion.meta}
+                      <span
+                        style={{
+                          padding: "0.25rem 0.5rem",
+                          borderRadius: "6px",
+                          backgroundColor:
+                            suggestion.type === "course"
+                              ? "color-mix(in srgb, var(--ts-primary-500) 15%, transparent)"
+                              : suggestion.type === "instructor"
+                                ? "color-mix(in srgb, var(--ts-info-500) 15%, transparent)"
+                                : "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
+                          color:
+                            suggestion.type === "course"
+                              ? "var(--ts-primary-600)"
+                              : suggestion.type === "instructor"
+                                ? "var(--ts-info-600)"
+                                : "var(--ts-warning-600)",
+                          fontWeight: 600,
+                          fontSize: "0.75rem",
+                          flexShrink: 0,
+                        }}
+                      >
+                        {suggestion.type === "course"
+                          ? "課程"
+                          : suggestion.type === "instructor"
+                            ? "教師"
+                            : "系所"}
+                      </span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div
+                          style={{
+                            fontSize: "0.9375rem",
+                            color: "var(--app-text)",
+                            fontWeight: 500,
+                          }}
+                        >
+                          {suggestion.label}
                         </div>
-                      )}
+                        {suggestion.meta && (
+                          <div
+                            style={{
+                              fontSize: "0.8125rem",
+                              color: "var(--app-muted)",
+                              marginTop: "0.25rem",
+                              overflow: "hidden",
+                              textOverflow: "ellipsis",
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {suggestion.meta}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ))}
-              </div>
-            )}
+                  ))}
+                </div>
+              )}
             </div>
           </div>
           <div className="column">
@@ -323,7 +351,7 @@ export function CoursesFilters({ initial }: Props) {
                   <div className="content">
                     <div className="ts-select is-solid is-fluid">
                       <select name="division" defaultValue={initial.division ?? ""}>
-                        <option value="">全部</option>                      
+                        <option value="">全部</option>
                         {options.divisions.map((v) => (
                           <option key={v} value={v}>
                             {v}
@@ -438,11 +466,19 @@ export function CoursesFilters({ initial }: Props) {
 
               <div style={{ height: "1.5rem" }} />
               <div className="ts-wrap is-compact">
-                <button type="submit" className="ts-button is-primary" style={{ padding: "0.75rem 1.5rem" }}>
+                <button
+                  type="submit"
+                  className="ts-button is-primary"
+                  style={{ padding: "0.75rem 1.5rem" }}
+                >
                   套用篩選
                 </button>
                 {hasAnyFilter ? (
-                  <a className="ts-button is-ghost" href="/courses" style={{ padding: "0.75rem 1.5rem" }}>
+                  <a
+                    className="ts-button is-ghost"
+                    href="/courses"
+                    style={{ padding: "0.75rem 1.5rem" }}
+                  >
                     清除全部
                   </a>
                 ) : null}
@@ -454,4 +490,3 @@ export function CoursesFilters({ initial }: Props) {
     </>
   );
 }
-

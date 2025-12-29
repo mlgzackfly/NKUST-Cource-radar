@@ -3,18 +3,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
 
     if (!prisma) {
-      return Response.json(
-        { error: "Database not available" },
-        { status: 503 }
-      );
+      return Response.json({ error: "Database not available" }, { status: 503 });
     }
 
     // 查詢教師基本資訊
@@ -28,10 +22,7 @@ export async function GET(
     });
 
     if (!instructor) {
-      return Response.json(
-        { error: "Instructor not found" },
-        { status: 404 }
-      );
+      return Response.json({ error: "Instructor not found" }, { status: 404 });
     }
 
     // 查詢該教師所有課程
@@ -43,11 +34,7 @@ export async function GET(
           },
         },
       },
-      orderBy: [
-        { year: "desc" },
-        { term: "desc" },
-        { courseName: "asc" },
-      ],
+      orderBy: [{ year: "desc" }, { term: "desc" }, { courseName: "asc" }],
       select: {
         id: true,
         courseName: true,
@@ -77,15 +64,13 @@ export async function GET(
       totalEnrolled: courses.reduce((sum: number, c: any) => sum + (c.enrolled || 0), 0),
       totalReviews: courses.reduce((sum: number, c: any) => sum + c._count.reviews, 0),
       // 學期分佈
-      semesters: Array.from(
-        new Set(courses.map((c: any) => `${c.year}-${c.term}`))
-      ).sort().reverse(),
+      semesters: Array.from(new Set(courses.map((c: any) => `${c.year}-${c.term}`)))
+        .sort()
+        .reverse(),
       // 校區分佈
       campuses: Array.from(new Set(courses.map((c: any) => c.campus).filter(Boolean))),
       // 系所分佈
-      departments: Array.from(
-        new Set(courses.map((c: any) => c.department).filter(Boolean))
-      ),
+      departments: Array.from(new Set(courses.map((c: any) => c.department).filter(Boolean))),
     };
 
     // 取得該教師的課程評價統計
@@ -129,9 +114,6 @@ export async function GET(
     });
   } catch (error: any) {
     console.error("Failed to get instructor details:", error);
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

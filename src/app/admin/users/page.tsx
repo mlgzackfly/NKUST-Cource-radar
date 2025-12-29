@@ -101,7 +101,7 @@ export default function UsersPage() {
       const res = await fetch(`/api/admin/users/${userId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action })
+        body: JSON.stringify({ action }),
       });
 
       if (res.ok) {
@@ -130,11 +130,11 @@ export default function UsersPage() {
 
     setProcessing("batch");
     try {
-      const promises = Array.from(selectedUsers).map(userId =>
+      const promises = Array.from(selectedUsers).map((userId) =>
         fetch(`/api/admin/users/${userId}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ action })
+          body: JSON.stringify({ action }),
         })
       );
 
@@ -160,10 +160,10 @@ export default function UsersPage() {
   };
 
   const toggleSelectAll = () => {
-    if (selectedUsers.size === users.filter(u => u.role !== "ADMIN").length) {
+    if (selectedUsers.size === users.filter((u) => u.role !== "ADMIN").length) {
       setSelectedUsers(new Set());
     } else {
-      setSelectedUsers(new Set(users.filter(u => u.role !== "ADMIN").map(u => u.id)));
+      setSelectedUsers(new Set(users.filter((u) => u.role !== "ADMIN").map((u) => u.id)));
     }
   };
 
@@ -194,7 +194,10 @@ export default function UsersPage() {
 
       {/* 搜尋與篩選 */}
       <div style={{ marginBottom: "1.5rem" }}>
-        <form onSubmit={handleSearch} style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
+        <form
+          onSubmit={handleSearch}
+          style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}
+        >
           <div className="ts-input is-fluid" style={{ flex: 1 }}>
             <input
               type="text"
@@ -203,24 +206,35 @@ export default function UsersPage() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <button type="submit" className="ts-button is-primary">搜尋</button>
+          <button type="submit" className="ts-button is-primary">
+            搜尋
+          </button>
         </form>
 
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
           <button
-            onClick={() => { setBannedFilter(""); setPage(1); }}
+            onClick={() => {
+              setBannedFilter("");
+              setPage(1);
+            }}
             className={`ts-button ${!bannedFilter ? "is-primary" : "is-outlined"}`}
           >
             全部
           </button>
           <button
-            onClick={() => { setBannedFilter("false"); setPage(1); }}
+            onClick={() => {
+              setBannedFilter("false");
+              setPage(1);
+            }}
             className={`ts-button ${bannedFilter === "false" ? "is-primary" : "is-outlined"}`}
           >
             正常
           </button>
           <button
-            onClick={() => { setBannedFilter("true"); setPage(1); }}
+            onClick={() => {
+              setBannedFilter("true");
+              setPage(1);
+            }}
             className={`ts-button ${bannedFilter === "true" ? "is-primary" : "is-outlined"}`}
           >
             已封禁
@@ -230,15 +244,17 @@ export default function UsersPage() {
 
       {/* 批次操作列 */}
       {selectedUsers.size > 0 && (
-        <div style={{
-          padding: "1rem",
-          backgroundColor: "var(--ts-gray-100)",
-          borderRadius: "8px",
-          marginBottom: "1rem",
-          display: "flex",
-          alignItems: "center",
-          gap: "1rem"
-        }}>
+        <div
+          style={{
+            padding: "1rem",
+            backgroundColor: "var(--ts-gray-100)",
+            borderRadius: "8px",
+            marginBottom: "1rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "1rem",
+          }}
+        >
           <span style={{ fontWeight: 600 }}>已選擇 {selectedUsers.size} 位使用者</span>
           <div style={{ display: "flex", gap: "0.5rem" }}>
             <button
@@ -283,7 +299,10 @@ export default function UsersPage() {
                   <th style={{ width: "40px" }}>
                     <input
                       type="checkbox"
-                      checked={selectedUsers.size === users.filter(u => u.role !== "ADMIN").length && users.filter(u => u.role !== "ADMIN").length > 0}
+                      checked={
+                        selectedUsers.size === users.filter((u) => u.role !== "ADMIN").length &&
+                        users.filter((u) => u.role !== "ADMIN").length > 0
+                      }
                       onChange={toggleSelectAll}
                     />
                   </th>
@@ -297,7 +316,7 @@ export default function UsersPage() {
                 </tr>
               </thead>
               <tbody>
-                {users.map(user => (
+                {users.map((user) => (
                   <React.Fragment key={user.id}>
                     <tr style={{ cursor: "pointer" }}>
                       <td onClick={(e) => e.stopPropagation()}>
@@ -309,7 +328,10 @@ export default function UsersPage() {
                           />
                         )}
                       </td>
-                      <td onClick={() => fetchUserDetails(user.id)} style={{ color: "var(--ts-primary-500)", fontWeight: 500 }}>
+                      <td
+                        onClick={() => fetchUserDetails(user.id)}
+                        style={{ color: "var(--ts-primary-500)", fontWeight: 500 }}
+                      >
                         {expandedUser === user.id ? "▼ " : "▶ "}
                         {user.email}
                       </td>
@@ -318,7 +340,9 @@ export default function UsersPage() {
                           {user.role === "ADMIN" ? "管理員" : "使用者"}
                         </span>
                       </td>
-                      <td onClick={() => fetchUserDetails(user.id)}>{new Date(user.createdAt).toLocaleDateString()}</td>
+                      <td onClick={() => fetchUserDetails(user.id)}>
+                        {new Date(user.createdAt).toLocaleDateString()}
+                      </td>
                       <td onClick={() => fetchUserDetails(user.id)}>{user._count.reviews}</td>
                       <td onClick={() => fetchUserDetails(user.id)}>{user._count.reports}</td>
                       <td onClick={() => fetchUserDetails(user.id)}>
@@ -342,9 +366,14 @@ export default function UsersPage() {
                     </tr>
                     {expandedUser === user.id && (
                       <tr>
-                        <td colSpan={8} style={{ padding: "1.5rem", backgroundColor: "var(--ts-gray-50)" }}>
+                        <td
+                          colSpan={8}
+                          style={{ padding: "1.5rem", backgroundColor: "var(--ts-gray-50)" }}
+                        >
                           {loadingDetails ? (
-                            <div style={{ textAlign: "center", padding: "2rem" }}>載入詳細資料中...</div>
+                            <div style={{ textAlign: "center", padding: "2rem" }}>
+                              載入詳細資料中...
+                            </div>
                           ) : userDetails ? (
                             <UserDetailsPanel details={userDetails} />
                           ) : null}
@@ -359,9 +388,16 @@ export default function UsersPage() {
 
           {/* 分頁 */}
           {totalPages > 1 && (
-            <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem", marginTop: "1.5rem" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "0.5rem",
+                marginTop: "1.5rem",
+              }}
+            >
               <button
-                onClick={() => setPage(p => Math.max(1, p - 1))}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
                 className="ts-button is-outlined"
                 disabled={page === 1}
               >
@@ -371,7 +407,7 @@ export default function UsersPage() {
                 第 {page} / {totalPages} 頁
               </span>
               <button
-                onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                 className="ts-button is-outlined"
                 disabled={page === totalPages}
               >
@@ -391,27 +427,53 @@ function UserDetailsPanel({ details }: { details: UserDetails }) {
       {/* 活動統計 */}
       <div>
         <h3 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>活動統計</h3>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem" }}>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gap: "1rem",
+          }}
+        >
           <StatBox label="評論總數" value={details.stats.totalReviews} />
-          <StatBox label="顯示中" value={details.stats.activeReviews} color="var(--ts-positive-500)" />
-          <StatBox label="已隱藏" value={details.stats.hiddenReviews} color="var(--ts-warning-500)" />
-          <StatBox label="已移除" value={details.stats.removedReviews} color="var(--ts-negative-500)" />
+          <StatBox
+            label="顯示中"
+            value={details.stats.activeReviews}
+            color="var(--ts-positive-500)"
+          />
+          <StatBox
+            label="已隱藏"
+            value={details.stats.hiddenReviews}
+            color="var(--ts-warning-500)"
+          />
+          <StatBox
+            label="已移除"
+            value={details.stats.removedReviews}
+            color="var(--ts-negative-500)"
+          />
           <StatBox label="獲得讚數" value={details.stats.totalHelpfulVotes} />
-          <StatBox label="被檢舉次數" value={details.stats.totalReportsReceived} color="var(--ts-negative-500)" />
+          <StatBox
+            label="被檢舉次數"
+            value={details.stats.totalReportsReceived}
+            color="var(--ts-negative-500)"
+          />
           <StatBox label="發出檢舉" value={details.stats.totalReportsMade} />
         </div>
       </div>
 
       {/* 活動圖表 */}
-      {details.stats.totalReviews > 0 && (
-        <UserActivityChart userId={details.user.id} />
-      )}
+      {details.stats.totalReviews > 0 && <UserActivityChart userId={details.user.id} />}
 
       {/* 平均評分 */}
       {details.stats.totalReviews > 0 && (
         <div>
           <h3 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>平均評分</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))", gap: "1rem" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
+              gap: "1rem",
+            }}
+          >
             <StatBox label="涼度" value={details.stats.averageRatings.coolness.toFixed(1)} />
             <StatBox label="實用性" value={details.stats.averageRatings.usefulness.toFixed(1)} />
             <StatBox label="作業量" value={details.stats.averageRatings.workload.toFixed(1)} />
@@ -432,39 +494,71 @@ function UserDetailsPanel({ details }: { details: UserDetails }) {
           </div>
         ) : (
           <div style={{ display: "grid", gap: "0.75rem", maxHeight: "400px", overflowY: "auto" }}>
-            {details.reviews.map(review => (
-              <div key={review.id} style={{
-                padding: "1rem",
-                backgroundColor: "white",
-                borderRadius: "8px",
-                border: "1px solid var(--ts-gray-200)"
-              }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
+            {details.reviews.map((review) => (
+              <div
+                key={review.id}
+                style={{
+                  padding: "1rem",
+                  backgroundColor: "white",
+                  borderRadius: "8px",
+                  border: "1px solid var(--ts-gray-200)",
+                }}
+              >
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    marginBottom: "0.5rem",
+                  }}
+                >
                   <Link
                     href={`/courses/${review.course.id}`}
-                    style={{ fontSize: "0.938rem", fontWeight: 600, color: "var(--ts-primary-500)" }}
+                    style={{
+                      fontSize: "0.938rem",
+                      fontWeight: 600,
+                      color: "var(--ts-primary-500)",
+                    }}
                   >
                     {review.course.courseName}
                   </Link>
-                  <span className={`ts-badge ${
-                    review.status === "ACTIVE" ? "is-positive" :
-                    review.status === "HIDDEN" ? "is-warning" : "is-negative"
-                  }`}>
-                    {review.status === "ACTIVE" ? "顯示中" : review.status === "HIDDEN" ? "已隱藏" : "已移除"}
+                  <span
+                    className={`ts-badge ${
+                      review.status === "ACTIVE"
+                        ? "is-positive"
+                        : review.status === "HIDDEN"
+                          ? "is-warning"
+                          : "is-negative"
+                    }`}
+                  >
+                    {review.status === "ACTIVE"
+                      ? "顯示中"
+                      : review.status === "HIDDEN"
+                        ? "已隱藏"
+                        : "已移除"}
                   </span>
                 </div>
-                <div style={{ fontSize: "0.813rem", color: "var(--app-muted)", marginBottom: "0.5rem" }}>
+                <div
+                  style={{
+                    fontSize: "0.813rem",
+                    color: "var(--app-muted)",
+                    marginBottom: "0.5rem",
+                  }}
+                >
                   {review.course.courseCode} | {new Date(review.createdAt).toLocaleDateString()}
                 </div>
                 {review.body && (
-                  <div style={{
-                    fontSize: "0.875rem",
-                    padding: "0.75rem",
-                    backgroundColor: "var(--ts-gray-50)",
-                    borderRadius: "4px",
-                    marginBottom: "0.5rem"
-                  }}>
-                    {review.body.substring(0, 100)}{review.body.length > 100 ? "..." : ""}
+                  <div
+                    style={{
+                      fontSize: "0.875rem",
+                      padding: "0.75rem",
+                      backgroundColor: "var(--ts-gray-50)",
+                      borderRadius: "4px",
+                      marginBottom: "0.5rem",
+                    }}
+                  >
+                    {review.body.substring(0, 100)}
+                    {review.body.length > 100 ? "..." : ""}
                   </div>
                 )}
                 <div style={{ fontSize: "0.813rem", color: "var(--app-muted)" }}>
@@ -485,19 +579,31 @@ function UserDetailsPanel({ details }: { details: UserDetails }) {
             </h3>
             <div style={{ display: "grid", gap: "0.5rem", maxHeight: "300px", overflowY: "auto" }}>
               {details.reportsReceived.length === 0 ? (
-                <div style={{ padding: "1rem", textAlign: "center", fontSize: "0.875rem", color: "var(--app-muted)" }}>
+                <div
+                  style={{
+                    padding: "1rem",
+                    textAlign: "center",
+                    fontSize: "0.875rem",
+                    color: "var(--app-muted)",
+                  }}
+                >
                   無被檢舉記錄
                 </div>
               ) : (
-                details.reportsReceived.map(report => (
-                  <div key={report.id} style={{
-                    padding: "0.75rem",
-                    backgroundColor: "white",
-                    borderRadius: "4px",
-                    border: "1px solid var(--ts-gray-200)",
-                    fontSize: "0.875rem"
-                  }}>
-                    <div style={{ fontWeight: 500, marginBottom: "0.25rem" }}>{report.review.course.courseName}</div>
+                details.reportsReceived.map((report) => (
+                  <div
+                    key={report.id}
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "white",
+                      borderRadius: "4px",
+                      border: "1px solid var(--ts-gray-200)",
+                      fontSize: "0.875rem",
+                    }}
+                  >
+                    <div style={{ fontWeight: 500, marginBottom: "0.25rem" }}>
+                      {report.review.course.courseName}
+                    </div>
                     <div style={{ color: "var(--app-muted)", fontSize: "0.813rem" }}>
                       {report.reason} | {new Date(report.createdAt).toLocaleDateString()}
                     </div>
@@ -512,19 +618,31 @@ function UserDetailsPanel({ details }: { details: UserDetails }) {
             </h3>
             <div style={{ display: "grid", gap: "0.5rem", maxHeight: "300px", overflowY: "auto" }}>
               {details.reportsMade.length === 0 ? (
-                <div style={{ padding: "1rem", textAlign: "center", fontSize: "0.875rem", color: "var(--app-muted)" }}>
+                <div
+                  style={{
+                    padding: "1rem",
+                    textAlign: "center",
+                    fontSize: "0.875rem",
+                    color: "var(--app-muted)",
+                  }}
+                >
                   無發出檢舉記錄
                 </div>
               ) : (
-                details.reportsMade.map(report => (
-                  <div key={report.id} style={{
-                    padding: "0.75rem",
-                    backgroundColor: "white",
-                    borderRadius: "4px",
-                    border: "1px solid var(--ts-gray-200)",
-                    fontSize: "0.875rem"
-                  }}>
-                    <div style={{ fontWeight: 500, marginBottom: "0.25rem" }}>{report.review.course.courseName}</div>
+                details.reportsMade.map((report) => (
+                  <div
+                    key={report.id}
+                    style={{
+                      padding: "0.75rem",
+                      backgroundColor: "white",
+                      borderRadius: "4px",
+                      border: "1px solid var(--ts-gray-200)",
+                      fontSize: "0.875rem",
+                    }}
+                  >
+                    <div style={{ fontWeight: 500, marginBottom: "0.25rem" }}>
+                      {report.review.course.courseName}
+                    </div>
                     <div style={{ color: "var(--app-muted)", fontSize: "0.813rem" }}>
                       {report.reason} | {new Date(report.createdAt).toLocaleDateString()}
                     </div>
@@ -539,15 +657,27 @@ function UserDetailsPanel({ details }: { details: UserDetails }) {
   );
 }
 
-function StatBox({ label, value, color }: { label: string; value: number | string; color?: string }) {
+function StatBox({
+  label,
+  value,
+  color,
+}: {
+  label: string;
+  value: number | string;
+  color?: string;
+}) {
   return (
-    <div style={{
-      padding: "1rem",
-      backgroundColor: "white",
-      borderRadius: "8px",
-      border: "1px solid var(--ts-gray-200)"
-    }}>
-      <div style={{ fontSize: "0.813rem", color: "var(--app-muted)", marginBottom: "0.25rem" }}>{label}</div>
+    <div
+      style={{
+        padding: "1rem",
+        backgroundColor: "white",
+        borderRadius: "8px",
+        border: "1px solid var(--ts-gray-200)",
+      }}
+    >
+      <div style={{ fontSize: "0.813rem", color: "var(--app-muted)", marginBottom: "0.25rem" }}>
+        {label}
+      </div>
       <div style={{ fontSize: "1.5rem", fontWeight: 700, color: color || "var(--ts-gray-800)" }}>
         {typeof value === "number" ? value.toLocaleString() : value}
       </div>

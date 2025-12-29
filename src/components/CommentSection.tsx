@@ -29,7 +29,7 @@ export function CommentSection({ reviewId, initialCommentCount = 0 }: CommentSec
 
   const fetchComments = useCallback(async () => {
     if (status !== "authenticated") return;
-    
+
     setLoading(true);
     setError(null);
 
@@ -63,7 +63,7 @@ export function CommentSection({ reviewId, initialCommentCount = 0 }: CommentSec
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!newComment.trim() || submitting) return;
 
     setSubmitting(true);
@@ -163,19 +163,14 @@ export function CommentSection({ reviewId, initialCommentCount = 0 }: CommentSec
       >
         <span style={{ marginRight: "0.5rem" }}>💬</span>
         留言 ({total})
-        <span style={{ marginLeft: "0.5rem", fontSize: "0.75rem" }}>
-          {isExpanded ? "▲" : "▼"}
-        </span>
+        <span style={{ marginLeft: "0.5rem", fontSize: "0.75rem" }}>{isExpanded ? "▲" : "▼"}</span>
       </button>
 
       {isExpanded && (
         <div style={{ marginTop: "0.75rem" }}>
           {/* 錯誤訊息 */}
           {error && (
-            <div
-              className="ts-notice is-negative is-small"
-              style={{ marginBottom: "0.75rem" }}
-            >
+            <div className="ts-notice is-negative is-small" style={{ marginBottom: "0.75rem" }}>
               {error}
             </div>
           )}
@@ -270,9 +265,7 @@ export function CommentSection({ reviewId, initialCommentCount = 0 }: CommentSec
                       </button>
                     )}
                   </div>
-                  <div style={{ fontSize: "0.9375rem", lineHeight: 1.6 }}>
-                    {comment.body}
-                  </div>
+                  <div style={{ fontSize: "0.9375rem", lineHeight: 1.6 }}>{comment.body}</div>
                 </div>
               ))}
 

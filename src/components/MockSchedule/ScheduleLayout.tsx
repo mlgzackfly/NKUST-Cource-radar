@@ -23,7 +23,7 @@ export function ScheduleLayout({ initialCourses = [], initialSemester }: Schedul
   // 初始化：從 localStorage 讀取 + 合併分享連結的課程
   useEffect(() => {
     const stored = loadSchedule();
-    let courses: SelectedCourse[] = stored?.selectedCourses || [];
+    const courses: SelectedCourse[] = stored?.selectedCourses || [];
 
     // 若有分享連結參數，合併至已選課程（避免重複）
     if (initialCourses.length > 0) {

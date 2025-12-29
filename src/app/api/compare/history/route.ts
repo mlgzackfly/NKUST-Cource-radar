@@ -31,10 +31,7 @@ export async function GET(request: NextRequest) {
 
     // 驗證 @nkust.edu.tw email
     if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return Response.json(
-        { error: "Only @nkust.edu.tw emails allowed" },
-        { status: 403 }
-      );
+      return Response.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
     }
 
     const { searchParams } = request.nextUrl;
@@ -110,9 +107,6 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error("Failed to get comparison history:", error);
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

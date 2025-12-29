@@ -43,12 +43,12 @@ export async function GET(request: NextRequest) {
           _count: {
             select: {
               reviews: true,
-              reports: true
-            }
-          }
-        }
+              reports: true,
+            },
+          },
+        },
       }),
-      prisma!.user.count({ where })
+      prisma!.user.count({ where }),
     ]);
 
     return Response.json({
@@ -57,10 +57,9 @@ export async function GET(request: NextRequest) {
         total,
         page,
         limit,
-        totalPages: Math.ceil(total / limit)
-      }
+        totalPages: Math.ceil(total / limit),
+      },
     });
-
   } catch (error: any) {
     console.error("Failed to get users:", error);
 
@@ -71,9 +70,6 @@ export async function GET(request: NextRequest) {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

@@ -53,9 +53,6 @@ export async function GET(): Promise<Response> {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

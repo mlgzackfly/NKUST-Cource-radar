@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
         orderBy: { createdAt: "desc" },
         include: {
           user: {
-            select: { id: true, email: true }
+            select: { id: true, email: true },
           },
           review: {
             select: {
@@ -35,16 +35,16 @@ export async function GET(request: NextRequest) {
               body: true,
               status: true,
               user: {
-                select: { id: true, email: true }
+                select: { id: true, email: true },
               },
               course: {
-                select: { id: true, courseName: true, courseCode: true }
-              }
-            }
-          }
-        }
+                select: { id: true, courseName: true, courseCode: true },
+              },
+            },
+          },
+        },
       }),
-      prisma!.report.count({ where })
+      prisma!.report.count({ where }),
     ]);
 
     return Response.json({
@@ -53,10 +53,9 @@ export async function GET(request: NextRequest) {
         total,
         page,
         limit,
-        totalPages: Math.ceil(total / limit)
-      }
+        totalPages: Math.ceil(total / limit),
+      },
     });
-
   } catch (error: any) {
     console.error("Failed to get reports:", error);
 
@@ -67,9 +66,6 @@ export async function GET(request: NextRequest) {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

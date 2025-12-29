@@ -1,7 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
 declare global {
-  // eslint-disable-next-line no-var
   var __prisma: PrismaClient | undefined;
 }
 
@@ -23,5 +22,3 @@ export function requirePrisma(): PrismaClient {
   if (!prisma) throw new Error("DATABASE_URL is not set. Configure PostgreSQL first.");
   return prisma;
 }
-
-

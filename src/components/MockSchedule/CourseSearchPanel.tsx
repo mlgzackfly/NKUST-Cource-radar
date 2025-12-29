@@ -110,11 +110,11 @@ export function CourseSearchPanel({
 
         const semesterOptions = Array.from(semesterSet)
           .sort((a, b) => b.localeCompare(a)) // 按新到舊排序
-          .map(sem => {
-            const [year, term] = sem.split('-');
+          .map((sem) => {
+            const [year, term] = sem.split("-");
             return {
               value: sem,
-              label: `${year} 學年第 ${term} 學期`
+              label: `${year} 學年第 ${term} 學期`,
             };
           });
 
@@ -166,7 +166,14 @@ export function CourseSearchPanel({
 
           {/* 學期選擇器 */}
           <div>
-            <label style={{ display: "block", marginBottom: "0.5rem", fontSize: "0.875rem", fontWeight: 600 }}>
+            <label
+              style={{
+                display: "block",
+                marginBottom: "0.5rem",
+                fontSize: "0.875rem",
+                fontWeight: 600,
+              }}
+            >
               學期
             </label>
             <div className="ts-select is-solid is-fluid">
@@ -176,12 +183,15 @@ export function CourseSearchPanel({
                 disabled={semestersLoading || semesters.length === 0}
               >
                 {semestersLoading && <option value="">載入中...</option>}
-                {!semestersLoading && semesters.length === 0 && <option value="">無可用學期</option>}
-                {!semestersLoading && semesters.map((sem) => (
-                  <option key={sem.value} value={sem.value}>
-                    {sem.label}
-                  </option>
-                ))}
+                {!semestersLoading && semesters.length === 0 && (
+                  <option value="">無可用學期</option>
+                )}
+                {!semestersLoading &&
+                  semesters.map((sem) => (
+                    <option key={sem.value} value={sem.value}>
+                      {sem.label}
+                    </option>
+                  ))}
               </select>
             </div>
           </div>
@@ -229,7 +239,13 @@ export function CourseSearchPanel({
                         : "1px solid var(--ts-gray-200)",
                     }}
                   >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "flex-start",
+                      }}
+                    >
                       <div style={{ flex: 1 }}>
                         <Link
                           href={`/courses/${course.id}`}
@@ -248,13 +264,26 @@ export function CourseSearchPanel({
                           {course.courseName}
                         </Link>
 
-                        <div style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", marginBottom: "0.5rem" }}>
+                        <div
+                          style={{
+                            fontSize: "0.875rem",
+                            color: "var(--ts-gray-600)",
+                            marginBottom: "0.5rem",
+                          }}
+                        >
                           {course.instructors.map((i) => i.name).join("、") || "—"}
                           {course.time && ` | ${course.time}`}
                           {course.classroom && ` | ${course.classroom}`}
                         </div>
 
-                        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", fontSize: "0.813rem" }}>
+                        <div
+                          style={{
+                            display: "flex",
+                            gap: "0.5rem",
+                            flexWrap: "wrap",
+                            fontSize: "0.813rem",
+                          }}
+                        >
                           {course.department && (
                             <span className="ts-badge">{course.department}</span>
                           )}

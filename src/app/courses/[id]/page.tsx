@@ -17,7 +17,7 @@ type CoursePageProps = {
 };
 
 type CourseDetail = {
-  id:string;
+  id: string;
   year: string;
   term: string;
   campus: string | null;
@@ -49,7 +49,11 @@ function FieldRow({ label, value }: { label: string; value: string | number | nu
   if (value === null || value === undefined || value === "") return null;
   return (
     <tr>
-      <td style={{ width: 140, opacity: 0.75, whiteSpace: "nowrap", paddingTop: 8, paddingBottom: 8 }}>{label}</td>
+      <td
+        style={{ width: 140, opacity: 0.75, whiteSpace: "nowrap", paddingTop: 8, paddingBottom: 8 }}
+      >
+        {label}
+      </td>
       <td style={{ paddingTop: 8, paddingBottom: 8 }}>{value}</td>
     </tr>
   );
@@ -71,7 +75,8 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <div className="ts-notice is-negative">
               <div className="title">無法載入課程</div>
               <div className="content">
-                目前尚未設定 <code>DATABASE_URL</code>,所以暫時無法載入課程詳情。請先連線 PostgreSQL 並匯入資料後再試。
+                目前尚未設定 <code>DATABASE_URL</code>,所以暫時無法載入課程詳情。請先連線 PostgreSQL
+                並匯入資料後再試。
               </div>
             </div>
           </div>
@@ -139,7 +144,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
       if (isNkustUser && session?.user?.email) {
         // Check if user has already reviewed this course
         const user = await prisma.user.findUnique({
-          where: { email: session.user.email }
+          where: { email: session.user.email },
         });
 
         if (user) {
@@ -149,9 +154,9 @@ export default async function CoursePage({ params }: CoursePageProps) {
             where: {
               userId_courseId: {
                 userId: user.id,
-                courseId: typedCourse.id
-              }
-            }
+                courseId: typedCourse.id,
+              },
+            },
           });
           userHasReviewed = !!existingReview;
         }
@@ -182,60 +187,63 @@ export default async function CoursePage({ params }: CoursePageProps) {
             helpfulVotes: {
               select: {
                 voteType: true,
-                userId: true
-              }
-            }
+                userId: true,
+              },
+            },
           },
         });
 
-        reviewsData = reviews.map((r: {
-          id: string;
-          userId: string;
-          createdAt: Date;
-          updatedAt: Date;
-          coolness: number | null;
-          usefulness: number | null;
-          workload: number | null;
-          attendance: number | null;
-          grading: number | null;
-          body: string | null;
-          authorDept: string | null;
-          _count: { helpfulVotes: number; comments: number };
-          helpfulVotes: Array<{ voteType: string; userId: string }>;
-        }) => {
-          const upvotes = r.helpfulVotes.filter(v => v.voteType === 'UPVOTE').length;
-          const downvotes = r.helpfulVotes.filter(v => v.voteType === 'DOWNVOTE').length;
-          const currentUserVote = r.helpfulVotes.find(v => v.userId === currentUserId)?.voteType || null;
+        reviewsData = reviews.map(
+          (r: {
+            id: string;
+            userId: string;
+            createdAt: Date;
+            updatedAt: Date;
+            coolness: number | null;
+            usefulness: number | null;
+            workload: number | null;
+            attendance: number | null;
+            grading: number | null;
+            body: string | null;
+            authorDept: string | null;
+            _count: { helpfulVotes: number; comments: number };
+            helpfulVotes: Array<{ voteType: string; userId: string }>;
+          }) => {
+            const upvotes = r.helpfulVotes.filter((v) => v.voteType === "UPVOTE").length;
+            const downvotes = r.helpfulVotes.filter((v) => v.voteType === "DOWNVOTE").length;
+            const currentUserVote =
+              r.helpfulVotes.find((v) => v.userId === currentUserId)?.voteType || null;
 
-          return {
-            id: r.id,
-            isOwnReview: r.userId === currentUserId,  // ✅ 使用布林值而非 userId
-            createdAt: r.createdAt.toISOString(),
-            updatedAt: r.updatedAt.toISOString(),
-            coolness: r.coolness,
-            usefulness: r.usefulness,
-            workload: r.workload,
-            attendance: r.attendance,
-            grading: r.grading,
-            body: r.body,
-            authorDept: r.authorDept,
-            votes: {
-              upvotes,
-              downvotes,
-              netScore: upvotes - downvotes,
-              currentUserVote
-            },
-            helpfulCount: r._count.helpfulVotes,
-            commentCount: r._count.comments
-          };
-        });
+            return {
+              id: r.id,
+              isOwnReview: r.userId === currentUserId, // ✅ 使用布林值而非 userId
+              createdAt: r.createdAt.toISOString(),
+              updatedAt: r.updatedAt.toISOString(),
+              coolness: r.coolness,
+              usefulness: r.usefulness,
+              workload: r.workload,
+              attendance: r.attendance,
+              grading: r.grading,
+              body: r.body,
+              authorDept: r.authorDept,
+              votes: {
+                upvotes,
+                downvotes,
+                netScore: upvotes - downvotes,
+                currentUserVote,
+              },
+              helpfulCount: r._count.helpfulVotes,
+              commentCount: r._count.comments,
+            };
+          }
+        );
       }
     } catch (reviewError) {
-      console.error('Failed to fetch reviews:', reviewError);
+      console.error("Failed to fetch reviews:", reviewError);
       // Continue rendering without reviews
     }
   } catch (error) {
-    console.error('Failed to fetch course:', error);
+    console.error("Failed to fetch course:", error);
     return (
       <div className="app-container" style={{ paddingTop: "1.5rem" }}>
         <div className="ts-box is-raised">
@@ -248,9 +256,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <div className="ts-space" />
             <div className="ts-notice is-negative">
               <div className="title">資料庫連線失敗</div>
-              <div className="content">
-                無法連線到資料庫伺服器,請稍後再試或聯繫管理員。
-              </div>
+              <div className="content">無法連線到資料庫伺服器,請稍後再試或聯繫管理員。</div>
             </div>
           </div>
         </div>
@@ -277,7 +283,9 @@ export default async function CoursePage({ params }: CoursePageProps) {
     typedCourse.campus ? { label: "校區", value: typedCourse.campus } : null,
     typedCourse.division ? { label: "學制", value: typedCourse.division } : null,
     typedCourse.department ? { label: "系所", value: typedCourse.department } : null,
-    typedCourse.requiredOrElective ? { label: "必/選", value: typedCourse.requiredOrElective } : null,
+    typedCourse.requiredOrElective
+      ? { label: "必/選", value: typedCourse.requiredOrElective }
+      : null,
     typedCourse.credits !== null ? { label: "學分", value: String(typedCourse.credits) } : null,
     typedCourse.selectCode ? { label: "選課代號", value: typedCourse.selectCode } : null,
     typedCourse.courseCode ? { label: "永久課號", value: typedCourse.courseCode } : null,
@@ -291,23 +299,41 @@ export default async function CoursePage({ params }: CoursePageProps) {
       {/* Hero Section */}
       <div className="ts-box is-raised app-course-hero" style={{ marginBottom: "1.5rem" }}>
         <div className="ts-content">
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "1rem",
+              marginBottom: "1.5rem",
+            }}
+          >
             <Link className="ts-button is-ghost is-short" href="/courses">
               ← 回課程列表
             </Link>
             <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
               {typedCourse.year && typedCourse.term ? (
-                <Link className="ts-button is-outlined is-short" href={coursesHref({ year: typedCourse.year, term: typedCourse.term })}>
+                <Link
+                  className="ts-button is-outlined is-short"
+                  href={coursesHref({ year: typedCourse.year, term: typedCourse.term })}
+                >
                   同學期
                 </Link>
               ) : null}
               {typedCourse.department ? (
-                <Link className="ts-button is-outlined is-short" href={coursesHref({ department: typedCourse.department })}>
+                <Link
+                  className="ts-button is-outlined is-short"
+                  href={coursesHref({ department: typedCourse.department })}
+                >
                   同系所
                 </Link>
               ) : null}
               {typedCourse.campus ? (
-                <Link className="ts-button is-outlined is-short" href={coursesHref({ campus: typedCourse.campus })}>
+                <Link
+                  className="ts-button is-outlined is-short"
+                  href={coursesHref({ campus: typedCourse.campus })}
+                >
                   同校區
                 </Link>
               ) : null}
@@ -315,19 +341,30 @@ export default async function CoursePage({ params }: CoursePageProps) {
             </div>
           </div>
 
-          <div className="ts-header is-large" style={{ marginBottom: "0.5rem" }}>{typedCourse.courseName}</div>
+          <div className="ts-header is-large" style={{ marginBottom: "0.5rem" }}>
+            {typedCourse.courseName}
+          </div>
           {typedCourse.syllabusData?.courseNameEn && (
-            <div style={{ fontSize: "1.125rem", color: "var(--ts-gray-600)", marginBottom: "0.75rem", fontWeight: 500 }}>
+            <div
+              style={{
+                fontSize: "1.125rem",
+                color: "var(--ts-gray-600)",
+                marginBottom: "0.75rem",
+                fontWeight: 500,
+              }}
+            >
               {typedCourse.syllabusData.courseNameEn}
             </div>
           )}
           <div className="app-muted" style={{ lineHeight: 1.6, fontSize: "0.95rem" }}>
             {typedCourse.instructors.length > 0 && (
               <>
-                教師：<InstructorLinks instructors={typedCourse.instructors} /> ·{" "}
+                教師：
+                <InstructorLinks instructors={typedCourse.instructors} /> ·{" "}
               </>
             )}
-            {typedCourse.department || "—"} · {typedCourse.campus || "—"} · {formatSemester(typedCourse.year, typedCourse.term)}
+            {typedCourse.department || "—"} · {typedCourse.campus || "—"} ·{" "}
+            {formatSemester(typedCourse.year, typedCourse.term)}
           </div>
         </div>
       </div>
@@ -339,11 +376,26 @@ export default async function CoursePage({ params }: CoursePageProps) {
           <div style={{ display: "grid", gap: "1.5rem" }}>
             <div className="ts-box is-raised">
               <div className="ts-content" style={{ padding: "2rem" }}>
-                <div className="ts-header" style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}>課程資訊</div>
+                <div
+                  className="ts-header"
+                  style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}
+                >
+                  課程資訊
+                </div>
                 <table className="ts-table is-basic" style={{ fontSize: "0.9375rem" }}>
                   <tbody>
                     <tr>
-                      <th style={{ width: "30%", verticalAlign: "top", padding: "0.75rem 1rem", fontWeight: 600, color: "var(--ts-gray-700)" }}>教師</th>
+                      <th
+                        style={{
+                          width: "30%",
+                          verticalAlign: "top",
+                          padding: "0.75rem 1rem",
+                          fontWeight: 600,
+                          color: "var(--ts-gray-700)",
+                        }}
+                      >
+                        教師
+                      </th>
                       <td style={{ padding: "0.75rem 1rem", color: "var(--ts-gray-900)" }}>
                         {typedCourse.instructors.length > 0 ? (
                           <InstructorLinks instructors={typedCourse.instructors} />
@@ -356,7 +408,14 @@ export default async function CoursePage({ params }: CoursePageProps) {
                     <FieldRow label="永久課號" value={typedCourse.courseCode} />
                     <FieldRow label="班級" value={typedCourse.className} />
                     <FieldRow label="合班班級" value={typedCourse.combinedClassName} />
-                    <FieldRow label="授課/實習" value={typedCourse.lectureHours || typedCourse.labHours ? `${typedCourse.lectureHours ?? "-"} / ${typedCourse.labHours ?? "-"}` : null} />
+                    <FieldRow
+                      label="授課/實習"
+                      value={
+                        typedCourse.lectureHours || typedCourse.labHours
+                          ? `${typedCourse.lectureHours ?? "-"} / ${typedCourse.labHours ?? "-"}`
+                          : null
+                      }
+                    />
                     <FieldRow label="教室" value={typedCourse.classroom} />
                     <FieldRow label="上課時間" value={typedCourse.time} />
                     <FieldRow
@@ -403,8 +462,16 @@ export default async function CoursePage({ params }: CoursePageProps) {
             {typedCourse.time && (
               <div className="ts-box is-raised">
                 <div className="ts-content" style={{ padding: "2rem" }}>
-                  <div className="ts-header" style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}>課程時間表</div>
-                  <CourseTimeTable timeString={typedCourse.time} courseName={typedCourse.courseName} />
+                  <div
+                    className="ts-header"
+                    style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}
+                  >
+                    課程時間表
+                  </div>
+                  <CourseTimeTable
+                    timeString={typedCourse.time}
+                    courseName={typedCourse.courseName}
+                  />
                 </div>
               </div>
             )}
@@ -424,20 +491,25 @@ export default async function CoursePage({ params }: CoursePageProps) {
             {typedCourse.syllabusData && (
               <div className="ts-box is-raised">
                 <div className="ts-content" style={{ padding: "2rem" }}>
-                  <div className="ts-header" style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}>
+                  <div
+                    className="ts-header"
+                    style={{ fontSize: "1.5rem", fontWeight: 700, marginBottom: "1.5rem" }}
+                  >
                     授課大綱
                   </div>
 
                   {typedCourse.syllabusData.objectives && (
                     <div style={{ marginBottom: "1.5rem" }}>
                       <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>課程目標</div>
-                      <div style={{
-                        padding: "1rem",
-                        backgroundColor: "var(--app-surface)",
-                        borderRadius: "8px",
-                        lineHeight: 1.7,
-                        whiteSpace: "pre-wrap"
-                      }}>
+                      <div
+                        style={{
+                          padding: "1rem",
+                          backgroundColor: "var(--app-surface)",
+                          borderRadius: "8px",
+                          lineHeight: 1.7,
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
                         {typedCourse.syllabusData.objectives}
                       </div>
                     </div>
@@ -446,13 +518,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
                   {typedCourse.syllabusData.outline && (
                     <div style={{ marginBottom: "1.5rem" }}>
                       <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>課程大綱</div>
-                      <div style={{
-                        padding: "1rem",
-                        backgroundColor: "var(--app-surface)",
-                        borderRadius: "8px",
-                        lineHeight: 1.7,
-                        whiteSpace: "pre-wrap"
-                      }}>
+                      <div
+                        style={{
+                          padding: "1rem",
+                          backgroundColor: "var(--app-surface)",
+                          borderRadius: "8px",
+                          lineHeight: 1.7,
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
                         {typedCourse.syllabusData.outline}
                       </div>
                     </div>
@@ -461,13 +535,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
                   {typedCourse.syllabusData.teachingMethod && (
                     <div style={{ marginBottom: "1.5rem" }}>
                       <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>授課方式</div>
-                      <div style={{
-                        padding: "1rem",
-                        backgroundColor: "var(--app-surface)",
-                        borderRadius: "8px",
-                        lineHeight: 1.7,
-                        whiteSpace: "pre-wrap"
-                      }}>
+                      <div
+                        style={{
+                          padding: "1rem",
+                          backgroundColor: "var(--app-surface)",
+                          borderRadius: "8px",
+                          lineHeight: 1.7,
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
                         {typedCourse.syllabusData.teachingMethod}
                       </div>
                     </div>
@@ -476,13 +552,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
                   {typedCourse.syllabusData.evaluation && (
                     <div style={{ marginBottom: "1.5rem" }}>
                       <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>評量方式</div>
-                      <div style={{
-                        padding: "1rem",
-                        backgroundColor: "var(--app-surface)",
-                        borderRadius: "8px",
-                        lineHeight: 1.7,
-                        whiteSpace: "pre-wrap"
-                      }}>
+                      <div
+                        style={{
+                          padding: "1rem",
+                          backgroundColor: "var(--app-surface)",
+                          borderRadius: "8px",
+                          lineHeight: 1.7,
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
                         {typedCourse.syllabusData.evaluation}
                       </div>
                     </div>
@@ -491,13 +569,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
                   {typedCourse.syllabusData.textbooks && (
                     <div style={{ marginBottom: "1.5rem" }}>
                       <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>指定用書</div>
-                      <div style={{
-                        padding: "1rem",
-                        backgroundColor: "var(--app-surface)",
-                        borderRadius: "8px",
-                        lineHeight: 1.7,
-                        whiteSpace: "pre-wrap"
-                      }}>
+                      <div
+                        style={{
+                          padding: "1rem",
+                          backgroundColor: "var(--app-surface)",
+                          borderRadius: "8px",
+                          lineHeight: 1.7,
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
                         {typedCourse.syllabusData.textbooks}
                       </div>
                     </div>
@@ -506,13 +586,15 @@ export default async function CoursePage({ params }: CoursePageProps) {
                   {typedCourse.syllabusData.references && (
                     <div style={{ marginBottom: "1.5rem" }}>
                       <div style={{ fontWeight: 600, marginBottom: "0.5rem" }}>參考書籍</div>
-                      <div style={{
-                        padding: "1rem",
-                        backgroundColor: "var(--app-surface)",
-                        borderRadius: "8px",
-                        lineHeight: 1.7,
-                        whiteSpace: "pre-wrap"
-                      }}>
+                      <div
+                        style={{
+                          padding: "1rem",
+                          backgroundColor: "var(--app-surface)",
+                          borderRadius: "8px",
+                          lineHeight: 1.7,
+                          whiteSpace: "pre-wrap",
+                        }}
+                      >
                         {typedCourse.syllabusData.references}
                       </div>
                     </div>
@@ -548,9 +630,17 @@ export default async function CoursePage({ params }: CoursePageProps) {
             <div className="ts-content" style={{ padding: "2rem" }}>
               {/* Rating Header */}
               <div style={{ marginBottom: "1.5rem" }}>
-                <div className="ts-header" style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem" }}>評分摘要</div>
+                <div
+                  className="ts-header"
+                  style={{ fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.5rem" }}
+                >
+                  評分摘要
+                </div>
                 <div className="app-muted" style={{ fontSize: "0.9375rem" }}>
-                  總評論數：<span style={{ fontWeight: 600, color: "var(--ts-gray-900)" }}>{summary.totalReviews}</span>
+                  總評論數：
+                  <span style={{ fontWeight: 600, color: "var(--ts-gray-900)" }}>
+                    {summary.totalReviews}
+                  </span>
                 </div>
               </div>
 

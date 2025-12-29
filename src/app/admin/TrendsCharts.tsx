@@ -20,12 +20,12 @@ export function TrendsCharts() {
 
   useEffect(() => {
     fetch("/api/admin/stats/trends")
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         setTrends(data);
         setLoading(false);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Failed to fetch trends:", error);
         setLoading(false);
       });
@@ -50,8 +50,8 @@ export function TrendsCharts() {
       left: "center",
       textStyle: {
         fontSize: 16,
-        fontWeight: 600
-      }
+        fontWeight: 600,
+      },
     },
     tooltip: {
       trigger: "axis",
@@ -59,26 +59,26 @@ export function TrendsCharts() {
         const date = params[0].axisValue;
         const count = params[0].value;
         return `${date}<br/>註冊人數: ${count}`;
-      }
+      },
     },
     grid: {
       left: "3%",
       right: "4%",
       bottom: "3%",
-      containLabel: true
+      containLabel: true,
     },
     xAxis: {
       type: "category",
       boundaryGap: false,
-      data: trends.users.map(item => item.date.substring(5)),
+      data: trends.users.map((item) => item.date.substring(5)),
       axisLabel: {
         rotate: 45,
-        fontSize: 11
-      }
+        fontSize: 11,
+      },
     },
     yAxis: {
       type: "value",
-      minInterval: 1
+      minInterval: 1,
     },
     series: [
       {
@@ -86,7 +86,7 @@ export function TrendsCharts() {
         type: "line",
         smooth: true,
         itemStyle: {
-          color: "#5CB3CC"
+          color: "#5CB3CC",
         },
         areaStyle: {
           color: {
@@ -97,13 +97,13 @@ export function TrendsCharts() {
             y2: 1,
             colorStops: [
               { offset: 0, color: "rgba(92, 179, 204, 0.3)" },
-              { offset: 1, color: "rgba(92, 179, 204, 0.05)" }
-            ]
-          }
+              { offset: 1, color: "rgba(92, 179, 204, 0.05)" },
+            ],
+          },
         },
-        data: trends.users.map(item => item.count)
-      }
-    ]
+        data: trends.users.map((item) => item.count),
+      },
+    ],
   };
 
   // 評論發布趨勢圖表選項
@@ -113,8 +113,8 @@ export function TrendsCharts() {
       left: "center",
       textStyle: {
         fontSize: 16,
-        fontWeight: 600
-      }
+        fontWeight: 600,
+      },
     },
     tooltip: {
       trigger: "axis",
@@ -122,26 +122,26 @@ export function TrendsCharts() {
         const date = params[0].axisValue;
         const count = params[0].value;
         return `${date}<br/>發布數量: ${count}`;
-      }
+      },
     },
     grid: {
       left: "3%",
       right: "4%",
       bottom: "3%",
-      containLabel: true
+      containLabel: true,
     },
     xAxis: {
       type: "category",
       boundaryGap: false,
-      data: trends.reviews.map(item => item.date.substring(5)),
+      data: trends.reviews.map((item) => item.date.substring(5)),
       axisLabel: {
         rotate: 45,
-        fontSize: 11
-      }
+        fontSize: 11,
+      },
     },
     yAxis: {
       type: "value",
-      minInterval: 1
+      minInterval: 1,
     },
     series: [
       {
@@ -149,7 +149,7 @@ export function TrendsCharts() {
         type: "line",
         smooth: true,
         itemStyle: {
-          color: "#7E57C2"
+          color: "#7E57C2",
         },
         areaStyle: {
           color: {
@@ -160,13 +160,13 @@ export function TrendsCharts() {
             y2: 1,
             colorStops: [
               { offset: 0, color: "rgba(126, 87, 194, 0.3)" },
-              { offset: 1, color: "rgba(126, 87, 194, 0.05)" }
-            ]
-          }
+              { offset: 1, color: "rgba(126, 87, 194, 0.05)" },
+            ],
+          },
         },
-        data: trends.reviews.map(item => item.count)
-      }
-    ]
+        data: trends.reviews.map((item) => item.count),
+      },
+    ],
   };
 
   // 檢舉趨勢圖表選項
@@ -176,8 +176,8 @@ export function TrendsCharts() {
       left: "center",
       textStyle: {
         fontSize: 16,
-        fontWeight: 600
-      }
+        fontWeight: 600,
+      },
     },
     tooltip: {
       trigger: "axis",
@@ -185,26 +185,26 @@ export function TrendsCharts() {
         const date = params[0].axisValue;
         const count = params[0].value;
         return `${date}<br/>檢舉數量: ${count}`;
-      }
+      },
     },
     grid: {
       left: "3%",
       right: "4%",
       bottom: "3%",
-      containLabel: true
+      containLabel: true,
     },
     xAxis: {
       type: "category",
       boundaryGap: false,
-      data: trends.reports.map(item => item.date.substring(5)),
+      data: trends.reports.map((item) => item.date.substring(5)),
       axisLabel: {
         rotate: 45,
-        fontSize: 11
-      }
+        fontSize: 11,
+      },
     },
     yAxis: {
       type: "value",
-      minInterval: 1
+      minInterval: 1,
     },
     series: [
       {
@@ -212,7 +212,7 @@ export function TrendsCharts() {
         type: "line",
         smooth: true,
         itemStyle: {
-          color: "#EF5350"
+          color: "#EF5350",
         },
         areaStyle: {
           color: {
@@ -223,19 +223,25 @@ export function TrendsCharts() {
             y2: 1,
             colorStops: [
               { offset: 0, color: "rgba(239, 83, 80, 0.3)" },
-              { offset: 1, color: "rgba(239, 83, 80, 0.05)" }
-            ]
-          }
+              { offset: 1, color: "rgba(239, 83, 80, 0.05)" },
+            ],
+          },
         },
-        data: trends.reports.map(item => item.count)
-      }
-    ]
+        data: trends.reports.map((item) => item.count),
+      },
+    ],
   };
 
   return (
     <div style={{ display: "grid", gap: "1.5rem", marginTop: "2rem" }}>
       {/* 使用者與評論趨勢並排 */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))", gap: "1.5rem" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+          gap: "1.5rem",
+        }}
+      >
         <div className="ts-box" style={{ backgroundColor: "var(--ts-gray-50)" }}>
           <div className="ts-content" style={{ padding: "1rem" }}>
             <ReactECharts option={userChartOption} style={{ height: "300px" }} />

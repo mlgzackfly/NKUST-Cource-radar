@@ -15,7 +15,10 @@ export async function GET(request: NextRequest) {
     const skip = (page - 1) * limit;
 
     const where: any = {};
-    if (type && ["HIDE_REVIEW", "UNHIDE_REVIEW", "REMOVE_REVIEW", "BAN_USER", "REQUEST_EDIT"].includes(type)) {
+    if (
+      type &&
+      ["HIDE_REVIEW", "UNHIDE_REVIEW", "REMOVE_REVIEW", "BAN_USER", "REQUEST_EDIT"].includes(type)
+    ) {
       where.type = type;
     }
 
@@ -27,23 +30,23 @@ export async function GET(request: NextRequest) {
         orderBy: { createdAt: "desc" },
         include: {
           actor: {
-            select: { id: true, email: true, name: true }
+            select: { id: true, email: true, name: true },
           },
           targetUser: {
-            select: { id: true, email: true }
+            select: { id: true, email: true },
           },
           targetReview: {
             select: {
               id: true,
               body: true,
               course: {
-                select: { id: true, courseName: true, courseCode: true }
-              }
-            }
-          }
-        }
+                select: { id: true, courseName: true, courseCode: true },
+              },
+            },
+          },
+        },
       }),
-      prisma!.adminAction.count({ where })
+      prisma!.adminAction.count({ where }),
     ]);
 
     return Response.json({
@@ -52,10 +55,9 @@ export async function GET(request: NextRequest) {
         total,
         page,
         limit,
-        totalPages: Math.ceil(total / limit)
-      }
+        totalPages: Math.ceil(total / limit),
+      },
     });
-
   } catch (error: any) {
     console.error("Failed to get admin actions:", error);
 
@@ -66,9 +68,6 @@ export async function GET(request: NextRequest) {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

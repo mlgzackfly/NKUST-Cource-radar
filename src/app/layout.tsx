@@ -10,16 +10,17 @@ import { BottomNavbar } from "@/components/BottomNavbar";
 
 export const metadata = {
   title: "高科選課雷達 | 選課，不只是憑感覺",
-  description: "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊，做出更明智的選課決定。",
+  description:
+    "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊，做出更明智的選課決定。",
   icons: {
-    icon: '/icon.svg',
-    apple: '/icons/icon-192.svg',
+    icon: "/icon.svg",
+    apple: "/icons/icon-192.svg",
   },
-  manifest: '/manifest.json',
+  manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
-    statusBarStyle: 'default',
-    title: '選課雷達',
+    statusBarStyle: "default",
+    title: "選課雷達",
   },
   formatDetection: {
     telephone: false,
@@ -56,10 +57,14 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           }}
         />
         {/* Core: Tocas UI (for built-in light/dark palette & components) */}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/tocas.min.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/tocas.min.css"
+        />
         {/* Override Tocas UI icon fonts with absolute CDN URLs */}
-        <style dangerouslySetInnerHTML={{
-          __html: `
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
             @font-face {
               font-family: tocas-icons-fixed;
               src: url(https://cdnjs.cloudflare.com/ajax/libs/tocas-ui/5.0.2/fonts/icons/fa-solid-900.woff2) format("woff2"),
@@ -93,11 +98,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             [class*="ts-icon-"] {
               font-family: tocas-icons-fixed !important;
             }
-          `
-        }} />
+          `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body>
         <SessionProvider>
@@ -106,7 +115,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <div className="app-container">
                 <div className="app-header-inner">
                   <div className="app-header-left">
-                    <Link href="/" className="app-brand" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                    <Link
+                      href="/"
+                      className="app-brand"
+                      style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}
+                    >
                       <Image src="/icon.svg" alt="Logo" width={28} height={28} />
                       高科選課雷達
                     </Link>
@@ -134,13 +147,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </div>
             </header>
 
-            <main className="app-main">
-              {children}
-            </main>
+            <main className="app-main">{children}</main>
 
             <div className="app-container">
               <footer className="app-footer" style={{ marginTop: 24, paddingBottom: 24 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 24, flexWrap: "wrap" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    gap: 24,
+                    flexWrap: "wrap",
+                  }}
+                >
                   <div>
                     <div className="app-muted" style={{ marginBottom: "0.75rem" }}>
                       高科選課雷達 | 選課，不只是憑感覺
@@ -148,15 +167,36 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                       此為非官方專案，資訊僅供參考。
                     </div>
                     <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-                      <Link href="/privacy" style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                      <Link
+                        href="/privacy"
+                        style={{
+                          fontSize: "0.875rem",
+                          color: "var(--ts-gray-600)",
+                          textDecoration: "underline",
+                          textUnderlineOffset: "3px",
+                        }}
+                      >
                         隱私權政策
                       </Link>
-                      <Link href="/cookies" style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", textDecoration: "underline", textUnderlineOffset: "3px" }}>
+                      <Link
+                        href="/cookies"
+                        style={{
+                          fontSize: "0.875rem",
+                          color: "var(--ts-gray-600)",
+                          textDecoration: "underline",
+                          textUnderlineOffset: "3px",
+                        }}
+                      >
                         Cookie 使用說明
                       </Link>
                     </div>
                   </div>
-                  <a href="https://github.com/mlgzack/nkust-course-review" target="_blank" rel="noopener noreferrer" className="ts-button is-ghost is-small">
+                  <a
+                    href="https://github.com/mlgzack/nkust-course-review"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ts-button is-ghost is-small"
+                  >
                     GitHub
                   </a>
                 </div>
@@ -187,5 +227,3 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   );
 }
-
-

@@ -11,7 +11,11 @@ export default function PrivacyPage() {
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div className="ts-box is-raised">
           <div className="ts-content" style={{ padding: "3rem" }}>
-            <Link href="/" className="ts-button is-ghost is-short" style={{ marginBottom: "1.5rem" }}>
+            <Link
+              href="/"
+              className="ts-button is-ghost is-short"
+              style={{ marginBottom: "1.5rem" }}
+            >
               ← 回首頁
             </Link>
 
@@ -19,7 +23,12 @@ export default function PrivacyPage() {
               隱私權政策
             </h1>
             <p className="app-muted" style={{ marginBottom: "2rem", fontSize: "0.9375rem" }}>
-              最後更新日期：{new Date().toLocaleDateString("zh-TW", { year: "numeric", month: "long", day: "numeric" })}
+              最後更新日期：
+              {new Date().toLocaleDateString("zh-TW", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             </p>
 
             <div style={{ lineHeight: 1.8, fontSize: "1rem" }}>
@@ -86,7 +95,9 @@ export default function PrivacyPage() {
                 <h2 style={{ fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
                   4. 資料保護
                 </h2>
-                <p style={{ marginBottom: "0.75rem" }}>我們採取合理的技術和組織措施保護您的個人資料：</p>
+                <p style={{ marginBottom: "0.75rem" }}>
+                  我們採取合理的技術和組織措施保護您的個人資料：
+                </p>
                 <ul style={{ paddingLeft: "1.5rem" }}>
                   <li>使用 HTTPS 加密傳輸</li>
                   <li>資料庫存取控制</li>
@@ -99,9 +110,7 @@ export default function PrivacyPage() {
                 <h2 style={{ fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
                   5. 匿名性保護
                 </h2>
-                <p style={{ marginBottom: "0.75rem" }}>
-                  本服務重視評論者的匿名性：
-                </p>
+                <p style={{ marginBottom: "0.75rem" }}>本服務重視評論者的匿名性：</p>
                 <ul style={{ paddingLeft: "1.5rem" }}>
                   <li>評論一律匿名顯示，不會顯示您的姓名或學號</li>
                   <li>您可以選擇是否顯示系所資訊</li>
@@ -131,9 +140,13 @@ export default function PrivacyPage() {
                 </h2>
                 <p style={{ marginBottom: "0.75rem" }}>
                   本服務使用 Cookie 和類似技術來維持登入狀態和改善用戶體驗。詳細資訊請參閱我們的{" "}
-                  <Link href="/cookies" style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}>
+                  <Link
+                    href="/cookies"
+                    style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}
+                  >
                     Cookie 使用說明
-                  </Link>。
+                  </Link>
+                  。
                 </p>
               </section>
 
@@ -171,7 +184,8 @@ export default function PrivacyPage() {
                   10. 未成年人
                 </h2>
                 <p>
-                  本服務僅供高雄科技大學在學學生使用。如果您未滿 18 歲，請在使用本服務前徵得家長或監護人的同意。
+                  本服務僅供高雄科技大學在學學生使用。如果您未滿 18
+                  歲，請在使用本服務前徵得家長或監護人的同意。
                 </p>
               </section>
 
@@ -190,17 +204,26 @@ export default function PrivacyPage() {
                   12. 聯繫我們
                 </h2>
                 <p>
-                  如果您對本隱私權政策或您的個人資料有任何疑問，請透過您註冊的 @nkust.edu.tw 電子郵件聯繫我們。
+                  如果您對本隱私權政策或您的個人資料有任何疑問，請透過您註冊的 @nkust.edu.tw
+                  電子郵件聯繫我們。
                 </p>
               </section>
 
-              <div style={{
-                padding: "1.5rem",
-                background: "var(--ts-gray-50)",
-                borderRadius: "8px",
-                marginTop: "2rem"
-              }}>
-                <p style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", marginBottom: "0.5rem" }}>
+              <div
+                style={{
+                  padding: "1.5rem",
+                  background: "var(--ts-gray-50)",
+                  borderRadius: "8px",
+                  marginTop: "2rem",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "0.875rem",
+                    color: "var(--ts-gray-600)",
+                    marginBottom: "0.5rem",
+                  }}
+                >
                   <strong>重要提醒：</strong>
                 </p>
                 <p style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", lineHeight: 1.6 }}>

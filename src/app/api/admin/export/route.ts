@@ -98,7 +98,10 @@ export async function GET(request: Request) {
 
     switch (type) {
       case "courses":
-        data = await exportCourses(year ? parseInt(year) : undefined, term ? parseInt(term) : undefined);
+        data = await exportCourses(
+          year ? parseInt(year) : undefined,
+          term ? parseInt(term) : undefined
+        );
         filename = `courses_${new Date().toISOString().split("T")[0]}`;
         headers = [
           "id",
@@ -120,7 +123,10 @@ export async function GET(request: Request) {
         break;
 
       case "reviews":
-        data = await exportReviews(year ? parseInt(year) : undefined, term ? parseInt(term) : undefined);
+        data = await exportReviews(
+          year ? parseInt(year) : undefined,
+          term ? parseInt(term) : undefined
+        );
         filename = `reviews_${new Date().toISOString().split("T")[0]}`;
         headers = [
           "id",
@@ -278,12 +284,18 @@ async function exportCourses(year?: number, term?: number) {
         campus: course.campus,
         unit: course.unit,
         credits: course.credits,
-        instructors: course.instructors.map((i: { instructor: { name: string } }) => i.instructor.name).join(", "),
+        instructors: course.instructors
+          .map((i: { instructor: { name: string } }) => i.instructor.name)
+          .join(", "),
         reviewCount: course._count.reviews,
         avgCoolness: avgStats._avg.coolness ? Math.round(avgStats._avg.coolness * 10) / 10 : null,
-        avgUsefulness: avgStats._avg.usefulness ? Math.round(avgStats._avg.usefulness * 10) / 10 : null,
+        avgUsefulness: avgStats._avg.usefulness
+          ? Math.round(avgStats._avg.usefulness * 10) / 10
+          : null,
         avgWorkload: avgStats._avg.workload ? Math.round(avgStats._avg.workload * 10) / 10 : null,
-        avgAttendance: avgStats._avg.attendance ? Math.round(avgStats._avg.attendance * 10) / 10 : null,
+        avgAttendance: avgStats._avg.attendance
+          ? Math.round(avgStats._avg.attendance * 10) / 10
+          : null,
         avgGrading: avgStats._avg.grading ? Math.round(avgStats._avg.grading * 10) / 10 : null,
       };
     })
@@ -344,7 +356,9 @@ async function exportReviews(year?: number, term?: number) {
     courseId: r.courseId,
     courseName: r.course.courseName,
     courseCode: r.course.courseCode,
-    instructor: r.course.instructors.map((i: { instructor: { name: string } }) => i.instructor.name).join(", "),
+    instructor: r.course.instructors
+      .map((i: { instructor: { name: string } }) => i.instructor.name)
+      .join(", "),
     status: r.status,
     createdAt: r.createdAt.toISOString(),
     coolness: r.coolness,
@@ -412,9 +426,13 @@ async function exportInstructors() {
         courseCount: courseIds.length,
         reviewCount,
         avgCoolness: avgStats._avg.coolness ? Math.round(avgStats._avg.coolness * 10) / 10 : null,
-        avgUsefulness: avgStats._avg.usefulness ? Math.round(avgStats._avg.usefulness * 10) / 10 : null,
+        avgUsefulness: avgStats._avg.usefulness
+          ? Math.round(avgStats._avg.usefulness * 10) / 10
+          : null,
         avgWorkload: avgStats._avg.workload ? Math.round(avgStats._avg.workload * 10) / 10 : null,
-        avgAttendance: avgStats._avg.attendance ? Math.round(avgStats._avg.attendance * 10) / 10 : null,
+        avgAttendance: avgStats._avg.attendance
+          ? Math.round(avgStats._avg.attendance * 10) / 10
+          : null,
         avgGrading: avgStats._avg.grading ? Math.round(avgStats._avg.grading * 10) / 10 : null,
       };
     })

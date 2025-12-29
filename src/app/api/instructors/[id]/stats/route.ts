@@ -14,18 +14,12 @@ import { getCached, CACHE_TTL } from "@/lib/cache";
  * - topCourses: 熱門課程（按評論數排序）
  * - comparison: 與全校平均的比較
  */
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
 
     if (!prisma) {
-      return Response.json(
-        { error: "Database not available" },
-        { status: 503 }
-      );
+      return Response.json({ error: "Database not available" }, { status: 503 });
     }
 
     // 使用 cache 提升效能
@@ -135,11 +129,9 @@ export async function GET(
             semester,
             count,
             avgCoolness: sum.coolnessCount > 0 ? sum.coolness / sum.coolnessCount : 0,
-            avgUsefulness:
-              sum.usefulnessCount > 0 ? sum.usefulness / sum.usefulnessCount : 0,
+            avgUsefulness: sum.usefulnessCount > 0 ? sum.usefulness / sum.usefulnessCount : 0,
             avgWorkload: sum.workloadCount > 0 ? sum.workload / sum.workloadCount : 0,
-            avgAttendance:
-              sum.attendanceCount > 0 ? sum.attendance / sum.attendanceCount : 0,
+            avgAttendance: sum.attendanceCount > 0 ? sum.attendance / sum.attendanceCount : 0,
             avgGrading: sum.gradingCount > 0 ? sum.grading / sum.gradingCount : 0,
           };
         })
@@ -311,15 +303,9 @@ export async function GET(
     console.error("Failed to get instructor stats:", error);
 
     if (error.message === "Instructor not found") {
-      return Response.json(
-        { error: "Instructor not found" },
-        { status: 404 }
-      );
+      return Response.json({ error: "Instructor not found" }, { status: 404 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

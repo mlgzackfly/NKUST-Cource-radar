@@ -4,10 +4,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
 import { rateLimiter, RATE_LIMITS } from "@/lib/ratelimit";
 
-export async function POST(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
@@ -54,13 +51,16 @@ export async function POST(
     const { voteType } = body;
 
     // 驗證 voteType
-    if (voteType !== 'UPVOTE' && voteType !== 'DOWNVOTE') {
-      return Response.json({ error: "Invalid vote type. Must be 'UPVOTE' or 'DOWNVOTE'" }, { status: 400 });
+    if (voteType !== "UPVOTE" && voteType !== "DOWNVOTE") {
+      return Response.json(
+        { error: "Invalid vote type. Must be 'UPVOTE' or 'DOWNVOTE'" },
+        { status: 400 }
+      );
     }
 
     // 找到使用者
     const user = await prisma!.user.findUnique({
-      where: { email }
+      where: { email },
     });
 
     if (!user) {
@@ -75,7 +75,7 @@ export async function POST(
     // 檢查評論是否存在
     const review = await prisma!.review.findUnique({
       where: { id: p.id },
-      select: { userId: true }
+      select: { userId: true },
     });
 
     if (!review) {
@@ -92,27 +92,27 @@ export async function POST(
       where: {
         reviewId_userId: {
           reviewId: p.id,
-          userId: user.id
-        }
+          userId: user.id,
+        },
       },
       create: {
         reviewId: p.id,
         userId: user.id,
-        voteType: voteType
+        voteType: voteType,
       },
       update: {
-        voteType: voteType
-      }
+        voteType: voteType,
+      },
     });
 
     // 即時計算統計
     const [upvotes, downvotes] = await Promise.all([
       prisma!.helpfulVote.count({
-        where: { reviewId: p.id, voteType: 'UPVOTE' }
+        where: { reviewId: p.id, voteType: "UPVOTE" },
       }),
       prisma!.helpfulVote.count({
-        where: { reviewId: p.id, voteType: 'DOWNVOTE' }
-      })
+        where: { reviewId: p.id, voteType: "DOWNVOTE" },
+      }),
     ]);
 
     return Response.json({
@@ -121,25 +121,18 @@ export async function POST(
       counts: {
         upvotes,
         downvotes,
-        netScore: upvotes - downvotes
-      }
+        netScore: upvotes - downvotes,
+      },
     });
-
   } catch (error) {
     console.error("Failed to vote on review:", error);
 
     // 不洩露錯誤詳情給客戶端
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }
 
-export async function DELETE(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
@@ -184,7 +177,7 @@ export async function DELETE(
 
     // 找到使用者
     const user = await prisma!.user.findUnique({
-      where: { email }
+      where: { email },
     });
 
     if (!user) {
@@ -195,18 +188,18 @@ export async function DELETE(
     await prisma!.helpfulVote.deleteMany({
       where: {
         reviewId: p.id,
-        userId: user.id
-      }
+        userId: user.id,
+      },
     });
 
     // 即時計算統計
     const [upvotes, downvotes] = await Promise.all([
       prisma!.helpfulVote.count({
-        where: { reviewId: p.id, voteType: 'UPVOTE' }
+        where: { reviewId: p.id, voteType: "UPVOTE" },
       }),
       prisma!.helpfulVote.count({
-        where: { reviewId: p.id, voteType: 'DOWNVOTE' }
-      })
+        where: { reviewId: p.id, voteType: "DOWNVOTE" },
+      }),
     ]);
 
     return Response.json({
@@ -214,17 +207,13 @@ export async function DELETE(
       counts: {
         upvotes,
         downvotes,
-        netScore: upvotes - downvotes
-      }
+        netScore: upvotes - downvotes,
+      },
     });
-
   } catch (error) {
     console.error("Failed to delete vote:", error);
 
     // 不洩露錯誤詳情給客戶端
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

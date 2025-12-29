@@ -59,10 +59,7 @@ interface ReviewRecord {
 export async function GET(request: NextRequest) {
   try {
     if (!prisma) {
-      return Response.json(
-        { error: "Database not available" },
-        { status: 503 }
-      );
+      return Response.json({ error: "Database not available" }, { status: 503 });
     }
 
     const { searchParams } = request.nextUrl;
@@ -73,25 +70,20 @@ export async function GET(request: NextRequest) {
     const cacheKey = `trends:${type}:${period}:${limit}`;
     const trends = await getCached(cacheKey, CACHE_TTL.COURSE_SUMMARY, async () => {
       // 1. 總覽統計
-      const [
-        totalCourses,
-        totalInstructors,
-        totalReviews,
-        totalUsers,
-        activeCourses,
-      ] = await Promise.all([
-        prisma!.course.count(),
-        prisma!.instructor.count(),
-        prisma!.review.count({ where: { status: "ACTIVE" } }),
-        prisma!.user.count(),
-        prisma!.course.count({
-          where: {
-            reviews: {
-              some: { status: "ACTIVE" },
+      const [totalCourses, totalInstructors, totalReviews, totalUsers, activeCourses] =
+        await Promise.all([
+          prisma!.course.count(),
+          prisma!.instructor.count(),
+          prisma!.review.count({ where: { status: "ACTIVE" } }),
+          prisma!.user.count(),
+          prisma!.course.count({
+            where: {
+              reviews: {
+                some: { status: "ACTIVE" },
+              },
             },
-          },
-        }),
-      ]);
+          }),
+        ]);
 
       const overviewStats = {
         totalCourses,
@@ -169,11 +161,7 @@ export async function GET(request: NextRequest) {
 
         trendData = await Promise.all(
           months.map(async (monthStart) => {
-            const monthEnd = new Date(
-              monthStart.getFullYear(),
-              monthStart.getMonth() + 1,
-              0
-            );
+            const monthEnd = new Date(monthStart.getFullYear(), monthStart.getMonth() + 1, 0);
 
             const reviewCount = await prisma!.review.count({
               where: {
@@ -203,9 +191,10 @@ export async function GET(request: NextRequest) {
             });
 
             return {
-              month: `${monthStart.getFullYear()}-${String(
-                monthStart.getMonth() + 1
-              ).padStart(2, "0")}`,
+              month: `${monthStart.getFullYear()}-${String(monthStart.getMonth() + 1).padStart(
+                2,
+                "0"
+              )}`,
               reviewCount,
               avgRating: {
                 coolness: avgRatings._avg.coolness || 0,
@@ -383,9 +372,6 @@ export async function GET(request: NextRequest) {
     return Response.json(trends);
   } catch (error: any) {
     console.error("Failed to get trends:", error);
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

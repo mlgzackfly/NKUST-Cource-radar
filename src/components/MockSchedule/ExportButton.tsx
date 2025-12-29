@@ -61,11 +61,7 @@ export function ExportButton({ scheduleRef }: ExportButtonProps) {
   };
 
   return (
-    <button
-      className="ts-button is-outlined"
-      onClick={handleExport}
-      disabled={exporting}
-    >
+    <button className="ts-button is-outlined" onClick={handleExport} disabled={exporting}>
       {exporting ? "匯出中..." : "匯出圖片"}
     </button>
   );

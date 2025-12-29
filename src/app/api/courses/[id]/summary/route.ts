@@ -6,5 +6,3 @@ export async function GET(_: Request, { params }: { params: Promise<{ id: string
   const summary = await getCourseRatingSummary(p.id);
   return Response.json({ courseId: p.id, summary });
 }
-
-

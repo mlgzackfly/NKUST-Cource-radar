@@ -22,11 +22,7 @@ export function ShareButton({ selectedCourses }: ShareButtonProps) {
 
       // 檢查 URL 長度
       if (url.length > 1800) {
-        if (
-          !confirm(
-            `URL 過長（${url.length} 字元），可能在某些平台無法正常分享。是否繼續？`
-          )
-        ) {
+        if (!confirm(`URL 過長（${url.length} 字元），可能在某些平台無法正常分享。是否繼續？`)) {
           return;
         }
       }

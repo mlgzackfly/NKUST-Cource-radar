@@ -88,7 +88,7 @@ export async function POST(request: Request): Promise<Response> {
     const dbUser = await prisma!.user.upsert({
       where: { email },
       create: { email },
-      update: {}
+      update: {},
     });
 
     // 檢查是否被禁用
@@ -98,7 +98,7 @@ export async function POST(request: Request): Promise<Response> {
 
     // 檢查是否已評論過
     const existing = await prisma!.review.findUnique({
-      where: { userId_courseId: { userId: dbUser.id, courseId } }
+      where: { userId_courseId: { userId: dbUser.id, courseId } },
     });
 
     if (existing) {
@@ -117,8 +117,8 @@ export async function POST(request: Request): Promise<Response> {
         grading: validatedRatings.grading,
         body: validatedBody,
         authorDept: validatedDept,
-        status: "ACTIVE"
-      }
+        status: "ACTIVE",
+      },
     });
 
     // 建立版本快照
@@ -131,19 +131,15 @@ export async function POST(request: Request): Promise<Response> {
         attendance: validatedRatings.attendance,
         grading: validatedRatings.grading,
         body: validatedBody,
-        authorDept: validatedDept
-      }
+        authorDept: validatedDept,
+      },
     });
 
     return Response.json({ success: true, reviewId: review.id }, { status: 201 });
-
   } catch (error) {
     console.error("Failed to create review:", error);
 
     // 不洩露錯誤詳情給客戶端
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

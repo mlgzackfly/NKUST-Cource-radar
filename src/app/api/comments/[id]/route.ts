@@ -3,16 +3,10 @@ import { prisma } from "@/lib/db";
 import { requireNkustUser } from "@/lib/auth";
 
 // DELETE /api/comments/[id] - 刪除留言（僅自己的）
-export async function DELETE(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     if (!prisma) {
-      return Response.json(
-        { error: "資料庫連線失敗" },
-        { status: 503 }
-      );
+      return Response.json({ error: "資料庫連線失敗" }, { status: 503 });
     }
 
     // 檢查使用者是否已登入且為高科大學生
@@ -30,10 +24,7 @@ export async function DELETE(
 
     // 檢查是否為留言擁有者
     if (comment.userId !== user.id) {
-      return Response.json(
-        { error: "無權刪除此留言" },
-        { status: 403 }
-      );
+      return Response.json({ error: "無權刪除此留言" }, { status: 403 });
     }
 
     // 刪除留言
@@ -44,9 +35,6 @@ export async function DELETE(
     return Response.json({ success: true });
   } catch (error) {
     console.error("Error deleting comment:", error);
-    return Response.json(
-      { error: "刪除留言失敗，請稍後再試" },
-      { status: 500 }
-    );
+    return Response.json({ error: "刪除留言失敗，請稍後再試" }, { status: 500 });
   }
 }

@@ -219,18 +219,12 @@ function CompareContent() {
       {/* 標題 */}
       <div style={{ marginBottom: "1.5rem" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "0.5rem" }}>
-          <button
-            onClick={() => router.back()}
-            className="ts-button is-ghost is-icon"
-            title="返回"
-          >
+          <button onClick={() => router.back()} className="ts-button is-ghost is-icon" title="返回">
             <span className="ts-icon is-arrow-left-icon" />
           </button>
           <h1 style={{ fontSize: "1.5rem", fontWeight: 700 }}>課程比較</h1>
         </div>
-        <p style={{ color: "var(--ts-gray-600)" }}>
-          比較 {courses.length} 門課程的評分與資訊
-        </p>
+        <p style={{ color: "var(--ts-gray-600)" }}>比較 {courses.length} 門課程的評分與資訊</p>
       </div>
 
       {/* 雷達圖 */}
@@ -279,7 +273,9 @@ function CompareContent() {
               <tr>
                 <td style={{ fontWeight: 500 }}>學期</td>
                 {courses.map((c) => (
-                  <td key={c.id}>{c.year}-{c.term}</td>
+                  <td key={c.id}>
+                    {c.year}-{c.term}
+                  </td>
                 ))}
               </tr>
               <tr>

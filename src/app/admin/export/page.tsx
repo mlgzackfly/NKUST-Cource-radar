@@ -79,7 +79,9 @@ export default function AdminExportPage() {
       <div style={{ display: "grid", gap: "2rem", maxWidth: "800px" }}>
         {/* 匯出類型選擇 */}
         <div className="ts-box" style={{ padding: "1.5rem" }}>
-          <h2 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>選擇匯出類型</h2>
+          <h2 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>
+            選擇匯出類型
+          </h2>
           <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {exportOptions.map((option) => (
               <label
@@ -121,7 +123,14 @@ export default function AdminExportPage() {
             </h2>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
               <div>
-                <label style={{ display: "block", fontSize: "0.875rem", marginBottom: "0.5rem", color: "var(--ts-gray-600)" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "0.875rem",
+                    marginBottom: "0.5rem",
+                    color: "var(--ts-gray-600)",
+                  }}
+                >
                   學年
                 </label>
                 <div className="ts-input">
@@ -135,7 +144,14 @@ export default function AdminExportPage() {
                 </div>
               </div>
               <div>
-                <label style={{ display: "block", fontSize: "0.875rem", marginBottom: "0.5rem", color: "var(--ts-gray-600)" }}>
+                <label
+                  style={{
+                    display: "block",
+                    fontSize: "0.875rem",
+                    marginBottom: "0.5rem",
+                    color: "var(--ts-gray-600)",
+                  }}
+                >
                   學期
                 </label>
                 <div className="ts-select">

@@ -9,10 +9,7 @@ import { prisma } from "@/lib/db";
  */
 export async function GET(request: Request): Promise<Response> {
   if (!prisma) {
-    return Response.json(
-      { error: "Database not available" },
-      { status: 503 }
-    );
+    return Response.json({ error: "Database not available" }, { status: 503 });
   }
 
   try {
@@ -46,9 +43,6 @@ export async function GET(request: Request): Promise<Response> {
     });
   } catch (error: any) {
     console.error("Tags API error:", error);
-    return Response.json(
-      { error: error.message || "Failed to fetch tags" },
-      { status: 500 }
-    );
+    return Response.json({ error: error.message || "Failed to fetch tags" }, { status: 500 });
   }
 }

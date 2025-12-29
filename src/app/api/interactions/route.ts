@@ -14,10 +14,7 @@ import { getCurrentUser } from "@/lib/auth";
  */
 export async function POST(request: Request): Promise<Response> {
   if (!prisma) {
-    return Response.json(
-      { error: "Database not available" },
-      { status: 503 }
-    );
+    return Response.json({ error: "Database not available" }, { status: 503 });
   }
 
   try {
@@ -31,10 +28,7 @@ export async function POST(request: Request): Promise<Response> {
 
     // 驗證參數
     if (!courseId || !type) {
-      return Response.json(
-        { error: "courseId and type are required" },
-        { status: 400 }
-      );
+      return Response.json({ error: "courseId and type are required" }, { status: 400 });
     }
 
     const validTypes = ["VIEW", "REVIEW", "FAVORITE", "SEARCH"];

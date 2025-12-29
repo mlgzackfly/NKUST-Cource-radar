@@ -6,7 +6,7 @@ export async function GET(request: Request): Promise<Response> {
   if (!prisma) {
     return Response.json(
       { courses: [], warning: "DATABASE_URL is not set. API is running without DB." },
-      { status: 503 },
+      { status: 503 }
     );
   }
 
@@ -25,9 +25,15 @@ export async function GET(request: Request): Promise<Response> {
   // 進階篩選參數
   const sortBy = clean(searchParams.get("sortBy")) || "latest"; // latest | name | credits | rating | reviews
   const sortOrder = clean(searchParams.get("sortOrder")) || "desc"; // asc | desc
-  const minRating = searchParams.get("minRating") ? parseFloat(searchParams.get("minRating")!) : undefined;
-  const maxWorkload = searchParams.get("maxWorkload") ? parseFloat(searchParams.get("maxWorkload")!) : undefined;
-  const minGrading = searchParams.get("minGrading") ? parseFloat(searchParams.get("minGrading")!) : undefined;
+  const minRating = searchParams.get("minRating")
+    ? parseFloat(searchParams.get("minRating")!)
+    : undefined;
+  const maxWorkload = searchParams.get("maxWorkload")
+    ? parseFloat(searchParams.get("maxWorkload")!)
+    : undefined;
+  const minGrading = searchParams.get("minGrading")
+    ? parseFloat(searchParams.get("minGrading")!)
+    : undefined;
   const timeSlot = clean(searchParams.get("timeSlot")); // 例如 "1-2" (星期一 2-3 節)
 
   const andFilters: Prisma.CourseWhereInput[] = [];
@@ -55,10 +61,10 @@ export async function GET(request: Request): Promise<Response> {
               instructors: {
                 some: {
                   instructor: {
-                    name: { contains: q }
-                  }
-                }
-              }
+                    name: { contains: q },
+                  },
+                },
+              },
             },
           ],
         }
@@ -78,10 +84,13 @@ export async function GET(request: Request): Promise<Response> {
   }
 
   // 查詢課程
-  let courses = await prisma.course.findMany({
+  const courses = await prisma.course.findMany({
     where: whereClause,
-    orderBy: (sortBy === "rating" || sortBy === "reviews") ? undefined : orderBy,
-    take: sortBy === "rating" || sortBy === "reviews" || minRating || maxWorkload || minGrading ? undefined : take,
+    orderBy: sortBy === "rating" || sortBy === "reviews" ? undefined : orderBy,
+    take:
+      sortBy === "rating" || sortBy === "reviews" || minRating || maxWorkload || minGrading
+        ? undefined
+        : take,
     select: {
       id: true,
       courseName: true,
@@ -112,7 +121,7 @@ export async function GET(request: Request): Promise<Response> {
   });
 
   // 計算平均評分並過濾
-  type CourseWithStats = typeof courses[0] & {
+  type CourseWithStats = (typeof courses)[0] & {
     avgRating?: number;
     avgWorkload?: number;
     avgGrading?: number;
@@ -124,17 +133,20 @@ export async function GET(request: Request): Promise<Response> {
     const reviewCount = reviews.length;
 
     // 計算平均值（coolness 作為 overall rating）
-    const avgRating = reviewCount > 0
-      ? reviews.reduce((sum: number, r: any) => sum + (r.coolness || 0), 0) / reviewCount
-      : 0;
+    const avgRating =
+      reviewCount > 0
+        ? reviews.reduce((sum: number, r: any) => sum + (r.coolness || 0), 0) / reviewCount
+        : 0;
 
-    const avgWorkload = reviewCount > 0
-      ? reviews.reduce((sum: number, r: any) => sum + (r.workload || 0), 0) / reviewCount
-      : 0;
+    const avgWorkload =
+      reviewCount > 0
+        ? reviews.reduce((sum: number, r: any) => sum + (r.workload || 0), 0) / reviewCount
+        : 0;
 
-    const avgGrading = reviewCount > 0
-      ? reviews.reduce((sum: number, r: any) => sum + (r.grading || 0), 0) / reviewCount
-      : 0;
+    const avgGrading =
+      reviewCount > 0
+        ? reviews.reduce((sum: number, r: any) => sum + (r.grading || 0), 0) / reviewCount
+        : 0;
 
     return {
       ...course,
@@ -151,7 +163,9 @@ export async function GET(request: Request): Promise<Response> {
   }
 
   if (maxWorkload !== undefined) {
-    coursesWithStats = coursesWithStats.filter((c) => c.reviewCount === 0 || c.avgWorkload <= maxWorkload);
+    coursesWithStats = coursesWithStats.filter(
+      (c) => c.reviewCount === 0 || c.avgWorkload <= maxWorkload
+    );
   }
 
   if (minGrading !== undefined) {
@@ -161,15 +175,11 @@ export async function GET(request: Request): Promise<Response> {
   // 套用排序（若需要按評分或評論數）
   if (sortBy === "rating") {
     coursesWithStats.sort((a, b) =>
-      sortOrder === "asc"
-        ? a.avgRating - b.avgRating
-        : b.avgRating - a.avgRating
+      sortOrder === "asc" ? a.avgRating - b.avgRating : b.avgRating - a.avgRating
     );
   } else if (sortBy === "reviews") {
     coursesWithStats.sort((a, b) =>
-      sortOrder === "asc"
-        ? a.reviewCount - b.reviewCount
-        : b.reviewCount - a.reviewCount
+      sortOrder === "asc" ? a.reviewCount - b.reviewCount : b.reviewCount - a.reviewCount
     );
   }
 
@@ -187,5 +197,3 @@ export async function GET(request: Request): Promise<Response> {
 
   return Response.json({ courses: result });
 }
-
-

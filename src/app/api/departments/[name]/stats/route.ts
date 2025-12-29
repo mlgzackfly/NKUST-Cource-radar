@@ -15,18 +15,12 @@ import { getCached, CACHE_TTL } from "@/lib/cache";
  * - topCourses: 熱門課程
  * - ratingDistribution: 評分分佈
  */
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ name: string }> }
-) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ name: string }> }) {
   try {
     const { name } = await params;
 
     if (!prisma) {
-      return Response.json(
-        { error: "Database not available" },
-        { status: 503 }
-      );
+      return Response.json({ error: "Database not available" }, { status: 503 });
     }
 
     const departmentName = decodeURIComponent(name);
@@ -151,11 +145,9 @@ export async function GET(
               courseCount: courseIds.length,
               reviewCount: count,
               avgCoolness: sum.coolnessCount > 0 ? sum.coolness / sum.coolnessCount : 0,
-              avgUsefulness:
-                sum.usefulnessCount > 0 ? sum.usefulness / sum.usefulnessCount : 0,
+              avgUsefulness: sum.usefulnessCount > 0 ? sum.usefulness / sum.usefulnessCount : 0,
               avgWorkload: sum.workloadCount > 0 ? sum.workload / sum.workloadCount : 0,
-              avgAttendance:
-                sum.attendanceCount > 0 ? sum.attendance / sum.attendanceCount : 0,
+              avgAttendance: sum.attendanceCount > 0 ? sum.attendance / sum.attendanceCount : 0,
               avgGrading: sum.gradingCount > 0 ? sum.grading / sum.gradingCount : 0,
             };
           })
@@ -322,15 +314,9 @@ export async function GET(
     console.error("Failed to get department stats:", error);
 
     if (error.message === "Department not found or has no courses") {
-      return Response.json(
-        { error: "Department not found" },
-        { status: 404 }
-      );
+      return Response.json({ error: "Department not found" }, { status: 404 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

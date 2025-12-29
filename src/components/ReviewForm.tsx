@@ -10,7 +10,7 @@ type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
 export function ReviewForm({
   courseId,
-  userHasReviewed = false
+  userHasReviewed = false,
 }: {
   courseId: string;
   userHasReviewed?: boolean;
@@ -34,7 +34,9 @@ export function ReviewForm({
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
-          <div className="ts-header" style={{ marginBottom: "1rem" }}>撰寫課程評價</div>
+          <div className="ts-header" style={{ marginBottom: "1rem" }}>
+            撰寫課程評價
+          </div>
           <div className="app-muted">載入中...</div>
         </div>
       </div>
@@ -45,7 +47,9 @@ export function ReviewForm({
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
-          <div className="ts-header" style={{ marginBottom: "1rem" }}>撰寫課程評價</div>
+          <div className="ts-header" style={{ marginBottom: "1rem" }}>
+            撰寫課程評價
+          </div>
           <div className="app-muted" style={{ marginBottom: "1.5rem" }}>
             登入後即可撰寫評價
           </div>
@@ -61,10 +65,10 @@ export function ReviewForm({
     return (
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
-          <div className="ts-header" style={{ marginBottom: "0.5rem" }}>您已評論過此課程</div>
-          <div className="app-muted">
-            每門課程只能評論一次，您的評論已顯示在下方列表中
+          <div className="ts-header" style={{ marginBottom: "0.5rem" }}>
+            您已評論過此課程
           </div>
+          <div className="app-muted">每門課程只能評論一次，您的評論已顯示在下方列表中</div>
         </div>
       </div>
     );
@@ -93,8 +97,8 @@ export function ReviewForm({
           attendance,
           grading,
           body: body.trim() || null,
-          authorDept: authorDept.trim() || null
-        })
+          authorDept: authorDept.trim() || null,
+        }),
       });
 
       const data = await res.json();
@@ -116,7 +120,6 @@ export function ReviewForm({
       setTimeout(() => {
         router.refresh();
       }, 1500);
-
     } catch (err: any) {
       setError(err.message || "提交失敗，請稍後再試");
     } finally {
@@ -216,20 +219,17 @@ export function ReviewForm({
           )}
 
           {/* Submit */}
-          <button
-            type="submit"
-            className="ts-button is-primary is-fluid"
-            disabled={loading}
-          >
+          <button type="submit" className="ts-button is-primary is-fluid" disabled={loading}>
             {loading ? "送出中..." : "送出評價"}
           </button>
 
           {/* Notice */}
           <div className="ts-notice is-outlined" style={{ marginTop: "1rem" }}>
             <div className="content" style={{ fontSize: "0.875rem" }}>
-              • 評價會匿名顯示<br />
-              • 每門課程只能評價一次<br />
-              • 請尊重他人，避免不當言論
+              • 評價會匿名顯示
+              <br />
+              • 每門課程只能評價一次
+              <br />• 請尊重他人，避免不當言論
             </div>
           </div>
         </form>
@@ -243,7 +243,7 @@ function RatingInput({
   label,
   description,
   value,
-  onChange
+  onChange,
 }: {
   label: string;
   description: string;
@@ -254,9 +254,7 @@ function RatingInput({
     <div>
       <div style={{ marginBottom: "0.5rem" }}>
         <div style={{ fontWeight: 600, marginBottom: "0.25rem" }}>{label}</div>
-        <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
-          {description}
-        </div>
+        <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>{description}</div>
       </div>
       <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap" }}>
         {[1, 2, 3, 4, 5].map((rating) => (
@@ -270,7 +268,7 @@ function RatingInput({
               height: "3rem",
               fontSize: "1.125rem",
               minWidth: "44px",
-              minHeight: "44px"
+              minHeight: "44px",
             }}
           >
             {rating}

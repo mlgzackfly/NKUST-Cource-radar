@@ -8,10 +8,7 @@ import { getCourseRatingSummary } from "@/lib/reviewSummary";
 export async function POST(request: Request): Promise<Response> {
   try {
     if (!prisma) {
-      return Response.json(
-        { error: "資料庫連線失敗" },
-        { status: 503 }
-      );
+      return Response.json({ error: "資料庫連線失敗" }, { status: 503 });
     }
 
     // 檢查使用者是否已登入且為高科大學生
@@ -39,10 +36,7 @@ export async function POST(request: Request): Promise<Response> {
 
     // 驗證課程 ID
     if (!courseId || typeof courseId !== "string") {
-      return Response.json(
-        { error: "課程 ID 不可為空" },
-        { status: 400 }
-      );
+      return Response.json({ error: "課程 ID 不可為空" }, { status: 400 });
     }
 
     // 檢查課程是否存在
@@ -73,19 +67,13 @@ export async function POST(request: Request): Promise<Response> {
     } catch (error: any) {
       // P2002 是 Prisma 的 unique constraint violation 錯誤
       if (error.code === "P2002") {
-        return Response.json(
-          { error: "已經收藏過此課程" },
-          { status: 400 }
-        );
+        return Response.json({ error: "已經收藏過此課程" }, { status: 400 });
       }
       throw error;
     }
   } catch (error) {
     console.error("Error creating favorite:", error);
-    return Response.json(
-      { error: "新增收藏失敗，請稍後再試" },
-      { status: 500 }
-    );
+    return Response.json({ error: "新增收藏失敗，請稍後再試" }, { status: 500 });
   }
 }
 
@@ -93,10 +81,7 @@ export async function POST(request: Request): Promise<Response> {
 export async function GET(request: Request): Promise<Response> {
   try {
     if (!prisma) {
-      return Response.json(
-        { error: "資料庫連線失敗" },
-        { status: 503 }
-      );
+      return Response.json({ error: "資料庫連線失敗" }, { status: 503 });
     }
 
     // 檢查使用者是否已登入且為高科大學生
@@ -192,9 +177,6 @@ export async function GET(request: Request): Promise<Response> {
     });
   } catch (error) {
     console.error("Error fetching favorites:", error);
-    return Response.json(
-      { error: "取得收藏列表失敗，請稍後再試" },
-      { status: 500 }
-    );
+    return Response.json({ error: "取得收藏列表失敗，請稍後再試" }, { status: 500 });
   }
 }

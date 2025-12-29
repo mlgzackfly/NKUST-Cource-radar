@@ -48,10 +48,7 @@ export async function GET(): Promise<Response> {
     const fillDates = (data: Array<{ date: Date; count: bigint }>) => {
       const result: Array<{ date: string; count: number }> = [];
       const dataMap = new Map(
-        data.map(item => [
-          item.date.toISOString().split("T")[0],
-          Number(item.count)
-        ])
+        data.map((item) => [item.date.toISOString().split("T")[0], Number(item.count)])
       );
 
       const current = new Date(startDate);
@@ -59,7 +56,7 @@ export async function GET(): Promise<Response> {
         const dateStr = current.toISOString().split("T")[0];
         result.push({
           date: dateStr,
-          count: dataMap.get(dateStr) || 0
+          count: dataMap.get(dateStr) || 0,
         });
         current.setDate(current.getDate() + 1);
       }
@@ -70,9 +67,8 @@ export async function GET(): Promise<Response> {
     return Response.json({
       users: fillDates(userTrend),
       reviews: fillDates(reviewTrend),
-      reports: fillDates(reportTrend)
+      reports: fillDates(reportTrend),
     });
-
   } catch (error: any) {
     console.error("Failed to get trends:", error);
 
@@ -83,9 +79,6 @@ export async function GET(): Promise<Response> {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

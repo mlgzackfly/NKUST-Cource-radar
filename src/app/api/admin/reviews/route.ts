@@ -28,25 +28,25 @@ export async function GET(request: NextRequest) {
         {
           body: {
             contains: search,
-            mode: "insensitive"
-          }
+            mode: "insensitive",
+          },
         },
         {
           course: {
             courseName: {
               contains: search,
-              mode: "insensitive"
-            }
-          }
+              mode: "insensitive",
+            },
+          },
         },
         {
           course: {
             courseCode: {
               contains: search,
-              mode: "insensitive"
-            }
-          }
-        }
+              mode: "insensitive",
+            },
+          },
+        },
       ];
     }
 
@@ -58,7 +58,7 @@ export async function GET(request: NextRequest) {
         orderBy: { createdAt: "desc" },
         include: {
           user: {
-            select: { id: true, email: true, bannedAt: true }
+            select: { id: true, email: true, bannedAt: true },
           },
           course: {
             select: {
@@ -68,21 +68,21 @@ export async function GET(request: NextRequest) {
               instructors: {
                 include: {
                   instructor: {
-                    select: { name: true }
-                  }
-                }
-              }
-            }
+                    select: { name: true },
+                  },
+                },
+              },
+            },
           },
           _count: {
             select: {
               helpfulVotes: true,
-              reports: true
-            }
-          }
-        }
+              reports: true,
+            },
+          },
+        },
       }),
-      prisma!.review.count({ where })
+      prisma!.review.count({ where }),
     ]);
 
     return Response.json({
@@ -91,10 +91,9 @@ export async function GET(request: NextRequest) {
         total,
         page,
         limit,
-        totalPages: Math.ceil(total / limit)
-      }
+        totalPages: Math.ceil(total / limit),
+      },
     });
-
   } catch (error: any) {
     console.error("Failed to get reviews:", error);
 
@@ -105,9 +104,6 @@ export async function GET(request: NextRequest) {
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

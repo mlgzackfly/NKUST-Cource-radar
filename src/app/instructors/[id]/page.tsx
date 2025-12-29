@@ -106,10 +106,7 @@ export default function InstructorPage() {
             <div className="ts-header is-large" style={{ marginBottom: "1rem" }}>
               {error || "找不到教師資料"}
             </div>
-            <button
-              onClick={() => router.back()}
-              className="ts-button is-outlined"
-            >
+            <button onClick={() => router.back()} className="ts-button is-outlined">
               返回
             </button>
           </div>
@@ -118,9 +115,10 @@ export default function InstructorPage() {
     );
   }
 
-  const filteredCourses = selectedSemester === "all"
-    ? data.courses
-    : data.courses.filter(c => `${c.year}-${c.term}` === selectedSemester);
+  const filteredCourses =
+    selectedSemester === "all"
+      ? data.courses
+      : data.courses.filter((c) => `${c.year}-${c.term}` === selectedSemester);
 
   // 雷達圖配置
   const radarOption = {
@@ -171,7 +169,10 @@ export default function InstructorPage() {
   };
 
   return (
-    <div className="ts-container" style={{ padding: "2rem 1rem", maxWidth: "1200px", margin: "0 auto" }}>
+    <div
+      className="ts-container"
+      style={{ padding: "2rem 1rem", maxWidth: "1200px", margin: "0 auto" }}
+    >
       {/* 返回按鈕 */}
       <div style={{ marginBottom: "1.5rem" }}>
         <button onClick={() => router.back()} className="ts-button is-outlined">
@@ -185,19 +186,19 @@ export default function InstructorPage() {
           <div className="ts-header is-huge" style={{ marginBottom: "0.5rem" }}>
             {data.instructor.name}
           </div>
-          <div style={{ color: "var(--app-muted)", fontSize: "0.938rem" }}>
-            教師檔案
-          </div>
+          <div style={{ color: "var(--app-muted)", fontSize: "0.938rem" }}>教師檔案</div>
         </div>
       </div>
 
       {/* 統計資訊卡片 */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-        gap: "1rem",
-        marginBottom: "2rem"
-      }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "1rem",
+          marginBottom: "2rem",
+        }}
+      >
         <StatCard label="開課總數" value={data.stats.totalCourses} unit="門課" />
         <StatCard label="總上課人數" value={data.stats.totalEnrolled} unit="人" />
         <StatCard label="評價總數" value={data.reviewStats.totalReviews} unit="則" />
@@ -209,12 +210,14 @@ export default function InstructorPage() {
         <div className="ts-box" style={{ marginBottom: "2rem" }}>
           <div className="ts-content">
             <ReactECharts option={radarOption} style={{ height: "400px" }} />
-            <div style={{
-              textAlign: "center",
-              fontSize: "0.875rem",
-              color: "var(--app-muted)",
-              marginTop: "1rem"
-            }}>
+            <div
+              style={{
+                textAlign: "center",
+                fontSize: "0.875rem",
+                color: "var(--app-muted)",
+                marginTop: "1rem",
+              }}
+            >
               基於 {data.reviewStats.totalReviews} 則評價的平均分數
             </div>
           </div>
@@ -238,15 +241,15 @@ export default function InstructorPage() {
       {/* 課程列表 */}
       <div className="ts-box">
         <div className="ts-content" style={{ padding: "1.5rem" }}>
-          <div style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            marginBottom: "1.5rem"
-          }}>
-            <div className="ts-header is-large">
-              開設課程 ({filteredCourses.length})
-            </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "1.5rem",
+            }}
+          >
+            <div className="ts-header is-large">開設課程 ({filteredCourses.length})</div>
 
             {/* 學期篩選 */}
             <div className="ts-control">
@@ -257,7 +260,7 @@ export default function InstructorPage() {
                     onChange={(e) => setSelectedSemester(e.target.value)}
                   >
                     <option value="all">全部學期</option>
-                    {data.stats.semesters.map(sem => (
+                    {data.stats.semesters.map((sem) => (
                       <option key={sem} value={sem}>
                         {sem.replace("-", " 學年第 ")} 學期
                       </option>
@@ -274,7 +277,7 @@ export default function InstructorPage() {
             </div>
           ) : (
             <div style={{ display: "grid", gap: "1rem" }}>
-              {filteredCourses.map(course => (
+              {filteredCourses.map((course) => (
                 <Link
                   key={course.id}
                   href={`/courses/${course.id}`}
@@ -297,9 +300,18 @@ export default function InstructorPage() {
                     e.currentTarget.style.backgroundColor = "var(--ts-gray-50)";
                   }}
                 >
-                  <div className="instructor-course-header" style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.75rem" }}>
+                  <div
+                    className="instructor-course-header"
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      marginBottom: "0.75rem",
+                    }}
+                  >
                     <div>
-                      <div style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.25rem" }}>
+                      <div
+                        style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "0.25rem" }}
+                      >
                         {course.courseName}
                       </div>
                       <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
@@ -314,31 +326,33 @@ export default function InstructorPage() {
                         </div>
                       )}
                       {course._count.reviews > 0 && (
-                        <div style={{
-                          fontSize: "0.875rem",
-                          color: "var(--ts-primary-500)",
-                          marginTop: "0.25rem"
-                        }}>
+                        <div
+                          style={{
+                            fontSize: "0.875rem",
+                            color: "var(--ts-primary-500)",
+                            marginTop: "0.25rem",
+                          }}
+                        >
                           {course._count.reviews} 則評價
                         </div>
                       )}
                     </div>
                   </div>
 
-                  <div style={{
-                    display: "flex",
-                    gap: "0.5rem",
-                    flexWrap: "wrap",
-                    fontSize: "0.813rem"
-                  }}>
-                    {course.department && (
-                      <span className="ts-badge">{course.department}</span>
-                    )}
-                    {course.campus && (
-                      <span className="ts-badge is-outlined">{course.campus}</span>
-                    )}
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "0.5rem",
+                      flexWrap: "wrap",
+                      fontSize: "0.813rem",
+                    }}
+                  >
+                    {course.department && <span className="ts-badge">{course.department}</span>}
+                    {course.campus && <span className="ts-badge is-outlined">{course.campus}</span>}
                     {course.requiredOrElective && (
-                      <span className={`ts-badge ${course.requiredOrElective === "必修" ? "is-primary" : ""}`}>
+                      <span
+                        className={`ts-badge ${course.requiredOrElective === "必修" ? "is-primary" : ""}`}
+                      >
                         {course.requiredOrElective}
                       </span>
                     )}
@@ -375,11 +389,13 @@ function StatCard({ label, value, unit }: { label: string; value: number; unit: 
 function InfoItem({ label, value }: { label: string; value: string }) {
   return (
     <div style={{ display: "flex", gap: "1rem" }}>
-      <div style={{
-        minWidth: "100px",
-        fontWeight: 600,
-        color: "var(--app-muted)"
-      }}>
+      <div
+        style={{
+          minWidth: "100px",
+          fontWeight: 600,
+          color: "var(--app-muted)",
+        }}
+      >
         {label}
       </div>
       <div>{value || "—"}</div>

@@ -6,7 +6,7 @@ import { useState } from "react";
 export function AdminNavLink({
   href,
   icon,
-  children
+  children,
 }: {
   href: string;
   icon: string;
@@ -26,7 +26,7 @@ export function AdminNavLink({
         color: "var(--ts-gray-800)",
         textDecoration: "none",
         transition: "background-color 0.2s",
-        backgroundColor: isHovered ? "var(--ts-gray-100)" : "transparent"
+        backgroundColor: isHovered ? "var(--ts-gray-100)" : "transparent",
       }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

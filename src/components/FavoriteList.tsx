@@ -244,33 +244,58 @@ export default function FavoriteList() {
           }}
         >
           <div>
-            <label style={{ display: "block", fontSize: "0.813rem", marginBottom: "0.5rem", color: "var(--app-muted)" }}>
+            <label
+              style={{
+                display: "block",
+                fontSize: "0.813rem",
+                marginBottom: "0.5rem",
+                color: "var(--app-muted)",
+              }}
+            >
               學年
             </label>
             <div className="ts-select is-fluid">
               <select value={year} onChange={(e) => setYear(e.target.value)}>
                 <option value="">全部學年</option>
                 {filterOptions.years.map((y) => (
-                  <option key={y} value={y}>{y} 學年</option>
+                  <option key={y} value={y}>
+                    {y} 學年
+                  </option>
                 ))}
               </select>
             </div>
           </div>
           <div>
-            <label style={{ display: "block", fontSize: "0.813rem", marginBottom: "0.5rem", color: "var(--app-muted)" }}>
+            <label
+              style={{
+                display: "block",
+                fontSize: "0.813rem",
+                marginBottom: "0.5rem",
+                color: "var(--app-muted)",
+              }}
+            >
               學期
             </label>
             <div className="ts-select is-fluid">
               <select value={term} onChange={(e) => setTerm(e.target.value)}>
                 <option value="">全部學期</option>
                 {filterOptions.terms.map((t) => (
-                  <option key={t} value={t}>第 {t} 學期</option>
+                  <option key={t} value={t}>
+                    第 {t} 學期
+                  </option>
                 ))}
               </select>
             </div>
           </div>
           <div>
-            <label style={{ display: "block", fontSize: "0.813rem", marginBottom: "0.5rem", color: "var(--app-muted)" }}>
+            <label
+              style={{
+                display: "block",
+                fontSize: "0.813rem",
+                marginBottom: "0.5rem",
+                color: "var(--app-muted)",
+              }}
+            >
               排序方式
             </label>
             <div className="ts-select is-fluid">
@@ -298,7 +323,9 @@ export default function FavoriteList() {
             border: "1px solid var(--app-border)",
           }}
         >
-          <label style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}>
+          <label
+            style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer" }}
+          >
             <input
               type="checkbox"
               checked={selectedIds.size === favorites.length && favorites.length > 0}
@@ -379,12 +406,24 @@ export default function FavoriteList() {
                     type="checkbox"
                     checked={isSelected}
                     onChange={() => toggleSelect(favorite.id)}
-                    style={{ width: "18px", height: "18px", marginTop: "0.25rem", cursor: "pointer" }}
+                    style={{
+                      width: "18px",
+                      height: "18px",
+                      marginTop: "0.25rem",
+                      cursor: "pointer",
+                    }}
                   />
 
                   {/* 課程資訊 */}
                   <div style={{ flex: 1, minWidth: 0 }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: "0.5rem" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "flex-start",
+                        gap: "0.5rem",
+                      }}
+                    >
                       <Link
                         href={`/courses/${favorite.course.id}`}
                         style={{
@@ -421,7 +460,8 @@ export default function FavoriteList() {
                       {favorite.course.courseCode && `${favorite.course.courseCode} · `}
                       {favorite.course.year} 學年第 {favorite.course.term} 學期
                       {favorite.course.credits && ` · ${favorite.course.credits} 學分`}
-                      {favorite.course.summary.count > 0 && ` · ${favorite.course.summary.count} 則評論`}
+                      {favorite.course.summary.count > 0 &&
+                        ` · ${favorite.course.summary.count} 則評論`}
                     </div>
 
                     {favorite.course.instructors.length > 0 && (
@@ -444,7 +484,13 @@ export default function FavoriteList() {
                     )}
 
                     {favorite.course.time && (
-                      <div style={{ fontSize: "0.813rem", marginTop: "0.375rem", color: "var(--app-muted)" }}>
+                      <div
+                        style={{
+                          fontSize: "0.813rem",
+                          marginTop: "0.375rem",
+                          color: "var(--app-muted)",
+                        }}
+                      >
                         {favorite.course.time}
                         {favorite.course.classroom && ` @ ${favorite.course.classroom}`}
                       </div>

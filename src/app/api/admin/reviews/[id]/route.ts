@@ -4,10 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function PATCH(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const admin = await requireAdmin();
     const p = await params;
@@ -24,7 +21,7 @@ export async function PATCH(
     // 查找評論
     const review = await prisma!.review.findUnique({
       where: { id: p.id },
-      include: { user: { select: { id: true, email: true } } }
+      include: { user: { select: { id: true, email: true } } },
     });
 
     if (!review) {
@@ -49,7 +46,7 @@ export async function PATCH(
     // 更新評論狀態
     const updatedReview = await prisma!.review.update({
       where: { id: p.id },
-      data: { status: newStatus }
+      data: { status: newStatus },
     });
 
     // 記錄管理員操作
@@ -59,15 +56,14 @@ export async function PATCH(
         actorId: admin.id,
         targetReviewId: review.id,
         targetUserId: review.userId,
-        note: note || `${action === "hide" ? "隱藏" : action === "unhide" ? "恢復" : "移除"}評論`
-      }
+        note: note || `${action === "hide" ? "隱藏" : action === "unhide" ? "恢復" : "移除"}評論`,
+      },
     });
 
     return Response.json({
       success: true,
-      review: updatedReview
+      review: updatedReview,
     });
-
   } catch (error: any) {
     console.error("Failed to manage review:", error);
 
@@ -78,9 +74,6 @@ export async function PATCH(
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

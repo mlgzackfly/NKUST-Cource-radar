@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
 type PrismaClientType = NonNullable<typeof prisma>;
-type CourseType = Awaited<ReturnType<PrismaClientType['course']['findMany']>>[number];
-type InstructorType = Awaited<ReturnType<PrismaClientType['instructor']['findMany']>>[number];
+type CourseType = Awaited<ReturnType<PrismaClientType["course"]["findMany"]>>[number];
+type InstructorType = Awaited<ReturnType<PrismaClientType["instructor"]["findMany"]>>[number];
 
 type CourseSuggestion = Pick<CourseType, "id" | "courseName" | "department">;
 type InstructorSuggestion = Pick<InstructorType, "id" | "name">;
@@ -28,7 +28,7 @@ export async function GET(request: Request): Promise<Response> {
         where: {
           courseName: { contains: q },
         },
-        distinct: ['courseName'],
+        distinct: ["courseName"],
         take: 8,
         select: {
           id: true,
@@ -36,7 +36,7 @@ export async function GET(request: Request): Promise<Response> {
           department: true,
         },
         orderBy: {
-          courseName: 'asc',
+          courseName: "asc",
         },
       }) as Promise<CourseSuggestion[]>, // Cast to CourseSuggestion[]
       // Get matching instructors
@@ -44,14 +44,14 @@ export async function GET(request: Request): Promise<Response> {
         where: {
           name: { contains: q },
         },
-        distinct: ['name'],
+        distinct: ["name"],
         take: 3,
         select: {
           id: true,
           name: true,
         },
         orderBy: {
-          name: 'asc',
+          name: "asc",
         },
       }) as Promise<InstructorSuggestion[]>, // Cast to InstructorSuggestion[]
       // Get unique departments matching the query
@@ -59,13 +59,13 @@ export async function GET(request: Request): Promise<Response> {
         where: {
           department: { contains: q },
         },
-        distinct: ['department'],
+        distinct: ["department"],
         take: 2,
         select: {
           department: true,
         },
         orderBy: {
-          department: 'asc',
+          department: "asc",
         },
       }) as Promise<DepartmentSuggestion[]>, // Cast to DepartmentSuggestion[]
     ]);
@@ -73,31 +73,31 @@ export async function GET(request: Request): Promise<Response> {
     // Build suggestions with priority: courses > instructors > departments
     const suggestions = [
       ...courses.map((c: CourseSuggestion) => ({
-        type: 'course' as const,
+        type: "course" as const,
         value: c.courseName,
         label: c.courseName,
         department: c.department,
-        id: c.id
+        id: c.id,
       })),
       ...instructors.map((i: InstructorSuggestion) => ({
-        type: 'instructor' as const,
+        type: "instructor" as const,
         value: i.name,
         label: i.name,
         department: null,
-        id: i.id
+        id: i.id,
       })),
       ...departments
-        .filter(d => d.department !== null)
+        .filter((d) => d.department !== null)
         .map((d: DepartmentSuggestion) => ({
-        type: 'department' as const,
-        value: d.department!,
-        label: d.department!,
-      }))
+          type: "department" as const,
+          value: d.department!,
+          label: d.department!,
+        })),
     ];
 
     return Response.json(suggestions);
   } catch (error) {
-    console.error('Search suggestions error:', error);
+    console.error("Search suggestions error:", error);
     return Response.json([]);
   }
 }

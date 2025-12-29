@@ -39,10 +39,7 @@ interface ReviewWithDetails {
  * - 學期趨勢
  * - 評分分佈
  */
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const admin = await requireAdmin();
     if (!admin) {

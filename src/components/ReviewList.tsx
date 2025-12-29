@@ -11,7 +11,7 @@ type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 
 type Review = {
   id: string;
-  isOwnReview: boolean;  // ✅ 使用布林值而非 userId
+  isOwnReview: boolean; // ✅ 使用布林值而非 userId
   createdAt: string;
   coolness: number | null;
   usefulness: number | null;
@@ -24,7 +24,7 @@ type Review = {
     upvotes: number;
     downvotes: number;
     netScore: number;
-    currentUserVote: 'UPVOTE' | 'DOWNVOTE' | null;
+    currentUserVote: "UPVOTE" | "DOWNVOTE" | null;
   };
 };
 
@@ -51,7 +51,9 @@ export function ReviewList({ reviews, courseId }: ReviewListProps) {
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "3rem 2rem", textAlign: "center" }}>
           <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🔒</div>
-          <div className="ts-header" style={{ marginBottom: "1rem" }}>登入查看評論</div>
+          <div className="ts-header" style={{ marginBottom: "1rem" }}>
+            登入查看評論
+          </div>
           <div className="app-muted" style={{ marginBottom: "1.5rem" }}>
             為了保護評論者隱私，需要登入後才能查看完整評論內容
           </div>
@@ -68,7 +70,9 @@ export function ReviewList({ reviews, courseId }: ReviewListProps) {
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "3rem 2rem", textAlign: "center" }}>
           <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>📝</div>
-          <div className="ts-header" style={{ marginBottom: "0.5rem" }}>尚無評論</div>
+          <div className="ts-header" style={{ marginBottom: "0.5rem" }}>
+            尚無評論
+          </div>
           <div className="app-muted">成為第一位評論此課程的人！</div>
         </div>
       </div>
@@ -116,7 +120,9 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
   const [reportReason, setReportReason] = useState("");
   const [reportLoading, setReportLoading] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
-  const [snackbar, setSnackbar] = useState<{ message: string; type: "success" | "error" } | null>(null);
+  const [snackbar, setSnackbar] = useState<{ message: string; type: "success" | "error" } | null>(
+    null
+  );
   const router = useRouter();
 
   const formatDate = (dateStr: string) => {
@@ -144,8 +150,8 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
           attendance,
           grading,
           body: body.trim() || null,
-          authorDept: authorDept.trim() || null
-        })
+          authorDept: authorDept.trim() || null,
+        }),
       });
 
       const data = await res.json();
@@ -180,7 +186,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
     setShowDeleteConfirm(false);
     try {
       const res = await fetch(`/api/reviews/${review.id}`, {
-        method: "DELETE"
+        method: "DELETE",
       });
 
       const data = await res.json();
@@ -211,7 +217,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
       const res = await fetch(`/api/reviews/${review.id}/report`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ reason: reportReason.trim() })
+        body: JSON.stringify({ reason: reportReason.trim() }),
       });
 
       const data = await res.json();
@@ -235,7 +241,9 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
       <div className="ts-box is-raised">
         <div className="ts-content" style={{ padding: "1.5rem" }}>
           <div style={{ marginBottom: "1.5rem" }}>
-            <div className="ts-header" style={{ fontSize: "1.125rem" }}>編輯評論</div>
+            <div className="ts-header" style={{ fontSize: "1.125rem" }}>
+              編輯評論
+            </div>
           </div>
 
           {/* Rating Dimensions */}
@@ -288,18 +296,10 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
 
           {/* Actions */}
           <div style={{ display: "flex", gap: "0.75rem" }}>
-            <button
-              onClick={handleSave}
-              className="ts-button is-primary"
-              disabled={loading}
-            >
+            <button onClick={handleSave} className="ts-button is-primary" disabled={loading}>
               {loading ? "儲存中..." : "儲存"}
             </button>
-            <button
-              onClick={handleCancel}
-              className="ts-button is-outlined"
-              disabled={loading}
-            >
+            <button onClick={handleCancel} className="ts-button is-outlined" disabled={loading}>
               取消
             </button>
           </div>
@@ -312,7 +312,14 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
     <div className="ts-box is-raised">
       <div className="ts-content" style={{ padding: "1.5rem" }}>
         {/* Header */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginBottom: "1rem",
+          }}
+        >
           <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
             {review.authorDept || "匿名使用者"} · {formatDate(review.createdAt)}
           </div>
@@ -338,48 +345,45 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
 
         {/* Ratings */}
         <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "1rem" }}>
-          {review.coolness !== null && (
-            <RatingBadge label="涼度" value={review.coolness} />
-          )}
-          {review.usefulness !== null && (
-            <RatingBadge label="實用" value={review.usefulness} />
-          )}
-          {review.workload !== null && (
-            <RatingBadge label="作業量" value={review.workload} />
-          )}
-          {review.attendance !== null && (
-            <RatingBadge label="點名" value={review.attendance} />
-          )}
-          {review.grading !== null && (
-            <RatingBadge label="給分甜度" value={review.grading} />
-          )}
+          {review.coolness !== null && <RatingBadge label="涼度" value={review.coolness} />}
+          {review.usefulness !== null && <RatingBadge label="實用" value={review.usefulness} />}
+          {review.workload !== null && <RatingBadge label="作業量" value={review.workload} />}
+          {review.attendance !== null && <RatingBadge label="點名" value={review.attendance} />}
+          {review.grading !== null && <RatingBadge label="給分甜度" value={review.grading} />}
         </div>
 
         {/* Body */}
         {review.body && (
-          <div style={{
-            padding: "1rem",
-            backgroundColor: "var(--app-surface)",
-            borderRadius: "8px",
-            lineHeight: 1.7,
-            whiteSpace: "pre-wrap"
-          }}>
+          <div
+            style={{
+              padding: "1rem",
+              backgroundColor: "var(--app-surface)",
+              borderRadius: "8px",
+              lineHeight: 1.7,
+              whiteSpace: "pre-wrap",
+            }}
+          >
             {review.body}
           </div>
         )}
 
         {/* 投票按鈕 */}
-        <div style={{
-          marginTop: '1rem',
-          paddingTop: '1rem',
-          borderTop: '1px solid var(--ts-gray-200)'
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <VoteButtons
-              reviewId={review.id}
-              votes={review.votes}
-              isOwnReview={isOwner}
-            />
+        <div
+          style={{
+            marginTop: "1rem",
+            paddingTop: "1rem",
+            borderTop: "1px solid var(--ts-gray-200)",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginBottom: "1rem",
+            }}
+          >
+            <VoteButtons reviewId={review.id} votes={review.votes} isOwnReview={isOwner} />
             {!isOwner && (
               <button
                 onClick={() => setShowReportDialog(true)}
@@ -409,7 +413,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 1000
+            zIndex: 1000,
           }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
@@ -425,7 +429,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
               maxWidth: "500px",
               maxHeight: "min(90vh, 600px)",
               overflowY: "auto",
-              backgroundColor: "var(--ts-gray-50)"
+              backgroundColor: "var(--ts-gray-50)",
             }}
           >
             <div className="ts-content" style={{ padding: "1.5rem" }}>
@@ -446,7 +450,10 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
                     style={{ resize: "vertical" }}
                   />
                 </div>
-                <div className="text" style={{ marginTop: "0.5rem", fontSize: "0.875rem", color: "var(--app-muted)" }}>
+                <div
+                  className="text"
+                  style={{ marginTop: "0.5rem", fontSize: "0.875rem", color: "var(--app-muted)" }}
+                >
                   {reportReason.length}/500
                 </div>
               </div>
@@ -488,7 +495,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 1000
+            zIndex: 1000,
           }}
           onClick={(e) => {
             if (e.target === e.currentTarget) {
@@ -503,7 +510,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
               maxWidth: "400px",
               maxHeight: "min(90vh, 500px)",
               overflowY: "auto",
-              backgroundColor: "var(--ts-gray-50)"
+              backgroundColor: "var(--ts-gray-50)",
             }}
           >
             <div className="ts-content" style={{ padding: "1.5rem" }}>
@@ -549,7 +556,7 @@ function ReviewCard({ review, isOwner, courseId }: ReviewCardProps) {
 function RatingInput({
   label,
   value,
-  onChange
+  onChange,
 }: {
   label: string;
   value: RatingValue;
@@ -591,15 +598,17 @@ function RatingBadge({ label, value }: { label: string; value: number }) {
   };
 
   return (
-    <div style={{
-      display: "inline-flex",
-      alignItems: "center",
-      gap: "0.5rem",
-      padding: "0.375rem 0.75rem",
-      backgroundColor: "var(--app-surface)",
-      borderRadius: "6px",
-      fontSize: "0.875rem"
-    }}>
+    <div
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        padding: "0.375rem 0.75rem",
+        backgroundColor: "var(--app-surface)",
+        borderRadius: "6px",
+        fontSize: "0.875rem",
+      }}
+    >
       <span style={{ color: "var(--app-muted)" }}>{label}</span>
       <span style={{ fontWeight: 700, color: getColor(value) }}>{value}</span>
     </div>
@@ -609,18 +618,18 @@ function RatingBadge({ label, value }: { label: string; value: number }) {
 function VoteButtons({
   reviewId,
   votes,
-  isOwnReview
+  isOwnReview,
 }: {
   reviewId: string;
-  votes: Review['votes'];
+  votes: Review["votes"];
   isOwnReview: boolean;
 }) {
   const [voteState, setVoteState] = useState(votes);
   const [loading, setLoading] = useState(false);
 
-  const handleVote = async (voteType: 'UPVOTE' | 'DOWNVOTE') => {
+  const handleVote = async (voteType: "UPVOTE" | "DOWNVOTE") => {
     if (isOwnReview) {
-      alert('無法對自己的評論投票');
+      alert("無法對自己的評論投票");
       return;
     }
 
@@ -631,7 +640,7 @@ function VoteButtons({
       // 若點擊已選的票型，則取消投票
       if (voteState.currentUserVote === voteType) {
         const res = await fetch(`/api/reviews/${reviewId}/vote`, {
-          method: 'DELETE',
+          method: "DELETE",
         });
         if (!res.ok) throw new Error();
 
@@ -640,8 +649,8 @@ function VoteButtons({
       } else {
         // 投票或更改票型
         const res = await fetch(`/api/reviews/${reviewId}/vote`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ voteType }),
         });
         if (!res.ok) throw new Error();
@@ -653,7 +662,7 @@ function VoteButtons({
         });
       }
     } catch (error) {
-      alert('操作失敗，請稍後再試');
+      alert("操作失敗，請稍後再試");
       setVoteState(originalState);
     } finally {
       setLoading(false);
@@ -661,37 +670,36 @@ function VoteButtons({
   };
 
   return (
-    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }} className="mobile-button-group">
+    <div
+      style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}
+      className="mobile-button-group"
+    >
       {/* 讚按鈕 */}
       <button
-        onClick={() => handleVote('UPVOTE')}
+        onClick={() => handleVote("UPVOTE")}
         disabled={loading || isOwnReview}
         className={`ts-button is-small ${
-          voteState.currentUserVote === 'UPVOTE'
-            ? 'is-primary'
-            : 'is-outlined'
+          voteState.currentUserVote === "UPVOTE" ? "is-primary" : "is-outlined"
         }`}
-        style={{ minWidth: '4.5rem' }}
-        title={isOwnReview ? '無法對自己的評論投票' : '有幫助'}
+        style={{ minWidth: "4.5rem" }}
+        title={isOwnReview ? "無法對自己的評論投票" : "有幫助"}
       >
-        <span style={{ fontSize: '1rem' }}>👍</span>
-        <span style={{ marginLeft: '0.25rem' }}>{voteState.upvotes}</span>
+        <span style={{ fontSize: "1rem" }}>👍</span>
+        <span style={{ marginLeft: "0.25rem" }}>{voteState.upvotes}</span>
       </button>
 
       {/* 倒讚按鈕 */}
       <button
-        onClick={() => handleVote('DOWNVOTE')}
+        onClick={() => handleVote("DOWNVOTE")}
         disabled={loading || isOwnReview}
         className={`ts-button is-small ${
-          voteState.currentUserVote === 'DOWNVOTE'
-            ? 'is-negative'
-            : 'is-outlined'
+          voteState.currentUserVote === "DOWNVOTE" ? "is-negative" : "is-outlined"
         }`}
-        style={{ minWidth: '4.5rem' }}
-        title={isOwnReview ? '無法對自己的評論投票' : '沒幫助'}
+        style={{ minWidth: "4.5rem" }}
+        title={isOwnReview ? "無法對自己的評論投票" : "沒幫助"}
       >
-        <span style={{ fontSize: '1rem' }}>👎</span>
-        <span style={{ marginLeft: '0.25rem' }}>{voteState.downvotes}</span>
+        <span style={{ fontSize: "1rem" }}>👎</span>
+        <span style={{ marginLeft: "0.25rem" }}>{voteState.downvotes}</span>
       </button>
     </div>
   );

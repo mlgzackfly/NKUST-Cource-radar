@@ -51,9 +51,7 @@ export function sanitizeAndValidateText(
   const sanitized = sanitizeText(text.trim());
 
   if (sanitized.length > maxLength) {
-    throw new Error(
-      `${fieldName} exceeds maximum length of ${maxLength} characters`
-    );
+    throw new Error(`${fieldName} exceeds maximum length of ${maxLength} characters`);
   }
 
   return sanitized || null;
@@ -66,10 +64,7 @@ export function sanitizeAndValidateText(
  * @returns 驗證後的數值或 null
  * @throws Error 如果數值無效
  */
-export function validateRating(
-  value: any,
-  fieldName: string
-): number | null {
+export function validateRating(value: any, fieldName: string): number | null {
   // 允許 null/undefined（代表未評分）
   if (value === null || value === undefined) {
     return null;
@@ -114,9 +109,7 @@ export function validateText(
   const trimmed = text.trim();
 
   if (trimmed.length > maxLength) {
-    throw new Error(
-      `${fieldName} exceeds maximum length of ${maxLength} characters`
-    );
+    throw new Error(`${fieldName} exceeds maximum length of ${maxLength} characters`);
   }
 
   return trimmed || null;
@@ -168,11 +161,7 @@ export function validateOrigin(request: Request): boolean {
     return true;
   }
 
-  const allowedHosts = [
-    "nkust.zeabur.app",
-    "localhost",
-    "127.0.0.1",
-  ];
+  const allowedHosts = ["nkust.zeabur.app", "localhost", "127.0.0.1"];
 
   // 檢查 origin
   if (origin) {
@@ -206,9 +195,6 @@ export function validateOrigin(request: Request): boolean {
  * @param request - Request 物件
  * @param allowedMethods - 允許的方法列表
  */
-export function validateMethod(
-  request: Request,
-  allowedMethods: string[]
-): boolean {
+export function validateMethod(request: Request, allowedMethods: string[]): boolean {
   return allowedMethods.includes(request.method);
 }

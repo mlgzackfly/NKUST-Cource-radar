@@ -68,11 +68,7 @@ interface InstructorDetail {
   };
 }
 
-export default function AdminInstructorDetailPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default function AdminInstructorDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const [data, setData] = useState<InstructorDetail | null>(null);
   const [loading, setLoading] = useState(true);
@@ -84,12 +80,8 @@ export default function AdminInstructorDetailPage({
     // 動態載入 echarts
     import("echarts/core").then(async (ec) => {
       const { BarChart, LineChart, RadarChart } = await import("echarts/charts");
-      const {
-        GridComponent,
-        TooltipComponent,
-        LegendComponent,
-        RadarComponent,
-      } = await import("echarts/components");
+      const { GridComponent, TooltipComponent, LegendComponent, RadarComponent } =
+        await import("echarts/components");
       const { CanvasRenderer } = await import("echarts/renderers");
 
       ec.use([
@@ -133,7 +125,7 @@ export default function AdminInstructorDetailPage({
   if (loading) {
     return (
       <div style={{ textAlign: "center", padding: "4rem" }}>
-        <div className="ts-loading is-large"></div>
+        <div className="ts-loading is-large" />
         <p style={{ marginTop: "1rem", color: "var(--ts-gray-500)" }}>載入中...</p>
       </div>
     );
@@ -142,8 +134,14 @@ export default function AdminInstructorDetailPage({
   if (error || !data) {
     return (
       <div style={{ textAlign: "center", padding: "4rem" }}>
-        <p style={{ color: "var(--ts-negative-500)", fontSize: "1.25rem" }}>{error || "載入失敗"}</p>
-        <Link href="/admin/instructors" className="ts-button is-outlined" style={{ marginTop: "1rem" }}>
+        <p style={{ color: "var(--ts-negative-500)", fontSize: "1.25rem" }}>
+          {error || "載入失敗"}
+        </p>
+        <Link
+          href="/admin/instructors"
+          className="ts-button is-outlined"
+          style={{ marginTop: "1rem" }}
+        >
           返回列表
         </Link>
       </div>
@@ -190,8 +188,13 @@ export default function AdminInstructorDetailPage({
         name: "平均評分",
         type: "line",
         data: semesterTrends.map((t) => {
-          const ratings = [t.avgCoolness, t.avgUsefulness, t.avgWorkload, t.avgAttendance, t.avgGrading]
-            .filter((r): r is number => r !== null);
+          const ratings = [
+            t.avgCoolness,
+            t.avgUsefulness,
+            t.avgWorkload,
+            t.avgAttendance,
+            t.avgGrading,
+          ].filter((r): r is number => r !== null);
           return ratings.length > 0
             ? Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 10) / 10
             : null;
@@ -230,27 +233,50 @@ export default function AdminInstructorDetailPage({
     <div>
       {/* 頂部導航 */}
       <div style={{ marginBottom: "1.5rem" }}>
-        <Link href="/admin/instructors" style={{ color: "var(--ts-primary-500)", textDecoration: "none" }}>
+        <Link
+          href="/admin/instructors"
+          style={{ color: "var(--ts-primary-500)", textDecoration: "none" }}
+        >
           ← 返回教師列表
         </Link>
       </div>
 
       {/* 教師資訊 */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "2rem" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "flex-start",
+          marginBottom: "2rem",
+        }}
+      >
         <div>
-          <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.5rem" }}>{instructor.name}</h1>
+          <h1 style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "0.5rem" }}>
+            {instructor.name}
+          </h1>
           <p style={{ color: "var(--ts-gray-500)" }}>教師 ID: {instructor.id}</p>
         </div>
       </div>
 
       {/* 統計摘要 */}
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "1rem", marginBottom: "2rem" }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))",
+          gap: "1rem",
+          marginBottom: "2rem",
+        }}
+      >
         <StatBox label="課程數" value={summary.totalCourses} />
         <StatBox label="總評論" value={summary.totalReviews} />
         <StatBox label="顯示中" value={summary.activeReviews} color="var(--ts-positive-500)" />
         <StatBox label="已隱藏" value={summary.hiddenReviews} color="var(--ts-warning-500)" />
         <StatBox label="已移除" value={summary.removedReviews} color="var(--ts-negative-500)" />
-        <StatBox label="待處理檢舉" value={summary.reviewsWithOpenReports} color="var(--ts-negative-500)" />
+        <StatBox
+          label="待處理檢舉"
+          value={summary.reviewsWithOpenReports}
+          color="var(--ts-negative-500)"
+        />
       </div>
 
       {/* 分頁籤 */}
@@ -284,7 +310,9 @@ export default function AdminInstructorDetailPage({
           {/* 趨勢圖 */}
           {echarts && semesterTrends.length > 0 && (
             <div className="ts-box" style={{ padding: "1.5rem" }}>
-              <h3 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>學期趨勢</h3>
+              <h3 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>
+                學期趨勢
+              </h3>
               <ReactEChartsCore
                 echarts={echarts}
                 option={trendChartOption}
@@ -296,7 +324,9 @@ export default function AdminInstructorDetailPage({
           {/* 分佈圖 */}
           {echarts && (
             <div className="ts-box" style={{ padding: "1.5rem" }}>
-              <h3 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>評分分佈</h3>
+              <h3 style={{ fontSize: "1.125rem", fontWeight: 600, marginBottom: "1rem" }}>
+                評分分佈
+              </h3>
               <ReactEChartsCore
                 echarts={echarts}
                 option={distributionChartOption}
@@ -347,7 +377,10 @@ export default function AdminInstructorDetailPage({
       {activeTab === "reviews" && (
         <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
           {reviews.length === 0 ? (
-            <div className="ts-box" style={{ padding: "2rem", textAlign: "center", color: "var(--ts-gray-500)" }}>
+            <div
+              className="ts-box"
+              style={{ padding: "2rem", textAlign: "center", color: "var(--ts-gray-500)" }}
+            >
               目前沒有評論
             </div>
           ) : (
@@ -361,15 +394,24 @@ export default function AdminInstructorDetailPage({
                     review.status === "ACTIVE"
                       ? "var(--ts-positive-500)"
                       : review.status === "HIDDEN"
-                      ? "var(--ts-warning-500)"
-                      : "var(--ts-negative-500)"
+                        ? "var(--ts-warning-500)"
+                        : "var(--ts-negative-500)"
                   }`,
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.75rem" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                    marginBottom: "0.75rem",
+                  }}
+                >
                   <div>
                     <span style={{ fontWeight: 600 }}>{review.courseName}</span>
-                    <span style={{ color: "var(--ts-gray-500)", marginLeft: "0.5rem" }}>{review.courseCode}</span>
+                    <span style={{ color: "var(--ts-gray-500)", marginLeft: "0.5rem" }}>
+                      {review.courseCode}
+                    </span>
                   </div>
                   <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
                     {review.openReports > 0 && (
@@ -382,17 +424,29 @@ export default function AdminInstructorDetailPage({
                         review.status === "ACTIVE"
                           ? "is-positive"
                           : review.status === "HIDDEN"
-                          ? "is-warning"
-                          : "is-negative"
+                            ? "is-warning"
+                            : "is-negative"
                       }`}
                     >
-                      {review.status === "ACTIVE" ? "顯示中" : review.status === "HIDDEN" ? "已隱藏" : "已移除"}
+                      {review.status === "ACTIVE"
+                        ? "顯示中"
+                        : review.status === "HIDDEN"
+                          ? "已隱藏"
+                          : "已移除"}
                     </span>
                   </div>
                 </div>
 
                 {/* 評分 */}
-                <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", marginBottom: "0.75rem", fontSize: "0.875rem" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "1rem",
+                    flexWrap: "wrap",
+                    marginBottom: "0.75rem",
+                    fontSize: "0.875rem",
+                  }}
+                >
                   {review.coolness !== null && <span>風趣度: {review.coolness}</span>}
                   {review.usefulness !== null && <span>實用性: {review.usefulness}</span>}
                   {review.workload !== null && <span>負擔度: {review.workload}</span>}
@@ -402,13 +456,27 @@ export default function AdminInstructorDetailPage({
 
                 {/* 評論內容 */}
                 {review.body && (
-                  <p style={{ color: "var(--ts-gray-700)", marginBottom: "0.75rem", whiteSpace: "pre-wrap" }}>
+                  <p
+                    style={{
+                      color: "var(--ts-gray-700)",
+                      marginBottom: "0.75rem",
+                      whiteSpace: "pre-wrap",
+                    }}
+                  >
                     {review.body}
                   </p>
                 )}
 
                 {/* 底部資訊 */}
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", fontSize: "0.813rem", color: "var(--ts-gray-500)" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    fontSize: "0.813rem",
+                    color: "var(--ts-gray-500)",
+                  }}
+                >
                   <div style={{ display: "flex", gap: "1rem" }}>
                     <span>{new Date(review.createdAt).toLocaleDateString("zh-TW")}</span>
                     {review.authorDept && <span>來自: {review.authorDept}</span>}

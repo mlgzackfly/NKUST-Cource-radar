@@ -4,7 +4,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 function ErrorContent() {
   const searchParams = useSearchParams();
@@ -30,7 +30,10 @@ function ErrorContent() {
           <div className="ts-content" style={{ padding: "2.5rem", textAlign: "center" }}>
             <div style={{ fontSize: "4rem", marginBottom: "1.5rem" }}>⚠️</div>
 
-            <div className="ts-header" style={{ fontSize: "1.75rem", fontWeight: 700, marginBottom: "1rem" }}>
+            <div
+              className="ts-header"
+              style={{ fontSize: "1.75rem", fontWeight: 700, marginBottom: "1rem" }}
+            >
               登入失敗
             </div>
 
@@ -55,13 +58,13 @@ function ErrorContent() {
 
 export default function AuthError() {
   return (
-    <Suspense fallback={
-      <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
-        <div style={{ maxWidth: "440px", margin: "0 auto", textAlign: "center" }}>
-          載入中...
+    <Suspense
+      fallback={
+        <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
+          <div style={{ maxWidth: "440px", margin: "0 auto", textAlign: "center" }}>載入中...</div>
         </div>
-      </div>
-    }>
+      }
+    >
       <ErrorContent />
     </Suspense>
   );

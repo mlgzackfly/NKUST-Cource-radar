@@ -93,7 +93,9 @@ export async function GET(request: Request) {
     // 計算每位教師的統計資料
     const instructorsWithStats = await Promise.all(
       (instructors as InstructorWithCourses[]).map(async (instructor: InstructorWithCourses) => {
-        const courseIds = instructor.courses.map((c: InstructorWithCourses["courses"][0]) => c.course.id);
+        const courseIds = instructor.courses.map(
+          (c: InstructorWithCourses["courses"][0]) => c.course.id
+        );
         const reviewCount = instructor.courses.reduce(
           (sum: number, c: InstructorWithCourses["courses"][0]) => sum + c.course._count.reviews,
           0
@@ -125,8 +127,7 @@ export async function GET(request: Request) {
           ].filter((r): r is number => r !== null);
 
           if (ratings.length > 0) {
-            avgRating =
-              Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 10) / 10;
+            avgRating = Math.round((ratings.reduce((a, b) => a + b, 0) / ratings.length) * 10) / 10;
           }
         }
 
@@ -144,9 +145,7 @@ export async function GET(request: Request) {
     // 如果按 reviewCount 或 avgRating 排序，在應用層排序
     if (sortBy === "reviewCount") {
       instructorsWithStats.sort((a, b) =>
-        sortOrder === "desc"
-          ? b.reviewCount - a.reviewCount
-          : a.reviewCount - b.reviewCount
+        sortOrder === "desc" ? b.reviewCount - a.reviewCount : a.reviewCount - b.reviewCount
       );
     } else if (sortBy === "avgRating") {
       instructorsWithStats.sort((a, b) => {

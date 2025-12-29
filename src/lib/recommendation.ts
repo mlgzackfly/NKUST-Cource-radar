@@ -176,9 +176,7 @@ export async function getContentBasedRecommendations(
 
       // 同教師：+0.4
       const courseInstructorIds = course.instructors.map((i: any) => i.instructorId);
-      const commonInstructors = courseInstructorIds.filter((id: any) =>
-        instructorIds.includes(id)
-      );
+      const commonInstructors = courseInstructorIds.filter((id: any) => instructorIds.includes(id));
       if (commonInstructors.length > 0) {
         score += 0.4;
       }
@@ -258,8 +256,7 @@ export async function getTrendingRecommendations(
 
     const scoredCourses = courses.map((course: any) => {
       const v = course.reviews.length; // 評論數
-      const R =
-        course.reviews.reduce((sum: any, r: any) => sum + (r.coolness || 0), 0) / v; // 平均評分
+      const R = course.reviews.reduce((sum: any, r: any) => sum + (r.coolness || 0), 0) / v; // 平均評分
 
       // IMDb 公式：Score = (v / (v + m)) * R + (m / (v + m)) * C
       const score = (v / (v + m)) * R + (m / (v + m)) * C;
@@ -306,14 +303,11 @@ export async function getPersonalizedRecommendations(
 
     // 計算平均偏好
     const avgCoolness =
-      userReviews.reduce((sum: any, r: any) => sum + (r.coolness || 0), 0) /
-      userReviews.length;
+      userReviews.reduce((sum: any, r: any) => sum + (r.coolness || 0), 0) / userReviews.length;
     const avgUsefulness =
-      userReviews.reduce((sum: any, r: any) => sum + (r.usefulness || 0), 0) /
-      userReviews.length;
+      userReviews.reduce((sum: any, r: any) => sum + (r.usefulness || 0), 0) / userReviews.length;
     const avgGrading =
-      userReviews.reduce((sum: any, r: any) => sum + (r.grading || 0), 0) /
-      userReviews.length;
+      userReviews.reduce((sum: any, r: any) => sum + (r.grading || 0), 0) / userReviews.length;
 
     // 2. 判斷偏好類型
     const prefersCool = avgCoolness >= 4; // 喜歡涼課
@@ -397,13 +391,12 @@ export async function getHybridRecommendations(
 ): Promise<RecommendationResult[]> {
   try {
     // 並行執行四種演算法
-    const [collaborative, contentBased, trending, personalized] =
-      await Promise.all([
-        getCollaborativeRecommendations(userId, 10),
-        getContentBasedRecommendations(userId, 10),
-        getTrendingRecommendations(userId, 10),
-        getPersonalizedRecommendations(userId, 10),
-      ]);
+    const [collaborative, contentBased, trending, personalized] = await Promise.all([
+      getCollaborativeRecommendations(userId, 10),
+      getContentBasedRecommendations(userId, 10),
+      getTrendingRecommendations(userId, 10),
+      getPersonalizedRecommendations(userId, 10),
+    ]);
 
     // 合併結果並計算加權分數
     const courseScores = new Map<string, { score: number; reason: RecommendationType }>();
@@ -457,13 +450,13 @@ export async function getHybridRecommendations(
     });
 
     // 轉換為陣列並排序
-    const results: RecommendationResult[] = Array.from(
-      courseScores.entries()
-    ).map(([courseId, { score, reason }]) => ({
-      courseId,
-      score,
-      reason,
-    }));
+    const results: RecommendationResult[] = Array.from(courseScores.entries()).map(
+      ([courseId, { score, reason }]) => ({
+        courseId,
+        score,
+        reason,
+      })
+    );
 
     return results.sort((a: any, b: any) => b.score - a.score).slice(0, limit);
   } catch (error) {

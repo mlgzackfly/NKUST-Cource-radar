@@ -50,7 +50,7 @@ export default function ReportsPage() {
       const res = await fetch(`/api/admin/reports/${reportId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action })
+        body: JSON.stringify({ action }),
       });
 
       if (res.ok) {
@@ -102,7 +102,11 @@ export default function ReportsPage() {
       {loading ? (
         <div>載入中...</div>
       ) : reports.length === 0 ? (
-        <div className="ts-box"><div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>沒有檢舉記錄</div></div>
+        <div className="ts-box">
+          <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
+            沒有檢舉記錄
+          </div>
+        </div>
       ) : (
         <div className="ts-box">
           <table className="ts-table">
@@ -118,11 +122,14 @@ export default function ReportsPage() {
               </tr>
             </thead>
             <tbody>
-              {reports.map(report => (
+              {reports.map((report) => (
                 <tr key={report.id}>
                   <td>{new Date(report.createdAt).toLocaleDateString()}</td>
                   <td>
-                    <Link href={`/courses/${report.review.course.id}`} style={{ color: "var(--ts-primary-500)" }}>
+                    <Link
+                      href={`/courses/${report.review.course.id}`}
+                      style={{ color: "var(--ts-primary-500)" }}
+                    >
                       {report.review.course.courseName}
                     </Link>
                   </td>
@@ -130,8 +137,14 @@ export default function ReportsPage() {
                   <td style={{ fontSize: "0.875rem" }}>{report.review.user.email}</td>
                   <td>{report.reason}</td>
                   <td>
-                    <span className={`ts-badge ${report.status === "OPEN" ? "is-negative" : "is-positive"}`}>
-                      {report.status === "OPEN" ? "待處理" : report.status === "RESOLVED" ? "已解決" : "已拒絕"}
+                    <span
+                      className={`ts-badge ${report.status === "OPEN" ? "is-negative" : "is-positive"}`}
+                    >
+                      {report.status === "OPEN"
+                        ? "待處理"
+                        : report.status === "RESOLVED"
+                          ? "已解決"
+                          : "已拒絕"}
                     </span>
                   </td>
                   <td>

@@ -42,11 +42,11 @@ export function SemesterSelector() {
 
         const semesterOptions = Array.from(semesterSet)
           .sort((a, b) => b.localeCompare(a)) // Sort descending (newest first)
-          .map(semester => {
-            const [year, term] = semester.split('-');
+          .map((semester) => {
+            const [year, term] = semester.split("-");
             return {
               value: semester,
-              label: `${year}學年度第${term}學期`
+              label: `${year}學年度第${term}學期`,
             };
           });
 

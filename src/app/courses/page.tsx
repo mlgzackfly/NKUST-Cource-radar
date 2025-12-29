@@ -17,23 +17,22 @@ type CourseListItem = {
 };
 
 type CoursesPageProps = {
-  searchParams?:
-    | Promise<{
-        q?: string;
-        semester?: string;
-        campus?: string;
-        division?: string;
-        department?: string;
-        sort?: string;
-        order?: string;
-        page?: string;
-        sortBy?: string;
-        sortOrder?: string;
-        minRating?: string;
-        maxWorkload?: string;
-        minGrading?: string;
-        timeSlot?: string;
-      }>;
+  searchParams?: Promise<{
+    q?: string;
+    semester?: string;
+    campus?: string;
+    division?: string;
+    department?: string;
+    sort?: string;
+    order?: string;
+    page?: string;
+    sortBy?: string;
+    sortOrder?: string;
+    minRating?: string;
+    maxWorkload?: string;
+    minGrading?: string;
+    timeSlot?: string;
+  }>;
 };
 
 export default async function CoursesPage({ searchParams }: CoursesPageProps) {
@@ -46,7 +45,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   let year: string | undefined;
   let term: string | undefined;
   if (semester) {
-    const parts = semester.split('-');
+    const parts = semester.split("-");
     if (parts.length === 2) {
       year = parts[0];
       term = parts[1];
@@ -92,8 +91,8 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
               <div className="ts-notice is-negative">
                 <div className="title">尚未連線資料庫</div>
                 <div className="content">
-                  目前尚未設定 <code>DATABASE_URL</code>,所以暫時無法載入課程列表。
-                  請先在 Zeabur 建立 PostgreSQL,或本機設定連線後再匯入資料。
+                  目前尚未設定 <code>DATABASE_URL</code>,所以暫時無法載入課程列表。 請先在 Zeabur
+                  建立 PostgreSQL,或本機設定連線後再匯入資料。
                 </div>
               </div>
             </div>
@@ -112,11 +111,11 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
   // Sort field whitelist for Prisma queries
   const sortFieldMap: Record<string, string> = {
-    "updatedAt": "updatedAt",
-    "courseName": "courseName",
-    "year": "year",
-    "department": "department",
-    "campus": "campus"
+    updatedAt: "updatedAt",
+    courseName: "courseName",
+    year: "year",
+    department: "department",
+    campus: "campus",
   };
 
   // Complete ORDER BY clause mapping for raw SQL queries to prevent SQL injection
@@ -136,7 +135,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
   // Check if sorting by instructor (needs client-side sorting)
   const sortByInstructor = sort === "instructorName";
-  const sortField = sortByInstructor ? "updatedAt" : (sortFieldMap[sort] || "updatedAt");
+  const sortField = sortByInstructor ? "updatedAt" : sortFieldMap[sort] || "updatedAt";
   const sortOrder = order === "asc" ? "asc" : "desc";
 
   // Get pre-defined ORDER BY clause for raw SQL (prevents string concatenation)
@@ -190,7 +189,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       const countResult = (await prisma.$queryRawUnsafe(
         `SELECT COUNT(*)::int as count
         FROM "Course" c
-        WHERE ${conditions.join(' AND ')}`,
+        WHERE ${conditions.join(" AND ")}`,
         ...params
       )) as Array<{ count: number }>;
       totalCount = countResult[0]?.count || 0;
@@ -206,7 +205,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
           c.time,
           c.classroom
         FROM "Course" c
-        WHERE ${conditions.join(' AND ')}
+        WHERE ${conditions.join(" AND ")}
         ORDER BY ${orderByClause}
         LIMIT ${PER_PAGE} OFFSET ${offset}`,
         ...params
@@ -222,19 +221,22 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       }>;
 
       // Fetch instructors separately for better performance
-      const courseIds = rawCourses.map(c => c.id);
+      const courseIds = rawCourses.map((c) => c.id);
       const instructorsData = await prisma.courseInstructor.findMany({
         where: { courseId: { in: courseIds } },
         select: {
           courseId: true,
-          instructor: { select: { id: true, name: true } }
-        }
+          instructor: { select: { id: true, name: true } },
+        },
       });
 
       // Group instructors by courseId
       type InstructorItem = { courseId: string; instructor: { id: string; name: string } };
       const instructorsByCourse = instructorsData.reduce(
-        (acc: Record<string, Array<{ instructor: { id: string; name: string } }>>, ci: InstructorItem) => {
+        (
+          acc: Record<string, Array<{ instructor: { id: string; name: string } }>>,
+          ci: InstructorItem
+        ) => {
           if (!acc[ci.courseId]) acc[ci.courseId] = [];
           acc[ci.courseId].push({ instructor: { id: ci.instructor.id, name: ci.instructor.name } });
           return acc;
@@ -243,9 +245,9 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       );
 
       // Combine results
-      courses = rawCourses.map(c => ({
+      courses = rawCourses.map((c) => ({
         ...c,
-        instructors: instructorsByCourse[c.id] || []
+        instructors: instructorsByCourse[c.id] || [],
       }));
     } else {
       // Regular query without search
@@ -278,7 +280,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
     }
   } catch (error) {
     // Database connection error - return empty result
-    console.error('Failed to fetch courses:', error);
+    console.error("Failed to fetch courses:", error);
     courses = [];
   }
 
@@ -287,14 +289,21 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
     courses.sort((a, b) => {
       const aInstructor = a.instructors[0]?.instructor.name || "";
       const bInstructor = b.instructors[0]?.instructor.name || "";
-      const comparison = aInstructor.localeCompare(bInstructor, 'zh-Hant-TW');
+      const comparison = aInstructor.localeCompare(bInstructor, "zh-Hant-TW");
       return sortOrder === "asc" ? comparison : -comparison;
     });
   }
 
   const hasAnyFilter = Boolean(
-    q || semester || campus || division || department ||
-    minRating || maxWorkload || minGrading || timeSlot
+    q ||
+    semester ||
+    campus ||
+    division ||
+    department ||
+    minRating ||
+    maxWorkload ||
+    minGrading ||
+    timeSlot
   );
   const totalPages = Math.ceil(totalCount / PER_PAGE);
   const startItem = totalCount === 0 ? 0 : offset + 1;
@@ -325,8 +334,16 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       {/* Header & Search */}
       <div className="ts-box is-raised" style={{ marginBottom: "2rem", overflow: "visible" }}>
         <div className="ts-content" style={{ padding: "2rem", overflow: "visible" }}>
-          <div className="ts-header is-large" style={{ fontSize: "1.875rem", fontWeight: 700, marginBottom: "0.75rem" }}>課程列表</div>
-          <div className="app-muted" style={{ fontSize: "1.0625rem", lineHeight: 1.7, marginBottom: "1.5rem" }}>
+          <div
+            className="ts-header is-large"
+            style={{ fontSize: "1.875rem", fontWeight: 700, marginBottom: "0.75rem" }}
+          >
+            課程列表
+          </div>
+          <div
+            className="app-muted"
+            style={{ fontSize: "1.0625rem", lineHeight: 1.7, marginBottom: "1.5rem" }}
+          >
             先用關鍵字搜尋,再用進階篩選縮小範圍。
           </div>
           <CoursesFilters
@@ -350,20 +367,44 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
       <div className={`ts-box is-raised ${hasAnyFilter ? "is-start-indicated" : ""}`}>
         <div style={{ padding: "1.5rem 2rem" }}>
           {/* Toolbar */}
-          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: "1rem", marginBottom: "1.5rem" }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: "1rem",
+              marginBottom: "1.5rem",
+            }}
+          >
             <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
               <div>
-                <div style={{ fontSize: "0.875rem", fontWeight: 600, color: "var(--ts-gray-600)", marginBottom: "0.25rem" }}>
+                <div
+                  style={{
+                    fontSize: "0.875rem",
+                    fontWeight: 600,
+                    color: "var(--ts-gray-600)",
+                    marginBottom: "0.25rem",
+                  }}
+                >
                   {hasAnyFilter ? "篩選結果" : "所有課程"}
                 </div>
                 <div style={{ fontSize: "0.875rem", color: "var(--ts-gray-500)" }}>
-                  {totalCount === 0 ? "無資料" : `共 ${totalCount} 筆 · 顯示 ${startItem}-${endItem}`}
+                  {totalCount === 0
+                    ? "無資料"
+                    : `共 ${totalCount} 筆 · 顯示 ${startItem}-${endItem}`}
                 </div>
               </div>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+            <div
+              style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}
+            >
               {hasAnyFilter && (
-                <Link href="/courses" className="ts-button is-small is-ghost" style={{ fontSize: "0.875rem" }}>
+                <Link
+                  href="/courses"
+                  className="ts-button is-small is-ghost"
+                  style={{ fontSize: "0.875rem" }}
+                >
                   清除篩選
                 </Link>
               )}
@@ -374,20 +415,38 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
             <div className="ts-box is-hollowed">
               <div className="ts-content" style={{ textAlign: "center", padding: "3.5rem 2rem" }}>
                 <div style={{ fontSize: "4rem", marginBottom: "1.25rem", lineHeight: 1 }}>📭</div>
-                <div className="ts-header is-medium" style={{ fontSize: "1.375rem", fontWeight: 700, marginBottom: "0.75rem" }}>沒有結果</div>
-                <div className="app-muted" style={{ fontSize: "1.0625rem", lineHeight: 1.7, maxWidth: 480, margin: "0 auto" }}>
+                <div
+                  className="ts-header is-medium"
+                  style={{ fontSize: "1.375rem", fontWeight: 700, marginBottom: "0.75rem" }}
+                >
+                  沒有結果
+                </div>
+                <div
+                  className="app-muted"
+                  style={{
+                    fontSize: "1.0625rem",
+                    lineHeight: 1.7,
+                    maxWidth: 480,
+                    margin: "0 auto",
+                  }}
+                >
                   目前沒有符合條件的課程。
                   {!hasAnyFilter ? (
                     <>
                       <br />
-                      若你已經跑過爬蟲,請再執行 <code>npm run db:import:nkust-ag202</code> 匯入 PostgreSQL。
+                      若你已經跑過爬蟲,請再執行 <code>npm run db:import:nkust-ag202</code> 匯入
+                      PostgreSQL。
                     </>
                   ) : null}
                 </div>
                 {hasAnyFilter ? (
                   <>
                     <div className="ts-space is-large" />
-                    <a className="ts-button is-outlined is-large" href="/courses" style={{ fontSize: "1.0625rem" }}>
+                    <a
+                      className="ts-button is-outlined is-large"
+                      href="/courses"
+                      style={{ fontSize: "1.0625rem" }}
+                    >
                       清除篩選再試一次
                     </a>
                   </>
@@ -400,7 +459,16 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
               {/* Pagination */}
               {totalPages > 1 && (
-                <div style={{ marginTop: "2rem", display: "flex", justifyContent: "center", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
+                <div
+                  style={{
+                    marginTop: "2rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    gap: "0.75rem",
+                    flexWrap: "wrap",
+                  }}
+                >
                   {/* Previous Button */}
                   {page > 1 ? (
                     <Link
@@ -410,7 +478,9 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                       ←
                     </Link>
                   ) : (
-                    <button className="ts-button is-icon is-disabled" disabled>←</button>
+                    <button className="ts-button is-icon is-disabled" disabled>
+                      ←
+                    </button>
                   )}
 
                   {/* Page Numbers */}
@@ -451,7 +521,14 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
 
                     return pages.map((p, idx) => {
                       if (p === "...") {
-                        return <span key={`ellipsis-${idx}`} style={{ padding: "0 0.5rem", color: "var(--ts-gray-400)" }}>...</span>;
+                        return (
+                          <span
+                            key={`ellipsis-${idx}`}
+                            style={{ padding: "0 0.5rem", color: "var(--ts-gray-400)" }}
+                          >
+                            ...
+                          </span>
+                        );
                       }
 
                       const pageNum = p as number;
@@ -492,7 +569,9 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
                       →
                     </Link>
                   ) : (
-                    <button className="ts-button is-icon is-disabled" disabled>→</button>
+                    <button className="ts-button is-icon is-disabled" disabled>
+                      →
+                    </button>
                   )}
                 </div>
               )}

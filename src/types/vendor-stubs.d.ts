@@ -30,5 +30,3 @@ declare module "@prisma/client" {
     export type CourseWhereInput = any;
   }
 }
-
-

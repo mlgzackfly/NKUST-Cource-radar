@@ -76,7 +76,7 @@ export default function ReviewsManagePage() {
       const res = await fetch(`/api/admin/reviews/${reviewId}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ action })
+        body: JSON.stringify({ action }),
       });
 
       if (res.ok) {
@@ -112,7 +112,10 @@ export default function ReviewsManagePage() {
 
       {/* 搜尋與篩選 */}
       <div style={{ marginBottom: "1.5rem" }}>
-        <form onSubmit={handleSearch} style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}>
+        <form
+          onSubmit={handleSearch}
+          style={{ display: "flex", gap: "0.5rem", marginBottom: "1rem" }}
+        >
           <div className="ts-input is-fluid" style={{ flex: 1 }}>
             <input
               type="text"
@@ -121,30 +124,44 @@ export default function ReviewsManagePage() {
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
-          <button type="submit" className="ts-button is-primary">搜尋</button>
+          <button type="submit" className="ts-button is-primary">
+            搜尋
+          </button>
         </form>
 
         <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
           <button
-            onClick={() => { setStatusFilter(""); setPage(1); }}
+            onClick={() => {
+              setStatusFilter("");
+              setPage(1);
+            }}
             className={`ts-button ${!statusFilter ? "is-primary" : "is-outlined"}`}
           >
             全部
           </button>
           <button
-            onClick={() => { setStatusFilter("ACTIVE"); setPage(1); }}
+            onClick={() => {
+              setStatusFilter("ACTIVE");
+              setPage(1);
+            }}
             className={`ts-button ${statusFilter === "ACTIVE" ? "is-primary" : "is-outlined"}`}
           >
             顯示中
           </button>
           <button
-            onClick={() => { setStatusFilter("HIDDEN"); setPage(1); }}
+            onClick={() => {
+              setStatusFilter("HIDDEN");
+              setPage(1);
+            }}
             className={`ts-button ${statusFilter === "HIDDEN" ? "is-primary" : "is-outlined"}`}
           >
             已隱藏
           </button>
           <button
-            onClick={() => { setStatusFilter("REMOVED"); setPage(1); }}
+            onClick={() => {
+              setStatusFilter("REMOVED");
+              setPage(1);
+            }}
             className={`ts-button ${statusFilter === "REMOVED" ? "is-primary" : "is-outlined"}`}
           >
             已移除
@@ -164,33 +181,65 @@ export default function ReviewsManagePage() {
       ) : (
         <>
           <div style={{ display: "grid", gap: "1rem", marginBottom: "1.5rem" }}>
-            {reviews.map(review => (
+            {reviews.map((review) => (
               <div key={review.id} className="ts-box">
                 <div className="ts-content" style={{ padding: "1.5rem" }}>
                   {/* 標題列 */}
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "1rem" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "flex-start",
+                      marginBottom: "1rem",
+                    }}
+                  >
                     <div style={{ flex: 1 }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                      <div
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "0.5rem",
+                          marginBottom: "0.5rem",
+                        }}
+                      >
                         <Link
                           href={`/courses/${review.course.id}`}
-                          style={{ fontSize: "1.125rem", fontWeight: 600, color: "var(--ts-primary-500)" }}
+                          style={{
+                            fontSize: "1.125rem",
+                            fontWeight: 600,
+                            color: "var(--ts-primary-500)",
+                          }}
                         >
                           {review.course.courseName}
                         </Link>
                         {getStatusBadge(review.status)}
                       </div>
                       <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
-                        {review.course.courseCode} | {review.course.instructors.map(i => i.instructor.name).join(", ")}
+                        {review.course.courseCode} |{" "}
+                        {review.course.instructors.map((i) => i.instructor.name).join(", ")}
                       </div>
                     </div>
-                    <div style={{ textAlign: "right", fontSize: "0.875rem", color: "var(--app-muted)" }}>
+                    <div
+                      style={{
+                        textAlign: "right",
+                        fontSize: "0.875rem",
+                        color: "var(--app-muted)",
+                      }}
+                    >
                       <div>{new Date(review.createdAt).toLocaleString()}</div>
                       {review.authorDept && <div>{review.authorDept}</div>}
                     </div>
                   </div>
 
                   {/* 評分 */}
-                  <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", fontSize: "0.875rem" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      gap: "1rem",
+                      marginBottom: "1rem",
+                      fontSize: "0.875rem",
+                    }}
+                  >
                     {review.coolness && <span>涼度: {review.coolness}</span>}
                     {review.usefulness && <span>實用性: {review.usefulness}</span>}
                     {review.workload && <span>作業量: {review.workload}</span>}
@@ -200,24 +249,36 @@ export default function ReviewsManagePage() {
 
                   {/* 評論內容 */}
                   {review.body && (
-                    <div style={{
-                      padding: "1rem",
-                      backgroundColor: "var(--ts-gray-100)",
-                      borderRadius: "8px",
-                      marginBottom: "1rem",
-                      fontSize: "0.938rem",
-                      lineHeight: 1.6
-                    }}>
+                    <div
+                      style={{
+                        padding: "1rem",
+                        backgroundColor: "var(--ts-gray-100)",
+                        borderRadius: "8px",
+                        marginBottom: "1rem",
+                        fontSize: "0.938rem",
+                        lineHeight: 1.6,
+                      }}
+                    >
                       {review.body}
                     </div>
                   )}
 
                   {/* 統計與使用者 */}
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
                     <div style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
                       👤 {review.user.email}
-                      {review.user.bannedAt && <span style={{ color: "var(--ts-negative-500)" }}> (已封禁)</span>}
-                      <span style={{ marginLeft: "1rem" }}>👍 {review._count.helpfulVotes} 次投票</span>
+                      {review.user.bannedAt && (
+                        <span style={{ color: "var(--ts-negative-500)" }}> (已封禁)</span>
+                      )}
+                      <span style={{ marginLeft: "1rem" }}>
+                        👍 {review._count.helpfulVotes} 次投票
+                      </span>
                       <span style={{ marginLeft: "1rem" }}>🚩 {review._count.reports} 次檢舉</span>
                     </div>
 
@@ -279,7 +340,7 @@ export default function ReviewsManagePage() {
           {totalPages > 1 && (
             <div style={{ display: "flex", justifyContent: "center", gap: "0.5rem" }}>
               <button
-                onClick={() => setPage(p => Math.max(1, p - 1))}
+                onClick={() => setPage((p) => Math.max(1, p - 1))}
                 className="ts-button is-outlined"
                 disabled={page === 1}
               >
@@ -289,7 +350,7 @@ export default function ReviewsManagePage() {
                 第 {page} / {totalPages} 頁
               </span>
               <button
-                onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                 className="ts-button is-outlined"
                 disabled={page === totalPages}
               >

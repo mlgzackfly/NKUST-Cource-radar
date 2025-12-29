@@ -153,7 +153,9 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                     fontSize: "0.75rem",
                     color: "var(--ts-gray-600)",
                     borderBottom:
-                      periodIdx < allPeriods.length - 1 ? "1px solid var(--app-table-border)" : "none",
+                      periodIdx < allPeriods.length - 1
+                        ? "1px solid var(--app-table-border)"
+                        : "none",
                     background: "var(--app-surface)",
                     position: "sticky",
                     left: 0,
@@ -207,8 +209,10 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
                             color: "var(--ts-primary-700)",
                             padding: "0.5rem",
                             borderRadius: "6px",
-                            background: "color-mix(in srgb, var(--ts-primary-500) 12%, transparent)",
-                            border: "1px solid color-mix(in srgb, var(--ts-primary-500) 20%, transparent)",
+                            background:
+                              "color-mix(in srgb, var(--ts-primary-500) 12%, transparent)",
+                            border:
+                              "1px solid color-mix(in srgb, var(--ts-primary-500) 20%, transparent)",
                           }}
                         >
                           {courseName ? (
@@ -250,8 +254,7 @@ export function CourseTimeTable({ timeString, courseName }: CourseTimeTableProps
         <strong>上課時間：</strong>
         {slots.map((slot, idx) => (
           <span key={idx}>
-            {idx > 0 && "、"}
-            週{slot.dayLabel} {slot.startTime}-{slot.endTime}
+            {idx > 0 && "、"}週{slot.dayLabel} {slot.startTime}-{slot.endTime}
           </span>
         ))}
       </div>

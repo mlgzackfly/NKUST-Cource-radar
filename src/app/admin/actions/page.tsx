@@ -42,7 +42,7 @@ export default function ActionsPage() {
       UNHIDE_REVIEW: "恢復評論",
       REMOVE_REVIEW: "移除評論",
       BAN_USER: "封禁/解封使用者",
-      REQUEST_EDIT: "處理檢舉"
+      REQUEST_EDIT: "處理檢舉",
     };
     return labels[type] || type;
   };
@@ -54,7 +54,11 @@ export default function ActionsPage() {
       {loading ? (
         <div>載入中...</div>
       ) : actions.length === 0 ? (
-        <div className="ts-box"><div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>無操作記錄</div></div>
+        <div className="ts-box">
+          <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
+            無操作記錄
+          </div>
+        </div>
       ) : (
         <div className="ts-box">
           <table className="ts-table">
@@ -68,18 +72,18 @@ export default function ActionsPage() {
               </tr>
             </thead>
             <tbody>
-              {actions.map(action => (
+              {actions.map((action) => (
                 <tr key={action.id}>
                   <td>{new Date(action.createdAt).toLocaleString()}</td>
                   <td style={{ fontSize: "0.875rem" }}>{action.actor.email}</td>
                   <td>
-                    <span className="ts-badge is-outlined">
-                      {getActionLabel(action.type)}
-                    </span>
+                    <span className="ts-badge is-outlined">{getActionLabel(action.type)}</span>
                   </td>
                   <td>
                     {action.targetUser && <div>使用者: {action.targetUser.email}</div>}
-                    {action.targetReview && <div>評論: {action.targetReview.course.courseName}</div>}
+                    {action.targetReview && (
+                      <div>評論: {action.targetReview.course.courseName}</div>
+                    )}
                   </td>
                   <td style={{ fontSize: "0.875rem", color: "var(--app-muted)" }}>
                     {action.note || "-"}

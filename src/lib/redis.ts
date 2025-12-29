@@ -44,10 +44,7 @@ if (process.env.REDIS_URL) {
     console.error("Failed to connect to standard Redis:", error);
     standardRedis = null;
   }
-} else if (
-  process.env.UPSTASH_REDIS_REST_URL &&
-  process.env.UPSTASH_REDIS_REST_TOKEN
-) {
+} else if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
   // 使用 Upstash Redis (REST API)
   try {
     upstashRedis = new UpstashRedis({

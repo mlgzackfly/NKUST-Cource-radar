@@ -134,10 +134,7 @@ export function RecommendationSection() {
   };
 
   return (
-    <div
-      className="ts-box is-raised"
-      style={{ marginBottom: "2rem", overflow: "hidden" }}
-    >
+    <div className="ts-box is-raised" style={{ marginBottom: "2rem", overflow: "hidden" }}>
       <div style={{ padding: "1.5rem 0" }}>
         {/* 標題區 */}
         <div
@@ -237,121 +234,120 @@ export function RecommendationSection() {
                   flexShrink: 0,
                 }}
               >
-              <Link
-                href={`/courses/${course.id}`}
-                style={{
-                  textDecoration: "none",
-                  color: "inherit",
-                  flexShrink: 0,
-                  scrollSnapAlign: "start",
-                }}
-              >
-                <div
+                <Link
+                  href={`/courses/${course.id}`}
                   style={{
-                    padding: "1.25rem",
-                    width: "260px",
-                    height: "180px",
-                    display: "flex",
-                    flexDirection: "column",
-                    transition: "all 0.2s",
-                    cursor: "pointer",
-                    border: "2px solid var(--ts-gray-200)",
-                    borderRadius: "12px",
-                    backgroundColor: "var(--app-surface)",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "var(--ts-primary-500)";
-                    e.currentTarget.style.boxShadow =
-                      "0 4px 12px rgba(0,0,0,0.1)";
-                    e.currentTarget.style.transform = "translateY(-2px)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "var(--ts-gray-200)";
-                    e.currentTarget.style.boxShadow = "none";
-                    e.currentTarget.style.transform = "translateY(0)";
+                    textDecoration: "none",
+                    color: "inherit",
+                    flexShrink: 0,
+                    scrollSnapAlign: "start",
                   }}
                 >
-                  {/* 推薦原因標籤 */}
-                  <div style={{ marginBottom: "0.5rem" }}>
-                    <span
+                  <div
+                    style={{
+                      padding: "1.25rem",
+                      width: "260px",
+                      height: "180px",
+                      display: "flex",
+                      flexDirection: "column",
+                      transition: "all 0.2s",
+                      cursor: "pointer",
+                      border: "2px solid var(--ts-gray-200)",
+                      borderRadius: "12px",
+                      backgroundColor: "var(--app-surface)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.borderColor = "var(--ts-primary-500)";
+                      e.currentTarget.style.boxShadow = "0 4px 12px rgba(0,0,0,0.1)";
+                      e.currentTarget.style.transform = "translateY(-2px)";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.borderColor = "var(--ts-gray-200)";
+                      e.currentTarget.style.boxShadow = "none";
+                      e.currentTarget.style.transform = "translateY(0)";
+                    }}
+                  >
+                    {/* 推薦原因標籤 */}
+                    <div style={{ marginBottom: "0.5rem" }}>
+                      <span
+                        style={{
+                          padding: "0.2rem 0.5rem",
+                          borderRadius: "6px",
+                          fontSize: "0.7rem",
+                          fontWeight: 600,
+                          backgroundColor: `color-mix(in srgb, ${getReasonColor(course.reason)} 15%, transparent)`,
+                          color: getReasonColor(course.reason),
+                        }}
+                      >
+                        {getReasonLabel(course.reason)}
+                      </span>
+                    </div>
+
+                    {/* 課程名稱 */}
+                    <div
                       style={{
-                        padding: "0.2rem 0.5rem",
-                        borderRadius: "6px",
-                        fontSize: "0.7rem",
                         fontWeight: 600,
-                        backgroundColor: `color-mix(in srgb, ${getReasonColor(course.reason)} 15%, transparent)`,
-                        color: getReasonColor(course.reason),
+                        fontSize: "1rem",
+                        marginBottom: "0.5rem",
+                        lineHeight: 1.4,
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
                       }}
                     >
-                      {getReasonLabel(course.reason)}
-                    </span>
-                  </div>
+                      {course.courseName}
+                    </div>
 
-                  {/* 課程名稱 */}
-                  <div
-                    style={{
-                      fontWeight: 600,
-                      fontSize: "1rem",
-                      marginBottom: "0.5rem",
-                      lineHeight: 1.4,
-                      overflow: "hidden",
-                      textOverflow: "ellipsis",
-                      display: "-webkit-box",
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: "vertical",
-                    }}
-                  >
-                    {course.courseName}
-                  </div>
-
-                  {/* 課程資訊 */}
-                  <div
-                    style={{
-                      fontSize: "0.8rem",
-                      color: "var(--app-muted)",
-                      flex: 1,
-                      overflow: "hidden",
-                    }}
-                  >
-                    {course.department && (
-                      <div
-                        style={{
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {course.department}
-                      </div>
-                    )}
-                    {course.instructors.length > 0 && (
-                      <div
-                        style={{
-                          overflow: "hidden",
-                          textOverflow: "ellipsis",
-                          whiteSpace: "nowrap",
-                        }}
-                      >
-                        {course.instructors.map((i) => i.name).join("、")}
-                      </div>
-                    )}
-                  </div>
-
-                  {/* 學分 */}
-                  {course.credits !== null && (
+                    {/* 課程資訊 */}
                     <div
                       style={{
                         fontSize: "0.8rem",
-                        color: "var(--ts-primary-600)",
-                        fontWeight: 600,
-                        marginTop: "auto",
+                        color: "var(--app-muted)",
+                        flex: 1,
+                        overflow: "hidden",
                       }}
                     >
-                      {course.credits} 學分
+                      {course.department && (
+                        <div
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {course.department}
+                        </div>
+                      )}
+                      {course.instructors.length > 0 && (
+                        <div
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                            whiteSpace: "nowrap",
+                          }}
+                        >
+                          {course.instructors.map((i) => i.name).join("、")}
+                        </div>
+                      )}
                     </div>
-                  )}
-                </div>
-              </Link>
+
+                    {/* 學分 */}
+                    {course.credits !== null && (
+                      <div
+                        style={{
+                          fontSize: "0.8rem",
+                          color: "var(--ts-primary-600)",
+                          fontWeight: 600,
+                          marginTop: "auto",
+                        }}
+                      >
+                        {course.credits} 學分
+                      </div>
+                    )}
+                  </div>
+                </Link>
               </div>
             ))}
             {/* 右側間距 */}
@@ -366,9 +362,7 @@ export function RecommendationSection() {
             <div className="ts-header" style={{ marginBottom: "0.5rem" }}>
               還沒有推薦給你的課程
             </div>
-            <div className="app-muted">
-              多逛逛、收藏幾門課，我們就能更了解你的喜好！
-            </div>
+            <div className="app-muted">多逛逛、收藏幾門課，我們就能更了解你的喜好！</div>
           </div>
         )}
       </div>

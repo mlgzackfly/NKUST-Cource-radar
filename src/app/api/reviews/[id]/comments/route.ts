@@ -4,16 +4,10 @@ import { requireNkustUser } from "@/lib/auth";
 import { rateLimiter } from "@/lib/ratelimit";
 
 // POST /api/reviews/[id]/comments - 新增留言
-export async function POST(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     if (!prisma) {
-      return Response.json(
-        { error: "資料庫連線失敗" },
-        { status: 503 }
-      );
+      return Response.json({ error: "資料庫連線失敗" }, { status: 503 });
     }
 
     // 檢查使用者是否已登入且為高科大學生
@@ -60,10 +54,7 @@ export async function POST(
     }
 
     if (trimmedBody.length > 500) {
-      return Response.json(
-        { error: "留言內容過長（最多 500 字）" },
-        { status: 400 }
-      );
+      return Response.json({ error: "留言內容過長（最多 500 字）" }, { status: 400 });
     }
 
     // 建立留言
@@ -84,24 +75,15 @@ export async function POST(
     );
   } catch (error) {
     console.error("Error creating comment:", error);
-    return Response.json(
-      { error: "建立留言失敗，請稍後再試" },
-      { status: 500 }
-    );
+    return Response.json({ error: "建立留言失敗，請稍後再試" }, { status: 500 });
   }
 }
 
 // GET /api/reviews/[id]/comments - 取得留言列表
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     if (!prisma) {
-      return Response.json(
-        { error: "資料庫連線失敗" },
-        { status: 503 }
-      );
+      return Response.json({ error: "資料庫連線失敗" }, { status: 503 });
     }
 
     // 檢查使用者是否已登入（取得當前使用者 ID，未登入則為 null）
@@ -119,10 +101,7 @@ export async function GET(
 
     // 解析分頁參數
     const url = new URL(request.url);
-    const limit = Math.min(
-      parseInt(url.searchParams.get("limit") || "20"),
-      100
-    );
+    const limit = Math.min(parseInt(url.searchParams.get("limit") || "20"), 100);
     const offset = parseInt(url.searchParams.get("offset") || "0");
 
     // 查詢留言
@@ -183,15 +162,9 @@ export async function GET(
 
     // 如果是未登入錯誤，回傳空列表
     if ((error as Error).message?.includes("需要使用")) {
-      return Response.json(
-        { error: "需要登入才能查看留言" },
-        { status: 401 }
-      );
+      return Response.json({ error: "需要登入才能查看留言" }, { status: 401 });
     }
 
-    return Response.json(
-      { error: "取得留言失敗，請稍後再試" },
-      { status: 500 }
-    );
+    return Response.json({ error: "取得留言失敗，請稍後再試" }, { status: 500 });
   }
 }

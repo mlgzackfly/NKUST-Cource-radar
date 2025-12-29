@@ -20,9 +20,12 @@ class MemoryRateLimiter {
 
   constructor() {
     // 每 5 分鐘清理過期記錄
-    this.cleanupInterval = setInterval(() => {
-      this.cleanup();
-    }, 5 * 60 * 1000);
+    this.cleanupInterval = setInterval(
+      () => {
+        this.cleanup();
+      },
+      5 * 60 * 1000
+    );
   }
 
   private cleanup() {

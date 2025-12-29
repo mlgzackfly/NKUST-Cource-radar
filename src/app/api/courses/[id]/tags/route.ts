@@ -8,15 +8,9 @@ type Params = Promise<{ id: string }>;
  *
  * 取得課程的標籤
  */
-export async function GET(
-  request: Request,
-  { params }: { params: Params }
-) {
+export async function GET(request: Request, { params }: { params: Params }) {
   if (!prisma) {
-    return Response.json(
-      { error: "Database not available" },
-      { status: 503 }
-    );
+    return Response.json({ error: "Database not available" }, { status: 503 });
   }
 
   try {

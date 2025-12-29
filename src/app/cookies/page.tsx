@@ -11,7 +11,11 @@ export default function CookiesPage() {
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
         <div className="ts-box is-raised">
           <div className="ts-content" style={{ padding: "3rem" }}>
-            <Link href="/" className="ts-button is-ghost is-short" style={{ marginBottom: "1.5rem" }}>
+            <Link
+              href="/"
+              className="ts-button is-ghost is-short"
+              style={{ marginBottom: "1.5rem" }}
+            >
               ← 回首頁
             </Link>
 
@@ -19,7 +23,12 @@ export default function CookiesPage() {
               Cookie 使用說明
             </h1>
             <p className="app-muted" style={{ marginBottom: "2rem", fontSize: "0.9375rem" }}>
-              最後更新日期：{new Date().toLocaleDateString("zh-TW", { year: "numeric", month: "long", day: "numeric" })}
+              最後更新日期：
+              {new Date().toLocaleDateString("zh-TW", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             </p>
 
             <div style={{ lineHeight: 1.8, fontSize: "1rem" }}>
@@ -38,14 +47,30 @@ export default function CookiesPage() {
                   2. 我們使用的 Cookie
                 </h2>
 
-                <h3 style={{ fontSize: "1.25rem", fontWeight: 600, marginBottom: "1rem", marginTop: "1.5rem" }}>
+                <h3
+                  style={{
+                    fontSize: "1.25rem",
+                    fontWeight: 600,
+                    marginBottom: "1rem",
+                    marginTop: "1.5rem",
+                  }}
+                >
                   2.1 必要 Cookie（無法停用）
                 </h3>
-                <div style={{ background: "var(--ts-gray-50)", padding: "1.5rem", borderRadius: "8px", marginBottom: "1.5rem" }}>
+                <div
+                  style={{
+                    background: "var(--ts-gray-50)",
+                    padding: "1.5rem",
+                    borderRadius: "8px",
+                    marginBottom: "1.5rem",
+                  }}
+                >
                   <table style={{ width: "100%", fontSize: "0.9375rem" }}>
                     <tbody>
                       <tr>
-                        <td style={{ paddingBottom: "0.75rem", fontWeight: 600, width: "30%" }}>Cookie 名稱</td>
+                        <td style={{ paddingBottom: "0.75rem", fontWeight: 600, width: "30%" }}>
+                          Cookie 名稱
+                        </td>
                         <td style={{ paddingBottom: "0.75rem" }}>next-auth.session-token</td>
                       </tr>
                       <tr>
@@ -64,11 +89,20 @@ export default function CookiesPage() {
                   </table>
                 </div>
 
-                <div style={{ background: "var(--ts-gray-50)", padding: "1.5rem", borderRadius: "8px", marginBottom: "1.5rem" }}>
+                <div
+                  style={{
+                    background: "var(--ts-gray-50)",
+                    padding: "1.5rem",
+                    borderRadius: "8px",
+                    marginBottom: "1.5rem",
+                  }}
+                >
                   <table style={{ width: "100%", fontSize: "0.9375rem" }}>
                     <tbody>
                       <tr>
-                        <td style={{ paddingBottom: "0.75rem", fontWeight: 600, width: "30%" }}>Cookie 名稱</td>
+                        <td style={{ paddingBottom: "0.75rem", fontWeight: 600, width: "30%" }}>
+                          Cookie 名稱
+                        </td>
                         <td style={{ paddingBottom: "0.75rem" }}>next-auth.csrf-token</td>
                       </tr>
                       <tr>
@@ -87,11 +121,19 @@ export default function CookiesPage() {
                   </table>
                 </div>
 
-                <div style={{ background: "var(--ts-gray-50)", padding: "1.5rem", borderRadius: "8px" }}>
+                <div
+                  style={{
+                    background: "var(--ts-gray-50)",
+                    padding: "1.5rem",
+                    borderRadius: "8px",
+                  }}
+                >
                   <table style={{ width: "100%", fontSize: "0.9375rem" }}>
                     <tbody>
                       <tr>
-                        <td style={{ paddingBottom: "0.75rem", fontWeight: 600, width: "30%" }}>Cookie 名稱</td>
+                        <td style={{ paddingBottom: "0.75rem", fontWeight: 600, width: "30%" }}>
+                          Cookie 名稱
+                        </td>
                         <td style={{ paddingBottom: "0.75rem" }}>next-auth.callback-url</td>
                       </tr>
                       <tr>
@@ -110,18 +152,33 @@ export default function CookiesPage() {
                   </table>
                 </div>
 
-                <h3 style={{ fontSize: "1.25rem", fontWeight: 600, marginBottom: "1rem", marginTop: "2rem" }}>
+                <h3
+                  style={{
+                    fontSize: "1.25rem",
+                    fontWeight: 600,
+                    marginBottom: "1rem",
+                    marginTop: "2rem",
+                  }}
+                >
                   2.2 功能性 Cookie
                 </h3>
                 <p style={{ marginBottom: "1rem" }}>
                   目前本服務不使用額外的功能性 Cookie。未來如有需要將在此更新說明。
                 </p>
 
-                <h3 style={{ fontSize: "1.25rem", fontWeight: 600, marginBottom: "1rem", marginTop: "2rem" }}>
+                <h3
+                  style={{
+                    fontSize: "1.25rem",
+                    fontWeight: 600,
+                    marginBottom: "1rem",
+                    marginTop: "2rem",
+                  }}
+                >
                   2.3 分析 Cookie
                 </h3>
                 <p style={{ marginBottom: "1rem" }}>
-                  目前本服務不使用分析工具（如 Google Analytics）。我們不會追蹤您的瀏覽行為用於分析或廣告目的。
+                  目前本服務不使用分析工具（如 Google
+                  Analytics）。我們不會追蹤您的瀏覽行為用於分析或廣告目的。
                 </p>
               </section>
 
@@ -129,9 +186,7 @@ export default function CookiesPage() {
                 <h2 style={{ fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
                   3. 第三方 Cookie
                 </h2>
-                <p>
-                  本服務目前不使用第三方 Cookie。我們不與廣告商或數據分析公司分享 Cookie 資料。
-                </p>
+                <p>本服務目前不使用第三方 Cookie。我們不與廣告商或數據分析公司分享 Cookie 資料。</p>
               </section>
 
               <section style={{ marginBottom: "2.5rem" }}>
@@ -142,8 +197,17 @@ export default function CookiesPage() {
                   大部分瀏覽器預設會自動接受 Cookie，但您可以修改設定來拒絕或刪除 Cookie：
                 </p>
 
-                <div style={{ background: "var(--ts-gray-50)", padding: "1.5rem", borderRadius: "8px", marginBottom: "1rem" }}>
-                  <h4 style={{ fontWeight: 600, marginBottom: "0.75rem" }}>瀏覽器 Cookie 設定指南：</h4>
+                <div
+                  style={{
+                    background: "var(--ts-gray-50)",
+                    padding: "1.5rem",
+                    borderRadius: "8px",
+                    marginBottom: "1rem",
+                  }}
+                >
+                  <h4 style={{ fontWeight: 600, marginBottom: "0.75rem" }}>
+                    瀏覽器 Cookie 設定指南：
+                  </h4>
                   <ul style={{ paddingLeft: "1.5rem", marginBottom: 0 }}>
                     <li style={{ marginBottom: "0.5rem" }}>
                       <strong>Chrome：</strong> 設定 → 隱私權和安全性 → Cookie 和其他網站資料
@@ -172,9 +236,7 @@ export default function CookiesPage() {
                 <h2 style={{ fontSize: "1.5rem", fontWeight: 600, marginBottom: "1rem" }}>
                   5. 登出時的處理
                 </h2>
-                <p>
-                  當您登出時，我們會：
-                </p>
+                <p>當您登出時，我們會：</p>
                 <ul style={{ paddingLeft: "1.5rem" }}>
                   <li>刪除您的 session Cookie</li>
                   <li>從資料庫中移除 session 記錄</li>
@@ -187,7 +249,8 @@ export default function CookiesPage() {
                   6. Cookie 政策變更
                 </h2>
                 <p>
-                  我們可能不時更新本 Cookie 使用說明。如有重大變更，我們會更新「最後更新日期」並在網站上公告。
+                  我們可能不時更新本 Cookie
+                  使用說明。如有重大變更，我們會更新「最後更新日期」並在網站上公告。
                 </p>
               </section>
 
@@ -197,22 +260,41 @@ export default function CookiesPage() {
                 </h2>
                 <p>
                   如需了解我們如何處理您的個人資料，請參閱我們的{" "}
-                  <Link href="/privacy" style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}>
+                  <Link
+                    href="/privacy"
+                    style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}
+                  >
                     隱私權政策
-                  </Link>。
+                  </Link>
+                  。
                 </p>
               </section>
 
-              <div style={{
-                padding: "1.5rem",
-                background: "var(--ts-gray-50)",
-                borderRadius: "8px",
-                marginTop: "2rem"
-              }}>
-                <p style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", marginBottom: "0.5rem" }}>
+              <div
+                style={{
+                  padding: "1.5rem",
+                  background: "var(--ts-gray-50)",
+                  borderRadius: "8px",
+                  marginTop: "2rem",
+                }}
+              >
+                <p
+                  style={{
+                    fontSize: "0.875rem",
+                    color: "var(--ts-gray-600)",
+                    marginBottom: "0.5rem",
+                  }}
+                >
                   <strong>簡單來說：</strong>
                 </p>
-                <p style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", lineHeight: 1.6, marginBottom: 0 }}>
+                <p
+                  style={{
+                    fontSize: "0.875rem",
+                    color: "var(--ts-gray-600)",
+                    lineHeight: 1.6,
+                    marginBottom: 0,
+                  }}
+                >
                   我們只使用必要的 Cookie 來維持您的登入狀態和保護您的安全。
                   我們不會追蹤您的瀏覽行為，也不會將您的資料用於廣告或行銷目的。
                 </p>

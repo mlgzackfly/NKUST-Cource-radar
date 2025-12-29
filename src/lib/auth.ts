@@ -14,7 +14,7 @@ export async function getCurrentUser(): Promise<User | null> {
   if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) return null;
 
   return await prisma!.user.findUnique({
-    where: { email: session.user.email }
+    where: { email: session.user.email },
   });
 }
 

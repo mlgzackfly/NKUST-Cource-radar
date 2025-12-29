@@ -4,10 +4,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
 import { rateLimiter, RATE_LIMITS } from "@/lib/ratelimit";
 
-export async function POST(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function POST(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const p = await params;
     const session = await getServerSession(authOptions);
@@ -54,17 +51,20 @@ export async function POST(
     const { reason } = body;
 
     // 驗證檢舉理由
-    if (!reason || typeof reason !== 'string' || reason.trim().length === 0) {
+    if (!reason || typeof reason !== "string" || reason.trim().length === 0) {
       return Response.json({ error: "Report reason is required" }, { status: 400 });
     }
 
     if (reason.trim().length > 500) {
-      return Response.json({ error: "Report reason is too long (max 500 characters)" }, { status: 400 });
+      return Response.json(
+        { error: "Report reason is too long (max 500 characters)" },
+        { status: 400 }
+      );
     }
 
     // 找到使用者
     const user = await prisma!.user.findUnique({
-      where: { email }
+      where: { email },
     });
 
     if (!user) {
@@ -79,7 +79,7 @@ export async function POST(
     // 檢查評論是否存在
     const review = await prisma!.review.findUnique({
       where: { id: p.id },
-      select: { id: true, userId: true, status: true }
+      select: { id: true, userId: true, status: true },
     });
 
     if (!review) {
@@ -97,33 +97,26 @@ export async function POST(
       data: {
         reviewId: p.id,
         userId: user.id,
-        reason: reason.trim()
-      }
+        reason: reason.trim(),
+      },
     });
 
     return Response.json({
       success: true,
       report: {
         id: report.id,
-        createdAt: report.createdAt
-      }
+        createdAt: report.createdAt,
+      },
     });
-
   } catch (error) {
     console.error("Failed to report review:", error);
 
     // 處理 unique constraint violation (已經檢舉過)
-    if ((error as any).code === 'P2002') {
-      return Response.json(
-        { error: "You have already reported this review" },
-        { status: 400 }
-      );
+    if ((error as any).code === "P2002") {
+      return Response.json({ error: "You have already reported this review" }, { status: 400 });
     }
 
     // 不洩露錯誤詳情給客戶端
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

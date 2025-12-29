@@ -78,11 +78,7 @@ export async function getCached<T>(
  * @param value 要快取的資料
  * @param ttl 過期時間（秒）
  */
-export async function setCache<T>(
-  key: string,
-  value: T,
-  ttl: number
-): Promise<void> {
+export async function setCache<T>(key: string, value: T, ttl: number): Promise<void> {
   if (!redis) return;
 
   try {
@@ -170,10 +166,7 @@ export async function invalidateCourseCaches(courseId: string): Promise<void> {
  * @param userId 使用者 ID
  */
 export async function invalidateUserCaches(userId: string): Promise<void> {
-  const keys = [
-    `user:${userId}:recommendations`,
-    `user:${userId}:favorites`,
-  ];
+  const keys = [`user:${userId}:recommendations`, `user:${userId}:favorites`];
 
   await deleteCacheBatch(keys);
 }
@@ -185,12 +178,10 @@ export const cacheKeys = {
   courseSummary: (courseId: string) => `course:${courseId}:summary`,
   courseReviews: (courseId: string, sort: string) => `course:${courseId}:reviews:${sort}`,
   courseDetails: (courseId: string) => `course:${courseId}:details`,
-  courseList: (params: Record<string, any>) =>
-    `courses:${JSON.stringify(params)}`,
+  courseList: (params: Record<string, any>) => `courses:${JSON.stringify(params)}`,
   instructorStats: (instructorId: string) => `instructor:${instructorId}:stats`,
   departmentStats: (department: string) => `department:${department}:stats`,
-  userRecommendations: (userId: string, type: string) =>
-    `user:${userId}:recommendations:${type}`,
+  userRecommendations: (userId: string, type: string) => `user:${userId}:recommendations:${type}`,
   userFavorites: (userId: string) => `user:${userId}:favorites`,
   searchSuggestions: (query: string) => `search:suggestions:${query}`,
   filters: () => `filters:options`,

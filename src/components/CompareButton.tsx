@@ -155,7 +155,9 @@ export function CompareButton({
       onClick={handleClick}
       className={`ts-button ${isInList ? "is-outlined is-primary" : "is-outlined"} ${className}`}
     >
-      <span style={{ marginRight: "0.5rem", display: "inline-flex" }}><CompareIcon size={16} /></span>
+      <span style={{ marginRight: "0.5rem", display: "inline-flex" }}>
+        <CompareIcon size={16} />
+      </span>
       {isInList ? "已加入比較" : "加入比較"}
       {listCount > 0 && !isInList && (
         <span
@@ -302,11 +304,7 @@ export function CompareFloatingBar() {
                 paddingTop: "0.75rem",
               }}
             >
-              <button
-                type="button"
-                className="ts-button is-small is-outlined"
-                onClick={clearAll}
-              >
+              <button type="button" className="ts-button is-small is-outlined" onClick={clearAll}>
                 清空
               </button>
               <a
@@ -326,7 +324,9 @@ export function CompareFloatingBar() {
               onClick={() => setIsExpanded(true)}
               style={{ display: "flex", alignItems: "center" }}
             >
-              <span style={{ marginRight: "0.5rem", display: "inline-flex" }}><CompareIcon size={16} /></span>
+              <span style={{ marginRight: "0.5rem", display: "inline-flex" }}>
+                <CompareIcon size={16} />
+              </span>
               比較列表 ({list.length})
             </button>
             <a

@@ -20,7 +20,10 @@ type ReviewRow = {
   helpfulVotes: Array<{ voteType: string; userId: string }>;
 };
 
-export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }): Promise<Response> {
+export async function GET(
+  request: Request,
+  { params }: { params: Promise<{ id: string }> }
+): Promise<Response> {
   const p = await params;
   if (!prisma) {
     const summary = await getCourseRatingSummary(p.id);
@@ -43,7 +46,9 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
   // 支援的排序選項: latest, oldest, helpful, highest, lowest
   type SortOption = "latest" | "oldest" | "helpful" | "highest" | "lowest";
   const validSorts: SortOption[] = ["latest", "oldest", "helpful", "highest", "lowest"];
-  const sortOption: SortOption = validSorts.includes(sort as SortOption) ? (sort as SortOption) : "latest";
+  const sortOption: SortOption = validSorts.includes(sort as SortOption)
+    ? (sort as SortOption)
+    : "latest";
 
   // Check if user is logged in with @nkust.edu.tw email
   const isNkustUser = email?.toLowerCase().endsWith("@nkust.edu.tw");
@@ -54,7 +59,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       courseId: p.id,
       summary,
       reviews: null,
-      visibility: "summary_only"
+      visibility: "summary_only",
     });
   }
 
@@ -86,7 +91,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
   if (email) {
     const user = await prisma.user.findUnique({
       where: { email },
-      select: { id: true }
+      select: { id: true },
     });
     currentUserId = user?.id || null;
   }
@@ -117,9 +122,9 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
       helpfulVotes: {
         select: {
           voteType: true,
-          userId: true
-        }
-      }
+          userId: true,
+        },
+      },
     },
   });
 
@@ -145,9 +150,10 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
   return Response.json({
     courseId: p.id,
     reviews: reviews.map((r) => {
-      const upvotes = r.helpfulVotes.filter(v => v.voteType === 'UPVOTE').length;
-      const downvotes = r.helpfulVotes.filter(v => v.voteType === 'DOWNVOTE').length;
-      const currentUserVote = r.helpfulVotes.find(v => v.userId === currentUserId)?.voteType || null;
+      const upvotes = r.helpfulVotes.filter((v) => v.voteType === "UPVOTE").length;
+      const downvotes = r.helpfulVotes.filter((v) => v.voteType === "DOWNVOTE").length;
+      const currentUserVote =
+        r.helpfulVotes.find((v) => v.userId === currentUserId)?.voteType || null;
 
       const avgRating = calcAvgRating(r);
       return {
@@ -167,10 +173,10 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
           upvotes,
           downvotes,
           netScore: upvotes - downvotes,
-          currentUserVote
+          currentUserVote,
         },
         helpfulCount: r._count.helpfulVotes,
-        commentCount: r._count.comments
+        commentCount: r._count.comments,
       };
     }),
     visibility: "full",

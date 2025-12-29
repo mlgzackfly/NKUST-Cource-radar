@@ -57,7 +57,7 @@ export function UserMenu() {
             borderRadius: "12px",
             boxShadow: "0 4px 12px rgba(0,0,0,0.1), 0 8px 24px rgba(0,0,0,0.15)",
             zIndex: 100,
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         >
           <div style={{ padding: "0.75rem 1rem", borderBottom: "1px solid var(--app-border)" }}>
@@ -78,10 +78,12 @@ export function UserMenu() {
               textDecoration: "none",
               fontSize: "0.9375rem",
               color: "var(--app-text)",
-              transition: "background-color 0.15s"
+              transition: "background-color 0.15s",
             }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
           >
             ⭐ 我的收藏
           </Link>
@@ -99,10 +101,12 @@ export function UserMenu() {
                 fontSize: "0.9375rem",
                 color: "var(--ts-primary-500)",
                 fontWeight: 500,
-                transition: "background-color 0.15s"
+                transition: "background-color 0.15s",
               }}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+              }
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
             >
               ⚙️ 管理員控制台
             </Link>
@@ -123,10 +127,12 @@ export function UserMenu() {
               fontSize: "0.9375rem",
               color: "var(--ts-negative-500)",
               borderTop: "1px solid var(--app-border)",
-              transition: "background-color 0.15s"
+              transition: "background-color 0.15s",
             }}
-            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+            }
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
           >
             登出
           </button>

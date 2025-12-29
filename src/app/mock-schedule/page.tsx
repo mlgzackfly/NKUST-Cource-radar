@@ -87,9 +87,7 @@ export default async function MockSchedulePage({ searchParams }: PageProps) {
       <ScheduleLayout
         initialCourses={sharedCourses}
         initialSemester={
-          sharedYear && sharedTerm
-            ? { year: sharedYear, term: sharedTerm }
-            : undefined
+          sharedYear && sharedTerm ? { year: sharedYear, term: sharedTerm } : undefined
         }
       />
     </div>

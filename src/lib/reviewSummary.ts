@@ -29,7 +29,15 @@ export async function getCourseRatingSummary(courseId: string): Promise<RatingSu
 
   const where = { courseId, status: "ACTIVE" as const };
 
-  const [totalReviews, coolnessCount, usefulnessCount, workloadCount, attendanceCount, gradingCount, agg] = await Promise.all([
+  const [
+    totalReviews,
+    coolnessCount,
+    usefulnessCount,
+    workloadCount,
+    attendanceCount,
+    gradingCount,
+    agg,
+  ] = await Promise.all([
     prisma.review.count({ where }),
     prisma.review.count({ where: { ...where, coolness: { not: null } } }),
     prisma.review.count({ where: { ...where, usefulness: { not: null } } }),
@@ -66,5 +74,3 @@ export async function getCourseRatingSummary(courseId: string): Promise<RatingSu
     },
   };
 }
-
-

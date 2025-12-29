@@ -3,16 +3,10 @@ import { prisma } from "@/lib/db";
 import { requireNkustUser } from "@/lib/auth";
 
 // GET /api/courses/[id]/favorite-status - 檢查課程是否已收藏
-export async function GET(
-  request: Request,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     if (!prisma) {
-      return Response.json(
-        { error: "資料庫連線失敗" },
-        { status: 503 }
-      );
+      return Response.json({ error: "資料庫連線失敗" }, { status: 503 });
     }
 
     // 檢查使用者是否已登入（未登入則回傳 false）
@@ -43,9 +37,6 @@ export async function GET(
     });
   } catch (error) {
     console.error("Error checking favorite status:", error);
-    return Response.json(
-      { error: "檢查收藏狀態失敗，請稍後再試" },
-      { status: 500 }
-    );
+    return Response.json({ error: "檢查收藏狀態失敗，請稍後再試" }, { status: 500 });
   }
 }

@@ -4,10 +4,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { prisma } from "@/lib/db";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     await requireAdmin();
 
@@ -30,25 +27,26 @@ export async function GET(
       by: ["coolness"],
       where: {
         userId,
-        coolness: { not: null }
+        coolness: { not: null },
       },
-      _count: true
+      _count: true,
     });
 
     // 轉換數據格式
-    const monthlyData = reviewsByMonth.map((item: { month: Date; count: bigint }) => ({
-      month: item.month.toISOString().substring(0, 7), // YYYY-MM
-      count: Number(item.count)
-    })).reverse();
+    const monthlyData = reviewsByMonth
+      .map((item: { month: Date; count: bigint }) => ({
+        month: item.month.toISOString().substring(0, 7), // YYYY-MM
+        count: Number(item.count),
+      }))
+      .reverse();
 
     return Response.json({
       monthlyReviews: monthlyData,
       ratingDistribution: ratingDistribution.map((item: any) => ({
         rating: item.coolness,
-        count: item._count
-      }))
+        count: item._count,
+      })),
     });
-
   } catch (error: any) {
     console.error("Failed to get user activity:", error);
 
@@ -59,9 +57,6 @@ export async function GET(
       return Response.json({ error: "Forbidden" }, { status: 403 });
     }
 
-    return Response.json(
-      { error: "Internal server error" },
-      { status: 500 }
-    );
+    return Response.json({ error: "Internal server error" }, { status: 500 });
   }
 }

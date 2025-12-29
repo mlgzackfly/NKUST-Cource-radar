@@ -31,13 +31,15 @@ function RadarChartComponent({ data }: { data: Array<{ name: string; value: numb
 
   if (!ReactECharts) {
     return (
-      <div style={{
-        height: 350,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "var(--app-muted)"
-      }}>
+      <div
+        style={{
+          height: 350,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "var(--app-muted)",
+        }}
+      >
         載入圖表中...
       </div>
     );
@@ -45,68 +47,68 @@ function RadarChartComponent({ data }: { data: Array<{ name: string; value: numb
 
   const option: EChartsOption = {
     radar: {
-      indicator: data.map(item => ({
+      indicator: data.map((item) => ({
         name: item.name,
-        max: 5
+        max: 5,
       })),
-      center: ['50%', '45%'],
-      radius: '65%',
+      center: ["50%", "45%"],
+      radius: "65%",
       splitNumber: 5,
       axisName: {
-        color: '#374151',
+        color: "#374151",
         fontSize: 13,
-        fontWeight: 500
+        fontWeight: 500,
       },
       splitLine: {
         lineStyle: {
-          color: '#d1d5db',
-          type: 'dashed'
-        }
+          color: "#d1d5db",
+          type: "dashed",
+        },
       },
       splitArea: {
-        show: false
+        show: false,
       },
       axisLine: {
         lineStyle: {
-          color: '#d1d5db'
-        }
-      }
+          color: "#d1d5db",
+        },
+      },
     },
     series: [
       {
-        type: 'radar',
+        type: "radar",
         data: [
           {
-            value: data.map(item => item.value),
-            name: '平均評分',
+            value: data.map((item) => item.value),
+            name: "平均評分",
             areaStyle: {
-              color: 'rgba(59, 130, 246, 0.25)'
+              color: "rgba(59, 130, 246, 0.25)",
             },
             lineStyle: {
-              color: '#3b82f6',
-              width: 2.5
+              color: "#3b82f6",
+              width: 2.5,
             },
             itemStyle: {
-              color: '#3b82f6'
-            }
-          }
-        ]
-      }
+              color: "#3b82f6",
+            },
+          },
+        ],
+      },
     ],
     legend: {
       bottom: 10,
-      data: ['平均評分'],
+      data: ["平均評分"],
       textStyle: {
-        fontSize: 14
-      }
-    }
+        fontSize: 14,
+      },
+    },
   };
 
   return (
     <ReactECharts
       option={option}
-      style={{ height: '350px', width: '100%' }}
-      opts={{ renderer: 'svg' }}
+      style={{ height: "350px", width: "100%" }}
+      opts={{ renderer: "svg" }}
     />
   );
 }
@@ -115,21 +117,21 @@ const CourseSummaryChart = ({ summary }: CourseSummaryChartProps) => {
   // 如果沒有評論，顯示提示訊息
   if (summary.totalReviews === 0) {
     return (
-      <div style={{
-        height: 300,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "var(--app-muted)",
-        textAlign: "center",
-        padding: "2rem"
-      }}>
+      <div
+        style={{
+          height: 300,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          color: "var(--app-muted)",
+          textAlign: "center",
+          padding: "2rem",
+        }}
+      >
         <div style={{ fontSize: "3rem", marginBottom: "1rem", opacity: 0.5 }}>📊</div>
         <div style={{ fontSize: "0.9375rem" }}>尚無評分資料</div>
-        <div style={{ fontSize: "0.875rem", marginTop: "0.5rem" }}>
-          成為第一位評論者
-        </div>
+        <div style={{ fontSize: "0.875rem", marginTop: "0.5rem" }}>成為第一位評論者</div>
       </div>
     );
   }
@@ -148,15 +150,17 @@ const CourseSummaryChart = ({ summary }: CourseSummaryChartProps) => {
       <RadarChartComponent data={data} />
 
       {/* 數值詳細顯示 */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(5, 1fr)",
-        gap: "0.5rem",
-        marginTop: "1.5rem",
-        padding: "0 1rem",
-        borderTop: "1px solid #e5e7eb",
-        paddingTop: "1rem"
-      }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(5, 1fr)",
+          gap: "0.5rem",
+          marginTop: "1.5rem",
+          padding: "0 1rem",
+          borderTop: "1px solid #e5e7eb",
+          paddingTop: "1rem",
+        }}
+      >
         {data.map((item) => (
           <div
             key={item.name}
@@ -164,28 +168,34 @@ const CourseSummaryChart = ({ summary }: CourseSummaryChartProps) => {
               textAlign: "center",
               padding: "0.5rem",
               backgroundColor: "#f9fafb",
-              borderRadius: "6px"
+              borderRadius: "6px",
             }}
           >
-            <div style={{
-              fontSize: "0.75rem",
-              color: "#6b7280",
-              marginBottom: "0.25rem"
-            }}>
+            <div
+              style={{
+                fontSize: "0.75rem",
+                color: "#6b7280",
+                marginBottom: "0.25rem",
+              }}
+            >
               {item.name}
             </div>
-            <div style={{
-              fontSize: "1.25rem",
-              fontWeight: 700,
-              color: "#3b82f6"
-            }}>
+            <div
+              style={{
+                fontSize: "1.25rem",
+                fontWeight: 700,
+                color: "#3b82f6",
+              }}
+            >
               {item.value.toFixed(1)}
             </div>
-            <div style={{
-              fontSize: "0.625rem",
-              color: "#9ca3af",
-              marginTop: "0.125rem"
-            }}>
+            <div
+              style={{
+                fontSize: "0.625rem",
+                color: "#9ca3af",
+                marginTop: "0.125rem",
+              }}
+            >
               / 5.0
             </div>
           </div>

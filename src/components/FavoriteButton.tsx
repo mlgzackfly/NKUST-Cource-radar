@@ -115,7 +115,7 @@ export function FavoriteButton({
           borderColor: "var(--app-border)",
         }}
       >
-        <i className="icon is-regular is-star"></i>
+        <i className="icon is-regular is-star" />
         {size !== "small" && <span style={{ marginLeft: "0.5rem" }}>收藏</span>}
       </button>
     );
@@ -124,11 +124,8 @@ export function FavoriteButton({
   // 檢查中
   if (checking) {
     return (
-      <button
-        className={`ts-button is-outlined ${size === "small" ? "is-small" : ""}`}
-        disabled
-      >
-        <i className="icon is-regular is-spinner-third is-spinning"></i>
+      <button className={`ts-button is-outlined ${size === "small" ? "is-small" : ""}`} disabled>
+        <i className="icon is-regular is-spinner-third is-spinning" />
       </button>
     );
   }
@@ -149,7 +146,7 @@ export function FavoriteButton({
         style={{
           color: isFavorited ? "#fbbf24" : "var(--app-muted)",
         }}
-      ></i>
+      />
       {size !== "small" && (
         <span style={{ marginLeft: "0.5rem" }}>
           {loading ? "處理中..." : isFavorited ? "已收藏" : "收藏"}

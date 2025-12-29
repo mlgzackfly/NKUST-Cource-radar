@@ -57,7 +57,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
     letterSpacing: "0.05em",
     cursor: sortable ? "pointer" : "default",
     userSelect: "none" as const,
-    transition: "background-color 0.15s"
+    transition: "background-color 0.15s",
   });
 
   const renderInstructors = (instructors: Array<{ instructor: { id: string; name: string } }>) => {
@@ -78,8 +78,8 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
                 textDecoration: "none",
                 fontWeight: 500,
               }}
-              onMouseEnter={(e) => e.currentTarget.style.textDecoration = "underline"}
-              onMouseLeave={(e) => e.currentTarget.style.textDecoration = "none"}
+              onMouseEnter={(e) => (e.currentTarget.style.textDecoration = "underline")}
+              onMouseLeave={(e) => (e.currentTarget.style.textDecoration = "none")}
             >
               {item.instructor.name}
             </Link>
@@ -119,46 +119,54 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
         </div>
 
         {/* 系所與校區 */}
-        <div style={{
-          display: "flex",
-          gap: "0.5rem",
-          marginBottom: "0.75rem",
-          flexWrap: "wrap"
-        }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "0.5rem",
+            marginBottom: "0.75rem",
+            flexWrap: "wrap",
+          }}
+        >
           {course.department && (
-            <span style={{
-              fontSize: "0.75rem",
-              padding: "0.25rem 0.5rem",
-              backgroundColor: "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
-              color: "var(--ts-warning-600)",
-              borderRadius: "4px",
-              fontWeight: 500
-            }}>
+            <span
+              style={{
+                fontSize: "0.75rem",
+                padding: "0.25rem 0.5rem",
+                backgroundColor: "color-mix(in srgb, var(--ts-warning-500) 15%, transparent)",
+                color: "var(--ts-warning-600)",
+                borderRadius: "4px",
+                fontWeight: 500,
+              }}
+            >
               {course.department}
             </span>
           )}
           {course.campus && (
-            <span style={{
-              fontSize: "0.75rem",
-              padding: "0.25rem 0.5rem",
-              backgroundColor: "color-mix(in srgb, var(--ts-info-500) 15%, transparent)",
-              color: "var(--ts-info-600)",
-              borderRadius: "4px"
-            }}>
+            <span
+              style={{
+                fontSize: "0.75rem",
+                padding: "0.25rem 0.5rem",
+                backgroundColor: "color-mix(in srgb, var(--ts-info-500) 15%, transparent)",
+                color: "var(--ts-info-600)",
+                borderRadius: "4px",
+              }}
+            >
               {course.campus}
             </span>
           )}
         </div>
 
         {/* 教師 */}
-        <div style={{
-          fontSize: "0.875rem",
-          color: "var(--app-text)",
-          marginBottom: "0.5rem",
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem"
-        }}>
+        <div
+          style={{
+            fontSize: "0.875rem",
+            color: "var(--app-text)",
+            marginBottom: "0.5rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+          }}
+        >
           <span style={{ color: "var(--app-muted)", minWidth: "3rem" }}>教師</span>
           <span>
             {course.instructors && course.instructors.length > 0
@@ -176,27 +184,31 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
 
         {/* 時間與教室 */}
         {course.time && (
-          <div style={{
-            fontSize: "0.875rem",
-            color: "var(--app-text)",
-            marginBottom: "0.5rem",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem"
-          }}>
+          <div
+            style={{
+              fontSize: "0.875rem",
+              color: "var(--app-text)",
+              marginBottom: "0.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
             <span style={{ color: "var(--app-muted)", minWidth: "3rem" }}>時間</span>
             <span>{course.time}</span>
           </div>
         )}
 
         {course.classroom && (
-          <div style={{
-            fontSize: "0.875rem",
-            color: "var(--app-text)",
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem"
-          }}>
+          <div
+            style={{
+              fontSize: "0.875rem",
+              color: "var(--app-text)",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+            }}
+          >
             <span style={{ color: "var(--app-muted)", minWidth: "3rem" }}>教室</span>
             <span>{course.classroom}</span>
           </div>
@@ -204,14 +216,14 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
 
         {/* 比較按鈕 */}
         <div
-          style={{ marginTop: "0.75rem", paddingTop: "0.75rem", borderTop: "1px solid var(--app-border)" }}
+          style={{
+            marginTop: "0.75rem",
+            paddingTop: "0.75rem",
+            borderTop: "1px solid var(--app-border)",
+          }}
           onClick={(e) => e.stopPropagation()}
         >
-          <CompareButton
-            courseId={course.id}
-            courseName={course.courseName}
-            variant="button"
-          />
+          <CompareButton courseId={course.id} courseName={course.courseName} variant="button" />
         </div>
       </div>
     );
@@ -232,118 +244,152 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
       <div className="desktop-course-table" style={{ overflow: "auto" }}>
         {/* Table view - Notion/Airtable style */}
         <table style={{ width: "100%", borderCollapse: "separate", borderSpacing: 0 }}>
-        <thead>
-          <tr style={{ borderBottom: "2px solid var(--app-table-border)" }}>
-            <th
-              style={headerStyle(true)}
-              onClick={() => handleSort("courseName")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
-            >
-              課程名稱{getSortIcon("courseName")}
-            </th>
-            <th
-              style={{ ...headerStyle(true), minWidth: "150px" }}
-              onClick={() => handleSort("instructorName")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
-            >
-              教師{getSortIcon("instructorName")}
-            </th>
-            <th style={{ ...headerStyle(false), minWidth: "100px" }}>
-              上課時間
-            </th>
-            <th style={{ ...headerStyle(false), minWidth: "90px" }}>
-              教室
-            </th>
-            <th
-              style={{ ...headerStyle(true), minWidth: "120px" }}
-              onClick={() => handleSort("department")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
-            >
-              系所{getSortIcon("department")}
-            </th>
-            <th
-              style={{ ...headerStyle(true), textAlign: "center", minWidth: "100px" }}
-              onClick={() => handleSort("year")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
-            >
-              學期{getSortIcon("year")}
-            </th>
-            <th
-              style={{ ...headerStyle(true), textAlign: "center", minWidth: "90px" }}
-              onClick={() => handleSort("campus")}
-              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
-            >
-              校區{getSortIcon("campus")}
-            </th>
-            <th style={{ ...headerStyle(false), textAlign: "center", minWidth: "60px" }}>
-              比較
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {courses.map((c, index) => {
-            return (
-              <tr
-                key={c.id}
-                onClick={() => window.location.href = `/courses/${c.id}`}
-                style={{
-                  borderBottom: index < courses.length - 1 ? "1px solid var(--app-table-border)" : "none",
-                  cursor: "pointer",
-                  transition: "background-color 0.15s"
-                }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)"}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = "transparent"}
+          <thead>
+            <tr style={{ borderBottom: "2px solid var(--app-table-border)" }}>
+              <th
+                style={headerStyle(true)}
+                onClick={() => handleSort("courseName")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
               >
-                <td style={{ padding: "1rem", fontSize: "0.9375rem", fontWeight: 600, color: "var(--ts-gray-900)" }}>
-                  {c.courseName}
-                </td>
-                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-700)" }}>
-                  {renderInstructors(c.instructors)}
-                </td>
-                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}>
-                  {c.time || "—"}
-                </td>
-                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}>
-                  {c.classroom || "—"}
-                </td>
-                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}>
-                  {c.department || "—"}
-                </td>
-                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)", textAlign: "center" }}>
-                  <span style={{
-                    display: "inline-block",
-                    padding: "0.25rem 0.625rem",
-                    background: "var(--ts-gray-100)",
-                    borderRadius: "4px",
-                    fontSize: "0.8125rem",
-                    fontWeight: 600
-                  }}>
-                    {c.year}-{c.term}
-                  </span>
-                </td>
-                <td style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)", textAlign: "center" }}>
-                  {c.campus || "—"}
-                </td>
-                <td
-                  style={{ padding: "0.5rem", textAlign: "center" }}
-                  onClick={(e) => e.stopPropagation()}
+                課程名稱{getSortIcon("courseName")}
+              </th>
+              <th
+                style={{ ...headerStyle(true), minWidth: "150px" }}
+                onClick={() => handleSort("instructorName")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                教師{getSortIcon("instructorName")}
+              </th>
+              <th style={{ ...headerStyle(false), minWidth: "100px" }}>上課時間</th>
+              <th style={{ ...headerStyle(false), minWidth: "90px" }}>教室</th>
+              <th
+                style={{ ...headerStyle(true), minWidth: "120px" }}
+                onClick={() => handleSort("department")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                系所{getSortIcon("department")}
+              </th>
+              <th
+                style={{ ...headerStyle(true), textAlign: "center", minWidth: "100px" }}
+                onClick={() => handleSort("year")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                學期{getSortIcon("year")}
+              </th>
+              <th
+                style={{ ...headerStyle(true), textAlign: "center", minWidth: "90px" }}
+                onClick={() => handleSort("campus")}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                校區{getSortIcon("campus")}
+              </th>
+              <th style={{ ...headerStyle(false), textAlign: "center", minWidth: "60px" }}>比較</th>
+            </tr>
+          </thead>
+          <tbody>
+            {courses.map((c, index) => {
+              return (
+                <tr
+                  key={c.id}
+                  onClick={() => (window.location.href = `/courses/${c.id}`)}
+                  style={{
+                    borderBottom:
+                      index < courses.length - 1 ? "1px solid var(--app-table-border)" : "none",
+                    cursor: "pointer",
+                    transition: "background-color 0.15s",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)")
+                  }
+                  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                 >
-                  <CompareButton
-                    courseId={c.id}
-                    courseName={c.courseName}
-                    variant="icon"
-                  />
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontSize: "0.9375rem",
+                      fontWeight: 600,
+                      color: "var(--ts-gray-900)",
+                    }}
+                  >
+                    {c.courseName}
+                  </td>
+                  <td
+                    style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-700)" }}
+                  >
+                    {renderInstructors(c.instructors)}
+                  </td>
+                  <td
+                    style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}
+                  >
+                    {c.time || "—"}
+                  </td>
+                  <td
+                    style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}
+                  >
+                    {c.classroom || "—"}
+                  </td>
+                  <td
+                    style={{ padding: "1rem", fontSize: "0.875rem", color: "var(--ts-gray-600)" }}
+                  >
+                    {c.department || "—"}
+                  </td>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontSize: "0.875rem",
+                      color: "var(--ts-gray-600)",
+                      textAlign: "center",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-block",
+                        padding: "0.25rem 0.625rem",
+                        background: "var(--ts-gray-100)",
+                        borderRadius: "4px",
+                        fontSize: "0.8125rem",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {c.year}-{c.term}
+                    </span>
+                  </td>
+                  <td
+                    style={{
+                      padding: "1rem",
+                      fontSize: "0.875rem",
+                      color: "var(--ts-gray-600)",
+                      textAlign: "center",
+                    }}
+                  >
+                    {c.campus || "—"}
+                  </td>
+                  <td
+                    style={{ padding: "0.5rem", textAlign: "center" }}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <CompareButton courseId={c.id} courseName={c.courseName} variant="icon" />
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
 
       {/* 浮動比較列 */}

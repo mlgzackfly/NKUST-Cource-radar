@@ -5,7 +5,7 @@ import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 function SignInForm() {
   const [email, setEmail] = useState("");
@@ -53,11 +53,18 @@ function SignInForm() {
       <div style={{ maxWidth: "440px", margin: "0 auto" }}>
         <div className="ts-box is-raised" style={{ borderRadius: "16px" }}>
           <div className="ts-content" style={{ padding: "2.5rem" }}>
-            <Link href="/" className="ts-button is-ghost is-short" style={{ marginBottom: "1.5rem" }}>
+            <Link
+              href="/"
+              className="ts-button is-ghost is-short"
+              style={{ marginBottom: "1.5rem" }}
+            >
               ← 回首頁
             </Link>
 
-            <div className="ts-header" style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "1rem" }}>
+            <div
+              className="ts-header"
+              style={{ fontSize: "2rem", fontWeight: 700, marginBottom: "1rem" }}
+            >
               登入
             </div>
 
@@ -89,21 +96,31 @@ function SignInForm() {
                 </div>
               )}
 
-              <button
-                type="submit"
-                className="ts-button is-primary is-fluid"
-                disabled={loading}
-              >
+              <button type="submit" className="ts-button is-primary is-fluid" disabled={loading}>
                 {loading ? "傳送中..." : "傳送登入連結"}
               </button>
 
-              <div style={{ marginTop: "1rem", fontSize: "0.8125rem", color: "var(--ts-gray-600)", lineHeight: 1.6, textAlign: "center" }}>
+              <div
+                style={{
+                  marginTop: "1rem",
+                  fontSize: "0.8125rem",
+                  color: "var(--ts-gray-600)",
+                  lineHeight: 1.6,
+                  textAlign: "center",
+                }}
+              >
                 繼續即表示您同意我們的{" "}
-                <Link href="/privacy" style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}>
+                <Link
+                  href="/privacy"
+                  style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}
+                >
                   隱私權政策
-                </Link>
-                {" "}和{" "}
-                <Link href="/cookies" style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}>
+                </Link>{" "}
+                和{" "}
+                <Link
+                  href="/cookies"
+                  style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}
+                >
                   Cookie 使用說明
                 </Link>
               </div>
@@ -123,13 +140,13 @@ function SignInForm() {
 
 export default function SignIn() {
   return (
-    <Suspense fallback={
-      <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
-        <div style={{ maxWidth: "440px", margin: "0 auto", textAlign: "center" }}>
-          載入中...
+    <Suspense
+      fallback={
+        <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
+          <div style={{ maxWidth: "440px", margin: "0 auto", textAlign: "center" }}>載入中...</div>
         </div>
-      </div>
-    }>
+      }
+    >
       <SignInForm />
     </Suspense>
   );

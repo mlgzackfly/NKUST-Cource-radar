@@ -29,7 +29,13 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Noto Sans TC", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-family:
+    "Noto Sans TC",
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    sans-serif;
 }
 
 body {
@@ -45,7 +51,9 @@ a {
 }
 
 code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
   font-size: 0.95em;
 }
 
@@ -91,17 +99,25 @@ code {
 .ts-box {
   border-radius: 16px !important;
   border: 1px solid var(--app-border) !important;
-  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.02), 0 4px 12px 0 rgba(0,0,0,0.03) !important;
-  transition: box-shadow 200ms var(--ts-easing-standard), transform 200ms var(--ts-easing-standard);
+  box-shadow:
+    0 2px 8px 0 rgba(0, 0, 0, 0.02),
+    0 4px 12px 0 rgba(0, 0, 0, 0.03) !important;
+  transition:
+    box-shadow 200ms var(--ts-easing-standard),
+    transform 200ms var(--ts-easing-standard);
 }
 
 .ts-box.is-interactive:hover {
-  box-shadow: 0 6px 16px 0 rgba(0,0,0,0.06), 0 12px 32px 0 rgba(0,0,0,0.08) !important;
+  box-shadow:
+    0 6px 16px 0 rgba(0, 0, 0, 0.06),
+    0 12px 32px 0 rgba(0, 0, 0, 0.08) !important;
   transform: translateY(-2px);
 }
 
 .ts-box:not(.is-interactive):hover {
-  box-shadow: 0 4px 12px 0 rgba(0,0,0,0.04), 0 8px 24px 0 rgba(0,0,0,0.06) !important;
+  box-shadow:
+    0 4px 12px 0 rgba(0, 0, 0, 0.04),
+    0 8px 24px 0 rgba(0, 0, 0, 0.06) !important;
 }
 
 .ts-header.is-large {
@@ -285,7 +301,9 @@ summary::-webkit-details-marker {
   content: "▾";
   opacity: 0.7;
   display: inline-block;
-  transition: transform 140ms ease, opacity 140ms ease;
+  transition:
+    transform 140ms ease,
+    opacity 140ms ease;
 }
 
 details[open] > .app-details-summary::after {
