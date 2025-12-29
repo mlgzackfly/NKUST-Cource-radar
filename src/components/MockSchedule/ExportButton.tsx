@@ -20,7 +20,7 @@ export function ExportButton({ scheduleRef }: ExportButtonProps) {
       setExporting(true);
 
       // 獲取背景色（支援 light/dark mode）
-      const isDarkMode = document.documentElement.getAttribute("data-theme") === "dark";
+      const isDarkMode = document.documentElement.classList.contains("is-dark");
       const backgroundColor = isDarkMode ? "#1a1a1a" : "#ffffff";
 
       // 暫時設定固定寬度以確保完整顯示

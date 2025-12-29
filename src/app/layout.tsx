@@ -7,6 +7,7 @@ import { SemesterSelector } from "@/components/SemesterSelector";
 import { UserMenu } from "@/components/UserMenu";
 import { SessionProvider } from "@/components/SessionProvider";
 import { BottomNavbar } from "@/components/BottomNavbar";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata = {
   title: "高科選課雷達 | 選課，不只是憑感覺",
@@ -50,8 +51,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     var mode = localStorage.getItem('nkust-theme') || 'light';
     var root = document.documentElement;
     root.classList.remove('is-dark', 'is-light');
-    if (mode === 'dark') root.classList.add('is-dark');
-    if (mode === 'light') root.classList.add('is-light');
+    var effectiveMode = mode;
+    if (mode === 'auto') {
+      effectiveMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    if (effectiveMode === 'dark') root.classList.add('is-dark');
+    if (effectiveMode === 'light') root.classList.add('is-light');
   } catch (e) {}
 })();`,
           }}
@@ -139,6 +144,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <Suspense fallback={null}>
                       <SemesterSelector />
                     </Suspense>
+                    <ThemeToggle />
                     <div className="desktop-only-user-menu">
                       <UserMenu />
                     </div>
