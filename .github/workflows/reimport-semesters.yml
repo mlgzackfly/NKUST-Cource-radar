@@ -1,0 +1,49 @@
+name: Reimport Semesters
+
+on:
+  workflow_dispatch:
+    inputs:
+      semesters:
+        description: '要重新匯入的學期（格式: 109-2,110-1）'
+        required: true
+        default: '109-2,110-1'
+        type: string
+
+jobs:
+  reimport:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🔍 Generate Prisma Client
+        run: npx prisma generate
+
+      - name: 🔄 Reimport semesters
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          REIMPORT_SEMESTERS: ${{ inputs.semesters }}
+        run: node scripts/reimport-semesters.mjs
+
+      - name: 📊 Final verification
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          echo "各學期課程數："
+          npx prisma db execute --stdin <<EOF
+          SELECT year || '-' || term as semester, COUNT(*) as courses
+          FROM "Course"
+          GROUP BY year, term
+          ORDER BY year, term;
+          EOF
