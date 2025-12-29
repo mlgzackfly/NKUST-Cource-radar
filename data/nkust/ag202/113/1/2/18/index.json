@@ -1,0 +1,26 @@
+{
+  "scrapedAt": "2025-12-28T16:57:32.139Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#1",
+    "cmpAreaId": "2",
+    "dgrId": "18",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UC11",
+      "label": "(管理學院)國際企業系",
+      "courses": 7,
+      "file": "data/nkust/ag202/113/1/2/18/UC11.json"
+    },
+    {
+      "id": "UT02",
+      "label": "(商業智慧學院)商業智慧學院博士班",
+      "courses": 17,
+      "file": "data/nkust/ag202/113/1/2/18/UT02.json"
+    }
+  ]
+}

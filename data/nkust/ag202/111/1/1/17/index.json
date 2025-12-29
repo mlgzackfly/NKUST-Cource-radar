@@ -1,0 +1,74 @@
+{
+  "scrapedAt": "2025-12-28T15:56:26.182Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "111#1",
+    "cmpAreaId": "1",
+    "dgrId": "17",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UB01",
+      "label": "(電機與資訊學院)光電工程研究所",
+      "courses": 22,
+      "file": "data/nkust/ag202/111/1/1/17/UB01.json"
+    },
+    {
+      "id": "UE10",
+      "label": "(工學院)土木工程系碩士班",
+      "courses": 15,
+      "file": "data/nkust/ag202/111/1/1/17/UE10.json"
+    },
+    {
+      "id": "UE15",
+      "label": "(電機與資訊學院)資訊工程系",
+      "courses": 16,
+      "file": "data/nkust/ag202/111/1/1/17/UE15.json"
+    },
+    {
+      "id": "UE17",
+      "label": "(工學院)化學工程與材料工程系碩士班[建",
+      "courses": 11,
+      "file": "data/nkust/ag202/111/1/1/17/UE17.json"
+    },
+    {
+      "id": "UE18",
+      "label": "(電機與資訊學院)電機工程系碩士班",
+      "courses": 40,
+      "file": "data/nkust/ag202/111/1/1/17/UE18.json"
+    },
+    {
+      "id": "UE20",
+      "label": "(電機與資訊學院)電子工程系碩士班",
+      "courses": 18,
+      "file": "data/nkust/ag202/111/1/1/17/UE20.json"
+    },
+    {
+      "id": "UE25",
+      "label": "(智慧機電學院)機械工程系",
+      "courses": 23,
+      "file": "data/nkust/ag202/111/1/1/17/UE25.json"
+    },
+    {
+      "id": "UE33",
+      "label": "(智慧機電學院)模具工程系碩士班[建工/燕巢校區]",
+      "courses": 10,
+      "file": "data/nkust/ag202/111/1/1/17/UE33.json"
+    },
+    {
+      "id": "UE84",
+      "label": "(電機與資訊學院)電資工程與科技管理外國學生碩士",
+      "courses": 5,
+      "file": "data/nkust/ag202/111/1/1/17/UE84.json"
+    },
+    {
+      "id": "UP15",
+      "label": "(商業智慧學院)會計資訊系碩士班",
+      "courses": 1,
+      "file": "data/nkust/ag202/111/1/1/17/UP15.json"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:29:49.529Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#1",
+    "cmp_area_id": "1",
+    "dgr_id": "27",
+    "unt_id": "UP07",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UP07",
+    "label": "(管理學院)金融系碩士專班[第一]"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "2887",
+      "campus": "建工校區",
+      "division": "碩士在職專班",
+      "department": "金融系碩士專班[第一]",
+      "className": "金融碩專班一甲",
+      "combinedClassName": "",
+      "courseCode": "153H10030",
+      "courseName": "不動產與金融個案研討",
+      "credits": 3,
+      "lectureHours": 3,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "洪志興",
+      "classroom": "東002",
+      "enrolled": 24,
+      "capacity": 30,
+      "time": "(一)10-12",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

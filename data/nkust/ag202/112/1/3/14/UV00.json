@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:50:48.493Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "112#1",
+    "cmp_area_id": "3",
+    "dgr_id": "14",
+    "unt_id": "UV00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UV00",
+    "label": "(海洋商務學院)海洋商務學院"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "4088",
+      "campus": "第一校區",
+      "division": "日間部四技",
+      "department": "海洋商務學院",
+      "className": "海商學院跨領域課",
+      "combinedClassName": "",
+      "courseCode": "700C10076",
+      "courseName": "地方創生實務",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "陳怡君",
+      "classroom": "E210",
+      "enrolled": 11,
+      "capacity": 55,
+      "time": "(三)3-4",
+      "englishTaught": "是",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

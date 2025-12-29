@@ -1,0 +1,20 @@
+{
+  "scrapedAt": "2025-12-28T16:58:44.244Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#1",
+    "cmpAreaId": "5",
+    "dgrId": "24",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UR02",
+      "label": "(海事學院)輪機工程系",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/1/5/24/UR02.json"
+    }
+  ]
+}

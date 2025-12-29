@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:51:28.314Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#2",
+    "cmp_area_id": "3",
+    "dgr_id": "14",
+    "unt_id": "UB00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UB00",
+    "label": "(電機與資訊學院)電機與資訊學院"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "0001",
+      "campus": "第一校區",
+      "division": "日間部四技",
+      "department": "電機與資訊學院",
+      "className": "電資學院課程一甲",
+      "combinedClassName": "",
+      "courseCode": "600C00006",
+      "courseName": "智慧科技應用專論",
+      "credits": 3,
+      "lectureHours": 3,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "徐偉智,陳建志",
+      "classroom": "F223",
+      "enrolled": 16,
+      "capacity": 30,
+      "time": "(五)2-4",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

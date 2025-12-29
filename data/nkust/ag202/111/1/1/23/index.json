@@ -1,0 +1,32 @@
+{
+  "scrapedAt": "2025-12-28T15:56:32.486Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "111#1",
+    "cmpAreaId": "1",
+    "dgrId": "23",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UE23",
+      "label": "(工學院)土木工程系",
+      "courses": 15,
+      "file": "data/nkust/ag202/111/1/1/23/UE23.json"
+    },
+    {
+      "id": "UT03",
+      "label": "(商業智慧學院)財政稅務系",
+      "courses": 17,
+      "file": "data/nkust/ag202/111/1/1/23/UT03.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 2,
+      "file": "data/nkust/ag202/111/1/1/23/XB03.json"
+    }
+  ]
+}

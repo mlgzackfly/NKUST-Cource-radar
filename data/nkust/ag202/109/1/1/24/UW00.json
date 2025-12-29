@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T14:38:55.508Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "109#1",
+    "cmp_area_id": "1",
+    "dgr_id": "24",
+    "unt_id": "UW00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UW00",
+    "label": "(管理學院)管理學院"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "5606",
+      "campus": "建工校區",
+      "division": "進修部四技",
+      "department": "管理學院",
+      "className": "進四管院課程一甲",
+      "combinedClassName": "進四技企管系一甲",
+      "courseCode": "800F00001",
+      "courseName": "商業倫理",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "黃敏雄",
+      "classroom": "育501",
+      "enrolled": 41,
+      "capacity": 50,
+      "time": "(二)12-13",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

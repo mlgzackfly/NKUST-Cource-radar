@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:56:58.464Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "111#1",
+    "cmp_area_id": "2",
+    "dgr_id": "14",
+    "unt_id": "UW00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UW00",
+    "label": "(管理學院)管理學院"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "4118",
+      "campus": "燕巢校區",
+      "division": "日間部四技",
+      "department": "管理學院",
+      "className": "管院課程一甲",
+      "combinedClassName": "四國企一甲,四國企二甲,四國企三甲,四國企四甲,四國企",
+      "courseCode": "800C00014",
+      "courseName": "企業倫理與永續發展",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "林思吟",
+      "classroom": "MB523",
+      "enrolled": 64,
+      "capacity": 60,
+      "time": "(一)5-6",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

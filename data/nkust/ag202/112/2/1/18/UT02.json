@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:52:46.935Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "112#2",
+    "cmp_area_id": "1",
+    "dgr_id": "18",
+    "unt_id": "UT02",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UT02",
+    "label": "(商業智慧學院)商業智慧學院博士班"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "3859",
+      "campus": "建工校區",
+      "division": "日間部博士",
+      "department": "商業智慧學院博士班",
+      "className": "商業智慧學院博二",
+      "combinedClassName": "觀光系碩士班一甲",
+      "courseCode": "401A10094",
+      "courseName": "觀光暨餐旅產業現代議題研討",
+      "credits": 3,
+      "lectureHours": 3,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "李明聰",
+      "classroom": "西306B",
+      "enrolled": 6,
+      "capacity": 14,
+      "time": "(四)2-4",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

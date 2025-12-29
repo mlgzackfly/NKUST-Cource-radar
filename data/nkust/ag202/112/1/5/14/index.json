@@ -1,0 +1,74 @@
+{
+  "scrapedAt": "2025-12-28T16:51:42.461Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "112#1",
+    "cmpAreaId": "5",
+    "dgrId": "14",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UR01",
+      "label": "(海事學院)航運技術系",
+      "courses": 58,
+      "file": "data/nkust/ag202/112/1/5/14/UR01.json"
+    },
+    {
+      "id": "UR02",
+      "label": "(海事學院)輪機工程系",
+      "courses": 101,
+      "file": "data/nkust/ag202/112/1/5/14/UR02.json"
+    },
+    {
+      "id": "UR03",
+      "label": "(海事學院)海事資訊科技系",
+      "courses": 42,
+      "file": "data/nkust/ag202/112/1/5/14/UR03.json"
+    },
+    {
+      "id": "US18",
+      "label": "(水圈學院)漁業科技與管理系[公費專班]",
+      "courses": 2,
+      "file": "data/nkust/ag202/112/1/5/14/US18.json"
+    },
+    {
+      "id": "US19",
+      "label": "(水圈學院)漁業科技與管理系",
+      "courses": 2,
+      "file": "data/nkust/ag202/112/1/5/14/US19.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 4,
+      "file": "data/nkust/ag202/112/1/5/14/XB01.json"
+    },
+    {
+      "id": "XB02",
+      "label": "(共同教育學院)博雅教育中心",
+      "courses": 16,
+      "file": "data/nkust/ag202/112/1/5/14/XB02.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 14,
+      "file": "data/nkust/ag202/112/1/5/14/XB03.json"
+    },
+    {
+      "id": "XF01",
+      "label": "(服務教育)服務教育",
+      "courses": 5,
+      "file": "data/nkust/ag202/112/1/5/14/XF01.json"
+    },
+    {
+      "id": "XP00",
+      "label": "(體育室)體育課程",
+      "courses": 10,
+      "file": "data/nkust/ag202/112/1/5/14/XP00.json"
+    }
+  ]
+}

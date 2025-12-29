@@ -1,0 +1,110 @@
+{
+  "scrapedAt": "2025-12-28T16:51:04.275Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "112#1",
+    "cmpAreaId": "3",
+    "dgrId": "27",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UB02",
+      "label": "(電機與資訊學院)電機系智慧自動化系統碩士班",
+      "courses": 9,
+      "file": "data/nkust/ag202/112/1/3/27/UB02.json"
+    },
+    {
+      "id": "UD11",
+      "label": "(電機與資訊學院)電子工程系碩專班[第一]",
+      "courses": 23,
+      "file": "data/nkust/ag202/112/1/3/27/UD11.json"
+    },
+    {
+      "id": "UD14",
+      "label": "(電機與資訊學院)電腦與通訊工程系碩專班",
+      "courses": 10,
+      "file": "data/nkust/ag202/112/1/3/27/UD14.json"
+    },
+    {
+      "id": "UF09",
+      "label": "(智慧機電學院)機電工程系",
+      "courses": 5,
+      "file": "data/nkust/ag202/112/1/3/27/UF09.json"
+    },
+    {
+      "id": "UF20",
+      "label": "(工學院)環境與安全衛生工程系碩專班",
+      "courses": 8,
+      "file": "data/nkust/ag202/112/1/3/27/UF20.json"
+    },
+    {
+      "id": "UJ06",
+      "label": "(外語學院)應用日語系碩士專班",
+      "courses": 5,
+      "file": "data/nkust/ag202/112/1/3/27/UJ06.json"
+    },
+    {
+      "id": "UJ17",
+      "label": "(工學院)營建工程系營建工程與管理碩專班",
+      "courses": 11,
+      "file": "data/nkust/ag202/112/1/3/27/UJ17.json"
+    },
+    {
+      "id": "UN07",
+      "label": "(管理學院)高階主管經營管理碩專班",
+      "courses": 9,
+      "file": "data/nkust/ag202/112/1/3/27/UN07.json"
+    },
+    {
+      "id": "UN09",
+      "label": "(管理學院)行銷與流通管理系碩士專班",
+      "courses": 6,
+      "file": "data/nkust/ag202/112/1/3/27/UN09.json"
+    },
+    {
+      "id": "UN13",
+      "label": "(管理學院)資訊管理系碩士專班[第一]",
+      "courses": 5,
+      "file": "data/nkust/ag202/112/1/3/27/UN13.json"
+    },
+    {
+      "id": "UN18",
+      "label": "(管理學院)運籌管理系碩士專班[第一]",
+      "courses": 6,
+      "file": "data/nkust/ag202/112/1/3/27/UN18.json"
+    },
+    {
+      "id": "UN27",
+      "label": "(管理學院)科技法律研究所碩士專班[第一]",
+      "courses": 19,
+      "file": "data/nkust/ag202/112/1/3/27/UN27.json"
+    },
+    {
+      "id": "UN37",
+      "label": "(管理學院)運籌管理系商務經營管理碩士班",
+      "courses": 8,
+      "file": "data/nkust/ag202/112/1/3/27/UN37.json"
+    },
+    {
+      "id": "UP07",
+      "label": "(管理學院)金融系碩士專班[第一]",
+      "courses": 7,
+      "file": "data/nkust/ag202/112/1/3/27/UP07.json"
+    },
+    {
+      "id": "UP14",
+      "label": "(管理學院)財務管理系碩士專班[第一]",
+      "courses": 5,
+      "file": "data/nkust/ag202/112/1/3/27/UP14.json"
+    },
+    {
+      "id": "UP23",
+      "label": "(管理學院)風險管理與保險系碩士專班",
+      "courses": 7,
+      "file": "data/nkust/ag202/112/1/3/27/UP23.json"
+    }
+  ]
+}

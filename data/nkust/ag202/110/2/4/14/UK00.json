@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:52:04.621Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#2",
+    "cmp_area_id": "4",
+    "dgr_id": "14",
+    "unt_id": "UK00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UK00",
+    "label": "(創新創業教育中心)創新創業教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "1950",
+      "campus": "楠梓校區",
+      "division": "日間部四技",
+      "department": "創新創業教育中心",
+      "className": "創創中心一甲",
+      "combinedClassName": "",
+      "courseCode": "030C10001",
+      "courseName": "創客微學分(一)",
+      "credits": 1,
+      "lectureHours": 1,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "何敏煌,林俞佑,許鎧麟",
+      "classroom": "",
+      "enrolled": 12,
+      "capacity": 30,
+      "time": "",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "【課程內容】智慧觀光 x 科技趣遊 【上課時間】4/23(六)，4/24(日) 08:00-18:00 【上課地點】楠梓校區 海天樓401教室 為校級【創意與創新學分學程】&【創新與創業學分學程】課程之一"
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "scrapedAt": "2025-12-28T15:56:52.605Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "111#1",
+    "cmpAreaId": "2",
+    "dgrId": "14",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UC11",
+      "label": "(管理學院)國際企業系",
+      "courses": 33,
+      "file": "data/nkust/ag202/111/1/2/14/UC11.json"
+    },
+    {
+      "id": "UC45",
+      "label": "(商業智慧學院)金融資訊系",
+      "courses": 33,
+      "file": "data/nkust/ag202/111/1/2/14/UC45.json"
+    },
+    {
+      "id": "UE86",
+      "label": "(智慧機電學院)能源與冷凍空調工程系",
+      "courses": 9,
+      "file": "data/nkust/ag202/111/1/2/14/UE86.json"
+    },
+    {
+      "id": "UH53",
+      "label": "(管理學院)人力資源發展系",
+      "courses": 29,
+      "file": "data/nkust/ag202/111/1/2/14/UH53.json"
+    },
+    {
+      "id": "UH58",
+      "label": "(創新設計學院)文化創意產業系",
+      "courses": 28,
+      "file": "data/nkust/ag202/111/1/2/14/UH58.json"
+    },
+    {
+      "id": "UK00",
+      "label": "(創新創業教育中心)創新創業教育中心",
+      "courses": 1,
+      "file": "data/nkust/ag202/111/1/2/14/UK00.json"
+    },
+    {
+      "id": "UM74",
+      "label": "(管理學院)企業管理系",
+      "courses": 32,
+      "file": "data/nkust/ag202/111/1/2/14/UM74.json"
+    },
+    {
+      "id": "UM76",
+      "label": "(商業智慧學院)觀光管理系",
+      "courses": 47,
+      "file": "data/nkust/ag202/111/1/2/14/UM76.json"
+    },
+    {
+      "id": "UP04",
+      "label": "(商業智慧學院)會計資訊系",
+      "courses": 56,
+      "file": "data/nkust/ag202/111/1/2/14/UP04.json"
+    },
+    {
+      "id": "UT00",
+      "label": "(商業智慧學院)商業智慧學院",
+      "courses": 2,
+      "file": "data/nkust/ag202/111/1/2/14/UT00.json"
+    },
+    {
+      "id": "UT01",
+      "label": "(商業智慧學院)智慧商務系",
+      "courses": 75,
+      "file": "data/nkust/ag202/111/1/2/14/UT01.json"
+    },
+    {
+      "id": "UT03",
+      "label": "(商業智慧學院)財政稅務系",
+      "courses": 39,
+      "file": "data/nkust/ag202/111/1/2/14/UT03.json"
+    },
+    {
+      "id": "UW00",
+      "label": "(管理學院)管理學院",
+      "courses": 1,
+      "file": "data/nkust/ag202/111/1/2/14/UW00.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 18,
+      "file": "data/nkust/ag202/111/1/2/14/XB01.json"
+    },
+    {
+      "id": "XB02",
+      "label": "(共同教育學院)博雅教育中心",
+      "courses": 39,
+      "file": "data/nkust/ag202/111/1/2/14/XB02.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 38,
+      "file": "data/nkust/ag202/111/1/2/14/XB03.json"
+    },
+    {
+      "id": "XF01",
+      "label": "(服務教育)服務教育",
+      "courses": 12,
+      "file": "data/nkust/ag202/111/1/2/14/XF01.json"
+    },
+    {
+      "id": "XP00",
+      "label": "(體育室)體育課程",
+      "courses": 25,
+      "file": "data/nkust/ag202/111/1/2/14/XP00.json"
+    }
+  ]
+}

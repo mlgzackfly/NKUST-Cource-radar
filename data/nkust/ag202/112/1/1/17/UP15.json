@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:49:58.434Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "112#1",
+    "cmp_area_id": "1",
+    "dgr_id": "17",
+    "unt_id": "UP15",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UP15",
+    "label": "(商業智慧學院)會計資訊系碩士班"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "2911",
+      "campus": "建工校區",
+      "division": "日間部碩士",
+      "department": "會計資訊系碩士班",
+      "className": "會資碩士班一甲",
+      "combinedClassName": "",
+      "courseCode": "157B10076",
+      "courseName": "租稅救濟個案研討",
+      "credits": 3,
+      "lectureHours": 3,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "洪東煒",
+      "classroom": "西004",
+      "enrolled": 17,
+      "capacity": 35,
+      "time": "(六)2-4",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

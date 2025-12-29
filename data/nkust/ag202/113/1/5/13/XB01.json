@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:58:37.670Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "113#1",
+    "cmp_area_id": "5",
+    "dgr_id": "13",
+    "unt_id": "XB01",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "XB01",
+    "label": "(共同教育學院)基礎教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "4111",
+      "campus": "旗津校區",
+      "division": "日間部二技",
+      "department": "基礎教育中心",
+      "className": "基礎二技三甲(旗",
+      "combinedClassName": "日二技航技三甲",
+      "courseCode": "041C00021",
+      "courseName": "實務應用文",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "張清發",
+      "classroom": "旗U407教室",
+      "enrolled": 40,
+      "capacity": 55,
+      "time": "(三)7-8",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "二技航三"
+    }
+  ]
+}

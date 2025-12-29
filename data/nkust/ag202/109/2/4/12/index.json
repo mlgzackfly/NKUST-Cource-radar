@@ -1,0 +1,44 @@
+{
+  "scrapedAt": "2025-12-28T15:16:41.011Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "109#2",
+    "cmpAreaId": "4",
+    "dgrId": "12",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "US13",
+      "label": "(水圈學院)漁業生產與管理科",
+      "courses": 39,
+      "file": "data/nkust/ag202/109/2/4/12/US13.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 11,
+      "file": "data/nkust/ag202/109/2/4/12/XB01.json"
+    },
+    {
+      "id": "XB02",
+      "label": "(共同教育學院)博雅教育中心",
+      "courses": 3,
+      "file": "data/nkust/ag202/109/2/4/12/XB02.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 4,
+      "file": "data/nkust/ag202/109/2/4/12/XB03.json"
+    },
+    {
+      "id": "XP00",
+      "label": "(體育室)體育課程",
+      "courses": 3,
+      "file": "data/nkust/ag202/109/2/4/12/XP00.json"
+    }
+  ]
+}

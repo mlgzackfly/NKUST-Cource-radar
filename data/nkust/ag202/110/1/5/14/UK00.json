@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:31:18.470Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#1",
+    "cmp_area_id": "5",
+    "dgr_id": "14",
+    "unt_id": "UK00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UK00",
+    "label": "(創新創業教育中心)創新創業教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "1990",
+      "campus": "旗津校區",
+      "division": "日間部四技",
+      "department": "創新創業教育中心",
+      "className": "創創中心一甲",
+      "combinedClassName": "",
+      "courseCode": "030C10009",
+      "courseName": "創業募資實務",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "陳宗澤",
+      "classroom": "旗U407教室",
+      "enrolled": 10,
+      "capacity": 30,
+      "time": "(四)5-6",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

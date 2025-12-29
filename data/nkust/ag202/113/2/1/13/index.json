@@ -1,0 +1,38 @@
+{
+  "scrapedAt": "2025-12-28T16:58:51.428Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#2",
+    "cmpAreaId": "1",
+    "dgrId": "13",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UE31",
+      "label": "(智慧機電學院)模具工程系",
+      "courses": 5,
+      "file": "data/nkust/ag202/113/2/1/13/UE31.json"
+    },
+    {
+      "id": "UE72",
+      "label": "(工學院)工業工程與管理系",
+      "courses": 12,
+      "file": "data/nkust/ag202/113/2/1/13/UE72.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 1,
+      "file": "data/nkust/ag202/113/2/1/13/XB01.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 1,
+      "file": "data/nkust/ag202/113/2/1/13/XB03.json"
+    }
+  ]
+}

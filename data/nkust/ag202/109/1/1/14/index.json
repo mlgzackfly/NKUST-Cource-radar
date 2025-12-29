@@ -1,0 +1,98 @@
+{
+  "scrapedAt": "2025-12-28T14:38:33.692Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "109#1",
+    "cmpAreaId": "1",
+    "dgrId": "14",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UE15",
+      "label": "(電機與資訊學院)資訊工程系",
+      "courses": 34,
+      "file": "data/nkust/ag202/109/1/1/14/UE15.json"
+    },
+    {
+      "id": "UE16",
+      "label": "(工學院)化學工程與材料工程系",
+      "courses": 67,
+      "file": "data/nkust/ag202/109/1/1/14/UE16.json"
+    },
+    {
+      "id": "UE23",
+      "label": "(工學院)土木工程系",
+      "courses": 84,
+      "file": "data/nkust/ag202/109/1/1/14/UE23.json"
+    },
+    {
+      "id": "UE25",
+      "label": "(智慧機電學院)機械工程系",
+      "courses": 94,
+      "file": "data/nkust/ag202/109/1/1/14/UE25.json"
+    },
+    {
+      "id": "UE27",
+      "label": "(電機與資訊學院)電機工程系",
+      "courses": 122,
+      "file": "data/nkust/ag202/109/1/1/14/UE27.json"
+    },
+    {
+      "id": "UE29",
+      "label": "(電機與資訊學院)電子工程系[建工|燕巢校區 ]",
+      "courses": 89,
+      "file": "data/nkust/ag202/109/1/1/14/UE29.json"
+    },
+    {
+      "id": "UE31",
+      "label": "(智慧機電學院)模具工程系",
+      "courses": 147,
+      "file": "data/nkust/ag202/109/1/1/14/UE31.json"
+    },
+    {
+      "id": "UE72",
+      "label": "(工學院)工業工程與管理系",
+      "courses": 34,
+      "file": "data/nkust/ag202/109/1/1/14/UE72.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 19,
+      "file": "data/nkust/ag202/109/1/1/14/XB01.json"
+    },
+    {
+      "id": "XB02",
+      "label": "(共同教育學院)博雅教育中心",
+      "courses": 96,
+      "file": "data/nkust/ag202/109/1/1/14/XB02.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 80,
+      "file": "data/nkust/ag202/109/1/1/14/XB03.json"
+    },
+    {
+      "id": "XF01",
+      "label": "(服務教育)服務教育",
+      "courses": 18,
+      "file": "data/nkust/ag202/109/1/1/14/XF01.json"
+    },
+    {
+      "id": "XM00",
+      "label": "(軍訓室)軍訓",
+      "courses": 1,
+      "file": "data/nkust/ag202/109/1/1/14/XM00.json"
+    },
+    {
+      "id": "XP00",
+      "label": "(體育室)體育課程",
+      "courses": 67,
+      "file": "data/nkust/ag202/109/1/1/14/XP00.json"
+    }
+  ]
+}

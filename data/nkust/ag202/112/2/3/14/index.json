@@ -1,0 +1,194 @@
+{
+  "scrapedAt": "2025-12-28T16:53:24.841Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "112#2",
+    "cmpAreaId": "3",
+    "dgrId": "14",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UB00",
+      "label": "(電機與資訊學院)電機與資訊學院",
+      "courses": 1,
+      "file": "data/nkust/ag202/112/2/3/14/UB00.json"
+    },
+    {
+      "id": "UB05",
+      "label": "(電機與資訊學院)智慧系統技優專班",
+      "courses": 11,
+      "file": "data/nkust/ag202/112/2/3/14/UB05.json"
+    },
+    {
+      "id": "UD02",
+      "label": "(電機與資訊學院)電子工程系[第一]",
+      "courses": 51,
+      "file": "data/nkust/ag202/112/2/3/14/UD02.json"
+    },
+    {
+      "id": "UD03",
+      "label": "(電機與資訊學院)電腦與通訊工程系",
+      "courses": 102,
+      "file": "data/nkust/ag202/112/2/3/14/UD03.json"
+    },
+    {
+      "id": "UE29",
+      "label": "(電機與資訊學院)電子工程系[建工|燕巢校區 ]",
+      "courses": 1,
+      "file": "data/nkust/ag202/112/2/3/14/UE29.json"
+    },
+    {
+      "id": "UF01",
+      "label": "(工學院)營建工程系",
+      "courses": 92,
+      "file": "data/nkust/ag202/112/2/3/14/UF01.json"
+    },
+    {
+      "id": "UF02",
+      "label": "(工學院)環境與安全衛生工程系",
+      "courses": 80,
+      "file": "data/nkust/ag202/112/2/3/14/UF02.json"
+    },
+    {
+      "id": "UF08",
+      "label": "(創新設計學院)工業設計系",
+      "courses": 34,
+      "file": "data/nkust/ag202/112/2/3/14/UF08.json"
+    },
+    {
+      "id": "UF10",
+      "label": "(智慧機電學院)機電工程系精密機械組",
+      "courses": 29,
+      "file": "data/nkust/ag202/112/2/3/14/UF10.json"
+    },
+    {
+      "id": "UF11",
+      "label": "(智慧機電學院)機電工程系智慧自動化組",
+      "courses": 24,
+      "file": "data/nkust/ag202/112/2/3/14/UF11.json"
+    },
+    {
+      "id": "UJ01",
+      "label": "(外語學院)應用英語系",
+      "courses": 191,
+      "file": "data/nkust/ag202/112/2/3/14/UJ01.json"
+    },
+    {
+      "id": "UJ02",
+      "label": "(外語學院)應用日語系",
+      "courses": 116,
+      "file": "data/nkust/ag202/112/2/3/14/UJ02.json"
+    },
+    {
+      "id": "UJ03",
+      "label": "(外語學院)應用德語系",
+      "courses": 40,
+      "file": "data/nkust/ag202/112/2/3/14/UJ03.json"
+    },
+    {
+      "id": "UJ16",
+      "label": "(外語學院)外院學程[第一]",
+      "courses": 16,
+      "file": "data/nkust/ag202/112/2/3/14/UJ16.json"
+    },
+    {
+      "id": "UK00",
+      "label": "(創新創業教育中心)創新創業教育中心",
+      "courses": 22,
+      "file": "data/nkust/ag202/112/2/3/14/UK00.json"
+    },
+    {
+      "id": "UN01",
+      "label": "(管理學院)資訊管理系",
+      "courses": 83,
+      "file": "data/nkust/ag202/112/2/3/14/UN01.json"
+    },
+    {
+      "id": "UN02",
+      "label": "(管理學院)運籌管理系",
+      "courses": 72,
+      "file": "data/nkust/ag202/112/2/3/14/UN02.json"
+    },
+    {
+      "id": "UN04",
+      "label": "(管理學院)行銷與流通管理系",
+      "courses": 63,
+      "file": "data/nkust/ag202/112/2/3/14/UN04.json"
+    },
+    {
+      "id": "UP01",
+      "label": "(管理學院)金融系",
+      "courses": 73,
+      "file": "data/nkust/ag202/112/2/3/14/UP01.json"
+    },
+    {
+      "id": "UP02",
+      "label": "(管理學院)風險管理與保險系",
+      "courses": 27,
+      "file": "data/nkust/ag202/112/2/3/14/UP02.json"
+    },
+    {
+      "id": "UP03",
+      "label": "(管理學院)財務管理系",
+      "courses": 34,
+      "file": "data/nkust/ag202/112/2/3/14/UP03.json"
+    },
+    {
+      "id": "UU00",
+      "label": "(工學院)工學院",
+      "courses": 1,
+      "file": "data/nkust/ag202/112/2/3/14/UU00.json"
+    },
+    {
+      "id": "UW00",
+      "label": "(管理學院)管理學院",
+      "courses": 12,
+      "file": "data/nkust/ag202/112/2/3/14/UW00.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 31,
+      "file": "data/nkust/ag202/112/2/3/14/XB01.json"
+    },
+    {
+      "id": "XB02",
+      "label": "(共同教育學院)博雅教育中心",
+      "courses": 141,
+      "file": "data/nkust/ag202/112/2/3/14/XB02.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 117,
+      "file": "data/nkust/ag202/112/2/3/14/XB03.json"
+    },
+    {
+      "id": "XF01",
+      "label": "(服務教育)服務教育",
+      "courses": 33,
+      "file": "data/nkust/ag202/112/2/3/14/XF01.json"
+    },
+    {
+      "id": "XK05",
+      "label": "(跨校生)校際選課",
+      "courses": 39,
+      "file": "data/nkust/ag202/112/2/3/14/XK05.json"
+    },
+    {
+      "id": "XM00",
+      "label": "(軍訓室)軍訓",
+      "courses": 1,
+      "file": "data/nkust/ag202/112/2/3/14/XM00.json"
+    },
+    {
+      "id": "XP00",
+      "label": "(體育室)體育課程",
+      "courses": 73,
+      "file": "data/nkust/ag202/112/2/3/14/XP00.json"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "scrapedAt": "2025-12-28T15:16:02.930Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "109#2",
+    "cmpAreaId": "2",
+    "dgrId": "15",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UM83",
+      "label": "(管理學院)國際企業系碩士班[建工/燕巢校區]",
+      "courses": 3,
+      "file": "data/nkust/ag202/109/2/2/15/UM83.json"
+    }
+  ]
+}

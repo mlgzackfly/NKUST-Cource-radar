@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:58:20.320Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "111#1",
+    "cmp_area_id": "4",
+    "dgr_id": "42",
+    "unt_id": "XB01",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "XB01",
+    "label": "(共同教育學院)基礎教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "4335",
+      "campus": "楠梓校區",
+      "division": "進四技產學攜手專班",
+      "department": "基礎教育中心",
+      "className": "進基礎四產攜一甲",
+      "combinedClassName": "進四輪機產學一甲",
+      "courseCode": "041G00004",
+      "courseName": "中文閱讀與表達",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "柳秀英",
+      "classroom": "10203教室",
+      "enrolled": 18,
+      "capacity": 55,
+      "time": "(一)10-11",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "進四輪產一"
+    }
+  ]
+}

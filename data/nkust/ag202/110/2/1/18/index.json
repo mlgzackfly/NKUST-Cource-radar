@@ -1,0 +1,56 @@
+{
+  "scrapedAt": "2025-12-28T15:50:52.659Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "110#2",
+    "cmpAreaId": "1",
+    "dgrId": "18",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UE16",
+      "label": "(工學院)化學工程與材料工程系",
+      "courses": 10,
+      "file": "data/nkust/ag202/110/2/1/18/UE16.json"
+    },
+    {
+      "id": "UE19",
+      "label": "(電機與資訊學院)電機工程系博士班",
+      "courses": 28,
+      "file": "data/nkust/ag202/110/2/1/18/UE19.json"
+    },
+    {
+      "id": "UE25",
+      "label": "(智慧機電學院)機械工程系",
+      "courses": 25,
+      "file": "data/nkust/ag202/110/2/1/18/UE25.json"
+    },
+    {
+      "id": "UE29",
+      "label": "(電機與資訊學院)電子工程系[建工|燕巢校區 ]",
+      "courses": 20,
+      "file": "data/nkust/ag202/110/2/1/18/UE29.json"
+    },
+    {
+      "id": "UE31",
+      "label": "(智慧機電學院)模具工程系",
+      "courses": 14,
+      "file": "data/nkust/ag202/110/2/1/18/UE31.json"
+    },
+    {
+      "id": "UE68",
+      "label": "(工學院)土木工程系土木工程科技博士班",
+      "courses": 18,
+      "file": "data/nkust/ag202/110/2/1/18/UE68.json"
+    },
+    {
+      "id": "UE72",
+      "label": "(工學院)工業工程與管理系",
+      "courses": 11,
+      "file": "data/nkust/ag202/110/2/1/18/UE72.json"
+    }
+  ]
+}

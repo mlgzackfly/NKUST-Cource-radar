@@ -1,0 +1,26 @@
+{
+  "scrapedAt": "2025-12-28T16:47:29.268Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "111#2",
+    "cmpAreaId": "1",
+    "dgrId": "16",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UE17",
+      "label": "(工學院)化學工程與材料工程系碩士班[建",
+      "courses": 5,
+      "file": "data/nkust/ag202/111/2/1/16/UE17.json"
+    },
+    {
+      "id": "UM83",
+      "label": "(管理學院)國際企業系碩士班[建工/燕巢校區]",
+      "courses": 3,
+      "file": "data/nkust/ag202/111/2/1/16/UM83.json"
+    }
+  ]
+}

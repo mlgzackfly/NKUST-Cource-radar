@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:29:31.577Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#1",
+    "cmp_area_id": "1",
+    "dgr_id": "17",
+    "unt_id": "UB00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UB00",
+    "label": "(電機與資訊學院)電機與資訊學院"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "5654",
+      "campus": "建工校區",
+      "division": "日間部碩士",
+      "department": "電機與資訊學院",
+      "className": "電資院課程碩一甲",
+      "combinedClassName": "",
+      "courseCode": "600B10022",
+      "courseName": "迎向碳中和世代，能源轉型技術導論微學分",
+      "credits": 1,
+      "lectureHours": 18,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "林立夫",
+      "classroom": "",
+      "enrolled": 8,
+      "capacity": 30,
+      "time": "(一)5-6",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "此門課程為微學分課程（18小時/1學分）。 上課日期：09/27、10/04、10/18、10/25、11/01、11/15、11/22、11/29、12/06共9週18小時，上課教室會公告於電機與資訊學院網頁及mail通知上課同學。"
+    }
+  ]
+}

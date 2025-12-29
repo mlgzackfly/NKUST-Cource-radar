@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:48:44.113Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "111#2",
+    "cmp_area_id": "4",
+    "dgr_id": "14",
+    "unt_id": "UK00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UK00",
+    "label": "(創新創業教育中心)創新創業教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "1927",
+      "campus": "楠梓校區",
+      "division": "日間部四技",
+      "department": "創新創業教育中心",
+      "className": "創創中心二甲",
+      "combinedClassName": "",
+      "courseCode": "030C10008",
+      "courseName": "創新與創業",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "陳錦富",
+      "classroom": "10201教室",
+      "enrolled": 23,
+      "capacity": 50,
+      "time": "(二)3-4",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "為校級【創新與創業學分學程】&【第二專長: 創新管理與創業實務】認列課程。"
+    }
+  ]
+}

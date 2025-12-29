@@ -1,0 +1,20 @@
+{
+  "scrapedAt": "2025-12-28T16:59:37.624Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#2",
+    "cmpAreaId": "3",
+    "dgrId": "12",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "XK05",
+      "label": "(跨校生)校際選課",
+      "courses": 5,
+      "file": "data/nkust/ag202/113/2/3/12/XK05.json"
+    }
+  ]
+}

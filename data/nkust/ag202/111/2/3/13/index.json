@@ -1,0 +1,38 @@
+{
+  "scrapedAt": "2025-12-28T16:48:05.879Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "111#2",
+    "cmpAreaId": "3",
+    "dgrId": "13",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UJ01",
+      "label": "(外語學院)應用英語系",
+      "courses": 31,
+      "file": "data/nkust/ag202/111/2/3/13/UJ01.json"
+    },
+    {
+      "id": "UJ02",
+      "label": "(外語學院)應用日語系",
+      "courses": 44,
+      "file": "data/nkust/ag202/111/2/3/13/UJ02.json"
+    },
+    {
+      "id": "XF01",
+      "label": "(服務教育)服務教育",
+      "courses": 2,
+      "file": "data/nkust/ag202/111/2/3/13/XF01.json"
+    },
+    {
+      "id": "XK05",
+      "label": "(跨校生)校際選課",
+      "courses": 1,
+      "file": "data/nkust/ag202/111/2/3/13/XK05.json"
+    }
+  ]
+}

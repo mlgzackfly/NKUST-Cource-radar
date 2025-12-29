@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T17:00:50.844Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "113#2",
+    "cmp_area_id": "5",
+    "dgr_id": "42",
+    "unt_id": "UR11",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UR11",
+    "label": "(海事學院)輪機產學攜手專班"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "3134",
+      "campus": "旗津校區",
+      "division": "進四技產學攜手專班",
+      "department": "輪機產學攜手專班",
+      "className": "進四輪機產學三甲",
+      "combinedClassName": "",
+      "courseCode": "313G00024",
+      "courseName": "自動控制實習",
+      "credits": 4,
+      "lectureHours": 4,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "李俊岳",
+      "classroom": "1405自動控制實驗室",
+      "enrolled": 15,
+      "capacity": 55,
+      "time": "(六)1-4",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "僅限本班生"
+    }
+  ]
+}

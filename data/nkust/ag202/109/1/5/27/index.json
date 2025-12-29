@@ -1,0 +1,20 @@
+{
+  "scrapedAt": "2025-12-28T14:40:39.854Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "109#1",
+    "cmpAreaId": "5",
+    "dgrId": "27",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UR06",
+      "label": "(海事學院)航運技術系碩士班",
+      "courses": 5,
+      "file": "data/nkust/ag202/109/1/5/27/UR06.json"
+    }
+  ]
+}

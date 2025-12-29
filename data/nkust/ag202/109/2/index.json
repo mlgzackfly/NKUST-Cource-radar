@@ -1,0 +1,870 @@
+{
+  "scrapedAt": "2025-12-28T15:15:14.190Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "109#2",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "campuses": [
+    {
+      "id": "1",
+      "degrees": [
+        {
+          "id": "11",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/11/index.json"
+        },
+        {
+          "id": "12",
+          "units": 2,
+          "courses": 85,
+          "indexFile": "data/nkust/ag202/109/2/1/12/index.json"
+        },
+        {
+          "id": "13",
+          "units": 4,
+          "courses": 19,
+          "indexFile": "data/nkust/ag202/109/2/1/13/index.json"
+        },
+        {
+          "id": "14",
+          "units": 15,
+          "courses": 871,
+          "indexFile": "data/nkust/ag202/109/2/1/14/index.json"
+        },
+        {
+          "id": "15",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/15/index.json"
+        },
+        {
+          "id": "16",
+          "units": 1,
+          "courses": 5,
+          "indexFile": "data/nkust/ag202/109/2/1/16/index.json"
+        },
+        {
+          "id": "17",
+          "units": 10,
+          "courses": 178,
+          "indexFile": "data/nkust/ag202/109/2/1/17/index.json"
+        },
+        {
+          "id": "18",
+          "units": 7,
+          "courses": 137,
+          "indexFile": "data/nkust/ag202/109/2/1/18/index.json"
+        },
+        {
+          "id": "19",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/19/index.json"
+        },
+        {
+          "id": "21",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/21/index.json"
+        },
+        {
+          "id": "23",
+          "units": 4,
+          "courses": 30,
+          "indexFile": "data/nkust/ag202/109/2/1/23/index.json"
+        },
+        {
+          "id": "24",
+          "units": 17,
+          "courses": 417,
+          "indexFile": "data/nkust/ag202/109/2/1/24/index.json"
+        },
+        {
+          "id": "25",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/25/index.json"
+        },
+        {
+          "id": "26",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/26/index.json"
+        },
+        {
+          "id": "27",
+          "units": 20,
+          "courses": 172,
+          "indexFile": "data/nkust/ag202/109/2/1/27/index.json"
+        },
+        {
+          "id": "29",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/29/index.json"
+        },
+        {
+          "id": "30",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/30/index.json"
+        },
+        {
+          "id": "31",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/31/index.json"
+        },
+        {
+          "id": "33",
+          "units": 12,
+          "courses": 150,
+          "indexFile": "data/nkust/ag202/109/2/1/33/index.json"
+        },
+        {
+          "id": "40",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/40/index.json"
+        },
+        {
+          "id": "41",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/41/index.json"
+        },
+        {
+          "id": "42",
+          "units": 3,
+          "courses": 27,
+          "indexFile": "data/nkust/ag202/109/2/1/42/index.json"
+        },
+        {
+          "id": "45",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/1/45/index.json"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "degrees": [
+        {
+          "id": "11",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/11/index.json"
+        },
+        {
+          "id": "12",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/12/index.json"
+        },
+        {
+          "id": "13",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/13/index.json"
+        },
+        {
+          "id": "14",
+          "units": 17,
+          "courses": 529,
+          "indexFile": "data/nkust/ag202/109/2/2/14/index.json"
+        },
+        {
+          "id": "15",
+          "units": 1,
+          "courses": 3,
+          "indexFile": "data/nkust/ag202/109/2/2/15/index.json"
+        },
+        {
+          "id": "16",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/16/index.json"
+        },
+        {
+          "id": "17",
+          "units": 9,
+          "courses": 88,
+          "indexFile": "data/nkust/ag202/109/2/2/17/index.json"
+        },
+        {
+          "id": "18",
+          "units": 2,
+          "courses": 27,
+          "indexFile": "data/nkust/ag202/109/2/2/18/index.json"
+        },
+        {
+          "id": "19",
+          "units": 1,
+          "courses": 7,
+          "indexFile": "data/nkust/ag202/109/2/2/19/index.json"
+        },
+        {
+          "id": "21",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/21/index.json"
+        },
+        {
+          "id": "23",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/23/index.json"
+        },
+        {
+          "id": "24",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/24/index.json"
+        },
+        {
+          "id": "25",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/25/index.json"
+        },
+        {
+          "id": "26",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/26/index.json"
+        },
+        {
+          "id": "27",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/27/index.json"
+        },
+        {
+          "id": "29",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/29/index.json"
+        },
+        {
+          "id": "30",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/30/index.json"
+        },
+        {
+          "id": "31",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/31/index.json"
+        },
+        {
+          "id": "33",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/33/index.json"
+        },
+        {
+          "id": "40",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/40/index.json"
+        },
+        {
+          "id": "41",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/41/index.json"
+        },
+        {
+          "id": "42",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/42/index.json"
+        },
+        {
+          "id": "45",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/2/45/index.json"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "degrees": [
+        {
+          "id": "11",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/11/index.json"
+        },
+        {
+          "id": "12",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/12/index.json"
+        },
+        {
+          "id": "13",
+          "units": 3,
+          "courses": 13,
+          "indexFile": "data/nkust/ag202/109/2/3/13/index.json"
+        },
+        {
+          "id": "14",
+          "units": 30,
+          "courses": 1642,
+          "indexFile": "data/nkust/ag202/109/2/3/14/index.json"
+        },
+        {
+          "id": "15",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/15/index.json"
+        },
+        {
+          "id": "16",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/16/index.json"
+        },
+        {
+          "id": "17",
+          "units": 28,
+          "courses": 363,
+          "indexFile": "data/nkust/ag202/109/2/3/17/index.json"
+        },
+        {
+          "id": "18",
+          "units": 3,
+          "courses": 192,
+          "indexFile": "data/nkust/ag202/109/2/3/18/index.json"
+        },
+        {
+          "id": "19",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/19/index.json"
+        },
+        {
+          "id": "21",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/21/index.json"
+        },
+        {
+          "id": "23",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/23/index.json"
+        },
+        {
+          "id": "24",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/24/index.json"
+        },
+        {
+          "id": "25",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/25/index.json"
+        },
+        {
+          "id": "26",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/26/index.json"
+        },
+        {
+          "id": "27",
+          "units": 18,
+          "courses": 147,
+          "indexFile": "data/nkust/ag202/109/2/3/27/index.json"
+        },
+        {
+          "id": "29",
+          "units": 1,
+          "courses": 1,
+          "indexFile": "data/nkust/ag202/109/2/3/29/index.json"
+        },
+        {
+          "id": "30",
+          "units": 2,
+          "courses": 10,
+          "indexFile": "data/nkust/ag202/109/2/3/30/index.json"
+        },
+        {
+          "id": "31",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/31/index.json"
+        },
+        {
+          "id": "33",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/33/index.json"
+        },
+        {
+          "id": "40",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/40/index.json"
+        },
+        {
+          "id": "41",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/41/index.json"
+        },
+        {
+          "id": "42",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/42/index.json"
+        },
+        {
+          "id": "45",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/3/45/index.json"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "degrees": [
+        {
+          "id": "11",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/11/index.json"
+        },
+        {
+          "id": "12",
+          "units": 5,
+          "courses": 60,
+          "indexFile": "data/nkust/ag202/109/2/4/12/index.json"
+        },
+        {
+          "id": "13",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/13/index.json"
+        },
+        {
+          "id": "14",
+          "units": 21,
+          "courses": 805,
+          "indexFile": "data/nkust/ag202/109/2/4/14/index.json"
+        },
+        {
+          "id": "15",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/15/index.json"
+        },
+        {
+          "id": "16",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/16/index.json"
+        },
+        {
+          "id": "17",
+          "units": 13,
+          "courses": 106,
+          "indexFile": "data/nkust/ag202/109/2/4/17/index.json"
+        },
+        {
+          "id": "18",
+          "units": 3,
+          "courses": 51,
+          "indexFile": "data/nkust/ag202/109/2/4/18/index.json"
+        },
+        {
+          "id": "19",
+          "units": 1,
+          "courses": 3,
+          "indexFile": "data/nkust/ag202/109/2/4/19/index.json"
+        },
+        {
+          "id": "21",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/21/index.json"
+        },
+        {
+          "id": "23",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/23/index.json"
+        },
+        {
+          "id": "24",
+          "units": 17,
+          "courses": 347,
+          "indexFile": "data/nkust/ag202/109/2/4/24/index.json"
+        },
+        {
+          "id": "25",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/25/index.json"
+        },
+        {
+          "id": "26",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/26/index.json"
+        },
+        {
+          "id": "27",
+          "units": 9,
+          "courses": 57,
+          "indexFile": "data/nkust/ag202/109/2/4/27/index.json"
+        },
+        {
+          "id": "29",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/29/index.json"
+        },
+        {
+          "id": "30",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/30/index.json"
+        },
+        {
+          "id": "31",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/31/index.json"
+        },
+        {
+          "id": "33",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/33/index.json"
+        },
+        {
+          "id": "40",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/40/index.json"
+        },
+        {
+          "id": "41",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/41/index.json"
+        },
+        {
+          "id": "42",
+          "units": 5,
+          "courses": 62,
+          "indexFile": "data/nkust/ag202/109/2/4/42/index.json"
+        },
+        {
+          "id": "45",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/4/45/index.json"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "degrees": [
+        {
+          "id": "11",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/11/index.json"
+        },
+        {
+          "id": "12",
+          "units": 6,
+          "courses": 170,
+          "indexFile": "data/nkust/ag202/109/2/5/12/index.json"
+        },
+        {
+          "id": "13",
+          "units": 5,
+          "courses": 51,
+          "indexFile": "data/nkust/ag202/109/2/5/13/index.json"
+        },
+        {
+          "id": "14",
+          "units": 8,
+          "courses": 164,
+          "indexFile": "data/nkust/ag202/109/2/5/14/index.json"
+        },
+        {
+          "id": "15",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/15/index.json"
+        },
+        {
+          "id": "16",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/16/index.json"
+        },
+        {
+          "id": "17",
+          "units": 4,
+          "courses": 43,
+          "indexFile": "data/nkust/ag202/109/2/5/17/index.json"
+        },
+        {
+          "id": "18",
+          "units": 1,
+          "courses": 4,
+          "indexFile": "data/nkust/ag202/109/2/5/18/index.json"
+        },
+        {
+          "id": "19",
+          "units": 1,
+          "courses": 36,
+          "indexFile": "data/nkust/ag202/109/2/5/19/index.json"
+        },
+        {
+          "id": "21",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/21/index.json"
+        },
+        {
+          "id": "23",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/23/index.json"
+        },
+        {
+          "id": "24",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/24/index.json"
+        },
+        {
+          "id": "25",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/25/index.json"
+        },
+        {
+          "id": "26",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/26/index.json"
+        },
+        {
+          "id": "27",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/27/index.json"
+        },
+        {
+          "id": "29",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/29/index.json"
+        },
+        {
+          "id": "30",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/30/index.json"
+        },
+        {
+          "id": "31",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/31/index.json"
+        },
+        {
+          "id": "33",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/33/index.json"
+        },
+        {
+          "id": "40",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/40/index.json"
+        },
+        {
+          "id": "41",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/41/index.json"
+        },
+        {
+          "id": "42",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/42/index.json"
+        },
+        {
+          "id": "45",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/5/45/index.json"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "degrees": [
+        {
+          "id": "11",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/11/index.json"
+        },
+        {
+          "id": "12",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/12/index.json"
+        },
+        {
+          "id": "13",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/13/index.json"
+        },
+        {
+          "id": "14",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/14/index.json"
+        },
+        {
+          "id": "15",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/15/index.json"
+        },
+        {
+          "id": "16",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/16/index.json"
+        },
+        {
+          "id": "17",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/17/index.json"
+        },
+        {
+          "id": "18",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/18/index.json"
+        },
+        {
+          "id": "19",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/19/index.json"
+        },
+        {
+          "id": "21",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/21/index.json"
+        },
+        {
+          "id": "23",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/23/index.json"
+        },
+        {
+          "id": "24",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/24/index.json"
+        },
+        {
+          "id": "25",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/25/index.json"
+        },
+        {
+          "id": "26",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/26/index.json"
+        },
+        {
+          "id": "27",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/27/index.json"
+        },
+        {
+          "id": "29",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/29/index.json"
+        },
+        {
+          "id": "30",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/30/index.json"
+        },
+        {
+          "id": "31",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/31/index.json"
+        },
+        {
+          "id": "33",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/33/index.json"
+        },
+        {
+          "id": "40",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/40/index.json"
+        },
+        {
+          "id": "41",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/41/index.json"
+        },
+        {
+          "id": "42",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/42/index.json"
+        },
+        {
+          "id": "45",
+          "units": 0,
+          "courses": 0,
+          "indexFile": "data/nkust/ag202/109/2/6/45/index.json"
+        }
+      ]
+    }
+  ]
+}

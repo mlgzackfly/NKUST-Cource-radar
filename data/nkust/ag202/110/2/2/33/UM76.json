@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:51:26.258Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#2",
+    "cmp_area_id": "2",
+    "dgr_id": "33",
+    "unt_id": "UM76",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UM76",
+    "label": "(商業智慧學院)觀光管理系"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "2113",
+      "campus": "燕巢校區",
+      "division": "進修學院二技",
+      "department": "觀光管理系",
+      "className": "進修學院觀三甲",
+      "combinedClassName": "",
+      "courseCode": "235J10254",
+      "courseName": "手工咖啡調製實務",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "游仁良",
+      "classroom": "MB202",
+      "enrolled": 23,
+      "capacity": 20,
+      "time": "(六)5-6",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

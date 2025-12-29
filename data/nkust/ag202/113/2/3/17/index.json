@@ -1,0 +1,152 @@
+{
+  "scrapedAt": "2025-12-28T16:59:56.100Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#2",
+    "cmpAreaId": "3",
+    "dgrId": "17",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UB01",
+      "label": "(電機與資訊學院)光電工程研究所",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/2/3/17/UB01.json"
+    },
+    {
+      "id": "UB02",
+      "label": "(電機與資訊學院)電機系智慧自動化系統碩士班",
+      "courses": 15,
+      "file": "data/nkust/ag202/113/2/3/17/UB02.json"
+    },
+    {
+      "id": "UD07",
+      "label": "(電機與資訊學院)電子工程系碩士班[第一]",
+      "courses": 26,
+      "file": "data/nkust/ag202/113/2/3/17/UD07.json"
+    },
+    {
+      "id": "UD13",
+      "label": "(電機與資訊學院)電腦與通訊工程系碩士班",
+      "courses": 13,
+      "file": "data/nkust/ag202/113/2/3/17/UD13.json"
+    },
+    {
+      "id": "UF08",
+      "label": "(創新設計學院)工業設計系",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/2/3/17/UF08.json"
+    },
+    {
+      "id": "UF09",
+      "label": "(智慧機電學院)機電工程系",
+      "courses": 17,
+      "file": "data/nkust/ag202/113/2/3/17/UF09.json"
+    },
+    {
+      "id": "UF19",
+      "label": "(工學院)環境與安全衛生工程系碩士班",
+      "courses": 7,
+      "file": "data/nkust/ag202/113/2/3/17/UF19.json"
+    },
+    {
+      "id": "UJ07",
+      "label": "(外語學院)應用日語系碩士班",
+      "courses": 10,
+      "file": "data/nkust/ag202/113/2/3/17/UJ07.json"
+    },
+    {
+      "id": "UJ08",
+      "label": "(外語學院)應用英語系口筆譯碩士班",
+      "courses": 11,
+      "file": "data/nkust/ag202/113/2/3/17/UJ08.json"
+    },
+    {
+      "id": "UJ09",
+      "label": "(外語學院)應用英語系應用語言學與英語教學",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/2/3/17/UJ09.json"
+    },
+    {
+      "id": "UJ10",
+      "label": "(外語學院)應用德語系碩士班",
+      "courses": 9,
+      "file": "data/nkust/ag202/113/2/3/17/UJ10.json"
+    },
+    {
+      "id": "UJ11",
+      "label": "(工學院)營建工程系碩士班[第一]",
+      "courses": 31,
+      "file": "data/nkust/ag202/113/2/3/17/UJ11.json"
+    },
+    {
+      "id": "UN03",
+      "label": "(管理學院)科技法律研究所",
+      "courses": 25,
+      "file": "data/nkust/ag202/113/2/3/17/UN03.json"
+    },
+    {
+      "id": "UN08",
+      "label": "(管理學院)行銷與流通管理系碩士班[第一]",
+      "courses": 20,
+      "file": "data/nkust/ag202/113/2/3/17/UN08.json"
+    },
+    {
+      "id": "UN11",
+      "label": "(管理學院)資訊管理系電子商務碩士班",
+      "courses": 14,
+      "file": "data/nkust/ag202/113/2/3/17/UN11.json"
+    },
+    {
+      "id": "UN12",
+      "label": "(管理學院)資訊管理系碩士班[第一]",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/2/3/17/UN12.json"
+    },
+    {
+      "id": "UN14",
+      "label": "(管理學院)運籌管理系碩士班[第一]",
+      "courses": 5,
+      "file": "data/nkust/ag202/113/2/3/17/UN14.json"
+    },
+    {
+      "id": "UN22",
+      "label": "(管理學院)國際管理碩士學位學程",
+      "courses": 18,
+      "file": "data/nkust/ag202/113/2/3/17/UN22.json"
+    },
+    {
+      "id": "UN37",
+      "label": "(管理學院)運籌管理系商務經營管理碩士班",
+      "courses": 4,
+      "file": "data/nkust/ag202/113/2/3/17/UN37.json"
+    },
+    {
+      "id": "UP09",
+      "label": "(管理學院)金融系碩士班[第一]",
+      "courses": 19,
+      "file": "data/nkust/ag202/113/2/3/17/UP09.json"
+    },
+    {
+      "id": "UP13",
+      "label": "(管理學院)財務管理系碩士班",
+      "courses": 9,
+      "file": "data/nkust/ag202/113/2/3/17/UP13.json"
+    },
+    {
+      "id": "UP22",
+      "label": "(管理學院)風險管理與保險系碩士班[第一]",
+      "courses": 9,
+      "file": "data/nkust/ag202/113/2/3/17/UP22.json"
+    },
+    {
+      "id": "XK05",
+      "label": "(跨校生)校際選課",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/2/3/17/XK05.json"
+    }
+  ]
+}

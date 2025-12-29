@@ -1,0 +1,26 @@
+{
+  "scrapedAt": "2025-12-28T16:50:29.384Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "112#1",
+    "cmpAreaId": "2",
+    "dgrId": "15",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UM83",
+      "label": "(管理學院)國際企業系碩士班[建工/燕巢校區]",
+      "courses": 2,
+      "file": "data/nkust/ag202/112/1/2/15/UM83.json"
+    },
+    {
+      "id": "UM87",
+      "label": "(管理學院)國際貴金屬與珠寶行銷產業碩士專",
+      "courses": 1,
+      "file": "data/nkust/ag202/112/1/2/15/UM87.json"
+    }
+  ]
+}

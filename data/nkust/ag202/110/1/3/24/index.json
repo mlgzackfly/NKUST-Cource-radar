@@ -1,0 +1,44 @@
+{
+  "scrapedAt": "2025-12-28T15:30:36.634Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "110#1",
+    "cmpAreaId": "3",
+    "dgrId": "24",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UP01",
+      "label": "(管理學院)金融系",
+      "courses": 17,
+      "file": "data/nkust/ag202/110/1/3/24/UP01.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 1,
+      "file": "data/nkust/ag202/110/1/3/24/XB01.json"
+    },
+    {
+      "id": "XB02",
+      "label": "(共同教育學院)博雅教育中心",
+      "courses": 2,
+      "file": "data/nkust/ag202/110/1/3/24/XB02.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 2,
+      "file": "data/nkust/ag202/110/1/3/24/XB03.json"
+    },
+    {
+      "id": "XP00",
+      "label": "(體育室)體育課程",
+      "courses": 2,
+      "file": "data/nkust/ag202/110/1/3/24/XP00.json"
+    }
+  ]
+}

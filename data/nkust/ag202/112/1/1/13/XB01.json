@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:49:41.595Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "112#1",
+    "cmp_area_id": "1",
+    "dgr_id": "13",
+    "unt_id": "XB01",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "XB01",
+    "label": "(共同教育學院)基礎教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "4206",
+      "campus": "建工校區",
+      "division": "日間部二技",
+      "department": "基礎教育中心",
+      "className": "基礎二技三甲(建",
+      "combinedClassName": "技工三甲",
+      "courseCode": "041C00021",
+      "courseName": "實務應用文",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "蕭麗娟",
+      "classroom": "育301",
+      "enrolled": 38,
+      "capacity": 55,
+      "time": "(四)5-6",
+      "englishTaught": "否",
+      "distanceLearning": "非同步遠距",
+      "syllabus": null,
+      "note": "【經111-2校課通過】遠距教學課程，班級: 技工三甲 非同步+同步遠距"
+    }
+  ]
+}

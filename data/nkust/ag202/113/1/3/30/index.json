@@ -1,0 +1,20 @@
+{
+  "scrapedAt": "2025-12-28T16:58:05.409Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#1",
+    "cmpAreaId": "3",
+    "dgrId": "30",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UN07",
+      "label": "(管理學院)高階主管經營管理碩專班",
+      "courses": 5,
+      "file": "data/nkust/ag202/113/1/3/30/UN07.json"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "scrapedAt": "2025-12-28T16:58:36.312Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#1",
+    "cmpAreaId": "5",
+    "dgrId": "13",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UR01",
+      "label": "(海事學院)航運技術系",
+      "courses": 34,
+      "file": "data/nkust/ag202/113/1/5/13/UR01.json"
+    },
+    {
+      "id": "UR02",
+      "label": "(海事學院)輪機工程系",
+      "courses": 17,
+      "file": "data/nkust/ag202/113/1/5/13/UR02.json"
+    },
+    {
+      "id": "UR16",
+      "label": "(海事學院)輪機工程系學士後多元專長培力課",
+      "courses": 31,
+      "file": "data/nkust/ag202/113/1/5/13/UR16.json"
+    },
+    {
+      "id": "UR17",
+      "label": "(海事學院)航運技術系學士後多元專長培力課",
+      "courses": 13,
+      "file": "data/nkust/ag202/113/1/5/13/UR17.json"
+    },
+    {
+      "id": "XB01",
+      "label": "(共同教育學院)基礎教育中心",
+      "courses": 1,
+      "file": "data/nkust/ag202/113/1/5/13/XB01.json"
+    },
+    {
+      "id": "XF01",
+      "label": "(服務教育)服務教育",
+      "courses": 2,
+      "file": "data/nkust/ag202/113/1/5/13/XF01.json"
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "scrapedAt": "2025-12-28T16:59:33.315Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#2",
+    "cmpAreaId": "2",
+    "dgrId": "17",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UC45",
+      "label": "(商業智慧學院)金融資訊系",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/2/2/17/UC45.json"
+    },
+    {
+      "id": "UH54",
+      "label": "(管理學院)人力資源發展系碩士班",
+      "courses": 7,
+      "file": "data/nkust/ag202/113/2/2/17/UH54.json"
+    },
+    {
+      "id": "UH58",
+      "label": "(創新設計學院)文化創意產業系",
+      "courses": 14,
+      "file": "data/nkust/ag202/113/2/2/17/UH58.json"
+    },
+    {
+      "id": "UM44",
+      "label": "(商業智慧學院)觀光管理系觀光與餐旅管理碩士班",
+      "courses": 7,
+      "file": "data/nkust/ag202/113/2/2/17/UM44.json"
+    },
+    {
+      "id": "UM74",
+      "label": "(管理學院)企業管理系",
+      "courses": 7,
+      "file": "data/nkust/ag202/113/2/2/17/UM74.json"
+    },
+    {
+      "id": "UM83",
+      "label": "(管理學院)國際企業系碩士班[建工/燕巢校區]",
+      "courses": 8,
+      "file": "data/nkust/ag202/113/2/2/17/UM83.json"
+    },
+    {
+      "id": "UP15",
+      "label": "(商業智慧學院)會計資訊系碩士班",
+      "courses": 7,
+      "file": "data/nkust/ag202/113/2/2/17/UP15.json"
+    },
+    {
+      "id": "UT01",
+      "label": "(商業智慧學院)智慧商務系",
+      "courses": 19,
+      "file": "data/nkust/ag202/113/2/2/17/UT01.json"
+    },
+    {
+      "id": "UT03",
+      "label": "(商業智慧學院)財政稅務系",
+      "courses": 6,
+      "file": "data/nkust/ag202/113/2/2/17/UT03.json"
+    }
+  ]
+}

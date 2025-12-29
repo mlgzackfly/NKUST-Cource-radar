@@ -1,0 +1,50 @@
+{
+  "scrapedAt": "2025-12-28T17:00:01.981Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#2",
+    "cmpAreaId": "3",
+    "dgrId": "18",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UE19",
+      "label": "(電機與資訊學院)電機工程系博士班",
+      "courses": 2,
+      "file": "data/nkust/ag202/113/2/3/18/UE19.json"
+    },
+    {
+      "id": "UE29",
+      "label": "(電機與資訊學院)電子工程系[建工|燕巢校區 ]",
+      "courses": 3,
+      "file": "data/nkust/ag202/113/2/3/18/UE29.json"
+    },
+    {
+      "id": "UF02",
+      "label": "(工學院)環境與安全衛生工程系",
+      "courses": 2,
+      "file": "data/nkust/ag202/113/2/3/18/UF02.json"
+    },
+    {
+      "id": "UF09",
+      "label": "(智慧機電學院)機電工程系",
+      "courses": 4,
+      "file": "data/nkust/ag202/113/2/3/18/UF09.json"
+    },
+    {
+      "id": "UF13",
+      "label": "(工學院)工學院工程科技博士班",
+      "courses": 45,
+      "file": "data/nkust/ag202/113/2/3/18/UF13.json"
+    },
+    {
+      "id": "UN23",
+      "label": "(管理學院)管理學院博士班",
+      "courses": 18,
+      "file": "data/nkust/ag202/113/2/3/18/UN23.json"
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
-// Cache this route for 1 hour (best-effort; platform dependent).
-export const revalidate = 3600;
+// Always fetch fresh data to reflect new imports immediately
+export const dynamic = "force-dynamic";
 
 export async function GET(): Promise<Response> {
   if (!prisma) {
@@ -49,21 +49,13 @@ export async function GET(): Promise<Response> {
     Array<{ department: string | null }>,
   ];
 
-  return Response.json(
-    {
-      years: years.map((x) => x.year),
-      terms: terms.map((x) => x.term),
-      campuses: campuses.map((x) => x.campus).filter(Boolean),
-      divisions: divisions.map((x) => x.division).filter(Boolean),
-      departments: departments.map((x) => x.department).filter(Boolean),
-    },
-    {
-      headers: {
-        // Best-effort caching. (Works best on platforms that respect s-maxage.)
-        "Cache-Control": "public, max-age=0, s-maxage=3600, stale-while-revalidate=86400",
-      },
-    },
-  );
+  return Response.json({
+    years: years.map((x) => x.year),
+    terms: terms.map((x) => x.term),
+    campuses: campuses.map((x) => x.campus).filter(Boolean),
+    divisions: divisions.map((x) => x.division).filter(Boolean),
+    departments: departments.map((x) => x.department).filter(Boolean),
+  });
 }
 
 

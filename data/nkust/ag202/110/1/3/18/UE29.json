@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:30:34.202Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#1",
+    "cmp_area_id": "3",
+    "dgr_id": "18",
+    "unt_id": "UE29",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UE29",
+    "label": "(電機與資訊學院)電子工程系[建工|燕巢校區 ]"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "1012",
+      "campus": "第一校區",
+      "division": "日間部博士",
+      "department": "電子工程系[建工|燕巢校區 ]",
+      "className": "博子一甲",
+      "combinedClassName": "電通碩士班一甲,電通碩士班二甲",
+      "courseCode": "222A10225",
+      "courseName": "網路與排隊理論",
+      "credits": 3,
+      "lectureHours": 3,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "蔡碩仁",
+      "classroom": "F455",
+      "enrolled": 6,
+      "capacity": 55,
+      "time": "(二)2-4",
+      "englishTaught": "是",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "經109-2校課程委員會通過之全英語授課"
+    }
+  ]
+}

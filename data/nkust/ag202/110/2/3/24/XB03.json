@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T15:51:55.977Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "110#2",
+    "cmp_area_id": "3",
+    "dgr_id": "24",
+    "unt_id": "XB03",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "XB03",
+    "label": "(共同教育學院)外語教育中心"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "5104",
+      "campus": "第一校區",
+      "division": "進修部四技",
+      "department": "外語教育中心",
+      "className": "進外語四技一第一",
+      "combinedClassName": "進四技金融一甲",
+      "courseCode": "043F00008",
+      "courseName": "實用英文(二)",
+      "credits": 2,
+      "lectureHours": 2,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "陳楓旻",
+      "classroom": "E304",
+      "enrolled": 36,
+      "capacity": 55,
+      "time": "(六)10-11",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "不開放選課：【限進修部金融系選修】"
+    }
+  ]
+}

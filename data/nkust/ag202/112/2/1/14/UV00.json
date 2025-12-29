@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:52:36.204Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "112#2",
+    "cmp_area_id": "1",
+    "dgr_id": "14",
+    "unt_id": "UV00",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "UV00",
+    "label": "(海洋商務學院)海洋商務學院"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "3951",
+      "campus": "建工校區",
+      "division": "日間部四技",
+      "department": "海洋商務學院",
+      "className": "海商學院跨領域課",
+      "combinedClassName": "",
+      "courseCode": "700C10078",
+      "courseName": "科技海岸線微學分",
+      "credits": 1,
+      "lectureHours": 1,
+      "labHours": 0,
+      "requiredOrElective": "選修",
+      "instructor": "李俊宏",
+      "classroom": "電B02",
+      "enrolled": 14,
+      "capacity": 55,
+      "time": "(一)8",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": ""
+    }
+  ]
+}

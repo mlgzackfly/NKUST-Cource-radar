@@ -1,0 +1,38 @@
+{
+  "scrapedAt": "2025-12-28T17:00:29.383Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "113#2",
+    "cmpAreaId": "4",
+    "dgrId": "18",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UO08",
+      "label": "(海洋商務學院)航運管理系博士班",
+      "courses": 20,
+      "file": "data/nkust/ag202/113/2/4/18/UO08.json"
+    },
+    {
+      "id": "UR14",
+      "label": "(海事學院)海事學院海事科技產學合作博士班",
+      "courses": 11,
+      "file": "data/nkust/ag202/113/2/4/18/UR14.json"
+    },
+    {
+      "id": "US16",
+      "label": "(水圈學院)水圈學院水產科技產業博士班",
+      "courses": 18,
+      "file": "data/nkust/ag202/113/2/4/18/US16.json"
+    },
+    {
+      "id": "US22",
+      "label": "(水圈學院)水圈學院外國學生專班",
+      "courses": 11,
+      "file": "data/nkust/ag202/113/2/4/18/US22.json"
+    }
+  ]
+}

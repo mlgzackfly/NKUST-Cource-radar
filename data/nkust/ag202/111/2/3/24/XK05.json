@@ -1,0 +1,67 @@
+{
+  "scrapedAt": "2025-12-28T16:48:35.358Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "request": {
+    "yms_yms": "111#2",
+    "cmp_area_id": "3",
+    "dgr_id": "24",
+    "unt_id": "XK05",
+    "clyear": "%",
+    "week": "%",
+    "period": "%",
+    "reading": "reading"
+  },
+  "unit": {
+    "id": "XK05",
+    "label": "(跨校生)校際選課"
+  },
+  "warning": null,
+  "header": [
+    "選課代號",
+    "上課校區",
+    "部別",
+    "科系",
+    "班級",
+    "合班班級",
+    "永久課號",
+    "科目名稱",
+    "學分",
+    "授課時數",
+    "實習時數",
+    "必/選",
+    "授課教師",
+    "教室",
+    "修課人數",
+    "人數上限",
+    "上課時間",
+    "全英語授課",
+    "遠距教學",
+    "授課大綱",
+    "備註"
+  ],
+  "courses": [
+    {
+      "selectCode": "5521",
+      "campus": "第一校區",
+      "division": "進修部四技",
+      "department": "校際選課",
+      "className": "進校際一甲",
+      "combinedClassName": "",
+      "courseCode": "070F00025",
+      "courseName": "機構學",
+      "credits": 3,
+      "lectureHours": 3,
+      "labHours": 0,
+      "requiredOrElective": "必修",
+      "instructor": "校際教師",
+      "classroom": "",
+      "enrolled": 1,
+      "capacity": 1,
+      "time": "(三)11-13",
+      "englishTaught": "否",
+      "distanceLearning": "否",
+      "syllabus": null,
+      "note": "遠東科大"
+    }
+  ]
+}

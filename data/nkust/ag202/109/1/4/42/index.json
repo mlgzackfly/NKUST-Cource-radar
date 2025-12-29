@@ -1,0 +1,44 @@
+{
+  "scrapedAt": "2025-12-28T14:40:27.302Z",
+  "sourceUrl": "https://webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp",
+  "params": {
+    "ymsYms": "109#1",
+    "cmpAreaId": "4",
+    "dgrId": "42",
+    "clyear": "%",
+    "week": "%",
+    "period": "%"
+  },
+  "units": [
+    {
+      "id": "UB04",
+      "label": "(電機與資訊學院)半導體工程系產學專班",
+      "courses": 12,
+      "file": "data/nkust/ag202/109/1/4/42/UB04.json"
+    },
+    {
+      "id": "UQ09",
+      "label": "(海事學院)電訊工程系系統實務產業專班",
+      "courses": 13,
+      "file": "data/nkust/ag202/109/1/4/42/UQ09.json"
+    },
+    {
+      "id": "UQ18",
+      "label": "(海事學院)造船產學攜手專班",
+      "courses": 39,
+      "file": "data/nkust/ag202/109/1/4/42/UQ18.json"
+    },
+    {
+      "id": "XB03",
+      "label": "(共同教育學院)外語教育中心",
+      "courses": 3,
+      "file": "data/nkust/ag202/109/1/4/42/XB03.json"
+    },
+    {
+      "id": "XP00",
+      "label": "(體育室)體育課程",
+      "courses": 1,
+      "file": "data/nkust/ag202/109/1/4/42/XP00.json"
+    }
+  ]
+}
