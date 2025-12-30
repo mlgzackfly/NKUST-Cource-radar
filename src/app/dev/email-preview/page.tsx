@@ -26,7 +26,7 @@ export default function EmailPreviewPage() {
           <!-- Header -->
           <tr>
             <td style="padding: 32px 32px 24px; text-align: center; border-bottom: 1px solid #e4e4e7;">
-              <img src="/icon.svg" alt="Logo" width="48" height="48" style="margin-bottom: 12px; border-radius: 10px;" />
+              <img src="/icon-email.png" alt="Logo" width="48" height="48" style="margin-bottom: 12px; border-radius: 10px;" />
               <h1 style="margin: 0; font-size: 22px; font-weight: 700; color: #18181b;">高科選課雷達</h1>
               <p style="margin: 4px 0 0; font-size: 14px; color: #71717a;">選課，不只是憑感覺</p>
             </td>
