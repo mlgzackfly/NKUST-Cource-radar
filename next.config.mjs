@@ -12,7 +12,6 @@ const nextConfig = {
 
   // 實驗性功能
   experimental: {
-    // 優化套件匯入
     optimizePackageImports: ["echarts", "echarts-for-react"],
   },
 
