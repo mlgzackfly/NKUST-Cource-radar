@@ -16,8 +16,41 @@ let standardRedis: Redis | null = null;
 let upstashRedis: UpstashRedis | null = null;
 
 // 初始化 Redis 連線
-if (process.env.REDIS_URL) {
-  // 使用標準 Redis (Zeabur)
+// 優先使用分離的環境變數（避免密碼中特殊字元的 URL 編碼問題）
+if (process.env.REDIS_HOST && process.env.REDIS_PASSWORD) {
+  try {
+    const host = process.env.REDIS_HOST;
+    const port = parseInt(process.env.REDIS_PORT || "6379");
+    const password = process.env.REDIS_PASSWORD;
+    const useTLS = process.env.REDIS_TLS === "true";
+
+    standardRedis = new Redis({
+      host,
+      port,
+      password,
+      maxRetriesPerRequest: 3,
+      retryStrategy(times) {
+        const delay = Math.min(times * 50, 2000);
+        return delay;
+      },
+      tls: useTLS
+        ? {
+            rejectUnauthorized: false, // Zeabur 使用自簽憑證
+          }
+        : undefined,
+    });
+
+    standardRedis.on("error", (err) => {
+      console.error("Redis connection error:", err);
+    });
+
+    console.log("✓ Connected to standard Redis (Zeabur)");
+  } catch (error) {
+    console.error("Failed to connect to standard Redis:", error);
+    standardRedis = null;
+  }
+} else if (process.env.REDIS_URL) {
+  // Fallback: 使用 REDIS_URL（密碼需要 URL 編碼）
   try {
     const redisUrl = process.env.REDIS_URL;
     const useTLS = redisUrl.startsWith("rediss://") || process.env.REDIS_TLS === "true";
