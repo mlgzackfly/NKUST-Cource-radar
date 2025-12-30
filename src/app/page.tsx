@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { HomeSearch } from "@/components/HomeSearch";
 import { RecommendationSection } from "@/components/RecommendationSection";
+import { getCached, CACHE_TTL } from "@/lib/cache";
 
 // Force dynamic rendering to always fetch fresh stats
 export const dynamic = "force-dynamic";
@@ -10,22 +11,114 @@ function formatCount(n: number) {
   return new Intl.NumberFormat("zh-Hant-TW").format(n);
 }
 
+// 預設的熱門搜尋關鍵字
+const DEFAULT_KEYWORDS = ["程式設計", "微積分", "資料結構", "演算法"];
+
+// 停用詞
+const STOP_WORDS = new Set([
+  "的", "與", "及", "和", "之", "或", "等", "一", "二", "三", "四",
+  "上", "下", "甲", "乙", "丙", "丁", "I", "II", "III", "IV",
+]);
+
+// 提取課程名稱中的關鍵字
+function extractKeywords(courseName: string): string[] {
+  const cleaned = courseName
+    .replace(/[（(][^）)]*[）)]/g, "")
+    .replace(/[ⅠⅡⅢⅣ]/g, "")
+    .trim();
+
+  const keywords: string[] = [];
+  const parts = cleaned.split(/[與及和、,，]/);
+
+  for (const part of parts) {
+    const trimmed = part.trim();
+    if (trimmed.length >= 2 && trimmed.length <= 10 && !STOP_WORDS.has(trimmed)) {
+      keywords.push(trimmed);
+    }
+  }
+
+  if (keywords.length === 0 && cleaned.length >= 2 && cleaned.length <= 10) {
+    keywords.push(cleaned);
+  }
+
+  return keywords;
+}
+
+// 取得熱門搜尋關鍵字
+async function getPopularSearches(): Promise<string[]> {
+  if (!prisma) return DEFAULT_KEYWORDS;
+
+  try {
+    return await getCached<string[]>(
+      "popular-searches",
+      CACHE_TTL.FILTERS,
+      async () => {
+        const coursesWithReviews = await prisma!.course.findMany({
+          where: {
+            reviews: { some: { status: "ACTIVE" } },
+          },
+          select: {
+            courseName: true,
+            _count: { select: { reviews: { where: { status: "ACTIVE" } } } },
+          },
+          orderBy: { reviews: { _count: "desc" } },
+          take: 100,
+        });
+
+        const keywordCounts = new Map<string, number>();
+
+        for (const course of coursesWithReviews) {
+          const keywords = extractKeywords(course.courseName);
+          const reviewCount = course._count.reviews;
+
+          for (const keyword of keywords) {
+            const current = keywordCounts.get(keyword) || 0;
+            keywordCounts.set(keyword, current + reviewCount);
+          }
+        }
+
+        const sorted = Array.from(keywordCounts.entries())
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 6)
+          .map(([keyword]) => keyword);
+
+        // 補充預設關鍵字
+        while (sorted.length < 4) {
+          const next = DEFAULT_KEYWORDS.find((d) => !sorted.includes(d));
+          if (next) sorted.push(next);
+          else break;
+        }
+
+        return sorted.slice(0, 6);
+      }
+    );
+  } catch (error) {
+    console.error("Failed to fetch popular searches:", error);
+    return DEFAULT_KEYWORDS;
+  }
+}
+
 export default async function HomePage() {
   let courseCount = null;
   let instructorCount = null;
   let reviewCount = null;
+  let popularSearches = DEFAULT_KEYWORDS;
 
   // Try to fetch stats, but gracefully handle errors
   if (prisma) {
     try {
-      const stats = await Promise.all([
-        prisma.course.count(),
-        prisma.instructor.count(),
-        prisma.review.count(),
+      const [stats, searches] = await Promise.all([
+        Promise.all([
+          prisma.course.count(),
+          prisma.instructor.count(),
+          prisma.review.count(),
+        ]),
+        getPopularSearches(),
       ]);
       courseCount = stats[0];
       instructorCount = stats[1];
       reviewCount = stats[2];
+      popularSearches = searches;
     } catch (error) {
       // Database unavailable - continue with null values
       console.error("Failed to fetch stats:", error);
@@ -96,7 +189,7 @@ export default async function HomePage() {
             {/* Minimalist Search Bar */}
             <HomeSearch />
 
-            {/* Minimal quick links */}
+            {/* Dynamic popular search links */}
             <div
               style={{
                 display: "flex",
@@ -106,53 +199,22 @@ export default async function HomePage() {
                 marginBottom: "4rem",
               }}
             >
-              <Link
-                href="/courses?q=%E8%B3%87%E6%96%99%E5%BA%AB"
-                style={{
-                  color: "var(--ts-gray-600)",
-                  fontSize: "0.9375rem",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "4px",
-                }}
-              >
-                資料庫
-              </Link>
-              <span style={{ color: "var(--ts-gray-300)" }}>·</span>
-              <Link
-                href="/courses?q=%E5%BE%AE%E7%A9%8D%E5%88%86"
-                style={{
-                  color: "var(--ts-gray-600)",
-                  fontSize: "0.9375rem",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "4px",
-                }}
-              >
-                微積分
-              </Link>
-              <span style={{ color: "var(--ts-gray-300)" }}>·</span>
-              <Link
-                href="/courses?q=%E8%B3%87%E5%B7%A5"
-                style={{
-                  color: "var(--ts-gray-600)",
-                  fontSize: "0.9375rem",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "4px",
-                }}
-              >
-                資工
-              </Link>
-              <span style={{ color: "var(--ts-gray-300)" }}>·</span>
-              <Link
-                href="/courses?q=%E6%BC%94%E7%AE%97%E6%B3%95"
-                style={{
-                  color: "var(--ts-gray-600)",
-                  fontSize: "0.9375rem",
-                  textDecoration: "underline",
-                  textUnderlineOffset: "4px",
-                }}
-              >
-                演算法
-              </Link>
+              {popularSearches.map((keyword, index) => (
+                <span key={keyword} style={{ display: "contents" }}>
+                  {index > 0 && <span style={{ color: "var(--ts-gray-300)" }}>·</span>}
+                  <Link
+                    href={`/courses?q=${encodeURIComponent(keyword)}`}
+                    style={{
+                      color: "var(--ts-gray-600)",
+                      fontSize: "0.9375rem",
+                      textDecoration: "underline",
+                      textUnderlineOffset: "4px",
+                    }}
+                  >
+                    {keyword}
+                  </Link>
+                </span>
+              ))}
             </div>
 
             {/* Minimal stats - Simple numbers */}
