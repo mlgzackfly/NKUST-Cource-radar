@@ -196,7 +196,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     </div>
                   </div>
                   <a
-                    href="https://github.com/mlgzack/nkust-course-review"
+                    href="https://github.com/mlgzackfly/NKUST-Cource-radar"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ts-button is-ghost is-small"
