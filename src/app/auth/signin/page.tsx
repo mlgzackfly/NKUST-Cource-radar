@@ -43,8 +43,18 @@ function SignInForm() {
   const displayError = error || getErrorMessage(errorParam);
 
   return (
-    <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
-      <div style={{ maxWidth: "440px", margin: "0 auto" }}>
+    <div
+      className="app-container"
+      style={{
+        minHeight: "calc(100vh - 64px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingTop: "2rem",
+        paddingBottom: "2rem",
+      }}
+    >
+      <div style={{ maxWidth: "440px", width: "100%" }}>
         <div className="ts-box is-raised" style={{ borderRadius: "16px" }}>
           <div className="ts-content" style={{ padding: "2.5rem" }}>
             <Link
@@ -155,8 +165,16 @@ export default function SignIn() {
   return (
     <Suspense
       fallback={
-        <div className="app-container" style={{ paddingTop: "4rem", paddingBottom: "4rem" }}>
-          <div style={{ maxWidth: "440px", margin: "0 auto", textAlign: "center" }}>載入中...</div>
+        <div
+          className="app-container"
+          style={{
+            minHeight: "calc(100vh - 64px)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <div style={{ textAlign: "center" }}>載入中...</div>
         </div>
       }
     >
