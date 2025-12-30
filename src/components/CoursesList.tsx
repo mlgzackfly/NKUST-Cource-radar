@@ -64,6 +64,7 @@ export async function CoursesList({
     updatedAt: "updatedAt",
     courseName: "courseName",
     year: "year",
+    semester: "semester",
     department: "department",
     campus: "campus",
   };
@@ -75,6 +76,8 @@ export async function CoursesList({
     "courseName-desc": 'c."courseName" DESC',
     "year-asc": 'c."year" ASC',
     "year-desc": 'c."year" DESC',
+    "semester-asc": 'c."year" ASC, c."term" ASC',
+    "semester-desc": 'c."year" DESC, c."term" DESC',
     "department-asc": 'c."department" ASC',
     "department-desc": 'c."department" DESC',
     "campus-asc": 'c."campus" ASC',
@@ -82,10 +85,11 @@ export async function CoursesList({
   };
 
   const sortByInstructor = sort === "instructorName";
-  const sortField = sortByInstructor ? "updatedAt" : sortFieldMap[sort] || "updatedAt";
+  const sortBySemester = sort === "semester";
+  const sortField = sortByInstructor || sortBySemester ? "semester" : sortFieldMap[sort] || "semester";
   const sortOrder = order === "asc" ? "asc" : "desc";
   const sortKey = `${sortField}-${sortOrder}`;
-  const baseOrderBy = ORDER_BY_MAP[sortKey] || ORDER_BY_MAP["updatedAt-desc"];
+  const baseOrderBy = ORDER_BY_MAP[sortKey] || ORDER_BY_MAP["semester-desc"];
 
   let courses: CourseListItem[];
   let totalCount = 0;
@@ -173,12 +177,17 @@ export async function CoursesList({
     } else {
       const whereClause = andFilters.length ? { AND: andFilters } : {};
 
+      // Build orderBy based on sort field
+      const orderBy = sortBySemester
+        ? [{ year: sortOrder as "asc" | "desc" }, { term: sortOrder as "asc" | "desc" }]
+        : { [sortField]: sortOrder };
+
       // Run count and data queries in parallel
       const [count, data] = await Promise.all([
         prisma.course.count({ where: whereClause }),
         prisma.course.findMany({
           where: whereClause,
-          orderBy: { [sortField]: sortOrder },
+          orderBy,
           skip: offset,
           take: PER_PAGE,
           select: {

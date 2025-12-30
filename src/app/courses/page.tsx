@@ -40,7 +40,7 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
   const campus = clean(sp.campus);
   const division = clean(sp.division);
   const department = clean(sp.department);
-  const sortBy = clean(sp.sortBy) || clean(sp.sort) || "updatedAt";
+  const sortBy = clean(sp.sortBy) || clean(sp.sort) || "semester";
   const sortOrder = clean(sp.sortOrder) || clean(sp.order) || "desc";
   const page = Math.max(1, parseInt(clean(sp.page) || "1", 10));
   const minRating = clean(sp.minRating);
