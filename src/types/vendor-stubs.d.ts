@@ -21,12 +21,14 @@ declare module "next/image-types/global" {}
 declare module "@prisma/client" {
   export class PrismaClient {
     constructor(options?: unknown);
-    [key: string]: unknown;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
   }
 
   // Minimal namespace to satisfy `import type { Prisma } from "@prisma/client"`
   // before Prisma Client is generated.
   export namespace Prisma {
-    export type CourseWhereInput = Record<string, unknown>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    export type CourseWhereInput = any;
   }
 }
