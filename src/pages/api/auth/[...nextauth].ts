@@ -47,21 +47,6 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-  events: {
-    async createUser({ user }) {
-      // 正規化 email：將本地部分轉為大寫（保持與舊資料一致）
-      if (user.email) {
-        const [localPart, domain] = user.email.split("@");
-        const normalizedEmail = `${localPart.toUpperCase()}@${domain.toLowerCase()}`;
-        if (normalizedEmail !== user.email) {
-          await prisma?.user.update({
-            where: { id: user.id },
-            data: { email: normalizedEmail },
-          });
-        }
-      }
-    },
-  },
   secret: process.env.NEXTAUTH_SECRET,
 };
 
