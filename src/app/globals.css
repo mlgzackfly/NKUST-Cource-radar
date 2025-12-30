@@ -628,3 +628,36 @@ html.is-dark {
     text-align: left !important;
   }
 }
+
+/* =========================================================
+   Compare Floating Bar Mobile Optimization
+   ========================================================= */
+
+/* Mobile 端浮動比較列優化 */
+@media (max-width: 768px) {
+  .compare-floating-bar {
+    /* 確保不會被底部導覽列遮擋 */
+    bottom: calc(70px + env(safe-area-inset-bottom, 0px)) !important;
+    /* 增加寬度以便操作 */
+    max-width: calc(100vw - 1rem) !important;
+  }
+
+  /* 確保按鈕有足夠的點擊區域 (44px 最小觸控目標) */
+  .compare-floating-bar .ts-button {
+    min-height: 44px !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .compare-floating-bar .ts-button.is-icon {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+}
+
+/* Desktop 端浮動比較列位置調整 */
+@media (min-width: 769px) {
+  .compare-floating-bar {
+    bottom: 20px !important;
+  }
+}

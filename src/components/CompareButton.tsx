@@ -113,7 +113,11 @@ export function CompareButton({
     };
   }, [updateState]);
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent) => {
+    // 阻止事件冒泡和預設行為，避免觸發父層的導航
+    e.stopPropagation();
+    e.preventDefault();
+
     const list = getCompareList();
 
     if (isInList) {
@@ -221,9 +225,11 @@ export function CompareFloatingBar() {
 
   return (
     <div
+      className="compare-floating-bar"
       style={{
         position: "fixed",
-        bottom: "80px", // 避開底部導覽列
+        // Mobile: 底部導覽列約 60px + safe area，Desktop: 20px
+        bottom: "calc(80px + env(safe-area-inset-bottom, 0px))",
         left: "50%",
         transform: "translateX(-50%)",
         zIndex: 1000,
@@ -238,6 +244,8 @@ export function CompareFloatingBar() {
           padding: isExpanded ? "1rem" : "0.75rem 1rem",
           borderRadius: "12px",
           boxShadow: "0 4px 20px rgba(0,0,0,0.15)",
+          // Mobile 端加大最小寬度，確保按鈕可點擊
+          minWidth: isExpanded ? "280px" : "auto",
         }}
       >
         {isExpanded ? (
