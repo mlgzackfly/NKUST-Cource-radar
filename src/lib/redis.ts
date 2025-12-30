@@ -1,4 +1,4 @@
-import Redis from "ioredis";
+import Redis, { RedisOptions } from "ioredis";
 import { Redis as UpstashRedis } from "@upstash/redis";
 import { Ratelimit } from "@upstash/ratelimit";
 
@@ -7,6 +7,8 @@ import { Ratelimit } from "@upstash/ratelimit";
  * 支援兩種連線方式：
  * 1. Zeabur/標準 Redis (使用 REDIS_URL)
  * 2. Upstash Redis (使用 UPSTASH_REDIS_REST_URL)
+ *
+ * Redis 是可選功能，連線失敗時會優雅降級
  */
 
 // 標準 Redis 客戶端 (ioredis)
@@ -15,68 +17,95 @@ let standardRedis: Redis | null = null;
 // Upstash Redis 客戶端
 let upstashRedis: UpstashRedis | null = null;
 
+// 追蹤連線狀態，避免重複打印錯誤
+let redisErrorLogged = false;
+let redisDisabled = false;
+
+/**
+ * 建立標準 Redis 連線
+ * 使用 lazyConnect 避免啟動時阻塞，並限制重試次數
+ */
+function createStandardRedis(config: {
+  host?: string;
+  port?: number;
+  password?: string;
+  url?: string;
+  useTLS?: boolean;
+}): Redis | null {
+  try {
+    const options: RedisOptions = {
+      maxRetriesPerRequest: 1, // 減少每個請求的重試次數
+      enableOfflineQueue: false, // 離線時不排隊命令
+      lazyConnect: true, // 延遲連線，不在初始化時連線
+      retryStrategy(times: number) {
+        // 最多重試 3 次，之後停止
+        if (times > 3) {
+          if (!redisErrorLogged) {
+            console.warn("Redis: max retries reached, disabling Redis");
+            redisErrorLogged = true;
+            redisDisabled = true;
+          }
+          return null; // 停止重試
+        }
+        return Math.min(times * 100, 1000);
+      },
+      tls: config.useTLS
+        ? {
+            rejectUnauthorized: false, // Zeabur 使用自簽憑證
+          }
+        : undefined,
+    };
+
+    let client: Redis;
+
+    if (config.url) {
+      client = new Redis(config.url, options);
+    } else {
+      client = new Redis({
+        ...options,
+        host: config.host,
+        port: config.port || 6379,
+        password: config.password,
+      });
+    }
+
+    // 只在第一次錯誤時打印，避免 log 洪水
+    client.on("error", (err: Error & { code?: string }) => {
+      if (!redisErrorLogged) {
+        console.warn("Redis connection error (will retry silently):", err.message || err.code);
+        redisErrorLogged = true;
+      }
+    });
+
+    client.on("connect", () => {
+      redisErrorLogged = false;
+      redisDisabled = false;
+      console.log("✓ Connected to standard Redis");
+    });
+
+    return client;
+  } catch (error) {
+    console.warn("Failed to create Redis client:", error);
+    return null;
+  }
+}
+
 // 初始化 Redis 連線
 // 優先使用分離的環境變數（避免密碼中特殊字元的 URL 編碼問題）
 if (process.env.REDIS_HOST && process.env.REDIS_PASSWORD) {
-  try {
-    const host = process.env.REDIS_HOST;
-    const port = parseInt(process.env.REDIS_PORT || "6379");
-    const password = process.env.REDIS_PASSWORD;
-    const useTLS = process.env.REDIS_TLS === "true";
-
-    standardRedis = new Redis({
-      host,
-      port,
-      password,
-      maxRetriesPerRequest: 3,
-      retryStrategy(times) {
-        const delay = Math.min(times * 50, 2000);
-        return delay;
-      },
-      tls: useTLS
-        ? {
-            rejectUnauthorized: false, // Zeabur 使用自簽憑證
-          }
-        : undefined,
-    });
-
-    standardRedis.on("error", (err) => {
-      console.error("Redis connection error:", err);
-    });
-
-    console.log("✓ Connected to standard Redis (Zeabur)");
-  } catch (error) {
-    console.error("Failed to connect to standard Redis:", error);
-    standardRedis = null;
-  }
+  standardRedis = createStandardRedis({
+    host: process.env.REDIS_HOST,
+    port: parseInt(process.env.REDIS_PORT || "6379"),
+    password: process.env.REDIS_PASSWORD,
+    useTLS: process.env.REDIS_TLS === "true",
+  });
 } else if (process.env.REDIS_URL) {
   // Fallback: 使用 REDIS_URL（密碼需要 URL 編碼）
-  try {
-    const redisUrl = process.env.REDIS_URL;
-    const useTLS = redisUrl.startsWith("rediss://") || process.env.REDIS_TLS === "true";
-
-    standardRedis = new Redis(redisUrl, {
-      maxRetriesPerRequest: 3,
-      retryStrategy(times) {
-        const delay = Math.min(times * 50, 2000);
-        return delay;
-      },
-      tls: useTLS
-        ? {
-            rejectUnauthorized: false, // Zeabur 使用自簽憑證
-          }
-        : undefined,
-    });
-
-    standardRedis.on("error", (err) => {
-      console.error("Redis connection error:", err);
-    });
-
-    console.log("✓ Connected to standard Redis (Zeabur)");
-  } catch (error) {
-    console.error("Failed to connect to standard Redis:", error);
-    standardRedis = null;
-  }
+  const redisUrl = process.env.REDIS_URL;
+  standardRedis = createStandardRedis({
+    url: redisUrl,
+    useTLS: redisUrl.startsWith("rediss://") || process.env.REDIS_TLS === "true",
+  });
 } else if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
   // 使用 Upstash Redis (REST API)
   try {
@@ -164,8 +193,10 @@ export const redisRateLimiters = upstashRedis
 
 /**
  * 檢查 Redis 是否可用
+ * 考慮連線狀態和是否被禁用
  */
 export function isRedisAvailable(): boolean {
+  if (redisDisabled) return false;
   return redis !== null;
 }
 
@@ -173,7 +204,7 @@ export function isRedisAvailable(): boolean {
  * Redis 連線測試
  */
 export async function testRedisConnection(): Promise<boolean> {
-  if (!redis) return false;
+  if (!redis || redisDisabled) return false;
 
   try {
     if (standardRedis) {
@@ -182,8 +213,8 @@ export async function testRedisConnection(): Promise<boolean> {
       await upstashRedis.ping();
     }
     return true;
-  } catch (error) {
-    console.error("Redis connection test failed:", error);
+  } catch {
+    // 連線測試失敗，靜默處理
     return false;
   }
 }
