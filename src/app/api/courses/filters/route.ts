@@ -1,4 +1,4 @@
-import { prisma } from "@/lib/db";
+import { prisma, prismaRaw } from "@/lib/db";
 import { getCached, CACHE_TTL, cacheKeys } from "@/lib/cache";
 
 interface FiltersResponse {
@@ -10,49 +10,31 @@ interface FiltersResponse {
 }
 
 async function fetchFiltersFromDB(): Promise<FiltersResponse> {
-  const [years, terms, campuses, divisions, departments] = (await Promise.all([
-    prisma!.course.findMany({
-      select: { year: true },
-      distinct: ["year"],
-      orderBy: { year: "desc" },
-    }),
-    prisma!.course.findMany({
-      select: { term: true },
-      distinct: ["term"],
-      orderBy: { term: "asc" },
-    }),
-    prisma!.course.findMany({
-      where: { campus: { not: null } },
-      select: { campus: true },
-      distinct: ["campus"],
-      orderBy: { campus: "asc" },
-    }),
-    prisma!.course.findMany({
-      where: { division: { not: null } },
-      select: { division: true },
-      distinct: ["division"],
-      orderBy: { division: "asc" },
-    }),
-    prisma!.course.findMany({
-      where: { department: { not: null } },
-      select: { department: true },
-      distinct: ["department"],
-      orderBy: { department: "asc" },
-    }),
-  ])) as [
-    Array<{ year: string }>,
-    Array<{ term: string }>,
-    Array<{ campus: string | null }>,
-    Array<{ division: string | null }>,
-    Array<{ department: string | null }>,
-  ];
+  // 使用原始 SQL 進行 DISTINCT 查詢，比 Prisma findMany + distinct 更快
+  const [years, terms, campuses, divisions, departments] = await Promise.all([
+    prismaRaw<{ year: string }[]>`
+      SELECT DISTINCT year FROM "Course" ORDER BY year DESC
+    `,
+    prismaRaw<{ term: string }[]>`
+      SELECT DISTINCT term FROM "Course" ORDER BY term ASC
+    `,
+    prismaRaw<{ campus: string }[]>`
+      SELECT DISTINCT campus FROM "Course" WHERE campus IS NOT NULL ORDER BY campus ASC
+    `,
+    prismaRaw<{ division: string }[]>`
+      SELECT DISTINCT division FROM "Course" WHERE division IS NOT NULL ORDER BY division ASC
+    `,
+    prismaRaw<{ department: string }[]>`
+      SELECT DISTINCT department FROM "Course" WHERE department IS NOT NULL ORDER BY department ASC
+    `,
+  ]);
 
   return {
     years: years.map((x) => x.year),
     terms: terms.map((x) => x.term),
-    campuses: campuses.map((x) => x.campus).filter((x): x is string => Boolean(x)),
-    divisions: divisions.map((x) => x.division).filter((x): x is string => Boolean(x)),
-    departments: departments.map((x) => x.department).filter((x): x is string => Boolean(x)),
+    campuses: campuses.map((x) => x.campus),
+    divisions: divisions.map((x) => x.division),
+    departments: departments.map((x) => x.department),
   };
 }
 
@@ -70,5 +52,10 @@ export async function GET(): Promise<Response> {
     fetchFiltersFromDB
   );
 
-  return Response.json(filters);
+  // 設定 HTTP Cache-Control header，讓瀏覽器快取 5 分鐘
+  return Response.json(filters, {
+    headers: {
+      "Cache-Control": "public, max-age=300, stale-while-revalidate=3600",
+    },
+  });
 }

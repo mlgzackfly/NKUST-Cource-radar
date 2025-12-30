@@ -22,7 +22,7 @@ export function SemesterSelector() {
     if (!shouldShow) return;
 
     setLoading(true);
-    fetch("/api/courses/filters", { cache: "no-store" })
+    fetch("/api/courses/filters", { cache: "force-cache" })
       .then(async (res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return await res.json();
