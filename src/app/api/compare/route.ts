@@ -1,9 +1,8 @@
 // @ts-expect-error - Next.js 15.5.9 type definition issue with NextRequest
 
 import { NextRequest } from "next/server";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
+import { getCurrentUser } from "@/lib/auth";
 
 interface ReviewData {
   coolness: number | null;
@@ -16,15 +15,17 @@ interface ReviewData {
 /**
  * POST /api/compare
  * 比較 2-4 門課程
+ * - 公開：課程基本資訊、評論數
+ * - 需登入：詳細評分（涼度、實用性、負擔、出席、給分）
  *
  * Request body: { courseIds: string[] }
- * Response: { courses: Array<CourseWithStats>, comparisonId: string }
+ * Response: { courses: Array<CourseWithStats>, comparisonId: string, isAuthenticated: boolean }
  */
 export async function POST(request: NextRequest) {
   try {
-    // 課程比較功能是公開的（只顯示評分摘要和雷達圖）
-    // 但如果有登入，會儲存比較歷史
-    const session = await getServerSession(authOptions);
+    // 檢查是否登入（不強制要求）
+    const user = await getCurrentUser();
+    const isAuthenticated = !!user;
 
     const body = await request.json();
     const { courseIds } = body;
@@ -32,14 +33,6 @@ export async function POST(request: NextRequest) {
     // 驗證 courseIds
     if (!Array.isArray(courseIds) || courseIds.length < 2 || courseIds.length > 4) {
       return Response.json({ error: "Must compare between 2 and 4 courses" }, { status: 400 });
-    }
-
-    // 如果有登入，找到使用者（用於儲存比較歷史）
-    let user = null;
-    if (session?.user?.email?.toLowerCase().endsWith("@nkust.edu.tw")) {
-      user = await prisma!.user.findUnique({
-        where: { email: session.user.email },
-      });
     }
 
     // 取得課程資料與統計
@@ -70,30 +63,41 @@ export async function POST(request: NextRequest) {
         }
 
         // 計算評分統計
-        const reviews = await prisma!.review.findMany({
+        const reviewCount = await prisma!.review.count({
           where: {
             courseId,
             status: "ACTIVE",
           },
-          select: {
-            coolness: true,
-            usefulness: true,
-            workload: true,
-            attendance: true,
-            grading: true,
-          },
         });
 
-        const stats = {
-          totalReviews: reviews.length,
-          avgCoolness: 0,
-          avgUsefulness: 0,
-          avgWorkload: 0,
-          avgAttendance: 0,
-          avgGrading: 0,
+        // 基本統計（公開）
+        const stats: {
+          totalReviews: number;
+          avgCoolness?: number;
+          avgUsefulness?: number;
+          avgWorkload?: number;
+          avgAttendance?: number;
+          avgGrading?: number;
+        } = {
+          totalReviews: reviewCount,
         };
 
-        if (reviews.length > 0) {
+        // 詳細評分統計（需登入）
+        if (isAuthenticated && reviewCount > 0) {
+          const reviews = await prisma!.review.findMany({
+            where: {
+              courseId,
+              status: "ACTIVE",
+            },
+            select: {
+              coolness: true,
+              usefulness: true,
+              workload: true,
+              attendance: true,
+              grading: true,
+            },
+          });
+
           const coolnessValues = reviews
             .map((r: ReviewData) => r.coolness)
             .filter((v: number | null): v is number => v !== null);
@@ -110,26 +114,21 @@ export async function POST(request: NextRequest) {
             .map((r: ReviewData) => r.grading)
             .filter((v: number | null): v is number => v !== null);
 
-          if (coolnessValues.length > 0) {
-            stats.avgCoolness =
-              coolnessValues.reduce((a: number, b: number) => a + b, 0) / coolnessValues.length;
-          }
-          if (usefulnessValues.length > 0) {
-            stats.avgUsefulness =
-              usefulnessValues.reduce((a: number, b: number) => a + b, 0) / usefulnessValues.length;
-          }
-          if (workloadValues.length > 0) {
-            stats.avgWorkload =
-              workloadValues.reduce((a: number, b: number) => a + b, 0) / workloadValues.length;
-          }
-          if (attendanceValues.length > 0) {
-            stats.avgAttendance =
-              attendanceValues.reduce((a: number, b: number) => a + b, 0) / attendanceValues.length;
-          }
-          if (gradingValues.length > 0) {
-            stats.avgGrading =
-              gradingValues.reduce((a: number, b: number) => a + b, 0) / gradingValues.length;
-          }
+          stats.avgCoolness = coolnessValues.length > 0
+            ? coolnessValues.reduce((a: number, b: number) => a + b, 0) / coolnessValues.length
+            : 0;
+          stats.avgUsefulness = usefulnessValues.length > 0
+            ? usefulnessValues.reduce((a: number, b: number) => a + b, 0) / usefulnessValues.length
+            : 0;
+          stats.avgWorkload = workloadValues.length > 0
+            ? workloadValues.reduce((a: number, b: number) => a + b, 0) / workloadValues.length
+            : 0;
+          stats.avgAttendance = attendanceValues.length > 0
+            ? attendanceValues.reduce((a: number, b: number) => a + b, 0) / attendanceValues.length
+            : 0;
+          stats.avgGrading = gradingValues.length > 0
+            ? gradingValues.reduce((a: number, b: number) => a + b, 0) / gradingValues.length
+            : 0;
         }
 
         return {
@@ -161,6 +160,7 @@ export async function POST(request: NextRequest) {
     return Response.json({
       courses: validCourses,
       comparisonId,
+      isAuthenticated,
     });
   } catch (error) {
     console.error("Failed to compare courses:", error);
