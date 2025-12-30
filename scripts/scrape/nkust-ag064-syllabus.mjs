@@ -24,8 +24,8 @@ async function fetchTextWithFallback(url, init) {
     return await res.text();
   } catch (err) {
     if (!isTlsCertError(err)) throw err;
-    // Fallback to system curl
-    const args = ["-fsSL"];
+    // Fallback to system curl with SSL verification disabled
+    const args = ["-fsSL", "-k"];
     if (init?.method && init.method.toUpperCase() !== "GET") {
       args.push("-X", init.method.toUpperCase());
     }
