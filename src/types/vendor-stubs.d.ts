@@ -21,12 +21,12 @@ declare module "next/image-types/global" {}
 declare module "@prisma/client" {
   export class PrismaClient {
     constructor(options?: unknown);
-    [key: string]: any;
+    [key: string]: unknown;
   }
 
   // Minimal namespace to satisfy `import type { Prisma } from "@prisma/client"`
   // before Prisma Client is generated.
   export namespace Prisma {
-    export type CourseWhereInput = any;
+    export type CourseWhereInput = Record<string, unknown>;
   }
 }

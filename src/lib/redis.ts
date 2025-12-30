@@ -80,7 +80,7 @@ function createStandardRedis(config: {
     client.on("connect", () => {
       redisErrorLogged = false;
       redisDisabled = false;
-      console.log("✓ Connected to standard Redis");
+      console.warn("✓ Connected to standard Redis");
     });
 
     return client;
@@ -114,7 +114,8 @@ if (process.env.REDIS_HOST && process.env.REDIS_PASSWORD) {
       token: process.env.UPSTASH_REDIS_REST_TOKEN,
     });
 
-    console.log("✓ Connected to Upstash Redis");
+    // Upstash Redis 連線成功（使用 warn 以符合 ESLint 規則）
+    console.warn("✓ Connected to Upstash Redis");
   } catch (error) {
     console.error("Failed to connect to Upstash Redis:", error);
     upstashRedis = null;

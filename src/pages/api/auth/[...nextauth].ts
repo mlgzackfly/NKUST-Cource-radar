@@ -29,13 +29,13 @@ export const authOptions: NextAuthOptions = {
         const [localPart, domain] = email.split("@");
         const normalizedEmail = `${localPart.toUpperCase()}@${domain.toLowerCase()}`;
 
-        // 只在開發環境顯示詳細 log
+        // 只在開發環境顯示詳細 log（使用 warn 以符合 ESLint 規則）
         if (isDev) {
-          console.log("=== sendVerificationRequest called ===");
+          console.warn("=== sendVerificationRequest called ===");
           // 遮罩 email（只顯示部分）
           const maskedEmail = normalizedEmail.replace(/(.{3})(.*)(@.+)/, "$1***$3");
-          console.log("Email:", maskedEmail);
-          console.log("RESEND_API_KEY:", process.env.RESEND_API_KEY ? "✓ Set" : "✗ Not set");
+          console.warn("Email:", maskedEmail);
+          console.warn("RESEND_API_KEY:", process.env.RESEND_API_KEY ? "✓ Set" : "✗ Not set");
         }
 
         // 驗證 @nkust.edu.tw
@@ -47,7 +47,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         try {
-          const result = await resend.emails.send({
+          await resend.emails.send({
             from: process.env.EMAIL_FROM!,
             to: normalizedEmail,
             subject: "登入高科選課雷達 - 驗證您的身份",
@@ -130,7 +130,7 @@ export const authOptions: NextAuthOptions = {
           });
 
           if (isDev) {
-            console.log("✓ Email sent successfully!");
+            console.warn("✓ Email sent successfully!");
           }
         } catch (error) {
           console.error("Failed to send verification email");

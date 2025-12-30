@@ -64,7 +64,7 @@ export function sanitizeAndValidateText(
  * @returns 驗證後的數值或 null
  * @throws Error 如果數值無效
  */
-export function validateRating(value: any, fieldName: string): number | null {
+export function validateRating(value: unknown, fieldName: string): number | null {
   // 允許 null/undefined（代表未評分）
   if (value === null || value === undefined) {
     return null;
@@ -120,11 +120,11 @@ export function validateText(
  * @returns 驗證後的評分物件
  */
 export function validateReviewRatings(data: {
-  coolness?: any;
-  usefulness?: any;
-  workload?: any;
-  attendance?: any;
-  grading?: any;
+  coolness?: unknown;
+  usefulness?: unknown;
+  workload?: unknown;
+  attendance?: unknown;
+  grading?: unknown;
 }) {
   const coolness = validateRating(data.coolness, "Coolness");
   const usefulness = validateRating(data.usefulness, "Usefulness");
@@ -148,7 +148,9 @@ export function validateReviewRatings(data: {
 export function validateOrigin(request: Request): boolean {
   const origin = request.headers.get("origin");
   const referer = request.headers.get("referer");
-  const host = request.headers.get("host");
+  // host 保留供未來使用
+  const _host = request.headers.get("host");
+  void _host;
 
   // 開發環境允許所有請求
   if (process.env.NODE_ENV === "development") {
