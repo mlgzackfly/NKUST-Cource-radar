@@ -12,7 +12,7 @@
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxxxx
-EMAIL_FROM=noreply@fenryx.tech
+EMAIL_FROM=noreply@your-domain.com
 NEXTAUTH_URL=https://your-app.zeabur.app
 NEXTAUTH_SECRET=xxxxxxxxxxxxxxxx
 DATABASE_URL=postgresql://...
@@ -27,11 +27,11 @@ DATABASE_URL=postgresql://...
 
 ### 2️⃣ Resend Domain 驗證
 
-您目前使用的 domain：`fenryx.tech`
+您需要在 Resend 驗證您自己的 domain。
 
 **檢查步驟：**
 1. 登入 [Resend Dashboard](https://resend.com/domains)
-2. 檢查 `fenryx.tech` 狀態是否為 **Verified** ✓
+2. 檢查您的 domain 狀態是否為 **Verified** ✓
 
 **如果未驗證：**
 - 添加 Resend 提供的 DNS 記錄到您的域名服務商
@@ -106,11 +106,11 @@ Sending email via Resend...
 ### Step 1: 設定 Zeabur 環境變數
 
 ```bash
-# 在 Zeabur Variables 中添加：
-RESEND_API_KEY=REDACTED_RESEND_API_KEY
-EMAIL_FROM=noreply@fenryx.tech
-NEXTAUTH_URL=https://your-app.zeabur.app  # 改成您的實際網址
-NEXTAUTH_SECRET=REDACTED_NEXTAUTH_SECRET
+# 在 Zeabur Variables 中添加（請替換為您自己的值）：
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxx  # 從 Resend Dashboard 取得
+EMAIL_FROM=noreply@your-domain.com            # 您驗證過的 domain
+NEXTAUTH_URL=https://your-app.zeabur.app      # 您的實際網址
+NEXTAUTH_SECRET=xxxxxxxxxxxxxxxxxxxxxxxx      # 執行 openssl rand -base64 32 產生
 ```
 
 ### Step 2: 重新部署
@@ -150,8 +150,8 @@ node scripts/test-email.mjs
 ### Q3: 可以用 Gmail 發送嗎？
 **A**: 不建議。Resend 是專為應用郵件設計的服務，Gmail SMTP 可能被封鎖或限流。
 
-### Q4: fenryx.tech 是什麼？
-**A**: 這是您在 Resend 設定的發件 domain。必須在 Resend 中驗證才能使用。
+### Q4: EMAIL_FROM 的 domain 如何設定？
+**A**: 這是您在 Resend 設定並驗證的發件 domain。必須在 Resend 中驗證才能使用。
 
 ### Q5: 我可以改成其他郵件服務嗎？
 **A**: 可以，但需要修改 NextAuth 配置。Resend 是最簡單的方案。

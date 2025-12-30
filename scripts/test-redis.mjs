@@ -8,10 +8,16 @@ import Redis from "ioredis";
 async function testRedisConnection() {
   console.log("🔍 Testing Redis connection...\n");
 
-  // 使用獨立參數而非連線字串
-  const host = process.env.REDIS_HOST || "sjc1.clusters.zeabur.com";
-  const port = parseInt(process.env.REDIS_PORT || "27677");
-  const password = process.env.REDIS_PASSWORD || "REDACTED_REDIS_PASSWORD";
+  // 從環境變數讀取連線資訊（必須設定）
+  const host = process.env.REDIS_HOST;
+  const port = parseInt(process.env.REDIS_PORT || "6379");
+  const password = process.env.REDIS_PASSWORD;
+
+  if (!host || !password) {
+    console.error("❌ 請設定環境變數: REDIS_HOST, REDIS_PASSWORD");
+    console.error("   範例: REDIS_HOST=xxx.clusters.zeabur.com REDIS_PASSWORD=xxx node scripts/test-redis.mjs");
+    process.exit(1);
+  }
 
   console.log(`📡 Connecting to: ${host}:${port} (with password)`);
 
