@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { useRouter } from "next/navigation";
 
 // SVG 比較圖示 (標準天秤)
 function CompareIcon({ size = 16 }: { size?: number }) {
@@ -180,6 +181,7 @@ export function CompareButton({
 
 // 比較列表浮動按鈕（顯示在頁面底部）
 export function CompareFloatingBar() {
+  const router = useRouter();
   const [list, setList] = useState<CompareItem[]>([]);
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -315,13 +317,14 @@ export function CompareFloatingBar() {
               <button type="button" className="ts-button is-small is-outlined" onClick={clearAll}>
                 清空
               </button>
-              <a
-                href={`/compare?ids=${list.map((i) => i.id).join(",")}`}
+              <button
+                type="button"
                 className="ts-button is-small is-primary"
                 style={{ flex: 1, textAlign: "center" }}
+                onClick={() => router.push(`/compare?ids=${list.map((i) => i.id).join(",")}`)}
               >
                 開始比較 ({list.length})
-              </a>
+              </button>
             </div>
           </div>
         ) : (
@@ -337,12 +340,13 @@ export function CompareFloatingBar() {
               </span>
               比較列表 ({list.length})
             </button>
-            <a
-              href={`/compare?ids=${list.map((i) => i.id).join(",")}`}
+            <button
+              type="button"
               className="ts-button is-small is-primary"
+              onClick={() => router.push(`/compare?ids=${list.map((i) => i.id).join(",")}`)}
             >
               開始比較
-            </a>
+            </button>
           </div>
         )}
       </div>

@@ -22,16 +22,9 @@ interface ReviewData {
  */
 export async function POST(request: NextRequest) {
   try {
+    // 課程比較功能是公開的（只顯示評分摘要和雷達圖）
+    // 但如果有登入，會儲存比較歷史
     const session = await getServerSession(authOptions);
-
-    if (!session?.user?.email) {
-      return Response.json({ error: "Unauthorized" }, { status: 401 });
-    }
-
-    // 驗證 @nkust.edu.tw email
-    if (!session.user.email.toLowerCase().endsWith("@nkust.edu.tw")) {
-      return Response.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
-    }
 
     const body = await request.json();
     const { courseIds } = body;
@@ -41,13 +34,12 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: "Must compare between 2 and 4 courses" }, { status: 400 });
     }
 
-    // 找到使用者
-    const user = await prisma!.user.findUnique({
-      where: { email: session.user.email },
-    });
-
-    if (!user) {
-      return Response.json({ error: "User not found" }, { status: 404 });
+    // 如果有登入，找到使用者（用於儲存比較歷史）
+    let user = null;
+    if (session?.user?.email?.toLowerCase().endsWith("@nkust.edu.tw")) {
+      user = await prisma!.user.findUnique({
+        where: { email: session.user.email },
+      });
     }
 
     // 取得課程資料與統計
@@ -154,17 +146,21 @@ export async function POST(request: NextRequest) {
       return Response.json({ error: "At least 2 valid courses required" }, { status: 400 });
     }
 
-    // 儲存比較歷史
-    const comparison = await prisma!.comparisonHistory.create({
-      data: {
-        userId: user.id,
-        courseIds: validCourses.map((c) => c!.id),
-      },
-    });
+    // 如果有登入，儲存比較歷史
+    let comparisonId = null;
+    if (user) {
+      const comparison = await prisma!.comparisonHistory.create({
+        data: {
+          userId: user.id,
+          courseIds: validCourses.map((c) => c!.id),
+        },
+      });
+      comparisonId = comparison.id;
+    }
 
     return Response.json({
       courses: validCourses,
-      comparisonId: comparison.id,
+      comparisonId,
     });
   } catch (error) {
     console.error("Failed to compare courses:", error);
