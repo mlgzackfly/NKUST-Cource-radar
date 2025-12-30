@@ -25,6 +25,10 @@ interface CoursesListProps {
   sort: string;
   order: string;
   page: number;
+  minRating?: string;
+  maxWorkload?: string;
+  minGrading?: string;
+  timeSlot?: string;
 }
 
 const PER_PAGE = 50;
@@ -39,6 +43,10 @@ export async function CoursesList({
   sort,
   order,
   page,
+  minRating,
+  maxWorkload,
+  minGrading,
+  timeSlot,
 }: CoursesListProps) {
   if (!prisma) {
     return (
@@ -59,6 +67,13 @@ export async function CoursesList({
   if (campus) andFilters.push({ campus });
   if (division) andFilters.push({ division });
   if (department) andFilters.push({ department });
+  if (timeSlot) andFilters.push({ time: { contains: timeSlot } });
+
+  // 是否需要評分篩選（需要額外查詢評論資料）
+  const needsRatingFilter = Boolean(minRating || maxWorkload || minGrading);
+  const minRatingNum = minRating ? parseFloat(minRating) : undefined;
+  const maxWorkloadNum = maxWorkload ? parseFloat(maxWorkload) : undefined;
+  const minGradingNum = minGrading ? parseFloat(minGrading) : undefined;
 
   const sortFieldMap: Record<string, string> = {
     updatedAt: "updatedAt",
@@ -182,14 +197,11 @@ export async function CoursesList({
         ? [{ year: sortOrder as "asc" | "desc" }, { term: sortOrder as "asc" | "desc" }]
         : { [sortField]: sortOrder };
 
-      // Run count and data queries in parallel
-      const [count, data] = await Promise.all([
-        prisma.course.count({ where: whereClause }),
-        prisma.course.findMany({
+      if (needsRatingFilter) {
+        // 需要評分篩選時，查詢所有符合基本條件的課程及其評論
+        const allCourses = await prisma.course.findMany({
           where: whereClause,
           orderBy,
-          skip: offset,
-          take: PER_PAGE,
           select: {
             id: true,
             courseName: true,
@@ -204,12 +216,78 @@ export async function CoursesList({
                 instructor: { select: { id: true, name: true } },
               },
             },
+            reviews: {
+              where: { status: "ACTIVE" },
+              select: {
+                coolness: true,
+                workload: true,
+                grading: true,
+              },
+            },
           },
-        }),
-      ]);
+        });
 
-      totalCount = count;
-      courses = data;
+        // 在記憶體中過濾
+        type CourseWithReviews = (typeof allCourses)[0];
+        type ReviewData = { coolness: number | null; workload: number | null; grading: number | null };
+        const filteredCourses = allCourses.filter((course: CourseWithReviews) => {
+          const reviews = course.reviews;
+          if (reviews.length === 0) {
+            // 沒有評論的課程：若有最低要求則不顯示
+            if (minRatingNum || minGradingNum) return false;
+            return true;
+          }
+
+          const avgRating =
+            reviews.reduce((sum: number, r: ReviewData) => sum + (r.coolness || 0), 0) / reviews.length;
+          const avgWorkload =
+            reviews.reduce((sum: number, r: ReviewData) => sum + (r.workload || 0), 0) / reviews.length;
+          const avgGrading =
+            reviews.reduce((sum: number, r: ReviewData) => sum + (r.grading || 0), 0) / reviews.length;
+
+          if (minRatingNum && avgRating < minRatingNum) return false;
+          if (maxWorkloadNum && avgWorkload > maxWorkloadNum) return false;
+          if (minGradingNum && avgGrading < minGradingNum) return false;
+
+          return true;
+        });
+
+        totalCount = filteredCourses.length;
+        // 分頁
+        courses = filteredCourses.slice(offset, offset + PER_PAGE).map((c: CourseWithReviews) => {
+          const { reviews: _reviews, ...rest } = c;
+          return rest;
+        });
+      } else {
+        // 不需要評分篩選，使用原本的高效查詢
+        const [count, data] = await Promise.all([
+          prisma.course.count({ where: whereClause }),
+          prisma.course.findMany({
+            where: whereClause,
+            orderBy,
+            skip: offset,
+            take: PER_PAGE,
+            select: {
+              id: true,
+              courseName: true,
+              department: true,
+              campus: true,
+              year: true,
+              term: true,
+              time: true,
+              classroom: true,
+              instructors: {
+                select: {
+                  instructor: { select: { id: true, name: true } },
+                },
+              },
+            },
+          }),
+        ]);
+
+        totalCount = count;
+        courses = data;
+      }
     }
   } catch (error) {
     console.error("Failed to fetch courses:", error);
@@ -225,7 +303,7 @@ export async function CoursesList({
     });
   }
 
-  const hasAnyFilter = Boolean(q || year || term || campus || division || department);
+  const hasAnyFilter = Boolean(q || year || term || campus || division || department || minRating || maxWorkload || minGrading || timeSlot);
   const totalPages = Math.ceil(totalCount / PER_PAGE);
   const startItem = totalCount === 0 ? 0 : offset + 1;
   const endItem = Math.min(offset + PER_PAGE, totalCount);
@@ -240,6 +318,10 @@ export async function CoursesList({
       ...(department && { department }),
       ...(sort && { sortBy: sort }),
       ...(order && { sortOrder: order }),
+      ...(minRating && { minRating }),
+      ...(maxWorkload && { maxWorkload }),
+      ...(minGrading && { minGrading }),
+      ...(timeSlot && { timeSlot }),
       page: pageNum.toString(),
     }).toString();
   };

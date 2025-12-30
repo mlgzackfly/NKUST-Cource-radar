@@ -100,6 +100,10 @@ export default async function CoursesPage({ searchParams }: CoursesPageProps) {
               sort={sortBy}
               order={sortOrder}
               page={page}
+              minRating={minRating}
+              maxWorkload={maxWorkload}
+              minGrading={minGrading}
+              timeSlot={timeSlot}
             />
           </Suspense>
         </div>
