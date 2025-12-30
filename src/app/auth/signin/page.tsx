@@ -118,6 +118,13 @@ function SignInForm() {
             >
               繼續即表示您同意我們的{" "}
               <Link
+                href="/terms"
+                style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}
+              >
+                服務條款
+              </Link>
+              、
+              <Link
                 href="/privacy"
                 style={{ color: "var(--ts-primary-600)", textDecoration: "underline" }}
               >
