@@ -1,24 +1,57 @@
 name: Import Multiple Semesters
 
 on:
-  # 僅支援手動觸發
   workflow_dispatch:
     inputs:
       semesters:
         description: '要匯入的學期（格式: 113-1,113-2,114-1）'
         required: true
-        default: '113-1,113-2,114-1'
+        default: '114-1'
         type: string
       scrape_syllabus:
         description: '是否爬取課程大綱 (會增加 3-5 倍時間)'
         required: false
         default: false
         type: boolean
+      skip_existing:
+        description: '跳過已存在的學期'
+        required: false
+        default: true
+        type: boolean
 
 jobs:
-  import-multiple:
+  # 第一個 job：解析學期列表，生成 matrix
+  prepare:
     runs-on: ubuntu-latest
-    timeout-minutes: 360  # 6 小時超時限制
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+      count: ${{ steps.set-matrix.outputs.count }}
+    steps:
+      - name: 📋 Parse semesters into matrix
+        id: set-matrix
+        run: |
+          SEMESTERS="${{ inputs.semesters }}"
+
+          # 將逗號分隔的學期轉換為 JSON array
+          JSON_ARRAY=$(echo "$SEMESTERS" | tr ',' '\n' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | jq -R -s -c 'split("\n") | map(select(length > 0))')
+
+          echo "matrix={\"semester\":$JSON_ARRAY}" >> $GITHUB_OUTPUT
+
+          COUNT=$(echo "$JSON_ARRAY" | jq '. | length')
+          echo "count=$COUNT" >> $GITHUB_OUTPUT
+
+          echo "準備匯入 $COUNT 個學期"
+          echo "Matrix: $JSON_ARRAY"
+
+  # 第二個 job：並行處理每個學期
+  import:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 180  # 每個學期最多 3 小時
+    strategy:
+      fail-fast: false  # 一個失敗不影響其他
+      max-parallel: 3   # 最多同時執行 3 個
+      matrix: ${{ fromJson(needs.prepare.outputs.matrix) }}
 
     steps:
       - name: 📥 Checkout repository
@@ -36,104 +69,94 @@ jobs:
       - name: 🔍 Generate Prisma Client
         run: npx prisma generate
 
-      - name: 📚 Parse semesters
+      - name: 📚 Parse semester
         id: parse
         run: |
-          SEMESTERS="${{ inputs.semesters }}"
-          echo "semesters=$SEMESTERS" >> $GITHUB_OUTPUT
+          SEMESTER="${{ matrix.semester }}"
+          YEAR=$(echo "$SEMESTER" | cut -d'-' -f1)
+          TERM=$(echo "$SEMESTER" | cut -d'-' -f2)
 
-          # 計算學期數量
-          COUNT=$(echo "$SEMESTERS" | tr ',' '\n' | wc -l)
-          echo "count=$COUNT" >> $GITHUB_OUTPUT
+          echo "year=$YEAR" >> $GITHUB_OUTPUT
+          echo "term=$TERM" >> $GITHUB_OUTPUT
+          echo "處理: $YEAR 學年度第 $TERM 學期"
 
-          echo "準備匯入 $COUNT 個學期: $SEMESTERS"
-
-      - name: 🕷️ Import semesters
+      - name: 🔍 Check existing data
+        id: check
+        if: ${{ inputs.skip_existing }}
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
-          NKUST_SCRAPE_SYLLABUS: ${{ inputs.scrape_syllabus }}
         run: |
-          SEMESTERS="${{ steps.parse.outputs.semesters }}"
-          SCRAPE_SYLLABUS="${{ inputs.scrape_syllabus }}"
+          YEAR="${{ steps.parse.outputs.year }}"
+          TERM="${{ steps.parse.outputs.term }}"
 
-          echo "開始批次匯入..."
-          echo "爬取課程大綱: $SCRAPE_SYLLABUS"
-          echo ""
+          EXISTING=$(psql "$DATABASE_URL" -t -c "
+            SELECT COUNT(*)
+            FROM \"Course\"
+            WHERE year = '$YEAR' AND term = '$TERM';
+          " | tr -d ' ')
 
-          SUCCESS_COUNT=0
-          SKIP_COUNT=0
-          FAIL_COUNT=0
+          echo "existing=$EXISTING" >> $GITHUB_OUTPUT
 
-          # 分割學期字串並逐個處理
-          IFS=',' read -ra SEMESTER_LIST <<< "$SEMESTERS"
+          if [ "$EXISTING" -gt 0 ]; then
+            echo "⏭️ 已存在 $EXISTING 筆資料"
+          fi
 
-          for semester in "${SEMESTER_LIST[@]}"; do
-            # 移除空白
-            semester=$(echo "$semester" | xargs)
+      - name: 🕷️ Scrape data
+        if: ${{ !inputs.skip_existing || steps.check.outputs.existing == '0' }}
+        env:
+          NKUST_AG202_YMS_YMS: "${{ steps.parse.outputs.year }}#${{ steps.parse.outputs.term }}"
+          NKUST_SCRAPE_SYLLABUS: ${{ inputs.scrape_syllabus && '1' || '' }}
+        run: |
+          echo "🕷️ 開始爬取 ${{ matrix.semester }}..."
+          npm run scrape:nkust-ag202
+          echo "✓ 爬取完成"
 
-            # 解析學年和學期
-            YEAR=$(echo "$semester" | cut -d'-' -f1)
-            TERM=$(echo "$semester" | cut -d'-' -f2)
+      - name: 💾 Import to database
+        if: ${{ !inputs.skip_existing || steps.check.outputs.existing == '0' }}
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NKUST_IMPORT_YEAR: ${{ steps.parse.outputs.year }}
+          NKUST_IMPORT_TERM: ${{ steps.parse.outputs.term }}
+        run: |
+          echo "💾 開始匯入..."
+          npm run db:import:nkust-ag202
+          echo "✓ 匯入完成"
 
-            echo "========================================="
-            echo "📚 處理: $YEAR 學年度第 $TERM 學期"
-            echo "========================================="
+      - name: 📊 Verify import
+        if: ${{ !inputs.skip_existing || steps.check.outputs.existing == '0' }}
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          YEAR="${{ steps.parse.outputs.year }}"
+          TERM="${{ steps.parse.outputs.term }}"
 
-            # 檢查是否已有資料
-            EXISTING=$(psql "$DATABASE_URL" -t -c "
-              SELECT COUNT(*)
-              FROM \"Course\"
-              WHERE year = '$YEAR' AND term = '$TERM';
-            " | tr -d ' ')
+          COUNT=$(psql "$DATABASE_URL" -t -c "
+            SELECT COUNT(*)
+            FROM \"Course\"
+            WHERE year = '$YEAR' AND term = '$TERM';
+          " | tr -d ' ')
 
-            if [ "$EXISTING" -gt 0 ]; then
-              echo "⏭️  已存在 $EXISTING 筆資料，跳過"
-              SKIP_COUNT=$((SKIP_COUNT + 1))
-              echo ""
-              continue
-            fi
+          echo "📈 ${{ matrix.semester }} 匯入課程數: $COUNT"
 
-            # 爬取資料
-            echo "🕷️  開始爬取..."
-            if NKUST_AG202_YMS_YMS="${YEAR}#${TERM}" NKUST_IMPORT_YEAR=$YEAR NKUST_IMPORT_TERM=$TERM npm run scrape:nkust-ag202; then
-              echo "✓ 爬取完成"
-            else
-              echo "❌ 爬取失敗"
-              FAIL_COUNT=$((FAIL_COUNT + 1))
-              echo ""
-              continue
-            fi
+      - name: ⏭️ Skip message
+        if: ${{ inputs.skip_existing && steps.check.outputs.existing != '0' }}
+        run: |
+          echo "⏭️ 跳過 ${{ matrix.semester }}，已存在 ${{ steps.check.outputs.existing }} 筆資料"
 
-            # 匯入資料庫
-            echo "💾 開始匯入..."
-            if NKUST_IMPORT_YEAR=$YEAR NKUST_IMPORT_TERM=$TERM npm run db:import:nkust-ag202; then
-              echo "✓ 匯入完成"
-
-              # 驗證
-              NEW_COUNT=$(psql "$DATABASE_URL" -t -c "
-                SELECT COUNT(*)
-                FROM \"Course\"
-                WHERE year = '$YEAR' AND term = '$TERM';
-              " | tr -d ' ')
-
-              echo "📈 新增課程: $NEW_COUNT"
-              SUCCESS_COUNT=$((SUCCESS_COUNT + 1))
-            else
-              echo "❌ 匯入失敗"
-              FAIL_COUNT=$((FAIL_COUNT + 1))
-            fi
-
-            echo ""
-          done
-
-          # 最終統計
+  # 第三個 job：統計結果
+  summary:
+    needs: [prepare, import]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: 📊 Final Summary
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
           echo "========================================="
           echo "📊 批次匯入完成"
           echo "========================================="
-          echo "總學期數: ${{ steps.parse.outputs.count }}"
-          echo "成功: $SUCCESS_COUNT"
-          echo "跳過: $SKIP_COUNT"
-          echo "失敗: $FAIL_COUNT"
+          echo "處理學期數: ${{ needs.prepare.outputs.count }}"
           echo ""
 
           # 查詢總資料量
@@ -143,25 +166,15 @@ jobs:
           echo "資料庫總計："
           echo "  課程總數: $TOTAL_COURSES"
           echo "  教師總數: $TOTAL_INSTRUCTORS"
+          echo ""
 
           # 按學期統計
-          echo ""
           echo "各學期課程數："
           psql "$DATABASE_URL" -c "
-            SELECT year || ' 學年度第 ' || term || ' 學期' as semester,
+            SELECT year || '-' || term as semester,
                    COUNT(*) as courses
             FROM \"Course\"
             GROUP BY year, term
-            ORDER BY year DESC, term DESC;
+            ORDER BY year DESC, term DESC
+            LIMIT 20;
           "
-
-          # 如果有失敗，退出碼設為 1
-          if [ "$FAIL_COUNT" -gt 0 ]; then
-            exit 1
-          fi
-
-      - name: 📋 Summary
-        if: always()
-        run: |
-          echo "批次匯入任務完成"
-          echo "請查看上方日誌了解詳細結果"
