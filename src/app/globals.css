@@ -661,3 +661,23 @@ html.is-dark {
     bottom: 20px !important;
   }
 }
+
+/* =========================================================
+   Mobile Course Card - Disable Hover on Touch Devices
+   ========================================================= */
+
+/* 只在支援 hover 的設備上啟用 hover 效果 */
+@media (hover: hover) and (pointer: fine) {
+  .mobile-course-card:hover {
+    background-color: var(--app-table-hover-bg) !important;
+    border-color: var(--ts-primary-500) !important;
+  }
+}
+
+/* 觸控設備上使用 active 狀態提供點擊回饋 */
+@media (hover: none) and (pointer: coarse) {
+  .mobile-course-card:active {
+    background-color: var(--app-table-hover-bg) !important;
+    transform: scale(0.98);
+  }
+}

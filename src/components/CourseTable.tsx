@@ -95,6 +95,7 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
   function CourseCard({ course }: { course: CourseListItem }) {
     return (
       <div
+        className="mobile-course-card"
         onClick={() => router.push(`/courses/${course.id}`)}
         style={{
           backgroundColor: "var(--app-surface)",
@@ -103,14 +104,6 @@ export function CourseTable({ courses, currentSort, currentOrder }: CourseTableP
           padding: "1rem",
           cursor: "pointer",
           transition: "all 0.15s",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = "var(--app-table-hover-bg)";
-          e.currentTarget.style.borderColor = "var(--ts-primary-500)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = "var(--app-surface)";
-          e.currentTarget.style.borderColor = "var(--app-border)";
         }}
       >
         {/* 課程名稱 */}
