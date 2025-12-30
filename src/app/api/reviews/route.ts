@@ -96,6 +96,15 @@ export async function POST(request: Request): Promise<Response> {
       return Response.json({ error: "User is banned" }, { status: 403 });
     }
 
+    // 檢查是否有評論限制
+    if (dbUser.reviewRestrictedUntil && dbUser.reviewRestrictedUntil > new Date()) {
+      const restrictedUntil = dbUser.reviewRestrictedUntil.toISOString().split("T")[0];
+      return Response.json(
+        { error: `您的評論功能已被限制至 ${restrictedUntil}` },
+        { status: 403 }
+      );
+    }
+
     // 檢查是否已評論過
     const existing = await prisma!.review.findUnique({
       where: { userId_courseId: { userId: dbUser.id, courseId } },

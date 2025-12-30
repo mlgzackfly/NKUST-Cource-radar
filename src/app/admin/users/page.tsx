@@ -9,7 +9,8 @@ type User = {
   email: string;
   createdAt: string;
   bannedAt: string | null;
-  role: string;
+  reviewRestrictedUntil: string | null;
+  role: "USER" | "ADMIN";
   _count: { reviews: number; reports: number };
 };
 
@@ -50,6 +51,13 @@ type UserDetails = {
   };
 };
 
+type ActionModalState = {
+  isOpen: boolean;
+  userId: string | null;
+  userEmail: string;
+  actionType: "restrict_review" | "set_admin" | "remove_admin" | null;
+};
+
 export default function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
   const [loading, setLoading] = useState(true);
@@ -62,6 +70,13 @@ export default function UsersPage() {
   const [expandedUser, setExpandedUser] = useState<string | null>(null);
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
   const [loadingDetails, setLoadingDetails] = useState(false);
+  const [actionModal, setActionModal] = useState<ActionModalState>({
+    isOpen: false,
+    userId: null,
+    userEmail: "",
+    actionType: null,
+  });
+  const [restrictDays, setRestrictDays] = useState<number>(7);
 
   useEffect(() => {
     fetchUsers();
@@ -116,6 +131,68 @@ export default function UsersPage() {
       alert("操作失敗");
     } finally {
       setProcessing(null);
+    }
+  };
+
+  const handleUserAction = async (
+    userId: string,
+    action: string,
+    extraData?: Record<string, unknown>
+  ) => {
+    setProcessing(userId);
+    try {
+      const res = await fetch(`/api/admin/users/${userId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ action, ...extraData }),
+      });
+
+      if (res.ok) {
+        alert("操作成功");
+        fetchUsers();
+        setActionModal({ isOpen: false, userId: null, userEmail: "", actionType: null });
+      } else {
+        const data = await res.json();
+        alert(data.error || "操作失敗");
+      }
+    } catch (error) {
+      console.error("Failed to handle user action:", error);
+      alert("操作失敗");
+    } finally {
+      setProcessing(null);
+    }
+  };
+
+  const openActionModal = (
+    user: User,
+    actionType: "restrict_review" | "set_admin" | "remove_admin"
+  ) => {
+    setActionModal({
+      isOpen: true,
+      userId: user.id,
+      userEmail: user.email,
+      actionType,
+    });
+  };
+
+  const closeActionModal = () => {
+    setActionModal({ isOpen: false, userId: null, userEmail: "", actionType: null });
+    setRestrictDays(7);
+  };
+
+  const handleModalConfirm = () => {
+    if (!actionModal.userId || !actionModal.actionType) return;
+
+    if (actionModal.actionType === "restrict_review") {
+      handleUserAction(actionModal.userId, "restrict_review", { restrictDays });
+    } else if (actionModal.actionType === "set_admin") {
+      if (confirm(`確定要將 ${actionModal.userEmail} 設為管理員嗎？`)) {
+        handleUserAction(actionModal.userId, "set_admin");
+      }
+    } else if (actionModal.actionType === "remove_admin") {
+      if (confirm(`確定要移除 ${actionModal.userEmail} 的管理員權限嗎？`)) {
+        handleUserAction(actionModal.userId, "remove_admin");
+      }
     }
   };
 
@@ -312,6 +389,7 @@ export default function UsersPage() {
                   <th>評論數</th>
                   <th>檢舉數</th>
                   <th>狀態</th>
+                  <th>評論限制</th>
                   <th>操作</th>
                 </tr>
               </thead>
@@ -352,31 +430,32 @@ export default function UsersPage() {
                           <span className="ts-badge is-positive">正常</span>
                         )}
                       </td>
-                      <td onClick={(e) => e.stopPropagation()}>
-                        {user.role === "ADMIN" ? (
-                          <span
-                            style={{
-                              fontSize: "0.813rem",
-                              color: "var(--ts-gray-500)",
-                            }}
-                          >
-                            管理員
+                      <td onClick={() => fetchUserDetails(user.id)}>
+                        {user.reviewRestrictedUntil &&
+                        new Date(user.reviewRestrictedUntil) > new Date() ? (
+                          <span className="ts-badge is-warning">
+                            至 {new Date(user.reviewRestrictedUntil).toLocaleDateString()}
                           </span>
                         ) : (
-                          <button
-                            onClick={() => handleBan(user.id, user.bannedAt ? "unban" : "ban")}
-                            className={`ts-button is-small ${user.bannedAt ? "is-positive" : "is-negative"}`}
-                            disabled={processing === user.id}
-                          >
-                            {user.bannedAt ? "解封" : "封禁"}
-                          </button>
+                          <span style={{ color: "var(--ts-gray-400)", fontSize: "0.813rem" }}>
+                            無
+                          </span>
                         )}
+                      </td>
+                      <td onClick={(e) => e.stopPropagation()}>
+                        <UserActionsDropdown
+                          user={user}
+                          processing={processing}
+                          onBan={handleBan}
+                          onAction={openActionModal}
+                          onUnrestrict={(userId) => handleUserAction(userId, "unrestrict_review")}
+                        />
                       </td>
                     </tr>
                     {expandedUser === user.id && (
                       <tr>
                         <td
-                          colSpan={8}
+                          colSpan={9}
                           style={{ padding: "1.5rem", backgroundColor: "var(--ts-gray-50)" }}
                         >
                           {loadingDetails ? (
@@ -425,6 +504,82 @@ export default function UsersPage() {
             </div>
           )}
         </>
+      )}
+
+      {/* Action Modal */}
+      {actionModal.isOpen && actionModal.actionType === "restrict_review" && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            backgroundColor: "rgba(0,0,0,0.5)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            zIndex: 1000,
+          }}
+          onClick={closeActionModal}
+        >
+          <div
+            style={{
+              backgroundColor: "white",
+              borderRadius: "12px",
+              padding: "1.5rem",
+              width: "90%",
+              maxWidth: "400px",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.2)",
+            }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <h3 style={{ fontSize: "1.25rem", fontWeight: 600, marginBottom: "1rem" }}>
+              限制評論功能
+            </h3>
+            <p style={{ fontSize: "0.875rem", color: "var(--ts-gray-600)", marginBottom: "1rem" }}>
+              將限制 <strong>{actionModal.userEmail}</strong> 的評論功能
+            </p>
+            <div style={{ marginBottom: "1.5rem" }}>
+              <label
+                style={{
+                  display: "block",
+                  fontSize: "0.875rem",
+                  fontWeight: 500,
+                  marginBottom: "0.5rem",
+                }}
+              >
+                限制時長
+              </label>
+              <select
+                value={restrictDays}
+                onChange={(e) => setRestrictDays(Number(e.target.value))}
+                className="ts-select is-fluid"
+                style={{ width: "100%" }}
+              >
+                <option value={7}>7 天</option>
+                <option value={14}>14 天</option>
+                <option value={30}>30 天</option>
+                <option value={90}>90 天</option>
+                <option value={180}>180 天</option>
+                <option value={365}>1 年</option>
+                <option value={-1}>永久</option>
+              </select>
+            </div>
+            <div style={{ display: "flex", gap: "0.5rem", justifyContent: "flex-end" }}>
+              <button onClick={closeActionModal} className="ts-button is-outlined">
+                取消
+              </button>
+              <button
+                onClick={handleModalConfirm}
+                className="ts-button is-warning"
+                disabled={processing === actionModal.userId}
+              >
+                確認限制
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
@@ -690,6 +845,225 @@ function StatBox({
       <div style={{ fontSize: "1.5rem", fontWeight: 700, color: color || "var(--ts-gray-800)" }}>
         {typeof value === "number" ? value.toLocaleString() : value}
       </div>
+    </div>
+  );
+}
+
+function UserActionsDropdown({
+  user,
+  processing,
+  onBan,
+  onAction,
+  onUnrestrict,
+}: {
+  user: User;
+  processing: string | null;
+  onBan: (userId: string, action: "ban" | "unban") => void;
+  onAction: (user: User, actionType: "restrict_review" | "set_admin" | "remove_admin") => void;
+  onUnrestrict: (userId: string) => void;
+}) {
+  const [isOpen, setIsOpen] = useState(false);
+  const isRestricted =
+    user.reviewRestrictedUntil && new Date(user.reviewRestrictedUntil) > new Date();
+
+  return (
+    <div style={{ position: "relative" }}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="ts-button is-small is-outlined"
+        disabled={processing === user.id}
+      >
+        操作 ▾
+      </button>
+      {isOpen && (
+        <>
+          <div
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 99,
+            }}
+            onClick={() => setIsOpen(false)}
+          />
+          <div
+            style={{
+              position: "absolute",
+              top: "100%",
+              right: 0,
+              marginTop: "4px",
+              backgroundColor: "white",
+              border: "1px solid var(--ts-gray-200)",
+              borderRadius: "8px",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+              minWidth: "160px",
+              zIndex: 100,
+              overflow: "hidden",
+            }}
+          >
+            {/* 帳號狀態 */}
+            <div
+              style={{
+                padding: "0.5rem 1rem",
+                fontSize: "0.75rem",
+                color: "var(--ts-gray-500)",
+                borderBottom: "1px solid var(--ts-gray-100)",
+              }}
+            >
+              帳號狀態
+            </div>
+            <button
+              onClick={() => {
+                onBan(user.id, user.bannedAt ? "unban" : "ban");
+                setIsOpen(false);
+              }}
+              style={{
+                display: "block",
+                width: "100%",
+                padding: "0.75rem 1rem",
+                textAlign: "left",
+                border: "none",
+                background: "none",
+                cursor: "pointer",
+                fontSize: "0.875rem",
+                color: user.bannedAt ? "var(--ts-positive-600)" : "var(--ts-negative-600)",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.backgroundColor = "var(--ts-gray-50)")
+              }
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+            >
+              {user.bannedAt ? "解除封禁" : "封禁帳號"}
+            </button>
+
+            {/* 權限管理 */}
+            <div
+              style={{
+                padding: "0.5rem 1rem",
+                fontSize: "0.75rem",
+                color: "var(--ts-gray-500)",
+                borderBottom: "1px solid var(--ts-gray-100)",
+                borderTop: "1px solid var(--ts-gray-100)",
+              }}
+            >
+              權限管理
+            </div>
+            {user.role === "ADMIN" ? (
+              <button
+                onClick={() => {
+                  onAction(user, "remove_admin");
+                  setIsOpen(false);
+                }}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  padding: "0.75rem 1rem",
+                  textAlign: "left",
+                  border: "none",
+                  background: "none",
+                  cursor: "pointer",
+                  fontSize: "0.875rem",
+                  color: "var(--ts-warning-600)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--ts-gray-50)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                移除管理員
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  onAction(user, "set_admin");
+                  setIsOpen(false);
+                }}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  padding: "0.75rem 1rem",
+                  textAlign: "left",
+                  border: "none",
+                  background: "none",
+                  cursor: "pointer",
+                  fontSize: "0.875rem",
+                  color: "var(--ts-primary-600)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--ts-gray-50)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                設為管理員
+              </button>
+            )}
+
+            {/* 評論限制 */}
+            <div
+              style={{
+                padding: "0.5rem 1rem",
+                fontSize: "0.75rem",
+                color: "var(--ts-gray-500)",
+                borderBottom: "1px solid var(--ts-gray-100)",
+                borderTop: "1px solid var(--ts-gray-100)",
+              }}
+            >
+              評論限制
+            </div>
+            {isRestricted ? (
+              <button
+                onClick={() => {
+                  onUnrestrict(user.id);
+                  setIsOpen(false);
+                }}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  padding: "0.75rem 1rem",
+                  textAlign: "left",
+                  border: "none",
+                  background: "none",
+                  cursor: "pointer",
+                  fontSize: "0.875rem",
+                  color: "var(--ts-positive-600)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--ts-gray-50)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                解除評論限制
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  onAction(user, "restrict_review");
+                  setIsOpen(false);
+                }}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  padding: "0.75rem 1rem",
+                  textAlign: "left",
+                  border: "none",
+                  background: "none",
+                  cursor: "pointer",
+                  fontSize: "0.875rem",
+                  color: "var(--ts-warning-600)",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.backgroundColor = "var(--ts-gray-50)")
+                }
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+              >
+                限制評論
+              </button>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 }

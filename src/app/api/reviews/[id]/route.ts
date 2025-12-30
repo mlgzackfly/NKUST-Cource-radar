@@ -89,6 +89,20 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
       return Response.json({ error: "User not found" }, { status: 404 });
     }
 
+    // 檢查是否被禁用
+    if (user.bannedAt) {
+      return Response.json({ error: "User is banned" }, { status: 403 });
+    }
+
+    // 檢查是否有評論限制
+    if (user.reviewRestrictedUntil && user.reviewRestrictedUntil > new Date()) {
+      const restrictedUntil = user.reviewRestrictedUntil.toISOString().split("T")[0];
+      return Response.json(
+        { error: `您的評論功能已被限制至 ${restrictedUntil}` },
+        { status: 403 }
+      );
+    }
+
     // 檢查評論是否存在且屬於該使用者
     const existingReview = await prisma!.review.findUnique({
       where: { id: p.id },

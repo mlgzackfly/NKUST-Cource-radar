@@ -39,6 +39,7 @@ export async function GET(request: NextRequest) {
           name: true,
           createdAt: true,
           bannedAt: true,
+          reviewRestrictedUntil: true,
           role: true,
           _count: {
             select: {

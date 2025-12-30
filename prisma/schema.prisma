@@ -24,6 +24,11 @@ enum AdminActionType {
   UNHIDE_REVIEW
   REMOVE_REVIEW
   BAN_USER
+  UNBAN_USER
+  SET_ADMIN
+  REMOVE_ADMIN
+  RESTRICT_REVIEW
+  UNRESTRICT_REVIEW
   REQUEST_EDIT
 }
 
@@ -54,6 +59,7 @@ model User {
   image         String?   // Optional for NextAuth
   createdAt     DateTime  @default(now())
   bannedAt      DateTime?
+  reviewRestrictedUntil DateTime? // 評論限制到期時間 (null = 無限制)
   role          UserRole  @default(USER)
 
   // NextAuth relations
