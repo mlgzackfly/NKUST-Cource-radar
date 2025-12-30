@@ -353,7 +353,16 @@ export default function UsersPage() {
                         )}
                       </td>
                       <td onClick={(e) => e.stopPropagation()}>
-                        {user.role !== "ADMIN" && (
+                        {user.role === "ADMIN" ? (
+                          <span
+                            style={{
+                              fontSize: "0.813rem",
+                              color: "var(--ts-gray-500)",
+                            }}
+                          >
+                            管理員
+                          </span>
+                        ) : (
                           <button
                             onClick={() => handleBan(user.id, user.bannedAt ? "unban" : "ban")}
                             className={`ts-button is-small ${user.bannedAt ? "is-positive" : "is-negative"}`}

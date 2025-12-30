@@ -27,11 +27,19 @@ interface InstructorWithCourses {
  */
 export async function GET(request: Request) {
   try {
-    const admin = await requireAdmin();
-    if (!admin) {
-      return Response.json({ error: "Unauthorized" }, { status: 401 });
+    await requireAdmin();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Unauthorized";
+    if (message === "Unauthorized" || message === "Admin access required") {
+      return Response.json({ error: message }, { status: 401 });
     }
+    if (message === "User is banned") {
+      return Response.json({ error: message }, { status: 403 });
+    }
+    return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
 
+  try {
     if (!prisma) {
       return Response.json({ error: "Database not available" }, { status: 503 });
     }
