@@ -1,12 +1,12 @@
 // 開發用：郵件模板預覽頁面
 // 只在開發環境可用
 
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 export default function EmailPreviewPage() {
   // 只在開發環境可用
   if (process.env.NODE_ENV === "production") {
-    redirect("/");
+    notFound();
   }
 
   const mockUrl = "https://nkust.zeabur.app/api/auth/callback/email?token=example-token-12345";
