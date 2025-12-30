@@ -17,7 +17,9 @@ function ErrorContent() {
       case "Verification":
         return "登入連結已過期或無效";
       case "AccessDenied":
-        return "存取被拒絕";
+        return "只允許使用 @nkust.edu.tw 帳號登入，請使用高科大帳號重試";
+      case "OAuthAccountNotLinked":
+        return "此 Email 已使用其他方式登入過，請使用原本的登入方式";
       default:
         return "登入時發生錯誤";
     }
