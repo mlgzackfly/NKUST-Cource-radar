@@ -48,13 +48,12 @@ export function CoursesFilters({ initial }: Props) {
   const suggestionsRef = useRef<HTMLDivElement>(null);
   const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
 
+  // 判斷是否有用戶主動設定的篩選條件（排除預設的排序設定）
   const hasAnyFilter = Boolean(
     initial.q ||
     initial.campus ||
     initial.division ||
     initial.department ||
-    initial.sortBy ||
-    initial.sortOrder ||
     initial.minRating ||
     initial.maxWorkload ||
     initial.minGrading ||
