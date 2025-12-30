@@ -173,8 +173,13 @@ export function CoursesFilters({ initial }: Props) {
     } else if (suggestion.type === "course" && suggestion.id) {
       // 點擊課程建議 -> 直接進入課程詳情頁面
       window.location.href = `/courses/${suggestion.id}`;
+    } else if (suggestion.type === "department") {
+      // 點擊系所建議 -> 設定系所篩選，讓用戶可以繼續搜尋課程
+      const params = new URLSearchParams();
+      params.set("department", suggestion.text);
+      window.location.href = `/courses?${params.toString()}`;
     } else {
-      // 其他類型（系所等）-> 進入課程搜尋頁面
+      // 其他類型 -> 進入課程搜尋頁面
       const params = new URLSearchParams();
       params.set("q", suggestion.text);
       window.location.href = `/courses?${params.toString()}`;
