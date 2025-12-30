@@ -468,18 +468,17 @@ html.is-dark {
    ========================================================= */
 
 @media (hover: none) and (pointer: coarse) {
-  /* 所有按鈕 */
+  /* 所有按鈕 - 使用 opacity 而非 scale 避免佈局移動 */
   .ts-button:active {
-    transform: scale(0.98);
-    opacity: 0.9;
-    transition: all 0.1s ease;
+    opacity: 0.85;
+    transition: opacity 0.1s ease;
   }
 
-  /* 卡片和可點擊元素 */
+  /* 卡片和可點擊元素 - 使用 box-shadow 提供回饋 */
   .ts-box:active,
   [role="button"]:active {
-    transform: scale(0.995);
-    transition: all 0.1s ease;
+    box-shadow: inset 0 0 0 2px var(--ts-primary-300) !important;
+    transition: box-shadow 0.1s ease;
   }
 }
 
@@ -678,6 +677,7 @@ html.is-dark {
 @media (hover: none) and (pointer: coarse) {
   .mobile-course-card:active {
     background-color: var(--app-table-hover-bg) !important;
-    transform: scale(0.98);
+    border-color: var(--ts-primary-400) !important;
+    box-shadow: inset 0 0 0 1px var(--ts-primary-300) !important;
   }
 }
