@@ -5,10 +5,10 @@ interface CourseWithReviewCount {
   id: string;
   courseName: string;
   courseCode: string;
-  year: number;
-  term: number;
-  campus: string;
-  unit: string;
+  year: string;
+  term: string;
+  campus: string | null;
+  department: string | null;
   _count: { reviews: number };
 }
 
@@ -89,7 +89,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
         year: true,
         term: true,
         campus: true,
-        unit: true,
+        department: true,
         _count: {
           select: {
             reviews: {
@@ -145,7 +145,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
     // 計算學期趨勢
     const semesterMap = new Map<
       string,
-      { reviews: ReviewWithDetails[]; semester: string; year: number; term: number }
+      { reviews: ReviewWithDetails[]; semester: string; year: string; term: string }
     >();
 
     for (const course of typedCourses) {
@@ -212,7 +212,7 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
           avgGrading: cnt.grading > 0 ? sum.grading / cnt.grading : null,
         };
       })
-      .sort((a, b) => a.year - b.year || a.term - b.term);
+      .sort((a, b) => a.year.localeCompare(b.year) || a.term.localeCompare(b.term));
 
     // 計算評分分佈
     const distribution = {
@@ -263,8 +263,8 @@ export async function GET(request: Request, { params }: { params: Promise<{ id: 
         name: c.courseName,
         code: c.courseCode,
         semester: `${c.year}-${c.term}`,
-        campus: c.campus,
-        unit: c.unit,
+        campus: c.campus || "",
+        unit: c.department || "",
         reviewCount: c._count.reviews,
       })),
       reviews: typedReviews.map((r: ReviewWithDetails) => ({
