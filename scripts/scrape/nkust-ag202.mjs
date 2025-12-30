@@ -218,7 +218,7 @@ const HEADER_TO_KEY = new Map([
 
 function parseSyllabusCell($, cell) {
   const onclick = $(cell).attr("onclick") || "";
-  const m = onclick.match(/go_next\\('([^']*)','([^']*)','([^']*)'\\)/);
+  const m = onclick.match(/go_next\('([^']*)','([^']*)','([^']*)'\)/);
   if (!m) return null;
   return {
     action: "ag064_print.jsp",
