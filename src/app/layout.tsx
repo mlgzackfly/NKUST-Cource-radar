@@ -7,7 +7,6 @@ import { SemesterSelector } from "@/components/SemesterSelector";
 import { UserMenu } from "@/components/UserMenu";
 import { SessionProvider } from "@/components/SessionProvider";
 import { BottomNavbar } from "@/components/BottomNavbar";
-import { ThemeToggle } from "@/components/ThemeToggle";
 
 export const metadata = {
   title: "高科選課雷達 | 選課，不只是憑感覺",
@@ -144,7 +143,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     <Suspense fallback={null}>
                       <SemesterSelector />
                     </Suspense>
-                    <ThemeToggle />
                     <div className="desktop-only-user-menu">
                       <UserMenu />
                     </div>
