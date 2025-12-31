@@ -50,7 +50,8 @@ export function CourseSearchPanel({
       const [year, term] = sem.split("-");
       const params = new URLSearchParams({
         q: query,
-        semester: sem,
+        year,
+        term,
       });
 
       const res = await fetch(`/api/courses?${params.toString()}`);
