@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import { HomeSearch } from "@/components/HomeSearch";
 import { RecommendationSection } from "@/components/RecommendationSection";
+import { WebsiteJsonLd, OrganizationJsonLd } from "@/components/JsonLd";
 import { getCached, CACHE_TTL } from "@/lib/cache";
 
 // Force dynamic rendering to always fetch fresh stats
@@ -125,8 +126,23 @@ export default async function HomePage() {
     }
   }
 
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+
   return (
     <>
+      {/* JSON-LD 結構化資料 */}
+      <WebsiteJsonLd
+        name="高科選課雷達"
+        description="提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊。"
+        url={baseUrl}
+      />
+      <OrganizationJsonLd
+        name="高科選課雷達"
+        url={baseUrl}
+        logo={`${baseUrl}/icon.svg`}
+        description="高雄科技大學課程查詢與匿名評價平台"
+      />
+
       {/* Hero Section - Minimalist Center Style */}
       <div style={{ borderRadius: 0, border: "none", background: "transparent" }}>
         <div className="app-container">

@@ -8,10 +8,29 @@ import { UserMenu } from "@/components/UserMenu";
 import { SessionProvider } from "@/components/SessionProvider";
 import { BottomNavbar } from "@/components/BottomNavbar";
 
+const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+
 export const metadata = {
-  title: "高科選課雷達 | 選課，不只是憑感覺",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "高科選課雷達 | 選課，不只是憑感覺",
+    template: "%s | 高科選課雷達",
+  },
   description:
     "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊，做出更明智的選課決定。",
+  keywords: [
+    "高雄科技大學",
+    "NKUST",
+    "選課",
+    "課程評價",
+    "教師評價",
+    "課程查詢",
+    "選課雷達",
+    "涼度指數",
+  ],
+  authors: [{ name: "高科選課雷達" }],
+  creator: "高科選課雷達",
+  publisher: "高科選課雷達",
   icons: {
     icon: "/icon.svg",
     apple: "/icons/icon-192.svg",
@@ -24,6 +43,35 @@ export const metadata = {
   },
   formatDetection: {
     telephone: false,
+  },
+  openGraph: {
+    title: "高科選課雷達 | 選課，不只是憑感覺",
+    description:
+      "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊。",
+    url: baseUrl,
+    siteName: "高科選課雷達",
+    locale: "zh_TW",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "高科選課雷達 | 選課，不只是憑感覺",
+    description:
+      "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊。",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: baseUrl,
   },
 };
 

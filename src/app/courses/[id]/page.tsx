@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+// @ts-expect-error - Next.js 15.5.9 type definition issue
+import type { Metadata } from "next";
 import { prisma } from "@/lib/db";
 import { getCourseRatingSummary } from "@/lib/reviewSummary";
 import { formatSemester, formatTerm } from "@/lib/semesterFormatter";
@@ -9,12 +11,80 @@ import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewList } from "@/components/ReviewList";
 import { InstructorLinks } from "@/components/InstructorLinks";
 import { FavoriteButton } from "@/components/FavoriteButton";
+import { CourseJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
 type CoursePageProps = {
   params: Promise<{ id: string }>;
 };
+
+// 動態生成課程頁面的 metadata
+export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
+  const p = await params;
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+
+  if (!prisma) {
+    return {
+      title: "課程詳情 | 高科選課雷達",
+    };
+  }
+
+  try {
+    const course = await prisma.course.findUnique({
+      where: { id: p.id },
+      select: {
+        courseName: true,
+        year: true,
+        term: true,
+        department: true,
+        campus: true,
+        credits: true,
+        instructors: {
+          select: {
+            instructor: { select: { name: true } },
+          },
+        },
+      },
+    });
+
+    if (!course) {
+      return {
+        title: "課程不存在 | 高科選課雷達",
+      };
+    }
+
+    const instructors = course.instructors.map((x: { instructor: { name: string } }) => x.instructor.name).join("、");
+    const semester = formatSemester(course.year, course.term);
+    const title = `${course.courseName} - ${instructors || "未知教師"} | 高科選課雷達`;
+    const description = `查看 ${course.courseName} 的課程評價與詳細資訊。教師：${instructors || "未知"}｜${semester}｜${course.department || ""}｜${course.campus || ""}｜${course.credits || 0} 學分`;
+
+    return {
+      title,
+      description,
+      openGraph: {
+        title,
+        description,
+        url: `${baseUrl}/courses/${p.id}`,
+        siteName: "高科選課雷達",
+        locale: "zh_TW",
+        type: "article",
+      },
+      twitter: {
+        card: "summary",
+        title,
+        description,
+      },
+      alternates: {
+        canonical: `${baseUrl}/courses/${p.id}`,
+      },
+    };
+  } catch {
+    return {
+      title: "課程詳情 | 高科選課雷達",
+    };
+  }
+}
 
 type CourseDetail = {
   id: string;
@@ -294,7 +364,27 @@ export default async function CoursePage({ params }: CoursePageProps) {
     typedCourse.distanceLearning ? { label: "遠距", value: typedCourse.distanceLearning } : null,
   ].filter(Boolean) as Array<{ label: string; value: string }>;
 
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+
   return (
+    <>
+      {/* JSON-LD 結構化資料 */}
+      <CourseJsonLd
+        name={typedCourse.courseName}
+        description={typedCourse.syllabusData?.objectives || `${typedCourse.courseName} - 高雄科技大學課程`}
+        instructor={instructors || undefined}
+        provider="國立高雄科技大學"
+        url={`${baseUrl}/courses/${typedCourse.id}`}
+        credits={typedCourse.credits}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "首頁", url: baseUrl },
+          { name: "課程列表", url: `${baseUrl}/courses` },
+          { name: typedCourse.courseName, url: `${baseUrl}/courses/${typedCourse.id}` },
+        ]}
+      />
+
     <div className="app-container" style={{ paddingTop: "1.5rem", paddingBottom: "3rem" }}>
       {/* Hero Section */}
       <div className="ts-box is-raised app-course-hero" style={{ marginBottom: "1.5rem" }}>
@@ -653,5 +743,6 @@ export default async function CoursePage({ params }: CoursePageProps) {
         </aside>
       </div>
     </div>
+    </>
   );
 }
