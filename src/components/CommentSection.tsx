@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { useSession } from "next-auth/react";
 
 interface Comment {
@@ -26,6 +26,7 @@ export function CommentSection({ reviewId, initialCommentCount = 0 }: CommentSec
   const [newComment, setNewComment] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [hasMore, setHasMore] = useState(false);
+  const hasFetched = useRef(false);
 
   const fetchComments = useCallback(async () => {
     if (status !== "authenticated") return;
@@ -55,11 +56,20 @@ export function CommentSection({ reviewId, initialCommentCount = 0 }: CommentSec
     }
   }, [reviewId, status]);
 
+  // 當展開且尚未載入過時，載入留言
   useEffect(() => {
-    if (isExpanded && comments.length === 0 && !loading) {
+    if (isExpanded && !hasFetched.current && status === "authenticated") {
+      hasFetched.current = true;
       fetchComments();
     }
-  }, [isExpanded, comments.length, loading, fetchComments]);
+  }, [isExpanded, status, fetchComments]);
+
+  // 當 reviewId 變化時重置狀態
+  useEffect(() => {
+    hasFetched.current = false;
+    setComments([]);
+    setIsExpanded(false);
+  }, [reviewId]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
