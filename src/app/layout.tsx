@@ -54,7 +54,7 @@ export const metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "高科選課雷達 | 選課，不只是憑感覺",
     description:
       "提供 NKUST 課程查詢與匿名評價，讓你選課不再憑感覺。查看課程評分、教師評價、涼度指數等資訊。",

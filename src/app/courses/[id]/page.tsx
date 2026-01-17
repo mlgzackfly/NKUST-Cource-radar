@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: CoursePageProps): Promise<Met
         type: "article",
       },
       twitter: {
-        card: "summary",
+        card: "summary_large_image",
         title,
         description,
       },
