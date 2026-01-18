@@ -8,7 +8,7 @@ import { UserMenu } from "@/components/UserMenu";
 import { SessionProvider } from "@/components/SessionProvider";
 import { BottomNavbar } from "@/components/BottomNavbar";
 
-const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
 
 export const metadata = {
   metadataBase: new URL(baseUrl),

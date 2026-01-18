@@ -285,7 +285,7 @@ export default async function Image({ params }: Props) {
             display: "flex",
           }}
         >
-          nkust-course.zeabur.app
+          nkust.zeabur.app
         </div>
       </div>
     ),

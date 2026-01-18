@@ -8,7 +8,7 @@ type SitemapEntry = {
 };
 
 export default async function sitemap(): Promise<SitemapEntry[]> {
-  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
 
   // 靜態頁面
   const staticPages: SitemapEntry[] = [

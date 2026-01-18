@@ -1,5 +1,5 @@
 export default function robots() {
-  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
 
   return {
     rules: [

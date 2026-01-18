@@ -142,7 +142,7 @@ export default async function Image() {
             display: "flex",
           }}
         >
-          nkust-course.zeabur.app
+          nkust.zeabur.app
         </div>
       </div>
     ),

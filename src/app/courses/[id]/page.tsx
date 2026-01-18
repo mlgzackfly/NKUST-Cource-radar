@@ -24,7 +24,7 @@ type CoursePageProps = {
 // 動態生成課程頁面的 metadata
 export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
   const p = await params;
-  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
 
   if (!prisma) {
     return {
@@ -366,7 +366,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
     typedCourse.distanceLearning ? { label: "遠距", value: typedCourse.distanceLearning } : null,
   ].filter(Boolean) as Array<{ label: string; value: string }>;
 
-  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
 
   return (
     <>

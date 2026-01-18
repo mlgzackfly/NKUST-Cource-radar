@@ -11,7 +11,7 @@ interface BreadcrumbProps {
   baseUrl?: string;
 }
 
-export function Breadcrumb({ items, baseUrl = "https://nkust-course.zeabur.app" }: BreadcrumbProps) {
+export function Breadcrumb({ items, baseUrl = "https://nkust.zeabur.app" }: BreadcrumbProps) {
   // 準備 JSON-LD 資料
   const jsonLdItems = items
     .filter((item) => item.href)
