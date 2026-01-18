@@ -11,7 +11,9 @@ import { ReviewForm } from "@/components/ReviewForm";
 import { ReviewList } from "@/components/ReviewList";
 import { InstructorLinks } from "@/components/InstructorLinks";
 import { FavoriteButton } from "@/components/FavoriteButton";
-import { CourseJsonLd, BreadcrumbJsonLd } from "@/components/JsonLd";
+import { ShareButtons } from "@/components/ShareButtons";
+import { CourseJsonLd } from "@/components/JsonLd";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
@@ -377,15 +379,17 @@ export default async function CoursePage({ params }: CoursePageProps) {
         url={`${baseUrl}/courses/${typedCourse.id}`}
         credits={typedCourse.credits}
       />
-      <BreadcrumbJsonLd
+    <div className="app-container" style={{ paddingTop: "1.5rem", paddingBottom: "3rem" }}>
+      {/* Breadcrumb 導航 */}
+      <Breadcrumb
+        baseUrl={baseUrl}
         items={[
-          { name: "首頁", url: baseUrl },
-          { name: "課程列表", url: `${baseUrl}/courses` },
-          { name: typedCourse.courseName, url: `${baseUrl}/courses/${typedCourse.id}` },
+          { label: "首頁", href: "/" },
+          { label: "課程列表", href: "/courses" },
+          { label: typedCourse.courseName },
         ]}
       />
 
-    <div className="app-container" style={{ paddingTop: "1.5rem", paddingBottom: "3rem" }}>
       {/* Hero Section */}
       <div className="ts-box is-raised app-course-hero" style={{ marginBottom: "1.5rem" }}>
         <div className="ts-content">
@@ -393,42 +397,37 @@ export default async function CoursePage({ params }: CoursePageProps) {
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "space-between",
+              justifyContent: "flex-end",
               flexWrap: "wrap",
-              gap: "1rem",
+              gap: "0.5rem",
               marginBottom: "1.5rem",
             }}
           >
-            <Link className="ts-button is-ghost is-short" href="/courses">
-              ← 回課程列表
-            </Link>
-            <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", alignItems: "center" }}>
-              {typedCourse.year && typedCourse.term ? (
-                <Link
-                  className="ts-button is-outlined is-short"
-                  href={coursesHref({ year: typedCourse.year, term: typedCourse.term })}
-                >
-                  同學期
-                </Link>
-              ) : null}
-              {typedCourse.department ? (
-                <Link
-                  className="ts-button is-outlined is-short"
-                  href={coursesHref({ department: typedCourse.department })}
-                >
-                  同系所
-                </Link>
-              ) : null}
-              {typedCourse.campus ? (
-                <Link
-                  className="ts-button is-outlined is-short"
-                  href={coursesHref({ campus: typedCourse.campus })}
-                >
-                  同校區
-                </Link>
-              ) : null}
-              <FavoriteButton courseId={typedCourse.id} />
-            </div>
+            {typedCourse.year && typedCourse.term ? (
+              <Link
+                className="ts-button is-outlined is-short"
+                href={coursesHref({ year: typedCourse.year, term: typedCourse.term })}
+              >
+                同學期
+              </Link>
+            ) : null}
+            {typedCourse.department ? (
+              <Link
+                className="ts-button is-outlined is-short"
+                href={coursesHref({ department: typedCourse.department })}
+              >
+                同系所
+              </Link>
+            ) : null}
+            {typedCourse.campus ? (
+              <Link
+                className="ts-button is-outlined is-short"
+                href={coursesHref({ campus: typedCourse.campus })}
+              >
+                同校區
+              </Link>
+            ) : null}
+            <FavoriteButton courseId={typedCourse.id} />
           </div>
 
           <div className="ts-header is-large" style={{ marginBottom: "0.5rem" }}>
@@ -455,6 +454,13 @@ export default async function CoursePage({ params }: CoursePageProps) {
             )}
             {typedCourse.department || "—"} · {typedCourse.campus || "—"} ·{" "}
             {formatSemester(typedCourse.year, typedCourse.term)}
+          </div>
+          <div style={{ marginTop: "1rem" }}>
+            <ShareButtons
+              url={`${baseUrl}/courses/${typedCourse.id}`}
+              title={`${typedCourse.courseName} - 高科選課雷達`}
+              description={`查看 ${typedCourse.courseName} 的課程評價與詳細資訊`}
+            />
           </div>
         </div>
       </div>

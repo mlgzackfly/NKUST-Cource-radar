@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import dynamic from "next/dynamic";
+import { Breadcrumb } from "@/components/Breadcrumb";
 
 const ReactECharts = dynamic(() => import("echarts-for-react"), { ssr: false });
 
@@ -173,12 +174,14 @@ export default function InstructorPage() {
       className="ts-container"
       style={{ padding: "2rem 1rem", maxWidth: "1200px", margin: "0 auto" }}
     >
-      {/* 返回按鈕 */}
-      <div style={{ marginBottom: "1.5rem" }}>
-        <button onClick={() => router.back()} className="ts-button is-outlined">
-          ← 返回
-        </button>
-      </div>
+      {/* Breadcrumb 導航 */}
+      <Breadcrumb
+        items={[
+          { label: "首頁", href: "/" },
+          { label: "課程列表", href: "/courses" },
+          { label: data.instructor.name },
+        ]}
+      />
 
       {/* 教師基本資訊 */}
       <div className="ts-box" style={{ marginBottom: "2rem" }}>
