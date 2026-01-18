@@ -12,6 +12,9 @@ const baseUrl = process.env.NEXTAUTH_URL || "https://nkust-course.zeabur.app";
 
 export const metadata = {
   metadataBase: new URL(baseUrl),
+  verification: {
+    google: "ASl1Op2wjvABTqFMrzBvFyar5iElPP_J-uaM-paEZgM",
+  },
   title: {
     default: "高科選課雷達 | 選課，不只是憑感覺",
     template: "%s | 高科選課雷達",
