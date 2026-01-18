@@ -13,7 +13,7 @@ const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
 export const metadata = {
   metadataBase: new URL(baseUrl),
   verification: {
-    google: "ASl1Op2wjvABTqFMrzBvFyar5iElPP_J-uaM-paEZgM",
+    google: "amYZ4AoLhCrElFRuaW0Svq-t2Xf4R-5HNKAupI6ZreA",
   },
   title: {
     default: "高科選課雷達 | 選課，不只是憑感覺",
