@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  poweredByHeader: false,
 
   // 圖片優化設定
   images: {
@@ -86,28 +87,12 @@ const nextConfig = {
             value: "nosniff",
           },
           {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
-          },
-          {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin",
           },
           {
             key: "Permissions-Policy",
             value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
-          },
-          {
-            key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com",
-              "style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com",
-              "img-src 'self' data: https:",
-              "connect-src 'self'",
-              "frame-ancestors 'none'",
-            ].join("; "),
           },
         ],
       },

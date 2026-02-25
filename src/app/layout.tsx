@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Suspense } from "react";
+import { headers } from "next/headers";
 import "./globals.css";
 import { SemesterSelector } from "@/components/SemesterSelector";
 import { UserMenu } from "@/components/UserMenu";
@@ -88,12 +89,14 @@ export const viewport = {
   ],
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="zh-Hant" suppressHydrationWarning>
       <head>
         <script
-          // Apply theme ASAP to reduce flash (based on localStorage).
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: `
 (function () {
@@ -264,6 +267,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </SessionProvider>
         {/* Service Worker Registration */}
         <script
+          nonce={nonce}
           dangerouslySetInnerHTML={{
             __html: `
               if ('serviceWorker' in navigator) {

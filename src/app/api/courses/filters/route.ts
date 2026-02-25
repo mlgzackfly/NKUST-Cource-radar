@@ -1,5 +1,6 @@
 import { prisma, prismaRaw } from "@/lib/db";
 import { getCached, CACHE_TTL, cacheKeys } from "@/lib/cache";
+import { rateLimiter, RATE_LIMITS, getClientIp } from "@/lib/ratelimit";
 
 interface FiltersResponse {
   years: string[];
@@ -38,7 +39,20 @@ async function fetchFiltersFromDB(): Promise<FiltersResponse> {
   };
 }
 
-export async function GET(): Promise<Response> {
+export async function GET(request: Request): Promise<Response> {
+  const ip = getClientIp(request);
+  const rateLimit = rateLimiter.check(`api:${ip}`, RATE_LIMITS.api.limit, RATE_LIMITS.api.window);
+  if (!rateLimit.success) {
+    return Response.json({ error: "Too many requests" }, {
+      status: 429,
+      headers: {
+        "Retry-After": String(Math.ceil((rateLimit.resetTime - Date.now()) / 1000)),
+        "X-RateLimit-Limit": String(RATE_LIMITS.api.limit),
+        "X-RateLimit-Remaining": "0",
+      },
+    });
+  }
+
   if (!prisma) {
     return Response.json(
       { error: "DATABASE_URL is not set. API is running without DB." },
