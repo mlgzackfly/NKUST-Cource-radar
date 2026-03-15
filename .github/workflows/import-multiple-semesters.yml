@@ -8,11 +8,6 @@ on:
         required: true
         default: '114-1'
         type: string
-      scrape_syllabus:
-        description: '是否爬取課程大綱 (會增加 3-5 倍時間)'
-        required: false
-        default: false
-        type: boolean
       skip_existing:
         description: '跳過已存在的學期'
         required: false
@@ -104,11 +99,11 @@ jobs:
       - name: 🕷️ Scrape data
         if: ${{ !inputs.skip_existing || steps.check.outputs.existing == '0' }}
         env:
-          NKUST_AG202_YMS_YMS: "${{ steps.parse.outputs.year }}#${{ steps.parse.outputs.term }}"
-          NKUST_SCRAPE_SYLLABUS: ${{ inputs.scrape_syllabus && '1' || '' }}
+          NKUST_YEAR: ${{ steps.parse.outputs.year }}
+          NKUST_TERM: ${{ steps.parse.outputs.term }}
         run: |
           echo "🕷️ 開始爬取 ${{ matrix.semester }}..."
-          npm run scrape:nkust-ag202
+          npm run scrape:nkust-stdsys
           echo "✓ 爬取完成"
 
       - name: 💾 Import to database
@@ -119,7 +114,7 @@ jobs:
           NKUST_IMPORT_TERM: ${{ steps.parse.outputs.term }}
         run: |
           echo "💾 開始匯入..."
-          npm run db:import:nkust-ag202
+          npm run db:import:nkust-stdsys
           echo "✓ 匯入完成"
 
       - name: 📊 Verify import

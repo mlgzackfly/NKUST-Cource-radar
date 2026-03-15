@@ -17,11 +17,11 @@ on:
         options:
           - '1'
           - '2'
-      scrape_syllabus:
-        description: '是否爬取課程大綱 (會增加 3-5 倍時間)'
+      program_id:
+        description: '學制代碼 (留空=全部, 14=日間部四技)'
         required: false
-        default: false
-        type: boolean
+        default: ''
+        type: string
 
   # 定時執行：每學期開始時自動爬取（2 月和 9 月的第一天）
   schedule:
@@ -58,7 +58,7 @@ jobs:
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             echo "year=${{ inputs.year }}" >> $GITHUB_OUTPUT
             echo "term=${{ inputs.term }}" >> $GITHUB_OUTPUT
-            echo "scrape_syllabus=${{ inputs.scrape_syllabus }}" >> $GITHUB_OUTPUT
+            echo "program_id=${{ inputs.program_id }}" >> $GITHUB_OUTPUT
           else
             # 定時任務：根據月份決定學期
             MONTH=$(date +%m)
@@ -76,7 +76,7 @@ jobs:
 
             echo "year=$ACADEMIC_YEAR" >> $GITHUB_OUTPUT
             echo "term=$TERM" >> $GITHUB_OUTPUT
-            echo "scrape_syllabus=false" >> $GITHUB_OUTPUT
+            echo "program_id=" >> $GITHUB_OUTPUT
           fi
 
       - name: 📊 Check existing data
@@ -108,15 +108,13 @@ jobs:
       - name: 🕷️ Scrape course data
         if: steps.check.outputs.should_skip != 'true'
         env:
-          NKUST_AG202_YMS_YMS: ${{ steps.semester.outputs.year }}#${{ steps.semester.outputs.term }}
-          NKUST_IMPORT_YEAR: ${{ steps.semester.outputs.year }}
-          NKUST_IMPORT_TERM: ${{ steps.semester.outputs.term }}
-          NKUST_SCRAPE_SYLLABUS: ${{ steps.semester.outputs.scrape_syllabus }}
+          NKUST_YEAR: ${{ steps.semester.outputs.year }}
+          NKUST_TERM: ${{ steps.semester.outputs.term }}
+          NKUST_PROGRAM_ID: ${{ steps.semester.outputs.program_id }}
         run: |
-          echo "📚 開始爬取 $NKUST_IMPORT_YEAR 學年度第 $NKUST_IMPORT_TERM 學期課程..."
-          echo "爬取課程大綱: $NKUST_SCRAPE_SYLLABUS"
+          echo "📚 開始爬取 $NKUST_YEAR 學年度第 $NKUST_TERM 學期課程..."
 
-          npm run scrape:nkust-ag202
+          npm run scrape:nkust-stdsys
 
           echo "✓ 爬取完成"
 
@@ -129,7 +127,7 @@ jobs:
         run: |
           echo "💾 開始匯入資料庫..."
 
-          npm run db:import:nkust-ag202
+          npm run db:import:nkust-stdsys
 
           echo "✓ 匯入完成"
 

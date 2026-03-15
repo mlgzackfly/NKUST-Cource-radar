@@ -50,11 +50,12 @@ async function main() {
     // 2. 重新爬取
     console.log('\n🕷️  開始爬取...');
     try {
-      execSync(`npm run scrape:nkust-ag202`, {
+      execSync(`npm run scrape:nkust-stdsys`, {
         stdio: 'inherit',
         env: {
           ...process.env,
-          NKUST_AG202_YMS_YMS: `${year}#${term}`,
+          NKUST_YEAR: year,
+          NKUST_TERM: term,
         }
       });
     } catch (e) {
@@ -65,7 +66,7 @@ async function main() {
     // 3. 重新匯入
     console.log('\n💾 開始匯入...');
     try {
-      execSync(`npm run db:import:nkust-ag202`, {
+      execSync(`npm run db:import:nkust-stdsys`, {
         stdio: 'inherit',
         env: {
           ...process.env,

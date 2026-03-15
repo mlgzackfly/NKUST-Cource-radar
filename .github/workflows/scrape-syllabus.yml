@@ -38,16 +38,17 @@ jobs:
       - name: 🔍 Generate Prisma Client
         run: npx prisma generate
 
-      - name: 🕷️ Scrape courses with syllabus
+      - name: 🕷️ Scrape courses with syllabus (legacy scraper)
         env:
           NKUST_AG202_YMS_YMS: ${{ inputs.year }}#${{ inputs.term }}
           NKUST_SCRAPE_SYLLABUS: '1'
         run: |
           echo "📚 開始爬取 ${{ inputs.year }} 學年度第 ${{ inputs.term }} 學期課程（含課綱）..."
+          echo "⚠️ 使用舊版爬蟲 (ag202) 以取得課綱資料"
           npm run scrape:nkust-ag202
           echo "✓ 爬取完成"
 
-      - name: 📥 Import to database
+      - name: 📥 Import to database (legacy importer)
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           NKUST_IMPORT_YEAR: ${{ inputs.year }}
