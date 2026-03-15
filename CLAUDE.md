@@ -35,17 +35,21 @@ npm run fix:search       # 修復全文搜尋 vector (若搜尋異常)
 
 ### 資料抓取與匯入
 ```bash
-# 抓取課程資料 (存至 data/nkust/ag202/)
+# 抓取課程資料 - 新版 (stdsys，存至 data/nkust/stdsys/)
+NKUST_YEAR="114" NKUST_TERM="1" npm run scrape:nkust-stdsys
+
+# 抓取特定學制
+NKUST_YEAR="114" NKUST_TERM="1" NKUST_PROGRAM_ID="14" npm run scrape:nkust-stdsys
+
+# 抓取所有學制
+NKUST_YEAR="114" NKUST_TERM="1" NKUST_SCRAPE_ALL_PROGRAMS=1 npm run scrape:nkust-stdsys
+
+# 匯入至資料庫 (新版)
+NKUST_IMPORT_YEAR="114" NKUST_IMPORT_TERM="1" npm run db:import:nkust-stdsys
+
+# 舊版抓取 (已棄用，來源: webap.nkust.edu.tw)
 NKUST_AG202_YMS_YMS="114#1" npm run scrape:nkust-ag202
-
-# 匯入至資料庫
 NKUST_IMPORT_YEAR="114" NKUST_IMPORT_TERM="1" npm run db:import:nkust-ag202
-
-# 批次匯入多個學期
-node scripts/import-all-semesters.mjs
-
-# 抓取課綱資料 (選用)
-NKUST_SCRAPE_SYLLABUS=1 NKUST_AG202_YMS_YMS="114#1" npm run scrape:nkust-ag202
 ```
 
 ### 其他工具
@@ -61,9 +65,10 @@ node scripts/clear-reviews.mjs  # 清除所有評論 (危險操作)
 ### 資料流架構
 
 1. **課程資料來源**：
-   - 從高科大 `webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp` 抓取
-   - 儲存至 `data/nkust/ag202/{year}/{term}/{campus}/{degree}/{unit}.json`
-   - 透過 `scripts/db/import-nkust-ag202.mjs` 匯入 PostgreSQL
+   - **新版**：從高科大 `stdsys.nkust.edu.tw/Student/Course/QueryCourse` 抓取
+   - 儲存至 `data/nkust/stdsys/{year}/{term}/{programId}.json`
+   - 透過 `scripts/db/import-nkust-stdsys.mjs` 匯入 PostgreSQL
+   - 舊版 (`webap.nkust.edu.tw/nkust/ag_pro/ag202.jsp`) 已棄用但保留
    - **重要**：Web 端一律從資料庫查詢，不讀 JSON 檔案
 
 2. **評價系統**：
@@ -170,15 +175,19 @@ node scripts/init-admin.mjs  # 將 C109193108@nkust.edu.tw 設為管理員
 
 ## 重要開發注意事項
 
-### 1. 爬蟲腳本特殊處理
+### 1. 爬蟲腳本
 
-**SSL 繞過**：高科大網站使用自簽憑證，爬蟲使用 Node.js `https` module 並設定 `rejectUnauthorized: false`
+**新版 (stdsys)**：使用 `stdsys.nkust.edu.tw` 的 JSON API，不需要 HTML parsing
+- 檔案：`scripts/scrape/nkust-stdsys.mjs`
+- 需要先取得 session cookie 和 XSRF token
+- 使用標準 `fetch`，不需要 SSL 繞過
+
+**舊版 (ag202，已棄用)**：高科大網站使用自簽憑證，使用 Node.js `https` module 並設定 `rejectUnauthorized: false`
 - 檔案：`scripts/scrape/nkust-ag202.mjs`
-- 不要使用 curl/fetch，會遇到 SSL 錯誤
 
 ### 2. 資料匯入 Idempotency
 
-- 使用 `sourceKey` (year#term:campus:degree:unit:selectCode) 確保可重複執行
+- 使用 `sourceKey` (year#term:campusId:programId:unitId:selectCode) 確保可重複執行
 - `upsert` 操作避免重複資料
 
 ### 3. TypeScript 路徑別名
@@ -202,12 +211,15 @@ node scripts/init-admin.mjs  # 將 C109193108@nkust.edu.tw 設為管理員
 - `EMAIL_FROM`：寄件者 email
 - `RESEND_API_KEY`：Resend API key
 
-爬蟲/匯入變數：
-- `NKUST_AG202_YMS_YMS`：學年學期 (例: "114#1")
+爬蟲/匯入變數 (新版 stdsys)：
+- `NKUST_YEAR`：學年 (例: "114"，可用逗號分隔多學年)
+- `NKUST_TERM`：學期 (例: "1"，1=上學期 2=下學期 3=寒修 4=暑修)
+- `NKUST_PROGRAM_ID`：學制代碼 (例: "14" 日間部四技)
+- `NKUST_SCRAPE_ALL_PROGRAMS`：抓取所有使用中學制 (1/0)
 - `NKUST_IMPORT_YEAR`、`NKUST_IMPORT_TERM`：匯入範圍限制
-- `NKUST_SCRAPE_SYLLABUS`：是否抓取課綱 (1/0)
-- `NKUST_DGR_ID`：學制 (例: "1" 日間部四技)
-- `NKUST_UNIT_ID`：系所代碼 (例: "14")
+
+爬蟲/匯入變數 (舊版 ag202，已棄用)：
+- `NKUST_AG202_YMS_YMS`：學年學期 (例: "114#1")
 
 ### 6. GitHub Actions
 
@@ -266,12 +278,15 @@ src/
 
 scripts/
 ├── scrape/            # 爬蟲腳本
-│   ├── nkust-ag202.mjs
+│   ├── nkust-stdsys.mjs        # 新版爬蟲 (stdsys.nkust.edu.tw)
+│   ├── nkust-ag202.mjs         # 舊版爬蟲 (已棄用)
 │   └── nkust-ag064-syllabus.mjs
 └── db/                # 資料庫操作
-    └── import-nkust-ag202.mjs
+    ├── import-nkust-stdsys.mjs  # 新版匯入
+    └── import-nkust-ag202.mjs   # 舊版匯入
 
-data/nkust/ag202/      # 爬取的課程 JSON (不 commit 大量資料)
+data/nkust/stdsys/     # 新版爬取的課程 JSON (不 commit 大量資料)
+data/nkust/ag202/      # 舊版爬取的課程 JSON
 prisma/schema.prisma   # 資料庫 Schema
 ```
 

@@ -15,6 +15,8 @@
     "fix:search": "node scripts/fix-search-vector.mjs",
     "test:email": "node scripts/test-email.mjs",
     "scrape:nkust-ag202": "node scripts/scrape/nkust-ag202.mjs",
+    "scrape:nkust-stdsys": "node scripts/scrape/nkust-stdsys.mjs",
+    "db:import:nkust-stdsys": "node scripts/db/import-nkust-stdsys.mjs",
     "build:api": "node scripts/api/build-static-api.mjs",
     "check-env": "node scripts/check-env.mjs",
     "init-data": "node scripts/init-data.mjs",
