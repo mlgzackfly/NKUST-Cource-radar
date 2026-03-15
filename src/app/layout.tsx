@@ -93,7 +93,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   const nonce = (await headers()).get("x-nonce") ?? undefined;
 
   return (
-    <html lang="zh-Hant" suppressHydrationWarning>
+    <html lang="zh-Hant" className="is-light" suppressHydrationWarning>
       <head>
         <script
           nonce={nonce}
@@ -108,9 +108,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     if (mode === 'auto') {
       effectiveMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
-    if (effectiveMode === 'dark') root.classList.add('is-dark');
-    if (effectiveMode === 'light') root.classList.add('is-light');
-  } catch (e) {}
+    root.classList.add(effectiveMode === 'dark' ? 'is-dark' : 'is-light');
+  } catch (e) {
+    root.classList.add('is-light');
+  }
 })();`,
           }}
         />
