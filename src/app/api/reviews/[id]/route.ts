@@ -4,6 +4,7 @@ import { authOptions } from "@/pages/api/auth/[...nextauth]";
 import { prisma } from "@/lib/db";
 import { validateReviewRatings, validateText } from "@/lib/validation";
 import { rateLimiter, RATE_LIMITS } from "@/lib/ratelimit";
+import { isStudentEmail } from "@/lib/studentIdParser";
 
 export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
@@ -46,6 +47,13 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
     // 驗證 @nkust.edu.tw
     if (!email.toLowerCase().endsWith("@nkust.edu.tw")) {
       return Response.json({ error: "Only @nkust.edu.tw emails allowed" }, { status: 403 });
+    }
+
+    if (!isStudentEmail(email)) {
+      return Response.json(
+        { error: "僅限學生帳號發表評價，教職員帳號無法使用此功能" },
+        { status: 403 }
+      );
     }
 
     const body = await request.json();

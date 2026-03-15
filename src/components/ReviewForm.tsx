@@ -11,9 +11,11 @@ type RatingValue = 1 | 2 | 3 | 4 | 5 | null;
 export function ReviewForm({
   courseId,
   userHasReviewed = false,
+  isStaff = false,
 }: {
   courseId: string;
   userHasReviewed?: boolean;
+  isStaff?: boolean;
 }) {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -56,6 +58,19 @@ export function ReviewForm({
           <Link href="/auth/signin" className="ts-button is-primary">
             登入撰寫
           </Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (isStaff) {
+    return (
+      <div className="ts-box is-raised">
+        <div className="ts-content" style={{ padding: "2rem", textAlign: "center" }}>
+          <div className="ts-header" style={{ marginBottom: "0.5rem" }}>
+            教職員帳號無法發表評價
+          </div>
+          <div className="app-muted">本平台僅開放學生帳號撰寫課程評價</div>
         </div>
       </div>
     );

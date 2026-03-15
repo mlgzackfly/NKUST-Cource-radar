@@ -239,3 +239,15 @@ export function getDepartmentName(deptCode: string): string | null {
 export function getAllDepartments(): Array<{ code: string; name: string }> {
   return Object.entries(DEPARTMENTS).map(([code, name]) => ({ code, name }));
 }
+
+/**
+ * 判斷 @nkust.edu.tw email 是否為學生帳號
+ * 學生帳號的 local part 符合學號格式（如 C109193108）
+ * 教職員帳號為英文名（如 huangyk）
+ */
+export function isStudentEmail(email: string): boolean {
+  if (!email || !email.toLowerCase().endsWith("@nkust.edu.tw")) return false;
+  const localPart = email.split("@")[0];
+  const info = parseStudentId(localPart);
+  return info.isValid;
+}

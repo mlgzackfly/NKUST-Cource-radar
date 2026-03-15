@@ -16,6 +16,7 @@ import { CourseJsonLd } from "@/components/JsonLd";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/pages/api/auth/[...nextauth]";
+import { isStudentEmail } from "@/lib/studentIdParser";
 
 type CoursePageProps = {
   params: Promise<{ id: string }>;
@@ -162,6 +163,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
   let reviewsData = null;
   let userHasReviewed = false;
   let isNkustUser = false;
+  let isStaff = false;
   let currentUserId: string | null = null;
 
   try {
@@ -212,6 +214,9 @@ export default async function CoursePage({ params }: CoursePageProps) {
     try {
       const session = await getServerSession(authOptions);
       isNkustUser = session?.user?.email?.toLowerCase().endsWith("@nkust.edu.tw") ?? false;
+      if (isNkustUser && session?.user?.email) {
+        isStaff = !isStudentEmail(session.user.email);
+      }
 
       if (isNkustUser && session?.user?.email) {
         // Check if user has already reviewed this course
@@ -713,7 +718,7 @@ export default async function CoursePage({ params }: CoursePageProps) {
             )}
 
             {/* Review Form */}
-            <ReviewForm courseId={typedCourse.id} userHasReviewed={userHasReviewed} />
+            <ReviewForm courseId={typedCourse.id} userHasReviewed={userHasReviewed} isStaff={isStaff} />
 
             {/* Review List */}
             <ReviewList reviews={reviewsData} courseId={typedCourse.id} />

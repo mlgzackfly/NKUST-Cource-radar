@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { UserActivityChart } from "./UserActivityChart";
+import { isStudentEmail } from "@/lib/studentIdParser";
 
 type User = {
   id: string;
@@ -412,6 +413,11 @@ export default function UsersPage() {
                       >
                         {expandedUser === user.id ? "▼ " : "▶ "}
                         {user.email}
+                        {!isStudentEmail(user.email) && (
+                          <span className="ts-badge is-warning" style={{ marginLeft: "0.5rem", fontSize: "0.75rem" }}>
+                            教職員
+                          </span>
+                        )}
                       </td>
                       <td onClick={() => fetchUserDetails(user.id)}>
                         <span className={`ts-badge ${user.role === "ADMIN" ? "is-primary" : ""}`}>
