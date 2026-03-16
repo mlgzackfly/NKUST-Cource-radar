@@ -3,7 +3,8 @@ import {
   parseStudentIdFromEmail,
   getDepartmentCategory,
   getRelatedDepartments,
-  getDepartmentName,
+  getDepartmentClassKeyword,
+  getDepartmentCollege,
 } from "./studentIdParser";
 
 /**
@@ -485,19 +486,20 @@ export async function getColdStartRecommendations(
     // 1. 解析學號取得系所資訊
     const studentInfo = parseStudentIdFromEmail(userEmail);
     const deptCode = studentInfo?.departmentCode;
-    const deptName = deptCode ? getDepartmentName(deptCode) : null;
     const deptCategory = deptCode ? getDepartmentCategory(deptCode) : null;
+    const classKeyword = deptCode ? getDepartmentClassKeyword(deptCode) : null;
+    const collegeName = deptCode ? getDepartmentCollege(deptCode) : null;
 
     const recommendations: RecommendationResult[] = [];
     const seenCourseIds = new Set<string>();
 
     // 2. 同系所的課程（優先級最高，按學期倒序）
-    if (deptName) {
-      const deptSearchTerm = deptName.replace(/（.*）$/, ""); // 移除括號說明
+    // 資料庫 department 存學院名，className 存班級名（含系所名），需用兩者組合搜尋
+    if (classKeyword || collegeName) {
       const sameDeptCourses = await prisma.course.findMany({
-        where: {
-          department: { contains: deptSearchTerm },
-        },
+        where: classKeyword
+          ? { className: { contains: classKeyword } }
+          : { department: collegeName! },
         select: {
           id: true,
           year: true,
@@ -511,8 +513,7 @@ export async function getColdStartRecommendations(
       sameDeptCourses.forEach((course: any, index: number) => {
         if (!seenCourseIds.has(course.id)) {
           seenCourseIds.add(course.id);
-          // 依學期新舊和評論數給分
-          const yearScore = (parseInt(course.year) - 100) / 20; // 正規化年份
+          const yearScore = (parseInt(course.year) - 100) / 20;
           const reviewBonus = Math.min(course._count.reviews * 0.05, 0.2);
           recommendations.push({
             courseId: course.id,
@@ -523,19 +524,33 @@ export async function getColdStartRecommendations(
       });
     }
 
-    // 3. 相關類別系所的課程
-    if (deptCategory && recommendations.length < limit) {
-      const relatedDeptCodes = getRelatedDepartments(deptCode!);
-      const relatedDeptNames = relatedDeptCodes
-        .map((code) => getDepartmentName(code))
-        .filter(Boolean) as string[];
+    // 3. 同學院其他系所 + 相關類別系所的課程
+    if (recommendations.length < limit) {
+      const relatedConditions: any[] = [];
 
-      if (relatedDeptNames.length > 0) {
+      // 同學院但不同系所的課程
+      if (collegeName && classKeyword) {
+        relatedConditions.push({
+          department: collegeName,
+          NOT: { className: { contains: classKeyword } },
+        });
+      }
+
+      // 相關類別系所的課程
+      if (deptCategory) {
+        const relatedDeptCodes = getRelatedDepartments(deptCode!);
+        for (const code of relatedDeptCodes) {
+          const keyword = getDepartmentClassKeyword(code);
+          if (keyword) {
+            relatedConditions.push({ className: { contains: keyword } });
+          }
+        }
+      }
+
+      if (relatedConditions.length > 0) {
         const relatedCourses = await prisma.course.findMany({
           where: {
-            OR: relatedDeptNames.map((name) => ({
-              department: { contains: name.replace(/（.*）$/, "") },
-            })),
+            OR: relatedConditions,
             id: { notIn: Array.from(seenCourseIds) },
           },
           select: {
