@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/db";
 import type { Prisma } from "@prisma/client";
 import { CourseTable } from "@/components/CourseTable";
+import { CourseListJsonLd } from "@/components/JsonLd";
 
 type CourseListItem = {
   id: string;
@@ -111,7 +112,9 @@ export async function CoursesList({
 
   try {
     if (q && q.length > 0) {
-      const conditions: string[] = [`c."searchVector" @@ plainto_tsquery('simple', $1)`];
+      const instructorJoin = `LEFT JOIN "CourseInstructor" ci ON ci."courseId" = c.id LEFT JOIN "Instructor" i ON i.id = ci."instructorId"`;
+      const searchCondition = `(c."courseName" ILIKE '%' || $1 || '%' OR c."courseCode" ILIKE '%' || $1 || '%' OR c."selectCode" ILIKE '%' || $1 || '%' OR c."department" ILIKE '%' || $1 || '%' OR i."name" ILIKE '%' || $1 || '%')`;
+      const conditions: string[] = [searchCondition];
       const params: unknown[] = [q];
 
       if (year) {
@@ -135,7 +138,7 @@ export async function CoursesList({
         params.push(department);
       }
 
-      const orderByClause = `ts_rank(c."searchVector", plainto_tsquery('simple', $1)) DESC, ${baseOrderBy}`;
+      const orderByClause = `CASE WHEN c."courseName" ILIKE $1 THEN 0 WHEN c."courseName" ILIKE $1 || '%' THEN 1 WHEN c."courseName" ILIKE '%' || $1 THEN 2 ELSE 3 END, ${baseOrderBy}`;
 
       type RawCourse = {
         id: string;
@@ -148,16 +151,17 @@ export async function CoursesList({
         classroom: string | null;
       };
 
-      // Run count and data queries in parallel
+      const whereClauseStr = conditions.join(" AND ");
+      const matchingIds = `SELECT DISTINCT c.id FROM "Course" c ${instructorJoin} WHERE ${whereClauseStr}`;
       const [countResult, rawCourses] = await Promise.all([
         prisma.$queryRawUnsafe(
-          `SELECT COUNT(*)::int as count FROM "Course" c WHERE ${conditions.join(" AND ")}`,
+          `SELECT COUNT(*)::int as count FROM (${matchingIds}) sub`,
           ...params
         ) as Promise<Array<{ count: number }>>,
         prisma.$queryRawUnsafe(
           `SELECT c.id, c."courseName", c.department, c.campus, c.year, c.term, c.time, c.classroom
            FROM "Course" c
-           WHERE ${conditions.join(" AND ")}
+           WHERE c.id IN (${matchingIds})
            ORDER BY ${orderByClause}
            LIMIT ${PER_PAGE} OFFSET ${offset}`,
           ...params
@@ -326,8 +330,21 @@ export async function CoursesList({
     }).toString();
   };
 
+  const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
+
   return (
     <>
+      {courses.length > 0 && (
+        <CourseListJsonLd
+          name={q ? `「${q}」搜尋結果` : "高科大課程列表"}
+          description={q ? `搜尋「${q}」的高科大課程結果` : "高雄科技大學課程列表"}
+          items={courses.slice(0, 20).map((c, i) => ({
+            name: c.courseName,
+            url: `${baseUrl}/courses/${c.id}`,
+            position: offset + i + 1,
+          }))}
+        />
+      )}
       {/* Toolbar */}
       <div
         style={{

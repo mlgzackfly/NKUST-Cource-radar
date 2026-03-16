@@ -8,6 +8,12 @@ type CourseJsonLdProps = {
   provider: string;
   url: string;
   credits?: number | null;
+  aggregateRating?: {
+    ratingValue: number;
+    ratingCount: number;
+    bestRating?: number;
+    worstRating?: number;
+  } | null;
 };
 
 export function CourseJsonLd({
@@ -17,6 +23,7 @@ export function CourseJsonLd({
   provider,
   url,
   credits,
+  aggregateRating,
 }: CourseJsonLdProps) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -37,6 +44,16 @@ export function CourseJsonLd({
     ...(credits && {
       numberOfCredits: credits,
     }),
+    ...(aggregateRating &&
+      aggregateRating.ratingCount > 0 && {
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: aggregateRating.ratingValue.toFixed(1),
+          ratingCount: aggregateRating.ratingCount,
+          bestRating: aggregateRating.bestRating ?? 5,
+          worstRating: aggregateRating.worstRating ?? 1,
+        },
+      }),
     url,
     inLanguage: "zh-TW",
   };
@@ -123,6 +140,41 @@ export function OrganizationJsonLd({ name, url, logo, description }: Organizatio
     url,
     ...(logo && { logo }),
     ...(description && { description }),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
+type CourseListItem = {
+  name: string;
+  url: string;
+  position: number;
+};
+
+type CourseListJsonLdProps = {
+  items: CourseListItem[];
+  name: string;
+  description: string;
+};
+
+export function CourseListJsonLd({ items, name, description }: CourseListJsonLdProps) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    description,
+    numberOfItems: items.length,
+    itemListElement: items.map((item) => ({
+      "@type": "ListItem",
+      position: item.position,
+      url: item.url,
+      name: item.name,
+    })),
   };
 
   return (

@@ -22,7 +22,27 @@ type CoursePageProps = {
   params: Promise<{ id: string }>;
 };
 
-// 動態生成課程頁面的 metadata
+export const revalidate = 3600;
+
+export async function generateStaticParams() {
+  if (!prisma) return [];
+
+  try {
+    const courses = await prisma.course.findMany({
+      where: {
+        reviews: { some: { status: "ACTIVE" } },
+      },
+      select: { id: true },
+      orderBy: { reviews: { _count: "desc" } },
+      take: 200,
+    });
+
+    return courses.map((c: { id: string }) => ({ id: c.id }));
+  } catch {
+    return [];
+  }
+}
+
 export async function generateMetadata({ params }: CoursePageProps): Promise<Metadata> {
   const p = await params;
   const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
@@ -383,6 +403,20 @@ export default async function CoursePage({ params }: CoursePageProps) {
         provider="國立高雄科技大學"
         url={`${baseUrl}/courses/${typedCourse.id}`}
         credits={typedCourse.credits}
+        aggregateRating={
+          summary && summary.totalReviews > 0
+            ? {
+                ratingValue:
+                  [summary.avg.coolness, summary.avg.usefulness, summary.avg.grading]
+                    .filter((v): v is number => v !== null)
+                    .reduce((a, b) => a + b, 0) /
+                  ([summary.avg.coolness, summary.avg.usefulness, summary.avg.grading].filter(
+                    (v) => v !== null
+                  ).length || 1),
+                ratingCount: summary.totalReviews,
+              }
+            : null
+        }
       />
     <div className="app-container" style={{ paddingTop: "1.5rem", paddingBottom: "3rem" }}>
       {/* Breadcrumb 導航 */}

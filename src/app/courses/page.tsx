@@ -1,6 +1,46 @@
 import { Suspense } from "react";
+// @ts-expect-error - Next.js 15.5.9 type definition issue
+import type { Metadata } from "next";
 import { CoursesFilters } from "@/components/CoursesFilters";
 import { CoursesList, CoursesListSkeleton } from "@/components/CoursesList";
+
+const baseUrl = process.env.NEXTAUTH_URL || "https://nkust.zeabur.app";
+
+export async function generateMetadata({
+  searchParams,
+}: CoursesPageProps): Promise<Metadata> {
+  const sp = (await searchParams) ?? {};
+  const q = sp.q?.trim();
+  const department = sp.department?.trim();
+
+  let title = "課程列表";
+  let description =
+    "搜尋高雄科技大學所有課程，查看評價、涼度指數、給分甜度等資訊，幫助你做出更好的選課決定。";
+
+  if (q) {
+    title = `「${q}」搜尋結果`;
+    description = `搜尋「${q}」的高科大課程結果，包含課程評價與詳細資訊。`;
+  } else if (department) {
+    title = `${department} 課程列表`;
+    description = `查看高雄科技大學${department}的所有課程、評價與教師資訊。`;
+  }
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title: `${title} | 高科選課雷達`,
+      description,
+      url: `${baseUrl}/courses`,
+      siteName: "高科選課雷達",
+      locale: "zh_TW",
+      type: "website",
+    },
+    alternates: {
+      canonical: `${baseUrl}/courses`,
+    },
+  };
+}
 
 type CoursesPageProps = {
   searchParams?: Promise<{

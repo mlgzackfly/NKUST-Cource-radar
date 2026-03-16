@@ -84,13 +84,14 @@ export default async function sitemap(): Promise<SitemapEntry[]> {
       const instructors = await prisma.instructor.findMany({
         select: {
           id: true,
+          createdAt: true,
         },
         take: 2000,
       });
 
-      instructorPages = instructors.map((instructor: { id: string }) => ({
+      instructorPages = instructors.map((instructor: { id: string; createdAt: Date }) => ({
         url: `${baseUrl}/instructors/${instructor.id}`,
-        lastModified: new Date(),
+        lastModified: instructor.createdAt,
         changeFrequency: "weekly" as const,
         priority: 0.6,
       }));
@@ -99,5 +100,29 @@ export default async function sitemap(): Promise<SitemapEntry[]> {
     }
   }
 
-  return [...staticPages, ...coursePages, ...instructorPages];
+  // 系所頁面
+  let departmentPages: SitemapEntry[] = [];
+
+  if (prisma) {
+    try {
+      const departments = await prisma.course.findMany({
+        where: { department: { not: null } },
+        select: { department: true },
+        distinct: ["department"],
+      });
+
+      departmentPages = departments
+        .filter((d: { department: string | null }) => d.department)
+        .map((d: { department: string | null }) => ({
+          url: `${baseUrl}/departments/${encodeURIComponent(d.department!)}`,
+          lastModified: new Date(),
+          changeFrequency: "weekly" as const,
+          priority: 0.5,
+        }));
+    } catch (error) {
+      console.error("Failed to fetch departments for sitemap:", error);
+    }
+  }
+
+  return [...staticPages, ...coursePages, ...instructorPages, ...departmentPages];
 }

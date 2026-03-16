@@ -3,6 +3,10 @@ import FavoriteList from "@/components/FavoriteList";
 export const metadata = {
   title: "我的收藏 - 高科選課雷達",
   description: "查看與管理您收藏的課程",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function FavoritesPage() {

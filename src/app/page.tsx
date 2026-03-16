@@ -5,8 +5,7 @@ import { RecommendationSection } from "@/components/RecommendationSection";
 import { WebsiteJsonLd, OrganizationJsonLd, FAQJsonLd } from "@/components/JsonLd";
 import { getCached, CACHE_TTL } from "@/lib/cache";
 
-// Force dynamic rendering to always fetch fresh stats
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 function formatCount(n: number) {
   return new Intl.NumberFormat("zh-Hant-TW").format(n);

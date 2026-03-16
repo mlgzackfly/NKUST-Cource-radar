@@ -26,19 +26,25 @@ interface Suggestion {
 }
 
 async function fetchSuggestions(q: string): Promise<Suggestion[]> {
-  // Use full-text search for courses (much faster with GIN index)
-  // Falls back to pattern matching for instructors and departments
+  const pattern = `%${q}%`;
   const [courses, instructors, departments] = await Promise.all([
-    // Full-text search for courses using searchVector (GIN index)
     prisma!.$queryRaw<CourseSuggestion[]>`
       SELECT id, "courseName", department FROM (
         SELECT DISTINCT ON ("courseName") id, "courseName", department,
-               ts_rank("searchVector", plainto_tsquery('simple', ${q})) as rank
+               CASE
+                 WHEN "courseName" ILIKE ${q} THEN 0
+                 WHEN "courseName" ILIKE ${q + '%'} THEN 1
+                 WHEN "courseName" ILIKE ${'%' + q} THEN 2
+                 ELSE 3
+               END as rank
         FROM "Course"
-        WHERE "searchVector" @@ plainto_tsquery('simple', ${q})
-        ORDER BY "courseName", rank DESC
+        WHERE "courseName" ILIKE ${pattern}
+           OR "courseCode" ILIKE ${pattern}
+           OR "selectCode" ILIKE ${pattern}
+           OR "department" ILIKE ${pattern}
+        ORDER BY "courseName", rank ASC
       ) ranked
-      ORDER BY rank DESC
+      ORDER BY rank ASC
       LIMIT 8
     `,
     // Pattern matching for instructors (no full-text index)
